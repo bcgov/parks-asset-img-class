@@ -1,6 +1,6 @@
 [![Apache 2.0 License](https://img.shields.io/github/license/bcgov/nr-epd-aq-statements.svg)](/LICENSE) [![Lifecycle:Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999)](<Redirect-URL>)
 
-# nr-site-tagging-pilot
+# parks-asset-img-class
 
 ## Usage
 
