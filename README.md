@@ -4,7 +4,7 @@
 
 ## Usage
 
-This repository is a collaboration space for a 2026 UBC MDS capstone project. This README will be completed by the Capstone team.
+This repository is a collaboration space for a 2026 UBC MDS capstone project. This README will be completed by the Capstone team. (please replace when ready)
 
 ## Getting Help or Reporting an Issue
 
