@@ -24,12 +24,11 @@ if str(ROOT) not in sys.path:
 
 import pandas as pd
 import mlflow
-from sklearn.metrics import f1_score, classification_report
+from sklearn.metrics import f1_score, classification_report, precision_score, recall_score
 from src.mlflow_utils import setup_mlflow, make_run_name, make_standard_tags
 
 import dagshub
 dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
-
 
 def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_type, prompt_version):
     
@@ -62,6 +61,10 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     
     macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
     weighted_f1 = f1_score(y_true, y_pred, average="weighted", zero_division=0)
+    macro_precision = precision_score(y_true, y_pred, average="macro", zero_division=0)
+    weighted_precision = precision_score(y_true, y_pred, average="weighted", zero_division=0)
+    macro_recall = recall_score(y_true, y_pred, average="macro", zero_division=0)
+    weighted_recall = recall_score(y_true, y_pred, average="weighted", zero_division=0)
     n_samples = len(y_true)
     
     print(f"\n=== {attribute} | {model_name} ===")
@@ -92,6 +95,10 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
         mlflow.log_metric("macro_f1", macro_f1)
         mlflow.log_metric("weighted_f1", weighted_f1)
         mlflow.log_metric("n_samples", n_samples)
+        mlflow.log_metric("macro_precision", macro_precision)
+        mlflow.log_metric("weighted_precision", weighted_precision)
+        mlflow.log_metric("macro_recall", macro_recall)
+        mlflow.log_metric("weighted_recall", weighted_recall)
         mlflow.log_param("attribute", attribute)
         mlflow.log_param("model", model_name)
         mlflow.log_param("asset_type", asset_type)

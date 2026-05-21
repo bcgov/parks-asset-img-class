@@ -15,9 +15,9 @@ STAIRS_PROMPT_V1 = """
     attribute, and provide a confidence score (0.0-1.0) for each prediction.
 
     Attributes to predict:
-    - fall_height: low (<0.5m) | medium (0.5m-1.2m) | high (>1.2m)
-    - has_pedestrian_railing: 2 railings | 1 railing | no railings
-    - material_frame_tank_body: PVC | Gravel | Natural Surface | Earth-filled |
+    - fall_height: low (<0.5m) | medium (0.5-1.2m) | high (>1.2m)
+    - has_pedestrian_railing: 2 railings | 1 railing | No railings
+    - material_frame_tank_body: PVC | Gravel | Natural Surface | Earth-Filled |
                                 Aluminum | Metal | Steel | Rock/Stone | Concrete |
                                 Box Step | Timber/Wood
     - number_of_steps: few (<10) | medium (10-20) | many (>20)
