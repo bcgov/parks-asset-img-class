@@ -1,0 +1,2346 @@
+asset_id,timestamp,model,response,has_pedestrian_railing_value,has_pedestrian_railing_confidence,parse_error
+46496,2026-05-22T06:50:49.927076,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+47049,2026-05-22T06:51:22.077323,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+47050,2026-05-22T06:51:44.077133,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+47053,2026-05-22T06:52:00.721514,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+47054,2026-05-22T06:52:26.804202,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+47184,2026-05-22T06:52:45.726852,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+48269,2026-05-22T06:53:02.412917,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+48347,2026-05-22T06:53:17.882239,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+48394,2026-05-22T06:53:32.521865,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+48799,2026-05-22T06:53:48.906008,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+48937,2026-05-22T06:54:05.486310,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+49501,2026-05-22T06:54:28.634567,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+49525,2026-05-22T06:54:42.884428,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+49702,2026-05-22T06:55:37.460672,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+49703,2026-05-22T06:55:54.542246,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+49704,2026-05-22T06:56:08.372200,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+49705,2026-05-22T06:56:50.784740,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+49707,2026-05-22T06:57:22.199522,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+49710,2026-05-22T06:57:49.127664,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+49711,2026-05-22T06:58:23.750075,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+50514,2026-05-22T06:59:03.885314,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.85
+    }
+}
+```",1 railing,0.85,
+50723,2026-05-22T06:59:34.813750,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+50805,2026-05-22T06:59:54.460061,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+51270,2026-05-22T07:00:35.431499,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+51458,2026-05-22T07:00:52.621884,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+51536,2026-05-22T07:00:59.688464,gemma-4-26b-a4b-it,,,,True
+51537,2026-05-22T07:01:13.661229,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+51695,2026-05-22T07:01:20.472819,gemma-4-26b-a4b-it,,,,True
+51805,2026-05-22T07:01:22.829187,gemma-4-26b-a4b-it,,,,True
+52248,2026-05-22T07:02:27.887875,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+52621,2026-05-22T07:02:58.583103,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+52952,2026-05-22T07:03:55.561257,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+53807,2026-05-22T07:04:22.146274,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+54208,2026-05-22T07:04:46.819923,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+54335,2026-05-22T07:05:29.697085,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+55707,2026-05-22T07:06:04.948342,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+55708,2026-05-22T07:06:29.058518,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+55912,2026-05-22T07:06:49.437024,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+56479,2026-05-22T07:07:16.674198,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+56563,2026-05-22T07:07:40.951275,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+56878,2026-05-22T07:08:11.052322,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+57224,2026-05-22T07:08:31.017264,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+57614,2026-05-22T07:08:51.396068,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+57673,2026-05-22T07:09:10.646185,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+57674,2026-05-22T07:09:31.840088,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+58180,2026-05-22T07:09:52.528820,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+58182,2026-05-22T07:10:09.222250,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+60066,2026-05-22T07:10:24.477043,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+60443,2026-05-22T07:12:33.611276,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+60444,2026-05-22T07:12:59.818604,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+61221,2026-05-22T07:13:15.379729,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+61611,2026-05-22T07:13:26.847489,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+61846,2026-05-22T07:13:43.650067,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+61933,2026-05-22T07:14:01.153378,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+61959,2026-05-22T07:14:29.635489,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+62338,2026-05-22T07:14:44.685009,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+62365,2026-05-22T07:15:17.341507,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+63006,2026-05-22T07:15:40.587635,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+64381,2026-05-22T07:15:58.297197,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+64441,2026-05-22T07:16:50.964515,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.85
+    }
+}
+```",1 railing,0.85,
+64656,2026-05-22T07:17:14.073897,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+64840,2026-05-22T07:17:32.918577,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+65318,2026-05-22T07:17:53.303609,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+65613,2026-05-22T07:18:17.151844,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+66054,2026-05-22T07:19:00.876153,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}",No railings,0.9,
+66055,2026-05-22T07:19:10.933817,gemma-4-26b-a4b-it,,,,True
+66243,2026-05-22T07:19:24.633766,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+67210,2026-05-22T07:19:57.721408,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.85
+    }
+}
+```",1 railing,0.85,
+80433,2026-05-22T07:20:15.733684,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80436,2026-05-22T07:20:29.763360,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80438,2026-05-22T07:20:37.643622,gemma-4-26b-a4b-it,,,,True
+80450,2026-05-22T07:20:55.585186,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80452,2026-05-22T07:21:25.065813,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80458,2026-05-22T07:21:38.275495,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80460,2026-05-22T07:22:46.884428,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+80463,2026-05-22T07:22:59.978803,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80470,2026-05-22T07:23:13.153265,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80471,2026-05-22T07:23:53.138820,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80606,2026-05-22T07:24:20.296949,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+80607,2026-05-22T07:25:34.732740,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+80608,2026-05-22T07:26:01.554722,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+80639,2026-05-22T07:26:31.610940,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+80640,2026-05-22T07:26:49.358600,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80804,2026-05-22T07:27:10.243148,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+80909,2026-05-22T07:27:24.487176,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+80916,2026-05-22T07:27:47.806579,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+81293,2026-05-22T07:28:05.420409,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82182,2026-05-22T07:28:20.322185,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82213,2026-05-22T07:28:38.553254,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82406,2026-05-22T07:28:54.211416,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82425,2026-05-22T07:29:08.549679,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82461,2026-05-22T07:29:25.915122,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82555,2026-05-22T07:29:42.243014,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+82778,2026-05-22T07:29:58.496813,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82806,2026-05-22T07:30:13.067844,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+82811,2026-05-22T07:30:35.634458,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+82812,2026-05-22T07:30:53.007279,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+83137,2026-05-22T07:31:07.131361,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+83142,2026-05-22T07:31:31.915334,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+83147,2026-05-22T07:32:04.615697,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+83152,2026-05-22T07:32:33.466349,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+83852,2026-05-22T07:32:48.913883,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+83940,2026-05-22T07:33:12.099509,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+84944,2026-05-22T07:33:25.072813,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+85087,2026-05-22T07:33:46.878553,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+85476,2026-05-22T07:34:01.316605,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85483,2026-05-22T07:34:17.191867,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85486,2026-05-22T07:34:31.830226,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85489,2026-05-22T07:34:51.045996,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85492,2026-05-22T07:35:05.726055,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85496,2026-05-22T07:35:26.208687,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85958,2026-05-22T07:35:42.490162,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+85964,2026-05-22T07:35:58.667900,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86044,2026-05-22T07:36:19.254625,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86053,2026-05-22T07:36:34.921263,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86062,2026-05-22T07:36:58.006041,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86091,2026-05-22T07:37:12.192266,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86094,2026-05-22T07:37:27.550298,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86102,2026-05-22T07:37:43.323340,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86159,2026-05-22T07:37:57.587865,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86174,2026-05-22T07:38:18.547122,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86209,2026-05-22T07:38:40.617455,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+86246,2026-05-22T07:38:56.829763,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86259,2026-05-22T07:39:31.256810,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.85
+    }
+}
+```",1 railing,0.85,
+86617,2026-05-22T07:39:44.403335,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86620,2026-05-22T07:40:00.538572,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+86623,2026-05-22T07:40:14.878766,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+87005,2026-05-22T07:40:28.315996,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+87019,2026-05-22T07:40:40.783866,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+87713,2026-05-22T07:41:01.908065,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+87717,2026-05-22T07:41:30.097922,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}
+```",No railings,0.9,
+88086,2026-05-22T07:41:42.847769,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+88198,2026-05-22T07:42:09.710022,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+88207,2026-05-22T07:42:14.756667,gemma-4-26b-a4b-it,,,,True
+88205,2026-05-22T07:42:14.757916,gemma-4-26b-a4b-it,,,,True
+89201,2026-05-22T07:43:19.751942,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+89202,2026-05-22T07:43:34.349265,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+88210,2026-05-22T07:43:39.363638,gemma-4-26b-a4b-it,,,,True
+89639,2026-05-22T07:43:53.402411,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+88398,2026-05-22T07:43:58.420611,gemma-4-26b-a4b-it,,,,True
+89332,2026-05-22T07:43:58.422818,gemma-4-26b-a4b-it,,,,True
+89718,2026-05-22T07:44:14.607074,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+89730,2026-05-22T07:44:38.151848,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+89732,2026-05-22T07:44:57.200482,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+89733,2026-05-22T07:45:42.679861,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+91434,2026-05-22T07:46:51.682322,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+92005,2026-05-22T07:47:08.782045,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+92007,2026-05-22T07:47:20.555958,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+92015,2026-05-22T07:47:37.018942,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}",1 railing,0.9,
+92076,2026-05-22T07:47:51.390990,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+92084,2026-05-22T07:48:12.789314,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+92085,2026-05-22T07:48:27.646119,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+92431,2026-05-22T07:48:56.720085,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+92432,2026-05-22T07:49:19.665149,gemma-4-26b-a4b-it,"{""has_pedestrian_railing"": {""value"": ""2 railings"", ""confidence"": 1.0}}",2 railings,1.0,
+92433,2026-05-22T07:49:42.618403,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+92434,2026-05-22T07:50:14.043703,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+92436,2026-05-22T07:50:45.886078,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+92806,2026-05-22T07:51:13.135089,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}
+```",1 railing,0.9,
+92807,2026-05-22T07:52:09.875305,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+92939,2026-05-22T07:52:27.466447,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+93352,2026-05-22T07:52:52.144812,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+93359,2026-05-22T07:53:34.540803,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+94135,2026-05-22T07:53:49.603486,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94137,2026-05-22T07:54:13.658532,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94176,2026-05-22T07:54:27.371921,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+94302,2026-05-22T07:54:55.845808,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94307,2026-05-22T07:55:19.878631,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94318,2026-05-22T07:55:39.162948,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94328,2026-05-22T07:55:52.953830,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94330,2026-05-22T07:56:13.267336,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+94332,2026-05-22T07:56:30.074731,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+94333,2026-05-22T07:57:01.084624,gemma-4-26b-a4b-it,"{""has_pedestrian_railing"": {""value"": ""No railings"", ""confidence"": 1.0}}",No railings,1.0,
+94334,2026-05-22T07:57:25.674989,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94339,2026-05-22T07:57:39.375112,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94341,2026-05-22T07:57:54.923832,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94343,2026-05-22T07:58:16.548472,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94369,2026-05-22T07:58:39.081788,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94398,2026-05-22T07:59:07.446204,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+94401,2026-05-22T07:59:28.733776,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94402,2026-05-22T07:59:52.195706,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+94404,2026-05-22T08:00:06.909317,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94417,2026-05-22T08:00:32.846812,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+94419,2026-05-22T08:00:48.204007,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+96803,2026-05-22T08:01:26.021552,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+97124,2026-05-22T08:02:06.338547,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+98299,2026-05-22T08:02:32.142811,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+98951,2026-05-22T08:03:04.705558,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+100301,2026-05-22T08:03:39.568338,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+100302,2026-05-22T08:04:11.612941,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+101016,2026-05-22T08:04:33.966864,gemma-4-26b-a4b-it,"{""has_pedestrian_railing"": {""value"": ""No railings"", ""confidence"": 1.0}}",No railings,1.0,
+101027,2026-05-22T08:04:48.066265,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+101031,2026-05-22T08:05:10.976351,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+101066,2026-05-22T08:05:42.109719,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+101380,2026-05-22T08:05:49.361016,gemma-4-26b-a4b-it,,,,True
+101396,2026-05-22T08:06:01.850572,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+101449,2026-05-22T08:06:29.095866,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+101607,2026-05-22T08:06:52.953240,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+101624,2026-05-22T08:07:12.583768,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+101697,2026-05-22T08:07:35.451510,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+101714,2026-05-22T08:07:52.654275,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}",1 railing,0.9,
+101744,2026-05-22T08:08:07.812903,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+102425,2026-05-22T08:08:24.298789,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+102439,2026-05-22T08:08:38.532583,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+102759,2026-05-22T08:08:55.323624,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+102839,2026-05-22T08:09:18.041718,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+102843,2026-05-22T08:09:40.982980,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+103909,2026-05-22T08:10:04.118705,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+103932,2026-05-22T08:10:18.865137,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+104721,2026-05-22T08:10:42.214089,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}
+```",No railings,0.9,
+104861,2026-05-22T08:11:32.596877,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}
+```",2 railings,0.9,
+104870,2026-05-22T08:11:51.441352,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+105082,2026-05-22T08:12:06.185903,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+105083,2026-05-22T08:12:31.882021,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+105458,2026-05-22T08:13:12.747981,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+105614,2026-05-22T08:13:37.007077,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+105616,2026-05-22T08:14:00.530522,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+105617,2026-05-22T08:14:24.835743,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+105619,2026-05-22T08:14:45.001580,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+105817,2026-05-22T08:14:58.116738,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+105824,2026-05-22T08:15:11.934109,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+105840,2026-05-22T08:15:58.738964,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+105855,2026-05-22T08:16:31.921078,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}
+```",1 railing,0.9,
+106011,2026-05-22T08:17:01.920191,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106065,2026-05-22T08:17:13.279450,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106066,2026-05-22T08:17:32.836458,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106068,2026-05-22T08:17:46.049639,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+106071,2026-05-22T08:18:02.435396,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106072,2026-05-22T08:18:14.517334,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+106073,2026-05-22T08:18:29.363946,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106074,2026-05-22T08:18:48.622003,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+106506,2026-05-22T08:19:01.313613,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+106583,2026-05-22T08:19:15.142831,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+106584,2026-05-22T08:19:27.734358,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+107290,2026-05-22T08:19:45.757254,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    }
+}",2 railings,0.9,
+107471,2026-05-22T08:20:01.013423,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107475,2026-05-22T08:20:14.015277,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107485,2026-05-22T08:20:25.900076,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107490,2026-05-22T08:20:40.847564,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107516,2026-05-22T08:20:52.521849,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107518,2026-05-22T08:21:06.962324,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107667,2026-05-22T08:21:19.560786,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+107876,2026-05-22T08:21:33.894179,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107878,2026-05-22T08:21:47.519641,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107879,2026-05-22T08:22:00.059146,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107894,2026-05-22T08:22:53.151709,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+107899,2026-05-22T08:23:26.120864,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+107903,2026-05-22T08:23:55.103362,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107905,2026-05-22T08:24:27.050768,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107913,2026-05-22T08:24:41.281885,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107917,2026-05-22T08:25:07.398676,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107918,2026-05-22T08:25:21.363037,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107927,2026-05-22T08:25:37.299969,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107928,2026-05-22T08:25:50.813639,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107929,2026-05-22T08:26:02.896143,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+107931,2026-05-22T08:26:15.394816,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+107932,2026-05-22T08:26:31.364007,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+107935,2026-05-22T08:26:48.877045,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107937,2026-05-22T08:27:01.776900,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107941,2026-05-22T08:27:16.215620,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+107942,2026-05-22T08:27:28.607332,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107943,2026-05-22T08:27:42.208983,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107945,2026-05-22T08:27:55.744735,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107947,2026-05-22T08:28:09.054598,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107950,2026-05-22T08:28:21.910004,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+107972,2026-05-22T08:28:38.237683,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107974,2026-05-22T08:28:52.781923,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107975,2026-05-22T08:29:11.009977,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+107977,2026-05-22T08:29:24.729623,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107983,2026-05-22T08:29:36.714167,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+107999,2026-05-22T08:29:51.556804,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+108004,2026-05-22T08:30:05.799394,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+108005,2026-05-22T08:30:20.302568,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+108010,2026-05-22T08:30:39.906541,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+108012,2026-05-22T08:30:52.910642,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+108028,2026-05-22T08:31:09.191751,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+108241,2026-05-22T08:31:27.624836,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+108734,2026-05-22T08:31:39.915176,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+108764,2026-05-22T08:31:55.989221,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+108862,2026-05-22T08:32:09.879707,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+108868,2026-05-22T08:32:25.483207,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+109154,2026-05-22T08:32:38.383793,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+109165,2026-05-22T08:33:00.401861,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}",1 railing,0.9,
+109628,2026-05-22T08:33:15.969079,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+109801,2026-05-22T08:33:28.356326,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+109803,2026-05-22T08:33:54.270604,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+109804,2026-05-22T08:34:08.192109,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+109806,2026-05-22T08:34:23.859107,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+109807,2026-05-22T08:34:38.091717,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+109919,2026-05-22T08:34:51.300419,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+110086,2026-05-22T08:35:06.559067,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+110173,2026-05-22T08:35:19.975449,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+110284,2026-05-22T08:35:34.414912,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+110287,2026-05-22T08:35:52.126961,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+110371,2026-05-22T08:36:05.132218,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+110568,2026-05-22T08:37:06.170435,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+110703,2026-05-22T08:37:18.552795,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+110871,2026-05-22T08:37:34.832184,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+111450,2026-05-22T08:37:48.351615,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+111458,2026-05-22T08:38:03.504361,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+111482,2026-05-22T08:39:36.085182,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}
+```",1 railing,0.9,
+112127,2026-05-22T08:39:51.761533,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+112342,2026-05-22T08:40:03.727641,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+112490,2026-05-22T08:40:17.978566,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+112573,2026-05-22T08:40:29.529907,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+112902,2026-05-22T08:40:45.813949,gemma-4-26b-a4b-it,"{""has_pedestrian_railing"": {""value"": ""No railings"", ""confidence"": 1.0}}",No railings,1.0,
+112908,2026-05-22T08:40:58.303719,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+113157,2026-05-22T08:41:21.247639,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+113161,2026-05-22T08:41:35.071012,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+113187,2026-05-22T08:41:49.918154,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+113193,2026-05-22T08:42:07.329085,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+113194,2026-05-22T08:42:25.454000,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+113196,2026-05-22T08:42:39.990124,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+113200,2026-05-22T08:42:54.738990,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+113203,2026-05-22T08:43:09.483900,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+113204,2026-05-22T08:43:36.003772,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",No railings,0.95,
+113205,2026-05-22T08:44:04.984873,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+114558,2026-05-22T08:44:19.933477,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+114575,2026-05-22T08:44:32.123727,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+115090,2026-05-22T08:44:45.740395,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+116610,2026-05-22T08:45:05.399925,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+116732,2026-05-22T08:45:23.730468,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+116796,2026-05-22T08:45:41.342064,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+117205,2026-05-22T08:45:58.547595,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+117219,2026-05-22T08:46:13.807695,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+117590,2026-05-22T08:46:29.883476,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+117800,2026-05-22T08:47:09.756654,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}",No railings,0.9,
+118199,2026-05-22T08:47:24.454839,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+118556,2026-05-22T08:47:42.074191,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",1 railing,0.95,
+120546,2026-05-22T08:47:58.562682,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+120734,2026-05-22T08:48:17.107018,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+121000,2026-05-22T08:48:41.374628,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+121001,2026-05-22T08:49:06.758581,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+121014,2026-05-22T08:49:22.122403,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+121017,2026-05-22T08:49:37.990687,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+121018,2026-05-22T08:49:58.781092,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+121071,2026-05-22T08:50:23.767045,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+121484,2026-05-22T08:50:42.202231,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+121499,2026-05-22T08:50:54.876308,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+121917,2026-05-22T08:51:10.459271,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+121918,2026-05-22T08:51:27.460853,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+121919,2026-05-22T08:51:40.260552,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+121921,2026-05-22T08:51:52.344089,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+122192,2026-05-22T08:52:24.292691,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}
+```",No railings,0.9,
+122611,2026-05-22T08:52:35.762134,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+122646,2026-05-22T08:52:49.899643,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+122647,2026-05-22T08:53:07.610002,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+122648,2026-05-22T08:53:26.451350,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+122649,2026-05-22T08:53:45.703175,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}",No railings,0.9,
+122661,2026-05-22T08:54:00.344798,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+122663,2026-05-22T08:54:16.425055,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+122777,2026-05-22T08:54:30.040009,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+122779,2026-05-22T08:54:43.760885,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",2 railings,0.95,
+122780,2026-05-22T08:54:59.634307,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+123140,2026-05-22T08:55:13.357480,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}
+```",2 railings,1.0,
+123141,2026-05-22T08:55:26.465073,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2 railings,1.0,
+123145,2026-05-22T08:55:41.614764,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+123217,2026-05-22T08:55:57.321629,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+123413,2026-05-22T08:56:11.621523,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+123416,2026-05-22T08:56:24.729890,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+123577,2026-05-22T08:56:37.394899,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+123605,2026-05-22T08:56:53.713677,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}
+```",1 railing,0.95,
+123618,2026-05-22T08:57:08.425286,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+123620,2026-05-22T08:57:34.877315,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+124042,2026-05-22T08:57:50.851834,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+124044,2026-05-22T08:58:05.381456,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+125311,2026-05-22T08:58:19.525450,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+125976,2026-05-22T08:58:32.626352,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+126696,2026-05-22T08:58:46.861474,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",No railings,1.0,
+126777,2026-05-22T08:59:04.991531,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+126796,2026-05-22T08:59:30.088080,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}
+```",1 railing,1.0,
+126797,2026-05-22T09:00:09.017267,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}
+```",2 railings,0.95,
+127081,2026-05-22T09:00:27.764675,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",No railings,0.95,
+127144,2026-05-22T09:00:42.506644,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
+127152,2026-05-22T09:00:54.922992,gemma-4-26b-a4b-it,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",1 railing,1.0,
+127157,2026-05-22T09:01:28.284972,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}
+```",1 railing,0.9,
+89716,2026-05-22T09:01:44.056209,gemma-4-26b-a4b-it,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}
+```",No railings,1.0,
