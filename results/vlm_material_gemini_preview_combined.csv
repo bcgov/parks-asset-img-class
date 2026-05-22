@@ -1,0 +1,228 @@
+asset_id,timestamp,model,response,material_frame_tank_body_value,material_frame_tank_body_confidence,parse_error
+47049,2026-05-20T20:31:21.325817,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Rock/Stone"",
+        ""confidence"": 0.95
+    }
+}",Rock/Stone,0.95,
+47050,2026-05-20T20:31:51.706351,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Rock/Stone"",
+        ""confidence"": 0.95
+    }
+}",Rock/Stone,0.95,
+47053,2026-05-20T20:32:17.708993,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",Concrete,0.9,
+47054,2026-05-20T20:32:38.300298,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+47184,2026-05-20T20:32:57.862608,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+48269,2026-05-20T20:33:16.682748,gemini-3-flash-preview,,,,True
+48347,2026-05-20T20:33:21.619049,gemini-3-flash-preview,,,,True
+48394,2026-05-20T20:33:47.983039,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",Concrete,1.0,
+48395,2026-05-20T20:34:09.561188,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",Concrete,1.0,
+48799,2026-05-20T20:34:28.170633,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+48937,2026-05-20T20:34:47.013719,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",Concrete,0.95,
+49501,2026-05-20T20:35:41.125675,gemini-3-flash-preview,"```json
+{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.8
+    }
+}
+```",Timber/Wood,0.8,
+49525,2026-05-20T20:36:01.714098,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49702,2026-05-20T20:36:21.901847,gemini-3-flash-preview,,,,True
+49703,2026-05-20T20:36:26.105011,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49704,2026-05-20T20:36:46.945750,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49705,2026-05-20T20:37:05.350162,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49707,2026-05-20T20:37:28.460588,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49710,2026-05-20T20:37:48.586784,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+49711,2026-05-20T20:38:21.754123,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+50514,2026-05-21T23:52:02.812401,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+50723,2026-05-21T23:52:23.669907,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",Concrete,1.0,
+50805,2026-05-21T23:52:42.472155,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+51270,2026-05-21T23:53:01.999495,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+51458,2026-05-21T23:53:26.372213,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",Concrete,1.0,
+51536,2026-05-21T23:54:00.637095,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Metal"",
+        ""confidence"": 0.9
+    }
+}",Metal,0.9,
+51537,2026-05-21T23:54:27.300312,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+51695,2026-05-21T23:54:55.877899,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",Concrete,0.9,
+51804,2026-05-21T23:55:25.884198,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+52162,2026-05-21T23:55:47.386668,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+52248,2026-05-21T23:56:06.731482,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+52622,2026-05-21T23:56:46.345688,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+52952,2026-05-21T23:57:05.406543,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+53110,2026-05-21T23:57:26.430914,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+53111,2026-05-21T23:57:56.577101,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+53212,2026-05-21T23:58:15.144156,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+53214,2026-05-21T23:58:43.200568,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    }
+}",Timber/Wood,0.95,
+53221,2026-05-21T23:59:02.286854,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    }
+}",Timber/Wood,1.0,
+53222,2026-05-21T23:59:33.930586,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",Concrete,0.95,
+53428,2026-05-21T23:59:54.773486,gemini-3-flash-preview,"{
+    ""material_frame_tank_body"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",Concrete,0.95,

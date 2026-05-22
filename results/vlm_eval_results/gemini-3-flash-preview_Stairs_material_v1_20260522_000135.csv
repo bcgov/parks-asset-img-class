@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+"attr_material_frame,_tank,_body",gemini-3-flash-preview,Stairs,material_v1,35,0.43116615067079456,0.46301046734483264,2026-05-22T00:01:35.145494
