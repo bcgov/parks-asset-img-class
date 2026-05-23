@@ -36,6 +36,17 @@ data/raw/*
 #ignore test files for now
 data/processed/test/*
 
+# PII review outputs (originals/boxed/blurred copies of flagged images — large,
+# regeneratable from data/predictions/pii_screen.csv via scripts/blur_flagged_images.py)
+data/pii_review/
+
+# Clean image set for cloud-VLM upload (originals for unflagged + blurred for
+# flagged; 5.2 GB, regeneratable via scripts/build_upload_set.py)
+data/processed/images_clean/
+
+# Auto-downloaded YOLO weights (ultralytics caches them in repo root by default)
+yolov8*.pt
+
 # MLflow file-based tracking store + artifacts
 mlruns/
 mlartifacts/
