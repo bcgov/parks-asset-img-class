@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent 
 
-def load_asset_images_base64(asset_id, df):
+def load_asset_images_base64(asset_id, df, image_root):
     """
     Load all images for a given asset and return:
     [{"b64": ..., "mime": ...}, ...]
@@ -17,7 +17,7 @@ def load_asset_images_base64(asset_id, df):
 
     images = []
     for p in paths:
-        fixed = ROOT / p.replace("data/", "data/raw/", 1)
+        fixed = ROOT / p.replace("data/", f"{image_root}/", 1)
         if not os.path.exists(fixed):
             print(f"⚠️ Image not found: {fixed}")
             continue
