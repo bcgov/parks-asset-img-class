@@ -1,0 +1,6 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_structure_position,gemma-4-26b-a4b-it,Stairs,stairs_v1,359,0.5425780298031943,0.7645186274972916,2026-05-20T22:24:49.426041
+attr_has_pedestrian_railing,gemma-4-26b-a4b-it,Stairs,stairs_v1,349,0.6165700298548136,0.8924221725522378,2026-05-20T22:25:09.310111
+"attr_material_frame,_tank,_body",gemma-4-26b-a4b-it,Stairs,stairs_v1,382,0.2646902605139264,0.5745986530081719,2026-05-20T22:25:37.322347
+fall_height_bin,gemma-4-26b-a4b-it,Stairs,stairs_v1,4,0.16666666666666666,0.25,2026-05-20T22:26:01.356379
+steps_bin,gemma-4-26b-a4b-it,Stairs,stairs_v1,19,0.5222222222222221,0.5280701754385965,2026-05-20T22:26:43.038423

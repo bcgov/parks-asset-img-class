@@ -31,6 +31,11 @@ sys.path.append(ROOT)
 from src.vlm.predictors import predict_asset_attributes
 from src.vlm.prompts import PROMPT_REGISTRY
 
+import signal
+
+def timeout_handler(signum, frame):
+    raise TimeoutError("API call timed out after 60s")
+
 # ---------------------------------------------------------------------
 # Main batch runner
 # ---------------------------------------------------------------------
@@ -54,8 +59,6 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
     print(f"Total assets to process: {len(unique_asset_ids)}")
     print(f"Offset: {offset}")
     print(f"Writing results to: {output_path}")
-
-    results = []
 
     for asset_id in tqdm(unique_asset_ids):
         asset_df = df[df["asset_id"] == asset_id]
@@ -100,7 +103,7 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
     
             if not parsed:  # catches None and empty string
                 out["parse_error"] = True
-                results.append(out)
+                pd.DataFrame([out]).to_csv(output_path, mode="a", header=not os.path.exists(output_path), index=False)
                 continue
 
             if isinstance(parsed, str):
@@ -115,7 +118,7 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
                     parsed = json.loads(parsed)
                 except json.JSONDecodeError:
                     out["parse_error"] = True
-                    results.append(out)
+                    pd.DataFrame([out]).to_csv(output_path, mode="a", header=not os.path.exists(output_path), index=False)
                     continue
                     
             if isinstance(parsed, dict):
@@ -132,14 +135,9 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
                     out[f"{col_name}_value"] = val.get("value")
                     out[f"{col_name}_confidence"] = val.get("confidence")
             
-        results.append(out)
+        pd.DataFrame([out]).to_csv(output_path, mode="a", header=not os.path.exists(output_path), index=False)
 
         time.sleep(delay)
-    
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-
-    df_out = pd.DataFrame(results)
-    df_out.to_csv(output_path, index=False)
 
     print("✅ Done! Processed", len(unique_asset_ids), "assets.")
     print(f"Next offset: {offset + len(unique_asset_ids)}")
