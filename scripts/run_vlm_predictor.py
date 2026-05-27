@@ -201,7 +201,8 @@ def run_batch(
         # infer schema and write header from first successful parse
         if output_columns is None and parsed_attrs is not None:
             output_columns = get_output_columns(parsed_attrs)
-            pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
+            if not os.path.exists(output_path):
+                pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
 
         buffer.append(out)
 
@@ -216,7 +217,8 @@ def run_batch(
     # if we never got a successful parse, fall back to minimal schema
     if output_columns is None:
         output_columns = FALLBACK_COLUMNS
-        pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
+        if not os.path.exists(output_path):
+            pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
 
     # flush remaining buffer
     if buffer:
