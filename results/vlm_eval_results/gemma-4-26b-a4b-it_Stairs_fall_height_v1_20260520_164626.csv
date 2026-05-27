@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-fall_height_bin,gemma-4-26b-a4b-it,Stairs,fall_height_v1,5,0.43333333333333335,0.68,2026-05-20T16:46:26.004219

@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-attr_structure_position,gemini-3-flash-preview,Stairs,structure_position_v1,18,0.467741935483871,0.78584229390681,2026-05-20T20:02:29.568092

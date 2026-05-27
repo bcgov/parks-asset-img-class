@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-length_bin,gemini-3.1-flash-lite,all,length_v1,16,0.2706766917293233,0.26879699248120303,2026-05-20T02:46:46.117997
