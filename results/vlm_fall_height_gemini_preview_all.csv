@@ -1,0 +1,16 @@
+asset_id,timestamp,model,response,fall_height_bin_value,fall_height_bin_confidence
+51537,2026-05-27T09:03:59.435560,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""high"", ""confidence"": 0.9}
+}",high,0.9
+121499,2026-05-27T09:04:09.291746,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""high (>1.2m)"", ""confidence"": 0.95}
+}",high (>1.2m),0.95
+125311,2026-05-27T09:04:18.385993,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<0.5m)"", ""confidence"": 0.9}
+}",low (<0.5m),0.9
+126700,2026-05-27T09:04:26.990522,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<0.5m)"", ""confidence"": 0.95}
+}",low (<0.5m),0.95
+126777,2026-05-27T09:04:39.892314,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""high (>1.2m)"", ""confidence"": 0.9}
+}",high (>1.2m),0.9
