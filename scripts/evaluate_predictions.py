@@ -30,7 +30,6 @@ from src.mlflow_utils import setup_mlflow, make_run_name, make_standard_tags
 import dagshub
 dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
 
-
 def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_type, prompt_version):
     
     preds_df = pd.read_csv(predictions_path)

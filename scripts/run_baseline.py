@@ -17,6 +17,9 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.baseline import DEFAULT_TRAIN_DIR, cross_validate_train_folder  # noqa: E402
 
+import dagshub
+dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
+
 
 METRIC_COLUMNS = [
     "train_majority_share_mean",
@@ -105,6 +108,8 @@ def log_results_to_mlflow(
     if experiment_name is not None:
         setup_kwargs["experiment_name"] = experiment_name
     setup_mlflow(**setup_kwargs)
+    
+    mlflow.autolog()
 
     parent_tags = make_standard_tags(
         task="all_classification_attributes",
