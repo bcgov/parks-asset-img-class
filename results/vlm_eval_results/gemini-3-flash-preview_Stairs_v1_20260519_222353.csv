@@ -1,6 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-attr_structure_position,gemini-3-flash-preview,Stairs,v1,1,1.0,1.0,2026-05-19T22:23:53.075872
-attr_has_pedestrian_railing,gemini-3-flash-preview,Stairs,v1,1,1.0,1.0,2026-05-19T22:23:53.115268
-"attr_material_frame,_tank,_body",gemini-3-flash-preview,Stairs,v1,1,1.0,1.0,2026-05-19T22:23:53.144366
-fall_height_bin,gemini-3-flash-preview,Stairs,v1,1,0.0,0.0,2026-05-19T22:23:53.171838
-steps_bin,gemini-3-flash-preview,Stairs,v1,1,1.0,1.0,2026-05-19T22:23:53.196600

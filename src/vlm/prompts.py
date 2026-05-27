@@ -67,7 +67,6 @@ TRAIL_BRIDGE_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
-
 # Attribute-specific prompts
 
 STRUCTURE_POSITION_PROMPT_V1 = """

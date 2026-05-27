@@ -1,12 +1,16 @@
 from .image_loader import load_asset_images_base64
 from .model_router import run_model
 
-def predict_asset_attributes(asset_id, df, model_name, prompt):
+def predict_asset_attributes(asset_id,
+                             df,
+                             model_name,
+                             prompt,
+                             image_root="data/processed/images_clean"):
     """
     Top-level function for use in production.
     Loads images, builds prompt, calls model, returns raw JSON string.
     """
-    images = load_asset_images_base64(asset_id, df)
+    images = load_asset_images_base64(asset_id, df, image_root)
 
     if len(images) == 0:
         return {
