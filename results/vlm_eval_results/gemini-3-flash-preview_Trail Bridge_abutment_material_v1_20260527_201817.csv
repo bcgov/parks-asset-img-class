@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_abutment_material,gemini-3-flash-preview,Trail Bridge,abutment_material_v1,188,0.3854989032750269,0.7300750977344055,2026-05-27T20:18:17.179945
