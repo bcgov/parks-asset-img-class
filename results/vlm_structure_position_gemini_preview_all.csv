@@ -1,0 +1,2307 @@
+asset_id,timestamp,model,response,structure_position_value,structure_position_confidence,parse_error
+47049,2026-05-27T07:55:32.472747,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+47050,2026-05-27T07:55:41.777308,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+47053,2026-05-27T07:55:53.157438,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+47054,2026-05-27T07:56:02.592488,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+47184,2026-05-27T07:56:11.902496,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+48269,2026-05-27T07:56:20.394631,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+48347,2026-05-27T07:56:29.091680,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+48394,2026-05-27T07:56:38.203177,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+48395,2026-05-27T07:56:46.804755,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+48799,2026-05-27T07:56:55.818644,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+48937,2026-05-27T07:57:06.877280,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49501,2026-05-27T07:57:15.171464,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49525,2026-05-27T07:57:23.822565,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+49702,2026-05-27T07:57:34.095107,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49703,2026-05-27T07:57:43.946823,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49704,2026-05-27T07:57:54.398100,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49705,2026-05-27T07:58:02.581392,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49707,2026-05-27T07:58:12.515093,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+49710,2026-05-27T07:58:21.113118,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+49711,2026-05-27T07:58:33.785317,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+50514,2026-05-27T07:58:42.626235,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+50723,2026-05-27T07:59:14.685149,gemini-3-flash-preview,"```json
+{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.85
+    }
+}
+```",Elevated,0.85,
+50805,2026-05-27T07:59:30.036189,gemini-3-flash-preview,"```json
+{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}
+```",At-Grade,0.9,
+51270,2026-05-27T07:59:39.254578,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+51458,2026-05-27T07:59:48.161696,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+51536,2026-05-27T07:59:56.557499,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+51537,2026-05-27T08:00:06.215657,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+51695,2026-05-27T08:00:15.400830,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+51804,2026-05-27T08:00:26.822173,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+52162,2026-05-27T08:00:37.314390,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+52248,2026-05-27T08:00:48.269329,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+52622,2026-05-27T08:00:59.129785,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+52952,2026-05-27T08:01:11.010874,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+53110,2026-05-27T08:01:19.610926,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+53111,2026-05-27T08:01:27.807545,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+53212,2026-05-27T08:01:41.217891,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+53214,2026-05-27T08:01:51.356884,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+53221,2026-05-27T08:02:10.828751,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+53222,2026-05-27T08:02:20.443104,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+53428,2026-05-27T08:02:29.962883,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+53688,2026-05-27T08:02:39.077594,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+53805,2026-05-27T08:02:50.137013,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+53807,2026-05-27T08:03:01.298017,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+53808,2026-05-27T08:03:11.642822,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+54159,2026-05-27T08:03:20.242968,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+54208,2026-05-27T08:03:30.996313,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+54335,2026-05-27T08:03:43.184742,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+54337,2026-05-27T08:03:52.295767,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+54506,2026-05-27T08:04:01.411436,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+55707,2026-05-27T08:04:10.095992,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+55708,2026-05-27T08:04:19.234433,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+55912,2026-05-27T08:04:29.776295,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+56479,2026-05-27T08:04:40.224906,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+56563,2026-05-27T08:04:49.207131,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+56878,2026-05-27T08:05:00.643172,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+57224,2026-05-27T08:05:15.658112,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+57614,2026-05-27T08:05:24.354066,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+57673,2026-05-27T08:05:34.555971,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+57674,2026-05-27T08:05:43.709612,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+58180,2026-05-27T08:05:54.358634,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+58182,2026-05-27T08:06:03.878251,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+60066,2026-05-27T08:06:13.299546,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+60443,2026-05-27T08:06:23.340881,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+60444,2026-05-27T08:06:49.158686,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+61221,2026-05-27T08:06:57.600479,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+61611,2026-05-27T08:07:06.121098,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+61933,2026-05-27T08:07:16.779873,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+61959,2026-05-27T08:07:34.614905,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+62338,2026-05-27T08:07:45.881607,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+62365,2026-05-27T08:07:59.495464,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+63006,2026-05-27T08:08:11.473858,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+63400,2026-05-27T08:08:20.746857,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+64381,2026-05-27T08:08:29.193701,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+64441,2026-05-27T08:08:39.123120,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+64656,2026-05-27T08:08:47.930748,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+64840,2026-05-27T08:08:56.739911,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+65318,2026-05-27T08:09:07.603606,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+65613,2026-05-27T08:09:15.990905,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+66054,2026-05-27T08:09:24.384950,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+66055,2026-05-27T08:09:34.524090,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+66243,2026-05-27T08:09:43.946316,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+67210,2026-05-27T08:09:53.483102,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80433,2026-05-27T08:10:05.453600,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80436,2026-05-27T08:10:14.567367,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80438,2026-05-27T08:10:24.910286,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80450,2026-05-27T08:10:33.711336,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80452,2026-05-27T08:10:43.031444,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80458,2026-05-27T08:10:52.655641,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80460,2026-05-27T08:11:03.103914,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+80463,2026-05-27T08:11:12.116964,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80470,2026-05-27T08:11:21.844495,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80471,2026-05-27T08:11:30.822252,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80606,2026-05-27T08:11:51.244088,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+80607,2026-05-27T08:12:07.524358,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+80608,2026-05-27T08:12:21.970562,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+80639,2026-05-27T08:12:33.095820,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80640,2026-05-27T08:12:44.699902,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80804,2026-05-27T08:12:54.072250,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+80909,2026-05-27T08:13:02.610588,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+80916,2026-05-27T08:13:12.425967,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+81293,2026-05-27T08:13:23.602299,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+82182,2026-05-27T08:13:32.716379,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+82213,2026-05-27T08:13:43.469159,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82406,2026-05-27T08:13:52.995504,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82425,2026-05-27T08:14:05.176215,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+82461,2026-05-27T08:14:15.627364,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82555,2026-05-27T08:14:25.966645,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+82778,2026-05-27T08:14:35.592758,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82806,2026-05-27T08:14:47.479487,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82811,2026-05-27T08:14:59.919104,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+82812,2026-05-27T08:15:11.541105,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+83137,2026-05-27T08:15:24.087337,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+83142,2026-05-27T08:15:37.038624,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+83147,2026-05-27T08:15:52.603020,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+83152,2026-05-27T08:16:09.193534,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+83852,2026-05-27T08:16:20.968386,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+83940,2026-05-27T08:16:29.873397,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+84944,2026-05-27T08:16:40.569044,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+85087,2026-05-27T08:16:55.788971,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+85483,2026-05-27T08:17:04.482152,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+85489,2026-05-27T08:17:13.495525,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+85496,2026-05-27T08:17:29.990013,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+85958,2026-05-27T08:17:45.171474,gemini-3-flash-preview,,,,True
+85964,2026-05-27T08:17:50.363141,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+86053,2026-05-27T08:17:59.580618,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86091,2026-05-27T08:18:10.952903,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86094,2026-05-27T08:18:19.736792,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86102,2026-05-27T08:18:33.585672,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+86159,2026-05-27T08:18:43.507416,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+86174,2026-05-27T08:18:52.304780,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86209,2026-05-27T08:19:06.035350,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+86246,2026-05-27T08:19:16.177166,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86259,2026-05-27T08:19:25.596035,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86617,2026-05-27T08:19:35.328712,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86620,2026-05-27T08:19:45.269492,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+86623,2026-05-27T08:19:54.887800,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+87005,2026-05-27T08:20:03.789722,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+87019,2026-05-27T08:20:13.748374,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+87713,2026-05-27T08:20:29.194882,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+87717,2026-05-27T08:20:38.096775,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+88086,2026-05-27T08:20:47.108153,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+88087,2026-05-27T08:20:56.223349,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+88091,2026-05-27T08:21:12.504310,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+88110,2026-05-27T08:21:21.124075,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+88111,2026-05-27T08:21:26.137509,gemini-3-flash-preview,,,,True
+88120,2026-05-27T08:21:26.138510,gemini-3-flash-preview,,,,True
+88138,2026-05-27T08:21:30.541040,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+88123,2026-05-27T08:21:35.554546,gemini-3-flash-preview,,,,True
+88137,2026-05-27T08:21:35.555700,gemini-3-flash-preview,,,,True
+88149,2026-05-27T08:21:35.556865,gemini-3-flash-preview,,,,True
+88161,2026-05-27T08:21:35.558117,gemini-3-flash-preview,,,,True
+88162,2026-05-27T08:21:35.559143,gemini-3-flash-preview,,,,True
+88165,2026-05-27T08:21:35.560103,gemini-3-flash-preview,,,,True
+88172,2026-05-27T08:21:35.561140,gemini-3-flash-preview,,,,True
+88198,2026-05-27T08:21:39.464957,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+88176,2026-05-27T08:21:44.475982,gemini-3-flash-preview,,,,True
+88177,2026-05-27T08:21:44.477201,gemini-3-flash-preview,,,,True
+88178,2026-05-27T08:21:44.478210,gemini-3-flash-preview,,,,True
+88207,2026-05-27T08:21:44.479586,gemini-3-flash-preview,,,,True
+88205,2026-05-27T08:21:44.480730,gemini-3-flash-preview,,,,True
+88271,2026-05-27T08:21:49.120868,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+88507,2026-05-27T08:21:59.136102,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89201,2026-05-27T08:22:08.863144,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89202,2026-05-27T08:22:17.774036,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+88210,2026-05-27T08:22:22.784625,gemini-3-flash-preview,,,,True
+89546,2026-05-27T08:22:27.515948,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89549,2026-05-27T08:22:37.474727,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89561,2026-05-27T08:22:46.303063,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89567,2026-05-27T08:22:56.393428,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+89639,2026-05-27T08:23:06.070688,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+88398,2026-05-27T08:23:11.081260,gemini-3-flash-preview,,,,True
+89332,2026-05-27T08:23:11.088142,gemini-3-flash-preview,,,,True
+89718,2026-05-27T08:23:17.620968,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+89730,2026-05-27T08:23:28.613904,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+89732,2026-05-27T08:23:39.190787,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+89733,2026-05-27T08:24:07.365176,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+90350,2026-05-27T08:24:16.556889,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+91224,2026-05-27T08:24:26.593662,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+91434,2026-05-27T08:24:39.090661,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92005,2026-05-27T08:24:47.173488,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92007,2026-05-27T08:24:56.191287,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92015,2026-05-27T08:25:04.793927,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92032,2026-05-27T08:25:13.187254,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92059,2026-05-27T08:25:22.614336,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92076,2026-05-27T08:25:30.934381,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92084,2026-05-27T08:25:39.612580,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92085,2026-05-27T08:25:55.443358,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92431,2026-05-27T08:26:04.818575,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92432,2026-05-27T08:26:16.407285,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+92433,2026-05-27T08:26:31.515228,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92434,2026-05-27T08:26:44.478525,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+92436,2026-05-27T08:26:54.675957,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92806,2026-05-27T08:27:04.609122,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92807,2026-05-27T08:27:14.751608,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+92939,2026-05-27T08:27:23.451084,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+93352,2026-05-27T08:27:32.971147,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+93359,2026-05-27T08:27:41.884176,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94135,2026-05-27T08:27:50.673312,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+94137,2026-05-27T08:27:58.574900,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94175,2026-05-27T08:28:09.223890,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+94176,2026-05-27T08:28:18.646145,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+94301,2026-05-27T08:28:44.762454,gemini-3-flash-preview,"```json
+{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}
+```",Elevated,0.9,
+94302,2026-05-27T08:28:56.535045,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94308,2026-05-27T08:29:06.778939,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+94318,2026-05-27T08:29:17.216533,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94328,2026-05-27T08:29:28.897193,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94330,2026-05-27T08:29:39.954011,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+94332,2026-05-27T08:29:49.888247,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+94333,2026-05-27T08:29:59.172204,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94334,2026-05-27T08:30:11.289436,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+94339,2026-05-27T08:30:23.447475,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94341,2026-05-27T08:30:32.691950,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94343,2026-05-27T08:30:43.342240,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94369,2026-05-27T08:30:54.237678,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94398,2026-05-27T08:31:04.744865,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+94401,2026-05-27T08:31:14.273456,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94402,2026-05-27T08:31:23.894597,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+94404,2026-05-27T08:31:32.802762,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+94417,2026-05-27T08:31:42.120180,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+94419,2026-05-27T08:31:51.739417,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+96803,2026-05-27T08:32:01.659812,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+97124,2026-05-27T08:32:09.976868,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+98299,2026-05-27T08:32:19.702904,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+98951,2026-05-27T08:32:29.328969,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+100301,2026-05-27T08:32:38.847949,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+100302,2026-05-27T08:32:47.484294,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101016,2026-05-27T08:32:55.956293,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101027,2026-05-27T08:33:04.453418,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101031,2026-05-27T08:33:13.157204,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101066,2026-05-27T08:33:22.269733,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101380,2026-05-27T08:33:32.091733,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+101396,2026-05-27T08:33:40.601242,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101449,2026-05-27T08:33:53.515603,gemini-3-flash-preview,"```json
+{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}
+```",At-Grade,0.9,
+101607,2026-05-27T08:34:01.595419,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101624,2026-05-27T08:34:10.391232,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+101715,2026-05-27T08:34:21.984062,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+102425,2026-05-27T08:34:30.887491,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+102439,2026-05-27T08:34:40.308334,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+102759,2026-05-27T08:34:48.854565,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+102839,2026-05-27T08:34:57.611798,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+102843,2026-05-27T08:35:06.520236,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+103909,2026-05-27T08:35:14.922756,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+103932,2026-05-27T08:35:26.708135,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+104721,2026-05-27T08:35:34.996431,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+104861,2026-05-27T08:35:43.488152,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+104870,2026-05-27T08:35:52.704120,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+105082,2026-05-27T08:36:02.071663,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+105083,2026-05-27T08:36:11.035234,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+105458,2026-05-27T08:36:21.891348,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+105614,2026-05-27T08:36:32.521381,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+105616,2026-05-27T08:36:41.655357,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+105617,2026-05-27T08:36:50.877539,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+105619,2026-05-27T08:36:59.556284,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+105817,2026-05-27T08:37:15.860507,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+105824,2026-05-27T08:37:24.474907,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+105840,2026-05-27T08:37:33.179391,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+105855,2026-05-27T08:37:42.814494,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+106011,2026-05-27T08:37:52.030473,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+106065,2026-05-27T08:38:00.131746,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+106066,2026-05-27T08:38:10.258041,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+106068,2026-05-27T08:38:18.289724,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+106071,2026-05-27T08:38:29.098350,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+106072,2026-05-27T08:38:37.499954,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+106073,2026-05-27T08:38:45.751586,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+106074,2026-05-27T08:38:55.829181,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+106506,2026-05-27T08:39:03.608883,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+106583,2026-05-27T08:39:12.106513,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+106584,2026-05-27T08:39:20.914055,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107290,2026-05-27T08:39:36.276168,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+107471,2026-05-27T08:39:44.574046,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107475,2026-05-27T08:39:53.378677,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+107485,2026-05-27T08:40:03.011164,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107490,2026-05-27T08:40:11.618398,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107516,2026-05-27T08:40:20.209158,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107518,2026-05-27T08:40:28.704683,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107667,2026-05-27T08:40:37.001724,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+107876,2026-05-27T08:40:45.298056,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107878,2026-05-27T08:40:54.943369,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+107879,2026-05-27T08:41:03.320782,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+107894,2026-05-27T08:41:13.155185,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+107899,2026-05-27T08:41:21.444874,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+107903,2026-05-27T08:41:30.152007,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107905,2026-05-27T08:41:38.958054,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107913,2026-05-27T08:41:47.968101,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107917,2026-05-27T08:41:56.987446,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107918,2026-05-27T08:42:05.383239,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+107927,2026-05-27T08:42:14.135544,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+107950,2026-05-27T08:42:23.093913,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107974,2026-05-27T08:42:31.796036,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107975,2026-05-27T08:42:40.193922,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+107977,2026-05-27T08:42:48.650978,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107983,2026-05-27T08:42:56.579271,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+107999,2026-05-27T08:43:05.077039,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+108004,2026-05-27T08:43:13.579685,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+108005,2026-05-27T08:43:23.919844,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+108010,2026-05-27T08:43:32.370671,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+108012,2026-05-27T08:43:40.203364,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+108028,2026-05-27T08:43:48.907085,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+108862,2026-05-27T08:43:56.896835,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+108868,2026-05-27T08:44:05.397262,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109154,2026-05-27T08:44:19.220994,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+109165,2026-05-27T08:44:28.357714,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109628,2026-05-27T08:44:36.933796,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109801,2026-05-27T08:44:47.016016,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+109803,2026-05-27T08:44:55.489422,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109804,2026-05-27T08:45:04.579946,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+109806,2026-05-27T08:45:13.287534,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109807,2026-05-27T08:45:22.910523,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+109919,2026-05-27T08:45:38.783932,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+110086,2026-05-27T08:45:47.591641,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+110173,2026-05-27T08:45:55.639860,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+110284,2026-05-27T08:46:06.332023,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+110287,2026-05-27T08:46:18.828596,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+110371,2026-05-27T08:46:27.420821,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+110568,2026-05-27T08:46:36.309943,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+110703,2026-05-27T08:46:44.935104,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+110828,2026-05-27T08:46:58.467156,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+110871,2026-05-27T08:47:07.062744,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+111450,2026-05-27T08:47:15.998974,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+111458,2026-05-27T08:47:23.785869,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+111482,2026-05-27T08:47:33.119518,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+111583,2026-05-27T08:47:42.077824,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+112127,2026-05-27T08:47:50.784647,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+112342,2026-05-27T08:47:59.698379,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+112490,2026-05-27T08:48:08.712246,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+112573,2026-05-27T08:48:20.658224,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+112902,2026-05-27T08:48:29.286529,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+112908,2026-05-27T08:48:38.605153,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+113157,2026-05-27T08:48:50.895073,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+113161,2026-05-27T08:49:01.748714,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+113187,2026-05-27T08:49:10.149980,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+113193,2026-05-27T08:49:18.643563,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+113194,2026-05-27T08:49:28.372314,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+113196,2026-05-27T08:49:43.529281,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+113200,2026-05-27T08:49:52.438153,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+113203,2026-05-27T08:50:02.376820,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+113204,2026-05-27T08:50:11.279588,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+113205,2026-05-27T08:50:21.035802,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+114558,2026-05-27T08:50:35.653954,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.8
+    }
+}",Elevated,0.8,
+114575,2026-05-27T08:50:44.469793,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+115090,2026-05-27T08:50:52.754257,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+116610,2026-05-27T08:51:05.966380,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+116796,2026-05-27T08:51:15.295813,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+117205,2026-05-27T08:51:27.877312,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+117219,2026-05-27T08:51:37.093543,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+117590,2026-05-27T08:51:52.973686,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.85
+    }
+}",Elevated,0.85,
+117800,2026-05-27T08:52:02.390393,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+118199,2026-05-27T08:52:10.784492,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+118556,2026-05-27T08:52:19.151950,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+120546,2026-05-27T08:52:27.585052,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+120734,2026-05-27T08:52:36.999350,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+121000,2026-05-27T08:52:49.393881,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+121001,2026-05-27T08:53:00.040757,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+121014,2026-05-27T08:53:27.106033,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+121017,2026-05-27T08:53:35.286675,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+121018,2026-05-27T08:53:46.756420,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+121071,2026-05-27T08:53:54.951846,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+121484,2026-05-27T08:54:03.145192,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+121499,2026-05-27T08:54:11.134224,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+121917,2026-05-27T08:54:19.936257,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+121918,2026-05-27T08:54:28.984169,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+121919,2026-05-27T08:54:41.340216,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+121921,2026-05-27T08:54:54.365936,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+122192,2026-05-27T08:55:04.588290,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122611,2026-05-27T08:55:13.806225,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+122646,2026-05-27T08:55:22.509280,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122647,2026-05-27T08:55:31.108898,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122648,2026-05-27T08:55:40.019445,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122649,2026-05-27T08:55:47.392191,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+122661,2026-05-27T08:55:55.379134,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122663,2026-05-27T08:56:03.672508,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+122777,2026-05-27T08:56:11.871681,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122779,2026-05-27T08:56:19.544672,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+122780,2026-05-27T08:56:27.946853,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+123140,2026-05-27T08:56:37.157292,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}",Elevated,1.0,
+123141,2026-05-27T08:56:52.216629,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+123145,2026-05-27T08:57:00.509623,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+123217,2026-05-27T08:57:09.110704,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+123413,2026-05-27T08:57:18.122238,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+123416,2026-05-27T08:57:27.020754,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+123577,2026-05-27T08:57:36.145389,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+123605,2026-05-27T08:57:47.418078,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+123618,2026-05-27T08:57:55.440984,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+123620,2026-05-27T08:58:03.692891,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+124042,2026-05-27T08:58:11.788397,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+124044,2026-05-27T08:58:20.058032,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+124045,2026-05-27T08:58:28.678909,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+125311,2026-05-27T08:58:37.270465,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,
+125976,2026-05-27T08:58:45.679635,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+126696,2026-05-27T08:58:55.612003,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+126777,2026-05-27T08:59:04.010441,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+126796,2026-05-27T08:59:18.861452,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.9
+    }
+}",Elevated,0.9,
+126797,2026-05-27T08:59:28.906624,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 0.95
+    }
+}",Elevated,0.95,
+127081,2026-05-27T08:59:37.902186,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+127152,2026-05-27T08:59:46.213282,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.95
+    }
+}",At-Grade,0.95,
+127157,2026-05-27T08:59:58.531300,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+89654,2026-05-27T09:00:18.666275,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",At-Grade,0.9,
+89716,2026-05-27T09:00:29.523150,gemini-3-flash-preview,"{
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",At-Grade,1.0,

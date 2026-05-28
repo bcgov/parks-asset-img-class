@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+steps_bin,gemma-4-26b-a4b-it,Stairs,steps_bin_v1,18,0.2392496392496392,0.4396344396344396,2026-05-20T22:03:21.623262
