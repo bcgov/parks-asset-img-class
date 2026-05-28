@@ -25,10 +25,10 @@ import pandas as pd
 METRICS = ["macro_f1", "weighted_f1"]
 
 COLORS = [
-    "#378ADD",  # blue
-    "#1D9E75",  # teal
-    "#D85A30",  # coral
-    "#D4537E",  # pink
+    "#0B4C8D",  # blue
+    "#79BCFF",  # light blue
+    "#BD431A",  # coral
+    "#FF9470",  # light coral
     "#BA7517",  # amber
     "#639922",  # green
     "#7F77DD",  # purple
@@ -40,7 +40,7 @@ COLORS = [
 # Load and merge CSVs
 # ---------------------------------------------------------------------
 
-def load_results(input_dir: str) -> pd.DataFrame:
+def load_results(input_dir: str, individual_prompt_label: str = "attribute-specific prompt") -> pd.DataFrame:
     pattern = os.path.join(input_dir, "*.csv")
     files = glob.glob(pattern)
 
@@ -52,6 +52,9 @@ def load_results(input_dir: str) -> pd.DataFrame:
     for f in files:
         try:
             df = pd.read_csv(f)
+            # tag single-attribute files with the individual prompt label
+            if df["attribute"].nunique() == 1:
+                df["prompt_version"] = individual_prompt_label
             frames.append(df)
         except Exception as e:
             print(f"Warning: could not read {f}: {e}", file=sys.stderr)
@@ -208,7 +211,8 @@ def plot_comparison(
         title="model  (prompt)",
         title_fontsize=8,
         fontsize=8,
-        loc="upper right",
+        loc="lower right",
+        bbox_to_anchor=(1, 0.65),
         frameon=True,
         framealpha=0.9,
         edgecolor="#D3D1C7",
@@ -262,6 +266,11 @@ if __name__ == "__main__":
         "--baseline",
         default="results/baseline_classification_results.csv",
         help="Path to baseline CV results CSV (optional)",
+    )
+    parser.add_argument(
+        "--individual_prompt_label",
+        default="attribute-specific prompt",
+        help="Legend label for single-attribute eval files (default: 'attribute-specific prompt')",
     )
 
     args = parser.parse_args()
