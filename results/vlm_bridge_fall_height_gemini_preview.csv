@@ -1,0 +1,80 @@
+asset_id,timestamp,model,response,latency_s,fall_height_bin_value,fall_height_bin_confidence,parse_error,raw_response,error,traceback
+52457,2026-05-27T18:33:17.574484,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",5.451,medium (1.2-5m),0.9,,,,
+59060,2026-05-27T18:33:23.719418,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",6.139,low (<1.2m),0.9,,,,
+63068,2026-05-27T18:33:28.834551,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.95}
+}",5.112,medium (1.2-5m),0.95,,,,
+63389,2026-05-27T18:33:34.679429,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",5.837,medium (1.2-5m),0.9,,,,
+64102,2026-05-27T18:33:41.944491,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.6}
+}",7.255,medium (1.2-5m),0.6,,,,
+64126,2026-05-27T18:33:46.715509,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",4.758,medium (1.2-5m),0.9,,,,
+88133,2026-05-27T18:33:54.327046,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.8}
+}",7.61,medium (1.2-5m),0.8,,,,
+100140,2026-05-27T18:34:00.772300,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.95}
+}",6.439,low (<1.2m),0.95,,,,
+105042,2026-05-27T18:34:03.954271,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.95}
+}",3.181,low (<1.2m),0.95,,,,
+105440,2026-05-27T18:34:07.831590,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",3.875,low (<1.2m),0.9,,,,
+122999,2026-05-27T18:34:12.346409,gemini-3-flash-preview,"{""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.7}}",4.513,medium (1.2-5m),0.7,,,,
+123219,2026-05-27T18:34:15.723712,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",3.373,low (<1.2m),0.9,,,,
+123352,2026-05-27T18:34:21.853538,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",6.125,low (<1.2m),0.9,,,,
+123310,2026-05-27T18:34:26.062948,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",4.208,medium (1.2-5m),0.9,,,,
+123354,2026-05-27T18:34:31.907809,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",5.843,low (<1.2m),0.9,,,,
+126178,2026-05-27T18:34:35.378689,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",3.465,low (<1.2m),0.9,,,,
+126334,2026-05-27T18:34:41.426839,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.9}
+}",6.046,low (<1.2m),0.9,,,,
+126340,2026-05-27T18:34:46.657848,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",5.229,medium (1.2-5m),0.9,,,,
+126683,2026-05-27T18:34:51.424254,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low"", ""confidence"": 0.9}
+}",4.758,low,0.9,,,,
+126721,2026-05-27T18:34:57.283745,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",5.856,medium (1.2-5m),0.9,,,,
+126779,2026-05-27T18:35:05.595545,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 0.8}
+}",8.22,low (<1.2m),0.8,,,,
+126799,2026-05-27T18:35:17.471396,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.7}
+}",11.868,medium (1.2-5m),0.7,,,,
+126915,2026-05-27T18:35:21.663492,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",4.189,medium (1.2-5m),0.9,,,,
+127136,2026-05-27T18:35:26.889259,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.9}
+}",5.225,medium (1.2-5m),0.9,,,,
+127147,2026-05-27T18:35:36.037763,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.85}
+}",9.148,medium (1.2-5m),0.85,,,,
+127145,2026-05-27T18:35:44.634616,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""medium (1.2-5m)"", ""confidence"": 0.8}
+}",8.591,medium (1.2-5m),0.8,,,,
+129739,2026-05-27T18:35:50.869019,gemini-3-flash-preview,"{
+    ""fall_height"": {""value"": ""low (<1.2m)"", ""confidence"": 1.0}
+}",6.222,low (<1.2m),1.0,,,,

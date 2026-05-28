@@ -210,6 +210,7 @@ def make_fall_height_prompt(asset_type):
     If you cannot determine the fall height from the images, set value to
     "unable to determine" and confidence to 0.0.
     """
+
 MATERIAL_PROMPT_V1 = """
     You are an expert in park infrastructure analysis.
 
@@ -241,6 +242,130 @@ MATERIAL_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
+DECKING_MATERIAL_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single asset, identify the decking material.
+
+    Predict exactly ONE value from the listed options:
+    - Timber
+    - Steel
+    - Aluminum
+    - Composite
+    - Concrete
+    - Asphalt
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "decking_material": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the decking material from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+STRUCTURE_MATERIAL_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single asset, identify the structure material.
+
+    Predict exactly ONE value from the listed options:
+    - Timber
+    - Steel
+    - Aluminum
+    - Concrete
+    - Stone
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "structure_material": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the structure material from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+ABUTMENT_MATERIAL_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single Trail Bridge asset, identify the
+    abutment material. The abutment is the structure at each end of the bridge
+    that supports it and transfers loads to the ground.
+
+    Predict exactly ONE value from the listed options:
+    - Timber
+    - Concrete
+    - Steel
+    - Gabions
+    - Aluminum Sill Fill
+    - Composite
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "abutment_material": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the abutment material from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+BRIDGE_TYPE_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single Trail Bridge asset, identify the
+    bridge type based on its structural design.
+
+    Predict exactly ONE value from the listed options:
+    - Beam
+    - Truss
+    - Suspension
+    - Fallen Tree
+    - Other
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "bridge_type": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the bridge type from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+HAS_EDGE_GUARD_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single asset, identify whether it has
+    an edge guard. An edge guard is a barrier along the edge of the structure
+    that prevents people or objects from falling off the side.
+
+    Predict exactly ONE value from the listed options:
+    - Yes
+    - No
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "has_edge_guard": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine whether there is an edge guard from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
 # Prompt registry
 #update after generating prompts for attribute/asset
 
@@ -251,6 +376,11 @@ PROMPT_REGISTRY = {
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,
     "material_v1": MATERIAL_PROMPT_V1,
+    "decking_material_v1": DECKING_MATERIAL_PROMPT_V1,
+    "structure_material_v1": STRUCTURE_MATERIAL_PROMPT_V1,
+    "abutment_material_v1": ABUTMENT_MATERIAL_PROMPT_V1,
+    "bridge_type_v1": BRIDGE_TYPE_PROMPT_V1,
+    "has_edge_guard_v1": HAS_EDGE_GUARD_PROMPT_V1,
     "length_v1": make_length_prompt,
     "width_v1": make_width_prompt,
     "fall_height_v1": make_fall_height_prompt,

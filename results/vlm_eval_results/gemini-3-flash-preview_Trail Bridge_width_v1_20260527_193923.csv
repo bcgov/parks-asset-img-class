@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+width_bin,gemini-3-flash-preview,Trail Bridge,width_v1,273,0.30987939556559807,0.5454996246986079,2026-05-27T19:39:23.841549
