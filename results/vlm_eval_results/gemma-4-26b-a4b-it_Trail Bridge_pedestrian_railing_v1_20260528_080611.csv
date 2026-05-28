@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_pedestrian_railing,gemma-4-26b-a4b-it,Trail Bridge,pedestrian_railing_v1,301,0.416354956902737,0.7489289368481544,2026-05-28T08:06:11.195326

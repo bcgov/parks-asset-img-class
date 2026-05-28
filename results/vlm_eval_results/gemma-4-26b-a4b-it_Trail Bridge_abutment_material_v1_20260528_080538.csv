@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_abutment_material,gemma-4-26b-a4b-it,Trail Bridge,abutment_material_v1,173,0.2597931959345003,0.5590910722853423,2026-05-28T08:05:38.634423
