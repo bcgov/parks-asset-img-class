@@ -1,0 +1,6 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_structure_position,gemini-3-flash-preview,Stairs,stairs_v1,385,0.5569237669035849,0.8283397903100146,2026-05-27T21:09:11.869127
+attr_has_pedestrian_railing,gemini-3-flash-preview,Stairs,stairs_v1,374,0.6409238584877506,0.9208271352906793,2026-05-27T21:09:25.243657
+"attr_material_frame,_tank,_body",gemini-3-flash-preview,Stairs,stairs_v1,410,0.30353492807189814,0.5743283818989849,2026-05-27T21:09:57.243296
+fall_height_bin,gemini-3-flash-preview,Stairs,stairs_v1,6,0.16666666666666666,0.25,2026-05-27T21:10:21.266457
+steps_bin,gemini-3-flash-preview,Stairs,stairs_v1,20,0.5423280423280423,0.5543650793650794,2026-05-27T21:10:57.807683
