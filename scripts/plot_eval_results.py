@@ -111,6 +111,11 @@ def plot_comparison(
         if df.empty:
             print(f"No data found for asset_type='{asset_type}'", file=sys.stderr)
             sys.exit(1)
+    
+    #delete later, adding for now to exclude decking material from plot
+
+    EXCLUDE_ATTRIBUTES = ["attr_decking_material", "attr_structure_material", "attr_structure_position"]
+    df = df[~df["attribute"].isin(EXCLUDE_ATTRIBUTES)]
 
     # group key: model + prompt_version
     df = df.copy()
