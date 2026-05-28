@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_structure_position,gemma-4-26b-a4b-it,Stairs,structure_position_v1,349,0.5133225174661639,0.786064756497247,2026-05-20T22:03:57.995311

@@ -115,6 +115,132 @@ PEDESTRIAN_RAILING_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
+#Dynamic prompts 
+#needed since bins have different ranges per asset type 
+
+def make_length_prompt(asset_type):
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate its length.
+
+    Predict exactly ONE value from the listed options for this asset type:
+
+    Boardwalk < 1.2m High: short (<20m) | medium (20-100m) | long (>100m)
+    Boardwalk > 1.2m High: short (<10m) | medium (10-30m) | long (>30m)
+    Stairs: short (<5m) | medium (5-20m) | long (>20m)
+    Trail Bridge: short (<6m) | medium (6-20m) | long (>20m)
+    Viewing Platform: small (<10m) | medium (10-20m) | large (>20m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "length_bin": {{"value": "<bin label>", "confidence": 0.85}}
+    }}
+
+    If you cannot determine the length, set value to "unable to determine" and confidence to 0.0.
+    """
+
+
+def make_width_prompt(asset_type):
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate its width.
+
+    Predict exactly ONE value from the listed options for this asset type:
+
+    Boardwalk < 1.2m High: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Boardwalk > 1.2m High: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Stairs: narrow (<0.8m) | standard (>=0.8m)
+    Trail Bridge: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Viewing Platform: narrow (<3m) | medium (3-7m) | wide (>7m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "width_bin": {{"value": "<bin label>", "confidence": 0.85}}
+    }}
+
+    If you cannot determine the width, set value to "unable to determine" and confidence to 0.0.
+    """
+
+STEPS_BIN_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single stair asset, estimate the number of steps.
+
+    Predict exactly ONE value from the listed options:
+    - few (<10)
+    - medium (10-20)
+    - many (>20)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "number_of_steps": {
+            "value": "<bin label>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the number of steps from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+def make_fall_height_prompt(asset_type):
+    
+    if asset_type == "Viewing Platform":
+        bins = "low (<1.2m) | medium (1.2-15m) | high (>15m)"
+    elif asset_type == "Trail Bridge":
+        bins = "low (<1.2m) | medium (1.2-5m) | high (>5m)"
+    else:  # Boardwalks and Stairs
+        bins = "low (<0.5m) | medium (0.5-1.2m) | high (>1.2m)"
+    
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate the fall height.
+    Fall height is the vertical distance from the asset surface to the ground below.
+
+    Predict exactly ONE value from the listed options for this asset type:
+    {bins}
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "fall_height": {{"value": "<bin label>", "confidence": <float 0.0-1.0>}}
+    }}
+
+    If you cannot determine the fall height from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+MATERIAL_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single stair asset, identify the material
+    of the frame, tank, or body of the structure.
+
+    Predict exactly ONE value from the listed options:
+    - Timber/Wood
+    - Concrete
+    - Box Step
+    - Rock/Stone
+    - Metal
+    - Steel
+    - Aluminum
+    - Earth-Filled
+    - Natural Surface
+    - Gravel
+    - PVC
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "material_frame_tank_body": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the material from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
 # Prompt registry
 #update after generating prompts for attribute/asset
 
@@ -123,4 +249,9 @@ PROMPT_REGISTRY = {
     "trail_bridge_v1": TRAIL_BRIDGE_PROMPT_V1,
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
+    "steps_bin_v1": STEPS_BIN_PROMPT_V1,
+    "material_v1": MATERIAL_PROMPT_V1,
+    "length_v1": make_length_prompt,
+    "width_v1": make_width_prompt,
+    "fall_height_v1": make_fall_height_prompt,
 }
