@@ -114,8 +114,8 @@ def plot_comparison(
     
     #delete later, adding for now to exclude decking material from plot
 
-    EXCLUDE_ATTRIBUTES = ["attr_decking_material", "attr_structure_material", "attr_structure_position"]
-    df = df[~df["attribute"].isin(EXCLUDE_ATTRIBUTES)]
+    #EXCLUDE_ATTRIBUTES = ["attr_decking_material", "attr_structure_material", "attr_structure_position"]
+    #df = df[~df["attribute"].isin(EXCLUDE_ATTRIBUTES)]
 
     # group key: model + prompt_version
     df = df.copy()
