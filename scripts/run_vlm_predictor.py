@@ -117,6 +117,17 @@ def run_batch(
     unique_asset_ids = unique_asset_ids[offset:]
     if limit:
         unique_asset_ids = unique_asset_ids[:limit]
+    
+    # skip already processed assets
+    if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+        try:
+            existing = pd.read_csv(output_path)
+            already_done = set(existing["asset_id"].tolist())
+            unique_asset_ids = [a for a in unique_asset_ids if a not in already_done]
+            print(f"Skipping {len(already_done)} already processed assets")
+            print(f"Remaining: {len(unique_asset_ids)} assets")
+        except Exception:
+            pass  # if we can't read it, just proceed normally
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
@@ -215,10 +226,18 @@ def run_batch(
         time.sleep(delay)
 
     # if we never got a successful parse, fall back to minimal schema
-    if output_columns is None:
-        output_columns = FALLBACK_COLUMNS
-        if not os.path.exists(output_path):
+    # infer schema and write header from first successful parse
+    if output_columns is None and parsed_attrs is not None:
+        output_columns = get_output_columns(parsed_attrs)
+        # only write header if file doesn't exist OR is empty
+        if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
             pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
+        else:
+            # file exists with content - check if schema matches
+            existing = pd.read_csv(output_path, nrows=0)
+            if list(existing.columns) != output_columns:
+                # schema mismatch - overwrite with new header
+                pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
 
     # flush remaining buffer
     if buffer:
