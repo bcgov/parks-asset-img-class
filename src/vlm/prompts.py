@@ -53,7 +53,7 @@ TRAIL_BRIDGE_PROMPT_V1 = """
     - has_pedestrian_railing: 2 railings | 1 railing | No railings
     - length: short (<6m) | medium (6-20m) | long (>20m)
     - width: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
-    - structure_position: Elevated | At-Grade | Other
+    - structure_material: Timber | Steel | Concrete | Aluminum | Stone
 
     Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
     {
