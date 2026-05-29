@@ -50,11 +50,12 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     merged = merged[merged[attribute].notna()]
 
     merged = merged.drop_duplicates("asset_id")
-    
-    # filter out classes not seen in training
-    #removing this, not applicable to VLM since there isn't training technically
-    #known_classes = merged[col].unique()
-    #merged = merged[merged[attribute].isin(known_classes)]
+
+    # get valid labels from ground truth
+    valid_labels = merged[attribute].dropna().unique().tolist()
+
+    # filter predictions to only valid labels
+    merged = merged[merged[col].isin(valid_labels)]
     
     y_true = merged[attribute].tolist()
     y_pred = merged[col].tolist()
