@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_pedestrian_railing,gemini-3-flash-preview,Stairs,pedestrian_railing_v1,369,0.8497420151771866,0.9143251677773063,2026-05-29T11:10:59.496365

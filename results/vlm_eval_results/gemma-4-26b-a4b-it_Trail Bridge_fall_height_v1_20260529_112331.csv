@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+fall_height_bin,gemma-4-26b-a4b-it,Trail Bridge,fall_height_v1,26,0.38095238095238093,0.35531135531135527,2026-05-29T11:23:31.521104

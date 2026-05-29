@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+width_bin,gemma-4-26b-a4b-it,Trail Bridge,width_v1,271,0.386038063650004,0.5536272249716101,2026-05-29T11:24:28.021218

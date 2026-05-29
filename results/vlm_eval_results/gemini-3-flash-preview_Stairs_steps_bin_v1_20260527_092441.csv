@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-steps_bin,gemini-3-flash-preview,Stairs,steps_bin_v1,19,0.5774225774225774,0.5858352174141648,2026-05-27T09:24:41.875650

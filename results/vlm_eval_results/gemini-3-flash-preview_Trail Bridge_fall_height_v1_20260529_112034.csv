@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+fall_height_bin,gemini-3-flash-preview,Trail Bridge,fall_height_v1,26,0.8300653594771241,0.8541980894922071,2026-05-29T11:20:34.603916

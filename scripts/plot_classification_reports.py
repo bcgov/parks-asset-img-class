@@ -100,6 +100,9 @@ def load_attribute_data(attribute, predictions_df, ground_truth_dir):
     merged = merged[merged[col].notna() & merged[attribute].notna()]
     merged = merged.drop_duplicates("asset_id")
 
+    valid_labels = merged[attribute].dropna().unique().tolist()
+    merged = merged[merged[col].isin(valid_labels)]
+
     if merged.empty:
         print(f"  Warning: no valid rows after merge for '{attribute}'", file=sys.stderr)
         return None

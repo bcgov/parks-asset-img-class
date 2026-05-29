@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_pedestrian_railing,gemini-3-flash-preview,Trail Bridge,pedestrian_railing_v1,302,0.5494155354449471,0.7620034985466423,2026-05-29T11:22:11.247792
