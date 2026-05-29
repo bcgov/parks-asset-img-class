@@ -21,6 +21,12 @@ dependencies:
     - transformers
     - torch
     - torchvision
+    - ftfy
+    - omegaconf
+    - regex
+    - submitit
+    - termcolor
+    - torchmetrics
     - python-dotenv
     - mlflow>=2.13
     - pytest>=8.0

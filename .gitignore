@@ -6,6 +6,8 @@
 models/*.pkl
 models/*.joblib
 models/*.h5
+models/downloaded_model/
+models/*.pth
 
 # Python
 __pycache__/
