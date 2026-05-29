@@ -9525,3 +9525,93 @@ asset_id,timestamp,model,response,latency_s,fall_height_bin_value,fall_height_bi
         ""confidence"": 1.0
     }
 }",24.088,low (<0.5m),0.8,No railings,1.0,Timber/Wood,0.9,medium (10-20),0.9,At-Grade,1.0,,,,
+51544,2026-05-27T21:03:45.758516,gemini-3-flash-preview,"{
+    ""fall_height"": {
+        ""value"": ""low (<0.5m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    },
+    ""number_of_steps"": {
+        ""value"": ""many (>20)"",
+        ""confidence"": 0.95
+    },
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 1.0
+    }
+}",4.068,low (<0.5m),0.95,No railings,1.0,Timber/Wood,0.95,many (>20),0.95,At-Grade,1.0,,,,
+89719,2026-05-27T21:03:57.637675,gemini-3-flash-preview,"{
+""fall_height"": {
+""value"": ""low (<0.5m)"",
+""confidence"": 0.95
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""material_frame_tank_body"": {
+""value"": ""Timber/Wood"",
+""confidence"": 0.9
+},
+""number_of_steps"": {
+""value"": ""few (<10)"",
+""confidence"": 0.95
+},
+""structure_position"": {
+""value"": ""At-Grade"",
+""confidence"": 0.95
+}
+}",11.874,low (<0.5m),0.95,No railings,1.0,Timber/Wood,0.9,few (<10),0.95,At-Grade,0.95,,,,
+121503,2026-05-27T21:04:05.822690,gemini-3-flash-preview,"```json
+{
+    ""fall_height"": {
+        ""value"": ""high (>1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 1.0
+    },
+    ""number_of_steps"": {
+        ""value"": ""medium (10-20)"",
+        ""confidence"": 0.95
+    },
+    ""structure_position"": {
+        ""value"": ""Elevated"",
+        ""confidence"": 1.0
+    }
+}
+```",8.185,high (>1.2m),0.95,2 railings,1.0,Timber/Wood,1.0,medium (10-20),0.95,Elevated,1.0,,,,
+121829,2026-05-27T21:04:16.648981,gemini-3-flash-preview,"{
+    ""fall_height"": {
+        ""value"": ""low (<0.5m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""material_frame_tank_body"": {
+        ""value"": ""Timber/Wood"",
+        ""confidence"": 0.95
+    },
+    ""number_of_steps"": {
+        ""value"": ""few (<10)"",
+        ""confidence"": 1.0
+    },
+    ""structure_position"": {
+        ""value"": ""At-Grade"",
+        ""confidence"": 0.9
+    }
+}",10.826,low (<0.5m),0.8,No railings,1.0,Timber/Wood,0.95,few (<10),1.0,At-Grade,0.9,,,,

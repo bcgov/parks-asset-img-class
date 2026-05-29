@@ -1,0 +1,1166 @@
+asset_id,timestamp,model,response,latency_s,abutment_material_value,abutment_material_confidence,parse_error,raw_response,error,traceback
+47533,2026-05-27T19:40:33.994807,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.331,Timber,0.9,,,,
+48111,2026-05-27T19:40:42.342690,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.335,Timber,0.95,,,,
+48112,2026-05-27T19:40:48.674970,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",6.327,Timber,0.8,,,,
+49057,2026-05-27T19:40:53.491225,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.814,Timber,0.9,,,,
+49059,2026-05-27T19:40:57.994440,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.501,Timber,0.95,,,,
+49060,2026-05-27T19:41:24.717235,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",26.721,Concrete,0.9,,,,
+49061,2026-05-27T19:41:35.179883,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",10.457,Concrete,0.9,,,,
+49243,2026-05-27T19:41:43.609373,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",8.424,Timber,0.8,,,,
+50654,2026-05-27T19:41:47.842067,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.23,Timber,0.9,,,,
+51524,2026-05-27T19:41:55.299493,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",7.449,unable to determine,0.0,,,,
+51531,2026-05-27T19:42:00.978430,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",5.674,Concrete,0.9,,,,
+52457,2026-05-27T19:42:08.769586,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",7.785,Concrete,0.95,,,,
+52551,2026-05-27T19:42:50.359874,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    }
+}
+```",41.586,Concrete,0.8,,,,
+53798,2026-05-27T19:42:57.136307,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.9
+    }
+}",6.772,Gabions,0.9,,,,
+53985,2026-05-27T19:43:04.063463,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",6.925,Timber,0.95,,,,
+53986,2026-05-27T19:43:16.554110,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}",12.488,Timber,0.7,,,,
+54324,2026-05-27T19:43:21.971529,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",5.411,Steel,0.9,,,,
+55640,2026-05-27T19:43:26.945943,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.973,Timber,0.95,,,,
+56469,2026-05-27T19:43:34.400308,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",7.45,Timber,0.9,,,,
+56876,2026-05-27T19:43:42.682031,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",8.278,Timber,0.8,,,,
+57834,2026-05-27T19:43:46.192204,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",3.401,Concrete,1.0,,,,
+58162,2026-05-27T19:43:55.003400,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.9
+    }
+}",8.809,Gabions,0.9,,,,
+58164,2026-05-27T19:43:59.545457,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.54,Timber,0.95,,,,
+58955,2026-05-27T19:44:07.317394,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",7.769,Timber,0.9,,,,
+59060,2026-05-27T19:44:12.567455,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.189,Timber,0.95,,,,
+61003,2026-05-27T19:44:24.554154,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}",11.984,Timber,0.7,,,,
+63068,2026-05-27T19:44:28.665787,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",4.105,Concrete,0.95,,,,
+63597,2026-05-27T19:44:44.689217,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",16.012,Steel,0.9,,,,
+64102,2026-05-27T19:44:50.410899,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.718,Timber,0.9,,,,
+64126,2026-05-27T19:44:55.975982,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.547,Timber,0.9,,,,
+64643,2026-05-27T19:45:00.654928,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.675,Timber,0.9,,,,
+65425,2026-05-27T19:45:04.444805,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.785,Timber,0.9,,,,
+65609,2026-05-27T19:45:10.113539,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",5.658,Concrete,0.95,,,,
+65788,2026-05-27T19:45:17.102616,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",6.987,Concrete,0.95,,,,
+65789,2026-05-27T19:45:22.189392,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",5.082,Steel,0.95,,,,
+66920,2026-05-27T19:45:26.508218,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",4.317,Concrete,0.9,,,,
+66922,2026-05-27T19:45:31.311813,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.802,Timber,0.9,,,,
+67205,2026-05-27T19:45:35.299545,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",3.987,Concrete,1.0,,,,
+82270,2026-05-27T19:45:40.576354,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.275,Timber,0.9,,,,
+83138,2026-05-27T19:45:47.695389,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",7.117,Timber,0.9,,,,
+83150,2026-05-27T19:45:54.135866,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",6.419,Gabions,0.95,,,,
+83513,2026-05-27T19:45:58.345120,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.204,Timber,0.95,,,,
+85208,2026-05-27T19:46:14.420608,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",16.074,unable to determine,0.0,,,,
+85487,2026-05-27T19:46:19.132549,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.707,Timber,0.9,,,,
+86369,2026-05-27T19:46:26.306226,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",7.166,unable to determine,0.0,,,,
+86525,2026-05-27T19:46:31.430928,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.113,Timber,0.95,,,,
+86599,2026-05-27T19:46:36.649568,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.212,Timber,0.95,,,,
+87483,2026-05-27T19:46:41.433585,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.778,Timber,0.9,,,,
+87769,2026-05-27T19:46:47.981947,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",6.543,Timber,0.8,,,,
+87928,2026-05-27T19:46:57.460383,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Aluminum Sill Fill"",
+        ""confidence"": 0.9
+    }
+}",9.475,Aluminum Sill Fill,0.9,,,,
+88733,2026-05-27T19:47:01.430122,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",3.961,Concrete,0.95,,,,
+89437,2026-05-27T19:47:11.462556,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",10.013,unable to determine,0.0,,,,
+89447,2026-05-27T19:47:17.292291,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.824,Timber,0.9,,,,
+89450,2026-05-27T19:47:29.887862,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",12.592,unable to determine,0.0,,,,
+89580,2026-05-27T19:47:40.652181,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",10.762,unable to determine,0.0,,,,
+89761,2026-05-27T19:47:45.448379,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.793,Timber,0.95,,,,
+90361,2026-05-27T19:47:49.339731,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.89,Timber,0.95,,,,
+89767,2026-05-27T19:47:49.347215,gemini-3-flash-preview,,0.005,,,True,,,
+90408,2026-05-27T19:47:54.985599,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",5.637,Concrete,0.9,,,,
+90412,2026-05-27T19:48:16.080953,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}",21.092,Timber,0.7,,,,
+91248,2026-05-27T19:48:21.105892,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.94,Timber,0.9,,,,
+91832,2026-05-27T19:48:27.335044,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",6.227,Timber,0.8,,,,
+92164,2026-05-27T19:48:31.930048,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",4.594,Timber,0.8,,,,
+92794,2026-05-27T19:48:35.831823,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.901,Timber,0.9,,,,
+92801,2026-05-27T19:48:52.432040,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",16.598,Timber,0.8,,,,
+92854,2026-05-27T19:48:57.503232,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",5.065,Concrete,1.0,,,,
+92872,2026-05-27T19:49:00.916513,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.411,Timber,0.9,,,,
+93036,2026-05-27T19:49:05.016706,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.099,Timber,0.9,,,,
+93038,2026-05-27T19:49:08.706082,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.688,Timber,0.95,,,,
+93043,2026-05-27T19:49:15.571611,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",6.862,Timber,0.9,,,,
+94144,2026-05-27T19:49:19.863149,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.279,Timber,0.9,,,,
+94177,2026-05-27T19:49:25.801228,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.935,Timber,0.9,,,,
+96854,2026-05-27T19:49:30.432190,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",4.63,Timber,0.8,,,,
+97817,2026-05-27T19:49:34.568100,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",4.134,Gabions,0.95,,,,
+98336,2026-05-27T19:49:41.893172,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.321,Timber,0.95,,,,
+98498,2026-05-27T19:49:45.878518,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.982,Timber,0.95,,,,
+98531,2026-05-27T19:49:50.596738,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.716,Timber,0.9,,,,
+99611,2026-05-27T19:50:20.802136,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",30.2,Timber,0.85,,,,
+99614,2026-05-27T19:50:25.701428,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.894,Timber,0.95,,,,
+99844,2026-05-27T19:50:29.501448,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.799,Timber,0.95,,,,
+100140,2026-05-27T19:50:34.361949,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",4.835,Concrete,1.0,,,,
+100181,2026-05-27T19:50:39.740618,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.373,Timber,0.9,,,,
+100272,2026-05-27T19:50:43.625353,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",3.883,Gabions,1.0,,,,
+100347,2026-05-27T19:50:49.175414,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.549,Timber,0.95,,,,
+100348,2026-05-27T19:50:55.803980,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.624,Timber,0.9,,,,
+100446,2026-05-27T19:51:00.101854,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.294,Timber,0.9,,,,
+100475,2026-05-27T19:51:04.136784,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.034,Timber,0.95,,,,
+100757,2026-05-27T19:51:15.195369,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",11.039,unable to determine,0.0,,,,
+100758,2026-05-27T19:51:23.126594,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",7.925,unable to determine,0.0,,,,
+101826,2026-05-27T19:51:30.723087,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",7.595,Timber,0.9,,,,
+101890,2026-05-27T19:51:34.429065,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.702,Timber,0.9,,,,
+101988,2026-05-27T19:51:38.433582,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.004,Timber,0.9,,,,
+102341,2026-05-27T19:51:44.964466,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",6.526,unable to determine,0.0,,,,
+102344,2026-05-27T19:51:49.167664,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",4.202,Timber,0.85,,,,
+102352,2026-05-27T19:51:52.029413,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",2.86,Timber,0.95,,,,
+102353,2026-05-27T19:51:55.387580,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.356,Timber,0.95,,,,
+102354,2026-05-27T19:52:00.428509,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.039,Timber,0.9,,,,
+102355,2026-05-27T19:52:06.463172,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.033,Timber,0.9,,,,
+102359,2026-05-27T19:52:19.366025,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",12.901,unable to determine,0.0,,,,
+102370,2026-05-27T19:52:24.171366,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.8,Timber,0.9,,,,
+102436,2026-05-27T19:52:27.748009,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.556,Timber,0.95,,,,
+102471,2026-05-27T19:52:31.538544,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.789,Timber,0.95,,,,
+102849,2026-05-27T19:52:35.218544,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.677,Timber,0.9,,,,
+102851,2026-05-27T19:52:38.864858,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.645,Timber,0.95,,,,
+104066,2026-05-27T19:52:43.043796,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.173,Timber,0.9,,,,
+104086,2026-05-27T19:52:46.905850,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.86,Timber,0.9,,,,
+104159,2026-05-27T19:52:53.037390,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",6.127,Timber,0.8,,,,
+104170,2026-05-27T19:52:58.054999,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",5.016,Timber,0.8,,,,
+105449,2026-05-27T19:53:01.940818,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.873,Timber,0.95,,,,
+106027,2026-05-27T19:53:06.138060,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.195,Timber,0.9,,,,
+106030,2026-05-27T19:53:17.205141,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",11.065,Timber,0.8,,,,
+106045,2026-05-27T19:53:21.401045,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.19,Timber,0.95,,,,
+106273,2026-05-27T19:53:26.116519,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",4.713,Timber,0.85,,,,
+107473,2026-05-27T19:53:36.174752,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",10.054,unable to determine,0.0,,,,
+107877,2026-05-27T19:53:42.604469,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Aluminum Sill Fill"",
+        ""confidence"": 0.9
+    }
+}",6.423,Aluminum Sill Fill,0.9,,,,
+107885,2026-05-27T19:53:49.362440,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.75,Timber,0.9,,,,
+107969,2026-05-27T19:53:59.285871,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",9.919,Steel,0.9,,,,
+107973,2026-05-27T19:54:05.031300,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",5.745,Timber,0.8,,,,
+108019,2026-05-27T19:54:10.125051,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.081,Timber,0.9,,,,
+108037,2026-05-27T19:54:16.656008,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",6.52,Steel,0.9,,,,
+108040,2026-05-27T19:54:20.709038,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.03,Timber,0.9,,,,
+108107,2026-05-27T19:54:24.752049,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.03,Timber,0.9,,,,
+109160,2026-05-27T19:54:32.470990,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",7.718,Timber,0.8,,,,
+109169,2026-05-27T19:54:36.807734,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.326,Timber,0.95,,,,
+109619,2026-05-27T19:54:40.561367,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",3.753,Gabions,1.0,,,,
+110170,2026-05-27T19:54:45.825612,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",5.254,Timber,0.85,,,,
+110299,2026-05-27T19:54:50.301165,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",4.474,Timber,0.95,,,,
+110788,2026-05-27T19:54:54.231341,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",3.923,Timber,1.0,,,,
+110868,2026-05-27T19:54:58.378145,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.145,Timber,0.9,,,,
+113163,2026-05-27T19:55:03.829028,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.442,Timber,0.9,,,,
+113164,2026-05-27T19:55:08.101237,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.271,Timber,0.9,,,,
+113217,2026-05-27T19:55:12.658970,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.554,Timber,0.9,,,,
+113804,2026-05-27T19:55:15.993807,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.333,Timber,0.9,,,,
+113952,2026-05-27T19:55:36.771498,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Aluminum Sill Fill"",
+        ""confidence"": 0.8
+    }
+}
+```",20.76,Aluminum Sill Fill,0.8,,,,
+113958,2026-05-27T19:55:40.868668,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.094,Timber,0.9,,,,
+114635,2026-05-27T19:55:45.778727,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.908,Timber,0.9,,,,
+114815,2026-05-27T19:55:49.778181,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.998,Timber,0.95,,,,
+114923,2026-05-27T19:55:54.295755,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.514,Timber,0.9,,,,
+114963,2026-05-27T19:55:59.271199,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",4.969,Gabions,1.0,,,,
+114996,2026-05-27T19:56:03.911973,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.98
+    }
+}",4.635,Concrete,0.98,,,,
+114997,2026-05-27T19:56:14.217747,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.286,Timber,0.9,,,,
+116847,2026-05-27T19:56:34.855376,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",20.634,Timber,0.9,,,,
+116851,2026-05-27T19:56:40.271848,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.411,Timber,0.9,,,,
+117196,2026-05-27T19:56:44.277516,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.999,Timber,0.95,,,,
+117197,2026-05-27T19:56:53.990787,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Composite"",
+        ""confidence"": 0.9
+    }
+}",9.712,Composite,0.9,,,,
+117211,2026-05-27T19:56:58.801056,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",4.806,Timber,0.8,,,,
+117216,2026-05-27T19:57:05.863593,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    }
+}",7.06,Concrete,0.8,,,,
+117220,2026-05-27T19:57:10.795335,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Aluminum Sill Fill"",
+        ""confidence"": 0.95
+    }
+}",4.929,Aluminum Sill Fill,0.95,,,,
+117221,2026-05-27T19:57:14.501444,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.701,Timber,0.95,,,,
+117304,2026-05-27T19:57:22.560083,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",8.058,Concrete,0.95,,,,
+117365,2026-05-27T19:57:27.876718,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.314,Timber,0.95,,,,
+118143,2026-05-27T19:57:32.483656,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.606,Timber,0.9,,,,
+118246,2026-05-27T19:57:39.373244,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",6.889,Gabions,0.95,,,,
+118797,2026-05-27T19:57:43.046895,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.67,Timber,0.9,,,,
+118923,2026-05-27T19:57:47.730158,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",4.678,Gabions,1.0,,,,
+119099,2026-05-27T19:57:54.206280,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",6.471,Gabions,1.0,,,,
+119811,2026-05-27T19:58:07.363490,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",13.155,Timber,0.9,,,,
+119851,2026-05-27T19:58:10.630872,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.263,Timber,0.9,,,,
+119977,2026-05-27T19:58:14.755886,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.119,Timber,0.9,,,,
+121497,2026-05-27T19:58:18.593106,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.832,Timber,0.95,,,,
+121755,2026-05-27T19:58:22.107134,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.469,Timber,0.95,,,,
+122034,2026-05-27T19:58:26.274752,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",4.165,Gabions,1.0,,,,
+121993,2026-05-27T19:58:29.415848,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",3.14,Gabions,0.95,,,,
+122441,2026-05-27T19:58:33.332725,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",3.915,Concrete,0.95,,,,
+122444,2026-05-27T19:58:37.724751,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",4.387,Concrete,0.95,,,,
+122445,2026-05-27T19:58:41.821892,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}",4.091,Concrete,1.0,,,,
+122981,2026-05-27T19:58:48.881827,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",7.055,Timber,0.9,,,,
+123161,2026-05-27T19:58:54.774030,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",5.891,Timber,0.8,,,,
+123309,2026-05-27T19:59:00.589823,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.813,Timber,0.9,,,,
+123352,2026-05-27T19:59:16.030085,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",15.438,Timber,0.8,,,,
+123310,2026-05-27T19:59:20.934477,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",4.9,Timber,0.9,,,,
+123354,2026-05-27T19:59:27.915446,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.979,Timber,0.9,,,,
+123585,2026-05-27T19:59:31.887002,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",3.967,Concrete,0.95,,,,
+126178,2026-05-27T19:59:43.977320,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",12.089,unable to determine,0.0,,,,
+126334,2026-05-27T20:00:19.860095,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",35.869,Concrete,0.9,,,,
+126340,2026-05-27T20:00:27.880653,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",7.964,Concrete,0.9,,,,
+126721,2026-05-27T20:00:31.312774,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",3.427,Gabions,1.0,,,,
+126709,2026-05-27T20:00:34.800897,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.473,Timber,0.95,,,,
+126799,2026-05-27T20:00:42.145555,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",7.334,Concrete,0.95,,,,
+126915,2026-05-27T20:00:48.814162,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",6.66,Gabions,0.95,,,,
+127136,2026-05-27T20:01:04.053216,gemini-3-flash-preview,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Aluminum Sill Fill"",
+        ""confidence"": 0.9
+    }
+}
+```",15.217,Aluminum Sill Fill,0.9,,,,
+127147,2026-05-27T20:01:07.375549,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.318,Timber,0.95,,,,
+127523,2026-05-27T20:01:12.436226,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",5.059,Timber,0.95,,,,
+128273,2026-05-27T20:01:16.434683,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",3.988,Concrete,0.95,,,,
+128830,2026-05-27T20:01:20.243443,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",3.808,Timber,0.9,,,,
+128831,2026-05-27T20:01:24.009482,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",3.765,Timber,0.95,,,,
+129739,2026-05-27T20:01:29.153056,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",5.136,Concrete,0.95,,,,
+129491,2026-05-27T20:01:37.735681,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",8.58,Timber,0.9,,,,
+102358,2026-05-27T20:01:42.803307,gemini-3-flash-preview,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",5.067,Timber,0.9,,,,

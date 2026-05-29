@@ -1,0 +1,1291 @@
+asset_id,timestamp,model,response,latency_s,bridge_type_value,bridge_type_confidence,parse_error,raw_response,error,traceback
+46926,2026-05-27T20:01:53.292847,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",6.167,Beam,1.0,,,,
+47533,2026-05-27T20:01:57.821222,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.495,Beam,0.95,,,,
+47637,2026-05-27T20:02:02.428240,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 1.0
+    }
+}",4.601,Fallen Tree,1.0,,,,
+48111,2026-05-27T20:02:08.982756,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",6.549,Truss,1.0,,,,
+48112,2026-05-27T20:02:13.487072,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.5,Beam,0.95,,,,
+48296,2026-05-27T20:02:28.663343,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.9
+    }
+}",15.17,Truss,0.9,,,,
+48488,2026-05-27T20:02:34.376105,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.696,Beam,1.0,,,,
+49057,2026-05-27T20:02:38.063372,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.685,Beam,0.95,,,,
+49059,2026-05-27T20:02:42.252970,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.184,Beam,1.0,,,,
+49060,2026-05-27T20:02:45.867599,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.612,Beam,1.0,,,,
+49061,2026-05-27T20:02:49.106956,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.237,Beam,1.0,,,,
+50654,2026-05-27T20:02:52.681292,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.573,Beam,0.95,,,,
+51524,2026-05-27T20:02:59.200033,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",6.517,Truss,0.95,,,,
+51525,2026-05-27T20:03:03.758921,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",4.553,Suspension,1.0,,,,
+51531,2026-05-27T20:03:08.257516,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.497,Beam,1.0,,,,
+52457,2026-05-27T20:03:12.481784,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.222,Beam,1.0,,,,
+52551,2026-05-27T20:03:19.002583,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",6.52,Beam,1.0,,,,
+53798,2026-05-27T20:03:23.175082,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.168,Beam,1.0,,,,
+53985,2026-05-27T20:03:30.229516,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",7.051,Beam,0.95,,,,
+53986,2026-05-27T20:03:34.468879,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",4.238,Truss,0.95,,,,
+54324,2026-05-27T20:03:38.367018,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",3.836,Suspension,1.0,,,,
+55640,2026-05-27T20:03:41.744814,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.375,Truss,1.0,,,,
+56469,2026-05-27T20:03:45.538086,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.791,Beam,1.0,,,,
+56533,2026-05-27T20:03:49.836084,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.296,Truss,1.0,,,,
+56876,2026-05-27T20:04:11.353452,gemini-3-flash-preview,"```json
+{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.9
+    }
+}
+```",21.514,Truss,0.9,,,,
+57834,2026-05-27T20:04:15.330585,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.973,Beam,1.0,,,,
+58162,2026-05-27T20:04:20.489302,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.157,Beam,1.0,,,,
+58955,2026-05-27T20:04:23.993253,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.469,Beam,0.95,,,,
+61003,2026-05-27T20:04:27.823629,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.825,Beam,1.0,,,,
+63068,2026-05-27T20:04:31.303970,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.479,Truss,1.0,,,,
+63597,2026-05-27T20:04:36.134759,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",4.829,Suspension,1.0,,,,
+64126,2026-05-27T20:04:41.233056,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.03,Beam,0.95,,,,
+64643,2026-05-27T20:04:46.873858,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.635,Beam,0.95,,,,
+65423,2026-05-27T20:04:49.836201,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",2.961,Truss,1.0,,,,
+65425,2026-05-27T20:04:53.268116,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",3.43,Truss,0.95,,,,
+65609,2026-05-27T20:04:58.548903,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.278,Beam,1.0,,,,
+65788,2026-05-27T20:05:04.542548,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",5.991,Truss,1.0,,,,
+65789,2026-05-27T20:05:08.580573,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",4.037,Suspension,1.0,,,,
+66920,2026-05-27T20:05:12.469623,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.886,Truss,1.0,,,,
+66922,2026-05-27T20:05:19.529321,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",7.058,Beam,0.9,,,,
+67205,2026-05-27T20:05:24.456822,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.92,Beam,1.0,,,,
+82270,2026-05-27T20:05:28.150768,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.689,Beam,1.0,,,,
+82385,2026-05-27T20:05:32.647292,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.495,Beam,0.95,,,,
+83138,2026-05-27T20:05:37.841835,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.193,Beam,0.95,,,,
+83150,2026-05-27T20:05:43.092347,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.249,Beam,1.0,,,,
+83513,2026-05-27T20:05:47.089607,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.995,Beam,1.0,,,,
+85208,2026-05-27T20:05:51.293701,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.198,Beam,0.95,,,,
+85487,2026-05-27T20:05:55.562950,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.263,Beam,0.95,,,,
+86369,2026-05-27T20:06:05.938047,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",10.369,Truss,0.95,,,,
+86525,2026-05-27T20:06:11.974442,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",6.028,Truss,0.95,,,,
+86599,2026-05-27T20:06:15.867246,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.889,Truss,1.0,,,,
+87188,2026-05-27T20:06:20.392391,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.522,Beam,0.95,,,,
+87483,2026-05-27T20:06:25.195140,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.8,Beam,0.95,,,,
+87769,2026-05-27T20:06:29.217852,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.02,Beam,0.95,,,,
+87928,2026-05-27T20:06:34.213908,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.994,Truss,1.0,,,,
+88733,2026-05-27T20:06:37.280402,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.064,Beam,0.95,,,,
+89437,2026-05-27T20:06:41.362050,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.077,Truss,1.0,,,,
+89447,2026-05-27T20:06:44.738701,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.369,Beam,0.95,,,,
+89450,2026-05-27T20:06:47.911588,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.164,Beam,0.95,,,,
+89580,2026-05-27T20:06:51.603309,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.687,Beam,0.95,,,,
+89761,2026-05-27T20:06:55.528866,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.903,Beam,1.0,,,,
+90361,2026-05-27T20:06:59.217223,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.678,Beam,0.95,,,,
+89767,2026-05-27T20:06:59.224494,gemini-3-flash-preview,,0.003,,,True,,,
+90408,2026-05-27T20:07:03.379573,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.155,Beam,0.95,,,,
+90412,2026-05-27T20:07:10.146368,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",6.764,Beam,1.0,,,,
+91248,2026-05-27T20:07:14.383968,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.233,Beam,0.95,,,,
+91832,2026-05-27T20:07:18.895715,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.51,Beam,1.0,,,,
+92164,2026-05-27T20:07:22.508874,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",3.609,Beam,0.9,,,,
+92794,2026-05-27T20:07:26.714122,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.204,Beam,0.95,,,,
+92801,2026-05-27T20:07:29.686391,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",2.971,Beam,1.0,,,,
+92854,2026-05-27T20:07:34.112379,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.424,Beam,1.0,,,,
+92872,2026-05-27T20:07:37.500534,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.383,Beam,0.95,,,,
+93036,2026-05-27T20:07:41.358132,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.856,Beam,0.95,,,,
+93038,2026-05-27T20:07:44.948742,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.589,Beam,0.95,,,,
+93043,2026-05-27T20:07:49.046075,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.095,Beam,0.95,,,,
+94144,2026-05-27T20:07:52.587481,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.538,Truss,1.0,,,,
+96291,2026-05-27T20:07:57.339396,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.75,Beam,0.95,,,,
+96292,2026-05-27T20:08:01.641885,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.301,Beam,0.95,,,,
+96854,2026-05-27T20:08:09.455221,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.9
+    }
+}",7.811,Truss,0.9,,,,
+98336,2026-05-27T20:08:15.443531,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.979,Beam,0.95,,,,
+98498,2026-05-27T20:08:18.689115,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.224,Beam,0.95,,,,
+98531,2026-05-27T20:08:23.040157,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.339,Beam,0.95,,,,
+99611,2026-05-27T20:08:26.826164,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.784,Beam,1.0,,,,
+99844,2026-05-27T20:08:29.906586,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.079,Beam,0.95,,,,
+100140,2026-05-27T20:08:34.103504,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.192,Beam,1.0,,,,
+100272,2026-05-27T20:08:37.785677,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.681,Beam,0.95,,,,
+100347,2026-05-27T20:08:44.039133,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",6.251,Beam,0.95,,,,
+100348,2026-05-27T20:08:49.839846,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.796,Beam,0.95,,,,
+100446,2026-05-27T20:08:55.611041,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.768,Beam,0.95,,,,
+100475,2026-05-27T20:09:02.875894,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",7.253,Truss,0.95,,,,
+100757,2026-05-27T20:09:10.562949,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",7.684,unable to determine,0.0,,,,
+100758,2026-05-27T20:09:14.789784,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",4.225,Beam,0.9,,,,
+101132,2026-05-27T20:09:25.103692,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",10.309,Beam,0.95,,,,
+101826,2026-05-27T20:09:28.267646,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",3.159,Suspension,1.0,,,,
+101831,2026-05-27T20:09:31.230772,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.962,Beam,0.95,,,,
+101890,2026-05-27T20:09:34.104543,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.873,Beam,0.95,,,,
+101988,2026-05-27T20:09:37.175979,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.068,Beam,0.95,,,,
+102341,2026-05-27T20:09:40.354112,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.176,Beam,0.95,,,,
+102344,2026-05-27T20:09:47.045357,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",6.69,Beam,0.95,,,,
+102352,2026-05-27T20:09:50.549623,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.503,Beam,0.95,,,,
+102353,2026-05-27T20:09:54.275753,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",3.705,Beam,0.9,,,,
+102354,2026-05-27T20:09:58.081345,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.805,Beam,0.95,,,,
+102355,2026-05-27T20:10:01.649458,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.561,Beam,0.95,,,,
+102359,2026-05-27T20:10:06.667754,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",5.016,Beam,0.9,,,,
+102370,2026-05-27T20:10:10.251475,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.581,Beam,0.95,,,,
+102436,2026-05-27T20:10:14.271885,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.018,Beam,0.95,,,,
+102471,2026-05-27T20:10:17.320475,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.048,Beam,0.95,,,,
+102849,2026-05-27T20:10:20.736401,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",3.413,Beam,0.9,,,,
+102851,2026-05-27T20:10:23.636430,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.899,Beam,0.95,,,,
+103256,2026-05-27T20:10:28.887764,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",5.234,Truss,0.95,,,,
+104066,2026-05-27T20:10:32.784189,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.895,Beam,0.95,,,,
+104086,2026-05-27T20:10:36.875315,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.089,Beam,0.95,,,,
+104159,2026-05-27T20:10:40.970951,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.094,Beam,0.95,,,,
+104170,2026-05-27T20:10:44.069253,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",3.097,Beam,0.9,,,,
+105042,2026-05-27T20:10:48.040300,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.97,Beam,0.95,,,,
+105438,2026-05-27T20:10:51.946428,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.9,Beam,0.95,,,,
+105440,2026-05-27T20:10:55.406995,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.455,Beam,1.0,,,,
+105442,2026-05-27T20:10:58.543772,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.135,Beam,1.0,,,,
+105443,2026-05-27T20:11:01.662613,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.11,Beam,1.0,,,,
+105444,2026-05-27T20:11:05.659745,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.993,Beam,0.95,,,,
+105449,2026-05-27T20:11:09.233778,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.566,Beam,1.0,,,,
+106027,2026-05-27T20:11:13.131034,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.895,Beam,1.0,,,,
+106030,2026-05-27T20:11:17.790282,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.653,Beam,0.95,,,,
+106045,2026-05-27T20:11:22.564465,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.757,Beam,0.95,,,,
+106273,2026-05-27T20:11:26.235260,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.653,Beam,0.95,,,,
+107117,2026-05-27T20:11:29.404510,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.16,Beam,1.0,,,,
+107473,2026-05-27T20:11:33.220632,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.798,Beam,0.95,,,,
+107877,2026-05-27T20:11:36.487035,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.26,Truss,1.0,,,,
+107885,2026-05-27T20:11:40.367456,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.866,Truss,1.0,,,,
+107969,2026-05-27T20:11:44.212215,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",3.843,Suspension,1.0,,,,
+107973,2026-05-27T20:11:47.683200,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.47,Truss,1.0,,,,
+108019,2026-05-27T20:11:52.743951,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.055,Beam,0.95,,,,
+108037,2026-05-27T20:11:57.979112,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    }
+}",5.233,Suspension,1.0,,,,
+108040,2026-05-27T20:12:01.155868,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.175,Beam,0.95,,,,
+108107,2026-05-27T20:12:04.846564,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.686,Beam,1.0,,,,
+108725,2026-05-27T20:12:11.204536,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",6.352,Beam,0.9,,,,
+108731,2026-05-27T20:12:14.857619,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.64,Beam,0.95,,,,
+109160,2026-05-27T20:12:20.817849,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.946,Beam,0.95,,,,
+109619,2026-05-27T20:12:24.758374,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.939,Beam,1.0,,,,
+110131,2026-05-27T20:12:28.486328,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.725,Beam,0.95,,,,
+110139,2026-05-27T20:12:33.105701,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.591,Beam,0.95,,,,
+110170,2026-05-27T20:12:36.803850,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.695,Beam,0.95,,,,
+110299,2026-05-27T20:12:42.777720,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.964,Beam,1.0,,,,
+110356,2026-05-27T20:12:45.882797,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.104,Beam,0.95,,,,
+110775,2026-05-27T20:12:48.972845,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.088,Beam,1.0,,,,
+110788,2026-05-27T20:12:52.476506,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.501,Beam,0.95,,,,
+110932,2026-05-27T20:12:55.614901,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.135,Beam,0.95,,,,
+112422,2026-05-27T20:13:00.051786,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.436,Beam,0.95,,,,
+113163,2026-05-27T20:13:03.522140,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.47,Beam,0.95,,,,
+113164,2026-05-27T20:13:07.250089,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.716,Beam,0.95,,,,
+113217,2026-05-27T20:13:13.669308,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",6.35,Beam,0.9,,,,
+113804,2026-05-27T20:13:17.133059,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.459,Beam,0.95,,,,
+113952,2026-05-27T20:13:21.320040,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.185,Truss,1.0,,,,
+113958,2026-05-27T20:13:24.714874,gemini-3-flash-preview,"{""bridge_type"": {""value"": ""Beam"", ""confidence"": 0.95}}",3.389,Beam,0.95,,,,
+114047,2026-05-27T20:13:29.234704,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.511,Beam,0.95,,,,
+114291,2026-05-27T20:13:32.474654,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.227,Beam,1.0,,,,
+114635,2026-05-27T20:13:44.798344,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",12.317,Beam,0.95,,,,
+114815,2026-05-27T20:13:48.186741,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.385,Beam,0.95,,,,
+114923,2026-05-27T20:13:56.782185,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",8.592,Beam,0.95,,,,
+114963,2026-05-27T20:14:02.109701,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",5.319,Beam,1.0,,,,
+114996,2026-05-27T20:14:05.785142,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.647,Truss,1.0,,,,
+114997,2026-05-27T20:14:09.563797,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",3.773,Truss,0.95,,,,
+116847,2026-05-27T20:14:12.916052,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.35,Beam,0.95,,,,
+117196,2026-05-27T20:14:16.425872,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.508,Truss,1.0,,,,
+117304,2026-05-27T20:14:25.003827,gemini-3-flash-preview,"```json
+{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}
+```",8.575,Beam,0.95,,,,
+117365,2026-05-27T20:14:29.465153,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.459,Beam,0.95,,,,
+118143,2026-05-27T20:14:33.225612,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.759,Beam,1.0,,,,
+118246,2026-05-27T20:14:37.350365,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.123,Beam,1.0,,,,
+118757,2026-05-27T20:14:41.327584,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.972,Beam,0.95,,,,
+118797,2026-05-27T20:14:44.954446,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.619,Beam,0.95,,,,
+118923,2026-05-27T20:14:48.598234,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.642,Truss,1.0,,,,
+119099,2026-05-27T20:14:55.323285,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",6.719,Beam,1.0,,,,
+119811,2026-05-27T20:14:58.711759,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.384,Beam,1.0,,,,
+119851,2026-05-27T20:15:02.801020,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.088,Beam,0.95,,,,
+119977,2026-05-27T20:15:06.202320,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.392,Beam,1.0,,,,
+121497,2026-05-27T20:15:09.307768,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.092,Beam,0.95,,,,
+121755,2026-05-27T20:15:13.055209,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.747,Beam,0.95,,,,
+122034,2026-05-27T20:15:17.263787,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.204,Beam,1.0,,,,
+121993,2026-05-27T20:15:21.174689,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.903,Beam,0.95,,,,
+122244,2026-05-27T20:15:25.070071,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.882,Beam,1.0,,,,
+122263,2026-05-27T20:15:28.003181,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.914,Beam,0.95,,,,
+122441,2026-05-27T20:15:31.380210,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.372,Beam,0.95,,,,
+122444,2026-05-27T20:15:33.949647,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",2.568,Beam,1.0,,,,
+122445,2026-05-27T20:15:36.710845,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.98
+    }
+}",2.76,Beam,0.98,,,,
+122981,2026-05-27T20:15:41.317239,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.602,Beam,1.0,,,,
+122999,2026-05-27T20:15:45.004692,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 0.95
+    }
+}",3.685,Fallen Tree,0.95,,,,
+123161,2026-05-27T20:15:48.798023,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.791,Beam,1.0,,,,
+123219,2026-05-27T20:15:53.150364,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    }
+}",4.351,Beam,0.9,,,,
+123309,2026-05-27T20:15:58.147968,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.992,Beam,0.95,,,,
+123352,2026-05-27T20:16:03.741047,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.588,Beam,0.95,,,,
+123310,2026-05-27T20:16:09.169618,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 0.95
+    }
+}",5.427,Fallen Tree,0.95,,,,
+123354,2026-05-27T20:16:13.167297,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 0.95
+    }
+}",3.994,Fallen Tree,0.95,,,,
+123585,2026-05-27T20:16:16.958904,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.789,Beam,1.0,,,,
+126199,2026-05-27T20:16:21.779613,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.809,Beam,0.95,,,,
+126334,2026-05-27T20:16:26.468864,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.684,Beam,1.0,,,,
+126340,2026-05-27T20:16:29.851069,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.382,Truss,1.0,,,,
+126683,2026-05-27T20:16:35.049512,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.197,Beam,0.95,,,,
+126721,2026-05-27T20:16:39.539215,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.489,Truss,1.0,,,,
+126709,2026-05-27T20:16:42.443130,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.901,Beam,0.95,,,,
+126779,2026-05-27T20:16:45.801643,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.357,Truss,1.0,,,,
+126799,2026-05-27T20:16:50.316365,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.508,Truss,1.0,,,,
+126915,2026-05-27T20:16:54.741364,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.424,Truss,1.0,,,,
+127136,2026-05-27T20:16:58.384676,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",3.624,Truss,1.0,,,,
+127147,2026-05-27T20:17:01.590339,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.205,Beam,0.95,,,,
+127145,2026-05-27T20:17:04.547982,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",2.957,Beam,0.95,,,,
+127203,2026-05-27T20:17:07.828964,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.99
+    }
+}",3.28,Beam,0.99,,,,
+127204,2026-05-27T20:17:11.736497,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.907,Beam,1.0,,,,
+127205,2026-05-27T20:17:15.722699,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",3.988,Beam,1.0,,,,
+127388,2026-05-27T20:17:20.953439,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    }
+}",5.002,Truss,0.95,,,,
+128273,2026-05-27T20:17:25.185439,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    }
+}",4.225,Truss,1.0,,,,
+128830,2026-05-27T20:17:28.437520,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.171,Beam,0.95,,,,
+129304,2026-05-27T20:17:34.053583,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",5.611,Beam,0.95,,,,
+128831,2026-05-27T20:17:36.826669,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",2.761,Beam,1.0,,,,
+129739,2026-05-27T20:17:41.746009,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    }
+}",4.915,Beam,1.0,,,,
+129491,2026-05-27T20:17:45.555362,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",3.806,Beam,0.95,,,,
+102358,2026-05-27T20:17:49.839507,gemini-3-flash-preview,"{
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    }
+}",4.27,Beam,0.95,,,,

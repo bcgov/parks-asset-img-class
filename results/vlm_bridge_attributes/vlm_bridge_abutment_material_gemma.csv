@@ -1,0 +1,1322 @@
+asset_id,timestamp,model,response,latency_s,abutment_material_value,abutment_material_confidence,parse_error,raw_response,error,traceback
+47533,2026-05-28T01:28:26.310382,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",23.466,Timber,0.9,,,,
+48111,2026-05-28T01:28:53.910598,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",27.579,Timber,0.8,,,,
+48112,2026-05-28T01:29:11.521983,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.606,unable to determine,0.0,,,,
+49057,2026-05-28T01:29:25.657538,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",14.131,Timber,0.9,,,,
+49059,2026-05-28T01:29:43.556836,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",17.892,Timber,0.9,,,,
+49060,2026-05-28T01:30:00.679202,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",17.121,Concrete,0.9,,,,
+49061,2026-05-28T01:30:14.514475,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",13.823,Concrete,0.9,,,,
+49243,2026-05-28T01:30:38.761197,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",24.241,unable to determine,0.0,,,,
+50654,2026-05-28T01:30:54.538025,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",15.772,Timber,0.8,,,,
+51524,2026-05-28T01:31:07.225441,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",12.68,Concrete,0.9,,,,
+51531,2026-05-28T01:31:46.991202,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}
+```",39.76,Steel,0.8,,,,
+52457,2026-05-28T01:32:02.651635,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",15.656,Concrete,0.95,,,,
+52551,2026-05-28T01:32:23.431820,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",20.776,Concrete,0.9,,,,
+53798,2026-05-28T01:33:07.258830,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",43.822,Timber,0.7,,,,
+53985,2026-05-28T01:33:39.184142,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",31.921,unable to determine,0.0,,,,
+53986,2026-05-28T01:34:06.020015,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",26.832,unable to determine,0.0,,,,
+54324,2026-05-28T01:34:35.207573,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",29.178,Steel,0.9,,,,
+55640,2026-05-28T01:34:53.466672,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",18.249,Timber,0.9,,,,
+56469,2026-05-28T01:35:13.297582,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",19.827,Timber,0.9,,,,
+56876,2026-05-28T01:35:43.712823,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",30.409,unable to determine,0.0,,,,
+57834,2026-05-28T01:35:55.375276,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",11.638,Concrete,0.95,,,,
+58162,2026-05-28T01:36:20.473688,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",25.097,Timber,0.9,,,,
+58164,2026-05-28T01:36:37.690268,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",17.213,Timber,0.8,,,,
+58955,2026-05-28T01:36:51.350567,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",13.659,unable to determine,0.0,,,,
+59060,2026-05-28T01:37:06.900436,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",15.544,Timber,0.95,,,,
+61003,2026-05-28T01:37:25.474207,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",18.573,unable to determine,0.0,,,,
+63068,2026-05-28T01:37:35.111998,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",9.632,Concrete,0.9,,,,
+63597,2026-05-28T01:38:30.835044,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",55.721,unable to determine,0.0,,,,
+64102,2026-05-28T01:38:49.052799,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",18.213,Timber,0.85,,,,
+64126,2026-05-28T01:39:03.107423,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",14.045,Timber,0.9,,,,
+64643,2026-05-28T01:39:22.855672,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}",19.723,Timber,0.8,,,,
+65425,2026-05-28T01:39:33.895708,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",11.024,Timber,0.9,,,,
+65609,2026-05-28T01:39:47.466408,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",13.568,Concrete,0.95,,,,
+65788,2026-05-28T01:40:14.293291,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",26.824,Concrete,0.95,,,,
+65789,2026-05-28T01:40:31.675464,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",17.377,Steel,0.9,,,,
+66920,2026-05-28T01:40:52.043626,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",20.367,unable to determine,0.0,,,,
+66922,2026-05-28T01:41:17.366003,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",25.317,unable to determine,0.0,,,,
+67205,2026-05-28T01:41:38.524379,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}
+```",21.153,Concrete,1.0,,,,
+82270,2026-05-28T01:42:00.132348,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",21.602,Timber,0.8,,,,
+83138,2026-05-28T01:42:30.342408,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",30.194,unable to determine,0.0,,,,
+83150,2026-05-28T01:42:45.424531,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",15.06,Timber,0.9,,,,
+83513,2026-05-28T01:43:04.238075,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",18.812,Timber,0.9,,,,
+85208,2026-05-28T01:43:17.892243,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",13.651,unable to determine,0.0,,,,
+85487,2026-05-28T01:43:31.567420,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",13.661,Timber,0.9,,,,
+86369,2026-05-28T01:44:01.816089,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",30.247,unable to determine,0.0,,,,
+86525,2026-05-28T01:44:20.679121,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",18.858,Timber,0.9,,,,
+86599,2026-05-28T01:44:40.966594,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",20.279,Timber,0.85,,,,
+87483,2026-05-28T01:45:11.547725,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",30.577,unable to determine,0.0,,,,
+87769,2026-05-28T01:45:24.152068,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",12.59,unable to determine,0.0,,,,
+87928,2026-05-28T01:46:24.161091,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",60.003,unable to determine,0.0,,,,
+88733,2026-05-28T01:46:49.755901,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.85
+    }
+}
+```",25.586,Concrete,0.85,,,,
+89437,2026-05-28T01:47:10.008294,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",20.235,unable to determine,0.0,,,,
+89447,2026-05-28T01:48:03.901538,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",53.877,unable to determine,0.0,,,,
+89450,2026-05-28T01:48:15.892392,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",11.984,unable to determine,0.0,,,,
+89580,2026-05-28T01:48:44.956919,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",29.06,unable to determine,0.0,,,,
+89761,2026-05-28T01:49:00.647332,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",15.676,Timber,0.9,,,,
+90361,2026-05-28T01:49:09.355955,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",8.704,Timber,0.9,,,,
+89767,2026-05-28T01:49:09.367015,gemma-4-26b-a4b-it,,0.006,,,True,,,
+90408,2026-05-28T01:49:24.763068,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",15.396,Timber,0.9,,,,
+90412,2026-05-28T01:49:48.744395,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",23.978,unable to determine,0.0,,,,
+91248,2026-05-28T01:50:01.344612,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",12.578,Timber,0.9,,,,
+91832,2026-05-28T01:50:20.089085,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",18.737,Timber,0.8,,,,
+92164,2026-05-28T01:50:37.496788,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.402,unable to determine,0.0,,,,
+92794,2026-05-28T01:51:02.826695,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",25.319,Timber,0.8,,,,
+92801,2026-05-28T01:51:57.159890,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",54.331,unable to determine,0.0,,,,
+92854,2026-05-28T01:52:15.188031,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",18.023,Concrete,0.95,,,,
+92872,2026-05-28T01:52:31.459957,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",16.256,Timber,0.9,,,,
+93036,2026-05-28T01:52:46.202289,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",14.739,Timber,0.9,,,,
+93038,2026-05-28T01:52:58.902445,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",12.698,Timber,0.85,,,,
+93043,2026-05-28T01:53:32.479594,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",33.574,unable to determine,0.0,,,,
+94144,2026-05-28T01:53:49.794829,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",17.302,Timber,0.9,,,,
+94177,2026-05-28T01:54:17.859972,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",28.064,unable to determine,0.0,,,,
+96854,2026-05-28T01:54:40.784115,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",22.918,Timber,0.85,,,,
+97817,2026-05-28T01:54:51.248707,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}
+```",10.459,Gabions,1.0,,,,
+98336,2026-05-28T01:55:07.837005,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",16.582,Timber,0.9,,,,
+98498,2026-05-28T01:55:20.552162,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",12.71,Concrete,0.95,,,,
+98531,2026-05-28T01:55:39.977910,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",19.417,unable to determine,0.0,,,,
+99611,2026-05-28T01:56:03.727752,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",23.743,unable to determine,0.0,,,,
+99614,2026-05-28T01:56:18.739377,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",15.01,Timber,0.95,,,,
+99844,2026-05-28T01:56:30.152327,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",11.407,Timber,0.9,,,,
+100140,2026-05-28T01:56:48.897776,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",18.726,Concrete,0.95,,,,
+100181,2026-05-28T01:57:27.020183,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",38.117,unable to determine,0.0,,,,
+100272,2026-05-28T01:57:38.451136,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",11.408,Gabions,1.0,,,,
+100347,2026-05-28T01:58:02.020448,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",23.567,Timber,0.8,,,,
+100348,2026-05-28T01:58:23.743110,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",21.719,Timber,0.8,,,,
+100446,2026-05-28T01:58:40.300298,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",16.537,Timber,0.9,,,,
+100475,2026-05-28T01:59:01.300318,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",20.998,Timber,0.9,,,,
+100757,2026-05-28T01:59:11.626325,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",10.314,unable to determine,0.0,,,,
+100758,2026-05-28T01:59:21.077154,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",9.379,unable to determine,0.0,,,,
+101826,2026-05-28T01:59:48.226727,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",27.144,unable to determine,0.0,,,,
+101890,2026-05-28T01:59:57.926200,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",9.673,Timber,0.9,,,,
+101988,2026-05-28T02:00:10.233307,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",12.305,Timber,0.9,,,,
+102341,2026-05-28T02:00:27.516151,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.279,unable to determine,0.0,,,,
+102344,2026-05-28T02:00:50.253166,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",22.734,unable to determine,0.0,,,,
+102352,2026-05-28T02:01:02.970134,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",12.714,Timber,0.9,,,,
+102353,2026-05-28T02:01:19.953404,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",16.981,Timber,0.9,,,,
+102354,2026-05-28T02:01:21.743453,gemma-4-26b-a4b-it,,1.78,,,True,,,
+102355,2026-05-28T02:01:54.051473,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",32.306,unable to determine,0.0,,,,
+102359,2026-05-28T02:02:12.317431,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",18.247,unable to determine,0.0,,,,
+102370,2026-05-28T02:02:30.507931,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",18.183,unable to determine,0.0,,,,
+102436,2026-05-28T02:02:50.978091,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",20.435,Timber,0.9,,,,
+102471,2026-05-28T02:03:04.732402,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",13.751,Timber,0.9,,,,
+102849,2026-05-28T02:03:20.774971,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",16.04,unable to determine,0.0,,,,
+102851,2026-05-28T02:03:38.182154,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",17.4,Timber,0.9,,,,
+104066,2026-05-28T02:04:10.132893,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",31.948,unable to determine,0.0,,,,
+104086,2026-05-28T02:04:23.871777,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",13.71,unable to determine,0.0,,,,
+104159,2026-05-28T02:04:54.325938,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",30.448,unable to determine,0.0,,,,
+104170,2026-05-28T02:05:36.769671,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",42.437,unable to determine,0.0,,,,
+105449,2026-05-28T02:05:52.177173,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",15.378,Timber,1.0,,,,
+106027,2026-05-28T02:06:13.866136,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",21.687,Timber,0.8,,,,
+106030,2026-05-28T02:06:31.184120,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.288,unable to determine,0.0,,,,
+106045,2026-05-28T02:06:50.704523,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",19.497,Timber,0.9,,,,
+106273,2026-05-28T02:07:30.640827,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",39.928,unable to determine,0.0,,,,
+107473,2026-05-28T02:08:14.007132,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.6
+    }
+}
+```",43.357,Timber,0.6,,,,
+107877,2026-05-28T02:08:28.408108,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",14.375,unable to determine,0.0,,,,
+107885,2026-05-28T02:08:46.829400,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",18.416,Timber,0.85,,,,
+107969,2026-05-28T02:09:40.462023,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}
+```",53.623,Steel,0.8,,,,
+107973,2026-05-28T02:09:56.561821,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",16.072,unable to determine,0.0,,,,
+108019,2026-05-28T02:10:14.857223,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",18.289,Timber,0.8,,,,
+108037,2026-05-28T02:11:11.866884,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",57.001,unable to determine,0.0,,,,
+108040,2026-05-28T02:11:41.239879,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",29.331,unable to determine,0.0,,,,
+108107,2026-05-28T02:12:01.445817,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",20.175,Timber,0.9,,,,
+109160,2026-05-28T02:12:22.175909,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",20.721,unable to determine,0.0,,,,
+109169,2026-05-28T02:13:12.151802,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",49.96,unable to determine,0.0,,,,
+109619,2026-05-28T02:13:24.242335,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",12.079,Gabions,0.95,,,,
+110170,2026-05-28T02:14:01.507369,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",37.253,unable to determine,0.0,,,,
+110299,2026-05-28T02:14:20.129006,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",18.615,Concrete,0.9,,,,
+110788,2026-05-28T02:14:39.909366,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",19.775,Timber,0.85,,,,
+110868,2026-05-28T02:14:57.309789,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",17.394,Timber,0.9,,,,
+113163,2026-05-28T02:15:18.613316,gemma-4-26b-a4b-it,"{""abutment_material"": {""value"": ""Timber"", ""confidence"": 0.8}}",21.289,Timber,0.8,,,,
+113164,2026-05-28T02:15:55.576308,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",36.953,Timber,0.7,,,,
+113217,2026-05-28T02:16:20.665981,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",25.082,unable to determine,0.0,,,,
+113804,2026-05-28T02:16:37.355351,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",16.682,Timber,0.9,,,,
+113952,2026-05-28T02:17:00.973458,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    }
+}
+```",23.614,Concrete,0.8,,,,
+113958,2026-05-28T02:17:15.343825,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",14.365,Timber,0.9,,,,
+114635,2026-05-28T02:17:53.753638,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",38.404,unable to determine,0.0,,,,
+114815,2026-05-28T02:18:24.677531,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",30.918,Timber,0.9,,,,
+114923,2026-05-28T02:18:35.520531,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.838,Timber,0.95,,,,
+114963,2026-05-28T02:18:49.768366,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",14.246,Gabions,1.0,,,,
+114996,2026-05-28T02:19:00.611716,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",10.838,Concrete,0.95,,,,
+114997,2026-05-28T02:19:29.495041,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.85
+    }
+}
+```",28.86,Concrete,0.85,,,,
+116847,2026-05-28T02:20:46.498610,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.7
+    }
+}
+```",76.998,Concrete,0.7,,,,
+116851,2026-05-28T02:21:01.143661,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",14.637,Timber,0.95,,,,
+117196,2026-05-28T02:21:14.464529,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",13.313,Timber,0.9,,,,
+117197,2026-05-28T02:21:51.636038,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Composite"",
+        ""confidence"": 0.7
+    }
+}
+```",37.17,Composite,0.7,,,,
+117211,2026-05-28T02:22:02.895641,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",11.248,unable to determine,0.0,,,,
+117216,2026-05-28T02:22:14.513105,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",11.616,unable to determine,0.0,,,,
+117220,2026-05-28T02:22:43.950265,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",29.426,unable to determine,0.0,,,,
+117221,2026-05-28T02:22:57.051176,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",13.094,Timber,0.9,,,,
+117304,2026-05-28T02:24:00.022145,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",62.969,concrete,0.9,,,,
+117365,2026-05-28T02:24:36.294849,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",36.266,Timber,0.8,,,,
+118143,2026-05-28T02:24:51.227389,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",14.928,Timber,0.8,,,,
+118246,2026-05-28T02:25:11.516656,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}
+```",20.286,Gabions,0.95,,,,
+118797,2026-05-28T02:25:30.249714,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",18.727,unable to determine,0.0,,,,
+118923,2026-05-28T02:25:41.681206,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",11.416,Gabions,0.95,,,,
+119099,2026-05-28T02:26:24.521842,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",42.839,unable to determine,0.0,,,,
+119811,2026-05-28T02:27:09.075511,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.6
+    }
+}
+```",44.53,Concrete,0.6,,,,
+119851,2026-05-28T02:27:26.585491,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.505,unable to determine,0.0,,,,
+119977,2026-05-28T02:28:02.172246,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",35.581,Timber,0.8,,,,
+121497,2026-05-28T02:28:15.744157,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",13.566,Timber,0.9,,,,
+121755,2026-05-28T02:28:40.407797,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",24.647,Timber,0.7,,,,
+122034,2026-05-28T02:28:50.739592,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    }
+}",10.326,Gabions,1.0,,,,
+121993,2026-05-28T02:29:02.722028,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    }
+}",11.981,Gabions,0.95,,,,
+122441,2026-05-28T02:29:12.258439,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}
+```",9.535,Concrete,1.0,,,,
+122444,2026-05-28T02:29:23.516935,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",11.254,Concrete,0.95,,,,
+122445,2026-05-28T02:29:34.669489,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    }
+}
+```",11.147,Concrete,1.0,,,,
+122981,2026-05-28T02:30:09.399981,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",34.729,Timber,0.85,,,,
+123161,2026-05-28T02:30:44.127590,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",34.722,unable to determine,0.0,,,,
+123309,2026-05-28T02:30:47.172846,gemma-4-26b-a4b-it,,3.04,,,True,,,
+123352,2026-05-28T02:30:50.452398,gemma-4-26b-a4b-it,,3.278,,,True,,,
+123310,2026-05-28T02:30:52.554877,gemma-4-26b-a4b-it,,2.101,,,True,,,
+123354,2026-05-28T02:31:22.202258,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",29.645,unable to determine,0.0,,,,
+123585,2026-05-28T02:31:24.341038,gemma-4-26b-a4b-it,,2.133,,,True,,,
+126178,2026-05-28T02:31:26.184226,gemma-4-26b-a4b-it,,1.841,,,True,,,
+126334,2026-05-28T02:31:28.026835,gemma-4-26b-a4b-it,,1.841,,,True,,,
+126340,2026-05-28T02:31:29.970939,gemma-4-26b-a4b-it,,1.942,,,True,,,
+126721,2026-05-28T02:31:32.025164,gemma-4-26b-a4b-it,,2.053,,,True,,,
+126709,2026-05-28T02:31:55.787529,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",23.758,Timber,0.95,,,,
+126799,2026-05-28T02:32:13.308828,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",17.518,Concrete,0.9,,,,
+126915,2026-05-28T02:32:15.438486,gemma-4-26b-a4b-it,,2.121,,,True,,,
+127136,2026-05-28T02:32:17.796400,gemma-4-26b-a4b-it,,2.334,,,True,,,
+127147,2026-05-28T02:32:19.635977,gemma-4-26b-a4b-it,,1.838,,,True,,,
+127523,2026-05-28T02:32:21.436126,gemma-4-26b-a4b-it,,1.798,,,True,,,
+128273,2026-05-28T02:32:23.428629,gemma-4-26b-a4b-it,,1.99,,,True,,,
+128830,2026-05-28T02:32:25.066324,gemma-4-26b-a4b-it,,1.636,,,True,,,
+128831,2026-05-28T02:32:51.009719,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",25.942,Timber,0.85,,,,
+129739,2026-05-28T02:33:05.936099,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",14.916,Concrete,0.95,,,,
+129491,2026-05-28T02:34:05.425307,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.5
+    }
+}
+```",59.484,Gabions,0.5,,,,
+102358,2026-05-28T02:34:22.519912,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",17.082,unable to determine,0.0,,,,

@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-fall_height_bin,gemini-3-flash-preview,Stairs,fall_height_v1,5,0.125,0.2,2026-05-27T09:06:55.011364
