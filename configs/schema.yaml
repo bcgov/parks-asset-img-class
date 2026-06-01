@@ -1,0 +1,229 @@
+# Locked output schema for the BC Parks attribute pipelines.
+#
+# This is the single source of truth used by every modelling pipeline in
+# `src/models/*` and by the leaderboard renderer.  It mirrors the matrix
+# locked in the sibling `bcparks-image-pipeline` repo, but uses the exact
+# column names that exist in `data/processed/master_dataset.csv` so the
+# config can be loaded and used directly without renaming.
+#
+# - `asset_types`: maps a stable id to the `profile_name` value as it
+#   appears in master_dataset.csv.
+# - `attributes`: per-attribute metadata, including the CSV column name,
+#   the kind of target (categorical / boolean / numeric / count / ordinal_bin),
+#   the asset types it applies to, and (for categoricals) the canonical
+#   class vocabulary plus alias mapping from raw CSV strings.
+# - `tasks`: derived tasks that are not attributes (relevance filter,
+#   asset-type classification, condition).
+#
+# This file is hand-edited.  Vocabularies may evolve as we ratify them
+# with BC Parks; the attribute set itself should only change with
+# sponsor sign-off.
+
+version: 1
+locked: true
+
+asset_types:
+  boardwalk_under_1_2m:
+    profile_name: "Boardwalk < 1.2m High"
+  boardwalk:
+    profile_name: "Boardwalk > 1.2m High"
+  trail_bridge:
+    profile_name: "Trail Bridge"
+  stairs:
+    profile_name: "Stairs"
+  viewing_platform:
+    profile_name: "Viewing Platform"
+
+attributes:
+  attr_abutment_material:
+    display_name: "Abutment Material"
+    kind: categorical
+    asset_types: [trail_bridge]
+    values: [Timber, Concrete, Steel, Gabions, Aluminum, Composite, Other]
+    aliases:
+      Timber: [Timber, Wood]
+      Concrete: [Concrete]
+      Steel: [Steel]
+      Gabions: [Gabions]
+      Aluminum: ["Aluminum Sill Fill", Aluminum]
+      Composite: [Composite]
+      Other: [Other]
+
+  attr_bridge_type:
+    display_name: "Bridge Type"
+    kind: categorical
+    asset_types: [trail_bridge]
+    values: [Beam, Truss, Suspension, "Fallen Tree", Other]
+    aliases:
+      Beam: [Beam, "Beam (Stringer)"]
+      Truss: [Truss]
+      Suspension: [Suspension, Cable]
+      "Fallen Tree": ["Fallen Tree"]
+      Other: [Other]
+
+  attr_decking_material:
+    display_name: "Decking Material"
+    kind: categorical
+    asset_types: [boardwalk_under_1_2m, boardwalk, trail_bridge, viewing_platform]
+    values: [Timber, Steel, Concrete, Aluminum, Composite, Asphalt, Other]
+    aliases:
+      Timber: [Timber, Wood]
+      Steel: [Steel, "Steel Grate", Grate]
+      Concrete: [Concrete]
+      Aluminum: [Aluminum, Aluminium]
+      Composite: [Composite, Plastic]
+      Asphalt: [Asphalt]
+      Other: [Other]
+
+  attr_fall_height:
+    display_name: "Fall Height (m)"
+    kind: numeric
+    units: m
+    bin_column: fall_height_bin
+    asset_types: [boardwalk_under_1_2m, boardwalk, stairs, trail_bridge, viewing_platform]
+
+  attr_has_edge_guard:
+    display_name: "Has Edge Guard"
+    kind: boolean
+    asset_types: [boardwalk_under_1_2m, boardwalk]
+    values: ["Yes", "No"]
+    aliases:
+      "Yes": [Yes, true, "1"]
+      "No": [No, false, "0"]
+
+  attr_has_pedestrian_railing:
+    display_name: "Has Pedestrian Railing"
+    kind: categorical
+    asset_types: [boardwalk_under_1_2m, boardwalk, stairs, trail_bridge, viewing_platform]
+    values: ["2 railings", "1 railing", "No railings"]
+    aliases:
+      "2 railings": ["2 railings", "Both sides", "Yes - both"]
+      "1 railing": ["1 railing", "One side", "Yes"]
+      "No railings": ["No railings", "No", "None"]
+
+  attr_length:
+    display_name: "Length (m)"
+    kind: numeric
+    units: m
+    bin_column: length_bin
+    measured_column: "Length measured by staff"
+    asset_types: [boardwalk_under_1_2m, boardwalk, trail_bridge, viewing_platform]
+
+  "attr_material_frame,_tank,_body":
+    display_name: "Material (Frame, Tank, Body)"
+    kind: categorical
+    asset_types: [stairs]
+    values:
+      [
+        "Timber/Wood",
+        "Box Step",
+        Concrete,
+        "Rock/Stone",
+        Steel,
+        Metal,
+        Aluminum,
+        "Earth-Filled",
+        "Natural Surface",
+        Gravel,
+        PVC,
+        Other,
+      ]
+    aliases:
+      "Timber/Wood": [Timber, Wood, "Timber/Wood"]
+      "Box Step": ["Box Step"]
+      Concrete: [Concrete]
+      "Rock/Stone": [Stone, Rock, "Rock/Stone"]
+      Steel: [Steel]
+      Metal: [Metal]
+      Aluminum: [Aluminum, Aluminium]
+      "Earth-Filled": ["Earth-Filled", Earth]
+      "Natural Surface": ["Natural Surface"]
+      Gravel: [Gravel]
+      PVC: [PVC]
+      Other: [Other]
+
+  attr_number_of_steps:
+    display_name: "Number of Steps"
+    kind: count
+    bin_column: steps_bin
+    asset_types: [stairs]
+
+  attr_structure_material:
+    display_name: "Structure Material"
+    kind: categorical
+    asset_types: [stairs, trail_bridge, viewing_platform]
+    values: [Timber, Steel, Aluminum, Concrete, Stone, Composite, Other]
+    aliases:
+      Timber: [Timber, Wood]
+      Steel: [Steel, Metal]
+      Aluminum: [Aluminum, Aluminium]
+      Concrete: [Concrete]
+      Stone: [Stone, Rock]
+      Composite: [Composite]
+      Other: [Other]
+
+  attr_structure_position:
+    display_name: "Structure Position"
+    kind: categorical
+    asset_types: [stairs, trail_bridge]
+    values: ["At-Grade", Elevated, Other]
+    aliases:
+      "At-Grade": ["At-Grade", "At Grade", "on the ground"]
+      Elevated: [Elevated, "off the ground"]
+      Other: [Other]
+
+  attr_width:
+    display_name: "Width (m)"
+    kind: numeric
+    units: m
+    bin_column: width_bin
+    asset_types: [boardwalk_under_1_2m, boardwalk, trail_bridge, viewing_platform]
+
+# Ordinal bin vocabularies as they currently appear in master_dataset.csv.
+# Each bin column has multiple parallel binnings depending on which subset
+# the row came from (e.g. boardwalks vs trail bridges); we keep the raw
+# strings here and only canonicalise when a pipeline explicitly opts in.
+ordinal_bins:
+  length_bin:
+    values:
+      - "short (<5m)"
+      - "short (<6m)"
+      - "short (<10m)"
+      - "short (<20m)"
+      - "medium (6-20m)"
+      - "medium (10-30m)"
+      - "medium (20-100m)"
+      - "long (>20m)"
+      - "long (>100m)"
+  width_bin:
+    values:
+      - "narrow (<0.8m)"
+      - "narrow (<0.9m)"
+      - "narrow (<3m)"
+      - "standard (>=0.8m)"
+      - "standard (0.9-1.5m)"
+      - "medium (3-7m)"
+      - "wide (>1.5m)"
+      - "wide (>7m)"
+  fall_height_bin:
+    values:
+      - "low (<0.5m)"
+      - "low (<1.2m)"
+      - "medium (0.5-1.2m)"
+      - "medium (1.2-5m)"
+      - "medium (1.2-15m)"
+      - "high (>1.2m)"
+      - "high (>5m)"
+      - "high (>15m)"
+  steps_bin:
+    values: ["few (<10)", "medium (10-20)", "many (>20)"]
+
+tasks:
+  T1_relevance:
+    display_name: "Relevance filter"
+    kind: boolean
+    description: "true if the image is a usable full-asset shot; false if close-up / off-asset / blurred."
+  T2_asset_type:
+    display_name: "Asset type classification"
+    kind: categorical
+    classes: [trail_bridge, boardwalk_under_1_2m, boardwalk, stairs, viewing_platform]
