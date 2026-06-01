@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_decking_material,attr_decking_material,data/processed/train/attr_decking_material_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_linear_svm,linear_svm,GroupKFold,5,1774,1774,768,0.93911673430413,0.01941534254190718,0.9444861699482846,0.01769526041469594,0.3655075965989184,0.06610322302835708

@@ -16,6 +16,9 @@ To include decking material too:
 
 To only write local CSVs and skip DagsHub/MLflow:
     python scripts/run_dinov3_remaining_attributes.py --no-mlflow
+
+To run Linear SVM instead of logistic regression:
+    python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
 """
 
 from __future__ import annotations
@@ -94,6 +97,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device", default=None)
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--classifier",
+        choices=["logistic_regression", "linear_svm"],
+        default="logistic_regression",
+        help="Classifier to train on frozen DINOv3 embeddings.",
+    )
     parser.add_argument("--data-version", default="processed-train")
     parser.add_argument("--experiment-name", default=None)
     parser.add_argument(
@@ -212,8 +221,10 @@ def main() -> int:
             str(args.folds),
             "--seed",
             str(args.seed),
+            "--classifier",
+            args.classifier,
             "--model-name",
-            f"{args.model}_logistic_regression",
+            f"{args.model}_{args.classifier}",
             "--data-version",
             args.data_version,
         ]
@@ -229,4 +240,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
