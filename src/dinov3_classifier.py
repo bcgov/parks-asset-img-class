@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold, StratifiedGroupKFold
 from sklearn.pipeline import make_pipeline
@@ -15,20 +16,39 @@ from src.baseline import first_mode, infer_target_column
 from src.dinov3_features import feature_columns
 
 
-def make_classifier(random_state: int = 42) -> object:
-    """Return the first classifier used for DINOv3 experiments.
+CLASSIFIER_CHOICES = ("logistic_regression", "linear_svm")
 
-    Logistic regression is deliberately boring here: the signal should come
-    from DINOv3 embeddings, and a simple linear classifier is easy to compare
-    against the majority-class baseline.
-    """
-    return make_pipeline(
-        StandardScaler(),
-        LogisticRegression(
-            max_iter=2000,
-            class_weight="balanced",
-            random_state=random_state,
-        ),
+
+def make_classifier(
+    classifier: str = "logistic_regression",
+    random_state: int = 42,
+) -> object:
+    """Return a small classifier for frozen DINOv3 embeddings."""
+    if classifier == "logistic_regression":
+        return make_pipeline(
+            StandardScaler(),
+            LogisticRegression(
+                max_iter=2000,
+                class_weight="balanced",
+                random_state=random_state,
+            ),
+        )
+
+    if classifier == "linear_svm":
+        return make_pipeline(
+            StandardScaler(),
+            SGDClassifier(
+                loss="hinge",
+                alpha=0.0001,
+                class_weight="balanced",
+                random_state=random_state,
+                max_iter=2000,
+                tol=1e-3,
+            ),
+        )
+
+    raise ValueError(
+        f"Unknown classifier {classifier!r}. Expected one of {CLASSIFIER_CHOICES}."
     )
 
 
@@ -88,6 +108,7 @@ def cross_validate_dinov3_classifier(
     n_splits: int = 5,
     random_state: int = 42,
     group_column: str = "asset_id",
+    classifier: str = "logistic_regression",
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Evaluate DINOv3 embeddings with grouped cross-validation."""
     joined, target_column, features = join_labels_and_features(
@@ -125,7 +146,7 @@ def cross_validate_dinov3_classifier(
                 f"Asset leakage in {target} fold {fold}: {sorted(overlap)[:5]}"
             )
 
-        model = make_classifier(random_state=random_state)
+        model = make_classifier(classifier=classifier, random_state=random_state)
         model.fit(X.iloc[train_idx], y.iloc[train_idx])
         predictions = model.predict(X.iloc[valid_idx])
         y_valid = y.iloc[valid_idx]
@@ -137,7 +158,8 @@ def cross_validate_dinov3_classifier(
                 "target_file": target_file,
                 "feature_file": feature_file,
                 "task_type": "classification",
-                "strategy": "dinov3_frozen_embeddings_logistic_regression",
+                "strategy": f"dinov3_frozen_embeddings_{classifier}",
+                "classifier": classifier,
                 "splitter": splitter_name,
                 "fold": fold,
                 "n_folds": target_splits,
@@ -169,6 +191,7 @@ def summarize_dinov3_folds(fold_results: pd.DataFrame) -> pd.DataFrame:
         "feature_file",
         "task_type",
         "strategy",
+        "classifier",
         "splitter",
     ]
     rows: list[dict[str, object]] = []
@@ -200,6 +223,7 @@ def run_task_from_files(
     target: str,
     n_splits: int = 5,
     random_state: int = 42,
+    classifier: str = "logistic_regression",
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Read files and run one DINOv3 classification task."""
     labels = pd.read_csv(labels_path)
@@ -212,14 +236,15 @@ def run_task_from_files(
         feature_file=str(features_path),
         n_splits=n_splits,
         random_state=random_state,
+        classifier=classifier,
     )
 
 
 __all__ = [
+    "CLASSIFIER_CHOICES",
     "cross_validate_dinov3_classifier",
     "join_labels_and_features",
     "make_classifier",
     "run_task_from_files",
     "summarize_dinov3_folds",
 ]
-

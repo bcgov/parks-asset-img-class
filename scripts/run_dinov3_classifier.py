@@ -4,7 +4,8 @@ Example:
     python scripts/run_dinov3_classifier.py \
         --labels data/processed/train/attr_decking_material_train.csv \
         --features data/features/dinov3_vitb16_attr_decking_material_assets.csv \
-        --target attr_decking_material
+        --target attr_decking_material \
+        --classifier logistic_regression
 
 To only write local CSVs:
     python scripts/run_dinov3_classifier.py ... --no-mlflow
@@ -20,7 +21,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.dinov3_classifier import run_task_from_files  # noqa: E402
+from src.dinov3_classifier import CLASSIFIER_CHOICES, run_task_from_files  # noqa: E402
 
 
 METRIC_COLUMNS = [
@@ -41,6 +42,7 @@ PARAM_COLUMNS = [
     "n_labels",
     "n_assets",
     "n_features",
+    "classifier",
 ]
 
 
@@ -55,9 +57,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
+        "--classifier",
+        choices=CLASSIFIER_CHOICES,
+        default="logistic_regression",
+        help="Classifier to train on frozen DINOv3 embeddings.",
+    )
+    parser.add_argument(
         "--model-name",
-        default="dinov3_vitb16_logistic_regression",
-        help="Model name/tag to use in MLflow.",
+        default=None,
+        help="Model name/tag to use in MLflow. Defaults to dinov3_vitb16_<classifier>.",
     )
     parser.add_argument(
         "--data-version",
@@ -161,24 +169,27 @@ def main() -> int:
         target=args.target,
         n_splits=args.folds,
         random_state=args.seed,
+        classifier=args.classifier,
     )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = args.output_dir / f"dinov3_{args.target}_classification_results.csv"
-    folds_path = args.output_dir / f"dinov3_{args.target}_classification_cv_folds.csv"
+    suffix = "" if args.classifier == "logistic_regression" else f"_{args.classifier}"
+    summary_path = args.output_dir / f"dinov3_{args.target}{suffix}_classification_results.csv"
+    folds_path = args.output_dir / f"dinov3_{args.target}{suffix}_classification_cv_folds.csv"
     summary.to_csv(summary_path, index=False)
     folds.to_csv(folds_path, index=False)
 
     print(f"Wrote {len(summary)} summary rows to {summary_path}")
     print(f"Wrote {len(folds)} fold rows to {folds_path}")
     if not args.no_mlflow:
+        model_name = args.model_name or f"dinov3_vitb16_{args.classifier}"
         log_results_to_mlflow(
             summary_path=summary_path,
             folds_path=folds_path,
             labels_path=args.labels,
             features_path=args.features,
             target=args.target,
-            model_name=args.model_name,
+            model_name=model_name,
             n_splits=args.folds,
             random_state=args.seed,
             data_version=args.data_version,

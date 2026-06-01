@@ -153,6 +153,16 @@ If you only want local CSV files, add:
 --no-mlflow
 ```
 
+To try Linear SVM on the same DINOv3 features:
+
+```bash
+python scripts/run_dinov3_classifier.py \
+  --labels data/processed/train/attr_decking_material_train.csv \
+  --features data/features/dinov3_vitb16_attr_decking_material_assets.csv \
+  --target attr_decking_material \
+  --classifier linear_svm
+```
+
 Expected outputs:
 
 ```text
@@ -193,6 +203,12 @@ It logs each classifier run to DagsHub/MLflow by default. To skip logging:
 
 ```bash
 python scripts/run_dinov3_remaining_attributes.py --no-mlflow
+```
+
+To run the remaining attributes with Linear SVM:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
 ```
 
 To rerun feature extraction even if the shared feature file exists:
@@ -250,6 +266,14 @@ Run it after DINOv3 classifiers finish:
 
 ```bash
 python scripts/compare_dinov3_to_baseline.py
+```
+
+For Linear SVM results:
+
+```bash
+python scripts/compare_dinov3_to_baseline.py \
+  --dinov3-glob 'results/dinov3_*_linear_svm_classification_results.csv' \
+  --output results/dinov3_linear_svm_vs_baseline_comparison.csv
 ```
 
 ```text

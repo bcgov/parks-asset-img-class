@@ -2,6 +2,9 @@
 
 Usage:
     python scripts/compare_dinov3_to_baseline.py
+    python scripts/compare_dinov3_to_baseline.py \
+        --dinov3-glob 'results/dinov3_*_linear_svm_classification_results.csv' \
+        --output results/dinov3_linear_svm_vs_baseline_comparison.csv
 
 This reads:
     results/baseline_classification_results.csv
@@ -43,6 +46,11 @@ def parse_args() -> argparse.Namespace:
         default=Path("results/dinov3_vs_baseline_comparison.csv"),
         help="Output comparison CSV.",
     )
+    parser.add_argument(
+        "--include-missing",
+        action="store_true",
+        help="Include attributes missing from either baseline or DINOv3 results.",
+    )
     return parser.parse_args()
 
 
@@ -65,7 +73,12 @@ def read_dinov3_results(pattern: str) -> pd.DataFrame:
     return pd.concat(frames, ignore_index=True)
 
 
-def make_comparison(baseline: pd.DataFrame, dinov3: pd.DataFrame) -> pd.DataFrame:
+def make_comparison(
+    baseline: pd.DataFrame,
+    dinov3: pd.DataFrame,
+    *,
+    include_missing: bool = False,
+) -> pd.DataFrame:
     baseline_cols = [
         "attribute",
         "prediction",
@@ -86,7 +99,7 @@ def make_comparison(baseline: pd.DataFrame, dinov3: pd.DataFrame) -> pd.DataFram
     comparison = baseline[baseline_cols].merge(
         dinov3[dinov3_cols],
         on="attribute",
-        how="outer",
+        how="outer" if include_missing else "inner",
         suffixes=("_baseline", "_dinov3"),
         indicator=True,
     )
@@ -126,7 +139,11 @@ def main() -> int:
     args = parse_args()
     baseline = pd.read_csv(args.baseline)
     dinov3 = read_dinov3_results(args.dinov3_glob)
-    comparison = make_comparison(baseline, dinov3)
+    comparison = make_comparison(
+        baseline,
+        dinov3,
+        include_missing=args.include_missing,
+    )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     comparison.to_csv(args.output, index=False)
@@ -148,4 +165,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

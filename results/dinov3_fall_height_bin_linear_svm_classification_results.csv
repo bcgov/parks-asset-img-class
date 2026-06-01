@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_linear_svm,linear_svm,GroupKFold,5,122,122,768,0.516,0.12254976313499935,0.5160762385762385,0.12036247823440213,0.36652983920841065,0.0762421627959773
