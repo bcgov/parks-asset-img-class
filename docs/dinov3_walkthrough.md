@@ -136,6 +136,23 @@ python scripts/run_dinov3_classifier.py \
   --target attr_decking_material
 ```
 
+This step logs to DagsHub/MLflow by default. The run stores the summary metrics,
+fold-level CSV artifact, and standard tags:
+
+```text
+task = attr_decking_material
+model_family = dinov3
+model_name = dinov3_vitb16_logistic_regression
+data_version = processed-train
+split_seed = 42
+```
+
+If you only want local CSV files, add:
+
+```bash
+--no-mlflow
+```
+
 Expected outputs:
 
 ```text
@@ -148,7 +165,49 @@ baseline leakage-prevention strategy.
 
 ## Reusing for Other Attributes
 
-Once `attr_decking_material` works, repeat the same pattern for another target:
+Once `attr_decking_material` works, use the batch runner for the remaining
+11 attributes:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py
+```
+
+The batch runner extracts one shared feature file from the union of the
+remaining attributes, then runs the classifier for each target in this order:
+
+```text
+attr_abutment_material
+attr_bridge_type
+attr_has_edge_guard
+attr_has_pedestrian_railing
+attr_material_frame_tank_body
+attr_structure_material
+attr_structure_position
+fall_height_bin
+length_bin
+steps_bin
+width_bin
+```
+
+It logs each classifier run to DagsHub/MLflow by default. To skip logging:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --no-mlflow
+```
+
+To rerun feature extraction even if the shared feature file exists:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --force-extract
+```
+
+To run all 12 baseline targets, including `attr_decking_material`:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --include-decking
+```
+
+You can also repeat the original two-step pattern manually for one target:
 
 ```bash
 python scripts/extract_dinov3_features.py \
@@ -165,6 +224,10 @@ python scripts/run_dinov3_classifier.py \
   --target attr_bridge_type
 ```
 
+To log a result that was already generated before MLflow logging was added,
+rerun only the classifier step. You do not need to rerun DINOv3 feature
+extraction if the asset feature CSV already exists.
+
 Recommended next attributes:
 
 ```text
@@ -175,6 +238,19 @@ steps_bin
 ```
 
 ## What Each File Does
+
+```text
+scripts/compare_dinov3_to_baseline.py
+```
+
+Command-line script for joining baseline and DINOv3 result summaries by
+attribute and writing `results/dinov3_vs_baseline_comparison.csv`.
+
+Run it after DINOv3 classifiers finish:
+
+```bash
+python scripts/compare_dinov3_to_baseline.py
+```
 
 ```text
 src/dinov3_features.py

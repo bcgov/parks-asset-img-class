@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_has_edge_guard,attr_has_edge_guard,data/processed/train/attr_has_edge_guard_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,StratifiedGroupKFold,5,1616,1616,768,0.9077858043802316,0.013399790602943829,0.911791982521508,0.011533776640953545,0.7037730809320959,0.03473237979651596
