@@ -5,6 +5,9 @@ Example:
         --labels data/processed/train/attr_decking_material_train.csv \
         --features data/features/dinov3_vitb16_attr_decking_material_assets.csv \
         --target attr_decking_material
+
+To only write local CSVs:
+    python scripts/run_dinov3_classifier.py ... --no-mlflow
 """
 
 from __future__ import annotations
@@ -20,6 +23,27 @@ if str(REPO_ROOT) not in sys.path:
 from src.dinov3_classifier import run_task_from_files  # noqa: E402
 
 
+METRIC_COLUMNS = [
+    "accuracy_mean",
+    "accuracy_std",
+    "weighted_f1_mean",
+    "weighted_f1_std",
+    "macro_f1_mean",
+    "macro_f1_std",
+]
+
+PARAM_COLUMNS = [
+    "target_column",
+    "target_file",
+    "feature_file",
+    "splitter",
+    "n_folds",
+    "n_labels",
+    "n_assets",
+    "n_features",
+]
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Evaluate frozen DINOv3 embeddings with grouped CV."
@@ -30,7 +54,103 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("results"))
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--model-name",
+        default="dinov3_vitb16_logistic_regression",
+        help="Model name/tag to use in MLflow.",
+    )
+    parser.add_argument(
+        "--data-version",
+        default="processed-train",
+        help="Data version tag to attach to MLflow runs.",
+    )
+    parser.add_argument(
+        "--experiment-name",
+        default=None,
+        help="MLflow experiment name. Defaults to the project standard.",
+    )
+    parser.add_argument(
+        "--no-mlflow",
+        action="store_true",
+        help="Skip MLflow/DagsHub logging and only write result CSVs.",
+    )
     return parser.parse_args()
+
+
+def log_results_to_mlflow(
+    *,
+    summary_path: Path,
+    folds_path: Path,
+    labels_path: Path,
+    features_path: Path,
+    target: str,
+    model_name: str,
+    n_splits: int,
+    random_state: int,
+    data_version: str,
+    experiment_name: str | None,
+) -> None:
+    """Log one DINOv3 classifier run to DagsHub/MLflow."""
+    try:
+        import dagshub
+        import mlflow
+        import pandas as pd
+
+        from src.mlflow_utils import make_run_name, make_standard_tags, setup_mlflow
+    except ModuleNotFoundError as exc:
+        raise SystemExit(
+            "MLflow/DagsHub logging dependencies are missing. Install the project "
+            "environment or rerun with --no-mlflow."
+        ) from exc
+
+    dagshub.init(repo_owner="sgauth01", repo_name="parks-asset-img-class", mlflow=True)
+
+    setup_kwargs = {}
+    if experiment_name is not None:
+        setup_kwargs["experiment_name"] = experiment_name
+    setup_mlflow(**setup_kwargs)
+
+    summary = pd.read_csv(summary_path)
+    if summary.empty:
+        print("Skipping MLflow logging because the DINOv3 summary is empty.")
+        return
+
+    row = summary.iloc[0]
+    tags = make_standard_tags(
+        task=target,
+        model_family="dinov3",
+        model_name=model_name,
+        data_version=data_version,
+        split_seed=random_state,
+        extra={"cv_group": "asset_id"},
+    )
+
+    with mlflow.start_run(
+        run_name=make_run_name(target, model_name),
+        tags=tags,
+    ):
+        mlflow.log_params(
+            {
+                "labels_path": str(labels_path),
+                "features_path": str(features_path),
+                "output_summary_path": str(summary_path),
+                "output_folds_path": str(folds_path),
+                "n_splits_requested": n_splits,
+                "random_state": random_state,
+            }
+        )
+        mlflow.log_params(
+            {column: row[column] for column in PARAM_COLUMNS if column in row.index}
+        )
+        mlflow.log_metrics(
+            {
+                column: float(row[column])
+                for column in METRIC_COLUMNS
+                if column in row.index
+            }
+        )
+        mlflow.log_artifact(str(summary_path), artifact_path="results")
+        mlflow.log_artifact(str(folds_path), artifact_path="results")
 
 
 def main() -> int:
@@ -51,9 +171,22 @@ def main() -> int:
 
     print(f"Wrote {len(summary)} summary rows to {summary_path}")
     print(f"Wrote {len(folds)} fold rows to {folds_path}")
+    if not args.no_mlflow:
+        log_results_to_mlflow(
+            summary_path=summary_path,
+            folds_path=folds_path,
+            labels_path=args.labels,
+            features_path=args.features,
+            target=args.target,
+            model_name=args.model_name,
+            n_splits=args.folds,
+            random_state=args.seed,
+            data_version=args.data_version,
+            experiment_name=args.experiment_name,
+        )
+        print("Logged DINOv3 classifier results to MLflow/DagsHub")
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

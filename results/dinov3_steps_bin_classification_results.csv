@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+steps_bin,steps_bin,data/processed/train/steps_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,GroupKFold,5,29,29,768,0.44666666666666666,0.06863753427324668,0.44387301587301586,0.09717654774219421,0.4193650793650793,0.12265805615709403
