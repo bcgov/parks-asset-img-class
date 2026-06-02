@@ -127,6 +127,48 @@ Run the unit tests:
 pytest -q tests/test_mlflow_utils.py
 ```
 
+## Vision Language Models (VLMs)
+
+This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
+VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
+
+Supported models include:
+
+- **Google AI Studio Models** (`gemini-3-flash-preview`, `gemma-4-26b-a4b-it` and `gemini-3.1-flash-lite`)
+- **OpenAI Models**: (`gpt-4o`)
+- **GitHub Models**: (`Phi-4-multimodal-instruct` and `Llama-3.2-11B-Vision-Instruct`)
+
+### Quick Start
+
+1. Set up API keys in `.env` file:
+
+```bash
+GEMINI_API_KEY="your-key-here"
+GITHUB_TOKEN="your-token-here"
+```
+
+2. Run batch predictions:
+
+```bash
+python scripts/run_vlm_predictor.py \
+  --input data/processed/train/train_only_stairs.csv \
+  --output results/vlm_stairs_gemini.csv \
+  --model gemini-3-flash-preview \
+  --prompt stairs_v1
+```
+
+3. Evaluate predictions against ground truth:
+
+```bash
+python scripts/evaluate_predictions.py \
+  --predictions results/vlm_stairs_gemini.csv \
+  --ground_truth_dir data/processed/train \
+  --attributes attr_number_of_steps \
+  --model gemini-3-flash-preview
+```
+
+For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see `docs/vlm_walkthrough.md`.
+
 ## Current status
 
 This project is in an early exploratory stage. The report currently describes the project motivation, research question, dataset assumptions, data challenges, and a proposed modelling approach. The notebook directory is available for exploration work as the project develops.
