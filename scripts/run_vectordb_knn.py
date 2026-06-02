@@ -13,6 +13,8 @@ import argparse
 import os
 import sys
 from pathlib import Path
+import pandas as pd
+import numpy as np
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 
@@ -20,17 +22,50 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.data.splits import DEFAULT_SPLIT_SEED, load_split  # noqa: E402
-from src.embed import DEFAULT_DINOV3_MODEL, load_features  # noqa: E402
-from src.models import run_pipeline  # noqa: E402
-from src.models.vectordb_knn import DEFAULT_K, predict  # noqa: E402
+from src.data.splits import DEFAULT_SPLIT_SEED, load_split
+from src.embed import DEFAULT_DINOV3_MODEL, FeatureCache, load_features
+from src.models import run_pipeline
+from src.models.vectordb_knn import DEFAULT_K, predict
 
+def load_features_from_csvs(features_dir: Path, model: str) -> FeatureCache:
+    """Build a FeatureCache from per-attribute dinov3_attr_*_images.csv files."""
+    csv_files = sorted(features_dir.glob("dinov3_attr_*_images.csv"))
+    if not csv_files:
+        raise FileNotFoundError(
+            f"No dinov3_attr_*_images.csv files found in {features_dir}. "
+            "Run extract_dinov3_features.py first."
+        )
+
+    print(f"Loading {len(csv_files)} per-attribute CSV(s) from {features_dir}...")
+    parts = [pd.read_csv(f) for f in csv_files]
+    combined = pd.concat(parts, ignore_index=True).drop_duplicates(subset="image_path")
+
+    feat_cols = [c for c in combined.columns if c.startswith("feat_")]
+    if not feat_cols:
+        raise ValueError(
+            "No feat_* columns found in CSVs. "
+            "Check that extract_dinov3_features.py produced embeddings correctly."
+        )
+
+    embeddings = combined[feat_cols].values.astype(np.float32)
+    meta = combined.drop(columns=feat_cols)
+    dim = embeddings.shape[1]
+
+    print(f"  {len(combined)} unique images, embedding dim={dim}")
+    return FeatureCache(df=meta, embeddings=embeddings, dim=dim, model_id=model)
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--model", default=DEFAULT_DINOV3_MODEL)
     p.add_argument("--features-dir", type=Path, default=Path("data/features"))
     p.add_argument("--feature-suffix", default="")
+    p.add_argument(
+        "--features-source",
+        choices=["parquet", "csv"],
+        default="parquet",
+        help="'parquet' loads the cache built by build_features.py (default); "
+             "'csv' loads per-attribute CSVs from extract_dinov3_features.py.",
+    )
     p.add_argument("--k", type=int, default=DEFAULT_K)
     p.add_argument("--data-dir", type=Path, default=Path("data/processed"))
     p.add_argument("--data-version", default="processed-main")
@@ -48,7 +83,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    cache = load_features(args.model, out_dir=args.features_dir, suffix=args.feature_suffix)
+
+    if args.features_source == "csv":
+        cache = load_features_from_csvs(args.features_dir, model=args.model)
+    else:
+        cache = load_features(args.model, out_dir=args.features_dir, suffix=args.feature_suffix)
+
     train_df, test_df = load_split(processed_dir=args.data_dir, split_seed=args.split_seed)
     print(
         f"Loaded {len(cache.df)}-image feature cache (dim={cache.dim}); "
@@ -74,7 +114,7 @@ def main() -> int:
         log_to_mlflow=not args.no_mlflow,
         predictions_dir=args.predictions_dir,
         produce_train_predictions=args.predict_train,
-        train_prediction_mode="oof",
+        prediction_mode="oof",
         train_n_folds=args.train_n_folds,
     )
 

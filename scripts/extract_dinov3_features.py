@@ -1,10 +1,16 @@
 """Extract frozen DINOv3 features for project images.
 
-First experiment:
+Single attribute:
     python scripts/extract_dinov3_features.py \
         --input data/processed/train/attr_decking_material_train.csv \
         --output data/features/dinov3_vitb16_attr_decking_material_images.csv \
         --asset-output data/features/dinov3_vitb16_attr_decking_material_assets.csv \
+        --model dinov3_vitb16
+
+All attributes in a directory:
+    python scripts/extract_dinov3_features.py \
+        --input-dir data/processed/train \
+        --output-dir data/features \
         --model dinov3_vitb16
 
 If the machine cannot download from torch.hub, clone the official DINOv3 repo
@@ -35,10 +41,17 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Extract DINOv3 image embeddings and aggregate them by asset_id."
     )
-    parser.add_argument("--input", type=Path, required=True, help="CSV with asset_id and image_path columns.")
-    parser.add_argument("--output", type=Path, required=True, help="Image-level feature CSV.")
-    parser.add_argument("--asset-output", type=Path, required=True, help="Asset-level averaged feature CSV.")
-    parser.add_argument("--skipped-output", type=Path, default=None, help="Optional CSV for missing/unreadable images.")
+    # --- input: one of --input or --input-dir ---
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument("--input", type=Path, help="Single CSV with asset_id and image_path columns.")
+    input_group.add_argument("--input-dir", type=Path, help="Directory of attr_*.csv files to process in bulk.")
+
+    # --- output: per-file flags (single mode) or a directory (bulk mode) ---
+    parser.add_argument("--output", type=Path, default=None, help="Image-level feature CSV (single mode).")
+    parser.add_argument("--asset-output", type=Path, default=None, help="Asset-level averaged feature CSV (single mode).")
+    parser.add_argument("--output-dir", type=Path, default=None, help="Output directory for bulk mode.")
+    parser.add_argument("--skipped-output", type=Path, default=None, help="Optional CSV for missing/unreadable images (single mode).")
+
     parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
     parser.add_argument("--model", default=DEFAULT_DINOV3_MODEL)
     parser.add_argument("--model-source", default="facebookresearch/dinov3")
@@ -53,9 +66,27 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> int:
-    args = parse_args()
-    rows = pd.read_csv(args.input)
+def get_output_paths(input_path: Path, output_dir: Path) -> tuple[Path, Path, Path]:
+    """Derive image, asset, and skipped output paths from an input CSV filename."""
+    stem = input_path.stem  # e.g. attr_decking_material_train
+    return (
+        output_dir / f"dinov3_{stem}_images.csv",
+        output_dir / f"dinov3_{stem}_assets.csv",
+        output_dir / f"dinov3_{stem}_skipped.csv",
+    )
+
+def process_one(
+    input_path: Path,
+    output_path: Path,
+    asset_output_path: Path,
+    skipped_output_path: Path,
+    args: argparse.Namespace,
+) -> None:
+    print(f"\n{'='*60}")
+    print(f"Processing: {input_path.name}")
+    print(f"{'='*60}")
+
+    rows = pd.read_csv(input_path)
     if args.limit_assets is not None:
         keep_assets = rows["asset_id"].drop_duplicates().head(args.limit_assets)
         rows = rows[rows["asset_id"].isin(keep_assets)]
@@ -71,23 +102,53 @@ def main() -> int:
         repo_root=REPO_ROOT,
     )
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.asset_output.parent.mkdir(parents=True, exist_ok=True)
-    features.to_csv(args.output, index=False)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    asset_output_path.parent.mkdir(parents=True, exist_ok=True)
+    features.to_csv(output_path, index=False)
 
     if features.empty:
-        print("No image features were extracted. Check --image-root and image availability.")
+        print("No image features extracted. Check --image-root and image availability.")
     else:
         asset_features = aggregate_asset_features(features)
-        asset_features.to_csv(args.asset_output, index=False)
-        print(f"Wrote {len(features)} image feature rows to {args.output}")
-        print(f"Wrote {len(asset_features)} asset feature rows to {args.asset_output}")
+        asset_features.to_csv(asset_output_path, index=False)
+        print(f"  Wrote {len(features)} image rows  → {output_path}")
+        print(f"  Wrote {len(asset_features)} asset rows → {asset_output_path}")
 
-    skipped_path = args.skipped_output or args.output.with_name(f"{args.output.stem}_skipped.csv")
     if not skipped.empty:
-        skipped_path.parent.mkdir(parents=True, exist_ok=True)
-        skipped.to_csv(skipped_path, index=False)
-        print(f"Wrote {len(skipped)} skipped image rows to {skipped_path}")
+        skipped_output_path.parent.mkdir(parents=True, exist_ok=True)
+        skipped.to_csv(skipped_output_path, index=False)
+        print(f"  Wrote {len(skipped)} skipped rows → {skipped_output_path}")
+
+
+def main() -> int:
+    args = parse_args()
+
+    if args.input_dir:
+        # --- bulk mode ---
+        if args.output_dir is None:
+            print("Error: --output-dir is required when using --input-dir.")
+            return 1
+
+        csv_files = sorted(args.input_dir.glob("attr_*.csv"))
+        if not csv_files:
+            print(f"No attr_*.csv files found in {args.input_dir}")
+            return 1
+
+        print(f"Found {len(csv_files)} attribute CSV(s) in {args.input_dir}")
+        for csv_path in csv_files:
+            img_out, asset_out, skipped_out = get_output_paths(csv_path, args.output_dir)
+            process_one(csv_path, img_out, asset_out, skipped_out, args)
+
+        print(f"\nDone. Processed {len(csv_files)} attribute file(s).")
+
+    else:
+        # --- single attribute mode ---
+        if args.output is None or args.asset_output is None:
+            print("Error: --output and --asset-output are required when using --input.")
+            return 1
+
+        skipped_path = args.skipped_output or args.output.with_name(f"{args.output.stem}_skipped.csv")
+        process_one(args.input, args.output, args.asset_output, skipped_path, args)
 
     return 0
 
