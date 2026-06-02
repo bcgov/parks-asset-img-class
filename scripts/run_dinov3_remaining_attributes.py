@@ -19,6 +19,12 @@ To only write local CSVs and skip DagsHub/MLflow:
 
 To run Linear SVM instead of logistic regression:
     python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
+
+To run Random Forest:
+    python scripts/run_dinov3_remaining_attributes.py --classifier random_forest
+
+To run histogram-based gradient boosting:
+    python scripts/run_dinov3_remaining_attributes.py --classifier hist_gradient_boosting
 """
 
 from __future__ import annotations
@@ -99,7 +105,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--classifier",
-        choices=["logistic_regression", "linear_svm"],
+        choices=[
+            "logistic_regression",
+            "linear_svm",
+            "random_forest",
+            "hist_gradient_boosting",
+        ],
         default="logistic_regression",
         help="Classifier to train on frozen DINOv3 embeddings.",
     )

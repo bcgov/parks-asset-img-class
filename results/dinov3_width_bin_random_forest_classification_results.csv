@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+width_bin,width_bin,data/processed/train/width_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_random_forest,random_forest,GroupKFold,5,1630,1630,768,0.6509202453987729,0.026416012443694462,0.5766022215662356,0.03111032499476659,0.2313045300328529,0.04607820431892654
