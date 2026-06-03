@@ -5,6 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score, f1_score
@@ -16,7 +18,12 @@ from src.baseline import first_mode, infer_target_column
 from src.dinov3_features import feature_columns
 
 
-CLASSIFIER_CHOICES = ("logistic_regression", "linear_svm")
+CLASSIFIER_CHOICES = (
+    "logistic_regression",
+    "linear_svm",
+    "random_forest",
+    "hist_gradient_boosting",
+)
 
 
 def make_classifier(
@@ -45,6 +52,24 @@ def make_classifier(
                 max_iter=2000,
                 tol=1e-3,
             ),
+        )
+
+    if classifier == "random_forest":
+        return RandomForestClassifier(
+            n_estimators=300,
+            class_weight="balanced_subsample",
+            random_state=random_state,
+            n_jobs=-1,
+        )
+
+    if classifier == "hist_gradient_boosting":
+        return HistGradientBoostingClassifier(
+            learning_rate=0.05,
+            max_iter=200,
+            max_leaf_nodes=31,
+            l2_regularization=0.01,
+            class_weight="balanced",
+            random_state=random_state,
         )
 
     raise ValueError(

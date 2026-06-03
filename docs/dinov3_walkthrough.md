@@ -211,6 +211,18 @@ To run the remaining attributes with Linear SVM:
 python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
 ```
 
+To run the remaining attributes with Random Forest:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --classifier random_forest
+```
+
+To run the remaining attributes with histogram-based gradient boosting:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --classifier hist_gradient_boosting
+```
+
 To rerun feature extraction even if the shared feature file exists:
 
 ```bash
@@ -274,6 +286,22 @@ For Linear SVM results:
 python scripts/compare_dinov3_to_baseline.py \
   --dinov3-glob 'results/dinov3_*_linear_svm_classification_results.csv' \
   --output results/dinov3_linear_svm_vs_baseline_comparison.csv
+```
+
+For Random Forest results:
+
+```bash
+python scripts/compare_dinov3_to_baseline.py \
+  --dinov3-glob 'results/dinov3_*_random_forest_classification_results.csv' \
+  --output results/dinov3_random_forest_vs_baseline_comparison.csv
+```
+
+For histogram-based gradient boosting results:
+
+```bash
+python scripts/compare_dinov3_to_baseline.py \
+  --dinov3-glob 'results/dinov3_*_hist_gradient_boosting_classification_results.csv' \
+  --output results/dinov3_hist_gradient_boosting_vs_baseline_comparison.csv
 ```
 
 ```text
