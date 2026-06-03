@@ -1,5 +1,10 @@
-"""Run grouped majority-class baselines from processed train CSVs.
-
+"""Run all three baseline strategies from processed train CSVs.
+ 
+Strategies:
+    - majority_class_group_cv   : always predict the most common training label
+    - uniform_random_group_cv   : predict a label uniformly at random
+    - stratified_random_group_cv: predict a label weighted by training frequency
+ 
 Usage:
     python scripts/run_baseline.py
     python scripts/run_baseline.py --no-mlflow
@@ -42,10 +47,16 @@ PARAM_COLUMNS = [
     "prediction",
 ]
 
+STRATEGIES = [
+    "majority_class_group_cv",
+    "uniform_random_group_cv",
+    "stratified_random_group_cv",
+]
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run grouped majority-class cross-validation baselines."
+        description="Run all three grouped baseline strategies."
     )
     parser.add_argument(
         "--train-dir",
@@ -56,7 +67,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("results"),
+        default=Path("results/baseline_results"),
         help="Directory where baseline CSV outputs are written.",
     )
     parser.add_argument("--folds", type=int, default=5, help="Maximum CV folds.")
@@ -77,8 +88,8 @@ def parse_args() -> argparse.Namespace:
         help="Skip MLflow logging and only write result CSVs.",
     )
     return parser.parse_args()
-
-
+ 
+ 
 def log_results_to_mlflow(
     *,
     summary_path: Path,
@@ -90,37 +101,37 @@ def log_results_to_mlflow(
     data_version: str,
     experiment_name: str | None,
 ) -> None:
-    """Log one parent run plus one nested run per attribute."""
+    """Log one parent run plus nested runs per attribute × strategy."""
     try:
         import mlflow
-
+ 
         from src.mlflow_utils import make_run_name, make_standard_tags, setup_mlflow
     except ModuleNotFoundError as exc:
         raise SystemExit(
             "MLflow is not installed in this Python environment. Install the "
             "project environment or rerun with --no-mlflow."
         ) from exc
-
+ 
     import pandas as pd
-
+ 
     summary = pd.read_csv(summary_path)
     setup_kwargs = {}
     if experiment_name is not None:
         setup_kwargs["experiment_name"] = experiment_name
     setup_mlflow(**setup_kwargs)
-    
+ 
     mlflow.autolog()
-
+ 
     parent_tags = make_standard_tags(
         task="all_classification_attributes",
         model_family="baseline",
-        model_name="majority_class_group_cv",
+        model_name="all_baselines_group_cv",
         data_version=data_version,
         split_seed=random_state,
         extra={"cv_group": "asset_id"},
     )
     with mlflow.start_run(
-        run_name=make_run_name("all_classification_attributes", "majority_class_group_cv"),
+        run_name=make_run_name("all_classification_attributes", "all_baselines_group_cv"),
         tags=parent_tags,
     ):
         mlflow.log_params(
@@ -129,24 +140,27 @@ def log_results_to_mlflow(
                 "output_dir": str(output_dir),
                 "n_splits_requested": n_splits,
                 "random_state": random_state,
-                "n_attributes": len(summary),
+                "n_attributes": summary["attribute"].nunique(),
+                "strategies": ", ".join(STRATEGIES),
             }
         )
         mlflow.log_artifact(str(summary_path), artifact_path="results")
         mlflow.log_artifact(str(folds_path), artifact_path="results")
-
+ 
+        # One nested run per attribute × strategy combination
         for _, row in summary.iterrows():
             attribute = str(row["attribute"])
+            strategy = str(row["strategy"])
             tags = make_standard_tags(
                 task=attribute,
                 model_family="baseline",
-                model_name="majority_class_group_cv",
+                model_name=strategy,
                 data_version=data_version,
                 split_seed=random_state,
                 extra={"cv_group": "asset_id"},
             )
             with mlflow.start_run(
-                run_name=make_run_name(attribute, "majority_class_group_cv"),
+                run_name=make_run_name(attribute, strategy),
                 tags=tags,
                 nested=True,
             ):
@@ -164,8 +178,8 @@ def log_results_to_mlflow(
                         if column in row.index
                     }
                 )
-
-
+ 
+ 
 def main() -> int:
     args = parse_args()
     summary, fold_results = cross_validate_train_folder(
@@ -173,15 +187,18 @@ def main() -> int:
         n_splits=args.folds,
         random_state=args.seed,
     )
-
+ 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     summary_path = args.output_dir / "baseline_classification_results.csv"
     folds_path = args.output_dir / "baseline_classification_cv_folds.csv"
     summary.to_csv(summary_path, index=False)
     fold_results.to_csv(folds_path, index=False)
-
-    print(f"Wrote {len(summary)} summary rows to {summary_path}")
+ 
+    n_attributes = summary["attribute"].nunique() if not summary.empty else 0
+    n_strategies = summary["strategy"].nunique() if not summary.empty else 0
+    print(f"Wrote {len(summary)} summary rows ({n_attributes} attributes × {n_strategies} strategies) to {summary_path}")
     print(f"Wrote {len(fold_results)} fold rows to {folds_path}")
+ 
     if not args.no_mlflow:
         log_results_to_mlflow(
             summary_path=summary_path,
@@ -193,9 +210,9 @@ def main() -> int:
             data_version=args.data_version,
             experiment_name=args.experiment_name,
         )
-        print("Logged baseline results to MLflow")
+        print("Logged all baseline results to MLflow")
     return 0
-
-
+ 
+ 
 if __name__ == "__main__":
     raise SystemExit(main())
