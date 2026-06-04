@@ -1,42 +1,42 @@
-"""Model evaluation results bar chart generator — DINOv3 multi-classifier edition.
+"""Model evaluation results bar chart generator.
 
-Supports VLM eval results (original) and DINOv3 classifier results from
-subdirectories of a results root (dinov3_gradient_boost, dinov3_knn_cv,
-dinov3_linear_svm, dinov3_logistic).
+Supports VLM eval results (original) and DINOv3, SigLIP and OpenCLIP classifier 
+results from subdirectories of a results root (dinov3_results, siglip_results and
+openclip_results)
 
 Usage — VLM (original):
     python scripts/plot_eval_results.py \
         --input_dir results/vlm_eval_results/ \
         --asset_type Stairs \
         --output results/eval_results_plots/stairs_vlm_comparison_macro-f1.png
-
-Usage — DINOv3 classifiers:
-    python scripts/plot_eval_results.py \
-        --dinov3_dir results/dinov3_results \
-        --output results/eval_results_plots/dinov3_comparison_macro_f1.png \
-        --title "DINOv3 Classifiers"
     
-Usage — DINOv3 vs SigLIP logistic regression only
+Usage — DINOv3 vs SigLIP vs OpenCLIP logistic regression only
     python scripts/plot_eval_results.py \
         --dinov3_dir results/dinov3_results \
         --siglip-dir results/siglip_results \
-        --include-series "DINOv3 + Logistic Regression" "SigLIP + Logistic Regression" \
+        --openclip-dir results/openclip_results \
+        --include-series \
+            "DINOv3 + Logistic Regression" \
+            "SigLIP + Logistic Regression" \
+            "OpenCLIP + Logistic Regression" \
         --output results/eval_results_plots/logistic_comparison_macro_f1.png \
-        --title "DINOv3 vs. SigLIP"
+        --title "DINOv3 vs. SigLIP vs. OpenCLIP"
 
 Usage — All DINOv3 classifiers
     python scripts/plot_eval_results.py \
         --dinov3_dir results/dinov3_results \
         --output results/eval_results_plots/dinov3_only.png
+        --title "DINOv3 classifiers comparison"
     
 Usage — DINOv3 + logistic regression, gemini-3-flash-preview
     python scripts/plot_eval_results.py \
         --dinov3_dir results/dinov3_results \
         --input_dir results/vlm_eval_results/ \
         --include-series \
-            "DINOv3 + Logistic Regression" \
-            "gemini-3-flash-preview"'\n'"(attribute-specific prompt)"
-    --output results/eval_results_plots/gemini_vs_dinov3.png
+            "DINOv3 + Logistic Regression" \ 
+            "gemini-3-flash-preview"$'\n'"(multi-attribute prompts)" \
+        --output results/eval_results_plots/gemini_vs_dinov3_macro_f1.png \
+        --title "DINOv3 vs. gemini-3-flash-preview (multi-atttribute prompts)"
     
 Usage — Aggregate all attributes into one bar per series
     python scripts/plot_eval_results.py \
@@ -46,14 +46,6 @@ Usage — Aggregate all attributes into one bar per series
         --output results/eval_results_plots/dinov3_aggregate_macro_f1.png \
         --figsize 7 7
 
-Usage — compare gemini vs dinov3 aggregated
-    python scripts/plot_eval_results.py \
-        --dinov3_dir results/dinov3_results \
-        --input_dir results/vlm_eval_results/ \
-        --aggregate \
-        --include-series "DINOv3 + Logistic Regression" "gemini-3-flash-preview"$'\n'"(attribute-specific prompt)" \
-        --output results/eval_results_plots/gemini_vs_dinov3_aggregate.png \
-        --figsize 4 6
 """
 
 import argparse
@@ -73,10 +65,6 @@ VLM_COLORS = [
     "#79BCFF",  # light blue
     "#BD431A",  # coral
     "#FF9470",  # light coral
-    "#BA7517",  # amber
-    "#639922",  # green
-    "#7F77DD",  # purple
-    "#888780",  # gray
 ]
 
 DINOV3_COLORS = [
@@ -93,6 +81,14 @@ SIGLIP_COLORS = [
     "#E8853D",  # orange
     "#4A90D9",  # sky blue
     "#C2396E",  # rose
+]
+
+OPENCLIP_COLORS = [
+    "#00A6D6",  # cyan
+    "#1E3A8A",  # navy
+    "#4F46E5",  # indigo
+    "#34D399",  # mint
+    "#64748B",  # slate
 ]
 
 
@@ -122,6 +118,14 @@ SIGLIP_LABELS = {
     "siglip_linear_svm": "SigLIP + Linear SVM",
     "siglip_logistic_reg": "SigLIP + Logistic Regression",
     "siglip_random_forest": "SigLIP + Random Forest",
+}
+
+OPENCLIP_SUBDIRS = [
+    "openclip_logistic_reg",
+]
+
+OPENCLIP_LABELS = {
+    "openclip_logistic_reg": "OpenCLIP + Logistic Regression",
 }
 
 
@@ -262,6 +266,9 @@ def load_dinov3_results(dinov3_dir: str, metric: str) -> pd.DataFrame:
 def load_siglip_results(siglip_dir: str, metric: str) -> pd.DataFrame:
     return load_embedding_results(siglip_dir, metric, SIGLIP_SUBDIRS, SIGLIP_LABELS)
 
+def load_openclip_results(siglip_dir: str, metric: str) -> pd.DataFrame:
+    return load_embedding_results(siglip_dir, metric, OPENCLIP_SUBDIRS, OPENCLIP_LABELS)
+
 def load_baseline(baseline_path: str) -> pd.DataFrame:
     df = pd.read_csv(baseline_path)
     if "target_column" in df.columns:
@@ -288,6 +295,7 @@ def plot_comparison(
     baseline_df: pd.DataFrame | None,
     dinov3_df: pd.DataFrame | None,
     siglip_df: pd.DataFrame | None,
+    openclip_df: pd.DataFrame | None,
     include_series: list[str] | None = None,
     aggregate: bool = False,
 ):
@@ -305,6 +313,22 @@ def plot_comparison(
         df[mean_col] = df[metric]
         df[std_col]  = 0.0
         vlm_rows = df[["attribute", "series", mean_col, std_col]].reset_index(drop=True)
+        MULTI_ATTRIBUTE_SERIES = [
+            "gemini-3-flash-preview\n(stairs_v1)",
+            "gemini-3-flash-preview\n(trail_bridge_v1)",
+        ]
+
+        vlm_rows.loc[
+            vlm_rows["series"].isin(MULTI_ATTRIBUTE_SERIES),
+            "series"
+        ] = "gemini-3-flash-preview\n(multi-attribute prompts)"
+        
+        vlm_rows = (
+            vlm_rows
+            .groupby(["attribute", "series"], as_index=False)
+            [[mean_col, std_col]]
+            .mean()
+        )
 
     dino_rows = pd.DataFrame()
     if dinov3_df is not None and not dinov3_df.empty:
@@ -313,8 +337,12 @@ def plot_comparison(
     siglip_rows = pd.DataFrame()
     if siglip_df is not None and not siglip_df.empty:
         siglip_rows = siglip_df[["attribute", "series", mean_col, std_col]].copy().reset_index(drop=True)
+    
+    openclip_rows = pd.DataFrame()
+    if openclip_df is not None and not openclip_df.empty:
+        openclip_rows = openclip_df[["attribute", "series", mean_col, std_col]].copy().reset_index(drop=True)
 
-    all_rows = pd.concat([vlm_rows, dino_rows, siglip_rows], ignore_index=True)
+    all_rows = pd.concat([vlm_rows, dino_rows, siglip_rows, openclip_rows], ignore_index=True)
     
     if include_series:
         all_rows = all_rows[all_rows["series"].isin(include_series)]
@@ -356,12 +384,14 @@ def plot_comparison(
 
     fig, ax = plt.subplots(figsize=figsize)
 
-    vlm_i    = 0
-    dino_i   = 0
+    vlm_i = 0
+    dino_i = 0
     siglip_i = 0
+    openclip_i = 0
 
     dinov3_series = set(DINOV3_LABELS.values())
     siglip_series = set(SIGLIP_LABELS.values())
+    openclip_series = set(OPENCLIP_LABELS.values())
 
     for i, s in enumerate(series):
         if s in dinov3_series:
@@ -370,6 +400,9 @@ def plot_comparison(
         elif s in siglip_series:
             color = SIGLIP_COLORS[siglip_i % len(SIGLIP_COLORS)]
             siglip_i += 1
+        elif s in openclip_series:
+            color = OPENCLIP_COLORS[openclip_i % len(OPENCLIP_COLORS)]
+            openclip_i += 1
         else:
             color = VLM_COLORS[vlm_i % len(VLM_COLORS)]
             vlm_i += 1
@@ -511,6 +544,8 @@ if __name__ == "__main__":
                         help="Root directory containing dinov3_* subdirectories (optional).")
     parser.add_argument("--siglip-dir", default=None,
                         help="Root directory containing siglip_* subdirectories (optional).")
+    parser.add_argument("--openclip-dir", default=None,
+                        help="Root directory containing openclip_* subdirectories (optional).")
     parser.add_argument("--metric", choices=METRICS, default="macro_f1")
     parser.add_argument("--asset_type", default=None)
     parser.add_argument("--output", default="comparison.png")
@@ -540,13 +575,14 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if not args.input_dir and not args.dinov3_dir and not args.siglip_dir:
-        print("Error: provide at least one of --input_dir, --dinov3_dir, or --siglip-dir", file=sys.stderr)
+    if not args.input_dir and not args.dinov3_dir and not args.siglip_dir and not args.openclip_dir:
+        print("Error: provide at least one of --input_dir, --dinov3_dir, --siglip-dir or --openclip-dir", file=sys.stderr)
         sys.exit(1)
 
     vlm_df = load_results(args.input_dir, args.individual_prompt_label) if args.input_dir else None
     dinov3_df = load_dinov3_results(args.dinov3_dir, args.metric) if args.dinov3_dir else None
     siglip_df = load_siglip_results(args.siglip_dir, args.metric) if args.siglip_dir else None
+    openclip_df = load_openclip_results(args.openclip_dir, args.metric) if args.openclip_dir else None
     baseline_df = load_baseline(args.baseline) if args.baseline and os.path.exists(args.baseline) else None
 
     plot_comparison(
@@ -560,6 +596,7 @@ if __name__ == "__main__":
         baseline_df=baseline_df,
         dinov3_df=dinov3_df,
         siglip_df=siglip_df,
+        openclip_df=openclip_df,
         include_series=args.include_series,
         aggregate=args.aggregate,
     )
