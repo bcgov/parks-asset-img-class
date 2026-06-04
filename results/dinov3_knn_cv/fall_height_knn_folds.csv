@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,mae,rmse,r2
+attr_fall_height,data\processed\train\attr_fall_height_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,1,5,GroupKFold,10,97,25,regression,1.5963999999999998,2.621328289245741,-0.0861436801812856
+attr_fall_height,data\processed\train\attr_fall_height_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,2,5,GroupKFold,10,97,25,regression,1.0006,1.2804932643321478,-1.8658623124571778
+attr_fall_height,data\processed\train\attr_fall_height_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,3,5,GroupKFold,10,98,24,regression,1.1700000000000002,3.7885083916144797,0.01740850614713163
+attr_fall_height,data\processed\train\attr_fall_height_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,4,5,GroupKFold,10,98,24,regression,0.7925,0.96920607543838,-0.2484995183183254
+attr_fall_height,data\processed\train\attr_fall_height_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,5,5,GroupKFold,10,98,24,regression,0.51625,0.7631800246337689,0.09224019319357935

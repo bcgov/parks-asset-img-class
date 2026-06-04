@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+attr_structure_position,data\processed\train\attr_structure_position_train.csv,data\features\dinov3_attr_structure_position_train_assets.csv,1,5,StratifiedGroupKFold,10,475,119,classification,0.8571428571428571,0.8474466709760828,0.6776878092667568
+attr_structure_position,data\processed\train\attr_structure_position_train.csv,data\features\dinov3_attr_structure_position_train_assets.csv,2,5,StratifiedGroupKFold,10,475,119,classification,0.907563025210084,0.8980417185489238,0.7201952510962192
+attr_structure_position,data\processed\train\attr_structure_position_train.csv,data\features\dinov3_attr_structure_position_train_assets.csv,3,5,StratifiedGroupKFold,10,476,118,classification,0.8305084745762712,0.8150346531256433,0.5537561853351327
+attr_structure_position,data\processed\train\attr_structure_position_train.csv,data\features\dinov3_attr_structure_position_train_assets.csv,4,5,StratifiedGroupKFold,10,475,119,classification,0.865546218487395,0.8575782378224109,0.7054903960564337
+attr_structure_position,data\processed\train\attr_structure_position_train.csv,data\features\dinov3_attr_structure_position_train_assets.csv,5,5,StratifiedGroupKFold,10,475,119,classification,0.8823529411764706,0.8803061621999793,0.68762220119836

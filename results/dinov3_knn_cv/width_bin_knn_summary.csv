@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+width_bin,data\processed\train\width_bin_train.csv,data\features\dinov3_attr_width_train_assets.csv,GroupKFold,10,classification,5,1630,0.6533742331288344,0.030443916014231957,0.6048712780635582,0.04011307241707143,0.25885939651943624,0.02808296272380558

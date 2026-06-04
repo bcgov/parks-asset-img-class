@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+length_bin,data\processed\train\length_bin_train.csv,data\features\dinov3_attr_length_train_assets.csv,1,5,GroupKFold,10,1279,320,classification,0.528125,0.48119107706941444,0.21985971221408115
+length_bin,data\processed\train\length_bin_train.csv,data\features\dinov3_attr_length_train_assets.csv,2,5,GroupKFold,10,1279,320,classification,0.521875,0.4828617190124773,0.2683559153861591
+length_bin,data\processed\train\length_bin_train.csv,data\features\dinov3_attr_length_train_assets.csv,3,5,GroupKFold,10,1279,320,classification,0.534375,0.4870666322314049,0.2567596418732782
+length_bin,data\processed\train\length_bin_train.csv,data\features\dinov3_attr_length_train_assets.csv,4,5,GroupKFold,10,1279,320,classification,0.55625,0.5029567548333944,0.1820322425851575
+length_bin,data\processed\train\length_bin_train.csv,data\features\dinov3_attr_length_train_assets.csv,5,5,GroupKFold,10,1280,319,classification,0.5329153605015674,0.46950086887615206,0.1800295809361854
