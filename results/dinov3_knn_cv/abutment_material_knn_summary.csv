@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,GroupKFold,10,classification,5,573,0.717254004576659,0.040785132687893855,0.6808707618255336,0.04522032835739606,0.38733180734011513,0.09461564830159978

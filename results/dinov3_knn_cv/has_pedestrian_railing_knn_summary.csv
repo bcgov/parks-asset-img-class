@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_has_pedestrian_railing,data\processed\train\attr_has_pedestrian_railing_train.csv,data\features\dinov3_attr_has_pedestrian_railing_train_assets.csv,StratifiedGroupKFold,10,classification,5,2355,0.9307855626326964,0.006646486557324194,0.9200536328649346,0.007058375749007782,0.6499252302314432,0.026866047816859306

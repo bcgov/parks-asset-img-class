@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,1,5,StratifiedGroupKFold,10,489,123,classification,0.8536585365853658,0.8373983739837398,0.4
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,2,5,StratifiedGroupKFold,10,489,123,classification,0.8455284552845529,0.82960410038883,0.3955072463768116
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,3,5,StratifiedGroupKFold,10,490,122,classification,0.9016393442622951,0.8731501993797076,0.42918918918918914
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,4,5,StratifiedGroupKFold,10,490,122,classification,0.8770491803278688,0.848459069232903,0.41688960515713136
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,5,5,StratifiedGroupKFold,10,490,122,classification,0.8770491803278688,0.8408871745419478,0.28054298642533937

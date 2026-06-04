@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,1,5,GroupKFold,10,458,115,classification,0.6608695652173913,0.6202180428267385,0.35625707625707626
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,2,5,GroupKFold,10,458,115,classification,0.7304347826086957,0.7009283941538744,0.3175475687103594
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,3,5,GroupKFold,10,458,115,classification,0.7739130434782608,0.7427301587301587,0.5525396825396826
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,4,5,GroupKFold,10,459,114,classification,0.7105263157894737,0.6654542039157424,0.372606880299188
+attr_abutment_material,data\processed\train\attr_abutment_material_train.csv,data\features\dinov3_attr_abutment_material_train_assets.csv,5,5,GroupKFold,10,459,114,classification,0.7105263157894737,0.675023009501154,0.33770782889426953

@@ -1,9 +1,16 @@
-"""Run grouped k-NN cross-validation from processed train CSVs and feature embeddings.
+"""Run grouped k-NN cross-validation on frozen DINOv3 asset embeddings.
 
-Usage:
-    python scripts/run_knn_cv.py
-    python scripts/run_knn_cv.py --knn-k 5 --folds 5
-    python scripts/run_knn_cv.py --no-mlflow
+Example (single attribute type):
+    python scripts/run_knn_cv.py \
+        --labels data/processed/train/attr_decking_material_train.csv \
+        --features data/features/dinov3_attr_decking_material_train_assets.csv \
+        --target attr_decking_material
+
+Example (all targets):
+    python scripts/run_knn_cv.py --all
+
+To only write local CSVs:
+    python scripts/run_knn_cv.py ... --no-mlflow
 """
 
 from __future__ import annotations
@@ -11,19 +18,18 @@ from __future__ import annotations
 import argparse
 import sys
 from pathlib import Path
+import pandas as pd
+import mlflow
+import dagshub
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.models.vectordb_knn import cross_validate_knn_folder
+from src.knn import cross_validate_knn, DEFAULT_K
+from src.mlflow_utils import setup_mlflow
 
-import dagshub
-
-dagshub.init(repo_owner="sgauth01", repo_name="parks-asset-img-class", mlflow=True)
-
-
-CLASSIFICATION_METRIC_COLUMNS = [
+METRIC_COLUMNS = [
     "accuracy_mean",
     "accuracy_std",
     "weighted_f1_mean",
@@ -32,66 +38,39 @@ CLASSIFICATION_METRIC_COLUMNS = [
     "macro_f1_std",
 ]
 
-REGRESSION_METRIC_COLUMNS = [
-    "mae_mean",
-    "mae_std",
-    "rmse_mean",
-    "rmse_std",
-    "r2_mean",
-    "r2_std",
-]
-
 PARAM_COLUMNS = [
     "target_column",
     "target_file",
-    "task_type",
+    "feature_file",
     "splitter",
     "n_folds",
+    "n_valid_assets",
     "knn_k",
-    "n_labels",
-    "n_assets",
 ]
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run grouped k-NN cross-validation."
+        description="Evaluate frozen DINOv3 embeddings with grouped k-NN CV."
     )
     parser.add_argument(
-        "--feature-dir",
-        type=Path,
-        default=Path("data/features"),
-        help="Directory containing dinov3 feature CSV files.",
+        "--all",
+        action="store_true",
+        help="Run all attributes automatically by scanning feature directory.",
     )
+    parser.add_argument("--labels", type=Path, help="Task train CSV (required if not using --all).")
+    parser.add_argument("--features", type=Path, help="Asset-level DINOv3 feature CSV (required if not using --all).")
+    parser.add_argument("--target", help="Target column (required if not using --all).")
+    parser.add_argument("--output-dir", type=Path, default=Path("results/new_dinov3_knn_cv"))
+    parser.add_argument("--feature-dir", type=Path, default=Path("data/features"), help="Directory to scan for feature CSVs when using --all.")
+    parser.add_argument("--train-dir", type=Path, default=Path("data/processed/train"), help="Directory to scan for train CSVs when using --all.")
+    parser.add_argument("--folds", type=int, default=5)
+    parser.add_argument("--k", type=int, default=DEFAULT_K, help="k-NN neighbors to use.")
+    parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
-        "--train-dir",
-        type=Path,
-        default=Path("data/processed/train"),
-        help="Directory containing *_train.csv files.",
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path("results/dinov3_knn_cv"),
-        help="Directory where k-NN CV CSV outputs are written.",
-    )
-    parser.add_argument(
-        "--knn-k",
-        type=int,
-        default=10,
-        help="Number of nearest neighbors for k-NN (default: 10).",
-    )
-    parser.add_argument(
-        "--folds",
-        type=int,
-        default=5,
-        help="Number of cross-validation folds (default: 5).",
-    )
-    parser.add_argument(
-        "--seed",
-        type=int,
-        default=42,
-        help="Random seed for reproducible splits (default: 42).",
+        "--model-name",
+        default=None,
+        help="Model name/tag to use in MLflow. Defaults to dinov3_vitb16_knn.",
     )
     parser.add_argument(
         "--data-version",
@@ -101,149 +80,204 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--experiment-name",
         default=None,
-        help="MLflow experiment name. Defaults to the project standard.",
+        help="MLflow experiment name.",
     )
     parser.add_argument(
         "--no-mlflow",
         action="store_true",
-        help="Skip MLflow logging and only write result CSVs.",
+        help="Skip MLflow/DagsHub logging and only write result CSVs.",
     )
     return parser.parse_args()
 
 
-def log_results_to_mlflow(
-    *,
-    summary_path: Path,
-    folds_path: Path,
-    feature_dir: Path,
-    train_dir: Path,
+def run_single_target(
+    labels_path: Path,
+    features_path: Path,
+    target: str,
     output_dir: Path,
-    knn_k: int,
-    n_splits: int,
-    random_state: int,
+    folds: int,
+    k: int,
+    seed: int,
+    model_name: str | None,
     data_version: str,
     experiment_name: str | None,
-) -> None:
-    """Log one parent run plus one nested run per attribute."""
+    no_mlflow: bool,
+) -> tuple[bool, str]:
+    """Run k-NN CV for a single target. Returns (success, message)."""
+
     try:
-        import mlflow
+        labels = pd.read_csv(labels_path)
+        features = pd.read_csv(features_path)
+    except Exception as e:
+        return False, f"Failed to load files: {e}"
 
-        from src.mlflow_utils import make_run_name, make_standard_tags, setup_mlflow
-    except ModuleNotFoundError as exc:
-        raise SystemExit(
-            "MLflow is not installed in this Python environment. Install the "
-            "project environment or rerun with --no-mlflow."
-        ) from exc
-
-    import pandas as pd
-
-    summary = pd.read_csv(summary_path)
-    setup_kwargs = {}
-    if experiment_name is not None:
-        setup_kwargs["experiment_name"] = experiment_name
-    setup_mlflow(**setup_kwargs)
-
-    mlflow.autolog()
-
-    parent_tags = make_standard_tags(
-        task="all_classification_attributes",
-        model_family="knn",
-        model_name=f"knn_group_cv_k{knn_k}",
-        data_version=data_version,
-        split_seed=random_state,
-        extra={"cv_group": "asset_id", "knn_k": knn_k},
+    summary, fold_results = cross_validate_knn(
+        labels,
+        features,
+        target,
+        target_file=str(labels_path),
+        feature_file=str(features_path),
+        n_splits=folds,
+        random_state=seed,
+        knn_k=k,
     )
-    with mlflow.start_run(
-        run_name=make_run_name("all_classification_attributes", f"knn_group_cv_k{knn_k}"),
-        tags=parent_tags,
-    ):
-        mlflow.log_params(
-            {
-                "feature_dir": str(feature_dir),
-                "train_dir": str(train_dir),
-                "output_dir": str(output_dir),
-                "knn_k": knn_k,
-                "n_splits_requested": n_splits,
-                "random_state": random_state,
-                "n_attributes": len(summary),
-            }
-        )
-        mlflow.log_artifact(str(summary_path), artifact_path="results")
-        mlflow.log_artifact(str(folds_path), artifact_path="results")
 
-        for _, row in summary.iterrows():
-            attribute = str(row["attribute"])
-            task_type = str(row.get("task_type", "classification"))
-            tags = make_standard_tags(
-                task=attribute,
-                model_family="knn",
-                model_name=f"knn_group_cv_k{knn_k}",
-                data_version=data_version,
-                split_seed=random_state,
-                extra={"cv_group": "asset_id", "task_type": task_type, "knn_k": knn_k},
-            )
-            with mlflow.start_run(
-                run_name=make_run_name(attribute, f"knn_group_cv_k{knn_k}"),
-                tags=tags,
-                nested=True,
-            ):
+    if summary.empty:
+        return False, f"No results for {target}"
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    target_stem = target.replace("attr_", "")
+    summary_path = output_dir / f"{target_stem}_knn_summary.csv"
+    folds_path = output_dir / f"{target_stem}_knn_folds.csv"
+
+    summary.to_csv(summary_path, index=False)
+    fold_results.to_csv(folds_path, index=False)
+
+    msg = f"✓ {target}: {summary_path}"
+
+    if not no_mlflow:
+        try:
+            dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
+
+            exp_name = experiment_name or "dinov3_knn_evaluation"
+            model = model_name or f"dinov3_vitb16_knn_k{k}"
+
+            setup_mlflow(experiment_name=exp_name)
+            with mlflow.start_run(run_name=f"{target_stem}_fold_cv"):
                 mlflow.log_params(
                     {
-                        column: row[column]
-                        for column in PARAM_COLUMNS
-                        if column in row.index
+                        "target": target,
+                        "model": model,
+                        "knn_k": k,
+                        "n_splits": folds,
+                        "random_state": seed,
+                        "data_version": data_version,
                     }
                 )
-                # Log appropriate metrics based on task type
-                metric_columns = (
-                    CLASSIFICATION_METRIC_COLUMNS
-                    if task_type == "classification"
-                    else REGRESSION_METRIC_COLUMNS
-                )
-                mlflow.log_metrics(
-                    {
-                        column: float(row[column])
-                        for column in metric_columns
-                        if column in row.index
-                    }
-                )
+                for col in METRIC_COLUMNS:
+                    if col in summary.columns:
+                        value = summary[col].iloc[0]
+                        mlflow.log_metric(col, float(value))
+
+                mlflow.log_artifact(str(summary_path))
+                mlflow.log_artifact(str(folds_path))
+        except ImportError:
+            pass
+        except Exception:
+            pass
+
+    return True, msg
+
+
+def find_attribute_pairs(
+    feature_dir: Path, train_dir: Path
+) -> list[tuple[str, Path, Path]]:
+    pairs = []
+    feature_dir = Path(feature_dir)
+    train_dir = Path(train_dir)
+
+    # Match actual naming: dinov3_attr_*_train_assets.csv
+    for feature_csv in sorted(feature_dir.glob("dinov3_attr_*_train_assets.csv")):
+        stem = feature_csv.stem  # e.g., "dinov3_attr_decking_material_train_assets"
+        attr_name = stem.replace("dinov3_", "").replace("_train_assets", "")  # e.g., "attr_decking_material"
+
+        train_csv = train_dir / f"{attr_name}_train.csv"
+        if train_csv.exists():
+            pairs.append((attr_name, feature_csv, train_csv))
+        else:
+            print(f"  [skip] no train CSV found for {attr_name} (expected {train_csv})")
+    
+    # Bin targets reuse parent feature files
+    BIN_TARGETS = {
+        "fall_height_bin": "dinov3_attr_fall_height_train_assets.csv",
+        "steps_bin": "dinov3_attr_number_of_steps_train_assets.csv",
+        "length_bin": "dinov3_attr_length_train_assets.csv",
+        "width_bin": "dinov3_attr_width_train_assets.csv",
+    }
+    for attr_name, feature_filename in BIN_TARGETS.items():
+        feature_csv = feature_dir / feature_filename
+        train_csv   = train_dir / f"{attr_name}_train.csv"
+        if feature_csv.exists() and train_csv.exists():
+            pairs.append((attr_name, feature_csv, train_csv))
+        else:
+            if not feature_csv.exists():
+                print(f"  [skip] feature file missing: {feature_csv}")
+            if not train_csv.exists():
+                print(f"  [skip] train file missing: {train_csv}")
+
+    return pairs
 
 
 def main() -> int:
     args = parse_args()
 
-    summary, fold_results = cross_validate_knn_folder(
-        feature_dir=args.feature_dir,
-        train_dir=args.train_dir,
-        knn_k=args.knn_k,
-        n_splits=args.folds,
-        random_state=args.seed,
+    if args.all:
+        pairs = find_attribute_pairs(args.feature_dir, args.train_dir)
+        if not pairs:
+            print(f"No attribute pairs found in {args.feature_dir} and {args.train_dir}")
+            return 1
+
+        print(f"Found {len(pairs)} attributes to process\n")
+
+        success_count = 0
+        summary_dfs = []
+
+        for target, feature_path, train_path in pairs:
+            success, msg = run_single_target(
+                train_path,
+                feature_path,
+                target,
+                args.output_dir,
+                args.folds,
+                args.k,
+                args.seed,
+                args.model_name,
+                args.data_version,
+                args.experiment_name,
+                args.no_mlflow,
+            )
+            print(msg)
+            if success:
+                success_count += 1
+                try:
+                    target_stem = target.replace("attr_", "")
+                    summary_path = args.output_dir / f"{target_stem}_knn_summary.csv"
+                    summary_dfs.append(pd.read_csv(summary_path))
+                except Exception:
+                    pass
+
+        # Write combined summary
+        if summary_dfs:
+            combined = pd.concat(summary_dfs, ignore_index=True)
+            combined_path = args.output_dir / "knn_summary_all.csv"
+            combined.to_csv(combined_path, index=False)
+            print(f"\nWrote combined summary to {combined_path}")
+
+        print(f"\nCompleted {success_count}/{len(pairs)} attributes successfully")
+        return 0 if success_count > 0 else 1
+
+    # Single target mode
+    if not args.labels or not args.features or not args.target:
+        print("Error: --labels, --features, and --target are required when not using --all")
+        return 1
+
+    success, msg = run_single_target(
+        args.labels,
+        args.features,
+        args.target,
+        args.output_dir,
+        args.folds,
+        args.k,
+        args.seed,
+        args.model_name,
+        args.data_version,
+        args.experiment_name,
+        args.no_mlflow,
     )
-
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = args.output_dir / f"knn_cv_results_k{args.knn_k}.csv"
-    folds_path = args.output_dir / f"knn_cv_folds_k{args.knn_k}.csv"
-    summary.to_csv(summary_path, index=False)
-    fold_results.to_csv(folds_path, index=False)
-
-    print(f"Wrote {len(summary)} summary rows to {summary_path}")
-    print(f"Wrote {len(fold_results)} fold rows to {folds_path}")
-    if not args.no_mlflow:
-        log_results_to_mlflow(
-            summary_path=summary_path,
-            folds_path=folds_path,
-            feature_dir=args.feature_dir,
-            train_dir=args.train_dir,
-            output_dir=args.output_dir,
-            knn_k=args.knn_k,
-            n_splits=args.folds,
-            random_state=args.seed,
-            data_version=args.data_version,
-            experiment_name=args.experiment_name,
-        )
-        print("Logged k-NN CV results to MLflow")
-    return 0
+    print(msg)
+    return 0 if success else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

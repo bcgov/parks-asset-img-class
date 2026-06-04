@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,mae,rmse,r2
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,1,5,GroupKFold,10,1304,326,regression,0.38558969325153375,1.3671041207123587,0.0947591913425403
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,2,5,GroupKFold,10,1304,326,regression,0.3076023312883436,0.577951169240961,0.3085931101707762
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,3,5,GroupKFold,10,1304,326,regression,0.359758282208589,0.7418243980525394,0.08003451474349876
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,4,5,GroupKFold,10,1304,326,regression,0.3981748466257669,1.2247532837480102,0.15714389253066607
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,5,5,GroupKFold,10,1304,326,regression,0.3952916564417178,1.130012293605965,0.1139258924733978

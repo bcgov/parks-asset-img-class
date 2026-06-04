@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+steps_bin,data\processed\train\steps_bin_train.csv,data\features\dinov3_attr_number_of_steps_train_assets.csv,GroupKFold,10,classification,5,29,0.5533333333333333,0.2478798992343761,0.4699999999999999,0.26355325355669096,0.4109523809523809,0.20958873452961005
