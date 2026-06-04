@@ -40,6 +40,7 @@ if str(REPO_ROOT) not in sys.path:
 DEFAULT_TARGETS = [
     "attr_abutment_material",
     "attr_bridge_type",
+    "attr_decking_material",
     "attr_has_edge_guard",
     "attr_has_pedestrian_railing",
     "attr_material_frame_tank_body",
