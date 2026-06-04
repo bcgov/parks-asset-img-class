@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/openclip_vith14_all_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,122,122,1024,0.5086666666666666,0.12671665680213912,0.4949127261627261,0.1451909917782735,0.400447779733494,0.08080496493143609
