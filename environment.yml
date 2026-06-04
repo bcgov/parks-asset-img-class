@@ -35,3 +35,4 @@ dependencies:
     - google-genai
     - openai
     - dagshub
+    - open-clip-torch

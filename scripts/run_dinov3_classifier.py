@@ -82,6 +82,18 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip MLflow/DagsHub logging and only write result CSVs.",
     )
+    parser.add_argument(
+        "--model-family",
+        choices=["dinov3", "openclip"],
+        default="dinov3",
+        help="Which embedding model produced the features.",
+    )
+    parser.add_argument(
+        "--predictions-dir",
+        type=Path,
+        default=None,
+        help="Directory where prediction CSVs are written. Defaults to <output-dir>/predictions.",
+    )
     return parser.parse_args()
 
 
@@ -163,7 +175,7 @@ def log_results_to_mlflow(
 
 def main() -> int:
     args = parse_args()
-    summary, folds = run_task_from_files(
+    summary, folds, predictions = run_task_from_files(
         labels_path=args.labels,
         features_path=args.features,
         target=args.target,
@@ -173,14 +185,23 @@ def main() -> int:
     )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    predictions_dir = args.predictions_dir or args.output_dir / "predictions"
+    predictions_dir.mkdir(parents=True, exist_ok=True)
+
     suffix = "" if args.classifier == "logistic_regression" else f"_{args.classifier}"
-    summary_path = args.output_dir / f"dinov3_{args.target}{suffix}_classification_results.csv"
-    folds_path = args.output_dir / f"dinov3_{args.target}{suffix}_classification_cv_folds.csv"
+    prefix = args.model_family  # "dinov3" or "openclip"
+    summary_path = args.output_dir / f"{prefix}_{args.target}{suffix}_classification_results.csv"
+    folds_path = args.output_dir / f"{prefix}_{args.target}{suffix}_classification_cv_folds.csv"
+    predictions_path = predictions_dir / f"{prefix}_{args.target}{suffix}_predictions.csv"
+
     summary.to_csv(summary_path, index=False)
     folds.to_csv(folds_path, index=False)
+    predictions.to_csv(predictions_path, index=False)
 
     print(f"Wrote {len(summary)} summary rows to {summary_path}")
     print(f"Wrote {len(folds)} fold rows to {folds_path}")
+    print(f"Wrote {len(predictions)} prediction rows to {predictions_path}")
+    
     if not args.no_mlflow:
         model_name = args.model_name or f"dinov3_vitb16_{args.classifier}"
         log_results_to_mlflow(

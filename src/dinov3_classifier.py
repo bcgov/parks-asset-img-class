@@ -134,7 +134,7 @@ def cross_validate_dinov3_classifier(
     random_state: int = 42,
     group_column: str = "asset_id",
     classifier: str = "logistic_regression",
-) -> tuple[pd.DataFrame, pd.DataFrame]:
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Evaluate DINOv3 embeddings with grouped cross-validation."""
     joined, target_column, features = join_labels_and_features(
         labels,
@@ -142,12 +142,12 @@ def cross_validate_dinov3_classifier(
         target,
     )
     if len(joined) < 2:
-        return pd.DataFrame(), pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
     n_asset_groups = joined[group_column].nunique()
     target_splits = min(n_splits, n_asset_groups)
     if target_splits < 2:
-        return pd.DataFrame(), pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
     splitter, splitter_name = _make_group_splitter(
         joined,
@@ -161,6 +161,7 @@ def cross_validate_dinov3_classifier(
     y = joined[target_column]
     groups = joined[group_column]
     fold_rows: list[dict[str, object]] = []
+    prediction_rows: list[dict[str, object]] = []
 
     for fold, (train_idx, valid_idx) in enumerate(splitter.split(joined, y, groups), start=1):
         train_assets = set(joined.iloc[train_idx][group_column])
@@ -175,6 +176,21 @@ def cross_validate_dinov3_classifier(
         model.fit(X.iloc[train_idx], y.iloc[train_idx])
         predictions = model.predict(X.iloc[valid_idx])
         y_valid = y.iloc[valid_idx]
+
+        # Save per-asset predictions for error analysis
+        for asset_id, true_label, pred_label in zip(
+            joined.iloc[valid_idx][group_column], y_valid, predictions
+        ):
+            prediction_rows.append(
+                {
+                    "attribute": target,
+                    "fold": fold,
+                    "asset_id": asset_id,
+                    "true_label": true_label,
+                    "predicted_label": pred_label,
+                    "correct": true_label == pred_label,
+                }
+            )
 
         fold_rows.append(
             {
@@ -200,8 +216,9 @@ def cross_validate_dinov3_classifier(
         )
 
     folds = pd.DataFrame(fold_rows)
+    predictions = pd.DataFrame(prediction_rows)
     summary = summarize_dinov3_folds(folds)
-    return summary, folds
+    return summary, folds, predictions
 
 
 def summarize_dinov3_folds(fold_results: pd.DataFrame) -> pd.DataFrame:
@@ -249,7 +266,7 @@ def run_task_from_files(
     n_splits: int = 5,
     random_state: int = 42,
     classifier: str = "logistic_regression",
-) -> tuple[pd.DataFrame, pd.DataFrame]:
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Read files and run one DINOv3 classification task."""
     labels = pd.read_csv(labels_path)
     features = pd.read_csv(features_path)
