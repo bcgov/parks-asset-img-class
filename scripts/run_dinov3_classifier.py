@@ -108,6 +108,18 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip MLflow/DagsHub logging and only write result CSVs.",
     )
+    parser.add_argument(
+        "--model-family",
+        choices=["dinov3", "openclip"],
+        default="dinov3",
+        help="Which embedding model produced the features.",
+    )
+    parser.add_argument(
+        "--predictions-dir",
+        type=Path,
+        default=None,
+        help="Directory where prediction CSVs are written. Defaults to <output-dir>/predictions.",
+    )
     return parser.parse_args()
 
 
