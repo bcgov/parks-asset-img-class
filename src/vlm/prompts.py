@@ -67,6 +67,36 @@ TRAIL_BRIDGE_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
+BOARDWALK_LOW_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single Boardwalk < 1.2m High asset, identify 
+    the most likely attribute values. For each of the following attributes, the 
+    possible values are given below. Predict exactly ONE value from the listed options 
+    for each attribute, and provide a confidence score (0.0-1.0) for each prediction.
+
+    Attributes to predict:
+    - decking_material: Aluminum | Asphalt | Composite | Concrete |
+                        Steel | Timber
+    - fall_height: low (<0.5m) | medium (0.5-1.2m) | high (>1.2m)
+    - has_edge_guard: Yes | No
+    - has_pedestrian_railing: 2 railings | 1 railing | No railings
+    - length: short (<20m) | medium (20-100m) | long (>100m)
+    - structure_material: Timber | Steel | Aluminum | Concrete | Stone
+    - width: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "<attribute_key>": {
+        "value": "<predicted value or 'unable to determine'>",
+        "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine an attribute from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
 # Attribute-specific prompts
 
 STRUCTURE_POSITION_PROMPT_V1 = """
@@ -372,6 +402,7 @@ HAS_EDGE_GUARD_PROMPT_V1 = """
 PROMPT_REGISTRY = {
     "stairs_v1": STAIRS_PROMPT_V1,
     "trail_bridge_v1": TRAIL_BRIDGE_PROMPT_V1,
+    "boardwalk_low_v1": BOARDWALK_LOW_PROMPT_V1,
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,

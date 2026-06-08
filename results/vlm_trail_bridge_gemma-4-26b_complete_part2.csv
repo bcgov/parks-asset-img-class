@@ -1,0 +1,4665 @@
+asset_id,timestamp,model,response,latency_s,abutment_material_value,abutment_material_confidence,bridge_type_value,bridge_type_confidence,decking_material_value,decking_material_confidence,fall_height_bin_value,fall_height_bin_confidence,has_pedestrian_railing_value,has_pedestrian_railing_confidence,length_bin_value,length_bin_confidence,width_bin_value,width_bin_confidence,structure_material_value,structure_material_confidence,parse_error,raw_response,error,traceback
+64105,2026-06-07T14:30:01.000058,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",54.243,unable to determine,0.0,Beam,0.9,Timber,1.0,medium (1.2-5m),0.7,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+64108,2026-06-07T14:31:08.378100,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",67.329,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+64111,2026-06-07T14:32:07.142973,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.75
+    }
+}",58.727,Concrete,0.8,Beam,0.95,Timber,0.9,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.7,Steel,0.75,,,,
+64114,2026-06-07T14:33:22.448054,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 0.85
+    },
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.75
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.85
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 1.0
+    }
+}",75.276,unable to determine,0.0,Suspension,0.85,Steel,0.95,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.75,standard (0.9-1.5m),0.85,Steel,1.0,,,,
+64118,2026-06-07T14:34:02.266132,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",39.813,unable to determine,0.0,Beam,0.9,Timber,0.95,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.95,,,,
+64126,2026-06-07T14:34:42.866731,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.8
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.7
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+}
+}",40.594,unable to determine,0.0,Beam,0.8,Timber,0.95,low (<1.2m),0.7,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+64142,2026-06-07T14:35:32.946764,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",50.07,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.6,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+64643,2026-06-07T14:36:30.765998,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}",57.814,unable to determine,0.0,Beam,0.9,Steel,0.8,low (<1.2m),0.6,1 railing,0.9,short (<6m),0.7,narrow (<0.9m),0.7,Steel,0.8,,,,
+65423,2026-06-07T14:37:05.516484,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",34.74,Concrete,0.9,Truss,0.95,Aluminum,0.8,low (<1.2m),0.9,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Aluminum,0.9,,,,
+65425,2026-06-07T14:37:51.934695,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Timber"",
+""confidence"": 0.8
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.7
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.8
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Aluminum"",
+""confidence"": 0.7
+}
+}",46.412,Timber,0.8,Beam,0.7,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Aluminum,0.7,,,,
+65426,2026-06-07T14:38:51.430763,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 1.0
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",59.49,unable to determine,0.0,Fallen Tree,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),0.9,narrow (<0.9m),1.0,Timber,1.0,,,,
+65427,2026-06-07T14:39:36.886496,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Fallen Tree"",
+""confidence"": 1.0
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 1.0
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 1.0
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",45.425,unable to determine,0.0,Fallen Tree,1.0,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),1.0,narrow (<0.9m),0.8,Timber,1.0,,,,
+65609,2026-06-07T14:40:25.432175,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}",48.537,Concrete,0.9,Beam,0.95,Concrete,0.95,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Concrete,0.95,,,,
+65788,2026-06-07T14:41:14.673977,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",49.236,Concrete,0.8,Truss,1.0,Aluminum,0.8,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Aluminum,0.9,,,,
+65789,2026-06-07T14:41:58.209661,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Suspension"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 1.0
+    }
+}",43.53,unable to determine,0.0,Suspension,1.0,Steel,0.8,low (<1.2m),0.8,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,1.0,,,,
+66171,2026-06-07T14:42:40.154719,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",41.933,Concrete,0.7,Truss,1.0,Aluminum,0.8,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Aluminum,0.9,,,,
+66173,2026-06-07T14:43:05.819914,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",25.626,Timber,0.9,Beam,0.95,Timber,0.95,low (<1.2m),0.8,No railings,1.0,short (<6m),0.7,narrow (<0.9m),0.7,Timber,0.95,,,,
+66920,2026-06-07T14:43:50.192375,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}",44.363,unable to determine,0.0,Truss,0.95,Timber,0.95,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,0.85,,,,
+66922,2026-06-07T14:44:46.918020,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}",56.719,unable to determine,0.0,Beam,0.9,Timber,0.9,low (<1.2m),0.8,1 railing,0.9,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.7,,,,
+67205,2026-06-07T14:45:26.326487,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",39.382,Concrete,1.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+80432,2026-06-07T14:46:16.369636,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.95
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.7
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+}
+}",49.934,Timber,0.95,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.95,narrow (<0.9m),0.7,Timber,0.95,,,,
+81415,2026-06-07T14:47:12.885825,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",56.486,Timber,0.9,Beam,0.8,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+81419,2026-06-07T14:48:05.388688,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",52.479,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),1.0,No railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+82270,2026-06-07T14:48:31.993593,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.85
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",26.599,Timber,0.7,Beam,0.95,Timber,1.0,low (<1.2m),0.85,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.8,Timber,0.95,,,,
+82304,2026-06-07T14:49:32.956313,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",60.949,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+82379,2026-06-07T14:50:14.861000,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.8
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.9
+}
+}",41.899,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+82385,2026-06-07T14:50:53.237937,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",38.373,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+83138,2026-06-07T14:51:42.196127,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",48.953,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,narrow (<0.9m),0.8,Timber,1.0,,,,
+83150,2026-06-07T14:52:41.807474,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",59.603,Timber,0.9,Beam,0.8,Timber,1.0,low (<1.2m),0.7,1 railing,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+83513,2026-06-07T14:53:31.392149,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""unable to determine"",
+    ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+    ""value"": ""Beam"",
+    ""confidence"": 0.9
+    },
+    ""decking_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""No railings"",
+    ""confidence"": 1.0
+    },
+    ""length"": {
+    ""value"": ""short (<6m)"",
+    ""confidence"": 0.9
+    },
+    ""width"": {
+    ""value"": ""standard (0.9-1.5m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    }
+}",49.579,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+83815,2026-06-07T14:54:09.231297,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",37.832,Concrete,0.9,Beam,0.9,Timber,1.0,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+85208,2026-06-07T14:55:04.736543,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""unable to determine"",
+    ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+    ""value"": ""Beam"",
+    ""confidence"": 0.6
+    },
+    ""decking_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""No railings"",
+    ""confidence"": 1.0
+    },
+    ""length"": {
+    ""value"": ""short (<6m)"",
+    ""confidence"": 0.5
+    },
+    ""width"": {
+    ""value"": ""standard (0.9-1.5m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 0.9
+    }
+}",55.5,unable to determine,0.0,Beam,0.6,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.5,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+85487,2026-06-07T14:55:58.819535,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.6
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",54.075,Timber,0.6,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+86350,2026-06-07T14:56:44.628368,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",45.787,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+86352,2026-06-07T14:57:29.472200,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.8
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.7
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.8
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+}
+}",44.806,unable to determine,0.0,Beam,0.8,Timber,0.95,low (<1.2m),0.7,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+86356,2026-06-07T14:58:24.120992,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",54.635,Timber,0.7,Truss,0.7,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+86365,2026-06-07T14:59:07.327851,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",43.199,Concrete,0.7,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+86369,2026-06-07T14:59:35.324761,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",27.975,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+86525,2026-06-07T15:00:01.645084,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",26.314,Timber,0.8,Beam,0.9,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+86599,2026-06-07T15:00:56.945689,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",55.286,unable to determine,0.0,Truss,0.8,Timber,1.0,low (<1.2m),0.7,2 railings,1.0,short (<6m),0.8,narrow (<0.9m),0.7,Timber,1.0,,,,
+87188,2026-06-07T15:01:33.796430,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",36.818,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+87483,2026-06-07T15:02:01.884605,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",28.075,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+87769,2026-06-07T15:02:48.592796,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.8
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",46.702,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,0.8,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+87928,2026-06-07T15:03:43.888927,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.7
+    }
+}
+```",55.289,unable to determine,0.0,Truss,0.8,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Aluminum,0.7,,,,
+88095,2026-06-07T15:04:43.744216,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Concrete"",
+""confidence"": 0.95
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.95
+},
+""has_pedestrian_railing"": {
+""value"": ""1 railing"",
+""confidence"": 0.85
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.85
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.85
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+}
+}",59.838,Concrete,0.95,Beam,0.9,Timber,1.0,low (<1.2m),0.95,1 railing,0.85,short (<6m),0.85,standard (0.9-1.5m),0.85,Timber,0.95,,,,
+88104,2026-06-07T15:04:43.756237,gemma-4-26b-a4b-it,,0.006,,,,,,,,,,,,,,,,,True,,,
+88129,2026-06-07T15:05:40.935062,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Timber"",
+""confidence"": 0.8
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""medium (1.2-5m)"",
+""confidence"": 0.6
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",57.178,Timber,0.8,Beam,0.9,Timber,1.0,medium (1.2-5m),0.6,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88131,2026-06-07T15:06:31.315660,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Fallen Tree"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""fall_height"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.9
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",50.375,unable to determine,0.0,Fallen Tree,0.8,Timber,0.9,unable to determine,0.0,2 railings,1.0,medium (6-20m),0.7,narrow (<0.9m),0.9,Timber,0.9,,,,
+88132,2026-06-07T15:07:25.903265,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",54.579,Concrete,0.7,Beam,0.9,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88133,2026-06-07T15:07:58.348294,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",32.439,Timber,0.8,Beam,1.0,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88135,2026-06-07T15:08:33.683997,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",35.332,Timber,0.7,Beam,0.95,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88136,2026-06-07T15:09:28.467958,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.5
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",54.779,Timber,0.5,Beam,0.9,Timber,1.0,low (<1.2m),0.6,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88195,2026-06-07T15:10:06.200068,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.5
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    }
+}",37.727,unable to determine,0.0,Beam,0.7,Aluminum,0.8,low (<1.2m),0.7,2 railings,1.0,short (<6m),0.5,standard (0.9-1.5m),0.8,Aluminum,0.8,,,,
+88199,2026-06-07T15:10:35.023688,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",28.817,unable to determine,0.0,Beam,0.8,Steel,0.7,medium (1.2-5m),0.6,2 railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88201,2026-06-07T15:11:40.634851,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.6
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",65.605,unable to determine,0.0,Truss,0.95,Concrete,0.6,medium (1.2-5m),0.6,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,0.9,,,,
+88267,2026-06-07T15:12:07.907385,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.95
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.9
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",27.248,Timber,0.9,Beam,1.0,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.95,narrow (<0.9m),0.9,Timber,1.0,,,,
+88280,2026-06-07T15:12:44.567377,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",36.648,Timber,0.8,Beam,0.9,Timber,1.0,low (<1.2m),0.8,1 railing,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+88467,2026-06-07T15:13:52.561003,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 1.0
+    }
+}
+```",67.987,Steel,0.7,Truss,1.0,Timber,1.0,medium (1.2-5m),0.8,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,1.0,,,,
+88733,2026-06-07T15:14:25.859032,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",33.294,Concrete,0.8,Beam,0.9,Timber,0.95,low (<1.2m),0.95,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+88736,2026-06-07T15:15:29.842321,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""Concrete"",
+    ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+    ""value"": ""Beam"",
+    ""confidence"": 1.0
+    },
+    ""decking_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""2 railings"",
+    ""confidence"": 1.0
+    },
+    ""length"": {
+    ""value"": ""short (<6m)"",
+    ""confidence"": 0.7
+    },
+    ""width"": {
+    ""value"": ""standard (0.9-1.5m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    }
+}",63.978,Concrete,0.7,Beam,1.0,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88741,2026-06-07T15:15:53.789587,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Timber"",
+""confidence"": 0.8
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 1.0
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 1.0
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",23.923,Timber,0.8,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),1.0,narrow (<0.9m),0.8,Timber,1.0,,,,
+88812,2026-06-07T15:16:53.836995,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",60.03,Timber,0.7,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+88814,2026-06-07T15:17:46.518780,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",52.676,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+88818,2026-06-07T15:18:21.668704,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",35.145,Timber,0.7,Beam,0.9,Timber,1.0,low (<1.2m),0.8,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+88823,2026-06-07T15:19:03.741694,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""unable to determine"",
+    ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+    ""value"": ""Beam"",
+    ""confidence"": 0.8
+    },
+    ""decking_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 0.95
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""No railings"",
+    ""confidence"": 0.95
+    },
+    ""length"": {
+    ""value"": ""short (<6m)"",
+    ""confidence"": 0.6
+    },
+    ""width"": {
+    ""value"": ""narrow (<0.9m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 0.9
+    }
+}",42.067,unable to determine,0.0,Beam,0.8,Timber,0.95,low (<1.2m),0.9,No railings,0.95,short (<6m),0.6,narrow (<0.9m),0.8,Timber,0.9,,,,
+88824,2026-06-07T15:19:31.497363,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.8
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",27.751,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88838,2026-06-07T15:20:12.165441,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.6
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",40.662,Timber,0.6,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+88842,2026-06-07T15:21:08.280040,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",56.109,Timber,0.8,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,unable to determine,0.0,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+88845,2026-06-07T15:22:04.814116,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",56.529,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88847,2026-06-07T15:22:43.397992,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.85
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",38.581,Timber,0.8,Beam,0.95,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.85,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+88848,2026-06-07T15:23:26.448137,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",43.045,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+88856,2026-06-07T15:24:15.671931,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",49.218,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,No railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+88857,2026-06-07T15:24:59.408450,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",43.73,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+88859,2026-06-07T15:25:42.840043,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Timber"",
+""confidence"": 0.7
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.95
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 0.98
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.85
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.7
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.95
+}
+}",43.427,Timber,0.7,Beam,0.95,Timber,0.98,low (<1.2m),0.9,No railings,1.0,short (<6m),0.85,standard (0.9-1.5m),0.7,Timber,0.95,,,,
+88865,2026-06-07T15:26:30.498040,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",47.653,unable to determine,0.0,Beam,0.7,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+88866,2026-06-07T15:27:21.842883,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",51.339,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.8,No railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+88869,2026-06-07T15:28:10.789996,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.9
+}
+}",48.923,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+88871,2026-06-07T15:29:01.273531,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",50.459,Timber,0.7,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+89154,2026-06-07T15:30:06.936413,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",65.639,Concrete,0.9,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+89155,2026-06-07T15:30:45.032771,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",38.055,Concrete,0.9,Truss,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+89163,2026-06-07T15:31:27.182815,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.85
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",42.071,Concrete,0.95,Truss,0.85,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+89177,2026-06-07T15:32:24.147271,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""Concrete"",
+""confidence"": 0.8
+},
+""bridge_type"": {
+""value"": ""Truss"",
+""confidence"": 1.0
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",56.959,Concrete,0.8,Truss,1.0,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+89437,2026-06-07T15:33:05.787053,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.5
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",41.629,unable to determine,0.0,Beam,0.7,Timber,1.0,low (<1.2m),0.5,2 railings,1.0,medium (6-20m),0.6,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+89447,2026-06-07T15:33:40.392709,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",34.592,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.8,Timber,1.0,,,,
+89450,2026-06-07T15:34:30.028341,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.7
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",49.621,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,1 railing,0.7,short (<6m),0.6,standard (0.9-1.5m),0.8,Timber,0.9,,,,
+89576,2026-06-07T15:35:21.605221,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",51.571,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.8,narrow (<0.9m),0.8,Timber,0.9,,,,
+89580,2026-06-07T15:36:01.155272,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.95
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",39.536,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.95,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+89761,2026-06-07T15:36:57.237213,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.7
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",56.056,Timber,0.8,Beam,0.95,Timber,0.95,low (<1.2m),0.95,1 railing,0.7,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+90361,2026-06-07T15:37:29.636671,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",32.388,Timber,0.7,Beam,0.8,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.8,Timber,1.0,,,,
+89767,2026-06-07T15:37:29.661050,gemma-4-26b-a4b-it,,0.009,,,,,,,,,,,,,,,,,True,,,
+90408,2026-06-07T15:38:15.990899,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",46.329,unable to determine,0.0,Beam,0.9,Timber,1.0,unable to determine,0.0,2 railings,1.0,medium (6-20m),0.6,narrow (<0.9m),0.7,Timber,1.0,,,,
+90412,2026-06-07T15:39:43.775581,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.7
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Steel"",
+""confidence"": 0.7
+}
+}",87.778,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,0.7,,,,
+90641,2026-06-07T15:40:25.002591,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",41.224,Gabions,0.9,Beam,0.9,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.7,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+90647,2026-06-07T15:41:20.446009,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+    ""value"": ""Truss"",
+    ""confidence"": 1.0
+    },
+    ""decking_material"": {
+    ""value"": ""Aluminum"",
+    ""confidence"": 0.8
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""2 railings"",
+    ""confidence"": 1.0
+    },
+    ""length"": {
+    ""value"": ""medium (6-20m)"",
+    ""confidence"": 0.8
+    },
+    ""width"": {
+    ""value"": ""standard (0.9-1.5m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Steel"",
+    ""confidence"": 0.8
+    }
+}",55.428,Timber,0.9,Truss,1.0,Aluminum,0.8,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.8,standard (0.9-1.5m),0.8,Steel,0.8,,,,
+91248,2026-06-07T15:42:03.420905,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",42.943,unable to determine,0.0,Beam,0.95,Timber,1.0,low (<1.2m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+91253,2026-06-07T15:42:45.885551,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.8
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",42.457,Timber,0.8,Beam,0.7,Timber,1.0,low (<1.2m),0.9,1 railing,0.8,medium (6-20m),0.6,narrow (<0.9m),0.7,Timber,0.9,,,,
+91832,2026-06-07T15:43:36.711759,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",50.777,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.95,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+92090,2026-06-07T15:44:18.417982,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",41.623,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,medium (6-20m),0.7,narrow (<0.9m),0.8,Timber,1.0,,,,
+92151,2026-06-07T15:45:07.703506,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",49.179,unable to determine,0.0,Beam,0.9,Timber,0.95,low (<1.2m),0.95,No railings,1.0,short (<6m),0.6,narrow (<0.9m),0.7,Timber,0.9,,,,
+92160,2026-06-07T15:45:49.427063,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.5
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",41.711,Timber,0.5,Beam,0.8,Timber,1.0,low (<1.2m),0.9,No railings,1.0,medium (6-20m),0.6,narrow (<0.9m),0.8,Timber,1.0,,,,
+92164,2026-06-07T15:46:29.872704,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",40.379,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,narrow (<0.9m),0.8,Timber,1.0,,,,
+92794,2026-06-07T15:47:20.654976,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.6
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    }
+}",50.716,Timber,0.6,Beam,0.9,Steel,0.7,low (<1.2m),1.0,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.7,Steel,0.7,,,,
+92801,2026-06-07T15:48:00.759762,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",39.995,unable to determine,0.0,Beam,0.95,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+92854,2026-06-07T15:48:36.553657,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 1.0
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.9
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.95
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",35.784,Concrete,0.95,Beam,1.0,Timber,1.0,low (<1.2m),0.95,2 railings,0.9,short (<6m),0.95,standard (0.9-1.5m),0.8,Steel,0.95,,,,
+92872,2026-06-07T15:49:02.446828,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",25.889,Timber,0.8,Beam,0.9,Timber,0.9,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+93036,2026-06-07T15:49:37.804527,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",35.355,Timber,0.8,Beam,0.7,Timber,0.9,low (<1.2m),0.9,1 railing,0.9,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+93038,2026-06-07T15:50:21.780779,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",43.937,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+93043,2026-06-07T15:50:52.397702,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 0.8
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.95
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 0.95
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.85
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 0.8
+}
+}",30.547,unable to determine,0.0,Beam,0.9,Timber,0.8,low (<1.2m),0.95,No railings,0.95,short (<6m),0.85,standard (0.9-1.5m),0.8,Timber,0.8,,,,
+94144,2026-06-07T15:51:32.129971,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Truss"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.85
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    }
+}",39.717,Timber,0.7,Truss,0.95,Aluminum,0.8,low (<1.2m),0.9,2 railings,1.0,medium (6-20m),0.85,standard (0.9-1.5m),0.8,Aluminum,0.8,,,,
+94172,2026-06-07T15:52:24.613923,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.8
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.8
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 0.9
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.9
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",52.439,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.8,2 railings,0.9,short (<6m),0.9,narrow (<0.9m),0.8,Timber,1.0,,,,
+94177,2026-06-07T15:52:55.543482,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 1.0
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",30.915,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),1.0,narrow (<0.9m),0.8,Timber,1.0,,,,
+95947,2026-06-07T15:53:31.126917,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",35.519,Timber,0.7,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+95948,2026-06-07T15:53:58.829663,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",27.671,Timber,0.7,Beam,0.9,Timber,0.95,low (<1.2m),1.0,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+96291,2026-06-07T15:54:40.969451,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 1.0
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",42.128,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),1.0,narrow (<0.9m),0.8,Timber,0.9,,,,
+96292,2026-06-07T15:55:27.069885,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.5
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.95
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",45.929,Timber,0.5,Beam,0.9,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.95,standard (0.9-1.5m),0.7,Timber,0.9,,,,
+96854,2026-06-07T15:56:26.025838,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.85
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.6
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",58.899,unable to determine,0.0,Beam,0.7,Timber,0.95,medium (1.2-5m),0.6,2 railings,0.85,short (<6m),0.6,standard (0.9-1.5m),0.7,Timber,0.95,,,,
+96884,2026-06-07T15:57:23.258200,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+    ""value"": ""unable to determine"",
+    ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+    ""value"": ""Beam"",
+    ""confidence"": 0.95
+    },
+    ""decking_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    },
+    ""fall_height"": {
+    ""value"": ""low (<1.2m)"",
+    ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+    ""value"": ""2 railings"",
+    ""confidence"": 0.9
+    },
+    ""length"": {
+    ""value"": ""short (<6m)"",
+    ""confidence"": 0.9
+    },
+    ""width"": {
+    ""value"": ""standard (0.9-1.5m)"",
+    ""confidence"": 0.8
+    },
+    ""structure_material"": {
+    ""value"": ""Timber"",
+    ""confidence"": 1.0
+    }
+}",57.073,unable to determine,0.0,Beam,0.95,Timber,1.0,low (<1.2m),0.95,2 railings,0.9,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+97442,2026-06-07T15:57:54.436729,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",30.795,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.8,Timber,1.0,,,,
+97444,2026-06-07T15:58:39.816274,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 1.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",45.333,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),1.0,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+97446,2026-06-07T15:59:19.789739,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.95
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",39.954,Timber,0.7,Beam,0.8,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.95,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+97447,2026-06-07T16:00:12.536230,gemma-4-26b-a4b-it,"```json
+{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 1.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.6
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.7
+    },
+    ""length"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.6
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    }
+}
+```",52.649,Concrete,1.0,Beam,0.8,Timber,1.0,low (<1.2m),0.6,No railings,0.7,unable to determine,0.0,standard (0.9-1.5m),0.6,Steel,0.7,,,,
+97817,2026-06-07T16:00:58.801656,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 0.95
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""medium (1.2-5m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.85
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",46.255,Gabions,0.95,Beam,0.9,Timber,1.0,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.85,Timber,0.95,,,,
+98336,2026-06-07T16:02:20.176911,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.8
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.7
+},
+""structure_material"": {
+""value"": ""Steel"",
+""confidence"": 0.7
+}
+}",81.37,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.7,Steel,0.7,,,,
+98498,2026-06-07T16:02:47.672214,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",27.491,Concrete,0.9,Beam,0.9,Timber,1.0,low (<1.2m),0.8,1 railing,0.9,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+98531,2026-06-07T16:03:22.410014,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",34.729,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,1 railing,0.95,short (<6m),0.8,standard (0.9-1.5m),0.8,Steel,0.95,,,,
+99455,2026-06-07T16:03:51.822358,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",29.399,Timber,0.7,Beam,0.8,Timber,1.0,low (<1.2m),0.9,No railings,0.95,short (<6m),0.8,narrow (<0.9m),0.8,Timber,1.0,,,,
+99611,2026-06-07T16:05:07.425289,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.95
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 0.9
+},
+""fall_height"": {
+""value"": ""medium (1.2-5m)"",
+""confidence"": 0.7
+},
+""has_pedestrian_railing"": {
+""value"": ""2 railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""medium (6-20m)"",
+""confidence"": 0.7
+},
+""width"": {
+""value"": ""standard (0.9-1.5m)"",
+""confidence"": 0.8
+},
+""structure_material"": {
+""value"": ""Steel"",
+""confidence"": 0.95
+}
+}",75.572,unable to determine,0.0,Beam,0.95,Timber,0.9,medium (1.2-5m),0.7,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Steel,0.95,,,,
+99614,2026-06-07T16:05:09.884377,gemma-4-26b-a4b-it,,2.426,,,,,,,,,,,,,,,,,True,,,
+99844,2026-06-07T16:05:11.800983,gemma-4-26b-a4b-it,,1.913,,,,,,,,,,,,,,,,,True,,,
+100140,2026-06-07T16:06:36.674926,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""medium (6-20m)"",
+        ""confidence"": 0.7
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",84.874,Concrete,0.9,Beam,0.95,Timber,1.0,low (<1.2m),0.95,2 railings,1.0,medium (6-20m),0.7,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+100181,2026-06-07T16:07:25.119392,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.85
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.75
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.85
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.85
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",48.376,unable to determine,0.0,Beam,0.95,Timber,1.0,low (<1.2m),0.85,1 railing,0.75,short (<6m),0.85,standard (0.9-1.5m),0.85,Timber,1.0,,,,
+100272,2026-06-07T16:07:59.946600,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Gabions"",
+        ""confidence"": 1.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",34.811,Gabions,1.0,Beam,0.95,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,0.95,,,,
+100347,2026-06-07T16:08:50.722373,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.6
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.7
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""narrow (<0.9m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",50.767,Timber,0.6,Beam,0.7,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.9,narrow (<0.9m),0.8,Timber,1.0,,,,
+100348,2026-06-07T16:09:56.147620,gemma-4-26b-a4b-it,"{
+""abutment_material"": {
+""value"": ""unable to determine"",
+""confidence"": 0.0
+},
+""bridge_type"": {
+""value"": ""Beam"",
+""confidence"": 0.9
+},
+""decking_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+},
+""fall_height"": {
+""value"": ""low (<1.2m)"",
+""confidence"": 0.9
+},
+""has_pedestrian_railing"": {
+""value"": ""No railings"",
+""confidence"": 1.0
+},
+""length"": {
+""value"": ""short (<6m)"",
+""confidence"": 0.8
+},
+""width"": {
+""value"": ""narrow (<0.9m)"",
+""confidence"": 0.9
+},
+""structure_material"": {
+""value"": ""Timber"",
+""confidence"": 1.0
+}
+}",65.381,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.9,No railings,1.0,short (<6m),0.8,narrow (<0.9m),0.9,Timber,1.0,,,,
+100446,2026-06-07T16:10:27.509316,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.95
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.9
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.85
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",31.279,Timber,0.8,Beam,0.95,Timber,1.0,low (<1.2m),0.9,2 railings,1.0,short (<6m),0.85,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+100475,2026-06-07T16:11:08.715437,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.85
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.85
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",41.196,Concrete,0.9,Beam,0.9,Timber,1.0,low (<1.2m),0.85,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.85,Timber,1.0,,,,
+100751,2026-06-07T16:11:42.530295,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.95
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.9
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.8
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",33.811,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.95,No railings,1.0,short (<6m),0.9,standard (0.9-1.5m),0.8,Timber,1.0,,,,
+100752,2026-06-07T16:12:16.109372,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.9
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.8
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    },
+    ""length"": {
+        ""value"": ""short (<6m)"",
+        ""confidence"": 0.8
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",33.577,unable to determine,0.0,Beam,0.9,Timber,1.0,low (<1.2m),0.8,2 railings,1.0,short (<6m),0.8,standard (0.9-1.5m),0.7,Timber,1.0,,,,
+100757,2026-06-07T16:13:22.353710,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    },
+    ""fall_height"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""length"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""width"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",66.228,unable to determine,0.0,unable to determine,0.0,Timber,0.95,unable to determine,0.0,unable to determine,0.0,unable to determine,0.0,unable to determine,0.0,Timber,0.95,,,,
+100758,2026-06-07T16:14:02.476731,gemma-4-26b-a4b-it,"{
+    ""abutment_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""bridge_type"": {
+        ""value"": ""Beam"",
+        ""confidence"": 0.8
+    },
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    },
+    ""fall_height"": {
+        ""value"": ""low (<1.2m)"",
+        ""confidence"": 0.7
+    },
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.8
+    },
+    ""length"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    },
+    ""width"": {
+        ""value"": ""standard (0.9-1.5m)"",
+        ""confidence"": 0.7
+    },
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",40.118,unable to determine,0.0,Beam,0.8,Timber,1.0,low (<1.2m),0.7,1 railing,0.8,unable to determine,0.0,standard (0.9-1.5m),0.7,Timber,1.0,,,,
