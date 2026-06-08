@@ -29,6 +29,7 @@ from scripts.run_dinov3_remaining_attributes import (  # noqa: E402
     DEFAULT_TARGETS,
     target_train_path,
 )
+from scripts.run_siglip_classifier import default_output_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.siglip_features import DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
@@ -52,8 +53,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("results"),
-        help="Directory where classifier result CSVs are written.",
+        default=None,
+        help=(
+            "Directory where classifier result CSVs are written. Defaults to "
+            "results/siglip_results/<classifier-specific-folder>."
+        ),
     )
     parser.add_argument(
         "--model-name",
@@ -187,6 +191,7 @@ def main() -> int:
     targets = selected_targets(args)
     slug = model_slug(args.model_name)
     targets_slug = target_set_slug(args, targets)
+    output_dir = args.output_dir or default_output_dir(args.classifier)
 
     args.feature_dir.mkdir(parents=True, exist_ok=True)
     union_path = args.feature_dir / f"{slug}_{targets_slug}_union_input.csv"
@@ -237,7 +242,7 @@ def main() -> int:
             "--target",
             target,
             "--output-dir",
-            str(args.output_dir),
+            str(output_dir),
             "--folds",
             str(args.folds),
             "--seed",

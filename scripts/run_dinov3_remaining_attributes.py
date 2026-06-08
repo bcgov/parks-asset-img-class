@@ -20,6 +20,9 @@ To only write local CSVs and skip DagsHub/MLflow:
 To run Linear SVM instead of logistic regression:
     python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
 
+To tune logistic regression:
+    python scripts/run_dinov3_remaining_attributes.py --classifier logistic_regression_tuned
+
 To run Random Forest:
     python scripts/run_dinov3_remaining_attributes.py --classifier random_forest
 
@@ -39,6 +42,9 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.run_dinov3_classifier import default_output_dir, default_prediction_dir  # noqa: E402
+from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 
 
 DEFAULT_TARGETS = [
@@ -90,8 +96,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("results"),
-        help="Directory where classifier result CSVs are written.",
+        default=None,
+        help=(
+            "Directory where classifier result CSVs are written. Defaults to "
+            "results/dinov3_results/<classifier-specific-folder>."
+        ),
+    )
+    parser.add_argument(
+        "--prediction-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Directory where out-of-fold prediction CSVs are written. Defaults "
+            "to data/predictions/dinov3_predictions/<classifier-specific-folder>."
+        ),
     )
     parser.add_argument("--model", default="dinov3_vitb16")
     parser.add_argument(
@@ -105,12 +123,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--classifier",
-        choices=[
-            "logistic_regression",
-            "linear_svm",
-            "random_forest",
-            "hist_gradient_boosting",
-        ],
+        choices=CLASSIFIER_CHOICES,
         default="logistic_regression",
         help="Classifier to train on frozen DINOv3 embeddings.",
     )
@@ -180,6 +193,8 @@ def run_command(command: list[str]) -> None:
 def main() -> int:
     args = parse_args()
     targets = selected_targets(args)
+    output_dir = args.output_dir or default_output_dir(args.classifier)
+    prediction_dir = args.prediction_dir or default_prediction_dir(args.classifier)
 
     args.feature_dir.mkdir(parents=True, exist_ok=True)
     union_path = args.feature_dir / f"{args.model}_remaining_attributes_union_input.csv"
@@ -227,7 +242,9 @@ def main() -> int:
             "--target",
             target,
             "--output-dir",
-            str(args.output_dir),
+            str(output_dir),
+            "--prediction-dir",
+            str(prediction_dir),
             "--folds",
             str(args.folds),
             "--seed",

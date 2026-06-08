@@ -100,8 +100,8 @@ Expected outputs:
 ```text
 data/features/google_siglip2_base_patch16_224_attr_decking_material_images.csv
 data/features/google_siglip2_base_patch16_224_attr_decking_material_assets.csv
-results/siglip_attr_decking_material_classification_results.csv
-results/siglip_attr_decking_material_classification_cv_folds.csv
+results/siglip_results/siglip_logistic_reg/siglip_attr_decking_material_classification_results.csv
+results/siglip_results/siglip_logistic_reg/siglip_attr_decking_material_classification_cv_folds.csv
 ```
 
 ## All Attributes
@@ -143,6 +143,15 @@ python scripts/run_siglip_attributes.py --include-decking --classifier random_fo
 python scripts/run_siglip_attributes.py --include-decking --classifier hist_gradient_boosting
 ```
 
+Classifier results are automatically written to the matching project folder:
+
+```text
+results/siglip_results/siglip_logistic_reg/
+results/siglip_results/siglip_linear_svm/
+results/siglip_results/siglip_random_forest/
+results/siglip_results/siglip_gradient_boost/
+```
+
 ## Compare With Baseline
 
 After SigLIP classifiers finish:
@@ -154,15 +163,14 @@ python scripts/compare_siglip_to_baseline.py
 Expected output:
 
 ```text
-results/siglip_vs_baseline_comparison.csv
+results/siglip_results/siglip_logistic_reg/siglip_vs_baseline_comparison.csv
 ```
 
 For other classifiers:
 
 ```bash
 python scripts/compare_siglip_to_baseline.py \
-  --siglip-glob 'results/siglip_*_linear_svm_classification_results.csv' \
-  --output results/siglip_linear_svm_vs_baseline_comparison.csv
+  --classifier linear_svm
 ```
 
 ## How To Explain The Experiment

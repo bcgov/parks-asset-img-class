@@ -137,7 +137,7 @@ python scripts/run_dinov3_classifier.py \
 ```
 
 This step logs to DagsHub/MLflow by default. The run stores the summary metrics,
-fold-level CSV artifact, and standard tags:
+fold-level CSV artifact, out-of-fold prediction CSV artifact, and standard tags:
 
 ```text
 task = attr_decking_material
@@ -163,15 +163,55 @@ python scripts/run_dinov3_classifier.py \
   --classifier linear_svm
 ```
 
+To tune logistic regression on the same DINOv3 features:
+
+```bash
+python scripts/run_dinov3_classifier.py \
+  --labels data/processed/train/attr_decking_material_train.csv \
+  --features data/features/dinov3_vitb16_attr_decking_material_assets.csv \
+  --target attr_decking_material \
+  --classifier logistic_regression_tuned
+```
+
+The tuned logistic regression searches these values inside each training fold:
+
+```text
+C = 0.01, 0.1, 1.0, 10.0, 100.0
+class_weight = balanced, none
+```
+
 Expected outputs:
 
 ```text
-results/dinov3_attr_decking_material_classification_results.csv
-results/dinov3_attr_decking_material_classification_cv_folds.csv
+results/dinov3_results/dinov3_logistic/dinov3_attr_decking_material_classification_results.csv
+results/dinov3_results/dinov3_logistic/dinov3_attr_decking_material_classification_cv_folds.csv
+data/predictions/dinov3_predictions/dinov3_logistic/dinov3_attr_decking_material_classification_predictions.csv
 ```
+
+The prediction CSV contains one out-of-fold prediction per validation asset:
+`asset_id`, `fold`, `y_true`, `y_pred`, `is_correct`, plus metadata such as the
+target, feature file, classifier, and split settings. Because these are
+out-of-fold predictions, each row is predicted by a model that did not train on
+that asset.
 
 The classifier uses grouped cross-validation by `asset_id`, matching the
 baseline leakage-prevention strategy.
+
+Classifier outputs are organized automatically:
+
+```text
+results/dinov3_results/dinov3_logistic/
+results/dinov3_results/dinov3_logistic_tuned/
+results/dinov3_results/dinov3_linear_svm/
+results/dinov3_results/dinov3_random_forest/
+results/dinov3_results/dinov3_gradient_boost/
+
+data/predictions/dinov3_predictions/dinov3_logistic/
+data/predictions/dinov3_predictions/dinov3_logistic_tuned/
+data/predictions/dinov3_predictions/dinov3_linear_svm/
+data/predictions/dinov3_predictions/dinov3_random_forest/
+data/predictions/dinov3_predictions/dinov3_gradient_boost/
+```
 
 ## Reusing for Other Attributes
 
@@ -209,6 +249,12 @@ To run the remaining attributes with Linear SVM:
 
 ```bash
 python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
+```
+
+To run the remaining attributes with tuned logistic regression:
+
+```bash
+python scripts/run_dinov3_remaining_attributes.py --classifier logistic_regression_tuned
 ```
 
 To run the remaining attributes with Random Forest:
@@ -284,7 +330,7 @@ For Linear SVM results:
 
 ```bash
 python scripts/compare_dinov3_to_baseline.py \
-  --dinov3-glob 'results/dinov3_*_linear_svm_classification_results.csv' \
+  --dinov3-glob 'results/dinov3_results/dinov3_linear_svm/dinov3_*_linear_svm_classification_results.csv' \
   --output results/dinov3_linear_svm_vs_baseline_comparison.csv
 ```
 
@@ -292,7 +338,7 @@ For Random Forest results:
 
 ```bash
 python scripts/compare_dinov3_to_baseline.py \
-  --dinov3-glob 'results/dinov3_*_random_forest_classification_results.csv' \
+  --dinov3-glob 'results/dinov3_results/dinov3_random_forest/dinov3_*_random_forest_classification_results.csv' \
   --output results/dinov3_random_forest_vs_baseline_comparison.csv
 ```
 
@@ -300,7 +346,7 @@ For histogram-based gradient boosting results:
 
 ```bash
 python scripts/compare_dinov3_to_baseline.py \
-  --dinov3-glob 'results/dinov3_*_hist_gradient_boosting_classification_results.csv' \
+  --dinov3-glob 'results/dinov3_results/dinov3_gradient_boost/dinov3_*_hist_gradient_boosting_classification_results.csv' \
   --output results/dinov3_hist_gradient_boosting_vs_baseline_comparison.csv
 ```
 
@@ -315,8 +361,9 @@ image-level embeddings, and averaging them to asset-level features.
 src/dinov3_classifier.py
 ```
 
-Reusable functions for joining labels to embeddings and evaluating a logistic
-regression classifier with grouped cross-validation.
+Reusable functions for joining labels to embeddings and evaluating the selected
+classifier with grouped cross-validation. It returns summary metrics,
+fold-level metrics, and out-of-fold predictions.
 
 ```text
 scripts/extract_dinov3_features.py
@@ -327,6 +374,11 @@ Command-line script for the slow step: image embedding extraction.
 ```text
 scripts/run_dinov3_classifier.py
 ```
+
+Command-line script for one DINOv3 classification target. It writes summary and
+fold CSVs under the classifier-specific `results/dinov3_results/...` folder and
+prediction CSVs under the matching `data/predictions/dinov3_predictions/...`
+folder unless custom directories are supplied.
 
 Command-line script for the fast step: train/evaluate a classifier from saved
 asset-level embeddings.
