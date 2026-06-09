@@ -22,8 +22,8 @@ from src.dinov3_features import (
     resolve_image_path,
 )
 
-DEFAULT_OPENCLIP_MODEL = "ViT-H-14"
-DEFAULT_OPENCLIP_PRETRAINED = "laion2b_s32b_b79k"
+DEFAULT_OPENCLIP_MODEL = "ViT-B-16"
+DEFAULT_OPENCLIP_PRETRAINED = "laion2b_s34b_b88k"
 DEFAULT_IMAGE_ROOT = Path("data/processed/images_clean")
 
 

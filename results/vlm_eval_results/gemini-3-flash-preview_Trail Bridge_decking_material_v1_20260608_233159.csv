@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_decking_material,gemini-3-flash-preview,Trail Bridge,decking_material_v1,265,0.47871520342612417,0.9241145812290412,2026-06-08T23:31:59.165187

@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_edge_guard,gemini-3-flash-preview,Boardwalk < 1.2m High,has_edge_guard_v1,581,0.6929175475687104,0.9640428218461281,2026-06-08T07:16:15.642132

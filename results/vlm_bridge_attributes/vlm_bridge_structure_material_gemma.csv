@@ -1,0 +1,1545 @@
+asset_id,timestamp,model,response,latency_s,structure_material_value,structure_material_confidence,parse_error,raw_response,error,traceback
+46926,2026-06-06T23:13:20.242769,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.076,Timber,1.0,,,,
+47533,2026-06-06T23:13:28.418594,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.169,Timber,1.0,,,,
+47637,2026-06-06T23:13:37.636617,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.217,Timber,1.0,,,,
+48111,2026-06-06T23:13:54.861929,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",17.223,Timber,0.95,,,,
+48112,2026-06-06T23:14:03.860515,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.993,Timber,0.98,,,,
+48296,2026-06-06T23:14:14.611361,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.749,Timber,0.95,,,,
+48340,2026-06-06T23:14:22.863783,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.251,Timber,1.0,,,,
+48344,2026-06-06T23:14:31.992464,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.127,Timber,0.95,,,,
+49057,2026-06-06T23:14:43.179295,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",11.18,Timber,1.0,,,,
+49059,2026-06-06T23:14:51.855418,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.674,Timber,1.0,,,,
+49060,2026-06-06T23:15:21.220756,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}
+```",29.363,Steel,0.95,,,,
+49061,2026-06-06T23:15:48.111739,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",26.89,Steel,0.9,,,,
+50654,2026-06-06T23:16:08.791175,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",20.674,Timber,0.95,,,,
+51524,2026-06-06T23:16:59.793613,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",51.001,Steel,0.85,,,,
+51525,2026-06-06T23:17:18.943227,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",19.144,Steel,0.95,,,,
+51531,2026-06-06T23:18:12.051504,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",53.103,Timber,0.9,,,,
+52551,2026-06-06T23:18:24.681351,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",12.602,Timber,1.0,,,,
+53193,2026-06-06T23:18:43.287081,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",18.605,Timber,0.9,,,,
+53798,2026-06-06T23:18:51.715195,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.425,Timber,1.0,,,,
+53985,2026-06-06T23:19:13.730617,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",22.012,Timber,0.9,,,,
+53986,2026-06-06T23:19:23.864097,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.115,Timber,0.95,,,,
+54184,2026-06-06T23:19:33.934353,gemma-4-26b-a4b-it,"{""structure_material"": {""value"": ""Timber"", ""confidence"": 0.98}}",10.069,Timber,0.98,,,,
+54321,2026-06-06T23:19:45.059131,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.123,Timber,0.95,,,,
+54324,2026-06-06T23:19:59.291471,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",14.231,Steel,0.95,,,,
+55640,2026-06-06T23:20:26.281536,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",26.988,Timber,0.9,,,,
+56469,2026-06-06T23:20:35.905172,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.616,Timber,1.0,,,,
+56533,2026-06-06T23:20:57.570830,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",21.664,Timber,0.95,,,,
+57834,2026-06-06T23:21:23.266623,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",25.695,Steel,0.9,,,,
+58162,2026-06-06T23:21:41.352808,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}
+```",18.084,Steel,0.95,,,,
+58164,2026-06-06T23:21:49.686718,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.332,Timber,0.95,,,,
+58955,2026-06-06T23:22:00.640986,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.952,Timber,0.9,,,,
+59060,2026-06-06T23:22:11.623157,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.98,Timber,1.0,,,,
+61003,2026-06-06T23:22:20.913720,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.289,Timber,0.95,,,,
+62289,2026-06-06T23:22:32.640717,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.725,Timber,0.95,,,,
+63068,2026-06-06T23:23:05.263056,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",32.621,Steel,0.85,,,,
+63597,2026-06-06T23:23:16.111047,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",10.843,Steel,0.95,,,,
+64102,2026-06-06T23:23:25.428444,gemma-4-26b-a4b-it,"{""structure_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",9.316,Timber,0.95,,,,
+64126,2026-06-06T23:23:35.361409,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.931,Timber,1.0,,,,
+64643,2026-06-06T23:23:51.424733,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",16.062,Timber,0.9,,,,
+65423,2026-06-06T23:24:16.443037,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",25.016,Aluminum,0.85,,,,
+65425,2026-06-06T23:24:38.135021,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",21.684,Timber,0.9,,,,
+65609,2026-06-06T23:25:02.037801,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",23.899,Concrete,0.95,,,,
+65788,2026-06-06T23:25:18.574093,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",16.531,Aluminum,0.9,,,,
+65789,2026-06-06T23:25:28.638496,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",10.063,Steel,0.95,,,,
+66920,2026-06-06T23:25:45.859567,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",17.22,Steel,0.9,,,,
+66922,2026-06-06T23:25:53.133495,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",7.272,Timber,0.95,,,,
+67205,2026-06-06T23:26:06.792278,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",13.658,Timber,1.0,,,,
+82270,2026-06-06T23:26:14.735168,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",7.941,Timber,0.95,,,,
+82385,2026-06-06T23:26:22.370552,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.634,Timber,1.0,,,,
+83138,2026-06-06T23:26:30.418178,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.042,Timber,1.0,,,,
+83150,2026-06-06T23:26:41.725355,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",11.301,Timber,1.0,,,,
+83513,2026-06-06T23:26:49.249095,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",7.523,Timber,0.98,,,,
+85208,2026-06-06T23:26:57.022415,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.772,Timber,1.0,,,,
+85487,2026-06-06T23:27:07.793959,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.77,Timber,0.95,,,,
+86369,2026-06-06T23:27:15.257703,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.462,Timber,0.95,,,,
+86525,2026-06-06T23:27:24.471797,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",9.212,Timber,0.98,,,,
+87188,2026-06-06T23:27:35.231039,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.758,Timber,1.0,,,,
+87483,2026-06-06T23:27:45.669888,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.436,Timber,1.0,,,,
+87769,2026-06-06T23:27:54.078648,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",8.407,Timber,0.98,,,,
+87928,2026-06-06T23:28:27.624782,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",33.544,Aluminum,0.9,,,,
+88201,2026-06-06T23:28:49.673228,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}",22.031,Steel,0.85,,,,
+88280,2026-06-06T23:28:56.961280,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",7.286,Timber,0.95,,,,
+88733,2026-06-06T23:29:10.463018,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",13.499,Timber,0.95,,,,
+88812,2026-06-06T23:29:19.067537,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.603,Timber,1.0,,,,
+88814,2026-06-06T23:29:28.494907,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.427,Timber,1.0,,,,
+88818,2026-06-06T23:29:39.746828,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",11.245,Timber,1.0,,,,
+88838,2026-06-06T23:29:53.368671,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",13.62,Timber,1.0,,,,
+88842,2026-06-06T23:30:00.158047,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",6.788,Timber,1.0,,,,
+88845,2026-06-06T23:30:11.179385,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",11.02,Timber,1.0,,,,
+88856,2026-06-06T23:30:22.029349,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.849,Timber,1.0,,,,
+88857,2026-06-06T23:30:30.960667,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.93,Timber,1.0,,,,
+88859,2026-06-06T23:30:40.788069,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.827,Timber,0.95,,,,
+88865,2026-06-06T23:30:50.614295,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.821,Timber,1.0,,,,
+88866,2026-06-06T23:30:59.317527,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.702,Timber,1.0,,,,
+88869,2026-06-06T23:31:11.169232,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",11.85,Timber,0.98,,,,
+88871,2026-06-06T23:31:20.518411,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.348,Timber,1.0,,,,
+89437,2026-06-06T23:31:28.291289,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.768,Timber,1.0,,,,
+89447,2026-06-06T23:31:35.169254,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",6.876,Timber,1.0,,,,
+89450,2026-06-06T23:31:44.782172,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.611,Timber,0.95,,,,
+89580,2026-06-06T23:31:52.140439,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.357,Timber,0.95,,,,
+89761,2026-06-06T23:32:05.845472,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",13.696,Timber,1.0,,,,
+89767,2026-06-06T23:32:05.847918,gemma-4-26b-a4b-it,,0.001,,,True,,,
+90408,2026-06-06T23:32:16.345695,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.497,Timber,1.0,,,,
+91248,2026-06-06T23:32:26.138693,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.791,Timber,1.0,,,,
+91832,2026-06-06T23:32:34.760859,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.62,Timber,1.0,,,,
+92164,2026-06-06T23:32:41.868510,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",7.102,Timber,0.95,,,,
+92794,2026-06-06T23:32:59.228235,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",17.357,Timber,0.9,,,,
+92801,2026-06-06T23:33:09.173845,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.944,Timber,1.0,,,,
+92854,2026-06-06T23:33:40.403354,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",31.228,Timber,0.95,,,,
+92872,2026-06-06T23:33:49.307520,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.885,Timber,0.95,,,,
+93036,2026-06-06T23:34:00.158959,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.848,Timber,0.95,,,,
+93038,2026-06-06T23:34:09.562650,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.402,Timber,0.95,,,,
+93043,2026-06-06T23:34:27.826493,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",18.262,Timber,0.8,,,,
+94144,2026-06-06T23:35:02.017871,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    }
+}
+```",34.19,Steel,0.7,,,,
+94177,2026-06-06T23:35:09.484627,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.462,Timber,1.0,,,,
+96291,2026-06-06T23:35:17.373343,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.887,Timber,0.95,,,,
+96292,2026-06-06T23:35:25.462018,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.088,Timber,0.98,,,,
+96854,2026-06-06T23:35:36.827267,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.363,Timber,0.95,,,,
+97817,2026-06-06T23:35:47.995769,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",11.165,Timber,1.0,,,,
+98336,2026-06-06T23:36:00.798185,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.8,Timber,0.95,,,,
+98498,2026-06-06T23:36:08.773952,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.966,Timber,1.0,,,,
+99611,2026-06-06T23:36:56.838279,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",48.063,Steel,0.9,,,,
+99614,2026-06-06T23:37:09.809516,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",12.965,Timber,1.0,,,,
+99844,2026-06-06T23:37:21.320993,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.51,Timber,0.95,,,,
+100140,2026-06-06T23:37:34.591815,gemma-4-26b-a4b-it,"{""structure_material"": {""value"": ""Timber"", ""confidence"": 1.0}}",13.269,Timber,1.0,,,,
+100181,2026-06-06T23:37:42.173607,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.58,Timber,1.0,,,,
+100272,2026-06-06T23:37:51.977857,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.802,Timber,1.0,,,,
+100347,2026-06-06T23:38:02.944023,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.964,Timber,1.0,,,,
+100348,2026-06-06T23:38:13.100459,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",10.155,Timber,0.98,,,,
+100446,2026-06-06T23:38:21.491932,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.39,Timber,1.0,,,,
+100475,2026-06-06T23:38:31.124697,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.632,Timber,1.0,,,,
+100757,2026-06-06T23:38:38.493310,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.366,Timber,1.0,,,,
+100758,2026-06-06T23:38:44.427560,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",5.932,Timber,1.0,,,,
+101826,2026-06-06T23:39:08.902802,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}",24.474,Aluminum,0.85,,,,
+101890,2026-06-06T23:39:16.478604,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.574,Timber,1.0,,,,
+101988,2026-06-06T23:39:24.036375,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",7.556,Timber,0.98,,,,
+102355,2026-06-06T23:39:32.780837,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.743,Timber,0.95,,,,
+102471,2026-06-06T23:40:06.660996,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",33.875,Aluminum,0.85,,,,
+102849,2026-06-06T23:40:18.594842,gemma-4-26b-a4b-it,"{""structure_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",11.932,Timber,0.95,,,,
+102851,2026-06-06T23:40:25.624966,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",7.029,Timber,1.0,,,,
+103256,2026-06-06T23:40:32.301310,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",6.668,Timber,1.0,,,,
+105438,2026-06-06T23:40:42.300888,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",9.995,Timber,0.98,,,,
+105440,2026-06-06T23:40:52.621610,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.32,Timber,0.9,,,,
+105442,2026-06-06T23:41:00.827663,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.182,Timber,0.95,,,,
+105443,2026-06-06T23:41:13.632805,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",12.803,Concrete,0.9,,,,
+105444,2026-06-06T23:41:20.493383,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",6.858,Timber,0.98,,,,
+105449,2026-06-06T23:41:29.914607,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.42,Timber,1.0,,,,
+106027,2026-06-06T23:41:38.446411,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.531,Timber,0.98,,,,
+106030,2026-06-06T23:41:48.446409,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.998,Timber,1.0,,,,
+106045,2026-06-06T23:41:59.198647,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.75,Timber,1.0,,,,
+106273,2026-06-06T23:42:15.480429,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",16.278,Timber,0.7,,,,
+106920,2026-06-06T23:42:23.876572,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.395,Timber,0.95,,,,
+106925,2026-06-06T23:42:35.450543,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",11.572,Timber,0.9,,,,
+107041,2026-06-06T23:42:42.209281,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",6.757,Timber,1.0,,,,
+107877,2026-06-06T23:42:58.674191,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}",16.463,Aluminum,0.85,,,,
+107885,2026-06-06T23:43:18.048479,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",19.373,Aluminum,0.9,,,,
+107969,2026-06-06T23:43:28.495577,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}
+```",10.445,Steel,0.95,,,,
+107973,2026-06-06T23:43:51.156419,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",22.659,Aluminum,0.9,,,,
+108019,2026-06-06T23:44:00.830094,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.671,Timber,1.0,,,,
+108037,2026-06-06T23:44:14.446089,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}
+```",13.614,Steel,0.95,,,,
+108040,2026-06-06T23:44:21.333525,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",6.878,Timber,0.95,,,,
+108107,2026-06-06T23:44:30.728152,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.393,Timber,0.95,,,,
+108380,2026-06-06T23:44:40.155299,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.426,Timber,1.0,,,,
+108731,2026-06-06T23:44:50.390076,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}
+```",10.216,Concrete,0.9,,,,
+109160,2026-06-06T23:44:59.286224,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.895,Timber,0.95,,,,
+109169,2026-06-06T23:45:08.206053,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",8.919,Timber,0.98,,,,
+109560,2026-06-06T23:45:15.577537,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.99
+    }
+}",7.37,Timber,0.99,,,,
+109619,2026-06-06T23:45:27.870982,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",12.292,Timber,1.0,,,,
+110131,2026-06-06T23:45:36.299733,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.427,Timber,1.0,,,,
+110170,2026-06-06T23:45:46.033637,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.713,Timber,1.0,,,,
+110299,2026-06-06T23:46:09.646106,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",23.611,Timber,0.95,,,,
+110356,2026-06-06T23:46:17.224254,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.576,Timber,1.0,,,,
+110775,2026-06-06T23:46:27.155840,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.93,Timber,0.95,,,,
+110868,2026-06-06T23:46:35.556095,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.399,Timber,0.95,,,,
+110932,2026-06-06T23:46:41.905707,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",6.348,Timber,0.9,,,,
+111914,2026-06-06T23:46:51.517600,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.61,Timber,0.95,,,,
+112338,2026-06-06T23:47:02.470046,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.951,Timber,0.95,,,,
+112422,2026-06-06T23:47:09.245654,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",6.774,Timber,1.0,,,,
+113125,2026-06-06T23:47:26.383174,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",17.136,Steel,0.95,,,,
+113163,2026-06-06T23:47:35.263888,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.88,Timber,1.0,,,,
+113164,2026-06-06T23:47:41.883496,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",6.601,Timber,0.95,,,,
+113217,2026-06-06T23:47:52.550933,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.663,Timber,1.0,,,,
+113244,2026-06-06T23:48:31.072643,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",38.52,Aluminum,0.85,,,,
+113804,2026-06-06T23:48:41.206758,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",10.128,Timber,0.98,,,,
+113952,2026-06-06T23:49:02.299413,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",21.092,Steel,0.9,,,,
+114047,2026-06-06T23:49:09.671892,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.371,Timber,1.0,,,,
+114291,2026-06-06T23:49:16.838515,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.165,Timber,0.95,,,,
+114635,2026-06-06T23:49:26.157783,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.317,Timber,1.0,,,,
+114815,2026-06-06T23:49:57.030772,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",30.871,Steel,0.85,,,,
+114923,2026-06-06T23:50:04.353373,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.32,Timber,0.95,,,,
+114963,2026-06-06T23:50:36.698715,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",32.344,Steel,0.9,,,,
+115806,2026-06-06T23:50:45.108303,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.407,Timber,1.0,,,,
+115807,2026-06-06T23:50:53.506253,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.397,Timber,0.95,,,,
+115809,2026-06-06T23:51:02.251071,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.743,Timber,1.0,,,,
+115814,2026-06-06T23:51:10.303361,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.051,Timber,0.95,,,,
+116847,2026-06-06T23:51:18.659822,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.354,Timber,0.98,,,,
+117195,2026-06-06T23:51:31.702392,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",13.041,Aluminum,0.9,,,,
+117196,2026-06-06T23:51:45.223705,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.95
+    }
+}",13.518,Aluminum,0.95,,,,
+117197,2026-06-06T23:52:01.092623,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}",15.857,Aluminum,0.85,,,,
+117211,2026-06-06T23:52:26.494848,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.7
+    }
+}
+```",25.4,Aluminum,0.7,,,,
+117216,2026-06-06T23:52:41.287753,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}",14.785,Aluminum,0.85,,,,
+117220,2026-06-06T23:52:52.500410,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",11.206,Aluminum,0.9,,,,
+117221,2026-06-06T23:53:05.916703,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}",13.411,Aluminum,0.85,,,,
+117304,2026-06-06T23:53:43.190913,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",37.272,Timber,0.9,,,,
+117365,2026-06-06T23:53:54.108834,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.915,Timber,1.0,,,,
+118143,2026-06-06T23:54:02.237915,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",8.127,Timber,0.95,,,,
+118246,2026-06-06T23:54:15.547871,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}
+```",13.308,Steel,0.95,,,,
+118757,2026-06-06T23:54:22.263628,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",6.714,Timber,1.0,,,,
+118797,2026-06-06T23:54:29.165302,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",6.9,Timber,0.95,,,,
+119099,2026-06-06T23:55:07.965611,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",38.798,Steel,0.9,,,,
+119811,2026-06-06T23:55:16.415527,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.405,Timber,0.95,,,,
+119851,2026-06-06T23:55:23.674752,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",7.053,Timber,0.98,,,,
+119977,2026-06-06T23:55:32.377968,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.698,Timber,1.0,,,,
+120706,2026-06-06T23:55:58.679989,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",26.29,Steel,0.9,,,,
+121497,2026-06-06T23:56:06.595505,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",7.909,Timber,0.98,,,,
+121755,2026-06-06T23:56:12.738494,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",6.141,Timber,1.0,,,,
+121993,2026-06-06T23:56:20.732083,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.992,Timber,1.0,,,,
+122244,2026-06-06T23:56:27.942829,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.205,Timber,1.0,,,,
+122263,2026-06-06T23:56:35.324259,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.378,Timber,0.95,,,,
+122441,2026-06-06T23:56:52.445313,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",17.119,Steel,0.9,,,,
+122444,2026-06-06T23:57:50.729592,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",58.261,Steel,0.85,,,,
+122445,2026-06-06T23:58:20.004849,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",29.247,Timber,0.9,,,,
+122981,2026-06-06T23:58:28.280664,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.271,Timber,1.0,,,,
+122999,2026-06-06T23:58:37.285270,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",9.002,Timber,0.9,,,,
+123161,2026-06-06T23:59:20.510593,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",43.222,Steel,0.9,,,,
+123219,2026-06-06T23:59:42.140232,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",21.623,Steel,0.85,,,,
+123309,2026-06-07T00:00:33.224450,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",51.076,Timber,0.7,,,,
+123352,2026-06-07T00:00:45.812849,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",12.582,Timber,1.0,,,,
+123310,2026-06-07T00:01:07.716669,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",21.903,Timber,0.8,,,,
+123354,2026-06-07T00:01:51.553268,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.4
+    }
+}
+```",43.831,Timber,0.4,,,,
+123585,2026-06-07T00:02:02.256986,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.698,Timber,1.0,,,,
+126334,2026-06-07T00:02:16.593490,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",14.335,Timber,1.0,,,,
+126340,2026-06-07T00:02:54.370222,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",37.763,Aluminum,0.85,,,,
+126683,2026-06-07T00:03:03.532681,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.156,Timber,0.95,,,,
+126721,2026-06-07T00:03:22.671063,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",19.136,Steel,0.95,,,,
+126709,2026-06-07T00:03:30.830438,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.157,Timber,0.98,,,,
+126779,2026-06-07T00:03:49.462074,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",18.63,Aluminum,0.9,,,,
+126799,2026-06-07T00:04:02.750783,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",13.276,Aluminum,0.9,,,,
+126915,2026-06-07T00:04:50.184941,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.7
+    }
+}
+```",47.433,Aluminum,0.7,,,,
+127136,2026-06-07T00:05:11.417806,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",21.227,Aluminum,0.9,,,,
+127147,2026-06-07T00:05:24.283034,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",12.833,Timber,0.95,,,,
+127145,2026-06-07T00:05:38.623500,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",14.33,Timber,0.9,,,,
+127203,2026-06-07T00:05:47.046387,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.399,Timber,1.0,,,,
+127204,2026-06-07T00:05:54.899397,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.848,Timber,1.0,,,,
+127205,2026-06-07T00:06:02.219334,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",7.319,Timber,1.0,,,,
+127388,2026-06-07T00:06:13.227498,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",11.005,Timber,0.9,,,,
+127523,2026-06-07T00:06:19.368556,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",6.14,Timber,1.0,,,,
+128273,2026-06-07T00:07:12.306815,gemma-4-26b-a4b-it,"```json
+{
+    ""structure_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.8
+    }
+}
+```",52.934,Aluminum,0.8,,,,
+129304,2026-06-07T00:07:22.756431,gemma-4-26b-a4b-it,"{
+    ""structure_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.419,Timber,0.9,,,,
+129739,2026-06-07T00:07:36.889169,gemma-4-26b-a4b-it,"{""structure_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",14.129,Timber,0.95,,,,
