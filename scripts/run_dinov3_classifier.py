@@ -129,8 +129,8 @@ def default_output_dir(classifier: str) -> Path:
 
 
 def default_prediction_dir(classifier: str) -> Path:
-    """Return the standard DINOv3 prediction folder for a classifier."""
-    return DINO_PREDICTIONS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
+    """Return the prediction folder nested inside the classifier's result folder."""
+    return default_output_dir(classifier) / "predictions"
 
 
 def log_results_to_mlflow(
