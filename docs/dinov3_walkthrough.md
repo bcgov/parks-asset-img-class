@@ -185,7 +185,7 @@ Expected outputs:
 ```text
 results/dinov3_results/dinov3_logistic/dinov3_attr_decking_material_classification_results.csv
 results/dinov3_results/dinov3_logistic/dinov3_attr_decking_material_classification_cv_folds.csv
-data/predictions/dinov3_predictions/dinov3_logistic/dinov3_attr_decking_material_classification_predictions.csv
+results/predictions/dinov3_predictions/dinov3_logistic/dinov3_attr_decking_material_classification_predictions.csv
 ```
 
 The prediction CSV contains one out-of-fold prediction per validation asset:
@@ -206,11 +206,11 @@ results/dinov3_results/dinov3_linear_svm/
 results/dinov3_results/dinov3_random_forest/
 results/dinov3_results/dinov3_gradient_boost/
 
-data/predictions/dinov3_predictions/dinov3_logistic/
-data/predictions/dinov3_predictions/dinov3_logistic_tuned/
-data/predictions/dinov3_predictions/dinov3_linear_svm/
-data/predictions/dinov3_predictions/dinov3_random_forest/
-data/predictions/dinov3_predictions/dinov3_gradient_boost/
+results/predictions/dinov3_predictions/dinov3_logistic/
+results/predictions/dinov3_predictions/dinov3_logistic_tuned/
+results/predictions/dinov3_predictions/dinov3_linear_svm/
+results/predictions/dinov3_predictions/dinov3_random_forest/
+results/predictions/dinov3_predictions/dinov3_gradient_boost/
 ```
 
 ## Reusing for Other Attributes
@@ -377,7 +377,7 @@ scripts/run_dinov3_classifier.py
 
 Command-line script for one DINOv3 classification target. It writes summary and
 fold CSVs under the classifier-specific `results/dinov3_results/...` folder and
-prediction CSVs under the matching `data/predictions/dinov3_predictions/...`
+prediction CSVs under the matching `results/predictions/dinov3_predictions/...`
 folder unless custom directories are supplied.
 
 Command-line script for the fast step: train/evaluate a classifier from saved

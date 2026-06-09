@@ -48,5 +48,5 @@ Local screen of 5310 images using YOLOv8n (general) — no face model. Confidenc
 - This screen is **recall-oriented**: borderline detections are flagged. Manual review is still needed.
 - Re-run with `--conf 0.3` for an even more cautious screen.
 - For a closer face-specific pass, download `yolov8n-face.pt` from https://github.com/akanametov/yolov8-face and pass `--face-model yolov8n-face.pt`.
-- Source CSV: `data/predictions/pii_screen.csv` — full per-image rows.
+- Source CSV: `results/predictions/pii_screen.csv` — full per-image rows.
 - Regenerate with `python scripts/screen_images_for_pii.py`.

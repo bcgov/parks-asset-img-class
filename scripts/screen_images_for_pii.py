@@ -15,7 +15,7 @@ Usage:
     python scripts/screen_images_for_pii.py --conf 0.3            # cautious
 
 Output:
-    data/predictions/pii_screen.csv         — one row per image
+    results/predictions/pii_screen.csv         — one row per image
     reports/pii_screen_summary.md           — counts + flagged-image table
 """
 
@@ -175,6 +175,13 @@ def render_summary(
         .sort_values(["n_faces", "n_persons", "n_vehicles"], ascending=False)
         .head(20)[["image_path", "n_persons", "n_faces", "n_vehicles", "flagged_reason"]]
     )
+    if flagged_sample.empty:
+        flagged_sample_text = "_None flagged._"
+    else:
+        try:
+            flagged_sample_text = flagged_sample.to_markdown(index=False)
+        except ImportError:
+            flagged_sample_text = flagged_sample.to_string(index=False)
 
     detector_str = (
         "YOLOv8n (general) + YOLOv8n-face"
@@ -206,7 +213,7 @@ def render_summary(
         "",
         "## First 20 flagged images (by face count → person → vehicle)",
         "",
-        flagged_sample.to_markdown(index=False) if not flagged_sample.empty else "_None flagged._",
+        flagged_sample_text,
         "",
         "## Notes",
         "",
@@ -216,7 +223,7 @@ def render_summary(
         "- Re-run with `--conf 0.3` for an even more cautious screen.",
         "- For a closer face-specific pass, download `yolov8n-face.pt` from "
         "https://github.com/akanametov/yolov8-face and pass `--face-model yolov8n-face.pt`.",
-        "- Source CSV: `data/predictions/pii_screen.csv` — full per-image rows.",
+        "- Source CSV: `results/predictions/pii_screen.csv` — full per-image rows.",
         "- Regenerate with `python scripts/screen_images_for_pii.py`.",
         "",
     ]
@@ -235,7 +242,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--output-csv",
         type=Path,
-        default=Path("data/predictions/pii_screen.csv"),
+        default=Path("results/predictions/pii_screen.csv"),
     )
     p.add_argument(
         "--summary-md",
