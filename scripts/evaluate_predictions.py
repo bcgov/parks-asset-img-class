@@ -5,7 +5,7 @@ Compute evaluation metrics for VLM predictions and log to MLflow.
 Usage:
     python scripts/evaluate_predictions.py \
         --predictions results/vlm_predictions_stairs_gemini.csv \
-        --ground_truth data/processed/test/attr_number_of_steps_test.csv \
+        --ground_truth data/processed/train/attr_has_pedestrian_railing_train.csv \
         --attribute number_of_steps \
         --model gemini-3-flash-preview \
         --asset_type Stairs \
