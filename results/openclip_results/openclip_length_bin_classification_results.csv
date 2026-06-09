@@ -1,2 +1,0 @@
-attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
-length_bin,length_bin,data/processed/train/length_bin_train.csv,data/features/openclip_vith14_all_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,1599,1599,1024,0.48028017241379306,0.019953917257320906,0.48403066605871603,0.021291884690673304,0.25997088769399057,0.019896501278187734
