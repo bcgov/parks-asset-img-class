@@ -1,0 +1,521 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>VLM Wrong Predictions - steps_bin</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background: #f5f5f5;
+                margin: 0;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            h1 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .summary {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .asset-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .asset-card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            .card-header {
+                background: #f0f0f0;
+                padding: 12px 16px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .asset-id {
+                font-weight: bold;
+                color: #222;
+                font-size: 1.05em;
+            }
+            .image-count {
+                background: #e3eaf7;
+                color: #3a5a9e;
+                font-size: 0.82em;
+                font-weight: 600;
+                padding: 2px 10px;
+                border-radius: 12px;
+            }
+            .timestamp {
+                margin-left: auto;
+                color: #888;
+                font-size: 0.82em;
+            }
+            .card-body {
+                padding: 16px;
+            }
+            .prediction-row {
+                display: flex;
+                margin-bottom: 10px;
+                align-items: center;
+                gap: 10px;
+            }
+            .meta-row {
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .label {
+                font-weight: 600;
+                color: #555;
+                min-width: 100px;
+                flex-shrink: 0;
+            }
+            .value {
+                flex: 1;
+                padding: 5px 10px;
+                background: #f5f5f5;
+                border-radius: 4px;
+                word-break: break-word;
+            }
+            .predicted {
+                background: #ffe0e0;
+                color: #c62828;
+                font-weight: 600;
+            }
+            .actual {
+                background: #e0f5e0;
+                color: #2e7d32;
+                font-weight: 600;
+            }
+            .confidence {
+                font-size: 0.85em;
+                color: #777;
+                flex-shrink: 0;
+            }
+            .meta-text {
+                background: #f9f9f9;
+                color: #666;
+                font-family: monospace;
+                font-size: 0.82em;
+            }
+            .prompt-text {
+                display: block;
+                max-height: 80px;
+                overflow-y: auto;
+            }
+            /* Horizontal image strip */
+            .images-strip {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #eee;
+            }
+            .image-wrapper {
+                flex: 0 0 auto;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+            .image-wrapper img {
+                width: 400px;
+                height: 300px;
+                object-fit: contain;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                background: #fafafa;
+            }
+            .image-filename {
+                font-size: 0.72em;
+                color: #888;
+                word-break: break-all;
+                text-align: center;
+                max-width: 400px;
+            }
+            .image-missing {
+                width: 400px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px dashed #ccc;
+                border-radius: 5px;
+                color: #aaa;
+                font-size: 0.85em;
+                background: #fafafa;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>VLM Wrong Predictions: steps_bin</h1>
+            <div class="summary">
+                <strong>Asset type:</strong> Stairs<br>
+                <strong>Model:</strong> gemini-3-flash<br>
+                <strong>Attribute:</strong> steps_bin<br>
+                <strong>Wrong assets:</strong> 9 of 20 (45.0% asset-level error rate)
+            </div>
+            <div class="asset-cards">
+                
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 91434</span>
+                <span class="image-count">5 images</span>
+                <span class="timestamp">2026-05-25T18:47:56.222275</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">many (>20)</span>
+                    <span class="confidence">(conf: 0.95)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">few (<10)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/91434/25852__AST_IM_20211006_115537.jpeg"
+                         alt="Asset 91434 image">
+                    <div class="image-filename">AST_IM_20211006_115537.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/91434/25856__AST_IM_20211006_115410.jpeg"
+                         alt="Asset 91434 image">
+                    <div class="image-filename">AST_IM_20211006_115410.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/91434/25857__AST_IM_20211006_115516.jpeg"
+                         alt="Asset 91434 image">
+                    <div class="image-filename">AST_IM_20211006_115516.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/91434/25858__AST_IM_20211006_115734.jpeg"
+                         alt="Asset 91434 image">
+                    <div class="image-filename">AST_IM_20211006_115734.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/91434/25860__AST_IM_20211006_115525.jpeg"
+                         alt="Asset 91434 image">
+                    <div class="image-filename">AST_IM_20211006_115525.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 94176</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp">2026-05-25T18:51:51.429697</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">few (<10)</span>
+                    <span class="confidence">(conf: 1.0)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">medium (10-20)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/94176/33067__AST_IM_20211126_124251.jpeg"
+                         alt="Asset 94176 image">
+                    <div class="image-filename">AST_IM_20211126_124251.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 102439</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp">2026-05-25T18:57:52.225033</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">many (>20)</span>
+                    <span class="confidence">(conf: 1.0)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">medium (10-20)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/102439/46608__AST_IM_20220615_130216.jpeg"
+                         alt="Asset 102439 image">
+                    <div class="image-filename">AST_IM_20220615_130216.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 102839</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp">2026-05-25T18:58:10.309964</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">medium (10-20)</span>
+                    <span class="confidence">(conf: 0.8)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">few (<10)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/102839/47369__AST_IM_20220617_133632.jpeg"
+                         alt="Asset 102839 image">
+                    <div class="image-filename">AST_IM_20220617_133632.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/102839/85476__AST_EX_20250727_115358.jpeg"
+                         alt="Asset 102839 image">
+                    <div class="image-filename">AST_EX_20250727_115358.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 105458</span>
+                <span class="image-count">5 images</span>
+                <span class="timestamp">2026-05-25T18:59:35.667600</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">medium (10-20)</span>
+                    <span class="confidence">(conf: 0.95)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">many (>20)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/105458/51321__AST_IM_20220702_104135.jpeg"
+                         alt="Asset 105458 image">
+                    <div class="image-filename">AST_IM_20220702_104135.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/105458/85439__AST_EX_20250726_111513.jpeg"
+                         alt="Asset 105458 image">
+                    <div class="image-filename">AST_EX_20250726_111513.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/105458/85440__AST_EX_20250726_112058.jpeg"
+                         alt="Asset 105458 image">
+                    <div class="image-filename">AST_EX_20250726_112058.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/105458/85445__AST_EX_20250726_111456.jpeg"
+                         alt="Asset 105458 image">
+                    <div class="image-filename">AST_EX_20250726_111456.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/105458/85450__AST_EX_20250726_111541.jpeg"
+                         alt="Asset 105458 image">
+                    <div class="image-filename">AST_EX_20250726_111541.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 121499</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp">2026-05-25T19:19:31.984286</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">medium (10-20)</span>
+                    <span class="confidence">(conf: 0.95)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">few (<10)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/121499/71875__AST_IM_20240801_153342.jpeg"
+                         alt="Asset 121499 image">
+                    <div class="image-filename">AST_IM_20240801_153342.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/121499/84492__AST_EX_20250707_102932.jpeg"
+                         alt="Asset 121499 image">
+                    <div class="image-filename">AST_EX_20250707_102932.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 127081</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp">2026-05-25T19:25:22.486840</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">many (>20)</span>
+                    <span class="confidence">(conf: 0.9)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">medium (10-20)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/127081/86531__AST_IM_20250814_103324.jpeg"
+                         alt="Asset 127081 image">
+                    <div class="image-filename">AST_IM_20250814_103324.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 127157</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp">2026-05-25T19:25:57.090885</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">medium (10-20)</span>
+                    <span class="confidence">(conf: 0.9)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">few (<10)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/127157/87052__AST_IM_20250818_155900.jpeg"
+                         alt="Asset 127157 image">
+                    <div class="image-filename">AST_IM_20250818_155900.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 121503</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp">2026-05-27T21:04:05.822690</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">medium (10-20)</span>
+                    <span class="confidence">(conf: 0.95)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">few (<10)</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/121503/71877__AST_IM_20240801_152836.jpeg"
+                         alt="Asset 121503 image">
+                    <div class="image-filename">AST_IM_20240801_152836.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///C:/Users/sarah/Documents/MDS/capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/356/121503/84485__AST_EX_20250707_104423.jpeg"
+                         alt="Asset 121503 image">
+                    <div class="image-filename">AST_EX_20250707_104423.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </body>
+    </html>
+    

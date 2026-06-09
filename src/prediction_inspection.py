@@ -72,9 +72,6 @@ def find_ground_truth_file(
 
     # Build ordered list of directories to search (prefer the given dir)
     search_dirs: list[Path] = [base_dir]
-    if base_dir.name in ("test", "train"):
-        sibling = "train" if base_dir.name == "test" else "test"
-        search_dirs.append(base_dir.parent / sibling)
 
     # Reproduce evaluate_predictions.py filename construction exactly:
     #   normalised = attribute with special chars stripped, attr_ prefix kept
