@@ -1,0 +1,8 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_edge_guard,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,592,0.6695374800637959,0.962003750161645,2026-06-08T18:38:40.825478
+attr_has_pedestrian_railing,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,596,0.5966159052453469,0.9919008846341658,2026-06-08T18:39:06.164970
+attr_decking_material,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,465,0.7902841311771149,0.9827736684187154,2026-06-08T18:39:32.464491
+fall_height_bin,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,1,0.0,0.0,2026-06-08T18:40:06.725867
+length_bin,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,318,0.4128560763091876,0.6221974790096101,2026-06-08T18:40:30.655179
+attr_structure_material,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,459,0.5811258278145696,0.988562091503268,2026-06-08T18:41:02.185841
+width_bin,gemma-4-26b-a4b-it,Boardwalk < 1.2m High,boardwalk_low_v1,402,0.3752136752136752,0.5128970531955607,2026-06-08T18:41:34.237277

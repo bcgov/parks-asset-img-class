@@ -1,0 +1,9 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+fall_height_bin,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,26,0.675,0.7153846153846154,2026-06-08T23:41:53.093001
+length_bin,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,198,0.5762644179509547,0.6025140618161845,2026-06-08T23:42:11.045461
+width_bin,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,262,0.40429000429000433,0.5475895743071316,2026-06-08T23:42:46.377388
+attr_has_pedestrian_railing,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,293,0.5766867642836635,0.7704379830262836,2026-06-08T23:43:14.370162
+attr_abutment_material,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,159,0.5310165912518854,0.7798643482550253,2026-06-08T23:43:29.359833
+attr_bridge_type,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,205,0.5369292595337172,0.840324610052234,2026-06-08T23:43:54.329727
+attr_decking_material,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,253,0.5164904034469252,0.9334759230789477,2026-06-08T23:44:30.174494
+attr_structure_material,gemini-3-flash-preview,Trail Bridge,trail_bridge_v1,221,0.8721246148753596,0.9012172940017397,2026-06-08T23:44:58.634984

@@ -1,8 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-fall_height_bin,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,23,0.43047619047619046,0.40679089026915116,2026-05-29T12:34:46.028164
-length_bin,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,187,0.5837804806876972,0.5899751607342986,2026-05-29T12:35:10.077371
-width_bin,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,230,0.3509181450357921,0.5131023423862299,2026-05-29T12:35:34.040197
-attr_has_pedestrian_railing,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,266,0.5554907941688847,0.7674929878756458,2026-05-29T12:35:58.106530
-attr_abutment_material,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,103,0.5899843949496382,0.7764428473638758,2026-05-29T12:36:30.450860
-attr_bridge_type,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,194,0.5527406194072861,0.8492638217724129,2026-05-29T12:36:50.596459
-attr_decking_material,gemma-4-26b-a4b-it,Trail Bridge,trail_bridge_v1,236,0.4252516575254962,0.9168987893035799,2026-05-29T12:37:18.074282
