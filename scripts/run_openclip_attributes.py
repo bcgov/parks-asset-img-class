@@ -1,26 +1,23 @@
 """Run OpenCLIP experiments for all classification attributes.
 
-Mirrors scripts/run_dinov3_remaining_attributes.py.
-
 The expensive step is OpenCLIP feature extraction. Because OpenCLIP features
 do not depend on the target label, this script extracts one shared feature
-table from the union of all requested train CSVs, then reuses that feature
-table for each attribute classifier.
+table from the union of all train CSVs, then reuses it for each attribute.
+
+Default model is ViT-B-16 (~86M params) to match DINOv3 ViT-B/16 and SigLIP2
+base for a fair, size-matched comparison.
 
 Usage:
-    python scripts/run_openclip_remaining_attributes.py
-
-To include decking material:
-    python scripts/run_openclip_remaining_attributes.py --include-decking
+    python scripts/run_openclip_attributes.py
 
 To skip MLflow:
-    python scripts/run_openclip_remaining_attributes.py --no-mlflow
+    python scripts/run_openclip_attributes.py --no-mlflow
 
 To use a different classifier:
-    python scripts/run_openclip_remaining_attributes.py --classifier random_forest
+    python scripts/run_openclip_attributes.py --classifier random_forest
 
-To force re-extraction of features even if they already exist:
-    python scripts/run_openclip_remaining_attributes.py --force-extract
+To force re-extraction even if features already exist:
+    python scripts/run_openclip_attributes.py --force-extract
 """
 
 from __future__ import annotations
@@ -52,25 +49,10 @@ DEFAULT_TARGETS = [
     "width_bin",
 ]
 
-ALL_TARGETS_IN_BASELINE_ORDER = [
-    "attr_abutment_material",
-    "attr_bridge_type",
-    "attr_decking_material",
-    "attr_has_edge_guard",
-    "attr_has_pedestrian_railing",
-    "attr_material_frame_tank_body",
-    "attr_structure_material",
-    "attr_structure_position",
-    "fall_height_bin",
-    "length_bin",
-    "steps_bin",
-    "width_bin",
-]
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Extract shared OpenCLIP features and run classifiers for multiple attributes."
+        description="Extract shared OpenCLIP features and run classifiers for all attributes."
     )
     parser.add_argument(
         "--train-dir",
@@ -98,12 +80,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        default="ViT-H-14",
+        default="ViT-B-16",
         help="OpenCLIP model architecture.",
     )
     parser.add_argument(
         "--pretrained",
-        default="laion2b_s32b_b79k",
+        default="laion2b_s34b_b88k",
         help="OpenCLIP pretrained weights tag.",
     )
     parser.add_argument(
@@ -130,17 +112,12 @@ def parse_args() -> argparse.Namespace:
         "--targets",
         nargs="+",
         default=None,
-        help="Optional explicit target list.",
-    )
-    parser.add_argument(
-        "--include-decking",
-        action="store_true",
-        help="Run all 12 targets including attr_decking_material.",
+        help="Optional explicit target list. Defaults to all 12 attributes.",
     )
     parser.add_argument(
         "--force-extract",
         action="store_true",
-        help="Recreate the shared OpenCLIP feature files even if they already exist.",
+        help="Recreate the shared OpenCLIP feature files even if they exist.",
     )
     parser.add_argument(
         "--no-mlflow",
@@ -153,8 +130,6 @@ def parse_args() -> argparse.Namespace:
 def selected_targets(args: argparse.Namespace) -> list[str]:
     if args.targets is not None:
         return args.targets
-    if args.include_decking:
-        return ALL_TARGETS_IN_BASELINE_ORDER
     return DEFAULT_TARGETS
 
 
@@ -191,7 +166,7 @@ def main() -> int:
     args = parse_args()
     targets = selected_targets(args)
 
-    # Sanitize model name for use in filenames (e.g. ViT-H-14 -> vith14)
+    # Sanitize model name for filenames (e.g. ViT-B-16 -> vitb16)
     model_slug = args.model.lower().replace("-", "").replace("/", "")
 
     args.feature_dir.mkdir(parents=True, exist_ok=True)
@@ -203,7 +178,7 @@ def main() -> int:
     for index, target in enumerate(targets, start=1):
         print(f"{index}. {target}")
 
-    # Step 1 — extract shared features (once for all attributes)
+    # Step 1 — extract shared features once for all attributes
     if args.force_extract or not asset_features_path.exists():
         build_union_input(targets, args.train_dir, union_path)
         extraction_command = [
@@ -222,15 +197,14 @@ def main() -> int:
     else:
         print(f"Reusing existing shared asset features: {asset_features_path}")
 
-    # Step 2 — run classifier for each attribute
+    # Step 2 — run the OpenCLIP classifier for each attribute
     for target in targets:
         classifier_command = [
             sys.executable,
-            "scripts/run_dinov3_classifier.py",
+            "scripts/run_openclip_classifier.py",
             "--labels", str(target_train_path(args.train_dir, target)),
             "--features", str(asset_features_path),
             "--target", target,
-            "--model-family", "openclip",
             "--output-dir", str(args.output_dir),
             "--predictions-dir", str(args.predictions_dir),
             "--folds", str(args.folds),

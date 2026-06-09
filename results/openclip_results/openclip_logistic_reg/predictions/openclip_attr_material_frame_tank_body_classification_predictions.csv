@@ -13,7 +13,7 @@ attr_material_frame_tank_body,1,64889,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,67630,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,46588,Rock/Stone,Concrete,False
 attr_material_frame_tank_body,1,47184,Timber/Wood,Metal,False
-attr_material_frame_tank_body,1,48131,Box Step,Box Step,True
+attr_material_frame_tank_body,1,48131,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,1,48269,Box Step,Box Step,True
 attr_material_frame_tank_body,1,49705,Box Step,Box Step,True
 attr_material_frame_tank_body,1,49707,Timber/Wood,Timber/Wood,True
@@ -22,8 +22,8 @@ attr_material_frame_tank_body,1,49711,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,1,50723,Concrete,Concrete,True
 attr_material_frame_tank_body,1,51537,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,51804,Box Step,Box Step,True
-attr_material_frame_tank_body,1,53111,Timber/Wood,Rock/Stone,False
-attr_material_frame_tank_body,1,55652,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,53111,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,55652,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,57224,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,1,57611,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,57614,Timber/Wood,Timber/Wood,True
@@ -42,9 +42,9 @@ attr_material_frame_tank_body,1,80909,Box Step,Box Step,True
 attr_material_frame_tank_body,1,82461,Concrete,Concrete,True
 attr_material_frame_tank_body,1,82812,Concrete,Concrete,True
 attr_material_frame_tank_body,1,84944,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,85481,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,85481,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,85492,Earth-Filled,Timber/Wood,False
-attr_material_frame_tank_body,1,85989,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,1,85989,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,86091,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,88087,Box Step,Box Step,True
 attr_material_frame_tank_body,1,88138,Timber/Wood,Timber/Wood,True
@@ -52,28 +52,28 @@ attr_material_frame_tank_body,1,89546,Concrete,Concrete,True
 attr_material_frame_tank_body,1,89561,Concrete,Concrete,True
 attr_material_frame_tank_body,1,89639,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,1,92015,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,1,92068,Box Step,Box Step,True
+attr_material_frame_tank_body,1,92068,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,1,92939,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,94328,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,94333,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,94340,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,94341,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,94343,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,94402,Concrete,Concrete,True
+attr_material_frame_tank_body,1,94340,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,1,94341,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,1,94343,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,1,94402,Concrete,Box Step,False
 attr_material_frame_tank_body,1,94426,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,94748,Box Step,Box Step,True
-attr_material_frame_tank_body,1,97124,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,94748,Box Step,Concrete,False
+attr_material_frame_tank_body,1,97124,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,98672,Concrete,Concrete,True
-attr_material_frame_tank_body,1,98951,Rock/Stone,Concrete,False
+attr_material_frame_tank_body,1,98951,Rock/Stone,Timber/Wood,False
 attr_material_frame_tank_body,1,101031,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,1,101380,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,101714,Steel,Metal,False
-attr_material_frame_tank_body,1,101739,Rock/Stone,Box Step,False
+attr_material_frame_tank_body,1,101714,Steel,Rock/Stone,False
+attr_material_frame_tank_body,1,101739,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,1,102473,Box Step,Box Step,True
 attr_material_frame_tank_body,1,102839,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,105458,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,106583,Concrete,Concrete,True
-attr_material_frame_tank_body,1,107290,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,107290,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,107475,Box Step,Box Step,True
 attr_material_frame_tank_body,1,107485,Box Step,Box Step,True
 attr_material_frame_tank_body,1,107876,Timber/Wood,Box Step,False
@@ -86,13 +86,13 @@ attr_material_frame_tank_body,1,107942,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,107945,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,107950,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,107974,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,1,108024,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,1,108024,Box Step,Box Step,True
 attr_material_frame_tank_body,1,108487,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,108648,Box Step,Box Step,True
 attr_material_frame_tank_body,1,108862,Concrete,Concrete,True
-attr_material_frame_tank_body,1,108945,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,1,108945,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,109154,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,109165,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,109165,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,109801,Concrete,Concrete,True
 attr_material_frame_tank_body,1,109807,Concrete,Concrete,True
 attr_material_frame_tank_body,1,109919,Timber/Wood,Timber/Wood,True
@@ -103,7 +103,7 @@ attr_material_frame_tank_body,1,112573,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,1,112908,Concrete,Concrete,True
 attr_material_frame_tank_body,1,113193,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,113204,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,114575,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,114575,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,117016,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,117219,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,117585,Timber/Wood,Timber/Wood,True
@@ -112,34 +112,34 @@ attr_material_frame_tank_body,1,120734,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,121829,Box Step,Box Step,True
 attr_material_frame_tank_body,1,122192,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,122648,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,123140,Metal,Box Step,False
-attr_material_frame_tank_body,1,123141,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,123605,Metal,Timber/Wood,False
+attr_material_frame_tank_body,1,123140,Metal,Metal,True
+attr_material_frame_tank_body,1,123141,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,1,123605,Metal,Box Step,False
 attr_material_frame_tank_body,1,126332,Concrete,Concrete,True
-attr_material_frame_tank_body,1,127152,Earth-Filled,Box Step,False
-attr_material_frame_tank_body,1,127157,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,127152,Earth-Filled,Concrete,False
+attr_material_frame_tank_body,1,127157,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,1,127168,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,46924,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,48488,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,49057,Metal,Timber/Wood,False
-attr_material_frame_tank_body,1,49062,Concrete,Concrete,True
+attr_material_frame_tank_body,1,49062,Concrete,Steel,False
 attr_material_frame_tank_body,1,89654,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,1,50822,Metal,Aluminum,False
 attr_material_frame_tank_body,1,51525,Steel,Metal,False
 attr_material_frame_tank_body,1,51941,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,52458,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,1,52458,Timber/Wood,Aluminum,False
 attr_material_frame_tank_body,1,53986,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,1,54327,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,55115,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,56206,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,57834,Steel,Timber/Wood,False
-attr_material_frame_tank_body,1,58162,Metal,Aluminum,False
+attr_material_frame_tank_body,1,58162,Metal,Timber/Wood,False
 attr_material_frame_tank_body,1,58165,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,60689,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,62927,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,64643,Aluminum,Steel,False
-attr_material_frame_tank_body,1,65497,Aluminum,Timber/Wood,False
-attr_material_frame_tank_body,1,67205,Timber/Wood,Steel,False
+attr_material_frame_tank_body,1,64643,Aluminum,Aluminum,True
+attr_material_frame_tank_body,1,65497,Aluminum,Box Step,False
+attr_material_frame_tank_body,1,67205,Timber/Wood,Metal,False
 attr_material_frame_tank_body,1,67465,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,88741,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,122980,Timber/Wood,Timber/Wood,True
@@ -147,7 +147,7 @@ attr_material_frame_tank_body,1,122981,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,128273,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,1,46618,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,50824,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,1,58183,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,1,58183,Timber/Wood,Steel,False
 attr_material_frame_tank_body,1,60883,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,64463,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,1,66056,Timber/Wood,Timber/Wood,True
@@ -159,7 +159,7 @@ attr_material_frame_tank_body,1,74944,Metal,Timber/Wood,False
 attr_material_frame_tank_body,2,48119,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,48637,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,48634,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,48933,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,48933,Timber/Wood,Concrete,False
 attr_material_frame_tank_body,2,50513,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,51547,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,52244,Timber/Wood,Timber/Wood,True
@@ -178,22 +178,22 @@ attr_material_frame_tank_body,2,49702,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,50514,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,2,50805,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,2,51458,Concrete,Concrete,True
-attr_material_frame_tank_body,2,51545,Metal,Steel,False
+attr_material_frame_tank_body,2,51545,Metal,Metal,True
 attr_material_frame_tank_body,2,52622,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,53805,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,2,53807,Concrete,Concrete,True
-attr_material_frame_tank_body,2,53808,Box Step,Box Step,True
-attr_material_frame_tank_body,2,54159,Rock/Stone,Concrete,False
+attr_material_frame_tank_body,2,53808,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,2,54159,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,2,56477,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,2,56479,Box Step,Box Step,True
 attr_material_frame_tank_body,2,57613,Concrete,Concrete,True
 attr_material_frame_tank_body,2,61612,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,2,61931,Concrete,Rock/Stone,False
+attr_material_frame_tank_body,2,61931,Concrete,Box Step,False
 attr_material_frame_tank_body,2,62890,Concrete,Concrete,True
 attr_material_frame_tank_body,2,63006,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,64399,Metal,Box Step,False
 attr_material_frame_tank_body,2,64459,Metal,Box Step,False
-attr_material_frame_tank_body,2,80463,Timber/Wood,Rock/Stone,False
+attr_material_frame_tank_body,2,80463,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,80471,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,2,80804,Concrete,Concrete,True
 attr_material_frame_tank_body,2,81109,Concrete,Concrete,True
@@ -204,8 +204,8 @@ attr_material_frame_tank_body,2,82806,Concrete,Concrete,True
 attr_material_frame_tank_body,2,82895,Box Step,Box Step,True
 attr_material_frame_tank_body,2,85480,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,85964,Concrete,Concrete,True
-attr_material_frame_tank_body,2,86044,Earth-Filled,Box Step,False
-attr_material_frame_tank_body,2,86053,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,86044,Earth-Filled,Timber/Wood,False
+attr_material_frame_tank_body,2,86053,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,2,86209,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,86620,Concrete,Concrete,True
 attr_material_frame_tank_body,2,86680,Concrete,Concrete,True
@@ -215,19 +215,19 @@ attr_material_frame_tank_body,2,88507,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,89202,Concrete,Concrete,True
 attr_material_frame_tank_body,2,89567,Concrete,Concrete,True
 attr_material_frame_tank_body,2,91857,Box Step,Box Step,True
-attr_material_frame_tank_body,2,92005,Box Step,Box Step,True
-attr_material_frame_tank_body,2,92007,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,2,92005,Box Step,Concrete,False
+attr_material_frame_tank_body,2,92007,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,92431,Rock/Stone,Box Step,False
 attr_material_frame_tank_body,2,92432,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,2,92917,Box Step,Box Step,True
-attr_material_frame_tank_body,2,94138,Concrete,Concrete,True
+attr_material_frame_tank_body,2,92917,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,2,94138,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,2,94297,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,94298,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,94301,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,94307,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,94313,Box Step,Box Step,True
 attr_material_frame_tank_body,2,94397,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,94403,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,2,94403,Box Step,Box Step,True
 attr_material_frame_tank_body,2,96803,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,98304,Concrete,Concrete,True
 attr_material_frame_tank_body,2,100301,Concrete,Box Step,False
@@ -235,10 +235,10 @@ attr_material_frame_tank_body,2,100302,Concrete,Concrete,True
 attr_material_frame_tank_body,2,101016,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,2,101396,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,101449,Rock/Stone,Timber/Wood,False
-attr_material_frame_tank_body,2,101607,Box Step,Box Step,True
-attr_material_frame_tank_body,2,101613,Box Step,Concrete,False
+attr_material_frame_tank_body,2,101607,Box Step,Concrete,False
+attr_material_frame_tank_body,2,101613,Box Step,Box Step,True
 attr_material_frame_tank_body,2,101720,Metal,Steel,False
-attr_material_frame_tank_body,2,101744,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,2,101744,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,102467,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,103932,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,2,105840,Timber/Wood,Timber/Wood,True
@@ -249,15 +249,15 @@ attr_material_frame_tank_body,2,107884,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,107899,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,107927,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,107937,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,107995,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,2,108005,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,2,107995,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,108005,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,108012,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,2,108028,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,109804,Concrete,Concrete,True
-attr_material_frame_tank_body,2,110173,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,110173,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,2,110371,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,2,113205,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,114558,Rock/Stone,Concrete,False
+attr_material_frame_tank_body,2,114558,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,2,116610,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,118199,Metal,Timber/Wood,False
 attr_material_frame_tank_body,2,121000,Timber/Wood,Timber/Wood,True
@@ -265,7 +265,7 @@ attr_material_frame_tank_body,2,121014,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,121017,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,121018,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,121019,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,121920,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,121920,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,2,121921,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,122611,Box Step,Box Step,True
 attr_material_frame_tank_body,2,122649,Timber/Wood,Timber/Wood,True
@@ -275,21 +275,21 @@ attr_material_frame_tank_body,2,125311,Box Step,Box Step,True
 attr_material_frame_tank_body,2,126696,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,2,126797,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,46925,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,46931,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,46931,Timber/Wood,Rock/Stone,False
 attr_material_frame_tank_body,2,47299,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,49059,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,49063,Metal,Metal,True
+attr_material_frame_tank_body,2,49063,Metal,Steel,False
 attr_material_frame_tank_body,2,49244,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,49664,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,2,49664,Timber/Wood,Metal,False
 attr_material_frame_tank_body,2,50770,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,51524,Steel,Timber/Wood,False
+attr_material_frame_tank_body,2,51524,Steel,Box Step,False
 attr_material_frame_tank_body,2,52457,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,2,53984,Timber/Wood,Metal,False
-attr_material_frame_tank_body,2,53985,Timber/Wood,Steel,False
+attr_material_frame_tank_body,2,53985,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,54321,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,55465,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,55638,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,55640,Aluminum,Aluminum,True
+attr_material_frame_tank_body,2,55640,Aluminum,Metal,False
 attr_material_frame_tank_body,2,55642,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,58163,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,58164,Timber/Wood,Timber/Wood,True
@@ -303,22 +303,22 @@ attr_material_frame_tank_body,2,65425,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,2,88740,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,96884,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,121796,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,46617,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,51549,Aluminum,Metal,False
+attr_material_frame_tank_body,2,46617,Timber/Wood,Metal,False
+attr_material_frame_tank_body,2,51549,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,2,54072,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,56218,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,57298,Timber/Wood,Metal,False
+attr_material_frame_tank_body,2,57298,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,2,58829,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,2,62341,Concrete,Rock/Stone,False
+attr_material_frame_tank_body,2,62341,Concrete,Concrete,True
 attr_material_frame_tank_body,2,66955,Steel,Timber/Wood,False
-attr_material_frame_tank_body,2,67796,Rock/Stone,Gravel,False
+attr_material_frame_tank_body,2,67796,Rock/Stone,Timber/Wood,False
 attr_material_frame_tank_body,2,68019,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,46935,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,48935,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,51603,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,54329,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,56209,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,58826,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,58826,Timber/Wood,Rock/Stone,False
 attr_material_frame_tank_body,3,58825,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,59061,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,62448,Timber/Wood,Timber/Wood,True
@@ -331,58 +331,58 @@ attr_material_frame_tank_body,3,66933,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,118770,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,47050,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,3,47054,Box Step,Box Step,True
-attr_material_frame_tank_body,3,48395,Concrete,Concrete,True
+attr_material_frame_tank_body,3,48395,Concrete,Timber/Wood,False
 attr_material_frame_tank_body,3,49525,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,49865,Concrete,Box Step,False
+attr_material_frame_tank_body,3,49865,Concrete,Timber/Wood,False
 attr_material_frame_tank_body,3,51544,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,52249,Box Step,Box Step,True
 attr_material_frame_tank_body,3,52621,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,52953,Concrete,Rock/Stone,False
+attr_material_frame_tank_body,3,52953,Concrete,Box Step,False
 attr_material_frame_tank_body,3,52956,Concrete,Concrete,True
 attr_material_frame_tank_body,3,53212,Box Step,Box Step,True
-attr_material_frame_tank_body,3,53213,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,3,53213,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,53214,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,53222,Concrete,Concrete,True
 attr_material_frame_tank_body,3,54506,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,3,55912,Concrete,Concrete,True
-attr_material_frame_tank_body,3,56563,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,3,56563,Box Step,Box Step,True
 attr_material_frame_tank_body,3,60961,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,3,61846,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,62068,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,3,62365,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,3,62365,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,63038,Box Step,Rock/Stone,False
 attr_material_frame_tank_body,3,64381,Box Step,Box Step,True
-attr_material_frame_tank_body,3,65613,Box Step,Box Step,True
+attr_material_frame_tank_body,3,65613,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,66054,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,80460,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,80640,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,3,80914,Box Step,Box Step,True
+attr_material_frame_tank_body,3,80640,Box Step,Box Step,True
+attr_material_frame_tank_body,3,80914,Box Step,Metal,False
 attr_material_frame_tank_body,3,80916,Box Step,Box Step,True
 attr_material_frame_tank_body,3,81293,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,81800,Box Step,Box Step,True
 attr_material_frame_tank_body,3,82213,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,83137,Rock/Stone,Timber/Wood,False
 attr_material_frame_tank_body,3,83142,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,83147,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,83940,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,85476,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,83147,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,3,83940,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,3,85476,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,3,85496,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,86094,Box Step,Box Step,True
-attr_material_frame_tank_body,3,86238,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,86238,Timber/Wood,Earth-Filled,False
 attr_material_frame_tank_body,3,86259,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,86617,Concrete,Concrete,True
-attr_material_frame_tank_body,3,88086,Box Step,Box Step,True
+attr_material_frame_tank_body,3,88086,Box Step,Concrete,False
 attr_material_frame_tank_body,3,89549,Concrete,Concrete,True
-attr_material_frame_tank_body,3,89718,Box Step,Box Step,True
+attr_material_frame_tank_body,3,89718,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,89732,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,89733,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,91434,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,92032,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,3,92032,Box Step,Box Step,True
 attr_material_frame_tank_body,3,92047,Box Step,Box Step,True
 attr_material_frame_tank_body,3,92059,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,92077,Box Step,Box Step,True
 attr_material_frame_tank_body,3,92807,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,3,93357,Rock/Stone,Timber/Wood,False
+attr_material_frame_tank_body,3,93357,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,3,94121,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,3,94308,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,94318,Timber/Wood,Timber/Wood,True
@@ -397,16 +397,16 @@ attr_material_frame_tank_body,3,102449,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,102455,Rock/Stone,Concrete,False
 attr_material_frame_tank_body,3,102459,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,3,105082,Box Step,Box Step,True
-attr_material_frame_tank_body,3,105083,Box Step,Box Step,True
+attr_material_frame_tank_body,3,105083,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,3,106065,Concrete,Concrete,True
 attr_material_frame_tank_body,3,106072,Concrete,Concrete,True
 attr_material_frame_tank_body,3,107490,Box Step,Box Step,True
 attr_material_frame_tank_body,3,107516,Box Step,Box Step,True
 attr_material_frame_tank_body,3,107667,Concrete,Concrete,True
 attr_material_frame_tank_body,3,107917,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,3,107938,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,107938,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,3,107944,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,107947,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,107947,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,3,107983,Box Step,Box Step,True
 attr_material_frame_tank_body,3,108004,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,108010,Timber/Wood,Timber/Wood,True
@@ -423,19 +423,19 @@ attr_material_frame_tank_body,3,113187,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,113194,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,113203,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,115090,Concrete,Concrete,True
-attr_material_frame_tank_body,3,117205,Timber/Wood,Metal,False
+attr_material_frame_tank_body,3,117205,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,121001,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,121484,Box Step,Box Step,True
 attr_material_frame_tank_body,3,121917,Box Step,Box Step,True
 attr_material_frame_tank_body,3,122662,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,122663,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,123217,Box Step,Box Step,True
-attr_material_frame_tank_body,3,123618,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,3,124044,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,3,125604,Concrete,Concrete,True
+attr_material_frame_tank_body,3,123217,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,3,123618,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,124044,Box Step,Box Step,True
+attr_material_frame_tank_body,3,125604,Concrete,Box Step,False
 attr_material_frame_tank_body,3,126796,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,127026,Concrete,Concrete,True
-attr_material_frame_tank_body,3,46340,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,46340,Timber/Wood,Metal,False
 attr_material_frame_tank_body,3,46923,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,46926,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,47633,Timber/Wood,Timber/Wood,True
@@ -449,7 +449,7 @@ attr_material_frame_tank_body,3,57833,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,61003,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,61004,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,62088,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,64102,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,3,64102,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,64110,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,64128,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,64137,Timber/Wood,Timber/Wood,True
@@ -459,13 +459,13 @@ attr_material_frame_tank_body,3,65424,Aluminum,Aluminum,True
 attr_material_frame_tank_body,3,88736,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,129364,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,51864,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,54186,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,54186,Timber/Wood,Rock/Stone,False
 attr_material_frame_tank_body,3,54209,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,54507,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,3,55656,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,56692,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,3,56786,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,3,57509,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,3,57509,Timber/Wood,Steel,False
 attr_material_frame_tank_body,3,61424,Gravel,Timber/Wood,False
 attr_material_frame_tank_body,3,66956,Timber/Wood,Steel,False
 attr_material_frame_tank_body,3,66957,Timber/Wood,Timber/Wood,True
@@ -485,55 +485,55 @@ attr_material_frame_tank_body,4,64887,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,65422,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,66539,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,120920,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,123415,PVC,Timber/Wood,False
+attr_material_frame_tank_body,4,123415,PVC,Box Step,False
 attr_material_frame_tank_body,4,123418,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,46616,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,48347,Box Step,Box Step,True
+attr_material_frame_tank_body,4,48347,Box Step,Concrete,False
 attr_material_frame_tank_body,4,48394,Concrete,Concrete,True
 attr_material_frame_tank_body,4,48937,Concrete,Concrete,True
 attr_material_frame_tank_body,4,51695,Concrete,Timber/Wood,False
-attr_material_frame_tank_body,4,52162,Box Step,Box Step,True
+attr_material_frame_tank_body,4,52162,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,52547,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,52952,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,52952,Timber/Wood,Metal,False
 attr_material_frame_tank_body,4,53110,Box Step,Box Step,True
-attr_material_frame_tank_body,4,54208,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,54208,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,54335,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,54337,Box Step,Box Step,True
 attr_material_frame_tank_body,4,55708,Box Step,Box Step,True
 attr_material_frame_tank_body,4,56878,Box Step,Box Step,True
-attr_material_frame_tank_body,4,57406,Rock/Stone,Rock/Stone,True
+attr_material_frame_tank_body,4,57406,Rock/Stone,Concrete,False
 attr_material_frame_tank_body,4,57612,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,60066,Rock/Stone,Concrete,False
 attr_material_frame_tank_body,4,60445,Concrete,Concrete,True
-attr_material_frame_tank_body,4,62338,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,4,63007,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,62338,Box Step,Box Step,True
+attr_material_frame_tank_body,4,63007,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,4,65317,Concrete,Concrete,True
 attr_material_frame_tank_body,4,66296,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,67210,Concrete,Concrete,True
 attr_material_frame_tank_body,4,80608,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,80639,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,80639,Timber/Wood,Concrete,False
 attr_material_frame_tank_body,4,82182,Concrete,Concrete,True
 attr_material_frame_tank_body,4,82778,Box Step,Box Step,True
 attr_material_frame_tank_body,4,83852,Concrete,Concrete,True
-attr_material_frame_tank_body,4,83874,Metal,Metal,True
-attr_material_frame_tank_body,4,84856,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,83874,Metal,Steel,False
+attr_material_frame_tank_body,4,84856,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,85483,Box Step,Timber/Wood,False
-attr_material_frame_tank_body,4,85488,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,85488,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,86102,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,86159,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,86174,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,86623,Concrete,Concrete,True
-attr_material_frame_tank_body,4,87713,Box Step,Concrete,False
+attr_material_frame_tank_body,4,87713,Box Step,Metal,False
 attr_material_frame_tank_body,4,87717,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,4,88110,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,4,88198,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,4,89719,Box Step,Box Step,True
-attr_material_frame_tank_body,4,89730,Box Step,Box Step,True
+attr_material_frame_tank_body,4,89730,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,91224,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,4,92019,Box Step,Box Step,True
+attr_material_frame_tank_body,4,92019,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,92076,Box Step,Box Step,True
 attr_material_frame_tank_body,4,92843,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,93359,Box Step,Aluminum,False
+attr_material_frame_tank_body,4,93359,Box Step,Box Step,True
 attr_material_frame_tank_body,4,93363,Concrete,Concrete,True
 attr_material_frame_tank_body,4,94137,Concrete,Concrete,True
 attr_material_frame_tank_body,4,94302,Box Step,Timber/Wood,False
@@ -542,41 +542,41 @@ attr_material_frame_tank_body,4,94329,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,94369,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,94417,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,101440,Timber/Wood,Rock/Stone,False
-attr_material_frame_tank_body,4,101697,Timber/Wood,Rock/Stone,False
-attr_material_frame_tank_body,4,102843,Box Step,Box Step,True
+attr_material_frame_tank_body,4,101697,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,102843,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,103909,Box Step,Box Step,True
-attr_material_frame_tank_body,4,103930,Concrete,Box Step,False
+attr_material_frame_tank_body,4,103930,Concrete,Metal,False
 attr_material_frame_tank_body,4,104143,Box Step,Box Step,True
-attr_material_frame_tank_body,4,104721,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,4,105854,Box Step,Box Step,True
+attr_material_frame_tank_body,4,104721,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,4,105854,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,106011,Box Step,Box Step,True
 attr_material_frame_tank_body,4,106066,Concrete,Concrete,True
 attr_material_frame_tank_body,4,106074,Concrete,Concrete,True
 attr_material_frame_tank_body,4,106506,Box Step,Box Step,True
-attr_material_frame_tank_body,4,106584,Concrete,Rock/Stone,False
+attr_material_frame_tank_body,4,106584,Concrete,Concrete,True
 attr_material_frame_tank_body,4,107329,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107518,Box Step,Box Step,True
 attr_material_frame_tank_body,4,107893,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107894,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107918,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,4,107928,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,107928,Timber/Wood,Earth-Filled,False
 attr_material_frame_tank_body,4,107931,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107932,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107935,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,107972,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,107975,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,107972,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,4,107975,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,107977,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,107999,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,108013,Box Step,Box Step,True
+attr_material_frame_tank_body,4,108013,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,108868,Concrete,Concrete,True
 attr_material_frame_tank_body,4,109159,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,4,109762,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,4,109806,Concrete,Concrete,True
-attr_material_frame_tank_body,4,110087,Rock/Stone,Rock/Stone,True
+attr_material_frame_tank_body,4,110087,Rock/Stone,Concrete,False
 attr_material_frame_tank_body,4,110869,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,4,111482,Rock/Stone,Timber/Wood,False
 attr_material_frame_tank_body,4,111583,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,4,111787,Timber/Wood,Aluminum,False
+attr_material_frame_tank_body,4,111787,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,113161,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,113196,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,117052,Timber/Wood,Timber/Wood,True
@@ -586,7 +586,7 @@ attr_material_frame_tank_body,4,121013,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,121016,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,121071,Box Step,Box Step,True
 attr_material_frame_tank_body,4,121503,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,121918,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,121918,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,4,122647,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,122664,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,122777,Timber/Wood,Timber/Wood,True
@@ -594,31 +594,31 @@ attr_material_frame_tank_body,4,122780,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,122781,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,123145,Box Step,Box Step,True
 attr_material_frame_tank_body,4,123172,Box Step,Box Step,True
-attr_material_frame_tank_body,4,123413,Rock/Stone,Concrete,False
+attr_material_frame_tank_body,4,123413,Rock/Stone,Box Step,False
 attr_material_frame_tank_body,4,123416,Rock/Stone,Box Step,False
 attr_material_frame_tank_body,4,123577,Box Step,Box Step,True
 attr_material_frame_tank_body,4,125976,Box Step,Box Step,True
-attr_material_frame_tank_body,4,127081,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,4,127081,Box Step,Box Step,True
 attr_material_frame_tank_body,4,46614,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,47637,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,4,47637,Timber/Wood,Metal,False
 attr_material_frame_tank_body,4,49061,Steel,Timber/Wood,False
 attr_material_frame_tank_body,4,51800,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,52551,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,53195,Concrete,Aluminum,False
+attr_material_frame_tank_body,4,53195,Concrete,Concrete,True
 attr_material_frame_tank_body,4,53200,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,54324,Steel,Metal,False
 attr_material_frame_tank_body,4,54326,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,55637,Timber/Wood,Metal,False
+attr_material_frame_tank_body,4,55637,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,56470,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,56533,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,58160,Steel,Timber/Wood,False
+attr_material_frame_tank_body,4,56533,Timber/Wood,Aluminum,False
+attr_material_frame_tank_body,4,58160,Steel,Metal,False
 attr_material_frame_tank_body,4,58413,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,58881,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,58954,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,58955,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,60633,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,61499,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,4,55464,Timber/Wood,Metal,False
+attr_material_frame_tank_body,4,55464,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,95948,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,115209,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,115211,Timber/Wood,Timber/Wood,True
@@ -629,8 +629,8 @@ attr_material_frame_tank_body,4,54338,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,4,64468,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,47664,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,46615,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,48514,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,48936,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,48514,Timber/Wood,Steel,False
+attr_material_frame_tank_body,5,48936,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,51538,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,51942,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,52245,Timber/Wood,Timber/Wood,True
@@ -643,49 +643,49 @@ attr_material_frame_tank_body,5,64274,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,65430,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,95950,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,46496,Natural Surface,Rock/Stone,False
-attr_material_frame_tank_body,5,47051,Concrete,Concrete,True
-attr_material_frame_tank_body,5,47053,Concrete,Rock/Stone,False
+attr_material_frame_tank_body,5,47051,Concrete,Timber/Wood,False
+attr_material_frame_tank_body,5,47053,Concrete,Concrete,True
 attr_material_frame_tank_body,5,49501,Concrete,Box Step,False
-attr_material_frame_tank_body,5,49704,Box Step,Box Step,True
-attr_material_frame_tank_body,5,49706,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,49704,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,5,49706,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,51270,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,51536,Box Step,Concrete,False
-attr_material_frame_tank_body,5,51805,Timber/Wood,Metal,False
+attr_material_frame_tank_body,5,51536,Box Step,Box Step,True
+attr_material_frame_tank_body,5,51805,Timber/Wood,Concrete,False
 attr_material_frame_tank_body,5,52248,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,53428,Box Step,Concrete,False
 attr_material_frame_tank_body,5,53688,Concrete,Concrete,True
 attr_material_frame_tank_body,5,55707,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,57673,Concrete,Concrete,True
-attr_material_frame_tank_body,5,57674,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,57674,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,58181,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,58182,Concrete,Concrete,True
 attr_material_frame_tank_body,5,60443,Concrete,Concrete,True
 attr_material_frame_tank_body,5,61221,Concrete,Concrete,True
 attr_material_frame_tank_body,5,61932,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,61933,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,61933,Timber/Wood,Concrete,False
 attr_material_frame_tank_body,5,63400,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,5,64656,Box Step,Box Step,True
 attr_material_frame_tank_body,5,66055,Concrete,Concrete,True
-attr_material_frame_tank_body,5,66243,Concrete,Timber/Wood,False
-attr_material_frame_tank_body,5,80438,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,5,66243,Concrete,Concrete,True
+attr_material_frame_tank_body,5,80438,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,80452,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,5,80470,Rock/Stone,Rock/Stone,True
+attr_material_frame_tank_body,5,80470,Rock/Stone,Timber/Wood,False
 attr_material_frame_tank_body,5,80606,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,82811,Concrete,Concrete,True
-attr_material_frame_tank_body,5,83152,Timber/Wood,Rock/Stone,False
-attr_material_frame_tank_body,5,85087,Metal,Concrete,False
+attr_material_frame_tank_body,5,83152,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,5,85087,Metal,Box Step,False
 attr_material_frame_tank_body,5,85486,Earth-Filled,Timber/Wood,False
 attr_material_frame_tank_body,5,85489,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,85493,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,85499,Timber/Wood,Box Step,False
+attr_material_frame_tank_body,5,85499,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,85958,Concrete,Concrete,True
 attr_material_frame_tank_body,5,86062,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,86143,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,86246,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,87019,Concrete,Concrete,True
+attr_material_frame_tank_body,5,87019,Concrete,Rock/Stone,False
 attr_material_frame_tank_body,5,88091,Box Step,Box Step,True
-attr_material_frame_tank_body,5,89201,Box Step,Concrete,False
-attr_material_frame_tank_body,5,92084,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,5,89201,Box Step,Rock/Stone,False
+attr_material_frame_tank_body,5,92084,Box Step,Box Step,True
 attr_material_frame_tank_body,5,92085,Box Step,Box Step,True
 attr_material_frame_tank_body,5,92433,Box Step,Box Step,True
 attr_material_frame_tank_body,5,92434,Timber/Wood,Timber/Wood,True
@@ -695,17 +695,17 @@ attr_material_frame_tank_body,5,93352,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,5,94135,Concrete,Concrete,True
 attr_material_frame_tank_body,5,94176,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,94295,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,94315,Timber/Wood,Rock/Stone,False
+attr_material_frame_tank_body,5,94315,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,94330,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,94334,Timber/Wood,Box Step,False
-attr_material_frame_tank_body,5,94339,Box Step,Box Step,True
+attr_material_frame_tank_body,5,94334,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,94339,Box Step,Timber/Wood,False
 attr_material_frame_tank_body,5,94398,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,94404,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,94418,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,94419,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,100334,Box Step,Box Step,True
 attr_material_frame_tank_body,5,101066,Rock/Stone,Rock/Stone,True
-attr_material_frame_tank_body,5,102439,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,102439,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,102759,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,5,104350,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,104861,Concrete,Box Step,False
@@ -721,7 +721,7 @@ attr_material_frame_tank_body,5,106068,Concrete,Concrete,True
 attr_material_frame_tank_body,5,106070,Concrete,Concrete,True
 attr_material_frame_tank_body,5,106073,Concrete,Concrete,True
 attr_material_frame_tank_body,5,107878,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,107905,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,5,107905,Box Step,Box Step,True
 attr_material_frame_tank_body,5,107941,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,107943,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,107971,Box Step,Timber/Wood,False
@@ -731,12 +731,12 @@ attr_material_frame_tank_body,5,109719,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,110378,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,110703,Box Step,Box Step,True
 attr_material_frame_tank_body,5,110871,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,110875,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,110875,Timber/Wood,Box Step,False
 attr_material_frame_tank_body,5,111450,Box Step,Box Step,True
 attr_material_frame_tank_body,5,112342,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,113157,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,113162,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,113200,Box Step,Timber/Wood,False
+attr_material_frame_tank_body,5,113200,Box Step,Box Step,True
 attr_material_frame_tank_body,5,114567,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,5,115040,Box Step,Box Step,True
 attr_material_frame_tank_body,5,116732,Timber/Wood,Timber/Wood,True
@@ -744,7 +744,7 @@ attr_material_frame_tank_body,5,116796,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,117044,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,117800,Box Step,Box Step,True
 attr_material_frame_tank_body,5,121499,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,121919,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,5,121919,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,122646,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,122779,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,123649,Box Step,Box Step,True
@@ -757,30 +757,30 @@ attr_material_frame_tank_body,5,46929,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,48296,Timber/Wood,Steel,False
 attr_material_frame_tank_body,5,49060,Steel,Timber/Wood,False
 attr_material_frame_tank_body,5,50654,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,51798,Steel,Timber/Wood,False
-attr_material_frame_tank_body,5,51858,Timber/Wood,Metal,False
+attr_material_frame_tank_body,5,51798,Steel,Steel,True
+attr_material_frame_tank_body,5,51858,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,53193,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,53983,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,55116,Aluminum,Metal,False
+attr_material_frame_tank_body,5,55116,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,5,55633,Metal,Timber/Wood,False
-attr_material_frame_tank_body,5,55635,Rock/Stone,Steel,False
+attr_material_frame_tank_body,5,55635,Rock/Stone,Rock/Stone,True
 attr_material_frame_tank_body,5,57117,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,57835,Timber/Wood,Steel,False
-attr_material_frame_tank_body,5,57858,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,57835,Timber/Wood,Timber/Wood,True
+attr_material_frame_tank_body,5,57858,Timber/Wood,Aluminum,False
 attr_material_frame_tank_body,5,61111,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,61414,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,61415,Metal,Timber/Wood,False
 attr_material_frame_tank_body,5,63597,Metal,Steel,False
-attr_material_frame_tank_body,5,64116,Timber/Wood,Concrete,False
+attr_material_frame_tank_body,5,64116,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,64131,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,89716,Box Step,Concrete,False
+attr_material_frame_tank_body,5,89716,Box Step,Box Step,True
 attr_material_frame_tank_body,5,94172,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,95947,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,111862,Timber/Wood,Timber/Wood,True
-attr_material_frame_tank_body,5,118221,Aluminum,Steel,False
+attr_material_frame_tank_body,5,118221,Aluminum,Timber/Wood,False
 attr_material_frame_tank_body,5,48252,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,48297,Gravel,Concrete,False
-attr_material_frame_tank_body,5,51548,Steel,Steel,True
+attr_material_frame_tank_body,5,51548,Steel,Metal,False
 attr_material_frame_tank_body,5,55471,Metal,Timber/Wood,False
 attr_material_frame_tank_body,5,68018,Timber/Wood,Timber/Wood,True
 attr_material_frame_tank_body,5,85146,Timber/Wood,Timber/Wood,True
