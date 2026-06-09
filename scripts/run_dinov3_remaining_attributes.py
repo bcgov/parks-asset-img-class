@@ -109,7 +109,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Directory where out-of-fold prediction CSVs are written. Defaults "
-            "to data/predictions/dinov3_predictions/<classifier-specific-folder>."
+            "to results/predictions/dinov3_predictions/<classifier-specific-folder>."
         ),
     )
     parser.add_argument("--model", default="dinov3_vitb16")

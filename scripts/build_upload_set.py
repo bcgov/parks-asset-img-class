@@ -1,6 +1,6 @@
 """Assemble a single clean image set ready for cloud-VLM upload.
 
-For each of the 5,310 images in ``data/predictions/pii_screen.csv``:
+For each of the 5,310 images in ``results/predictions/pii_screen.csv``:
 - If flagged → copy the **blurred** version from ``data/pii_review/blurred/``.
 - If not flagged → copy the **original** from ``data/raw/...``.
 
@@ -44,7 +44,7 @@ def _rel_under_raw(image_path: str) -> Path:
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--screen-csv", type=Path, default=Path("data/predictions/pii_screen.csv"))
+    p.add_argument("--screen-csv", type=Path, default=Path("results/predictions/pii_screen.csv"))
     p.add_argument("--blurred-root", type=Path, default=Path("data/pii_review/blurred"))
     p.add_argument("--source-root", type=Path, default=Path("data/raw"))
     p.add_argument("--output-root", type=Path, default=Path("data/processed/images_clean"))

@@ -24,7 +24,7 @@ if str(REPO_ROOT) not in sys.path:
 from src.dinov3_classifier import CLASSIFIER_CHOICES, run_task_from_files  # noqa: E402
 
 DINO_RESULTS_ROOT = Path("results/dinov3_results")
-DINO_PREDICTIONS_ROOT = Path("data/predictions/dinov3_predictions")
+DINO_PREDICTIONS_ROOT = Path("results/predictions/dinov3_predictions")
 CLASSIFIER_OUTPUT_DIRS = {
     "logistic_regression": "dinov3_logistic",
     "logistic_regression_tuned": "dinov3_logistic_tuned",
@@ -77,7 +77,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Directory for out-of-fold prediction CSVs. Defaults to "
-            "data/predictions/dinov3_predictions/<classifier-specific-folder>."
+            "results/predictions/dinov3_predictions/<classifier-specific-folder>."
         ),
     )
     parser.add_argument("--folds", type=int, default=5)
@@ -129,8 +129,8 @@ def default_output_dir(classifier: str) -> Path:
 
 
 def default_prediction_dir(classifier: str) -> Path:
-    """Return the standard DINOv3 prediction folder for a classifier."""
-    return DINO_PREDICTIONS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
+    """Return the prediction folder nested inside the classifier's result folder."""
+    return default_output_dir(classifier) / "predictions"
 
 
 def log_results_to_mlflow(

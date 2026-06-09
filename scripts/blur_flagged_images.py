@@ -1,6 +1,6 @@
 """For each PII-flagged image, write three side-by-side copies under data/pii_review/.
 
-Reads ``data/predictions/pii_screen.csv``, re-runs YOLOv8 on the flagged
+Reads ``results/predictions/pii_screen.csv``, re-runs YOLOv8 on the flagged
 rows to recover bounding boxes (the screening CSV only stored counts),
 then writes:
 
@@ -182,7 +182,7 @@ def process_one_image(
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--screen-csv", type=Path, default=Path("data/predictions/pii_screen.csv"))
+    p.add_argument("--screen-csv", type=Path, default=Path("results/predictions/pii_screen.csv"))
     p.add_argument("--output-root", type=Path, default=Path("data/pii_review"))
     p.add_argument("--general-model", default="yolov8n.pt")
     p.add_argument("--face-model", default=None, help="Optional path to a YOLO face model.")

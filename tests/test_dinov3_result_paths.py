@@ -26,11 +26,11 @@ def test_default_output_dir_uses_classifier_folder() -> None:
 
 def test_default_prediction_dir_uses_classifier_folder() -> None:
     assert default_prediction_dir("random_forest") == Path(
-        "data/predictions/dinov3_predictions/dinov3_random_forest"
+        "results/predictions/dinov3_predictions/dinov3_random_forest"
     )
     assert default_prediction_dir("hist_gradient_boosting") == Path(
-        "data/predictions/dinov3_predictions/dinov3_gradient_boost"
+        "results/predictions/dinov3_predictions/dinov3_gradient_boost"
     )
     assert default_prediction_dir("logistic_regression_tuned") == Path(
-        "data/predictions/dinov3_predictions/dinov3_logistic_tuned"
+        "results/predictions/dinov3_predictions/dinov3_logistic_tuned"
     )
