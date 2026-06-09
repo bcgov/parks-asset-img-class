@@ -1,2 +1,0 @@
-attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
-attr_decking_material,gemma-4-26b-a4b-it,Trail Bridge,decking_material_v1,262,0.41200000000000003,0.9013910093299405,2026-06-07T00:09:16.202007
