@@ -31,7 +31,7 @@ from scripts.run_dinov3_remaining_attributes import (  # noqa: E402
 )
 from scripts.run_siglip_classifier import default_output_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
-from src.siglip_features import DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
+from src.siglip_features import DEFAULT_IMAGE_ROOT, DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -64,7 +64,7 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_SIGLIP_MODEL,
         help="Hugging Face SigLIP/SigLIP2 model id.",
     )
-    parser.add_argument("--image-root", type=Path, default=Path("data/raw"))
+    parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
     parser.add_argument("--device", default=None)
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)

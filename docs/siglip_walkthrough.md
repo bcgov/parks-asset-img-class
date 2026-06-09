@@ -38,7 +38,7 @@ folder with `--model-name`.
 ## Workflow
 
 1. Read one or more train CSVs from `data/processed/train/`.
-2. Resolve each `image_path` under `data/raw`.
+2. Resolve each `image_path` under `data/processed/images_clean`.
 3. Run each image through the SigLIP image encoder.
 4. Save one feature row per image.
 5. Average image features into one row per `asset_id`.
@@ -70,7 +70,7 @@ python scripts/extract_siglip_features.py \
   --input data/processed/train/attr_decking_material_train.csv \
   --output data/features/google_siglip2_base_patch16_224_attr_decking_material_images_smoke.csv \
   --asset-output data/features/google_siglip2_base_patch16_224_attr_decking_material_assets_smoke.csv \
-  --image-root data/raw \
+  --image-root data/processed/images_clean \
   --limit-assets 10
 
 python scripts/run_siglip_classifier.py \
@@ -87,7 +87,7 @@ python scripts/extract_siglip_features.py \
   --input data/processed/train/attr_decking_material_train.csv \
   --output data/features/google_siglip2_base_patch16_224_attr_decking_material_images.csv \
   --asset-output data/features/google_siglip2_base_patch16_224_attr_decking_material_assets.csv \
-  --image-root data/raw
+  --image-root data/processed/images_clean
 
 python scripts/run_siglip_classifier.py \
   --labels data/processed/train/attr_decking_material_train.csv \

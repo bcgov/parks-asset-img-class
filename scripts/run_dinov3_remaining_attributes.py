@@ -45,6 +45,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from scripts.run_dinov3_classifier import default_output_dir, default_prediction_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
+from src.dinov3_features import DEFAULT_IMAGE_ROOT  # noqa: E402
 
 
 DEFAULT_TARGETS = [
@@ -117,7 +118,7 @@ def parse_args() -> argparse.Namespace:
         default="models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth",
     )
     parser.add_argument("--model-source", default="facebookresearch/dinov3")
-    parser.add_argument("--image-root", type=Path, default=Path("data/raw"))
+    parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
     parser.add_argument("--device", default=None)
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)

@@ -68,7 +68,7 @@ python scripts/extract_dinov3_features.py \
   --asset-output data/features/dinov3_vitb16_attr_decking_material_assets.csv \
   --model dinov3_vitb16 \
   --weights models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth \
-  --image-root data/raw
+  --image-root data/processed/images_clean
 ```
 
 The `--weights` value can be either a local `.pth` file or the approved
@@ -111,7 +111,7 @@ python scripts/extract_dinov3_features.py \
   --model dinov3_vitb16 \
   --model-source /path/to/dinov3 \
   --weights models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth \
-  --image-root data/raw
+  --image-root data/processed/images_clean
 ```
 
 For a quick smoke test:
@@ -123,7 +123,7 @@ python scripts/extract_dinov3_features.py \
   --asset-output data/features/dinov3_vits16_attr_decking_material_assets_smoke.csv \
   --model dinov3_vits16 \
   --weights models/downloaded_model/dinov3_vits16_pretrain_lvd1689m-08c60483.pth \
-  --image-root data/raw \
+  --image-root data/processed/images_clean \
   --limit-assets 10
 ```
 
@@ -290,7 +290,7 @@ python scripts/extract_dinov3_features.py \
   --asset-output data/features/dinov3_vitb16_attr_bridge_type_assets.csv \
   --model dinov3_vitb16 \
   --weights models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth \
-  --image-root data/raw
+  --image-root data/processed/images_clean
 
 python scripts/run_dinov3_classifier.py \
   --labels data/processed/train/attr_bridge_type_train.csv \
