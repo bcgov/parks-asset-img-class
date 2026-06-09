@@ -25,7 +25,6 @@ from src.siglip_features import DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
 
 METRIC_COLUMNS = [
-    
     "accuracy_mean",
     "accuracy_std",
     "weighted_f1_mean",
@@ -71,6 +70,15 @@ def parse_args() -> argparse.Namespace:
             "results/siglip_results/<classifier-specific-folder>."
         ),
     )
+    parser.add_argument(
+        "--prediction-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Directory for prediction CSVs. Defaults to "
+            "results/siglip_results/<classifier-specific-folder>/predictions."
+        ),
+    )
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
@@ -112,10 +120,16 @@ def default_output_dir(classifier: str) -> Path:
     return SIGLIP_RESULTS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
 
 
+def default_prediction_dir(classifier: str) -> Path:
+    """Return the prediction folder nested inside the classifier's result folder."""
+    return default_output_dir(classifier) / "predictions"
+
+
 def log_results_to_mlflow(
     *,
     summary_path: Path,
     folds_path: Path,
+    predictions_path: Path,
     labels_path: Path,
     features_path: Path,
     target: str,
@@ -171,6 +185,7 @@ def log_results_to_mlflow(
                 "features_path": str(features_path),
                 "output_summary_path": str(summary_path),
                 "output_folds_path": str(folds_path),
+                "output_predictions_path": str(predictions_path),
                 "siglip_model": siglip_model,
                 "n_splits_requested": n_splits,
                 "random_state": random_state,
@@ -188,11 +203,12 @@ def log_results_to_mlflow(
         )
         mlflow.log_artifact(str(summary_path), artifact_path="results")
         mlflow.log_artifact(str(folds_path), artifact_path="results")
+        mlflow.log_artifact(str(predictions_path), artifact_path="predictions")
 
 
 def main() -> int:
     args = parse_args()
-    summary, folds = run_task_from_files(
+    summary, folds, predictions = run_task_from_files(
         labels_path=args.labels,
         features_path=args.features,
         target=args.target,
@@ -202,20 +218,26 @@ def main() -> int:
     )
 
     output_dir = args.output_dir or default_output_dir(args.classifier)
+    prediction_dir = args.prediction_dir or default_prediction_dir(args.classifier)
     output_dir.mkdir(parents=True, exist_ok=True)
+    prediction_dir.mkdir(parents=True, exist_ok=True)
     suffix = "" if args.classifier == "logistic_regression" else f"_{args.classifier}"
     summary_path = output_dir / f"siglip_{args.target}{suffix}_classification_results.csv"
     folds_path = output_dir / f"siglip_{args.target}{suffix}_classification_cv_folds.csv"
+    predictions_path = prediction_dir / f"siglip_{args.target}{suffix}_classification_predictions.csv"
     summary.to_csv(summary_path, index=False)
     folds.to_csv(folds_path, index=False)
+    predictions.to_csv(predictions_path, index=False)
 
     print(f"Wrote {len(summary)} summary rows to {summary_path}")
     print(f"Wrote {len(folds)} fold rows to {folds_path}")
+    print(f"Wrote {len(predictions)} prediction rows to {predictions_path}")
     if not args.no_mlflow:
         model_name = args.model_name or f"{model_slug(args.siglip_model)}_{args.classifier}"
         log_results_to_mlflow(
             summary_path=summary_path,
             folds_path=folds_path,
+            predictions_path=predictions_path,
             labels_path=args.labels,
             features_path=args.features,
             target=args.target,
