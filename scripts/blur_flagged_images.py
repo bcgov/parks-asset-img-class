@@ -37,7 +37,7 @@ if str(REPO_ROOT) not in sys.path:
 os.environ.setdefault("YOLO_VERBOSE", "False")
 
 import pandas as pd  # noqa: E402
-from PIL import Image, ImageDraw, ImageFilter  # noqa: E402
+from PIL import Image, ImageDraw, ImageFilter, ImageOps  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -146,17 +146,21 @@ def process_one_image(
     if not src.exists():
         logger.warning("missing source: %s", src)
         return None
-    img = Image.open(src).convert("RGB")
+    # Apply EXIF orientation up front so the pixels we detect on, draw on, and
+    # save are all in the same (upright) coordinate frame. Without this, YOLO
+    # detects on the EXIF-corrected image while we would blur the raw rotated
+    # pixels, leaving the blur misaligned with the person.
+    img = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
     w, h = img.size
 
     detections: list[tuple[int, int, int, int, str, float]] = []
-    gen_results = general(str(src), conf=conf, device=device, verbose=False)[0]
+    gen_results = general(img, conf=conf, device=device, verbose=False)[0]
     for box in _boxes_above(gen_results, PERSON_CLASSES | VEHICLE_CLASSES, conf):
         x1, y1, x2, y2, cname, c = box
         px1, py1, px2, py2 = _pad_box((x1, y1, x2, y2), pad, w, h)
         detections.append((px1, py1, px2, py2, cname, c))
     if face is not None:
-        face_results = face(str(src), conf=conf, device=device, verbose=False)[0]
+        face_results = face(img, conf=conf, device=device, verbose=False)[0]
         for box in _boxes_above(face_results, set(), conf):
             x1, y1, x2, y2, _cname, c = box
             px1, py1, px2, py2 = _pad_box((x1, y1, x2, y2), pad, w, h)
