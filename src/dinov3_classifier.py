@@ -20,23 +20,33 @@ from src.dinov3_features import feature_columns
 
 CLASSIFIER_CHOICES = (
     "logistic_regression",
+    "logistic_regression_tuned",
     "linear_svm",
     "random_forest",
     "hist_gradient_boosting",
 )
 
+LOGISTIC_TUNING_GRID = {
+    "C": [0.01, 0.1, 1.0, 10.0, 100.0],
+    "class_weight": ["balanced", None],
+}
+
 
 def make_classifier(
     classifier: str = "logistic_regression",
     random_state: int = 42,
+    *,
+    logistic_c: float = 1.0,
+    logistic_class_weight: str | None = "balanced",
 ) -> object:
     """Return a small classifier for frozen DINOv3 embeddings."""
-    if classifier == "logistic_regression":
+    if classifier in {"logistic_regression", "logistic_regression_tuned"}:
         return make_pipeline(
             StandardScaler(),
             LogisticRegression(
+                C=logistic_c,
                 max_iter=2000,
-                class_weight="balanced",
+                class_weight=logistic_class_weight,
                 random_state=random_state,
             ),
         )
@@ -75,6 +85,10 @@ def make_classifier(
     raise ValueError(
         f"Unknown classifier {classifier!r}. Expected one of {CLASSIFIER_CHOICES}."
     )
+
+
+def _format_class_weight(class_weight: str | None) -> str:
+    return "none" if class_weight is None else class_weight
 
 
 def join_labels_and_features(
@@ -120,6 +134,77 @@ def _make_group_splitter(
     return (
         GroupKFold(n_splits=n_splits, shuffle=True, random_state=random_state),
         "GroupKFold",
+    )
+
+
+def _tune_logistic_regression(
+    X: pd.DataFrame,
+    y: pd.Series,
+    groups: pd.Series,
+    *,
+    random_state: int,
+) -> dict[str, object]:
+    """Select logistic regression hyperparameters using grouped inner CV."""
+    n_groups = groups.nunique()
+    inner_splits = min(3, n_groups)
+    default_params: dict[str, object] = {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "inner_macro_f1_mean": pd.NA,
+    }
+    if inner_splits < 2 or y.nunique() < 2:
+        return default_params
+
+    labelled = pd.DataFrame({"target": y, "asset_id": groups})
+    splitter, _ = _make_group_splitter(
+        labelled,
+        "target",
+        "asset_id",
+        inner_splits,
+        random_state,
+    )
+
+    candidate_scores: list[dict[str, object]] = []
+    for c_value in LOGISTIC_TUNING_GRID["C"]:
+        for class_weight in LOGISTIC_TUNING_GRID["class_weight"]:
+            scores: list[float] = []
+            for train_idx, valid_idx in splitter.split(X, y, groups):
+                y_train = y.iloc[train_idx]
+                y_valid = y.iloc[valid_idx]
+                if y_train.nunique() < 2 or y_valid.nunique() < 2:
+                    continue
+
+                model = make_classifier(
+                    classifier="logistic_regression",
+                    random_state=random_state,
+                    logistic_c=float(c_value),
+                    logistic_class_weight=class_weight,
+                )
+                model.fit(X.iloc[train_idx], y_train)
+                predictions = model.predict(X.iloc[valid_idx])
+                scores.append(
+                    f1_score(y_valid, predictions, average="macro", zero_division=0)
+                )
+
+            if scores:
+                candidate_scores.append(
+                    {
+                        "C": float(c_value),
+                        "class_weight": class_weight,
+                        "inner_macro_f1_mean": float(sum(scores) / len(scores)),
+                    }
+                )
+
+    if not candidate_scores:
+        return default_params
+
+    return max(
+        candidate_scores,
+        key=lambda row: (
+            float(row["inner_macro_f1_mean"]),
+            -abs(float(row["C"]) - 1.0),
+            row["class_weight"] == "balanced",
+        ),
     )
 
 
@@ -172,10 +257,61 @@ def cross_validate_dinov3_classifier(
                 f"Asset leakage in {target} fold {fold}: {sorted(overlap)[:5]}"
             )
 
-        model = make_classifier(classifier=classifier, random_state=random_state)
+        tuned_params: dict[str, object] = {}
+        if classifier == "logistic_regression_tuned":
+            tuned_params = _tune_logistic_regression(
+                X.iloc[train_idx],
+                y.iloc[train_idx],
+                groups.iloc[train_idx],
+                random_state=random_state,
+            )
+
+        model = make_classifier(
+            classifier=classifier,
+            random_state=random_state,
+            logistic_c=float(tuned_params.get("C", 1.0)),
+            logistic_class_weight=tuned_params.get("class_weight", "balanced"),
+        )
         model.fit(X.iloc[train_idx], y.iloc[train_idx])
         predictions = model.predict(X.iloc[valid_idx])
         y_valid = y.iloc[valid_idx]
+        valid_rows = joined.iloc[valid_idx]
+        if classifier == "logistic_regression_tuned":
+            tuned_c = tuned_params.get("C")
+            tuned_class_weight = tuned_params.get("class_weight")
+            inner_macro_f1_mean = tuned_params.get("inner_macro_f1_mean")
+        else:
+            tuned_c = pd.NA
+            tuned_class_weight = pd.NA
+            inner_macro_f1_mean = pd.NA
+
+        for row, true_label, predicted_label in zip(
+            valid_rows.itertuples(index=False),
+            y_valid,
+            predictions,
+            strict=True,
+        ):
+            prediction_rows.append(
+                {
+                    "attribute": target,
+                    "target_column": target_column,
+                    "target_file": target_file,
+                    "feature_file": feature_file,
+                    "task_type": "classification",
+                    "strategy": f"dinov3_frozen_embeddings_{classifier}",
+                    "classifier": classifier,
+                    "splitter": splitter_name,
+                    "fold": fold,
+                    "n_folds": target_splits,
+                    "asset_id": getattr(row, group_column),
+                    "y_true": true_label,
+                    "y_pred": predicted_label,
+                    "is_correct": true_label == predicted_label,
+                    "tuned_C": tuned_c,
+                    "tuned_class_weight": _format_class_weight(tuned_class_weight),
+                    "inner_macro_f1_mean": inner_macro_f1_mean,
+                }
+            )
 
         # Save per-asset predictions for error analysis
         for asset_id, true_label, pred_label in zip(
@@ -212,6 +348,9 @@ def cross_validate_dinov3_classifier(
                 "accuracy": accuracy_score(y_valid, predictions),
                 "weighted_f1": f1_score(y_valid, predictions, average="weighted", zero_division=0),
                 "macro_f1": f1_score(y_valid, predictions, average="macro", zero_division=0),
+                "tuned_C": tuned_c,
+                "tuned_class_weight": _format_class_weight(tuned_class_weight),
+                "inner_macro_f1_mean": inner_macro_f1_mean,
             }
         )
 

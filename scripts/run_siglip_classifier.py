@@ -25,6 +25,7 @@ from src.siglip_features import DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
 
 METRIC_COLUMNS = [
+    
     "accuracy_mean",
     "accuracy_std",
     "weighted_f1_mean",
@@ -45,6 +46,14 @@ PARAM_COLUMNS = [
     "classifier",
 ]
 
+SIGLIP_RESULTS_ROOT = Path("results/siglip_results")
+CLASSIFIER_OUTPUT_DIRS = {
+    "logistic_regression": "siglip_logistic_reg",
+    "linear_svm": "siglip_linear_svm",
+    "random_forest": "siglip_random_forest",
+    "hist_gradient_boosting": "siglip_gradient_boost",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -53,7 +62,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--labels", type=Path, required=True, help="Task train CSV.")
     parser.add_argument("--features", type=Path, required=True, help="Asset-level SigLIP feature CSV.")
     parser.add_argument("--target", required=True, help="Target column, for example attr_decking_material.")
-    parser.add_argument("--output-dir", type=Path, default=Path("results"))
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Directory for result CSVs. Defaults to "
+            "results/siglip_results/<classifier-specific-folder>."
+        ),
+    )
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
@@ -88,6 +105,11 @@ def parse_args() -> argparse.Namespace:
         help="Skip MLflow/DagsHub logging and only write result CSVs.",
     )
     return parser.parse_args()
+
+
+def default_output_dir(classifier: str) -> Path:
+    """Return the standard SigLIP result folder for a classifier."""
+    return SIGLIP_RESULTS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
 
 
 def log_results_to_mlflow(
@@ -179,10 +201,11 @@ def main() -> int:
         classifier=args.classifier,
     )
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
+    output_dir = args.output_dir or default_output_dir(args.classifier)
+    output_dir.mkdir(parents=True, exist_ok=True)
     suffix = "" if args.classifier == "logistic_regression" else f"_{args.classifier}"
-    summary_path = args.output_dir / f"siglip_{args.target}{suffix}_classification_results.csv"
-    folds_path = args.output_dir / f"siglip_{args.target}{suffix}_classification_cv_folds.csv"
+    summary_path = output_dir / f"siglip_{args.target}{suffix}_classification_results.csv"
+    folds_path = output_dir / f"siglip_{args.target}{suffix}_classification_cv_folds.csv"
     summary.to_csv(summary_path, index=False)
     folds.to_csv(folds_path, index=False)
 

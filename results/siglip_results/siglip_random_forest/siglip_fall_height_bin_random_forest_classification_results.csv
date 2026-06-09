@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/google_siglip2_base_patch16_224_all_attributes_assets.csv,classification,siglip_frozen_embeddings_random_forest,random_forest,GroupKFold,5,122,122,768,0.5003333333333333,0.06264893366122753,0.44448135725787896,0.0722357340635277,0.39323165401426274,0.024880313792894588

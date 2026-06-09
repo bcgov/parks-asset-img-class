@@ -5,7 +5,7 @@ Example:
         --input data/processed/train/attr_decking_material_train.csv \
         --output data/features/siglip2_base_patch16_224_attr_decking_material_images.csv \
         --asset-output data/features/siglip2_base_patch16_224_attr_decking_material_assets.csv \
-        --image-root data/raw
+        --image-root data/processed/images_clean
 """
 
 from __future__ import annotations
