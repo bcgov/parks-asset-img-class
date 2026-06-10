@@ -1,330 +1,505 @@
-"""Helpers for visualizing and analyzing VLM prediction errors."""
+"""Visualize VLM prediction errors with images for a specified attribute.
 
+This script loads VLM predictions and ground truth, filters for wrong predictions,
+and displays them with images to help identify patterns in VLM failures.
+
+Images are embedded directly into the HTML as base64 data URIs so the report
+renders in any browser, regardless of how the file is opened (no file:// issues).
+
+Usage:
+    python scripts/inspect_wrong_predictions.py \
+        --predictions results/vlm_stairs_attributes/vlm_stairs_gemini-3-flash_complete.csv \
+        --attribute steps_bin \
+        --asset_type Stairs \
+        --group_by_prediction
+    
+To render the HTML report:
+    start results/prediction_inspection/stairs/wrong_predictions_steps_bin.html
+    
+    python scripts/inspect_wrong_predictions.py \
+        --predictions results/vlm_bridge_attributes/vlm_trail_bridge_gemini-3-flash_complete.csv \
+        --attribute has_pedestrian_railing \
+        --asset_type "Trail Bridge" \
+        --group_by_prediction
+        
+To render the HTML report:
+    start results/prediction_inspection/trail_bridge/wrong_predictions_has_pedestrian_railing.html
+"""
+
+import argparse
+import base64
 import json
-import re
+import sys
+from io import BytesIO
 from pathlib import Path
 from typing import Optional
+from collections import defaultdict
 
 import pandas as pd
+from PIL import Image
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 
-try:
-    from src.dinov3_features import resolve_image_path
-except ImportError:
-    resolve_image_path = None
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.prediction_inspection import (
+    load_predictions_and_ground_truth,
+    get_wrong_predictions,
+    extract_response_value,
+    get_image_path,
+    normalize_attribute_name,
+)
 
 
-# ---------------------------------------------------------------------------
-# Attribute name normalization
-# ---------------------------------------------------------------------------
+def load_image_safe(image_path: Optional[Path], max_width: int = 300) -> Optional[Image.Image]:
+    """Load an image, returning None if it doesn't exist or fails to load."""
+    if image_path is None or not image_path.exists():
+        return None
 
-def normalize_attribute_name(attr: str) -> str:
-    """Normalize attribute names for file path / column matching.
+    try:
+        img = Image.open(image_path)
+        img.thumbnail((max_width, max_width), Image.Resampling.LANCZOS)
+        return img
+    except Exception as e:
+        print(f"Warning: Failed to load image {image_path}: {e}", file=sys.stderr)
+        return None
 
-    Strips the leading ``attr_`` prefix, removes punctuation that is illegal
-    in file-names, and collapses runs of underscores so that
-    ``attr_material_frame,_tank,_body`` → ``material_frame_tank_body``.
+
+def image_to_data_uri(image_path: Optional[Path], max_width: int = 400) -> Optional[str]:
+    """Read an image and return a base64 data URI.
+
+    Embedding the image directly in the HTML means it renders in any browser
+    without relying on file:// access (which browsers often block).
     """
-    name = attr
-    name = re.sub(r"^attr_", "", name)        # strip leading attr_
-    name = name.replace(",", "")               # remove commas
-    name = name.replace(" ", "_")
-    name = name.replace("(", "").replace(")", "")
-    name = name.replace("<", "lt").replace(">", "gt")
-    name = name.replace("/", "_")
-    name = re.sub(r"_+", "_", name)           # collapse repeated underscores
-    name = name.strip("_")
-    return name
+    if image_path is None or not Path(image_path).exists():
+        return None
+    try:
+        img = Image.open(image_path).convert("RGB")
+        img.thumbnail((max_width, max_width), Image.Resampling.LANCZOS)
+        buf = BytesIO()
+        img.save(buf, format="JPEG", quality=85)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        return f"data:image/jpeg;base64,{b64}"
+    except Exception as e:
+        print(f"Warning: Failed to encode image {image_path}: {e}", file=sys.stderr)
+        return None
 
 
-def _candidate_normalized_names(attribute: str) -> list[str]:
-    """Return several normalized forms of *attribute* to try during lookup."""
-    norm = normalize_attribute_name(attribute)
-    candidates = [norm]
-    # also try with the attr_ prefix re-added, in case the file kept it
-    if not norm.startswith("attr_"):
-        candidates.append(f"attr_{norm}")
-    # original attribute string (might already be the exact column name)
-    if attribute not in candidates:
-        candidates.append(attribute)
-    return candidates
-
-
-# ---------------------------------------------------------------------------
-# Ground-truth file discovery
-# ---------------------------------------------------------------------------
-
-def find_ground_truth_file(
+def create_error_report_html(
+    wrong_preds: pd.DataFrame,
+    merged: pd.DataFrame,
     attribute: str,
-    ground_truth_dir: str = "data/processed/train",
-) -> Optional[Path]:
-    """Locate the ground-truth CSV for *attribute*.
-
-    Mirrors the naming logic in ``evaluate_predictions.py``:
-
-    * ``attr_structure_position`` → ``{dir}/attr_structure_position_train.csv``
-    * ``steps_bin``               → ``{dir}/steps_bin_train.csv``
-
-    Searches *ground_truth_dir* first, then any sibling split directory
-    (train ↔ test), trying several filename variants so that callers
-    passing the wrong split still find the file.
-    """
-    base_dir = Path(ground_truth_dir)
-
-    # Build ordered list of directories to search (prefer the given dir)
-    search_dirs: list[Path] = [base_dir]
-
-    # Reproduce evaluate_predictions.py filename construction exactly:
-    #   normalised = attribute with special chars stripped, attr_ prefix kept
-    #   for attr_* attributes  → attr_{normalised}_train.csv
-    #   for everything else    → {normalised}_train.csv
-    norm = normalize_attribute_name(attribute)  # strips attr_ prefix
-    if attribute.startswith("attr_"):
-        primary_stem = f"attr_{norm}"           # re-add prefix, as evaluate_predictions does
-    else:
-        primary_stem = norm
-
-    # Additional stems to try as fallbacks (cover both with- and without-prefix)
-    extra_stems = [s for s in _candidate_normalized_names(attribute) if s != primary_stem]
-
-    for search_dir in search_dirs:
-        split_tag = search_dir.name  # "train" or "test"
-        for stem in [primary_stem] + extra_stems:
-            for fname in [
-                f"{stem}_{split_tag}.csv",   # e.g. attr_structure_position_train.csv
-                f"{stem}.csv",               # bare, no split tag
-            ]:
-                p = search_dir / fname
-                if p.exists():
-                    return p
-
-    return None
-
-
-# ---------------------------------------------------------------------------
-# Prediction column discovery  (THE MAIN BUG FIX)
-# ---------------------------------------------------------------------------
-
-def get_prediction_column(
-    attribute: str,
-    predictions_df: pd.DataFrame,
-) -> Optional[str]:
-    """Find the prediction value column for *attribute* in *predictions_df*.
-
-    Tries several naming strategies so that e.g. ``attr_structure_position``
-    resolves to ``structure_position_value`` even when the column is named
-    differently.
-    """
-    columns = predictions_df.columns.tolist()
-
-    for candidate_name in _candidate_normalized_names(attribute):
-        # Most common pattern: {normalized}_value
-        for col in [f"{candidate_name}_value", candidate_name]:
-            if col in columns:
-                return col
-
-    # Last-resort: scan all columns for a partial match on the normalised stem
-    norm = normalize_attribute_name(attribute)
-    for col in columns:
-        col_norm = normalize_attribute_name(col)
-        if col_norm == norm or col_norm == f"{norm}_value":
-            return col
-
-    return None
-
-
-def get_confidence_column(
-    attribute: str,
-    predictions_df: pd.DataFrame,
-) -> Optional[str]:
-    """Find the confidence column for *attribute*, if present."""
-    for candidate_name in _candidate_normalized_names(attribute):
-        col = f"{candidate_name}_confidence"
-        if col in predictions_df.columns:
-            return col
-    return None
-
-
-# ---------------------------------------------------------------------------
-# Ground-truth column discovery inside a DataFrame
-# ---------------------------------------------------------------------------
-
-def _find_gt_column(attribute: str, gt_df: pd.DataFrame) -> Optional[str]:
-    """Return the column in *gt_df* that holds the ground-truth for *attribute*.
-
-    Excludes confidence / metadata columns so we don't accidentally use those.
-    """
-    EXCLUDE_SUFFIXES = ("_confidence", "_path", "_id", "_url", "_file", "_name")
-    columns = gt_df.columns.tolist()
-
-    for candidate in _candidate_normalized_names(attribute):
-        if candidate in columns:
-            return candidate
-
-    # Fuzzy: normalise every column and compare
-    norm_target = normalize_attribute_name(attribute)
-    for col in columns:
-        if any(col.endswith(s) for s in EXCLUDE_SUFFIXES):
-            continue
-        if normalize_attribute_name(col) == norm_target:
-            return col
-
-    return None
-
-
-# ---------------------------------------------------------------------------
-# Core load + merge
-# ---------------------------------------------------------------------------
-
-def load_predictions_and_ground_truth(
-    predictions_csv: str,
-    attribute: str,
-    ground_truth_dir: str = "data/processed/train",
-    verbose: bool = True,
-) -> tuple[pd.DataFrame, pd.DataFrame, str, str]:
-    """Load predictions and ground truth and inner-merge on ``asset_id``.
-
-    Returns
-    -------
-    merged_df, predictions_df, pred_column, gt_column
-    """
-    predictions_df = pd.read_csv(predictions_csv)
-    if verbose:
-        print(f"[load] Predictions: {len(predictions_df)} rows, "
-              f"{len(predictions_df.columns)} columns")
-        print(f"[load] Prediction columns: {predictions_df.columns.tolist()}")
-
-    # --- locate prediction column -------------------------------------------
-    pred_col = get_prediction_column(attribute, predictions_df)
-    if pred_col is None:
-        raise ValueError(
-            f"Could not find a prediction column for attribute '{attribute}'.\n"
-            f"Available columns: {predictions_df.columns.tolist()}\n"
-            f"Tried normalized forms: {_candidate_normalized_names(attribute)}"
-        )
-    if verbose:
-        print(f"[load] Using prediction column: '{pred_col}'")
-
-    # --- locate ground-truth CSV --------------------------------------------
-    gt_path = find_ground_truth_file(attribute, ground_truth_dir)
-    if gt_path is None:
-        raise ValueError(
-            f"Could not find ground-truth CSV for attribute '{attribute}' "
-            f"under '{ground_truth_dir}'.\n"
-            f"Tried name variants: {_candidate_normalized_names(attribute)}"
-        )
-    if verbose:
-        print(f"[load] Ground-truth file: {gt_path}")
-
-    gt_df = pd.read_csv(gt_path)
-    if verbose:
-        print(f"[load] Ground-truth: {len(gt_df)} rows, "
-              f"columns: {gt_df.columns.tolist()}")
-
-    # --- locate ground-truth column -----------------------------------------
-    gt_col = _find_gt_column(attribute, gt_df)
-    if gt_col is None:
-        raise ValueError(
-            f"Could not find ground-truth column for attribute '{attribute}' "
-            f"in {gt_path}.\n"
-            f"Available columns: {gt_df.columns.tolist()}"
-        )
-    if verbose:
-        print(f"[load] Using ground-truth column: '{gt_col}'")
-
-    # --- normalise asset_id dtype so the join works -------------------------
-    for df in (predictions_df, gt_df):
-        df["asset_id"] = df["asset_id"].astype(str).str.strip()
-
-    # --- merge --------------------------------------------------------------
-    extra_gt_cols = ["asset_id", gt_col]
-    for optional in ("image_path", "filename"):
-        if optional in gt_df.columns:
-            extra_gt_cols.append(optional)
-
-    merged = predictions_df.merge(
-        gt_df[extra_gt_cols],
-        on="asset_id",
-        how="inner",
-    )
-    if verbose:
-        print(f"[load] After merge: {len(merged)} rows")
-
-    pre_drop = len(merged)
-    merged = merged.dropna(subset=[pred_col, gt_col])
-    if verbose and len(merged) < pre_drop:
-        print(f"[load] Dropped {pre_drop - len(merged)} rows with NaN in "
-              f"'{pred_col}' or '{gt_col}'")
-        print(f"[load] Rows available for comparison: {len(merged)}")
-
-    return merged, predictions_df, pred_col, gt_col
-
-
-# ---------------------------------------------------------------------------
-# Wrong-prediction filtering  (BUG FIX: normalise before comparing)
-# ---------------------------------------------------------------------------
-
-def _coerce_to_str(series: pd.Series) -> pd.Series:
-    """Stringify, lowercase, strip whitespace — for robust equality checks."""
-    return series.astype(str).str.strip().str.lower()
-
-
-def get_wrong_predictions(
-    merged_df: pd.DataFrame,
     pred_column: str,
     gt_column: str,
-    exclude_parse_errors: bool = True,
-    normalize_for_compare: bool = True,
-) -> pd.DataFrame:
-    """Return rows where the prediction does not match the ground truth.
+    output_dir: Path,
+    model_name: str = "",
+    asset_type: str = "",
+    limit: int = None,
+) -> None:
+    """Create an interactive HTML report of wrong predictions, grouped by asset."""
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    Parameters
-    ----------
-    normalize_for_compare:
-        If True (default) comparisons are case-insensitive and whitespace-
-        insensitive.  The *values in the returned DataFrame are not changed*;
-        only the filtering uses the normalised forms.
+    # Work at the asset level: get unique wrong asset IDs
+    wrong_asset_ids = wrong_preds["asset_id"].unique()
+    total_asset_ids = merged["asset_id"].unique()
+
+    if limit:
+        wrong_asset_ids = wrong_asset_ids[:limit]
+
+    asset_cards_html = []
+
+    for asset_id in wrong_asset_ids:
+        # All rows for this asset from the wrong_preds dataframe
+        asset_rows = wrong_preds[wrong_preds["asset_id"] == asset_id]
+
+        # Prediction and ground truth are per-asset, so take the first row's values
+        first_row = asset_rows.iloc[0]
+        predicted = first_row.get(pred_column, "N/A")
+        actual = first_row.get(gt_column, "N/A")
+        confidence = first_row.get(pred_column.replace("_value", "_confidence"), "N/A")
+        timestamp = first_row.get("timestamp", "")
+
+        # Try to extract prompt from response (use first row)
+        prompt_text = ""
+        if "raw_response" in first_row and pd.notna(first_row["raw_response"]):
+            try:
+                resp_data = json.loads(first_row["raw_response"])
+                if "prompt" in resp_data:
+                    prompt_text = resp_data["prompt"]
+            except Exception:
+                pass
+
+        # Build one image element per row/image for this asset
+        images_html_parts = []
+        for _, row in asset_rows.iterrows():
+            filename = row.get("filename", "")
+            resolved_image = get_image_path(row)
+            data_uri = image_to_data_uri(resolved_image)
+
+            if data_uri:
+                img_html = f"""
+                <div class="image-wrapper">
+                    <img src="{data_uri}"
+                         alt="Asset {asset_id} image">
+                    <div class="image-filename">{filename}</div>
+                </div>
+                """
+            else:
+                img_html = f"""
+                <div class="image-wrapper image-missing">
+                    <div>Image not found</div>
+                    <div class="image-filename">{filename}</div>
+                </div>
+                """
+            images_html_parts.append(img_html)
+
+        images_html = "\n".join(images_html_parts)
+        n_images = len(asset_rows)
+        image_label = f"{n_images} image{'s' if n_images != 1 else ''}"
+
+        asset_cards_html.append(f"""
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset {asset_id}</span>
+                <span class="image-count">{image_label}</span>
+                <span class="timestamp">{timestamp}</span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">{predicted}</span>
+                    <span class="confidence">(conf: {confidence})</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">{actual}</span>
+                </div>
+                {f'<div class="meta-row"><span class="label">Prompt:</span><span class="value meta-text prompt-text">{prompt_text}</span></div>' if prompt_text else ''}
+                <div class="images-strip">
+                    {images_html}
+                </div>
+            </div>
+        </div>
+        """)
+
+    n_wrong_assets = len(wrong_asset_ids)
+    n_total_assets = len(total_asset_ids)
+    error_rate = 100 * n_wrong_assets / n_total_assets if n_total_assets > 0 else 0
+    asset_type_line = f"<strong>Asset type:</strong> {asset_type}<br>" if asset_type else ""
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>VLM Wrong Predictions - {attribute}</title>
+        <style>
+            body {{
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background: #f5f5f5;
+                margin: 0;
+                padding: 20px;
+            }}
+            .container {{
+                max-width: 1400px;
+                margin: 0 auto;
+            }}
+            h1 {{
+                color: #333;
+                margin-bottom: 10px;
+            }}
+            .summary {{
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }}
+            .asset-cards {{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }}
+            .asset-card {{
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }}
+            .card-header {{
+                background: #f0f0f0;
+                padding: 12px 16px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }}
+            .asset-id {{
+                font-weight: bold;
+                color: #222;
+                font-size: 1.05em;
+            }}
+            .image-count {{
+                background: #e3eaf7;
+                color: #3a5a9e;
+                font-size: 0.82em;
+                font-weight: 600;
+                padding: 2px 10px;
+                border-radius: 12px;
+            }}
+            .timestamp {{
+                margin-left: auto;
+                color: #888;
+                font-size: 0.82em;
+            }}
+            .card-body {{
+                padding: 16px;
+            }}
+            .prediction-row {{
+                display: flex;
+                margin-bottom: 10px;
+                align-items: center;
+                gap: 10px;
+            }}
+            .meta-row {{
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+            }}
+            .label {{
+                font-weight: 600;
+                color: #555;
+                min-width: 100px;
+                flex-shrink: 0;
+            }}
+            .value {{
+                flex: 1;
+                padding: 5px 10px;
+                background: #f5f5f5;
+                border-radius: 4px;
+                word-break: break-word;
+            }}
+            .predicted {{
+                background: #ffe0e0;
+                color: #c62828;
+                font-weight: 600;
+            }}
+            .actual {{
+                background: #e0f5e0;
+                color: #2e7d32;
+                font-weight: 600;
+            }}
+            .confidence {{
+                font-size: 0.85em;
+                color: #777;
+                flex-shrink: 0;
+            }}
+            .meta-text {{
+                background: #f9f9f9;
+                color: #666;
+                font-family: monospace;
+                font-size: 0.82em;
+            }}
+            .prompt-text {{
+                display: block;
+                max-height: 80px;
+                overflow-y: auto;
+            }}
+            /* Horizontal image strip */
+            .images-strip {{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #eee;
+            }}
+            .image-wrapper {{
+                flex: 0 0 auto;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }}
+            .image-wrapper img {{
+                width: 400px;
+                height: 300px;
+                object-fit: contain;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                background: #fafafa;
+            }}
+            .image-filename {{
+                font-size: 0.72em;
+                color: #888;
+                word-break: break-all;
+                text-align: center;
+                max-width: 400px;
+            }}
+            .image-missing {{
+                width: 400px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px dashed #ccc;
+                border-radius: 5px;
+                color: #aaa;
+                font-size: 0.85em;
+                background: #fafafa;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>VLM Wrong Predictions: {attribute}</h1>
+            <div class="summary">
+                {asset_type_line}
+                <strong>Model:</strong> {model_name or 'unknown'}<br>
+                <strong>Attribute:</strong> {attribute}<br>
+                <strong>Wrong assets:</strong> {n_wrong_assets} of {n_total_assets} ({error_rate:.1f}% asset-level error rate)
+            </div>
+            <div class="asset-cards">
+                {"".join(asset_cards_html)}
+            </div>
+        </div>
+    </body>
+    </html>
     """
-    df = merged_df.copy()
 
-    if exclude_parse_errors and "parse_error" in df.columns:
-        df = df[df["parse_error"].ne(True)]
-
-    if normalize_for_compare:
-        pred_norm = _coerce_to_str(df[pred_column])
-        gt_norm   = _coerce_to_str(df[gt_column])
-        mask_wrong = pred_norm != gt_norm
-    else:
-        mask_wrong = df[pred_column] != df[gt_column]
-
-    return df[mask_wrong].reset_index(drop=True)
+    output_file = output_dir / f"wrong_predictions_{normalize_attribute_name(attribute)}.html"
+    output_file.write_text(html_content)
+    print(f"\nHTML report saved to: {output_file}")
 
 
-# ---------------------------------------------------------------------------
-# Misc helpers
-# ---------------------------------------------------------------------------
+def main():
+    parser = argparse.ArgumentParser(
+        description="Visualize VLM prediction errors with images"
+    )
+    parser.add_argument(
+        "--predictions",
+        required=True,
+        help="Path to predictions CSV file",
+    )
+    parser.add_argument(
+        "--attribute",
+        required=True,
+        help="Attribute to inspect (e.g., 'steps_bin', 'attr_material_frame,_tank,_body')",
+    )
+    parser.add_argument(
+        "--asset_type",
+        default="",
+        help="Asset type label to display in the report (e.g., 'Stairs', 'Trail Bridge')",
+    )
+    parser.add_argument(
+        "--ground_truth_dir",
+        default="data/processed/train",
+        help="Directory containing ground truth CSVs",
+    )
+    parser.add_argument(
+        "--output_dir",
+        default="results/prediction_inspection",
+        help="Directory to save HTML reports",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Maximum number of wrong assets to show",
+    )
+    parser.add_argument(
+        "--group_by_prediction",
+        action="store_true",
+        help="Group errors by predicted value",
+    )
+    parser.add_argument(
+        "--html_only",
+        action="store_true",
+        default=True,
+        help="Output HTML report (default: True)",
+    )
+    args = parser.parse_args()
 
-def extract_response_value(response_json: str, attribute: str) -> Optional[dict]:
-    """Extract value/confidence dict from a raw JSON response string."""
-    if pd.isna(response_json):
-        return None
+    # Load data
     try:
-        data = json.loads(response_json)
-    except (json.JSONDecodeError, TypeError):
-        return None
+        merged, preds_df, pred_col, gt_col = load_predictions_and_ground_truth(
+            args.predictions,
+            args.attribute,
+            args.ground_truth_dir,
+        )
+    except Exception as e:
+        print(f"Error loading data: {e}", file=sys.stderr)
+        sys.exit(1)
 
-    for key in _candidate_normalized_names(attribute) + [attribute]:
-        if key in data:
-            return data[key]
-    return None
+    # Get wrong predictions (row-level, but we'll aggregate to asset-level for display)
+    wrong_preds = get_wrong_predictions(merged, pred_col, gt_col)
+
+    if len(wrong_preds) == 0:
+        print(f"No wrong predictions found for attribute: {args.attribute}")
+        sys.exit(0)
+
+    # Report counts at asset level
+    unique_wrong_assets = wrong_preds["asset_id"].nunique()
+    unique_total_assets = merged["asset_id"].nunique()
+
+    print(
+        f"\nFound {unique_wrong_assets} wrong assets "
+        f"out of {unique_total_assets} total assets"
+    )
+    print(
+        f"Asset-level error rate: "
+        f"{100 * unique_wrong_assets / unique_total_assets:.1f}%"
+    )
+
+    # Get model name from predictions CSV path or filename
+    model_name = Path(args.predictions).stem
+    if "gemini" in model_name.lower():
+        model_name = "gemini-3-flash"
+    elif "gemma" in model_name.lower():
+        model_name = "gemma-2-27b"
+
+    # Summary statistics (asset-level)
+    # One row per asset for distribution summaries
+    asset_level = wrong_preds.drop_duplicates(subset=["asset_id"])
+    print(f"\nPredicted values distribution (asset-level):")
+    print(asset_level[pred_col].value_counts().to_string())
+    print(f"\nActual values distribution for wrong assets (asset-level):")
+    print(asset_level[gt_col].value_counts().to_string())
+
+    # Group by prediction if requested
+    if args.group_by_prediction:
+        print(f"\n=== Errors grouped by prediction (asset-level) ===")
+        for pred_val, group in asset_level.groupby(pred_col):
+            actual_vals = group[gt_col].value_counts()
+            print(f"\nPredicted '{pred_val}' (n={len(group)} assets):")
+            for actual_val, count in actual_vals.items():
+                print(f"  → Actually '{actual_val}': {count}")
+
+    # Build output dir: append asset_type slug as a subfolder when provided
+    output_dir = Path(args.output_dir)
+    if args.asset_type:
+        asset_type_slug = args.asset_type.lower().replace(" ", "_")
+        output_dir = output_dir / asset_type_slug
+
+    # Create HTML report
+    create_error_report_html(
+        wrong_preds,
+        merged,
+        args.attribute,
+        pred_col,
+        gt_col,
+        output_dir,
+        model_name=model_name,
+        asset_type=args.asset_type,
+        limit=args.limit,
+    )
 
 
-def get_image_path(row: pd.Series, repo_root: Path = None) -> Optional[Path]:
-    """Resolve the image path for a DataFrame row."""
-    if "image_path" not in row or pd.isna(row["image_path"]):
-        return None
-    if resolve_image_path is None:
-        return Path(row["image_path"])
-    try:
-        return resolve_image_path(row["image_path"], repo_root=repo_root)
-    except Exception:
-        return None
+if __name__ == "__main__":
+    main()

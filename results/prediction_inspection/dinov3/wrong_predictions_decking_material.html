@@ -1,0 +1,2764 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>VLM Wrong Predictions - attr_decking_material</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background: #f5f5f5;
+                margin: 0;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            h1 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .summary {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .asset-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .asset-card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            .card-header {
+                background: #f0f0f0;
+                padding: 12px 16px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .asset-id {
+                font-weight: bold;
+                color: #222;
+                font-size: 1.05em;
+            }
+            .image-count {
+                background: #e3eaf7;
+                color: #3a5a9e;
+                font-size: 0.82em;
+                font-weight: 600;
+                padding: 2px 10px;
+                border-radius: 12px;
+            }
+            .timestamp {
+                margin-left: auto;
+                color: #888;
+                font-size: 0.82em;
+            }
+            .card-body {
+                padding: 16px;
+            }
+            .prediction-row {
+                display: flex;
+                margin-bottom: 10px;
+                align-items: center;
+                gap: 10px;
+            }
+            .meta-row {
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .label {
+                font-weight: 600;
+                color: #555;
+                min-width: 100px;
+                flex-shrink: 0;
+            }
+            .value {
+                flex: 1;
+                padding: 5px 10px;
+                background: #f5f5f5;
+                border-radius: 4px;
+                word-break: break-word;
+            }
+            .predicted {
+                background: #ffe0e0;
+                color: #c62828;
+                font-weight: 600;
+            }
+            .actual {
+                background: #e0f5e0;
+                color: #2e7d32;
+                font-weight: 600;
+            }
+            .confidence {
+                font-size: 0.85em;
+                color: #777;
+                flex-shrink: 0;
+            }
+            .meta-text {
+                background: #f9f9f9;
+                color: #666;
+                font-family: monospace;
+                font-size: 0.82em;
+            }
+            .prompt-text {
+                display: block;
+                max-height: 80px;
+                overflow-y: auto;
+            }
+            /* Horizontal image strip */
+            .images-strip {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #eee;
+            }
+            .image-wrapper {
+                flex: 0 0 auto;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+            .image-wrapper img {
+                width: 400px;
+                height: 300px;
+                object-fit: contain;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                background: #fafafa;
+            }
+            .image-filename {
+                font-size: 0.72em;
+                color: #888;
+                word-break: break-all;
+                text-align: center;
+                max-width: 400px;
+            }
+            .image-missing {
+                width: 400px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px dashed #ccc;
+                border-radius: 5px;
+                color: #aaa;
+                font-size: 0.85em;
+                background: #fafafa;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>VLM Wrong Predictions: attr_decking_material</h1>
+            <div class="summary">
+                
+                <strong>Model:</strong> DINOv3 + Logistic Regression<br>
+                <strong>Attribute:</strong> attr_decking_material<br>
+                <strong>Wrong assets:</strong> 75 of 1774 (4.2% asset-level error rate)
+            </div>
+            <div class="asset-cards">
+                
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 48341</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/48341/10732__AST_EX_20210805_150527.jpeg"
+                         alt="Asset 48341 image">
+                    <div class="image-filename">10732__AST_EX_20210805_150527.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 49664</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49664/35820__AST_EX_20220211_111532.jpeg"
+                         alt="Asset 49664 image">
+                    <div class="image-filename">35820__AST_EX_20220211_111532.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49664/35818__AST_EX_20220211_111547.jpeg"
+                         alt="Asset 49664 image">
+                    <div class="image-filename">35818__AST_EX_20220211_111547.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 51524</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51524/16914__AST_EX_20210820_142024.jpeg"
+                         alt="Asset 51524 image">
+                    <div class="image-filename">16914__AST_EX_20210820_142024.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 51798</span>
+                <span class="image-count">7 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/6759__AST_EX_20210719_112242.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">6759__AST_EX_20210719_112242.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77873__AST_EX_20241128_121359.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77873__AST_EX_20241128_121359.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77868__AST_EX_20241128_121253.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77868__AST_EX_20241128_121253.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77886__AST_EX_20241128_121213.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77886__AST_EX_20241128_121213.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77875__AST_EX_20241128_121243.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77875__AST_EX_20241128_121243.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77898__AST_EX_20241128_121412.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77898__AST_EX_20241128_121412.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/51798/77896__AST_EX_20241128_121149.jpeg"
+                         alt="Asset 51798 image">
+                    <div class="image-filename">77896__AST_EX_20241128_121149.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 55635</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Asphalt</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/55635/57138__AST_EX_20220729_121246.jpeg"
+                         alt="Asset 55635 image">
+                    <div class="image-filename">57138__AST_EX_20220729_121246.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 63068</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/63068/87457__Picture1.jpg"
+                         alt="Asset 63068 image">
+                    <div class="image-filename">87457__Picture1.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 65608</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/65608/45622__IMG_0192.JPG"
+                         alt="Asset 65608 image">
+                    <div class="image-filename">45622__IMG_0192.JPG</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/65608/60899__MI_20220823_121454.jpg"
+                         alt="Asset 65608 image">
+                    <div class="image-filename">60899__MI_20220823_121454.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 66920</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/66920/64861__AST_IM_20220717_132815.jpeg"
+                         alt="Asset 66920 image">
+                    <div class="image-filename">64861__AST_IM_20220717_132815.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 102344</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/102344/46488__AST_IM_20220615_115431.jpeg"
+                         alt="Asset 102344 image">
+                    <div class="image-filename">46488__AST_IM_20220615_115431.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 104858</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Asphalt</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/104858/50120__AST_IM_20220628_105214.jpeg"
+                         alt="Asset 104858 image">
+                    <div class="image-filename">50120__AST_IM_20220628_105214.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 119774</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/119774/68016__MI_20240424_082404.jpg"
+                         alt="Asset 119774 image">
+                    <div class="image-filename">68016__MI_20240424_082404.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 123655</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/123655/78143__AST_IM_20241218_122442.jpeg"
+                         alt="Asset 123655 image">
+                    <div class="image-filename">78143__AST_IM_20241218_122442.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/123655/78151__AST_IM_20241218_122432.jpeg"
+                         alt="Asset 123655 image">
+                    <div class="image-filename">78151__AST_IM_20241218_122432.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 126801</span>
+                <span class="image-count">3 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126801/85645__AST_IM_20250730_143332.jpeg"
+                         alt="Asset 126801 image">
+                    <div class="image-filename">85645__AST_IM_20250730_143332.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126801/85662__AST_IM_20250730_143348.jpeg"
+                         alt="Asset 126801 image">
+                    <div class="image-filename">85662__AST_IM_20250730_143348.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126801/85646__AST_IM_20250730_143340.jpeg"
+                         alt="Asset 126801 image">
+                    <div class="image-filename">85646__AST_IM_20250730_143340.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 126803</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126803/85659__AST_IM_20250730_145101.jpeg"
+                         alt="Asset 126803 image">
+                    <div class="image-filename">85659__AST_IM_20250730_145101.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 51549</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/51549/16896__AST_EX_20210820_124957.jpeg"
+                         alt="Asset 51549 image">
+                    <div class="image-filename">16896__AST_EX_20210820_124957.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/51549/16899__AST_EX_20210820_124439.jpeg"
+                         alt="Asset 51549 image">
+                    <div class="image-filename">16899__AST_EX_20210820_124439.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 51551</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/51551/61176__AST_EX_20220824_093217.jpeg"
+                         alt="Asset 51551 image">
+                    <div class="image-filename">61176__AST_EX_20220824_093217.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 54507</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/54507/37393__AST_EX_20220324_141256.jpeg"
+                         alt="Asset 54507 image">
+                    <div class="image-filename">37393__AST_EX_20220324_141256.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 67796</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/67796/37371__AST_EX_20220324_145536.jpeg"
+                         alt="Asset 67796 image">
+                    <div class="image-filename">37371__AST_EX_20220324_145536.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 105246</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/105246/84459__AST_EX_20250704_130306.jpeg"
+                         alt="Asset 105246 image">
+                    <div class="image-filename">84459__AST_EX_20250704_130306.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 120665</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/120665/69762__AST_IM_20240606_091232.jpeg"
+                         alt="Asset 120665 image">
+                    <div class="image-filename">69762__AST_IM_20240606_091232.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 121730</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/121730/72508__AST_IM_20240813_102517.jpeg"
+                         alt="Asset 121730 image">
+                    <div class="image-filename">72508__AST_IM_20240813_102517.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 81881</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/573/81881/2851__AST_IM_20210627_113032.jpeg"
+                         alt="Asset 81881 image">
+                    <div class="image-filename">2851__AST_IM_20210627_113032.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 52457</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/52457/77956__IMG_3182.jpg"
+                         alt="Asset 52457 image">
+                    <div class="image-filename">77956__IMG_3182.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 58160</span>
+                <span class="image-count">10 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8158__AST_EX_20210727_134921.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8158__AST_EX_20210727_134921.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8159__AST_EX_20210727_134836.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8159__AST_EX_20210727_134836.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8160__AST_EX_20210727_134827.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8160__AST_EX_20210727_134827.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8161__AST_EX_20210727_134646.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8161__AST_EX_20210727_134646.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8162__AST_EX_20210727_134633.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8162__AST_EX_20210727_134633.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/8163__AST_EX_20210727_133917.jpeg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">8163__AST_EX_20210727_133917.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/67242__20231125_112131.jpg"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">67242__20231125_112131.jpg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/67243__IMG_2462.JPG"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">67243__IMG_2462.JPG</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/67244__IMG_2474.JPG"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">67244__IMG_2474.JPG</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58160/79620__New_Whitehorn_bridge.JPG"
+                         alt="Asset 58160 image">
+                    <div class="image-filename">79620__New_Whitehorn_bridge.JPG</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 64643</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/64643/47085__AST_EX_20220617_123258.jpeg"
+                         alt="Asset 64643 image">
+                    <div class="image-filename">47085__AST_EX_20220617_123258.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 65497</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/65497/20022__AST_EX_20210904_141825.jpeg"
+                         alt="Asset 65497 image">
+                    <div class="image-filename">20022__AST_EX_20210904_141825.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/65497/26366__AST_EX_20211012_113507.jpeg"
+                         alt="Asset 65497 image">
+                    <div class="image-filename">26366__AST_EX_20211012_113507.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 102347</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/102347/46507__AST_IM_20220615_115858.jpeg"
+                         alt="Asset 102347 image">
+                    <div class="image-filename">46507__AST_IM_20220615_115858.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 113125</span>
+                <span class="image-count">4 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/113125/61435__AST_IM_20220826_095740.jpeg"
+                         alt="Asset 113125 image">
+                    <div class="image-filename">61435__AST_IM_20220826_095740.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/113125/61438__AST_IM_20220826_104550.jpeg"
+                         alt="Asset 113125 image">
+                    <div class="image-filename">61438__AST_IM_20220826_104550.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/113125/61440__AST_IM_20220826_095727.jpeg"
+                         alt="Asset 113125 image">
+                    <div class="image-filename">61440__AST_IM_20220826_095727.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/113125/87467__AST_EX_20250905_110148.jpeg"
+                         alt="Asset 113125 image">
+                    <div class="image-filename">87467__AST_EX_20250905_110148.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 117720</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Asphalt</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/117720/66054__AST_IM_20230903_093825.jpeg"
+                         alt="Asset 117720 image">
+                    <div class="image-filename">66054__AST_IM_20230903_093825.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 121618</span>
+                <span class="image-count">4 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/121618/72114__AST_IM_20240803_115637.jpeg"
+                         alt="Asset 121618 image">
+                    <div class="image-filename">72114__AST_IM_20240803_115637.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/121618/72119__AST_IM_20240803_115627.jpeg"
+                         alt="Asset 121618 image">
+                    <div class="image-filename">72119__AST_IM_20240803_115627.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/121618/89897__Channel_view_lower_water.jpeg"
+                         alt="Asset 121618 image">
+                    <div class="image-filename">89897__Channel_view_lower_water.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/121618/89898__Bridge_elfin_side_-_high_water.jpeg"
+                         alt="Asset 121618 image">
+                    <div class="image-filename">89898__Bridge_elfin_side_-_high_water.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 128273</span>
+                <span class="image-count">3 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/128273/90332__AST_EX_20220617_171132.jpeg"
+                         alt="Asset 128273 image">
+                    <div class="image-filename">90332__AST_EX_20220617_171132.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/128273/90331__AST_EX_20220617_171114.jpeg"
+                         alt="Asset 128273 image">
+                    <div class="image-filename">90331__AST_EX_20220617_171114.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/128273/90333__AST_EX_20220617_171150.jpeg"
+                         alt="Asset 128273 image">
+                    <div class="image-filename">90333__AST_EX_20220617_171150.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 58183</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Concrete</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/58183/6494__AST_EX_20210715_120442.jpeg"
+                         alt="Asset 58183 image">
+                    <div class="image-filename">6494__AST_EX_20210715_120442.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/58183/6495__AST_EX_20210715_120427.jpeg"
+                         alt="Asset 58183 image">
+                    <div class="image-filename">6495__AST_EX_20210715_120427.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 123389</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Composite</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/123389/77613__Gitwinksihlkw_Viewing_Platform.jpg"
+                         alt="Asset 123389 image">
+                    <div class="image-filename">77613__Gitwinksihlkw_Viewing_Platform.jpg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/123389/88342__AST_EX_20250918_123812.jpeg"
+                         alt="Asset 123389 image">
+                    <div class="image-filename">88342__AST_EX_20250918_123812.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 103626</span>
+                <span class="image-count">3 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/573/103626/48406__AST_IM_20220622_115150.jpeg"
+                         alt="Asset 103626 image">
+                    <div class="image-filename">48406__AST_IM_20220622_115150.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/573/103626/48407__AST_IM_20220622_115138.jpeg"
+                         alt="Asset 103626 image">
+                    <div class="image-filename">48407__AST_IM_20220622_115138.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/573/103626/48408__AST_IM_20220622_115119.jpeg"
+                         alt="Asset 103626 image">
+                    <div class="image-filename">48408__AST_IM_20220622_115119.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 49062</span>
+                <span class="image-count">3 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Asphalt</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49062/52782__AST_EX_20220707_102209.jpeg"
+                         alt="Asset 49062 image">
+                    <div class="image-filename">52782__AST_EX_20220707_102209.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49062/52802__AST_EX_20220707_102138.jpeg"
+                         alt="Asset 49062 image">
+                    <div class="image-filename">52802__AST_EX_20220707_102138.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49062/52829__AST_EX_20220707_102122.jpeg"
+                         alt="Asset 49062 image">
+                    <div class="image-filename">52829__AST_EX_20220707_102122.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 55116</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/55116/42069__AST_EX_20220518_141051.jpeg"
+                         alt="Asset 55116 image">
+                    <div class="image-filename">42069__AST_EX_20220518_141051.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 67205</span>
+                <span class="image-count">4 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Concrete</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/67205/38565__AST_EX_20220331_144231.jpeg"
+                         alt="Asset 67205 image">
+                    <div class="image-filename">38565__AST_EX_20220331_144231.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/67205/38570__AST_EX_20220331_144247.jpeg"
+                         alt="Asset 67205 image">
+                    <div class="image-filename">38570__AST_EX_20220331_144247.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/67205/93110__AST_EX_20260422_114842.jpeg"
+                         alt="Asset 67205 image">
+                    <div class="image-filename">93110__AST_EX_20260422_114842.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/67205/93111__AST_EX_20260422_114908.jpeg"
+                         alt="Asset 67205 image">
+                    <div class="image-filename">93111__AST_EX_20260422_114908.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 107955</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Aluminum</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/107955/55169__AST_IM_20220720_153434.jpeg"
+                         alt="Asset 107955 image">
+                    <div class="image-filename">55169__AST_IM_20220720_153434.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 110139</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/110139/58047__AST_IM_20220806_125731.jpeg"
+                         alt="Asset 110139 image">
+                    <div class="image-filename">58047__AST_IM_20220806_125731.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 114635</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/114635/62977__AST_IM_20220910_092600.jpeg"
+                         alt="Asset 114635 image">
+                    <div class="image-filename">62977__AST_IM_20220910_092600.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/114635/62981__AST_IM_20220910_092613.jpeg"
+                         alt="Asset 114635 image">
+                    <div class="image-filename">62981__AST_IM_20220910_092613.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 68016</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/68016/7958__AST_EX_20210725_103041.jpeg"
+                         alt="Asset 68016 image">
+                    <div class="image-filename">7958__AST_EX_20210725_103041.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 108353</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/108353/55487__AST_IM_20220715_144400.jpeg"
+                         alt="Asset 108353 image">
+                    <div class="image-filename">55487__AST_IM_20220715_144400.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 120681</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/120681/69771__AST_IM_20240606_103254.jpeg"
+                         alt="Asset 120681 image">
+                    <div class="image-filename">69771__AST_IM_20240606_103254.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 129378</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Composite</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/129378/92385__AST_EX_20260120_112436.jpeg"
+                         alt="Asset 129378 image">
+                    <div class="image-filename">92385__AST_EX_20260120_112436.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 46931</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/46931/55371__asst_043.jpg"
+                         alt="Asset 46931 image">
+                    <div class="image-filename">55371__asst_043.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 49063</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49063/52756__AST_EX_20220707_155645.jpeg"
+                         alt="Asset 49063 image">
+                    <div class="image-filename">52756__AST_EX_20220707_155645.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/49063/52764__AST_EX_20220707_155352.jpeg"
+                         alt="Asset 49063 image">
+                    <div class="image-filename">52764__AST_EX_20220707_155352.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 53195</span>
+                <span class="image-count">3 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/53195/35427__AST_EX_20220113_151616.jpeg"
+                         alt="Asset 53195 image">
+                    <div class="image-filename">35427__AST_EX_20220113_151616.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/53195/35431__AST_EX_20220113_151626.jpeg"
+                         alt="Asset 53195 image">
+                    <div class="image-filename">35431__AST_EX_20220113_151626.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/53195/71811__AST_EX_20240730_122826.jpeg"
+                         alt="Asset 53195 image">
+                    <div class="image-filename">71811__AST_EX_20240730_122826.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 55633</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/55633/57133__AST_EX_20220729_114550.jpeg"
+                         alt="Asset 55633 image">
+                    <div class="image-filename">57133__AST_EX_20220729_114550.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 58161</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58161/8014__AST_EX_20210725_161106.jpeg"
+                         alt="Asset 58161 image">
+                    <div class="image-filename">8014__AST_EX_20210725_161106.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/58161/8015__AST_EX_20210725_161045.jpeg"
+                         alt="Asset 58161 image">
+                    <div class="image-filename">8015__AST_EX_20210725_161045.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 94144</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Composite</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/94144/32678__Babcock_Bridge___2.jpg"
+                         alt="Asset 94144 image">
+                    <div class="image-filename">32678__Babcock_Bridge___2.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 116737</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/116737/64694__AST_IM_20230302_104806.jpeg"
+                         alt="Asset 116737 image">
+                    <div class="image-filename">64694__AST_IM_20230302_104806.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 117193</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Aluminum</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/117193/65268__AST_IM_20230616_132528.jpeg"
+                         alt="Asset 117193 image">
+                    <div class="image-filename">65268__AST_IM_20230616_132528.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 120706</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/120706/69810__AST_IM_20240618_102502.jpeg"
+                         alt="Asset 120706 image">
+                    <div class="image-filename">69810__AST_IM_20240618_102502.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/120706/69811__AST_IM_20240618_102456.jpeg"
+                         alt="Asset 120706 image">
+                    <div class="image-filename">69811__AST_IM_20240618_102456.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 126356</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126356/84051__AST_IM_20250618_180850.jpeg"
+                         alt="Asset 126356 image">
+                    <div class="image-filename">84051__AST_IM_20250618_180850.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126356/84029__AST_IM_20250618_180914.jpeg"
+                         alt="Asset 126356 image">
+                    <div class="image-filename">84029__AST_IM_20250618_180914.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 127136</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/127136/90541__Footpath_bridge_1.jpg"
+                         alt="Asset 127136 image">
+                    <div class="image-filename">90541__Footpath_bridge_1.jpg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/127136/90542__Footpath_bridge_2.jpg"
+                         alt="Asset 127136 image">
+                    <div class="image-filename">90542__Footpath_bridge_2.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 127388</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/127388/87490__AST_IM_20250906_111632.jpeg"
+                         alt="Asset 127388 image">
+                    <div class="image-filename">87490__AST_IM_20250906_111632.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 62340</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/62340/2515__AST_EX_20210625_110834.jpeg"
+                         alt="Asset 62340 image">
+                    <div class="image-filename">2515__AST_EX_20210625_110834.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/62340/87455__Image__10_.jpg"
+                         alt="Asset 62340 image">
+                    <div class="image-filename">87455__Image__10_.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 62341</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Concrete</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/62341/2517__AST_EX_20210625_112058.jpeg"
+                         alt="Asset 62341 image">
+                    <div class="image-filename">2517__AST_EX_20210625_112058.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 74944</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/74944/47333__AST_EX_20220616_170442.jpeg"
+                         alt="Asset 74944 image">
+                    <div class="image-filename">47333__AST_EX_20220616_170442.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 108000</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/108000/55054__AST_IM_20220721_122330.jpeg"
+                         alt="Asset 108000 image">
+                    <div class="image-filename">55054__AST_IM_20220721_122330.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/108000/55056__AST_IM_20220721_122347.jpeg"
+                         alt="Asset 108000 image">
+                    <div class="image-filename">55056__AST_IM_20220721_122347.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 120660</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/120660/69763__AST_IM_20240606_094934.jpeg"
+                         alt="Asset 120660 image">
+                    <div class="image-filename">69763__AST_IM_20240606_094934.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 120663</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/120663/69783__AST_IM_20240605_125513.jpeg"
+                         alt="Asset 120663 image">
+                    <div class="image-filename">69783__AST_IM_20240605_125513.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 121676</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/121676/72307__MI_20240808_104828.jpg"
+                         alt="Asset 121676 image">
+                    <div class="image-filename">72307__MI_20240808_104828.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 123103</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Concrete</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/337/123103/76878__AST_IM_20241104_165545.jpeg"
+                         alt="Asset 123103 image">
+                    <div class="image-filename">76878__AST_IM_20241104_165545.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 50822</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/50822/64550__AST_EX_20230125_153836.jpeg"
+                         alt="Asset 50822 image">
+                    <div class="image-filename">64550__AST_EX_20230125_153836.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/50822/64554__AST_EX_20230125_153855.jpeg"
+                         alt="Asset 50822 image">
+                    <div class="image-filename">64554__AST_EX_20230125_153855.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 53985</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/53985/84285__Inland_pedestrian_bridge_DFAA_1.png"
+                         alt="Asset 53985 image">
+                    <div class="image-filename">84285__Inland_pedestrian_bridge_DFAA_1.png</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/53985/84286__Inland_pedestrian_bridge_DFAA_2.png"
+                         alt="Asset 53985 image">
+                    <div class="image-filename">84286__Inland_pedestrian_bridge_DFAA_2.png</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 98531</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/98531/40392__AST_IM_20220508_132058.jpeg"
+                         alt="Asset 98531 image">
+                    <div class="image-filename">40392__AST_IM_20220508_132058.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 101779</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/101779/45933__AST_IM_20220611_153937.jpeg"
+                         alt="Asset 101779 image">
+                    <div class="image-filename">45933__AST_IM_20220611_153937.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 107895</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/107895/54968__AST_IM_20220720_145555.jpeg"
+                         alt="Asset 107895 image">
+                    <div class="image-filename">54968__AST_IM_20220720_145555.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/107895/76399__AST_EX_20241025_115657.jpeg"
+                         alt="Asset 107895 image">
+                    <div class="image-filename">76399__AST_EX_20241025_115657.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 109138</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Timber</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Steel</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/109138/56715__AST_IM_20220720_162002.jpeg"
+                         alt="Asset 109138 image">
+                    <div class="image-filename">56715__AST_IM_20220720_162002.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/109138/76405__AST_EX_20241025_101407.jpeg"
+                         alt="Asset 109138 image">
+                    <div class="image-filename">76405__AST_EX_20241025_101407.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 114815</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/114815/63081__AST_IM_20220902_111956.jpeg"
+                         alt="Asset 114815 image">
+                    <div class="image-filename">63081__AST_IM_20220902_111956.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/114815/69758__AST_EX_20240606_090250.jpeg"
+                         alt="Asset 114815 image">
+                    <div class="image-filename">69758__AST_EX_20240606_090250.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 126683</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126683/85305__IMG_2174.jpg"
+                         alt="Asset 126683 image">
+                    <div class="image-filename">85305__IMG_2174.jpg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 126804</span>
+                <span class="image-count">1 image</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Steel</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Aluminum</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/253/126804/85647__AST_IM_20250730_133249.jpeg"
+                         alt="Asset 126804 image">
+                    <div class="image-filename">85647__AST_IM_20250730_133249.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 87775</span>
+                <span class="image-count">4 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Concrete</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Composite</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/87775/18214__AST_IM_20210823_122823.jpeg"
+                         alt="Asset 87775 image">
+                    <div class="image-filename">18214__AST_IM_20210823_122823.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/87775/55742__AST_EX_20220725_120810.jpeg"
+                         alt="Asset 87775 image">
+                    <div class="image-filename">55742__AST_EX_20220725_120810.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/87775/85995__AST_EX_20250810_111901.jpeg"
+                         alt="Asset 87775 image">
+                    <div class="image-filename">85995__AST_EX_20250810_111901.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/87775/85996__AST_EX_20250810_111908.jpeg"
+                         alt="Asset 87775 image">
+                    <div class="image-filename">85996__AST_EX_20250810_111908.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class="asset-card">
+            <div class="card-header">
+                <span class="asset-id">Asset 97887</span>
+                <span class="image-count">2 images</span>
+                <span class="timestamp"></span>
+            </div>
+            <div class="card-body">
+                <div class="prediction-row">
+                    <span class="label">Predicted:</span>
+                    <span class="value predicted">Concrete</span>
+                    <span class="confidence">(conf: N/A)</span>
+                </div>
+                <div class="prediction-row">
+                    <span class="label">Actual:</span>
+                    <span class="value actual">Timber</span>
+                </div>
+                
+                <div class="images-strip">
+                    
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/97887/39288__AST_IM_20220413_115758.jpeg"
+                         alt="Asset 97887 image">
+                    <div class="image-filename">39288__AST_IM_20220413_115758.jpeg</div>
+                </div>
+                
+
+                <div class="image-wrapper">
+                    <img src="file:///Users/nourshawky/Capstone/parks-asset-img-class/data/processed/images_clean/citywide/images/359/97887/66784__AST_EX_20231025_114253.jpeg"
+                         alt="Asset 97887 image">
+                    <div class="image-filename">66784__AST_EX_20231025_114253.jpeg</div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </body>
+    </html>
+    
