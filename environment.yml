@@ -34,5 +34,6 @@ dependencies:
     - tabulate
     - google-genai
     - openai
+    - anthropic
     - dagshub
     - open-clip-torch

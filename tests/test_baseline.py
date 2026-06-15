@@ -13,6 +13,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.baseline import (  # noqa: E402
     ConstantPredictor,
+    STRATEGIES,
     cross_validate_majority_class_frame,
     cross_validate_train_folder,
     first_mode,
@@ -58,9 +59,10 @@ def test_grouped_cv_keeps_asset_ids_out_of_validation_fold() -> None:
         frame, "attr_bridge_type", n_splits=2, random_state=7
     )
 
-    assert len(folds) == 2
-    assert folds["n_valid_assets"].sum() == frame["asset_id"].nunique()
-    assert set(folds["strategy"]) == {"majority_class_group_cv"}
+    assert len(folds) == 2 * len(STRATEGIES)
+    assert set(folds["strategy"]) == set(STRATEGIES)
+    per_strategy_assets = folds.groupby("strategy")["n_valid_assets"].sum()
+    assert (per_strategy_assets == frame["asset_id"].nunique()).all()
 
 
 def test_cross_validate_train_folder_reads_only_train_csvs(tmp_path: Path) -> None:
@@ -82,4 +84,5 @@ def test_cross_validate_train_folder_reads_only_train_csvs(tmp_path: Path) -> No
 
     assert summary.loc[0, "attribute"] == "attr_bridge_type"
     assert summary.loc[0, "n_folds"] == 2
-    assert len(folds) == 2
+    assert len(folds) == 2 * len(STRATEGIES)
+    assert len(summary) == len(STRATEGIES)

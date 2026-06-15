@@ -198,8 +198,6 @@ To better understand the possible values of categorical attributes, unique value
 #| tbl-cap: "Unique values for categorical attributes"
 
 import pandas as pd
-from IPython.display import Markdown
-from tabulate import tabulate
 
 attr_cols = [c for c in attributes_df.columns if c.startswith("attr_")]
 num_attrs = ["attr_Fall Height", "attr_Number of Steps", "attr_Length", "attr_Width"]
@@ -216,8 +214,6 @@ unique_table = pd.DataFrame({
 pd.set_option("display.max_colwidth", None)
 
 unique_table
-
-Markdown(tabulate(unique_table, headers="keys", tablefmt="pipe", showindex=False))
 ```
 
 @tbl-unique-vals reveals some data quality issues such as the presence of placeholder values like `TBD` to denote missing values, artificially reducing the null counts in @tbl-data-summary.
@@ -317,4 +313,3 @@ The primary stakeholders are BC Parks staff, the UBC MDS capstone team, and futu
 The final deliverable will be a reproducible end-to-end pipeline that takes a folder of infrastructure images as input and produces a structured CSV file containing predicted attribute values and confidence scores for each asset. Alongside the pipeline, we will provide BCParks with a report documenting our results with clear documentation and a walkthrough tutorial to support further fine tuning and future maintenance of our pipeline as new data becomes available.
 
 # References
-

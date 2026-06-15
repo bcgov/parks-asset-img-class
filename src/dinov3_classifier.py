@@ -313,21 +313,6 @@ def cross_validate_dinov3_classifier(
                 }
             )
 
-        # Save per-asset predictions for error analysis
-        for asset_id, true_label, pred_label in zip(
-            joined.iloc[valid_idx][group_column], y_valid, predictions
-        ):
-            prediction_rows.append(
-                {
-                    "attribute": target,
-                    "fold": fold,
-                    "asset_id": asset_id,
-                    "true_label": true_label,
-                    "predicted_label": pred_label,
-                    "correct": true_label == pred_label,
-                }
-            )
-
         fold_rows.append(
             {
                 "attribute": target,

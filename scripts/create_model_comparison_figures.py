@@ -37,17 +37,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--baseline",
         type=Path,
-        default=Path("results/baseline_classification_results.csv"),
+        default=Path("results/baseline_results/baseline_classification_results.csv"),
     )
     parser.add_argument(
         "--dinov3-comparison",
         type=Path,
-        default=Path("results/dinov3_vs_baseline_comparison.csv"),
+        default=Path("results/dinov3_results/dinov3_logistic/dinov3_vs_baseline_comparison.csv"),
     )
     parser.add_argument(
         "--siglip-comparison",
         type=Path,
-        default=Path("results/siglip_vs_baseline_comparison.csv"),
+        default=Path("results/siglip_results/siglip_logistic_reg/siglip_vs_baseline_comparison.csv"),
     )
     parser.add_argument(
         "--output-dir",
@@ -78,6 +78,10 @@ def build_model_summary(
     siglip_comparison: pd.DataFrame,
 ) -> pd.DataFrame:
     """Return one row per attribute/model with common metric columns."""
+    if "strategy" in baseline.columns:
+        baseline = baseline[baseline["strategy"].eq("majority_class_group_cv")].copy()
+    baseline = baseline.drop_duplicates("attribute")
+
     baseline_rows = baseline[
         ["attribute", "n_assets", "n_labels", *METRICS]
     ].copy()
