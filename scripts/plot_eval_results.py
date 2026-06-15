@@ -297,6 +297,7 @@ def plot_comparison(
     siglip_df: pd.DataFrame | None,
     openclip_df: pd.DataFrame | None,
     include_series: list[str] | None = None,
+    include_attributes: list[str] | None = None,
     aggregate: bool = False,
 ):
     mean_col = f"{metric}_mean"
@@ -351,6 +352,16 @@ def plot_comparison(
             print(
                 f"Error: none of the requested series were found. "
                 f"Available: {sorted(all_rows['series'].unique().tolist())}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+    if include_attributes:
+        wanted = {normalise_attribute(a) for a in include_attributes}
+        all_rows = all_rows[all_rows["attribute"].isin(wanted)]
+        if all_rows.empty:
+            print(
+                f"Error: none of the requested attributes were found.",
                 file=sys.stderr,
             )
             sys.exit(1)
@@ -521,7 +532,7 @@ def plot_comparison(
         title_fontsize=14,
         fontsize=12,
         loc="lower right",
-        bbox_to_anchor=(1, 0.75),
+        bbox_to_anchor=(1, 0.63),
         frameon=True,
         framealpha=0.9,
         edgecolor="#D3D1C7",
@@ -571,6 +582,12 @@ if __name__ == "__main__":
         ),
     )
     parser.add_argument(
+        "--include-attributes",
+        nargs="+",
+        default=None,
+        help="Only plot these attributes, e.g. fall_height_bin length_bin width_bin",
+    )
+    parser.add_argument(
         "--aggregate",
         action="store_true",
         help="Plot mean performance across all attributes instead of per-attribute bars.",
@@ -601,5 +618,6 @@ if __name__ == "__main__":
         siglip_df=siglip_df,
         openclip_df=openclip_df,
         include_series=args.include_series,
+        include_attributes=args.include_attributes,
         aggregate=args.aggregate,
     )
