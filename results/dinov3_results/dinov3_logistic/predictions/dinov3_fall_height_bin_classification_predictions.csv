@@ -1,245 +1,123 @@
-attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,fold,n_folds,asset_id,y_true,y_pred,is_correct,tuned_C,tuned_class_weight,inner_macro_f1_mean,true_label,predicted_label,correct
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126701,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,127131,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,127149,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,127242,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,127650,low (<0.5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,127074,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,128878,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,129397,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,125311,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,46614,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,51799,high (>5m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,63067,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,63068,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,66207,medium (1.2-5m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,100140,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,105042,low (<1.2m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,120299,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,123000,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,123352,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,123354,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126334,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126340,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126356,high (>5m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126774,high (>5m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,1,5.0,126803,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,,,,,,,,1,,126701,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,1,,127131,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,1,,127149,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,1,,127242,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,1,,127650,,,,,,,low (<0.5m),low (<1.2m),False
-fall_height_bin,,,,,,,,1,,127074,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,1,,128878,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,1,,129397,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,1,,125311,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,1,,46614,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,1,,51799,,,,,,,high (>5m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,63067,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,1,,63068,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,1,,66207,,,,,,,medium (1.2-5m),low (<0.5m),False
-fall_height_bin,,,,,,,,1,,100140,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,105042,,,,,,,low (<1.2m),low (<0.5m),False
-fall_height_bin,,,,,,,,1,,120299,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,123000,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,1,,123352,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,1,,123354,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,126334,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,1,,126340,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,1,,126356,,,,,,,high (>5m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,126774,,,,,,,high (>5m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,1,,126803,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126780,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,127135,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,127140,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,127756,low (<0.5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,129399,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,127153,high (>1.2m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,128879,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,121503,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,52457,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,63297,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,64102,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,114768,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,122828,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,123219,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126721,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126737,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126793,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126798,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126804,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,126915,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,127221,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,59089,medium (1.2-15m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,90699,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,100150,medium (1.2-15m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,2,5.0,117398,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,,,,,,,,2,,126780,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,2,,127135,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,2,,127140,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,2,,127756,,,,,,,low (<0.5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,2,,129399,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,2,,127153,,,,,,,high (>1.2m),low (<0.5m),False
-fall_height_bin,,,,,,,,2,,128879,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,2,,121503,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,2,,52457,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,63297,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,2,,64102,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,114768,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,122828,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,2,,123219,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,2,,126721,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,126737,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,2,,126793,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,126798,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,126804,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,2,,126915,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,127221,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,2,,59089,,,,,,,medium (1.2-15m),low (<1.2m),False
-fall_height_bin,,,,,,,,2,,90699,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,2,,100150,,,,,,,medium (1.2-15m),low (<1.2m),False
-fall_height_bin,,,,,,,,2,,117398,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,122831,medium (0.5-1.2m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126159,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126807,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,127141,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,127148,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,121505,high (>1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,128874,high (>1.2m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,51537,medium (0.5-1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126777,medium (0.5-1.2m),high (>1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,127020,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,55798,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,58881,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,59060,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,63298,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,64126,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,64138,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,105440,low (<1.2m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,121618,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,122999,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,123310,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126779,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126799,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,126916,low (<1.2m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,3,5.0,74894,high (>15m),high (>1.2m),False,,,,,,
-fall_height_bin,,,,,,,,3,,122831,,,,,,,medium (0.5-1.2m),low (<1.2m),False
-fall_height_bin,,,,,,,,3,,126159,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,3,,126807,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,3,,127141,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,3,,127148,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,3,,121505,,,,,,,high (>1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,3,,128874,,,,,,,high (>1.2m),low (<1.2m),False
-fall_height_bin,,,,,,,,3,,51537,,,,,,,medium (0.5-1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,3,,126777,,,,,,,medium (0.5-1.2m),high (>1.2m),False
-fall_height_bin,,,,,,,,3,,127020,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,3,,55798,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,58881,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,59060,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,3,,63298,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,64126,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,64138,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,3,,105440,,,,,,,low (<1.2m),low (<0.5m),False
-fall_height_bin,,,,,,,,3,,121618,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,3,,122999,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,123310,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,126779,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,3,,126799,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,3,,126916,,,,,,,low (<1.2m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,3,,74894,,,,,,,high (>15m),high (>1.2m),False
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126129,low (<0.5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126335,low (<0.5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126687,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126706,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126805,low (<0.5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126808,low (<0.5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,127154,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,129378,medium (0.5-1.2m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,127071,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,128876,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,128880,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,121499,high (>1.2m),high (>1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126700,high (>1.2m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,123218,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126178,medium (1.2-5m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126564,low (<1.2m),high (>1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126683,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126801,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,126806,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,127147,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,127145,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,127184,medium (1.2-5m),low (<1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,128033,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,4,5.0,123598,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,,,,,,,,4,,126129,,,,,,,low (<0.5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,126335,,,,,,,low (<0.5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,126687,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,4,,126706,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,4,,126805,,,,,,,low (<0.5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,126808,,,,,,,low (<0.5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,127154,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,4,,129378,,,,,,,medium (0.5-1.2m),low (<1.2m),False
-fall_height_bin,,,,,,,,4,,127071,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,4,,128876,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,4,,128880,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,4,,121499,,,,,,,high (>1.2m),high (>1.2m),True
-fall_height_bin,,,,,,,,4,,126700,,,,,,,high (>1.2m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,123218,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,4,,126178,,,,,,,medium (1.2-5m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,4,,126564,,,,,,,low (<1.2m),high (>1.2m),False
-fall_height_bin,,,,,,,,4,,126683,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,4,,126801,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,4,,126806,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,4,,127147,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,4,,127145,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,4,,127184,,,,,,,medium (1.2-5m),low (<1.2m),False
-fall_height_bin,,,,,,,,4,,128033,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,4,,123598,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126690,medium (0.5-1.2m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126800,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127067,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127151,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127155,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127156,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127229,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127507,medium (0.5-1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127653,low (<0.5m),low (<0.5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,115446,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126795,high (>1.2m),medium (0.5-1.2m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126332,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126333,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127027,medium (0.5-1.2m),medium (0.5-1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,49497,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,63389,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,88133,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,100111,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,122830,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,126809,low (<1.2m),low (<1.2m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,127136,medium (1.2-5m),medium (1.2-5m),True,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,129739,low (<1.2m),low (<0.5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,46619,low (<1.2m),medium (1.2-5m),False,,,,,,
-fall_height_bin,fall_height_bin,data/processed/train/fall_height_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,5.0,74895,low (<1.2m),high (>15m),False,,,,,,
-fall_height_bin,,,,,,,,5,,126690,,,,,,,medium (0.5-1.2m),low (<0.5m),False
-fall_height_bin,,,,,,,,5,,126800,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,127067,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,5,,127151,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,5,,127155,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,5,,127156,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,5,,127229,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,127507,,,,,,,medium (0.5-1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,5,,127653,,,,,,,low (<0.5m),low (<0.5m),True
-fall_height_bin,,,,,,,,5,,115446,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,126795,,,,,,,high (>1.2m),medium (0.5-1.2m),False
-fall_height_bin,,,,,,,,5,,126332,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,126333,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,127027,,,,,,,medium (0.5-1.2m),medium (0.5-1.2m),True
-fall_height_bin,,,,,,,,5,,49497,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,5,,63389,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,5,,88133,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,5,,100111,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,5,,122830,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,5,,126809,,,,,,,low (<1.2m),low (<1.2m),True
-fall_height_bin,,,,,,,,5,,127136,,,,,,,medium (1.2-5m),medium (1.2-5m),True
-fall_height_bin,,,,,,,,5,,129739,,,,,,,low (<1.2m),low (<0.5m),False
-fall_height_bin,,,,,,,,5,,46619,,,,,,,low (<1.2m),medium (1.2-5m),False
-fall_height_bin,,,,,,,,5,,74895,,,,,,,low (<1.2m),high (>15m),False
+attribute,asset_type,fold,asset_id,true_label,predicted_label,correct,confidence,target_column,classifier,strategy
+fall_height_bin,Boardwalk < 1.2m High,1,126780,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9407459856651017,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,126800,medium (0.5-1.2m),low (<0.5m),False,0.7458753652637687,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,127135,low (<0.5m),low (<0.5m),True,0.9978372551245964,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,127141,low (<0.5m),low (<0.5m),True,0.9958902775634709,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,127229,medium (0.5-1.2m),medium (0.5-1.2m),True,0.5678350696222151,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,127756,low (<0.5m),medium (0.5-1.2m),False,0.828888964304364,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,1,129378,medium (0.5-1.2m),medium (0.5-1.2m),True,0.7946005284370757,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,122831,medium (0.5-1.2m),low (<0.5m),False,0.6856018816808671,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,126687,medium (0.5-1.2m),medium (0.5-1.2m),True,0.7587266667681504,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,126690,medium (0.5-1.2m),low (<0.5m),False,0.8834358275185572,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,126808,low (<0.5m),medium (0.5-1.2m),False,0.5168355134146724,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,127067,low (<0.5m),low (<0.5m),True,0.987089277461972,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,127140,low (<0.5m),low (<0.5m),True,0.9982394235532627,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,2,127242,medium (0.5-1.2m),low (<0.5m),False,0.7620985249226533,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,126129,low (<0.5m),medium (0.5-1.2m),False,0.8928765968311673,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,126159,medium (0.5-1.2m),medium (0.5-1.2m),True,0.4958084387356845,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,126335,low (<0.5m),low (<0.5m),True,0.6775535411488207,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,126807,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9088038988450425,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,127156,low (<0.5m),low (<0.5m),True,0.9755997428411021,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,3,127507,medium (0.5-1.2m),medium (0.5-1.2m),True,0.8403223147310042,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,127148,low (<0.5m),low (<0.5m),True,0.9806880568123475,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,127151,low (<0.5m),low (<0.5m),True,0.9946636021500463,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,127154,low (<0.5m),low (<0.5m),True,0.916117435885343,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,127155,low (<0.5m),low (<0.5m),True,0.963792613855868,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,127650,low (<0.5m),medium (0.5-1.2m),False,0.7817632119050479,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,4,129399,high (>1.2m),medium (0.5-1.2m),False,0.997415849412891,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,126701,low (<0.5m),low (<0.5m),True,0.9919976932822794,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,126706,medium (0.5-1.2m),medium (0.5-1.2m),True,0.5011115370532029,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,126805,low (<0.5m),medium (0.5-1.2m),False,0.9216730295670438,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,127131,medium (0.5-1.2m),low (<0.5m),False,0.8150501746680797,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,127149,low (<0.5m),low (<0.5m),True,0.9996574503475438,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk < 1.2m High,5,127653,low (<0.5m),low (<0.5m),True,0.9972628453602034,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,1,115446,medium (0.5-1.2m),high (>1.2m),False,0.7526850433481306,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,1,128879,high (>1.2m),high (>1.2m),True,0.9996490951169549,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,1,128880,high (>1.2m),high (>1.2m),True,0.9983402505599422,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,2,126795,high (>1.2m),medium (0.5-1.2m),False,0.8829262769739592,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,2,127153,high (>1.2m),medium (0.5-1.2m),False,0.7319950131544698,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,2,128878,high (>1.2m),high (>1.2m),True,0.9967021628743334,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,3,121505,high (>1.2m),high (>1.2m),True,0.9341586247373276,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,3,129397,high (>1.2m),high (>1.2m),True,0.9891222709076782,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,4,127074,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9504201150910205,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,4,128876,high (>1.2m),high (>1.2m),True,0.9931959945592452,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,5,127071,medium (0.5-1.2m),medium (0.5-1.2m),True,0.642116926975613,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Boardwalk > 1.2m High,5,128874,high (>1.2m),high (>1.2m),True,0.890391958998423,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,1,121499,high (>1.2m),high (>1.2m),True,0.7505954118497354,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,1,127020,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9912833346771199,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,2,51537,medium (0.5-1.2m),high (>1.2m),False,0.7181196709142934,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,2,126333,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9982938718213991,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,3,121503,high (>1.2m),high (>1.2m),True,0.9892205433838739,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,3,126777,medium (0.5-1.2m),high (>1.2m),False,0.975449558885407,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,4,126332,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9563440743225813,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,4,127027,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9011999846119548,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,5,125311,medium (0.5-1.2m),medium (0.5-1.2m),True,0.9978647445108877,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Stairs,5,126700,high (>1.2m),medium (0.5-1.2m),False,0.9974847805105701,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,46614,medium (1.2-5m),medium (1.2-5m),True,0.9599255892392116,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,58881,medium (1.2-5m),medium (1.2-5m),True,0.9770707516899668,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,64102,medium (1.2-5m),medium (1.2-5m),True,0.9955599460317078,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,64126,medium (1.2-5m),medium (1.2-5m),True,0.9961911998776848,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126178,medium (1.2-5m),medium (1.2-5m),True,0.8699206779445532,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126356,high (>5m),medium (1.2-5m),False,0.9658880819510852,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126799,medium (1.2-5m),medium (1.2-5m),True,0.5694710265603844,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126801,medium (1.2-5m),medium (1.2-5m),True,0.6999965352099936,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126804,low (<1.2m),low (<1.2m),True,0.8385078102430977,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,126809,low (<1.2m),low (<1.2m),True,0.875012840521094,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,127145,medium (1.2-5m),medium (1.2-5m),True,0.9983708292179112,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,1,127221,medium (1.2-5m),low (<1.2m),False,0.488655626896205,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,52457,medium (1.2-5m),medium (1.2-5m),True,0.7805463060217069,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,55798,medium (1.2-5m),medium (1.2-5m),True,0.967744908454194,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,59060,medium (1.2-5m),low (<1.2m),False,0.8556099455114861,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,63068,medium (1.2-5m),medium (1.2-5m),True,0.923925174074484,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,100111,medium (1.2-5m),medium (1.2-5m),True,0.8867950054910966,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,105042,low (<1.2m),low (<1.2m),True,0.9991180978119869,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,123352,low (<1.2m),low (<1.2m),True,0.9008041545495471,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,126334,medium (1.2-5m),medium (1.2-5m),True,0.9551359907195908,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,126737,low (<1.2m),medium (1.2-5m),False,0.9732068854502909,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,126793,medium (1.2-5m),medium (1.2-5m),True,0.8526805446948282,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,126916,low (<1.2m),low (<1.2m),True,0.886013596858881,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,2,128033,low (<1.2m),medium (1.2-5m),False,0.7396905046364816,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,63297,low (<1.2m),low (<1.2m),True,0.9407880230600458,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,63389,medium (1.2-5m),medium (1.2-5m),True,0.6270876531915581,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,66207,medium (1.2-5m),low (<1.2m),False,0.9989686639131101,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,88133,medium (1.2-5m),medium (1.2-5m),True,0.9956639684286032,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,122828,low (<1.2m),medium (1.2-5m),False,0.988879407332924,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,122999,medium (1.2-5m),low (<1.2m),False,0.6727915578224882,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,123000,medium (1.2-5m),medium (1.2-5m),True,0.9228872309080722,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,122830,low (<1.2m),medium (1.2-5m),False,0.9253360642660702,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,123310,medium (1.2-5m),medium (1.2-5m),True,0.5705497843532317,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,123354,low (<1.2m),low (<1.2m),True,0.9917028174739504,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,127147,medium (1.2-5m),medium (1.2-5m),True,0.9962417774453621,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,3,127184,medium (1.2-5m),low (<1.2m),False,0.5365676696225188,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,49497,medium (1.2-5m),medium (1.2-5m),True,0.9653804004139238,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,51799,high (>5m),medium (1.2-5m),False,0.9633976973717011,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,114768,medium (1.2-5m),medium (1.2-5m),True,0.959344078037848,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,121618,low (<1.2m),medium (1.2-5m),False,0.7491874746711139,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,123219,low (<1.2m),low (<1.2m),True,0.9984329906991272,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126340,medium (1.2-5m),medium (1.2-5m),True,0.9443016633617587,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126564,low (<1.2m),medium (1.2-5m),False,0.666858790236302,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126721,medium (1.2-5m),medium (1.2-5m),True,0.9988748330572678,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126774,high (>5m),medium (1.2-5m),False,0.8427249223403884,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126798,medium (1.2-5m),medium (1.2-5m),True,0.9819267589728214,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,126803,low (<1.2m),low (<1.2m),True,0.9510995878421941,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,4,127136,medium (1.2-5m),medium (1.2-5m),True,0.9917969224741605,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,63067,medium (1.2-5m),medium (1.2-5m),True,0.9994540685242,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,63298,medium (1.2-5m),medium (1.2-5m),True,0.985583700136986,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,64138,medium (1.2-5m),medium (1.2-5m),True,0.9538783514692011,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,100140,low (<1.2m),medium (1.2-5m),False,0.9947660981640593,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,105440,low (<1.2m),low (<1.2m),True,0.9631647177630684,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,120299,low (<1.2m),low (<1.2m),True,0.7999733197963628,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,123218,medium (1.2-5m),low (<1.2m),False,0.5840008104292478,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,126683,medium (1.2-5m),medium (1.2-5m),True,0.8370712495664626,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,126779,medium (1.2-5m),low (<1.2m),False,0.5489380168567074,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,126806,low (<1.2m),low (<1.2m),True,0.944575221508826,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,126915,medium (1.2-5m),medium (1.2-5m),True,0.9852901679227996,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Trail Bridge,5,129739,low (<1.2m),low (<1.2m),True,0.937367885119131,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,1,59089,medium (1.2-15m),low (<1.2m),False,0.994472645051745,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,1,100150,medium (1.2-15m),low (<1.2m),False,0.8498765748171957,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,2,46619,low (<1.2m),medium (1.2-15m),False,0.9807053099722373,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,2,123598,low (<1.2m),low (<1.2m),True,0.6859976787243081,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,3,74894,high (>15m),medium (1.2-15m),False,0.8146431204321586,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,3,90699,low (<1.2m),medium (1.2-15m),False,0.957707972115181,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,4,74895,low (<1.2m),high (>15m),False,0.8135093343574226,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression
+fall_height_bin,Viewing Platform,5,117398,low (<1.2m),low (<1.2m),True,0.9621466282471715,fall_height_bin,logistic_regression,dinov3_frozen_embeddings_logistic_regression

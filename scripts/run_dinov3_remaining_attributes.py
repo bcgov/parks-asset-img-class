@@ -151,6 +151,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip DagsHub/MLflow logging for classifier runs.",
     )
+    parser.add_argument(
+        "--per-asset-type",
+        action="store_true",
+        help="Pass --per-asset-type to the classifier (for binned numeric attributes).",
+    )
     return parser.parse_args()
 
 
@@ -261,6 +266,8 @@ def main() -> int:
             classifier_command.extend(["--experiment-name", args.experiment_name])
         if args.no_mlflow:
             classifier_command.append("--no-mlflow")
+        if args.per_asset_type:
+            classifier_command.append("--per-asset-type")
         run_command(classifier_command)
 
     print("\nFinished DINOv3 runs for requested attributes.")

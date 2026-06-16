@@ -1,11 +1,20 @@
 """Run a grouped classifier on frozen DINOv3 asset embeddings.
 
-Example:
+Example (categorical attribute, pooled — unchanged behaviour):
     python scripts/run_dinov3_classifier.py \
         --labels data/processed/train/attr_decking_material_train.csv \
         --features data/features/dinov3_vitb16_attr_decking_material_assets.csv \
         --target attr_decking_material \
         --classifier logistic_regression
+
+Example (binned numeric attribute — train one model PER ASSET TYPE so the
+per-asset-type bin ranges are not mixed into one incoherent label space):
+    python scripts/run_dinov3_classifier.py \
+        --labels data/processed/train/fall_height_bin_train.csv \
+        --features data/features/dinov3_vitb16_remaining_attributes_assets.csv \
+        --target fall_height_bin \
+        --classifier logistic_regression \
+        --per-asset-type
 
 To only write local CSVs:
     python scripts/run_dinov3_classifier.py ... --no-mlflow
@@ -87,6 +96,15 @@ def parse_args() -> argparse.Namespace:
         choices=CLASSIFIER_CHOICES,
         default="logistic_regression",
         help="Classifier to train on frozen DINOv3 embeddings.",
+    )
+    parser.add_argument(
+        "--per-asset-type",
+        action="store_true",
+        help=(
+            "Train a separate model per asset type (profile_name). Use this for "
+            "binned numeric attributes (fall_height_bin, length_bin, width_bin, "
+            "steps_bin) whose bin ranges differ by asset type."
+        ),
     )
     parser.add_argument(
         "--model-name",
@@ -221,7 +239,16 @@ def main() -> int:
         n_splits=args.folds,
         random_state=args.seed,
         classifier=args.classifier,
+        per_asset_type=args.per_asset_type,
     )
+
+    if summary.empty:
+        print(
+            f"No results produced for {args.target}. If using --per-asset-type, "
+            f"every asset type may have had too little data (see [skip] messages).",
+            file=sys.stderr,
+        )
+        return 1
 
     output_dir = args.output_dir or default_output_dir(args.classifier)
     prediction_dir = args.prediction_dir or default_prediction_dir(args.classifier)
@@ -238,6 +265,9 @@ def main() -> int:
     print(f"Wrote {len(summary)} summary rows to {summary_path}")
     print(f"Wrote {len(folds)} fold rows to {folds_path}")
     print(f"Wrote {len(predictions)} prediction rows to {predictions_path}")
+    if args.per_asset_type:
+        n_types = folds["asset_type"].nunique() if "asset_type" in folds.columns else 0
+        print(f"  (trained per asset type: {n_types} asset type(s) included)")
     if not args.no_mlflow:
         model_name = args.model_name or f"dinov3_vitb16_{args.classifier}"
         log_results_to_mlflow(

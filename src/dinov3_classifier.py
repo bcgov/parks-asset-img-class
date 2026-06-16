@@ -284,6 +284,19 @@ def _run_cv_on_subset(
                 f"Asset leakage in {target} fold {fold}: {sorted(overlap)[:5]}"
             )
 
+        # Skip folds whose TRAINING split has fewer than 2 classes — a
+        # classifier can't be fit on a single class. This can happen when a
+        # rare class has so few assets that they all land in one fold's
+        # validation set, leaving the training set single-class.
+        if y.iloc[train_idx].nunique() < 2:
+            print(
+                f"  [skip fold] {target}"
+                + (f" / {asset_type}" if asset_type else "")
+                + f" fold {fold}: training split has only one class "
+                f"({y.iloc[train_idx].unique().tolist()}); skipping this fold."
+            )
+            continue
+
         tuned_params: dict[str, object] = {}
         if classifier == "logistic_regression_tuned":
             tuned_params = _tune_logistic_regression(
