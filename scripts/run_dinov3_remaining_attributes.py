@@ -1,33 +1,26 @@
-"""Run DINOv3 experiments for the remaining classification attributes.
+"""Run DINOv3 experiments for all classification attributes.
 
 The expensive step is DINOv3 feature extraction. Because DINOv3 features do
 not depend on the target label, this script extracts one shared feature table
 from the union of the requested train CSVs, then reuses that feature table for
 each attribute classifier.
 
-Default target order excludes ``attr_decking_material`` because that was the
-first completed DINOv3 experiment.
+By default it runs all 12 attributes. Binned numeric attributes
+(length_bin, width_bin, fall_height_bin, steps_bin) are trained PER ASSET TYPE
+automatically, because their bin ranges are defined per asset type; all other
+(categorical) attributes are trained as a single pooled model.
 
 Usage:
     python scripts/run_dinov3_remaining_attributes.py
 
-To include decking material too:
-    python scripts/run_dinov3_remaining_attributes.py --include-decking
-
 To only write local CSVs and skip DagsHub/MLflow:
     python scripts/run_dinov3_remaining_attributes.py --no-mlflow
 
+To run a subset:
+    python scripts/run_dinov3_remaining_attributes.py --targets fall_height_bin length_bin
+
 To run Linear SVM instead of logistic regression:
     python scripts/run_dinov3_remaining_attributes.py --classifier linear_svm
-
-To tune logistic regression:
-    python scripts/run_dinov3_remaining_attributes.py --classifier logistic_regression_tuned
-
-To run Random Forest:
-    python scripts/run_dinov3_remaining_attributes.py --classifier random_forest
-
-To run histogram-based gradient boosting:
-    python scripts/run_dinov3_remaining_attributes.py --classifier hist_gradient_boosting
 """
 
 from __future__ import annotations
@@ -48,21 +41,9 @@ from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.dinov3_features import DEFAULT_IMAGE_ROOT  # noqa: E402
 
 
+# All 12 classification attributes, in baseline order. Decking material is
+# included by default (it used to be excluded as a historical special case).
 DEFAULT_TARGETS = [
-    "attr_abutment_material",
-    "attr_bridge_type",
-    "attr_has_edge_guard",
-    "attr_has_pedestrian_railing",
-    "attr_material_frame_tank_body",
-    "attr_structure_material",
-    "attr_structure_position",
-    "fall_height_bin",
-    "length_bin",
-    "steps_bin",
-    "width_bin",
-]
-
-ALL_TARGETS_IN_BASELINE_ORDER = [
     "attr_abutment_material",
     "attr_bridge_type",
     "attr_decking_material",
@@ -77,10 +58,25 @@ ALL_TARGETS_IN_BASELINE_ORDER = [
     "width_bin",
 ]
 
+ALL_TARGETS_IN_BASELINE_ORDER = DEFAULT_TARGETS
+
+# Binned numeric attributes whose bin ranges differ across asset types. These
+# are trained per asset type so the schemes are not mixed into one model. All
+# other attributes are trained as a single pooled model.
+#
+# steps_bin is intentionally NOT here: it only applies to Stairs, so it has a
+# single asset type and a single scheme — pooled training is already correct
+# (per-asset-type would be a no-op for it).
+PER_ASSET_TYPE_TARGETS = {
+    "length_bin",
+    "width_bin",
+    "fall_height_bin",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Extract shared DINOv3 features and run classifiers for multiple attributes."
+        description="Extract shared DINOv3 features and run classifiers for all attributes."
     )
     parser.add_argument(
         "--train-dir",
@@ -134,12 +130,7 @@ def parse_args() -> argparse.Namespace:
         "--targets",
         nargs="+",
         default=None,
-        help="Optional explicit target list. Defaults to the remaining 11 attributes.",
-    )
-    parser.add_argument(
-        "--include-decking",
-        action="store_true",
-        help="Run all 12 baseline targets, including attr_decking_material.",
+        help="Optional explicit target list. Defaults to all 12 attributes.",
     )
     parser.add_argument(
         "--force-extract",
@@ -157,8 +148,6 @@ def parse_args() -> argparse.Namespace:
 def selected_targets(args: argparse.Namespace) -> list[str]:
     if args.targets is not None:
         return args.targets
-    if args.include_decking:
-        return ALL_TARGETS_IN_BASELINE_ORDER
     return DEFAULT_TARGETS
 
 
@@ -198,13 +187,14 @@ def main() -> int:
     prediction_dir = args.prediction_dir or default_prediction_dir(args.classifier)
 
     args.feature_dir.mkdir(parents=True, exist_ok=True)
-    union_path = args.feature_dir / f"{args.model}_remaining_attributes_union_input.csv"
-    image_features_path = args.feature_dir / f"{args.model}_remaining_attributes_images.csv"
-    asset_features_path = args.feature_dir / f"{args.model}_remaining_attributes_assets.csv"
+    union_path = args.feature_dir / f"{args.model}_all_attributes_union_input.csv"
+    image_features_path = args.feature_dir / f"{args.model}_all_attributes_images.csv"
+    asset_features_path = args.feature_dir / f"{args.model}_all_attributes_assets.csv"
 
     print("Targets, in order:")
     for index, target in enumerate(targets, start=1):
-        print(f"{index}. {target}")
+        mode = "per-asset-type" if target in PER_ASSET_TYPE_TARGETS else "pooled"
+        print(f"{index}. {target}  ({mode})")
 
     if args.force_extract or not asset_features_path.exists():
         build_union_input(targets, args.train_dir, union_path)
@@ -257,6 +247,9 @@ def main() -> int:
             "--data-version",
             args.data_version,
         ]
+        # Binned numeric attributes are trained per asset type; categoricals pooled.
+        if target in PER_ASSET_TYPE_TARGETS:
+            classifier_command.append("--per-asset-type")
         if args.experiment_name is not None:
             classifier_command.extend(["--experiment-name", args.experiment_name])
         if args.no_mlflow:

@@ -1,8 +1,10 @@
-#!/usr/bin/env python3
 """Visualize VLM prediction errors with images for a specified attribute.
 
 This script loads VLM predictions and ground truth, filters for wrong predictions,
 and displays them with images to help identify patterns in VLM failures.
+
+Images are embedded directly into the HTML as base64 data URIs so the report
+renders in any browser, regardless of how the file is opened (no file:// issues).
 
 Usage:
     python scripts/inspect_wrong_predictions.py \
@@ -25,8 +27,10 @@ To render the HTML report:
 """
 
 import argparse
+import base64
 import json
 import sys
+from io import BytesIO
 from pathlib import Path
 from typing import Optional
 from collections import defaultdict
@@ -60,6 +64,26 @@ def load_image_safe(image_path: Optional[Path], max_width: int = 300) -> Optiona
         return img
     except Exception as e:
         print(f"Warning: Failed to load image {image_path}: {e}", file=sys.stderr)
+        return None
+
+
+def image_to_data_uri(image_path: Optional[Path], max_width: int = 400) -> Optional[str]:
+    """Read an image and return a base64 data URI.
+
+    Embedding the image directly in the HTML means it renders in any browser
+    without relying on file:// access (which browsers often block).
+    """
+    if image_path is None or not Path(image_path).exists():
+        return None
+    try:
+        img = Image.open(image_path).convert("RGB")
+        img.thumbnail((max_width, max_width), Image.Resampling.LANCZOS)
+        buf = BytesIO()
+        img.save(buf, format="JPEG", quality=85)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        return f"data:image/jpeg;base64,{b64}"
+    except Exception as e:
+        print(f"Warning: Failed to encode image {image_path}: {e}", file=sys.stderr)
         return None
 
 
@@ -112,11 +136,12 @@ def create_error_report_html(
         for _, row in asset_rows.iterrows():
             filename = row.get("filename", "")
             resolved_image = get_image_path(row)
+            data_uri = image_to_data_uri(resolved_image)
 
-            if resolved_image and resolved_image.exists():
+            if data_uri:
                 img_html = f"""
                 <div class="image-wrapper">
-                    <img src="{resolved_image.resolve().as_uri()}"
+                    <img src="{data_uri}"
                          alt="Asset {asset_id} image">
                     <div class="image-filename">{filename}</div>
                 </div>

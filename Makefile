@@ -20,7 +20,7 @@ DINO_HUB_MODEL ?= dinov3_vitb16
 DINO_WEIGHTS ?= models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL).parquet
 DINO_MASTER_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_assets.csv
-DINO_RUN_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_remaining_attributes_assets.csv
+DINO_RUN_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
 PII_SCREEN_CSV ?= results/predictions/pii_screen.csv
 PII_BLUR_LOG ?= data/pii_review/blur_log.csv
 PII_UPLOAD_MARKER ?= $(IMAGE_ROOT)/.upload_set_complete
@@ -145,7 +145,6 @@ train-dinov3:
 	  --seed $(SEED) \
 	  --classifier $(CLASSIFIER) \
 	  --data-version $(DATA_VERSION) \
-	  --include-decking \
 	  --no-mlflow
 
 train-siglip:

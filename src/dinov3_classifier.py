@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -25,6 +26,9 @@ CLASSIFIER_CHOICES = (
     "random_forest",
     "hist_gradient_boosting",
 )
+
+# Column used to identify an asset's type (for per-asset-type training).
+ASSET_TYPE_COLUMN = "profile_name"
 
 LOGISTIC_TUNING_GRID = {
     "C": [0.01, 0.1, 1.0, 10.0, 100.0],
@@ -91,12 +95,31 @@ def _format_class_weight(class_weight: str | None) -> str:
     return "none" if class_weight is None else class_weight
 
 
+def _predict_with_confidence(model: object, X: pd.DataFrame):
+    """Return (predictions, confidence) where confidence is the max class
+    probability for each row. Classifiers without predict_proba get NaN.
+    """
+    predictions = model.predict(X)
+    confidences = [float("nan")] * len(predictions)
+    if hasattr(model, "predict_proba"):
+        try:
+            proba = model.predict_proba(X)
+            confidences = proba.max(axis=1).tolist()
+        except Exception:
+            pass
+    return predictions, confidences
+
+
 def join_labels_and_features(
     labels: pd.DataFrame,
     asset_features: pd.DataFrame,
     target: str,
 ) -> tuple[pd.DataFrame, str, list[str]]:
-    """Join a task CSV with asset-level DINOv3 features."""
+    """Join a task CSV with asset-level DINOv3 features.
+
+    Carries the asset-type column (``profile_name``) through when present so
+    callers can train one model per asset type.
+    """
     if "asset_id" not in labels.columns:
         raise ValueError("labels must contain an 'asset_id' column.")
     if "asset_id" not in asset_features.columns:
@@ -107,7 +130,11 @@ def join_labels_and_features(
     if not features:
         raise ValueError("asset_features does not contain f_* feature columns.")
 
-    labelled = labels[["asset_id", target_column]].dropna(subset=[target_column])
+    keep_cols = ["asset_id", target_column]
+    if ASSET_TYPE_COLUMN in labels.columns:
+        keep_cols.append(ASSET_TYPE_COLUMN)
+
+    labelled = labels[keep_cols].dropna(subset=[target_column])
     labelled = labelled.drop_duplicates(["asset_id", target_column])
     joined = labelled.merge(asset_features[["asset_id", *features]], on="asset_id", how="inner")
     joined = joined.drop_duplicates("asset_id").reset_index(drop=True)
@@ -208,31 +235,33 @@ def _tune_logistic_regression(
     )
 
 
-def cross_validate_dinov3_classifier(
-    labels: pd.DataFrame,
-    asset_features: pd.DataFrame,
+def _run_cv_on_subset(
+    joined: pd.DataFrame,
+    features: list[str],
     target: str,
+    target_column: str,
     *,
-    target_file: str | None = None,
-    feature_file: str | None = None,
-    n_splits: int = 5,
-    random_state: int = 42,
-    group_column: str = "asset_id",
-    classifier: str = "logistic_regression",
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Evaluate DINOv3 embeddings with grouped cross-validation."""
-    joined, target_column, features = join_labels_and_features(
-        labels,
-        asset_features,
-        target,
-    )
-    if len(joined) < 2:
-        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+    asset_type: str | None,
+    target_file: str | None,
+    feature_file: str | None,
+    n_splits: int,
+    random_state: int,
+    group_column: str,
+    classifier: str,
+) -> tuple[list[dict], list[dict]]:
+    """Run grouped CV on one subset of assets (optionally a single asset type).
+
+    Returns (fold_rows, prediction_rows). Each asset produces exactly ONE
+    prediction row with clean column names plus confidence and asset_type.
+    """
+    fold_rows: list[dict[str, object]] = []
+    prediction_rows: list[dict[str, object]] = []
 
     n_asset_groups = joined[group_column].nunique()
     target_splits = min(n_splits, n_asset_groups)
-    if target_splits < 2:
-        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+    if len(joined) < 2 or target_splits < 2 or joined[target_column].nunique() < 2:
+        # Not enough data to cross-validate this subset.
+        return fold_rows, prediction_rows
 
     splitter, splitter_name = _make_group_splitter(
         joined,
@@ -245,8 +274,6 @@ def cross_validate_dinov3_classifier(
     X = joined[features]
     y = joined[target_column]
     groups = joined[group_column]
-    fold_rows: list[dict[str, object]] = []
-    prediction_rows: list[dict[str, object]] = []
 
     for fold, (train_idx, valid_idx) in enumerate(splitter.split(joined, y, groups), start=1):
         train_assets = set(joined.iloc[train_idx][group_column])
@@ -256,6 +283,19 @@ def cross_validate_dinov3_classifier(
             raise AssertionError(
                 f"Asset leakage in {target} fold {fold}: {sorted(overlap)[:5]}"
             )
+
+        # Skip folds whose TRAINING split has fewer than 2 classes — a
+        # classifier can't be fit on a single class. This can happen when a
+        # rare class has so few assets that they all land in one fold's
+        # validation set, leaving the training set single-class.
+        if y.iloc[train_idx].nunique() < 2:
+            print(
+                f"  [skip fold] {target}"
+                + (f" / {asset_type}" if asset_type else "")
+                + f" fold {fold}: training split has only one class "
+                f"({y.iloc[train_idx].unique().tolist()}); skipping this fold."
+            )
+            continue
 
         tuned_params: dict[str, object] = {}
         if classifier == "logistic_regression_tuned":
@@ -273,9 +313,10 @@ def cross_validate_dinov3_classifier(
             logistic_class_weight=tuned_params.get("class_weight", "balanced"),
         )
         model.fit(X.iloc[train_idx], y.iloc[train_idx])
-        predictions = model.predict(X.iloc[valid_idx])
+        predictions, confidences = _predict_with_confidence(model, X.iloc[valid_idx])
         y_valid = y.iloc[valid_idx]
-        valid_rows = joined.iloc[valid_idx]
+        valid_asset_ids = joined.iloc[valid_idx][group_column].tolist()
+
         if classifier == "logistic_regression_tuned":
             tuned_c = tuned_params.get("C")
             tuned_class_weight = tuned_params.get("class_weight")
@@ -285,28 +326,23 @@ def cross_validate_dinov3_classifier(
             tuned_class_weight = pd.NA
             inner_macro_f1_mean = pd.NA
 
-        for row, true_label, predicted_label in zip(
-            valid_rows.itertuples(index=False),
-            y_valid,
-            predictions,
-            strict=True,
+        # ONE clean row per asset (no duplicate long-format row).
+        for asset_id, true_label, pred_label, conf in zip(
+            valid_asset_ids, y_valid, predictions, confidences, strict=True
         ):
             prediction_rows.append(
                 {
                     "attribute": target,
-                    "target_column": target_column,
-                    "target_file": target_file,
-                    "feature_file": feature_file,
-                    "task_type": "classification",
-                    "strategy": f"dinov3_frozen_embeddings_{classifier}",
-                    "classifier": classifier,
-                    "splitter": splitter_name,
+                    "asset_type": asset_type,
                     "fold": fold,
-                    "n_folds": target_splits,
-                    "asset_id": getattr(row, group_column),
-                    "y_true": true_label,
-                    "y_pred": predicted_label,
-                    "is_correct": true_label == predicted_label,
+                    "asset_id": asset_id,
+                    "true_label": true_label,
+                    "predicted_label": pred_label,
+                    "correct": true_label == pred_label,
+                    "confidence": conf,
+                    "target_column": target_column,
+                    "classifier": classifier,
+                    "strategy": f"dinov3_frozen_embeddings_{classifier}",
                     "tuned_C": tuned_c,
                     "tuned_class_weight": _format_class_weight(tuned_class_weight),
                     "inner_macro_f1_mean": inner_macro_f1_mean,
@@ -316,6 +352,7 @@ def cross_validate_dinov3_classifier(
         fold_rows.append(
             {
                 "attribute": target,
+                "asset_type": asset_type,
                 "target_column": target_column,
                 "target_file": target_file,
                 "feature_file": feature_file,
@@ -339,17 +376,128 @@ def cross_validate_dinov3_classifier(
             }
         )
 
-    folds = pd.DataFrame(fold_rows)
-    predictions = pd.DataFrame(prediction_rows)
-    summary = summarize_dinov3_folds(folds)
+    return fold_rows, prediction_rows
+
+
+def cross_validate_dinov3_classifier(
+    labels: pd.DataFrame,
+    asset_features: pd.DataFrame,
+    target: str,
+    *,
+    target_file: str | None = None,
+    feature_file: str | None = None,
+    n_splits: int = 5,
+    random_state: int = 42,
+    group_column: str = "asset_id",
+    classifier: str = "logistic_regression",
+    per_asset_type: bool = False,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Evaluate DINOv3 embeddings with grouped cross-validation.
+
+    When ``per_asset_type`` is True, a separate model is trained and evaluated
+    for each asset type (``profile_name``), so binned numeric attributes whose
+    bin ranges differ by asset type are not mixed into one incoherent label
+    space. Predictions from all asset types are concatenated; the summary is a
+    single combined row per attribute computed over the pooled folds.
+    """
+    joined, target_column, features = join_labels_and_features(
+        labels,
+        asset_features,
+        target,
+    )
+    if len(joined) < 2:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    all_fold_rows: list[dict[str, object]] = []
+    all_prediction_rows: list[dict[str, object]] = []
+
+    if per_asset_type:
+        if ASSET_TYPE_COLUMN not in joined.columns:
+            raise ValueError(
+                f"per_asset_type=True requires a '{ASSET_TYPE_COLUMN}' column in the "
+                f"labels CSV, but it was not found. Columns: {labels.columns.tolist()}"
+            )
+        asset_types = sorted(a for a in joined[ASSET_TYPE_COLUMN].dropna().unique())
+        for atype in asset_types:
+            subset = joined[joined[ASSET_TYPE_COLUMN] == atype].reset_index(drop=True)
+            fold_rows, pred_rows = _run_cv_on_subset(
+                subset,
+                features,
+                target,
+                target_column,
+                asset_type=atype,
+                target_file=target_file,
+                feature_file=feature_file,
+                n_splits=n_splits,
+                random_state=random_state,
+                group_column=group_column,
+                classifier=classifier,
+            )
+            if not pred_rows:
+                n_assets = subset[group_column].nunique()
+                n_classes = subset[target_column].nunique()
+                print(
+                    f"  [skip] asset type '{atype}' for {target}: not enough data "
+                    f"(assets={n_assets}, classes={n_classes}, need >=2 of each and "
+                    f">=2 assets per class for {n_splits}-fold CV)."
+                )
+                continue
+            all_fold_rows.extend(fold_rows)
+            all_prediction_rows.extend(pred_rows)
+    else:
+        fold_rows, pred_rows = _run_cv_on_subset(
+            joined,
+            features,
+            target,
+            target_column,
+            asset_type=None,
+            target_file=target_file,
+            feature_file=feature_file,
+            n_splits=n_splits,
+            random_state=random_state,
+            group_column=group_column,
+            classifier=classifier,
+        )
+        all_fold_rows.extend(fold_rows)
+        all_prediction_rows.extend(pred_rows)
+
+    if not all_prediction_rows:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    folds = pd.DataFrame(all_fold_rows)
+    predictions = pd.DataFrame(all_prediction_rows)
+    summary = summarize_dinov3_folds(folds, predictions=predictions,
+                                     per_asset_type=per_asset_type)
     return summary, folds, predictions
 
 
-def summarize_dinov3_folds(fold_results: pd.DataFrame) -> pd.DataFrame:
-    """Summarize per-fold DINOv3 classifier metrics."""
+def summarize_dinov3_folds(
+    fold_results: pd.DataFrame,
+    *,
+    predictions: pd.DataFrame | None = None,
+    per_asset_type: bool = False,
+) -> pd.DataFrame:
+    """Summarize DINOv3 classifier metrics into one row per attribute.
+
+    The headline F1 metrics (weighted_f1_mean, macro_f1_mean, accuracy_mean) are
+    computed by POOLING all out-of-fold predictions for the attribute and scoring
+    them once, rather than averaging per-fold scores.
+
+    Why pooling, not fold-averaging: with grouped CV — especially per-asset-type
+    training — some folds (or tiny asset-type subsets) contain only a handful of
+    assets. A 1-2 asset fold scores 0.0 or 1.0 with no middle ground, and
+    averaging those degenerate fold scores equally with large folds badly
+    distorts the result. Pooling all out-of-fold predictions and scoring once
+    weights each asset equally and gives the honest aggregate. Every asset has
+    exactly one out-of-fold prediction, so pooling is well-defined.
+
+    The *_std columns are still the spread across folds (a dispersion measure),
+    computed from fold_results.
+    """
     if fold_results.empty:
         return pd.DataFrame()
 
+    # Metadata grouping keys — one summary row per attribute.
     group_columns = [
         "attribute",
         "target_column",
@@ -363,17 +511,39 @@ def summarize_dinov3_folds(fold_results: pd.DataFrame) -> pd.DataFrame:
     rows: list[dict[str, object]] = []
     for keys, group in fold_results.groupby(group_columns, dropna=False):
         values = dict(zip(group_columns, keys, strict=True))
+        attribute = values["attribute"]
+
+        # --- Pooled F1 from out-of-fold predictions (the honest aggregate) ---
+        pooled_weighted_f1 = float("nan")
+        pooled_macro_f1 = float("nan")
+        pooled_accuracy = float("nan")
+        if predictions is not None and not predictions.empty:
+            pred_sub = predictions[predictions["attribute"] == attribute].dropna(
+                subset=["true_label", "predicted_label"]
+            )
+            if not pred_sub.empty:
+                y_true = pred_sub["true_label"]
+                y_pred = pred_sub["predicted_label"]
+                pooled_weighted_f1 = f1_score(
+                    y_true, y_pred, average="weighted", zero_division=0
+                )
+                pooled_macro_f1 = f1_score(
+                    y_true, y_pred, average="macro", zero_division=0
+                )
+                pooled_accuracy = accuracy_score(y_true, y_pred)
+
         values.update(
             {
                 "n_folds": int(group["fold"].max()),
                 "n_labels": int(group["n_valid_labels"].sum()),
                 "n_assets": int(group["n_valid_assets"].sum()),
                 "n_features": int(group["n_features"].iloc[0]),
-                "accuracy_mean": group["accuracy"].mean(),
+                # Headline metrics: pooled over all out-of-fold predictions.
+                "accuracy_mean": pooled_accuracy,
                 "accuracy_std": group["accuracy"].std(ddof=0),
-                "weighted_f1_mean": group["weighted_f1"].mean(),
+                "weighted_f1_mean": pooled_weighted_f1,
                 "weighted_f1_std": group["weighted_f1"].std(ddof=0),
-                "macro_f1_mean": group["macro_f1"].mean(),
+                "macro_f1_mean": pooled_macro_f1,
                 "macro_f1_std": group["macro_f1"].std(ddof=0),
             }
         )
@@ -390,6 +560,7 @@ def run_task_from_files(
     n_splits: int = 5,
     random_state: int = 42,
     classifier: str = "logistic_regression",
+    per_asset_type: bool = False,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Read files and run one DINOv3 classification task."""
     labels = pd.read_csv(labels_path)
@@ -403,6 +574,7 @@ def run_task_from_files(
         n_splits=n_splits,
         random_state=random_state,
         classifier=classifier,
+        per_asset_type=per_asset_type,
     )
 
 
