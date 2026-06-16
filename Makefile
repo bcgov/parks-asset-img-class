@@ -39,10 +39,19 @@ VLM_BUFFER_SIZE ?= 20
 VLM_MAX_TOKENS ?= 4096
 VLM_LIMIT_ARG = $(if $(VLM_LIMIT),--limit $(VLM_LIMIT),)
 
+CITYWIDE_OUTPUT_DIR ?= data/raw/citywide
+CITYWIDE_PROFILE ?=
+CITYWIDE_LIMIT ?=
+CITYWIDE_WORKERS ?= 4
+CITYWIDE_MAX_CALLS_PER_HOUR ?= 900
+CITYWIDE_PROFILE_ARG = $(foreach profile,$(CITYWIDE_PROFILE),--profile $(profile))
+CITYWIDE_LIMIT_ARG = $(if $(CITYWIDE_LIMIT),--limit $(CITYWIDE_LIMIT),)
+
 .PHONY: help all final-dinov3 smoke env-check data-check model-data-check test \
 	pii pii-screen pii-blur pii-upload-set baseline \
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
+	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
 	compare-dinov3 compare-siglip compare figures export-bcparks \
 	report report-html report-pdf
 
@@ -62,6 +71,11 @@ help:
 	@echo "    VLM variables: VLM_PROVIDER, VLM_MODEL, VLM_PROMPT, VLM_INPUT, VLM_OUTPUT, VLM_LIMIT"
 	@echo "    VLM providers: gemini, openai, grok, claude, github"
 	@echo "    VLM credentials: GEMINI_API_KEY/GOOGLE_API_KEY, OPENAI_API_KEY, XAI_API_KEY, ANTHROPIC_API_KEY, GITHUB_TOKEN"
+	@echo "  make download-citywide-images  Optional CityWide raw image/metadata download"
+	@echo "  make download-citywide-metadata Optional CityWide metadata-only download"
+	@echo "  make download-citywide-sample  Optional 50-file CityWide download smoke run"
+	@echo "    CityWide variables: CITYWIDE_PROFILE, CITYWIDE_LIMIT, CITYWIDE_WORKERS, CITYWIDE_OUTPUT_DIR"
+	@echo "    CityWide credentials: CITYWIDE_API_KEY, CITYWIDE_DB, CITYWIDE_USER"
 	@echo "  make export-bcparks        Write partner-facing prediction CSVs"
 	@echo "  make report                Render Quarto HTML/PDF report"
 
@@ -75,6 +89,34 @@ smoke: env-check data-check test baseline
 
 env-check:
 	$(PYTHON) -c "import pandas, sklearn, torch, PIL; print('Environment imports OK')"
+
+citywide-check:
+	$(PYTHON) scripts/check_pipeline_inputs.py --require-citywide-credentials
+
+download-citywide-probe: citywide-check
+	$(PYTHON) scripts/download_citywide_images.py \
+	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
+	  --max-calls-per-hour $(CITYWIDE_MAX_CALLS_PER_HOUR) \
+	  --probe
+
+download-citywide-metadata: citywide-check
+	$(PYTHON) scripts/download_citywide_images.py \
+	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
+	  --workers $(CITYWIDE_WORKERS) \
+	  --max-calls-per-hour $(CITYWIDE_MAX_CALLS_PER_HOUR) \
+	  --metadata-only \
+	  $(CITYWIDE_PROFILE_ARG)
+
+download-citywide-images: citywide-check
+	$(PYTHON) scripts/download_citywide_images.py \
+	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
+	  --workers $(CITYWIDE_WORKERS) \
+	  --max-calls-per-hour $(CITYWIDE_MAX_CALLS_PER_HOUR) \
+	  $(CITYWIDE_PROFILE_ARG) \
+	  $(CITYWIDE_LIMIT_ARG)
+
+download-citywide-sample: CITYWIDE_LIMIT = 50
+download-citywide-sample: download-citywide-images
 
 data-check:
 	$(PYTHON) scripts/check_pipeline_inputs.py

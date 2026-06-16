@@ -37,3 +37,4 @@ dependencies:
     - anthropic
     - dagshub
     - open-clip-torch
+    - httpx==0.27.2

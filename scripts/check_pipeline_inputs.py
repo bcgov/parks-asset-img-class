@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -18,6 +19,12 @@ REQUIRED_PATHS = [
     Path("data/processed/master_dataset.csv"),
     Path("data/processed/train"),
     Path("reports/Image_analysis_of_park_infrastructure_report.qmd"),
+]
+
+CITYWIDE_CREDENTIALS = [
+    "CITYWIDE_API_KEY",
+    "CITYWIDE_DB",
+    "CITYWIDE_USER",
 ]
 
 
@@ -44,6 +51,11 @@ def parse_args() -> argparse.Namespace:
         "--require-vlm-credentials",
         action="store_true",
         help="Require API credentials for the selected cloud VLM model.",
+    )
+    parser.add_argument(
+        "--require-citywide-credentials",
+        action="store_true",
+        help="Require CityWide API credentials for raw asset/image downloads.",
     )
     parser.add_argument(
         "--vlm-model",
@@ -91,6 +103,17 @@ def main() -> int:
             print(f"Missing VLM credential(s) for provider/model {provider}/{args.vlm_model}:")
             for credential in missing_credentials:
                 print(f"  - {credential}")
+            return 1
+
+    if args.require_citywide_credentials:
+        missing_citywide_credentials = [
+            credential for credential in CITYWIDE_CREDENTIALS if not os.getenv(credential)
+        ]
+        if missing_citywide_credentials:
+            print("Missing CityWide credential(s):")
+            for credential in missing_citywide_credentials:
+                print(f"  - {credential}")
+            print("Add them to .env or export them before running CityWide download targets.")
             return 1
 
     print("Pipeline inputs look ready.")

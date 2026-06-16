@@ -4,26 +4,31 @@
 
 ## Project overview
 
-This repository contains early work for a 2026 UBC MDS capstone project on using image analysis to classify BC Parks infrastructure assets and predict attributes such as asset type, material, railing presence, size ranges, structure position, and number of steps.
+This repository contains a 2026 UBC MDS capstone project on using image analysis to classify BC Parks infrastructure assets and predict attributes such as asset type, material, railing presence, size ranges, structure position, and number of steps.
 
-At the moment, the main runnable artifact is a Quarto report:
-
-- `reports/Image_analysis_of_park_infrastructure_report.qmd`
-
-Rendering this file creates both:
-
-- `reports/Image_analysis_of_park_infrastructure_report.html`
-- `reports/Image_analysis_of_park_infrastructure_report.pdf`
+The main runnable artifact is the Makefile pipeline. It validates inputs, screens raw images for PII, builds cleaned image sets, runs baseline and DINOv3 embedding classifiers, exports partner-facing prediction CSVs, and renders the Quarto report.
 
 ## Repository structure
 
 ```text
 .
+├── Makefile
 ├── environment.yml
-├── notebooks/
-│   └── data_exploration.ipynb
+├── data/
+│   ├── processed/
+│   │   ├── master_dataset.csv
+│   │   └── train/
+│   └── raw/                  # ignored; optional CityWide download output
+├── docs/
+│   ├── dinov3_walkthrough.md
+│   ├── siglip_walkthrough.md
+│   └── vlm_walkthrough.md
+├── scripts/                  # pipeline entry points used by the Makefile
+├── src/                      # reusable package code
+├── tests/
 └── reports/
     ├── Image_analysis_of_park_infrastructure_report.qmd
+    ├── figures/
     └── references.bib
 ```
 
@@ -35,6 +40,72 @@ Create and activate the Conda environment:
 conda env create -f environment.yml
 conda activate bcparks_capstone
 ```
+
+Copy `.env.example` to `.env` and fill only the credentials needed for the targets you plan to run. The `.env` file is gitignored.
+
+## Makefile pipeline
+
+From the repository root, list available targets:
+
+```bash
+make help
+```
+
+Run the final DINOv3 pipeline and render the report:
+
+```bash
+make final-dinov3
+```
+
+Run a faster local validation pass:
+
+```bash
+make smoke
+```
+
+Optional cloud VLM predictions are available when provider credentials are set:
+
+```bash
+make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+make final-with-vlm VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+```
+
+The partner-facing prediction exports are written to:
+
+- `results/final/bcparks_asset_attribute_predictions_long.csv`
+- `results/final/bcparks_asset_attribute_predictions_wide.csv`
+
+## Optional CityWide download
+
+The raw CityWide downloader is available as an upstream Makefile branch for BC Parks or graders who have API credentials. Required `.env` keys are:
+
+```bash
+CITYWIDE_API_KEY=
+CITYWIDE_DB=
+CITYWIDE_USER=
+CITYWIDE_API_URL=https://v4.citywidesolutions.com/v4_server/external/v1
+```
+
+Download metadata only:
+
+```bash
+make download-citywide-metadata
+```
+
+Download metadata and images:
+
+```bash
+make download-citywide-images
+```
+
+Useful controls:
+
+```bash
+make download-citywide-sample
+make download-citywide-images CITYWIDE_PROFILE="337 356" CITYWIDE_LIMIT=100
+```
+
+The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `images_manifest.csv`, and downloaded images under `data/raw/citywide/`.
 
 The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
 
@@ -132,11 +203,13 @@ pytest -q tests/test_mlflow_utils.py
 This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
 VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
 
-Supported models include:
+Supported provider families include:
 
-- **Google AI Studio Models** (`gemini-3-flash-preview`, `gemma-4-26b-a4b-it` and `gemini-3.1-flash-lite`)
-- **OpenAI Models**: (`gpt-4o`)
-- **GitHub Models**: (`Phi-4-multimodal-instruct` and `Llama-3.2-11B-Vision-Instruct`)
+- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
+- **OpenAI** through `OPENAI_API_KEY`
+- **xAI Grok** through `XAI_API_KEY`
+- **Anthropic Claude** through `ANTHROPIC_API_KEY`
+- **GitHub Models** through `GITHUB_TOKEN`
 
 ### Quick Start
 
@@ -147,12 +220,19 @@ GEMINI_API_KEY="your-key-here"
 GITHUB_TOKEN="your-token-here"
 ```
 
-2. Run batch predictions:
+2. Run a Makefile smoke prediction:
+
+```bash
+make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+```
+
+Or run batch predictions directly:
 
 ```bash
 python scripts/run_vlm_predictor.py \
   --input data/processed/train/train_only_stairs.csv \
   --output results/vlm_stairs_gemini.csv \
+  --provider gemini \
   --model gemini-3-flash-preview \
   --prompt stairs_v1
 ```
@@ -171,7 +251,7 @@ For comprehensive documentation on supported models, prompts, workflows, and ext
 
 ## Current status
 
-This project is in an early exploratory stage. The report currently describes the project motivation, research question, dataset assumptions, data challenges, and a proposed modelling approach. The notebook directory is available for exploration work as the project develops.
+The final pipeline is Makefile-driven and centered on the DINOv3 embedding classifier, with optional cloud VLM and CityWide download branches for credentialed runs.
 
 ## Getting Help or Reporting an Issue
 
