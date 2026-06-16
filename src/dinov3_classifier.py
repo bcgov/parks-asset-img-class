@@ -457,26 +457,38 @@ def cross_validate_dinov3_classifier(
 
     folds = pd.DataFrame(all_fold_rows)
     predictions = pd.DataFrame(all_prediction_rows)
-    summary = summarize_dinov3_folds(folds, per_asset_type=per_asset_type)
+    summary = summarize_dinov3_folds(folds, predictions=predictions,
+                                     per_asset_type=per_asset_type)
     return summary, folds, predictions
 
 
 def summarize_dinov3_folds(
     fold_results: pd.DataFrame,
     *,
+    predictions: pd.DataFrame | None = None,
     per_asset_type: bool = False,
 ) -> pd.DataFrame:
-    """Summarize per-fold DINOv3 classifier metrics.
+    """Summarize DINOv3 classifier metrics into one row per attribute.
 
-    With per_asset_type=True the summary is a single combined row per attribute
-    (pooled across asset types), so downstream plotting that expects one row per
-    attribute keeps working. Per-asset-type detail remains in the folds file.
+    The headline F1 metrics (weighted_f1_mean, macro_f1_mean, accuracy_mean) are
+    computed by POOLING all out-of-fold predictions for the attribute and scoring
+    them once, rather than averaging per-fold scores.
+
+    Why pooling, not fold-averaging: with grouped CV — especially per-asset-type
+    training — some folds (or tiny asset-type subsets) contain only a handful of
+    assets. A 1-2 asset fold scores 0.0 or 1.0 with no middle ground, and
+    averaging those degenerate fold scores equally with large folds badly
+    distorts the result. Pooling all out-of-fold predictions and scoring once
+    weights each asset equally and gives the honest aggregate. Every asset has
+    exactly one out-of-fold prediction, so pooling is well-defined.
+
+    The *_std columns are still the spread across folds (a dispersion measure),
+    computed from fold_results.
     """
     if fold_results.empty:
         return pd.DataFrame()
 
-    # Combined-per-attribute grouping (no asset_type in the group keys), so the
-    # output has one summary row per attribute regardless of per_asset_type.
+    # Metadata grouping keys — one summary row per attribute.
     group_columns = [
         "attribute",
         "target_column",
@@ -490,17 +502,39 @@ def summarize_dinov3_folds(
     rows: list[dict[str, object]] = []
     for keys, group in fold_results.groupby(group_columns, dropna=False):
         values = dict(zip(group_columns, keys, strict=True))
+        attribute = values["attribute"]
+
+        # --- Pooled F1 from out-of-fold predictions (the honest aggregate) ---
+        pooled_weighted_f1 = float("nan")
+        pooled_macro_f1 = float("nan")
+        pooled_accuracy = float("nan")
+        if predictions is not None and not predictions.empty:
+            pred_sub = predictions[predictions["attribute"] == attribute].dropna(
+                subset=["true_label", "predicted_label"]
+            )
+            if not pred_sub.empty:
+                y_true = pred_sub["true_label"]
+                y_pred = pred_sub["predicted_label"]
+                pooled_weighted_f1 = f1_score(
+                    y_true, y_pred, average="weighted", zero_division=0
+                )
+                pooled_macro_f1 = f1_score(
+                    y_true, y_pred, average="macro", zero_division=0
+                )
+                pooled_accuracy = accuracy_score(y_true, y_pred)
+
         values.update(
             {
                 "n_folds": int(group["fold"].max()),
                 "n_labels": int(group["n_valid_labels"].sum()),
                 "n_assets": int(group["n_valid_assets"].sum()),
                 "n_features": int(group["n_features"].iloc[0]),
-                "accuracy_mean": group["accuracy"].mean(),
+                # Headline metrics: pooled over all out-of-fold predictions.
+                "accuracy_mean": pooled_accuracy,
                 "accuracy_std": group["accuracy"].std(ddof=0),
-                "weighted_f1_mean": group["weighted_f1"].mean(),
+                "weighted_f1_mean": pooled_weighted_f1,
                 "weighted_f1_std": group["weighted_f1"].std(ddof=0),
-                "macro_f1_mean": group["macro_f1"].mean(),
+                "macro_f1_mean": pooled_macro_f1,
                 "macro_f1_std": group["macro_f1"].std(ddof=0),
             }
         )
