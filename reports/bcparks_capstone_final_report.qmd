@@ -1,0 +1,121 @@
+---
+title: ""
+
+bibliography: references.bib
+jupyter: bcparks_capstone
+author:
+  - name: Sarah Gauthier
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Nour Shawky
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Ssemakula Peter Wasswa
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Mehmet Imga
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    css: report-styles.css
+  pdf:
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    fontsize: 10pt
+    geometry:
+      - margin=0.85in
+    header-includes:
+      - \linespread{0.98}
+---
+
+```{=html}
+<section class="report-header">
+  <h1>Final Report</h1>
+  <h2>Image Analysis of Park Infrastructure</h2>
+
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-06-24</dd>
+
+    <dt>Prepared for:</dt>
+    <dd>BC Parks &middot; UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
+</section>
+```
+
+```{=latex}
+\begin{center}
+{\Huge \textbf{Final Report}\par}
+\vspace{0.35cm}
+{\Large \textbf{Image Analysis of Park Infrastructure}\par}
+\end{center}
+
+\vspace{0.45cm}
+
+\begin{center}
+\begin{tabular}{r@{\hspace{0.7cm}}l}
+\textbf{Date:} & 2026-06-25 \\
+\textbf{Prepared for:} & BC Parks \\
+\textbf{Prepared by:} & Sarah Gauthier \\
+                     & Nour Shawky \\
+                     & Ssemakula Peter Wasswa \\
+                     & Mehmet Imga \\
+\end{tabular}
+\end{center}
+
+\vspace{0.55cm}
+
+\newpage
+\tableofcontents
+\newpage
+```
+
+# Executive summary
+
+# Introduction 
+
+## Background and problem statement
+
+## Refined objectives
+
+# Data
+
+## Data sources and collection
+
+## Size and characteristics
+
+## Data quality, limitations, and preprocessing
+
+# Data science methods
+
+## Approaches considered
+
+## VLM Approach
+
+## Embedding-based classification
+
+# Data product and results
+
+## The Data Product
+
+## Results
+
+# Conclusions and recommendations
+
+# References
