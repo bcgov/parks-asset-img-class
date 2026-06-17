@@ -17,7 +17,7 @@ FINAL_DIR ?= results/final
 DINO_MODEL ?= dinov3_vitb16
 DINO_HUB_MODEL ?= dinov3_vitb16
 DINO_WEIGHTS ?= models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
-DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL).parquet
+DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_images.csv
 DINO_MASTER_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_assets.csv
 DINO_RUN_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
 PII_SCREEN_CSV ?= results/predictions/pii_screen.csv
@@ -46,23 +46,34 @@ CITYWIDE_MAX_CALLS_PER_HOUR ?= 900
 CITYWIDE_PROFILE_ARG = $(foreach profile,$(CITYWIDE_PROFILE),--profile $(profile))
 CITYWIDE_LIMIT_ARG = $(if $(CITYWIDE_LIMIT),--limit $(CITYWIDE_LIMIT),)
 
+NEW_IMAGE_FOLDER ?= $(IMAGE_ROOT)/citywide/images
+NEW_IMAGE_ASSET_TYPE ?=
+NEW_IMAGE_OUTPUT ?= $(FINAL_DIR)/new_image_predictions_long.csv
+NEW_IMAGE_OUTPUT_WIDE ?= $(FINAL_DIR)/new_image_predictions_wide.csv
+NEW_IMAGE_LIMIT ?=
+NEW_IMAGE_LIMIT_ARG = $(if $(NEW_IMAGE_LIMIT),--limit-assets $(NEW_IMAGE_LIMIT),)
+DEMO_ASSET_LIMIT ?= 5
+
 .PHONY: help all final-dinov3 smoke env-check data-check model-data-check test \
 	pii pii-screen pii-blur pii-upload-set baseline \
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
-	compare-dinov3 compare-siglip compare figures export-bcparks 
+	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo-new-images
 
 help:
 	@echo "Final pipeline targets:"
 	@echo "  make smoke                 Fast local validation: env/data checks + tests + baseline"
 	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV"
 	@echo "  make all                   Full final pipeline target alias"
-	@echo "  make model-data-check      Check cleaned images and DINOv3 feature file"
+	@echo "  make model-data-check      Check cleaned image inputs"
 	@echo "  make pii                   Screen, blur, and assemble cleaned image set"
 	@echo "  make baseline              Run grouped baseline strategies"
-	@echo "  make features-dinov3-master Build asset features from precomputed DINOv3 parquet"
+	@echo "  make features-dinov3-master Build asset features from DINOv3 image features"
 	@echo "  make train-dinov3          Run grouped CV for DINOv3 final classifier"
+	@echo "  make predict-new-images    Predict attributes for a folder of new images"
+	@echo "  make demo-new-images       Small new-image prediction run from cleaned training images"
+	@echo "    New image variables: NEW_IMAGE_FOLDER, NEW_IMAGE_ASSET_TYPE, NEW_IMAGE_LIMIT, NEW_IMAGE_OUTPUT"
 	@echo "  make vlm-predict           Optional cloud VLM predictions; requires provider credentials"
 	@echo "  make vlm-smoke             Optional 5-asset VLM credential/path smoke run"
 	@echo "  make final-with-vlm        Run final DINOv3 pipeline plus optional VLM branch"
@@ -124,8 +135,7 @@ data-check:
 
 model-data-check:
 	$(PYTHON) scripts/check_pipeline_inputs.py \
-	  --require-images \
-	  --feature-file $(DINO_IMAGE_FEATURES)
+	  --require-images
 
 test:
 	$(PYTEST) -q tests
@@ -157,6 +167,18 @@ baseline:
 	  --data-version $(DATA_VERSION) \
 	  --no-mlflow
 
+$(DINO_IMAGE_FEATURES): scripts/extract_dinov3_features.py $(MASTER_DATA)
+	$(PYTHON) scripts/check_pipeline_inputs.py \
+	  --require-dinov3-weights \
+	  --dinov3-weights $(DINO_WEIGHTS)
+	$(PYTHON) scripts/extract_dinov3_features.py \
+	  --input $(MASTER_DATA) \
+	  --output $(DINO_IMAGE_FEATURES) \
+	  --asset-output $(DINO_MASTER_FEATURES) \
+	  --model $(DINO_HUB_MODEL) \
+	  --weights $(DINO_WEIGHTS) \
+	  --image-root $(IMAGE_ROOT)
+
 $(DINO_MASTER_FEATURES): scripts/build_asset_features_from_image_features.py $(MASTER_DATA) $(DINO_IMAGE_FEATURES)
 	$(PYTHON) scripts/build_asset_features_from_image_features.py \
 	  --master $(MASTER_DATA) \
@@ -168,14 +190,7 @@ $(DINO_RUN_FEATURES): $(DINO_MASTER_FEATURES)
 
 features-dinov3-master: $(DINO_MASTER_FEATURES) $(DINO_RUN_FEATURES)
 
-features-dinov3-extract-master:
-	$(PYTHON) scripts/extract_dinov3_features.py \
-	  --input $(MASTER_DATA) \
-	  --output $(FEATURE_DIR)/$(DINO_HUB_MODEL)_master_images.csv \
-	  --asset-output $(DINO_MASTER_FEATURES) \
-	  --model $(DINO_HUB_MODEL) \
-	  --weights $(DINO_WEIGHTS) \
-	  --image-root $(IMAGE_ROOT)
+features-dinov3-extract-master: $(DINO_IMAGE_FEATURES) $(DINO_MASTER_FEATURES)
 
 train-dinov3:
 	$(PYTHON) scripts/run_dinov3_remaining_attributes.py \
@@ -262,3 +277,27 @@ export-bcparks:
 	  --seed $(SEED) \
 	  --output-long $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv \
 	  --output-wide $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
+
+predict-new-images: data-check model-data-check features-dinov3-master
+	$(PYTHON) scripts/check_pipeline_inputs.py \
+	  --require-dinov3-weights \
+	  --dinov3-weights $(DINO_WEIGHTS) \
+	  --feature-file $(DINO_MASTER_FEATURES)
+	$(PYTHON) scripts/predict_new_images.py \
+	  --image-folder $(NEW_IMAGE_FOLDER)$(if $(NEW_IMAGE_ASSET_TYPE), --asset-type "$(NEW_IMAGE_ASSET_TYPE)") \
+	  --training-features $(DINO_MASTER_FEATURES) \
+	  --train-dir $(TRAIN_DIR) \
+	  --weights $(DINO_WEIGHTS) \
+	  --model $(DINO_HUB_MODEL) \
+	  --image-root . \
+	  --classifier $(CLASSIFIER) \
+	  --seed $(SEED) \
+	  --output $(NEW_IMAGE_OUTPUT) \
+	  --output-wide $(NEW_IMAGE_OUTPUT_WIDE) \
+	  $(NEW_IMAGE_LIMIT_ARG)
+
+demo-new-images: NEW_IMAGE_FOLDER = $(IMAGE_ROOT)/citywide/images
+demo-new-images: NEW_IMAGE_LIMIT = $(DEMO_ASSET_LIMIT)
+demo-new-images: NEW_IMAGE_OUTPUT = $(FINAL_DIR)/demo_new_image_predictions_long.csv
+demo-new-images: NEW_IMAGE_OUTPUT_WIDE = $(FINAL_DIR)/demo_new_image_predictions_wide.csv
+demo-new-images: predict-new-images

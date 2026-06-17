@@ -6,7 +6,7 @@
 
 This repository contains a 2026 UBC MDS capstone project on using image analysis to classify BC Parks infrastructure assets and predict attributes such as asset type, material, railing presence, size ranges, structure position, and number of steps.
 
-The main runnable artifact is the Makefile pipeline. It validates inputs, screens raw images for PII, builds cleaned image sets, runs baseline and DINOv3 embedding classifiers, exports partner-facing prediction CSVs, and renders the Quarto report.
+The main runnable artifact is the Makefile pipeline. It validates inputs, screens raw images for PII, builds cleaned image sets, runs baseline and DINOv3 embedding classifiers, and exports partner-facing prediction CSVs. The Quarto report is rendered separately.
 
 ## Repository structure
 
@@ -51,7 +51,7 @@ From the repository root, list available targets:
 make help
 ```
 
-Run the final DINOv3 pipeline and render the report:
+Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
 make final-dinov3
@@ -61,6 +61,18 @@ Run a faster local validation pass:
 
 ```bash
 make smoke
+```
+
+Run a small new-image demo from the cleaned training image folder:
+
+```bash
+make demo-new-images
+```
+
+Predict on a separate folder of new images:
+
+```bash
+make predict-new-images NEW_IMAGE_FOLDER=data/raw/citywide/images
 ```
 
 Optional cloud VLM predictions are available when provider credentials are set:

@@ -1,11 +1,11 @@
 """Predict asset attributes for a folder of NEW images (BC Parks deployment).
 
 Point this at a folder of images, and it encodes them with DINOv3, trains the
-final per-attribute classifiers on the labelled training data, and writes
-predictions + confidence scores to CSV. Only attributes that apply to each
-asset type are predicted (per the applicability matrix), and binned numeric
-attributes (length, width, fall height) are trained per asset type so each
-asset is labelled in its own bin scheme.
+final per-attribute classifiers from the labelled training data plus precomputed
+training embeddings, and writes predictions + confidence scores to CSV. Only
+attributes that apply to each asset type are predicted (per the applicability
+matrix), and binned numeric attributes (length, width, fall height) are trained
+per asset type so each asset is labelled in its own bin scheme.
 
 Two input layouts are supported:
 
@@ -172,6 +172,17 @@ def build_input_table(image_folder: Path, asset_type: str | None) -> pd.DataFram
     return pd.DataFrame(rows)
 
 
+def limit_asset_rows(rows: pd.DataFrame, limit_assets: int | None) -> pd.DataFrame:
+    """Keep rows for the first N asset IDs, preserving all images per asset."""
+    if limit_assets is None:
+        return rows
+    if limit_assets <= 0:
+        raise ValueError("--limit-assets must be a positive integer.")
+
+    keep_assets = rows["asset_id"].drop_duplicates().head(limit_assets)
+    return rows[rows["asset_id"].isin(keep_assets)].reset_index(drop=True)
+
+
 # ---------------------------------------------------------------------
 # Applicability matrix
 # ---------------------------------------------------------------------
@@ -284,6 +295,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--applicability", type=Path,
                         default=Path("data/processed/attribute_applicability.csv"))
     parser.add_argument("--train-dir", type=Path, default=Path("data/processed/train"))
+    parser.add_argument("--training-features", type=Path,
+                        default=Path("data/features/dinov3_vitb16_master_assets.csv"),
+                        help="Asset-level feature CSV used to train the classifiers.")
     parser.add_argument("--weights", type=Path,
                         default=Path("models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth"))
     parser.add_argument("--model", default="dinov3_vitb16")
@@ -295,6 +309,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--high-threshold", type=float, default=0.80)
     parser.add_argument("--medium-threshold", type=float, default=0.60)
+    parser.add_argument("--limit-assets", type=int, default=None,
+                        help="Optional smoke-test limit; keeps all images for the first N assets.")
     parser.add_argument("--output", type=Path,
                         default=Path("results/final/new_image_predictions_long.csv"))
     parser.add_argument("--output-wide", type=Path, default=None,
@@ -306,12 +322,21 @@ def main() -> int:
     args = parse_args()
 
     # 1. Build the input table from the folder.
-    rows = build_input_table(args.image_folder, args.asset_type)
+    rows = limit_asset_rows(build_input_table(args.image_folder, args.asset_type), args.limit_assets)
     asset_types_present = sorted(rows["profile_name"].unique())
     print(f"Found {rows['asset_id'].nunique()} asset(s) across {len(rows)} image(s).")
     print(f"Asset type(s): {asset_types_present}")
 
-    # 2. Extract DINOv3 embeddings for the new images, aggregate per asset.
+    # 2. Load labelled-training embeddings and extract new-image embeddings.
+    if not args.training_features.exists():
+        print(f"Training feature file not found: {args.training_features}", file=sys.stderr)
+        return 1
+    train_asset_features = pd.read_csv(args.training_features)
+    features = feature_columns(train_asset_features.columns)
+    if not features:
+        print(f"Training feature file has no f_* columns: {args.training_features}", file=sys.stderr)
+        return 1
+
     print("Extracting DINOv3 embeddings for new images...")
     image_features, skipped = extract_image_features(
         rows,
@@ -332,7 +357,15 @@ def main() -> int:
     # carry profile_name onto the aggregated assets
     asset_profile = rows[["asset_id", "profile_name"]].drop_duplicates("asset_id")
     asset_features = asset_features.merge(asset_profile, on="asset_id", how="left")
-    features = feature_columns(asset_features.columns)
+
+    missing_features = [feature for feature in features if feature not in asset_features.columns]
+    if missing_features:
+        print(
+            "New-image embeddings are missing feature columns present in training features: "
+            f"{missing_features[:5]}",
+            file=sys.stderr,
+        )
+        return 1
 
     # 3. Applicability matrix.
     applicable = load_applicability(args.applicability)
@@ -354,7 +387,7 @@ def main() -> int:
                 asset_type=asset_type,
                 train_dir=args.train_dir,
                 new_assets=type_assets,
-                train_asset_features=asset_features,
+                train_asset_features=train_asset_features,
                 features=features,
                 classifier=args.classifier,
                 random_state=args.seed,
