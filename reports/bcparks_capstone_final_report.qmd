@@ -168,39 +168,43 @@ things across asset types, the implementation also supports fitting separate
 models by asset type and pooling the out-of-fold predictions for summary
 metrics.
 
-We reported accuracy, weighted F1, and macro F1. Macro F1 was the most important
-metric for model comparison because many of the labels are strongly imbalanced.
-For example, a majority-class model can obtain high accuracy on attributes where
-most assets share the same material, but it does not necessarily identify rare
-classes. Macro F1 gives each class equal weight and therefore better reflects
-whether the model learned beyond the dominant label.
+We used **weighted F1** as the primary model-selection metric because the
+attribute labels are highly imbalanced. A metric that only rewards the dominant
+class would overstate model quality for attributes where one material or one
+structural category appears much more often than the others. Weighted F1
+balances precision and recall while weighting each class by its support, making
+it a better summary of performance on the distribution of labels BC Parks is
+most likely to encounter. Macro F1 was retained only as a diagnostic for
+minority-class behaviour because it gives each class equal weight regardless of
+frequency.
 
 The overall pattern from the embedding experiments was that frozen embeddings
 substantially outperformed the majority-class baseline, and the best performing
 configuration was generally **DINOv3 embeddings with logistic regression**.
 SigLIP was competitive and was strongest for a small number of more
-context-dependent attributes, while tree-based classifiers often achieved high
-accuracy but lower macro F1, indicating weaker performance on minority classes.
-The average cross-validation scores from the main embedding runs are summarized
-below.
+context-dependent attributes, while tree-based classifiers had less consistent
+weighted-F1 performance across attributes. The average cross-validation scores
+from the main embedding runs are summarized below, ordered by mean weighted F1.
 
-| Model configuration | Attributes evaluated | Mean accuracy | Mean weighted F1 | Mean macro F1 |
-|---|---:|---:|---:|---:|
-| DINOv3 + logistic regression | 12 | 0.749 | 0.749 | 0.479 |
-| SigLIP + logistic regression | 12 | 0.741 | 0.742 | 0.462 |
-| OpenCLIP + logistic regression | 12 | 0.728 | 0.727 | 0.443 |
-| Baseline majority class | 12 | 0.655 | 0.540 | 0.201 |
+| Model configuration | Attributes evaluated | Mean weighted F1 | Mean macro F1 |
+|---|---:|---:|---:|
+| DINOv3 + logistic regression | 12 | 0.749 | 0.479 |
+| SigLIP + logistic regression | 12 | 0.742 | 0.462 |
+| OpenCLIP + logistic regression | 12 | 0.727 | 0.443 |
+| Baseline majority class | 12 | 0.540 | 0.201 |
 
-: Average grouped cross-validation performance for the main embedding-based classifiers.
+: Average grouped cross-validation performance for the main embedding-based classifiers. Weighted F1 was used as the primary comparison metric.
 
 These results suggest that the strongest image-only signal came from DINOv3's
-self-supervised visual representation. At the same time, the attribute-level
-results showed that no single embedding family was uniformly best. SigLIP
-performed particularly well for `attr_structure_position` and
-`attr_decking_material`, suggesting that language-aligned embeddings may capture
-some contextual cues that complement DINOv3. For the final modelling discussion,
-we therefore treat DINOv3 + logistic regression as the primary embedding-based
-classifier and SigLIP/OpenCLIP as useful comparative baselines.
+self-supervised visual representation: it produced the highest mean weighted F1
+among the embedding approaches and a large gain over the majority-class
+baseline. At the same time, the attribute-level results showed that no single
+embedding family was uniformly best. SigLIP performed particularly well for
+`attr_structure_position` and `attr_decking_material`, suggesting that
+language-aligned embeddings may capture some contextual cues that complement
+DINOv3. For the final modelling discussion, we therefore treat DINOv3 + logistic
+regression as the primary embedding-based classifier and SigLIP/OpenCLIP as
+useful comparative baselines.
 
 # Data product and results
 
