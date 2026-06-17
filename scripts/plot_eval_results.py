@@ -532,7 +532,7 @@ def plot_comparison(
         title_fontsize=14,
         fontsize=12,
         loc="lower right",
-        bbox_to_anchor=(1, 0.63),
+        bbox_to_anchor=(1, 0.75),
         frameon=True,
         framealpha=0.9,
         edgecolor="#D3D1C7",
