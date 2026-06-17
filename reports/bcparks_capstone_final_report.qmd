@@ -122,6 +122,54 @@ available attribute values for that asset. For modelling, however, the asset is
 the prediction unit: multiple images linked to the same asset are grouped
 together so one asset does not appear in both training and validation folds.
 
+```{python}
+#| label: data-summary-setup
+#| include: false
+import pandas as pd
+
+master_df = pd.read_csv("../data/processed/master_dataset.csv")
+file_exists = master_df["file_exists"]
+if file_exists.dtype == object:
+    image_file_count = int(
+        file_exists.astype(str).str.lower().isin(["true", "1", "yes"]).sum()
+    )
+else:
+    image_file_count = int(file_exists.fillna(False).sum())
+
+images_per_asset = master_df.groupby("asset_id")["image_path"].nunique()
+data_summary = pd.DataFrame(
+    {
+        "Measure": [
+            "Image-asset rows",
+            "Unique assets",
+            "Rows with local image files",
+            "Assets with more than one image",
+            "Mean images per asset",
+            "Median images per asset",
+            "Maximum images for one asset",
+        ],
+        "Value": [
+            f"{len(master_df):,}",
+            f"{master_df['asset_id'].nunique():,}",
+            f"{image_file_count:,}",
+            f"{int((images_per_asset > 1).sum()):,} ({(images_per_asset > 1).mean():.1%})",
+            f"{images_per_asset.mean():.2f}",
+            f"{images_per_asset.median():.0f}",
+            f"{images_per_asset.max():.0f}",
+        ],
+    }
+)
+asset_category_counts = (
+    master_df["profile_name"]
+    .value_counts()
+    .rename_axis("Asset category")
+    .reset_index(name="Image-asset rows")
+)
+asset_category_counts["Image-asset rows"] = asset_category_counts["Image-asset rows"].map(
+    lambda value: f"{value:,}"
+)
+```
+
 ## Size and characteristics
 
 The final processed master dataset contains 5,562 image-asset rows linked to
@@ -129,13 +177,19 @@ The final processed master dataset contains 5,562 image-asset rows linked to
 The image coverage is uneven by asset type, with most rows belonging to
 boardwalks and trail bridges.
 
-| Asset category | Image-asset rows |
-|---|---:|
-| Boardwalk < 1.2m High | 2,096 |
-| Trail Bridge | 1,995 |
-| Stairs | 1,093 |
-| Viewing Platform | 228 |
-| Boardwalk > 1.2m High | 150 |
+```{python}
+#| label: tbl-data-summary
+#| echo: false
+#| tbl-cap: "Reproducible summary counts from `data/processed/master_dataset.csv`."
+data_summary
+```
+
+```{python}
+#| label: tbl-asset-category-counts
+#| echo: false
+#| tbl-cap: "Image-asset rows by CityWide asset category."
+asset_category_counts
+```
 
 Most assets have a single image, but 1,088 assets, or 30.4% of assets, have more
 than one image. The mean number of images per asset is 1.55, the median is 1,
@@ -156,9 +210,7 @@ about 5.1% of rows, and number of steps is available for about 1.0% of rows.
 The categorical targets are also imbalanced. Several material fields are
 dominated by timber, and binary structural fields are often dominated by one
 class. Because of this imbalance, model evaluation cannot rely on accuracy
-alone. Weighted-F1 is used as the primary classification metric because it
-balances per-class F1 scores by class support while still penalizing poor
-performance beyond simple majority-class accuracy.
+alone; the primary evaluation metric is discussed in the Methods section.
 
 ![Class distributions for categorical attributes](report_images/categorical_distributions.png){#fig-categorical-distributions width=90%}
 
