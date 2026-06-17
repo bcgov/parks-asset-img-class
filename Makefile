@@ -78,7 +78,11 @@ help:
 
 all: final-dinov3
 
-final-dinov3: test data-check pii model-data-check baseline features-dinov3-master train-dinov3 compare-dinov3 figures export-bcparks 
+# Partner deliverable: prediction + confidence CSVs only
+final-dinov3: test data-check pii model-data-check features-dinov3-master export-bcparks
+
+# Analysis/evaluation (run manually when regenerating report numbers/figures)
+evaluate: baseline train-dinov3 compare-dinov3 figures
 
 final-with-vlm: final-dinov3 vlm-predict
 
@@ -195,7 +199,6 @@ train-siglip:
 	  --seed $(SEED) \
 	  --classifier $(CLASSIFIER) \
 	  --data-version $(DATA_VERSION) \
-	  --include-decking \
 	  --no-mlflow
 
 train-openclip:
