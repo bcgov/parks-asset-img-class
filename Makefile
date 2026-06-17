@@ -17,7 +17,8 @@ FINAL_DIR ?= results/final
 DINO_MODEL ?= dinov3_vitb16
 DINO_HUB_MODEL ?= dinov3_vitb16
 DINO_WEIGHTS ?= models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
-DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_images.csv
+GENERATED_DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_images.csv
+DINO_IMAGE_FEATURES ?= $(GENERATED_DINO_IMAGE_FEATURES)
 DINO_MASTER_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_assets.csv
 DINO_RUN_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
 PII_SCREEN_CSV ?= results/predictions/pii_screen.csv
@@ -55,7 +56,7 @@ NEW_IMAGE_LIMIT_ARG = $(if $(NEW_IMAGE_LIMIT),--limit-assets $(NEW_IMAGE_LIMIT),
 DEMO_ASSET_LIMIT ?= 5
 
 .PHONY: help all final-dinov3 smoke env-check data-check model-data-check test \
-	pii pii-screen pii-blur pii-upload-set baseline \
+	pii pii-ready pii-screen pii-blur pii-upload-set baseline \
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
@@ -66,8 +67,10 @@ help:
 	@echo "  make smoke                 Fast local validation: env/data checks + tests + baseline"
 	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV"
 	@echo "  make all                   Full final pipeline target alias"
+	@echo "    DINO variables: DINO_WEIGHTS, DINO_IMAGE_FEATURES, DINO_MASTER_FEATURES"
 	@echo "  make model-data-check      Check cleaned image inputs"
 	@echo "  make pii                   Screen, blur, and assemble cleaned image set"
+	@echo "  make pii-ready             Check that the cleaned image set already exists"
 	@echo "  make baseline              Run grouped baseline strategies"
 	@echo "  make features-dinov3-master Build asset features from DINOv3 image features"
 	@echo "  make train-dinov3          Run grouped CV for DINOv3 final classifier"
@@ -90,7 +93,7 @@ help:
 all: final-dinov3
 
 # Partner deliverable: prediction + confidence CSVs only
-final-dinov3: test data-check pii model-data-check features-dinov3-master export-bcparks
+final-dinov3: test data-check pii-ready model-data-check features-dinov3-master export-bcparks
 
 # Analysis/evaluation (run manually when regenerating report numbers/figures)
 evaluate: baseline train-dinov3 compare-dinov3 figures
@@ -156,6 +159,9 @@ $(PII_UPLOAD_MARKER): scripts/build_upload_set.py $(PII_SCREEN_CSV) $(PII_BLUR_L
 
 pii-upload-set: $(PII_UPLOAD_MARKER)
 
+pii-ready: model-data-check
+	@test -f $(PII_UPLOAD_MARKER) || (echo "Missing $(PII_UPLOAD_MARKER). Run 'make pii' before final-dinov3."; exit 1)
+
 pii: pii-screen pii-blur pii-upload-set
 
 baseline:
@@ -167,13 +173,13 @@ baseline:
 	  --data-version $(DATA_VERSION) \
 	  --no-mlflow
 
-$(DINO_IMAGE_FEATURES): scripts/extract_dinov3_features.py $(MASTER_DATA)
+$(GENERATED_DINO_IMAGE_FEATURES): scripts/extract_dinov3_features.py $(MASTER_DATA)
 	$(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-dinov3-weights \
 	  --dinov3-weights $(DINO_WEIGHTS)
 	$(PYTHON) scripts/extract_dinov3_features.py \
 	  --input $(MASTER_DATA) \
-	  --output $(DINO_IMAGE_FEATURES) \
+	  --output $(GENERATED_DINO_IMAGE_FEATURES) \
 	  --asset-output $(DINO_MASTER_FEATURES) \
 	  --model $(DINO_HUB_MODEL) \
 	  --weights $(DINO_WEIGHTS) \
@@ -236,7 +242,7 @@ vlm-check:
 	  --vlm-provider $(VLM_PROVIDER) \
 	  --vlm-model $(VLM_MODEL)
 
-vlm-predict: pii vlm-check
+vlm-predict: pii-ready vlm-check
 	$(PYTHON) scripts/run_vlm_predictor.py \
 	  --input $(VLM_INPUT) \
 	  --output $(VLM_OUTPUT) \
