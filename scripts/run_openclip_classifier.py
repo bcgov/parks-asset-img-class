@@ -47,6 +47,19 @@ PARAM_COLUMNS = [
     "classifier",
 ]
 
+OPENCLIP_RESULTS_ROOT = Path("results/openclip_results")
+CLASSIFIER_OUTPUT_DIRS = {
+    "logistic_regression": "openclip_logistic_reg",
+    "linear_svm": "openclip_linear_svm",
+    "random_forest": "openclip_random_forest",
+    "hist_gradient_boosting": "openclip_gradient_boost",
+}
+
+def default_output_dir(classifier: str) -> Path:
+    return OPENCLIP_RESULTS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
+
+def default_prediction_dir(classifier: str) -> Path:
+    return default_output_dir(classifier) / "predictions"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -55,12 +68,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--labels", type=Path, required=True, help="Task train CSV.")
     parser.add_argument("--features", type=Path, required=True, help="Asset-level OpenCLIP feature CSV.")
     parser.add_argument("--target", required=True, help="Target column, e.g. attr_decking_material.")
-    parser.add_argument("--output-dir", type=Path, default=Path("results/openclip_results"))
-    parser.add_argument(
-        "--predictions-dir",
-        type=Path,
-        default=Path("results/openclip_results/predictions"),
-    )
+    parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument("--predictions-dir", type=Path, default=None)
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
@@ -79,6 +88,11 @@ def parse_args() -> argparse.Namespace:
         "--no-mlflow",
         action="store_true",
         help="Skip MLflow/DagsHub logging and only write result CSVs.",
+    )
+    parser.add_argument(
+        "--per-asset-type",
+        action="store_true",
+        help="Train a separate model per asset type (for binned numeric attributes).",
     )
     return parser.parse_args()
 
@@ -170,13 +184,15 @@ def main() -> int:
         classifier=args.classifier,
     )
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    args.predictions_dir.mkdir(parents=True, exist_ok=True)
+    output_dir = args.output_dir or default_output_dir(args.classifier)
+    predictions_dir = args.predictions_dir or default_prediction_dir(args.classifier)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    predictions_dir.mkdir(parents=True, exist_ok=True)
 
     suffix = "" if args.classifier == "logistic_regression" else f"_{args.classifier}"
-    summary_path = args.output_dir / f"openclip_{args.target}{suffix}_classification_results.csv"
-    folds_path = args.output_dir / f"openclip_{args.target}{suffix}_classification_cv_folds.csv"
-    predictions_path = args.predictions_dir / f"openclip_{args.target}{suffix}_classification_predictions.csv"
+    summary_path = output_dir / f"openclip_{args.target}{suffix}_classification_results.csv"
+    folds_path = output_dir / f"openclip_{args.target}{suffix}_classification_cv_folds.csv"
+    predictions_path = predictions_dir / f"openclip_{args.target}{suffix}_classification_predictions.csv"
 
     summary.to_csv(summary_path, index=False)
     folds.to_csv(folds_path, index=False)
@@ -200,6 +216,7 @@ def main() -> int:
             random_state=args.seed,
             data_version=args.data_version,
             experiment_name=args.experiment_name,
+            per_asset_type=args.per_asset_type,
         )
         print("Logged OpenCLIP classifier results to MLflow/DagsHub")
     return 0

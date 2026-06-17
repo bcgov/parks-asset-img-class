@@ -112,6 +112,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip MLflow/DagsHub logging and only write result CSVs.",
     )
+    parser.add_argument(
+        "--per-asset-type",
+        action="store_true",
+        help="Train a separate model per asset type (for binned numeric attributes).",
+    )
     return parser.parse_args()
 
 
@@ -247,6 +252,7 @@ def main() -> int:
             random_state=args.seed,
             data_version=args.data_version,
             experiment_name=args.experiment_name,
+            per_asset_type=args.per_asset_type,
         )
         print("Logged SigLIP classifier results to MLflow/DagsHub")
     return 0
