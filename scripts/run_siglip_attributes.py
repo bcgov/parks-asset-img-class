@@ -33,7 +33,7 @@ from scripts.run_siglip_classifier import default_output_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.siglip_features import DEFAULT_IMAGE_ROOT, DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
-#PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
+DECKING_TARGET = "attr_decking_material"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -119,17 +119,17 @@ def parse_args() -> argparse.Namespace:
 def selected_targets(args: argparse.Namespace) -> list[str]:
     if args.targets is not None:
         return args.targets
-    #if args.include_decking:
-        #return ALL_TARGETS_IN_BASELINE_ORDER
-    return DEFAULT_TARGETS
+    if args.include_decking:
+        return DEFAULT_TARGETS
+    return [target for target in DEFAULT_TARGETS if target != DECKING_TARGET]
 
 
 def target_set_slug(args: argparse.Namespace, targets: list[str]) -> str:
     """Return a stable filename slug for the requested target set."""
     if args.targets is not None:
         return "_".join(targets)
-    #if args.include_decking:
-        #return "all_attributes"
+    if args.include_decking:
+        return "all_attributes"
     return "remaining_attributes"
 
 
