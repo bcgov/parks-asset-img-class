@@ -2,7 +2,6 @@
 
 PYTHON ?= conda run -n bcparks_capstone python
 PYTEST ?= conda run -n bcparks_capstone pytest
-QUARTO ?= quarto
 
 SEED ?= 42
 FOLDS ?= 5
@@ -52,13 +51,12 @@ CITYWIDE_LIMIT_ARG = $(if $(CITYWIDE_LIMIT),--limit $(CITYWIDE_LIMIT),)
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
-	compare-dinov3 compare-siglip compare figures export-bcparks \
-	report report-html report-pdf
+	compare-dinov3 compare-siglip compare figures export-bcparks 
 
 help:
 	@echo "Final pipeline targets:"
 	@echo "  make smoke                 Fast local validation: env/data checks + tests + baseline"
-	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV + report"
+	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV"
 	@echo "  make all                   Full final pipeline target alias"
 	@echo "  make model-data-check      Check cleaned images and DINOv3 feature file"
 	@echo "  make pii                   Screen, blur, and assemble cleaned image set"
@@ -77,11 +75,10 @@ help:
 	@echo "    CityWide variables: CITYWIDE_PROFILE, CITYWIDE_LIMIT, CITYWIDE_WORKERS, CITYWIDE_OUTPUT_DIR"
 	@echo "    CityWide credentials: CITYWIDE_API_KEY, CITYWIDE_DB, CITYWIDE_USER"
 	@echo "  make export-bcparks        Write partner-facing prediction CSVs"
-	@echo "  make report                Render Quarto HTML/PDF report"
 
 all: final-dinov3
 
-final-dinov3: test data-check pii model-data-check baseline features-dinov3-master train-dinov3 compare-dinov3 figures export-bcparks report
+final-dinov3: test data-check pii model-data-check baseline features-dinov3-master train-dinov3 compare-dinov3 figures export-bcparks 
 
 final-with-vlm: final-dinov3 vlm-predict
 
@@ -262,12 +259,3 @@ export-bcparks:
 	  --seed $(SEED) \
 	  --output-long $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv \
 	  --output-wide $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
-
-report:
-	$(QUARTO) render reports/Image_analysis_of_park_infrastructure_report.qmd
-
-report-html:
-	$(QUARTO) render reports/Image_analysis_of_park_infrastructure_report.qmd --to html
-
-report-pdf:
-	$(QUARTO) render reports/Image_analysis_of_park_infrastructure_report.qmd --to pdf

@@ -17,8 +17,7 @@ from src.vlm.config import detect_provider, missing_credentials_for_provider  # 
 REQUIRED_PATHS = [
     Path("environment.yml"),
     Path("data/processed/master_dataset.csv"),
-    Path("data/processed/train"),
-    Path("reports/Image_analysis_of_park_infrastructure_report.qmd"),
+    Path("data/processed/train")
 ]
 
 CITYWIDE_CREDENTIALS = [
