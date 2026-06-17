@@ -148,8 +148,9 @@ about 5.1% of rows, and number of steps is available for about 1.0% of rows.
 The categorical targets are also imbalanced. Several material fields are
 dominated by timber, and binary structural fields are often dominated by one
 class. Because of this imbalance, model evaluation cannot rely on accuracy
-alone. Macro-F1 is used for classification results so that rare classes still
-affect the score.
+alone. Weighted-F1 is used as the primary classification metric because it
+balances per-class F1 scores by class support while still penalizing poor
+performance beyond simple majority-class accuracy.
 
 ![Class distributions for categorical attributes](report_images/categorical_distributions.png){#fig-categorical-distributions width=90%}
 
