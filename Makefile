@@ -15,7 +15,7 @@ IMAGE_ROOT ?= data/processed/images_clean
 FEATURE_DIR ?= data/features
 FINAL_DIR ?= results/final
 
-DINO_MODEL ?= facebook_dinov3_vitl16_pretrain_lvd1689m
+DINO_MODEL ?= dinov3_vitb16
 DINO_HUB_MODEL ?= dinov3_vitb16
 DINO_WEIGHTS ?= models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL).parquet
