@@ -24,15 +24,16 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.run_dinov3_remaining_attributes import (  # noqa: E402
-    ALL_TARGETS_IN_BASELINE_ORDER,
+from scripts.run_dinov3_remaining_attributes import (
     DEFAULT_TARGETS,
+    PER_ASSET_TYPE_TARGETS,
     target_train_path,
 )
 from scripts.run_siglip_classifier import default_output_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.siglip_features import DEFAULT_IMAGE_ROOT, DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
+#PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -260,6 +261,8 @@ def main() -> int:
             classifier_command.extend(["--experiment-name", args.experiment_name])
         if args.no_mlflow:
             classifier_command.append("--no-mlflow")
+        if target in PER_ASSET_TYPE_TARGETS:
+            classifier_command.append("--per-asset-type")
         run_command(classifier_command)
 
     print("\nFinished SigLIP runs for requested attributes.")
