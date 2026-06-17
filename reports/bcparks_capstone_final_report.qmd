@@ -199,7 +199,34 @@ model can provide them.
 
 ## Approaches considered
 
+To address BCPark's main objective, automating attribute labelling and filing in missing attribute labels where possible, we started with a simple no-training-required approach, using zero-shot vision language models. This was motivated by our limited labelled data, especially across complex attributes like length, width, fall height and number of steps, which are difficult to extract from images without a scale or size reference to work with. After assessing this method, we also wanted to see whether visual fine grain details that distinguish material types, could be better captured by pre-trained embedding models, prompting us to explore pretrained embedding models, often trained on billions of images, in combination with a simple classifier to label our attributes. We anticipated that because embedding models use vector embeddings that can capture similarity from images, that these could potentially outperform the VLM's reasoning when it came to structurally distinct material types, but would likely not differ in the performance on the numerical, measuremeant based attributes. 
+
+To ensure we had a comparable benchmark, we implemeneted a majority class 'dummy' baseline classifier, that always predicted the majority category for each attribute, to reflect the nature of the class imbalance in some of our data, a uniform random guessing classifier, that predicted a label at random (from all possible labels) and a non-uniform (stratified) random guesser, where the predicted label also reflected the distribution of classes in the data. 
+
 ## VLM Approach
+
+[diagram of VLM workflow: asset image --> vlm model --> csv output with confidence score, include prompt engineering methods + different vlm model comparisons]
+
+- Justification: zero-shot, no training, good for our very limited labelled data (especially for measurement based numeric attributes, refer back to data completeness plot in EDA)
+- Approaches requring training from scratch wouldn't have been feasible given the limitations/constraints of our dataset. Also, a lot of our ground truth labels are not accurate. 
+- Strengths: zero-shot, non-technical, easy to configure prompt, high usability and flexibility, prompt template can be adapted/expanded to other asset types if BCParks chooses to do so. 
+- Limitations: Costly if free-tier API does not meet image processing demands, they would have to purchase more API tokens, privacy concerns with using open source VLM (addressed via YOLO blurring), vlm can also be downloaded locally but this requires high computational resources which BCParks may not have, difficult to validate (especially for things like length, width) when we have limited ground truth labels, especially for rare classes (material attributes)
+- Engineering/preprocessing logic: prompt approaches - multi-attribute prompt did not significantly differ from attribute specific prompt on weighted f1 score , it is also less costly (i.e. one asset gets called once for all of its attributes). 
+- Evaluation metrics & logic: weighted f1 chosen to take account the frequency of each class in the attributes (so that the data balance is also reflected and accounted for in the way we validate the pipeline). This is opposed to over-rewarding performance on rare or common classes alone.
+
+[Display example results from stairs, trail bridge and boardwalk < 1.2m plots (could aggregate attributes that overlap across assets and generate new plot aggregate plot)] 
+
+**Note: above plot might be better in the results section
+
+- Stakeholders: BCParks asset management team, who use these labels to decide when and whether or not to dispatch field engineers for periodic inspections and repairs.
+- Ethical considerations: there is a risk of missing high-risk assets if model is not accurate, which highlights the importance of having confidence scores and flagging things for manual review (especially for high priority attributes like legnth and fall height)
+- Improvements that may work better & reasons they were not implemented: Few-shot learning with VLM (using example labelled images as 'training data', useful for identifying the more uncommon classes)
+
+[diagram of classification report with rare class example e.g. aluminium sill on material attribute with example image. Example 2: box step stairs where VLM performed poorly]. 
+
+- Due to time constraints for the capstone project, we werent able to implement them
+- Similarly, incorporating labelled data from other open source databases to expand our training/validation sets for 'training/model tuning' purposes.
+
 
 ## Embedding-based classification
 
