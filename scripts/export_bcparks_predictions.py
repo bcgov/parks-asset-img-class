@@ -38,6 +38,8 @@ DEFAULT_METADATA_COLUMNS = [
     "description",
 ]
 
+PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -136,7 +138,10 @@ def build_asset_metadata(master: pd.DataFrame) -> pd.DataFrame:
 
 def _labelled_assets(labels: pd.DataFrame, target: str) -> tuple[pd.DataFrame, str]:
     target_column = infer_target_column(labels, target)
-    labelled = labels[["asset_id", target_column]].dropna(subset=[target_column])
+    keep = ["asset_id", target_column]
+    if "profile_name" in labels.columns:
+        keep.append("profile_name")
+    labelled = labels[keep].dropna(subset=[target_column])
     labelled = labelled.drop_duplicates(["asset_id", target_column])
     labelled = labelled.drop_duplicates("asset_id").reset_index(drop=True)
     return labelled, target_column
@@ -167,6 +172,25 @@ def _predict_confidence(model: object, X: pd.DataFrame) -> list[object]:
     probabilities = model.predict_proba(X)
     return probabilities.max(axis=1).tolist()
 
+def _fit_and_predict(
+    train: pd.DataFrame,
+    assets: pd.DataFrame,
+    features: list[str],
+    target_column: str,
+    *,
+    classifier: str,
+    random_state: int,
+) -> tuple[list, list]:
+    """Fit a model on `train` and predict `assets`. Returns
+    (predictions, confidence_scores) aligned to assets' rows, or ([], []) if
+    `train` has fewer than two classes."""
+    if train[target_column].nunique(dropna=True) < 2:
+        return [], []
+    model = make_classifier(classifier=classifier, random_state=random_state)
+    model.fit(train[features], train[target_column])
+    predictions = model.predict(assets[features]).tolist()
+    confidence_scores = _predict_confidence(model, assets[features])
+    return predictions, confidence_scores
 
 def predict_target(
     *,
@@ -199,12 +223,10 @@ def predict_target(
         on="asset_id",
         how="inner",
     )
+    
     if train[target_column].nunique(dropna=True) < 2:
         print(f"Skipping {target}: fewer than two classes after feature join.")
         return pd.DataFrame()
-
-    model = make_classifier(classifier=classifier, random_state=random_state)
-    model.fit(train[features], train[target_column])
 
     assets = asset_metadata.merge(
         asset_features[["asset_id", *features]],
@@ -220,9 +242,42 @@ def predict_target(
         print(f"Skipping {target}: no applicable assets with features.")
         return pd.DataFrame()
 
-    X = assets[features]
-    predictions = model.predict(X)
-    confidence_scores = _predict_confidence(model, X)
+    assets = assets.reset_index(drop=True)
+
+    if (
+        target in PER_ASSET_TYPE_TARGETS
+        and "profile_name" in assets.columns
+        and "profile_name" in train.columns
+    ):
+        # Train one model per asset type so each asset is labelled in its own
+        # bin scheme. Assets whose type has too little training data are left
+        # unpredicted (NA) and surface as confidence_level "unavailable".
+        predictions: list = [pd.NA] * len(assets)
+        confidence_scores: list = [pd.NA] * len(assets)
+        for atype in sorted(train["profile_name"].dropna().unique()):
+            train_subset = train[train["profile_name"] == atype]
+            mask = assets["profile_name"].astype(str) == str(atype)
+            if not mask.any():
+                continue
+            preds, confs = _fit_and_predict(
+                train_subset, assets[mask], features, target_column,
+                classifier=classifier, random_state=random_state,
+            )
+            if not preds:
+                print(
+                    f"  [skip] {target} / '{atype}': fewer than two classes; "
+                    f"{int(mask.sum())} asset(s) left unpredicted."
+                )
+                continue
+            for pos, pred, conf in zip(assets.index[mask], preds, confs):
+                predictions[pos] = pred
+                confidence_scores[pos] = conf
+    else:
+        # Pooled: categorical attributes and steps_bin (single asset type).
+        predictions, confidence_scores = _fit_and_predict(
+            train, assets, features, target_column,
+            classifier=classifier, random_state=random_state,
+        )
 
     rows = assets[
         [column for column in DEFAULT_METADATA_COLUMNS if column in assets.columns]

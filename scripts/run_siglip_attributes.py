@@ -119,8 +119,8 @@ def parse_args() -> argparse.Namespace:
 def selected_targets(args: argparse.Namespace) -> list[str]:
     if args.targets is not None:
         return args.targets
-    if args.include_decking:
-        return ALL_TARGETS_IN_BASELINE_ORDER
+    #if args.include_decking:
+        #return ALL_TARGETS_IN_BASELINE_ORDER
     return DEFAULT_TARGETS
 
 
@@ -128,8 +128,8 @@ def target_set_slug(args: argparse.Namespace, targets: list[str]) -> str:
     """Return a stable filename slug for the requested target set."""
     if args.targets is not None:
         return "_".join(targets)
-    if args.include_decking:
-        return "all_attributes"
+    #if args.include_decking:
+        #return "all_attributes"
     return "remaining_attributes"
 
 
