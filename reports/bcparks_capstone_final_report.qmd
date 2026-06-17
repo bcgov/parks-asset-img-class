@@ -110,6 +110,98 @@ format:
 
 ## Embedding-based classification
 
+The second modelling path treated each image as input to a pre-trained vision
+encoder and used the resulting embedding as a fixed feature representation. The
+motivation was practical: our labelled dataset is useful, but not large enough
+to train a high-capacity image model from scratch. Instead, we used foundation
+models that had already learned general visual representations from large-scale
+pretraining, froze their weights, and trained lightweight classifiers on top of
+their embeddings. This gave us a supervised image-based approach while keeping
+the number of trainable parameters small and the experiments reproducible.
+
+The embedding pipeline was the same for each vision backbone. First, images were
+loaded from the cleaned local image directory and passed through a frozen image
+encoder. Each photo was converted into a dense numeric vector. Because many BC
+Parks assets have multiple photos, we then averaged the image-level vectors for
+the same `asset_id` to create one asset-level embedding. This asset-level table
+was joined to the attribute-specific training labels, and one classifier was
+trained per target attribute. This design avoided duplicating labels across
+multiple photos while still allowing all available visual evidence for an asset
+to contribute to the final representation.
+
+We evaluated three embedding families:
+
+- **DINOv3**: a self-supervised vision transformer trained to produce general
+  visual features without relying on image-text labels [@simeoni2025dinov3].
+  We used DINOv3 as the main representation learner because self-supervised
+  visual features are often strong for object shape, structure, texture, and
+  material cues, all of which are central to infrastructure attributes.
+- **SigLIP**: a vision-language model trained with a sigmoid image-text
+  pretraining loss [@zhai2023sigmoid]. We used only the vision encoder, not the
+  text encoder. The reason for including SigLIP was that language-aligned
+  pretraining can sometimes encode higher-level semantic scene information that
+  is useful for attributes such as structure position or decking material.
+- **OpenCLIP / CLIP-style embeddings**: a contrastive image-text baseline based
+  on the CLIP family of models [@radford2021clip]. This provided an additional
+  comparison point for language-aligned embeddings.
+
+For the classifier layer, we tested logistic regression, linear support vector
+machines, random forests, and histogram-based gradient boosting using
+scikit-learn [@pedregosa2011scikit]. Logistic regression was especially
+important because a strong linear classifier indicates that the embedding space
+already separates the attribute classes reasonably well. We also tested a tuned
+logistic-regression variant by searching over regularization strength and class
+weighting inside the training folds. In practice, the tuned variant did not
+consistently improve over the simpler default logistic-regression setup, so the
+untuned logistic model remained the main embedding classifier.
+
+All embedding classifiers were evaluated with grouped cross-validation by
+`asset_id`. This was a key design choice. If photos from the same asset appeared
+in both training and validation folds, the model could appear to generalize while
+actually recognizing near-duplicate visual evidence from the same physical
+asset. Grouping by asset ensured that every validation prediction was made for
+an asset that was not present in that fold's training set. Where possible, we
+used stratified grouped folds to preserve class proportions; otherwise, we used
+grouped folds without stratification when rare classes made stratification
+infeasible. For binned physical attributes whose labels can mean different
+things across asset types, the implementation also supports fitting separate
+models by asset type and pooling the out-of-fold predictions for summary
+metrics.
+
+We reported accuracy, weighted F1, and macro F1. Macro F1 was the most important
+metric for model comparison because many of the labels are strongly imbalanced.
+For example, a majority-class model can obtain high accuracy on attributes where
+most assets share the same material, but it does not necessarily identify rare
+classes. Macro F1 gives each class equal weight and therefore better reflects
+whether the model learned beyond the dominant label.
+
+The overall pattern from the embedding experiments was that frozen embeddings
+substantially outperformed the majority-class baseline, and the best performing
+configuration was generally **DINOv3 embeddings with logistic regression**.
+SigLIP was competitive and was strongest for a small number of more
+context-dependent attributes, while tree-based classifiers often achieved high
+accuracy but lower macro F1, indicating weaker performance on minority classes.
+The average cross-validation scores from the main embedding runs are summarized
+below.
+
+| Model configuration | Attributes evaluated | Mean accuracy | Mean weighted F1 | Mean macro F1 |
+|---|---:|---:|---:|---:|
+| DINOv3 + logistic regression | 12 | 0.749 | 0.749 | 0.479 |
+| SigLIP + logistic regression | 12 | 0.741 | 0.742 | 0.462 |
+| OpenCLIP + logistic regression | 12 | 0.728 | 0.727 | 0.443 |
+| Baseline majority class | 12 | 0.655 | 0.540 | 0.201 |
+
+: Average grouped cross-validation performance for the main embedding-based classifiers.
+
+These results suggest that the strongest image-only signal came from DINOv3's
+self-supervised visual representation. At the same time, the attribute-level
+results showed that no single embedding family was uniformly best. SigLIP
+performed particularly well for `attr_structure_position` and
+`attr_decking_material`, suggesting that language-aligned embeddings may capture
+some contextual cues that complement DINOv3. For the final modelling discussion,
+we therefore treat DINOv3 + logistic regression as the primary embedding-based
+classifier and SigLIP/OpenCLIP as useful comparative baselines.
+
 # Data product and results
 
 ## The Data Product
