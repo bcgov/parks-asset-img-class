@@ -118,25 +118,26 @@ format:
 
 # Conclusions and recommendations
 
-BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, and for which many have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. The original problem was therefore whether these missing attributes could be predicted directly from existing asset photographs, reducing the manual effort required to keep records complete and current and shiftng to a more automated attribute-labelling-pipeline, helping allocate manual resources elsewhere.
+BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, and for which many have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. The original problem was therefore whether these missing attributes could be predicted directly from existing asset photographs, reducing the manual effort required to keep records complete and shiftng to a more automated attribute-labelling-pipeline, so that manual resources can be allocated elsewhere.
 
-Our product addresses this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, and the more confident predictions to be automated. 
+Our product addresses this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, whilst the more confident predictions rely on automated labelling.
 
 The extent to which the product meets BC Parks' needs varies by attribute:
 - Categorical attributes that are visually distinctive such as [decking material, structure material, and the presence of railings], both VLM and Embedding models (DINOv3) provide labels that are dependable enough to reduce manual labelling meaningfully. 
 - Measurement-based attributes such as length, width, fall height and number of steps are considerably harder, because estimating a physical dimension or bin from a photograph without a scale reference is inherently difficult, and because each asset type defines these bins differently. 
-- Here the model will help but more manual review will be required, rather than fully relying on automated labelling from our pipeline. This signals to BCParks that our model's performance is not as trustworthy for these attributes (refer to weighted f1 scores showing lower f1 for numeric attributes compared to categorical/material attributes). 
-- DINOv3 performs consistently well across all attributes (with exception of length & number of steps). We recommend using it as the default model
+  - Here the model will help but more manual review will be required, rather than fully relying on automated labelling from our pipeline. This signals to BCParks that our model's performance is not as trustworthy for these attributes (refer to weighted f1 scores showing lower f1 for numeric attributes compared to categorical/material attributes). 
+- DINOv3 (embedding-based model) performs consistently well across all attributes (with exception of length & number of steps). We recommend using it as the default model. 
 - For length and number of steps, a combined sub-pipeline (where length is predicted and verified by both models) is recommended for optimal labelling accuracy.***subject to change 
+- The VLM and it's corresponding prompt templates will be provided and BCParks can choose whether or not they wish to include it or substitute it for DINOv3 for a set chosen attributes, given the result comparison provided (refer to bar plot comparing VLM vs DINOv3).
 
-Gaps:
-- less trustworthy performance on uncommon and ambigious attribute classes 
-- predicting measurement based attributes reliably 
+Gap that persist:
+- Less trustworthy performance on rare and ambigious attribute classes (data quality issue that our pipeline cannot fix)
+- Predicting measurement based attributes reliably 
 
 Key lesson learned:
 - Difficulty of an attribute depends less on the choice of model than on whether the attribute is visually determinable at all
-- visually distinctive attributes were learned well by multiple approaches whereas measurement attributes weren't.
-- shifted our framework from "which model is best" toward "which attributes can be automated reliably, and which "need a human in the loop."
+  - Visually distinctive attributes were learned well by multiple approaches whereas measurement attributes weren't.
+  - From this, we shifted our framework from "which model is best" toward "which attributes can be automated reliably, and which "need a human in the loop."
 
 Future work:
 - Fine tuning/ few shot learning with VLM and embedding models 
