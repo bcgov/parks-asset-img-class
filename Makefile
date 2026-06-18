@@ -60,7 +60,8 @@ DEMO_ASSET_LIMIT ?= 5
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
-	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo-new-images
+	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo-new-images \
+	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean
 
 help:
 	@echo "Final pipeline targets:"
@@ -89,32 +90,57 @@ help:
 	@echo "    CityWide variables: CITYWIDE_PROFILE, CITYWIDE_LIMIT, CITYWIDE_WORKERS, CITYWIDE_OUTPUT_DIR"
 	@echo "    CityWide credentials: CITYWIDE_API_KEY, CITYWIDE_DB, CITYWIDE_USER"
 	@echo "  make export-bcparks        Write partner-facing prediction CSVs"
+	@echo "  make clean-final           Remove generated partner-facing final CSVs"
+	@echo "  make clean-dinov3          Remove generated DINOv3 feature CSVs for current DINO_MODEL"
+	@echo "  make clean-pipeline        Remove generated final CSVs + current DINOv3 feature CSVs"
+	@echo "  make clean                 Alias for clean-pipeline"
 
-all: final-dinov3
+all: all-start final-dinov3
+
+all-start:
+	@printf "\n==> make all: running the final DINOv3 partner-deliverable pipeline\n"
 
 # Partner deliverable: prediction + confidence CSVs only
-final-dinov3: test data-check pii-ready model-data-check features-dinov3-master export-bcparks
+final-dinov3: final-dinov3-start test data-check pii-ready model-data-check features-dinov3-master export-bcparks
+	@printf "\n==> final-dinov3 complete: prediction CSVs are in $(FINAL_DIR)\n"
+
+final-dinov3-start:
+	@printf "\n==> final-dinov3: tests -> data checks -> PII-ready check -> DINOv3 features -> BC Parks CSV export\n"
+	@printf "    DINO_MODEL=$(DINO_MODEL)\n"
+	@printf "    DINO_WEIGHTS=$(DINO_WEIGHTS)\n"
+	@printf "    DINO_IMAGE_FEATURES=$(DINO_IMAGE_FEATURES)\n"
+	@printf "    DINO_MASTER_FEATURES=$(DINO_MASTER_FEATURES)\n"
 
 # Analysis/evaluation (run manually when regenerating report numbers/figures)
-evaluate: baseline train-dinov3 compare-dinov3 figures
+evaluate: evaluate-start baseline train-dinov3 compare-dinov3 figures
+
+evaluate-start:
+	@printf "\n==> evaluate: baseline -> DINOv3 CV training -> baseline comparison -> figures\n"
 
 final-with-vlm: final-dinov3 vlm-predict
 
-smoke: env-check data-check test baseline
+smoke: smoke-start env-check data-check test baseline
+
+smoke-start:
+	@printf "\n==> smoke: environment imports -> data checks -> tests -> baseline\n"
 
 env-check:
+	@printf "\n==> env-check: importing core Python packages\n"
 	$(PYTHON) -c "import pandas, sklearn, torch, PIL; print('Environment imports OK')"
 
 citywide-check:
+	@printf "\n==> citywide-check: checking CityWide credentials\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py --require-citywide-credentials
 
 download-citywide-probe: citywide-check
+	@printf "\n==> download-citywide-probe: probing CityWide API without downloading images\n"
 	$(PYTHON) scripts/download_citywide_images.py \
 	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
 	  --max-calls-per-hour $(CITYWIDE_MAX_CALLS_PER_HOUR) \
 	  --probe
 
 download-citywide-metadata: citywide-check
+	@printf "\n==> download-citywide-metadata: downloading CityWide metadata only\n"
 	$(PYTHON) scripts/download_citywide_images.py \
 	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
 	  --workers $(CITYWIDE_WORKERS) \
@@ -123,6 +149,7 @@ download-citywide-metadata: citywide-check
 	  $(CITYWIDE_PROFILE_ARG)
 
 download-citywide-images: citywide-check
+	@printf "\n==> download-citywide-images: downloading CityWide metadata and images\n"
 	$(PYTHON) scripts/download_citywide_images.py \
 	  --output-dir $(CITYWIDE_OUTPUT_DIR) \
 	  --workers $(CITYWIDE_WORKERS) \
@@ -134,37 +161,45 @@ download-citywide-sample: CITYWIDE_LIMIT = 50
 download-citywide-sample: download-citywide-images
 
 data-check:
+	@printf "\n==> data-check: checking required project data inputs\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py
 
 model-data-check:
+	@printf "\n==> model-data-check: checking cleaned image directory\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-images
 
 test:
+	@printf "\n==> test: running unit tests\n"
 	$(PYTEST) -q tests
 
 $(PII_SCREEN_CSV): scripts/screen_images_for_pii.py
+	@printf "\n==> pii-screen: scanning raw images for PII and writing $(PII_SCREEN_CSV)\n"
 	$(PYTHON) scripts/screen_images_for_pii.py
 
 pii-screen: $(PII_SCREEN_CSV)
 
 $(PII_BLUR_LOG): scripts/blur_flagged_images.py $(PII_SCREEN_CSV)
+	@printf "\n==> pii-blur: blurring flagged images and writing $(PII_BLUR_LOG)\n"
 	$(PYTHON) scripts/blur_flagged_images.py
 
 pii-blur: $(PII_BLUR_LOG)
 
 $(PII_UPLOAD_MARKER): scripts/build_upload_set.py $(PII_SCREEN_CSV) $(PII_BLUR_LOG)
+	@printf "\n==> pii-upload-set: assembling cleaned image set under $(IMAGE_ROOT)\n"
 	$(PYTHON) scripts/build_upload_set.py
 	touch $(PII_UPLOAD_MARKER)
 
 pii-upload-set: $(PII_UPLOAD_MARKER)
 
 pii-ready: model-data-check
+	@printf "\n==> pii-ready: checking cleaned image-set marker $(PII_UPLOAD_MARKER)\n"
 	@test -f $(PII_UPLOAD_MARKER) || (echo "Missing $(PII_UPLOAD_MARKER). Run 'make pii' before final-dinov3."; exit 1)
 
 pii: pii-screen pii-blur pii-upload-set
 
 baseline:
+	@printf "\n==> baseline: running grouped majority-class baselines\n"
 	$(PYTHON) scripts/run_baseline.py \
 	  --train-dir $(TRAIN_DIR) \
 	  --output-dir results/baseline_results \
@@ -174,6 +209,8 @@ baseline:
 	  --no-mlflow
 
 $(GENERATED_DINO_IMAGE_FEATURES): scripts/extract_dinov3_features.py $(MASTER_DATA)
+	@printf "\n==> features-dinov3-extract: extracting image embeddings to $(GENERATED_DINO_IMAGE_FEATURES)\n"
+	@printf "    This is the slow DINOv3 step when features are not already present.\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-dinov3-weights \
 	  --dinov3-weights $(DINO_WEIGHTS)
@@ -186,19 +223,26 @@ $(GENERATED_DINO_IMAGE_FEATURES): scripts/extract_dinov3_features.py $(MASTER_DA
 	  --image-root $(IMAGE_ROOT)
 
 $(DINO_MASTER_FEATURES): scripts/build_asset_features_from_image_features.py $(MASTER_DATA) $(DINO_IMAGE_FEATURES)
+	@printf "\n==> features-dinov3-master: aggregating image embeddings to asset embeddings\n"
+	@printf "    Input:  $(DINO_IMAGE_FEATURES)\n"
+	@printf "    Output: $(DINO_MASTER_FEATURES)\n"
 	$(PYTHON) scripts/build_asset_features_from_image_features.py \
 	  --master $(MASTER_DATA) \
 	  --image-features $(DINO_IMAGE_FEATURES) \
 	  --asset-output $(DINO_MASTER_FEATURES)
 
 $(DINO_RUN_FEATURES): $(DINO_MASTER_FEATURES)
+	@printf "\n==> features-dinov3-master: copying asset features for all-attribute runs\n"
 	cp $(DINO_MASTER_FEATURES) $(DINO_RUN_FEATURES)
 
 features-dinov3-master: $(DINO_MASTER_FEATURES) $(DINO_RUN_FEATURES)
+	@printf "\n==> features-dinov3-master complete\n"
 
 features-dinov3-extract-master: $(DINO_IMAGE_FEATURES) $(DINO_MASTER_FEATURES)
+	@printf "\n==> features-dinov3-extract-master complete\n"
 
 train-dinov3:
+	@printf "\n==> train-dinov3: running grouped CV classifiers on DINOv3 embeddings\n"
 	$(PYTHON) scripts/run_dinov3_remaining_attributes.py \
 	  --train-dir $(TRAIN_DIR) \
 	  --feature-dir $(FEATURE_DIR) \
@@ -212,6 +256,7 @@ train-dinov3:
 	  --no-mlflow
 
 train-siglip:
+	@printf "\n==> train-siglip: running grouped CV classifiers on SigLIP embeddings\n"
 	$(PYTHON) scripts/run_siglip_attributes.py \
 	  --train-dir $(TRAIN_DIR) \
 	  --feature-dir $(FEATURE_DIR) \
@@ -223,6 +268,7 @@ train-siglip:
 	  --no-mlflow
 
 train-openclip:
+	@printf "\n==> train-openclip: running grouped CV classifiers on OpenCLIP embeddings\n"
 	$(PYTHON) scripts/run_openclip_attributes.py \
 	  --train-dir $(TRAIN_DIR) \
 	  --feature-dir $(FEATURE_DIR) \
@@ -236,6 +282,7 @@ train-openclip:
 models: train-dinov3 train-siglip train-openclip
 
 vlm-check:
+	@printf "\n==> vlm-check: checking VLM credentials for $(VLM_PROVIDER)/$(VLM_MODEL)\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-images \
 	  --require-vlm-credentials \
@@ -243,6 +290,7 @@ vlm-check:
 	  --vlm-model $(VLM_MODEL)
 
 vlm-predict: pii-ready vlm-check
+	@printf "\n==> vlm-predict: running optional cloud VLM predictions\n"
 	$(PYTHON) scripts/run_vlm_predictor.py \
 	  --input $(VLM_INPUT) \
 	  --output $(VLM_OUTPUT) \
@@ -260,19 +308,25 @@ vlm-smoke: VLM_LIMIT = 5
 vlm-smoke: vlm-predict
 
 compare-dinov3:
+	@printf "\n==> compare-dinov3: comparing DINOv3 results to baseline\n"
 	$(PYTHON) scripts/compare_dinov3_to_baseline.py \
 	  --classifier $(CLASSIFIER)
 
 compare-siglip:
+	@printf "\n==> compare-siglip: comparing SigLIP results to baseline\n"
 	$(PYTHON) scripts/compare_siglip_to_baseline.py \
 	  --classifier $(CLASSIFIER)
 
 compare: compare-dinov3 compare-siglip
 
 figures:
+	@printf "\n==> figures: creating model-comparison figures\n"
 	$(PYTHON) scripts/create_model_comparison_figures.py
 
 export-bcparks:
+	@printf "\n==> export-bcparks: training final classifiers and exporting partner CSVs\n"
+	@printf "    Long CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv\n"
+	@printf "    Wide CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv\n"
 	$(PYTHON) scripts/export_bcparks_predictions.py \
 	  --master $(MASTER_DATA) \
 	  --features $(DINO_MASTER_FEATURES) \
@@ -285,6 +339,7 @@ export-bcparks:
 	  --output-wide $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
 
 predict-new-images: data-check model-data-check features-dinov3-master
+	@printf "\n==> predict-new-images: predicting attributes for $(NEW_IMAGE_FOLDER)\n"
 	$(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-dinov3-weights \
 	  --dinov3-weights $(DINO_WEIGHTS) \
@@ -307,3 +362,27 @@ demo-new-images: NEW_IMAGE_LIMIT = $(DEMO_ASSET_LIMIT)
 demo-new-images: NEW_IMAGE_OUTPUT = $(FINAL_DIR)/demo_new_image_predictions_long.csv
 demo-new-images: NEW_IMAGE_OUTPUT_WIDE = $(FINAL_DIR)/demo_new_image_predictions_wide.csv
 demo-new-images: predict-new-images
+
+clean-final:
+	@printf "\n==> clean-final: removing generated final prediction CSVs from $(FINAL_DIR)\n"
+	rm -f $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv
+	rm -f $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
+	rm -f $(FINAL_DIR)/new_image_predictions_long.csv
+	rm -f $(FINAL_DIR)/new_image_predictions_wide.csv
+	rm -f $(FINAL_DIR)/demo_new_image_predictions_long.csv
+	rm -f $(FINAL_DIR)/demo_new_image_predictions_wide.csv
+
+clean-dinov3:
+	@printf "\n==> clean-dinov3: removing generated DINOv3 feature CSVs for $(DINO_MODEL)\n"
+	rm -f $(GENERATED_DINO_IMAGE_FEATURES)
+	rm -f $(DINO_MASTER_FEATURES)
+	rm -f $(DINO_RUN_FEATURES)
+	rm -f $(FEATURE_DIR)/$(DINO_MODEL)_master_images_skipped.csv
+	rm -f $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_images.csv
+	rm -f $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
+	rm -f $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_union_input.csv
+
+clean-pipeline: clean-final clean-dinov3
+	@printf "\n==> clean-pipeline complete. Model weights, raw data, train data, and cleaned images were preserved.\n"
+
+clean: clean-pipeline
