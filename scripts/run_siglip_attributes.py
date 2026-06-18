@@ -5,10 +5,10 @@ depend on the target label, this script extracts one shared feature table from
 the union of the requested train CSVs, then reuses it for each classifier.
 
 Usage:
-    python scripts/run_siglip_attributes.py --include-decking
+    python scripts/run_siglip_attributes.py
 
 To only write local CSVs and skip DagsHub/MLflow:
-    python scripts/run_siglip_attributes.py --include-decking --no-mlflow
+    python scripts/run_siglip_attributes.py --no-mlflow
 """
 
 from __future__ import annotations
@@ -32,8 +32,6 @@ from scripts.run_dinov3_remaining_attributes import (
 from scripts.run_siglip_classifier import default_output_dir  # noqa: E402
 from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.siglip_features import DEFAULT_IMAGE_ROOT, DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
-
-DECKING_TARGET = "attr_decking_material"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -81,12 +79,12 @@ def parse_args() -> argparse.Namespace:
         "--targets",
         nargs="+",
         default=None,
-        help="Optional explicit target list. Defaults to the remaining 11 attributes.",
+        help="Optional explicit target list. Defaults to all 12 attributes.",
     )
     parser.add_argument(
         "--include-decking",
         action="store_true",
-        help="Run all 12 baseline targets, including attr_decking_material.",
+        help=argparse.SUPPRESS,
     )
     parser.add_argument(
         "--force-extract",
@@ -119,18 +117,14 @@ def parse_args() -> argparse.Namespace:
 def selected_targets(args: argparse.Namespace) -> list[str]:
     if args.targets is not None:
         return args.targets
-    if args.include_decking:
-        return DEFAULT_TARGETS
-    return [target for target in DEFAULT_TARGETS if target != DECKING_TARGET]
+    return DEFAULT_TARGETS
 
 
 def target_set_slug(args: argparse.Namespace, targets: list[str]) -> str:
     """Return a stable filename slug for the requested target set."""
     if args.targets is not None:
         return "_".join(targets)
-    if args.include_decking:
-        return "all_attributes"
-    return "remaining_attributes"
+    return "all_attributes"
 
 
 def _target_column(frame: pd.DataFrame, target: str) -> str:
