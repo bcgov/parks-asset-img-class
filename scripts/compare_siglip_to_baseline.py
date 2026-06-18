@@ -84,7 +84,10 @@ def default_baseline_path() -> Path:
 def default_result_glob(classifier: str) -> str:
     """Return the standard SigLIP result glob for a classifier."""
     suffix = "" if classifier == "logistic_regression" else f"_{classifier}"
-    return str(default_output_dir(classifier) / f"siglip_*{suffix}_classification_results.csv")
+    return (
+        default_output_dir(classifier)
+        / f"siglip_*{suffix}_classification_results.csv"
+    ).as_posix()
 
 
 def default_comparison_output(classifier: str) -> Path:

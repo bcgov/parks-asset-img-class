@@ -1,13 +1,13 @@
 """Minimal MLflow smoke test (issue #10).
 
 Fits a sklearn dummy classifier and a dummy regressor on tiny synthetic
-data, logs both runs to ``./mlruns``, and prints the run ids so you can
+data, logs both runs to ``./mlflow.db``, and prints the run ids so you can
 confirm they landed.
 
 Usage::
 
     python scripts/mlflow_smoke_test.py
-    mlflow ui --backend-store-uri file:./mlruns
+    mlflow ui --backend-store-uri sqlite:///mlflow.db
 """
 
 from __future__ import annotations
@@ -78,7 +78,7 @@ def main() -> int:
         print(f"regression run id: {run_reg.info.run_id}")
 
     print("\nView the runs locally with:")
-    print("    mlflow ui --backend-store-uri file:./mlruns")
+    print("    mlflow ui --backend-store-uri sqlite:///mlflow.db")
     
     return 0
 

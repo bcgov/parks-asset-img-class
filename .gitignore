@@ -52,7 +52,8 @@ data/processed/images_clean/
 # Auto-downloaded YOLO weights (ultralytics caches them in repo root by default)
 yolov8*.pt
 
-# MLflow file-based tracking store + artifacts
+# MLflow local tracking store + artifacts
+mlflow.db
 mlruns/
 mlartifacts/
 
