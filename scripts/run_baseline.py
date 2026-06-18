@@ -22,10 +22,6 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.baseline import DEFAULT_TRAIN_DIR, cross_validate_train_folder  # noqa: E402
 
-import dagshub
-dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
-
-
 METRIC_COLUMNS = [
     "train_majority_share_mean",
     "train_majority_share_std",

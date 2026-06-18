@@ -1,0 +1,13 @@
+Attribute,Want AI to Determine,Boardwalk < 1.2m High,Boardwalk > 1.2m High,Stairs,Trail Bridge,Viewing Platform
+attr_abutment_material,yes,,,,X,
+attr_bridge_type,yes,,,,X,
+attr_decking_material,yes,X,X,,X,X
+fall_height_bin,yes,X,X,X,X,X
+attr_has_edge_guard,yes,X,X,,,X
+attr_has_pedestrian_railing,yes,X,X,X,X,X
+length_bin,yes,X,X,,X,X
+attr_material_frame_tank_body,yes,,,X,,
+steps_bin,yes,,,X,,
+attr_structure_material,yes,X,X,,X,X
+attr_structure_position,yes,,,X,,X
+width_bin,yes,X,X,,X,X

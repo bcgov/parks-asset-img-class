@@ -29,7 +29,7 @@ def test_cross_validate_siglip_classifier_handles_one_class_sample() -> None:
         }
     )
 
-    summary, folds = cross_validate_siglip_classifier(
+    summary, folds, predictions = cross_validate_siglip_classifier(
         labels,
         features,
         "attr_decking_material",
@@ -37,3 +37,4 @@ def test_cross_validate_siglip_classifier_handles_one_class_sample() -> None:
 
     assert summary.empty
     assert folds.empty
+    assert predictions.empty

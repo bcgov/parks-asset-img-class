@@ -58,6 +58,8 @@ DEFAULT_TARGETS = [
     "width_bin",
 ]
 
+ALL_TARGETS_IN_BASELINE_ORDER = DEFAULT_TARGETS
+
 # Binned numeric attributes whose bin ranges differ across asset types. These
 # are trained per asset type so the schemes are not mixed into one model. All
 # other attributes are trained as a single pooled model.

@@ -78,9 +78,10 @@ def test_cross_validate_dinov3_classifier_returns_predictions() -> None:
     assert {
         "asset_id",
         "fold",
-        "y_true",
-        "y_pred",
-        "is_correct",
+        "true_label",
+        "predicted_label",
+        "correct",
+        "confidence",
     }.issubset(predictions.columns)
 
 

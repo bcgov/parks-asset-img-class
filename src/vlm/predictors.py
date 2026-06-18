@@ -5,7 +5,9 @@ def predict_asset_attributes(asset_id,
                              df,
                              model_name,
                              prompt,
-                             image_root="data/processed/images_clean"):
+                             image_root="data/processed/images_clean",
+                             provider="auto",
+                             max_tokens=4096):
     """
     Top-level function for use in production.
     Loads images, builds prompt, calls model, returns raw JSON string.
@@ -20,7 +22,13 @@ def predict_asset_attributes(asset_id,
         }
 
     try:
-        result = run_model(model_name, prompt, images)
+        result = run_model(
+            model_name,
+            prompt,
+            images,
+            provider=provider,
+            max_tokens=max_tokens,
+        )
         return {
             "asset_id": asset_id,
             "error": None,
