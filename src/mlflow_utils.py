@@ -8,9 +8,9 @@ tagging* convention.
 
 Default store
 -------------
-A file directory at ``./mlruns`` (gitignored), so no server is required
-and nothing leaves the machine. Override with ``MLFLOW_TRACKING_URI`` if
-you ever need a different backend.
+A local SQLite database at ``./mlflow.db`` (gitignored), so no server is
+required and nothing leaves the machine. Override with ``MLFLOW_TRACKING_URI``
+if you ever need a different backend.
 
 Standard tags every run should carry
 ------------------------------------
@@ -33,7 +33,7 @@ import mlflow
 logger = logging.getLogger(__name__)
 
 DEFAULT_EXPERIMENT_NAME = "parks-asset-img-class"
-DEFAULT_TRACKING_URI = "file:./mlruns"
+DEFAULT_TRACKING_URI = "sqlite:///mlflow.db"
 
 
 def setup_mlflow(

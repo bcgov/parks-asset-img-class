@@ -44,7 +44,8 @@ def test_make_standard_tags_includes_required_keys() -> None:
 
 def test_setup_and_log_round_trip(tmp_path: Path) -> None:
     """Open a run against an isolated tmp store, log a metric, read it back."""
-    setup_mlflow(experiment_name="test-exp", tracking_uri=f"file:{tmp_path / 'mlruns'}")
+    tracking_uri = f"sqlite:///{(tmp_path / 'mlflow.db').as_posix()}"
+    setup_mlflow(experiment_name="test-exp", tracking_uri=tracking_uri)
     with mlflow.start_run(
         run_name="round_trip",
         tags=make_standard_tags(

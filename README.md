@@ -154,8 +154,8 @@ quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to pdf
 ## Experiment tracking with MLflow
 
 All model runs are tracked with [MLflow](https://mlflow.org/). The
-default tracking store is a local file directory at `./mlruns` (gitignored),
-so no server is required and nothing leaves the machine.
+default tracking store is a local SQLite database at `./mlflow.db`
+(gitignored), so no server is required and nothing leaves the machine.
 
 End-to-end smoke test (synthetic data only, no SharePoint download needed):
 
@@ -165,12 +165,12 @@ python scripts/mlflow_smoke_test.py
 
 This fits a `MajorityClassPredictor` on a synthetic 3-class target and a
 `MedianRegressor` on a synthetic numeric target, and writes both runs
-to `./mlruns` under the experiment **`parks-asset-img-class`**.
+to `./mlflow.db` under the experiment **`parks-asset-img-class`**.
 
 View the runs in your browser:
 
 ```bash
-mlflow ui --backend-store-uri file:./mlruns
+mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
 Programmatic logging:
@@ -182,7 +182,7 @@ from src.mlflow_utils import (
     make_run_name, make_standard_tags,
 )
 
-setup_mlflow()  # uses ./mlruns
+setup_mlflow()  # uses ./mlflow.db
 
 clf = MajorityClassPredictor().fit(X_train, y_train)
 y_pred = clf.predict(X_test)
