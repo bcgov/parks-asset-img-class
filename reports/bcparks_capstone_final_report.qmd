@@ -88,39 +88,38 @@ format:
 
 # Executive summary
 
+[to be completed after running pipeline with test set + obtaining results]
 
 
 # Introduction
 
-BC Parks manages over 100,000 infrastructure records across provincial parks, including assets such as stairs, trail bridges, boardwalks, viewing platforms, campsites, and picnic facilities. Accurate information about these assets is essential for maintenance planning, replacement cost estimation, safety inspections, and long-term asset management. Infrastructure characteristics such as material type, dimensions, and structural features are used to determine maintenance requirements and whether an asset requires inspection by a qualified professional. However, many records in the BC Parks asset inventory contain incomplete attribute information, limiting the ability of staff to confidently use the database for operational planning and decision-making.
+BC Parks manages over 100,000 infrastructure records across provincial parks, including assets such as stairs, trail bridges, boardwalks, viewing platforms, campsites, and picnic facilities [reference/cite official MDS capstone proposal page]. Accurate information about these assets is essential for maintenance planning, replacement cost estimation, safety inspections, and long-term asset management. Infrastructure characteristics such as material type, dimensions, and structural features are used to determine maintenance requirements and whether an asset requires inspection by a qualified professional. However, many records in the BC Parks asset inventory contain incomplete attribute information, limiting the ability of staff to confidently use the database for operational planning and decision-making.
 
 To maintain this inventory, field inspectors collect photos and record asset characteristics during site visits. As a result, BC Parks has accumulated a large repository of infrastructure images, with approximately 50,000 asset records containing one or more photographs. While these images capture valuable visual information about asset characteristics, many records still contain missing attributes due to incomplete field measurements, inconsistent data collection practices, or historical gaps in the inventory. Manually reviewing and labeling tens of thousands of images would require substantial staff time and is not feasible at scale. Consequently, incomplete records persist, limiting its value as a decision-support tool.
 
-Recent advances in computer vision and vision-language models (VLMs) have demonstrated strong capabilities for extracting structured information from images, creating an opportunity to enrich infrastructure records using existing photographic data. In collaboration with BC Parks, the broad objective of applying image analysis to infrastructure photographs was refined into three specific goals: (1) automate the prediction of missing asset attributes from photographs, (2) provide a confidence score for every prediction so that uncertain predictions can be flagged for manual review, and (3) develop a modular workflow that can be extended to additional asset categories in the future, such as picnic tables, campsites, and tent pads. Together, these objectives aim to improve the completeness and reliability of the BC Parks asset inventory while minimizing the need for manual data entry and review.
+Recent advances in computer vision and vision-language models (VLMs) have demonstrated strong capabilities for extracting structured information from images, creating an opportunity to enrich infrastructure records using existing photographic data [in-text citation to be added in later upon further research]. In collaboration with BC Parks, the broad objective of applying image analysis to infrastructure photographs was refined into three specific goals: (1) automate the prediction of missing asset attributes from photographs, (2) provide a confidence score for every prediction so that uncertain predictions can be flagged for manual review, and (3) develop a modular workflow that can be extended to additional asset categories in the future, such as picnic tables, campsites, and tent pads. Together, these objectives aim to improve the completeness and reliability of the BC Parks asset inventory while minimizing the need for manual data entry and review.
 
-The dataset provided for this project contains 5,562 images corresponding to 3,584 unique assets across four infrastructure categories: stairs, trail bridges, boardwalks, and viewing platforms. Exploratory analysis revealed several challenges that influenced both model development and evaluation. Many assets are associated with multiple photos, requiring predictions and performance metrics to be aggregated at the asset level rather than the image level. Image quality and framing vary considerably across the dataset, with some photos capturing the entire structure and others focusing on individual components. In addition, attribute coverage is highly uneven, resulting in highly limited labelled data for some attributes and substantial class imbalance for others. Measurement-related attributes such as length, width, number of steps, and fall height present an additional challenge because they are often difficult to infer from photos alone in the absence of a consistent scale reference.
+The dataset provided for this project contains 5,562 images corresponding to 3,584 unique assets across four infrastructure categories: stairs, trail bridges, boardwalks, and viewing platforms. Exploratory analysis revealed several challenges that influenced both model development and evaluation. Image quality and framing vary considerably across the dataset, with some photos capturing the entire structure and others focusing on individual components. In addition, attribute coverage is highly uneven, resulting in highly limited labelled data for some attributes and substantial class imbalance for others. Measurement-related attributes such as length, width, number of steps, and fall height present an additional challenge because they are often difficult to infer from photos alone in the absence of a consistent scale reference.
 
-To address these challenges, we developed a reproducible machine learning pipeline that outputs structured attribute predictions based on one or more asset photos. The pipeline first applies privacy-preserving image preprocessing, then routes assets to asset category-specific prediction workflows. Individual attributes are predicted using either VLMs or lightweight classifiers trained on image embeddings, depending on the attribute. Predictions are then combined with confidence scores and exported in a structured format that can be integrated into existing asset management processes. Across the evaluated asset categories, the pipeline achieved strong performance on structural attributes such as bridge type, decking material, and pedestrian railing presence, with a mean weighted F1-score of 0.88. Performance was lower for measurement-related attributes such as length, width, number of steps, and fall height, which achieved a mean weighted F1-score of 0.62. These results demonstrate the potential for image-based machine learning to improve the completeness and usability of BC Parks' infrastructure inventory while providing a scalable foundation for future expansion to additional asset types.
+To address these challenges, we developed a reproducible machine learning pipeline that outputs structured attribute predictions based on one or more asset photos. Individual attributes are predicted using either VLMs or lightweight classifiers trained on image embeddings, depending on the attribute. Predictions are then combined with confidence scores and exported in a structured format that can be integrated into existing asset management processes. Across the evaluated asset categories, the pipeline achieved strong performance on structural attributes such as bridge type, decking material, and pedestrian railing presence, with a mean weighted F1-score of 0.88. Performance was lower for measurement-related attributes such as length, width, number of steps, and fall height, which achieved a mean weighted F1-score of 0.62. These results demonstrate the potential for image-based machine learning to improve the completeness and usability of BC Parks' infrastructure inventory while providing a scalable foundation for future expansion to additional asset types.
 
 # Data and exploratory data analysis (EDA)
 
 ## Data sources and collection
 
 BC Parks provided infrastructure asset records and attached image metadata from
-the CityWide asset management system. The export covers the asset families most
-relevant to this project: trail bridges, stairs, boardwalks, and viewing
+the CityWide asset management system. The export covers the asset families explored
+during this project: trail bridges, stairs, boardwalks, and viewing
 platforms. The raw data contains three linked components:
 
-- asset records, including asset identifier and asset category;
-- asset attribute records, including materials, structural features, and
-  measurements recorded by field staff;
-- image attachment records and downloaded image files.
+- Asset records: including asset identifier and asset category
+- Asset attribute records: including materials, structural features, and measurements recorded by field staff
+- Image attachment records and downloaded image files
 
 The working dataset is organized around an image-asset attachment row. Each row
 contains an `asset_id`, image path, CityWide profile, file metadata, and the
 available attribute values for that asset. For modelling, however, the asset is
-the prediction unit: multiple images linked to the same asset are grouped
-together so one asset does not appear in both training and validation folds.
+the prediction unit: multiple images linked to the same asset are grouped together so one asset does not appear in both training and validation folds.
 
 ## Size and characteristics
 
