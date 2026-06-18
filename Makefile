@@ -60,7 +60,7 @@ DEMO_ASSET_LIMIT ?= 5
 	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
-	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo-new-images \
+	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo demo-new-images \
 	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean
 
 help:
@@ -76,6 +76,7 @@ help:
 	@echo "  make features-dinov3-master Build asset features from DINOv3 image features"
 	@echo "  make train-dinov3          Run grouped CV for DINOv3 final classifier"
 	@echo "  make predict-new-images    Predict attributes for a folder of new images"
+	@echo "  make demo                  Alias for demo-new-images with DEMO_ASSET_LIMIT=10"
 	@echo "  make demo-new-images       Small new-image prediction run from cleaned training images"
 	@echo "    New image variables: NEW_IMAGE_FOLDER, NEW_IMAGE_ASSET_TYPE, NEW_IMAGE_LIMIT, NEW_IMAGE_OUTPUT"
 	@echo "  make vlm-predict           Optional cloud VLM predictions; requires provider credentials"
@@ -362,6 +363,9 @@ demo-new-images: NEW_IMAGE_LIMIT = $(DEMO_ASSET_LIMIT)
 demo-new-images: NEW_IMAGE_OUTPUT = $(FINAL_DIR)/demo_new_image_predictions_long.csv
 demo-new-images: NEW_IMAGE_OUTPUT_WIDE = $(FINAL_DIR)/demo_new_image_predictions_wide.csv
 demo-new-images: predict-new-images
+
+demo: DEMO_ASSET_LIMIT = 10
+demo: demo-new-images
 
 clean-final:
 	@printf "\n==> clean-final: removing generated final prediction CSVs from $(FINAL_DIR)\n"
