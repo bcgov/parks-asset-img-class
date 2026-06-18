@@ -26,6 +26,7 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 ├── scripts/                  # pipeline entry points used by the Makefile
 ├── src/                      # reusable package code
 ├── tests/
+├── models/                   # where to store DINOv3 downloaded model
 └── reports/
     ├── Image_analysis_of_park_infrastructure_report.qmd
     ├── figures/
