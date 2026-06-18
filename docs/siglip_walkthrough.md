@@ -109,7 +109,7 @@ results/siglip_results/siglip_logistic_reg/siglip_attr_decking_material_classifi
 Run all 12 attributes in baseline order:
 
 ```bash
-python scripts/run_siglip_attributes.py --include-decking --force-extract
+python scripts/run_siglip_attributes.py --force-extract
 ```
 
 This creates one shared SigLIP feature table from the union of all selected
@@ -126,21 +126,21 @@ data/features/google_siglip2_base_patch16_224_all_attributes_assets.csv
 To skip DagsHub/MLflow logging:
 
 ```bash
-python scripts/run_siglip_attributes.py --include-decking --no-mlflow
+python scripts/run_siglip_attributes.py --no-mlflow
 ```
 
 To force feature extraction again:
 
 ```bash
-python scripts/run_siglip_attributes.py --include-decking --force-extract
+python scripts/run_siglip_attributes.py --force-extract
 ```
 
 To run a different classifier:
 
 ```bash
-python scripts/run_siglip_attributes.py --include-decking --classifier linear_svm
-python scripts/run_siglip_attributes.py --include-decking --classifier random_forest
-python scripts/run_siglip_attributes.py --include-decking --classifier hist_gradient_boosting
+python scripts/run_siglip_attributes.py --classifier linear_svm
+python scripts/run_siglip_attributes.py --classifier random_forest
+python scripts/run_siglip_attributes.py --classifier hist_gradient_boosting
 ```
 
 Classifier results are automatically written to the matching project folder:
