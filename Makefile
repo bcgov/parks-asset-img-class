@@ -69,7 +69,7 @@ help:
 	@echo "Final pipeline targets:"
 	@echo "  make smoke                 Fast local validation: env/data checks + tests + baseline"
 	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV"
-	@echo "  make all                   Full final pipeline target alias"
+	@echo "  make all                   Full final pipeline target alias; run 'make pii' once first"
 	@echo "    DINO variables: DINO_WEIGHTS, DINO_IMAGE_FEATURES, DINO_MASTER_FEATURES"
 	@echo "    Attribute map: ATTRIBUTE_APPLICABILITY"
 	@echo "  make model-data-check      Check cleaned image inputs"

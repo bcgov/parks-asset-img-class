@@ -11,10 +11,14 @@ Run these commands from the repository root.
 ```bash
 conda activate bcparks_capstone
 make help
+make pii
 make all
 ```
 
 `make all` is the main final pipeline command. It is currently an alias for the final DINOv3 partner-deliverable pipeline.
+Run `make pii` once before `make all` on a fresh checkout. It screens the
+images, creates the cleaned image set, and writes the completion marker that
+`make all` checks before model inference.
 
 The final outputs are written to:
 
