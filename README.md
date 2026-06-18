@@ -51,6 +51,9 @@ From the repository root, list available targets:
 make help
 ```
 
+For a business-friendly walkthrough of the final pipeline, see
+[`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
+
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
