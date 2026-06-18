@@ -34,17 +34,42 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 
 ## Setup
 
-Create and activate the Conda environment:
+**1. Create and activate the Conda environment**
 
 ```bash
 conda env create -f environment.yml
 conda activate bcparks_capstone
 ```
+**2. Set up the VLM API keys**
 
-Copy `.env.example` to `.env` and fill only the credentials needed for the targets you plan to run. The `.env` file is gitignored.
+Create an `.env` file in the project root with the required API keys for the models you want to use.
+
+```bash
+# Google AI Studio
+GEMINI_API_KEY="your-key-here"
+
+# GitHub Models (OpenAI, Llama, Phi)
+GITHUB_TOKEN="your-token-here"
+```
+
+An example of how to set up API keys in an `.env` file is provided in `.env.example`.
 
 - For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 - For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
+
+**3. Set up the DINOv3 model**
+
+This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
+
+The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
+
+Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model. \
+
+Once downloaded, copy it to the following directory in the repository root:
+
+```text
+models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+```
 
 ## Makefile pipeline
 
