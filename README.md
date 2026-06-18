@@ -57,8 +57,13 @@ For a business-friendly walkthrough of the final pipeline, see
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
+make pii
 make final-dinov3
 ```
+
+Run `make pii` once before the final pipeline on a fresh checkout. It creates
+the cleaned image set and the completion marker required by `make final-dinov3`
+and `make all`.
 
 Run a faster local validation pass:
 
