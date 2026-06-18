@@ -18,7 +18,7 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 │   ├── processed/
 │   │   ├── master_dataset.csv
 │   │   └── train/
-│   └── raw/                  # ignored; optional CityWide download output
+│   └── raw/                  # optional CityWide download output
 ├── docs/
 │   ├── dinov3_walkthrough.md
 │   ├── siglip_walkthrough.md
@@ -51,7 +51,7 @@ From the repository root, list available targets:
 make help
 ```
 
-For a business-friendly walkthrough of the final pipeline, see
+For a full walkthrough of the final pipeline, see
 [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
 
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
@@ -127,6 +127,59 @@ make download-citywide-images CITYWIDE_PROFILE="337 356" CITYWIDE_LIMIT=100
 
 The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `images_manifest.csv`, and downloaded images under `data/raw/citywide/`.
 
+## To use Vision Language Models (VLMs)
+
+This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
+VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
+
+Supported provider families include:
+
+- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
+- **OpenAI** through `OPENAI_API_KEY`
+- **xAI Grok** through `XAI_API_KEY`
+- **Anthropic Claude** through `ANTHROPIC_API_KEY`
+- **GitHub Models** through `GITHUB_TOKEN`
+
+### Quick Start
+
+1. Set up API keys in `.env` file:
+
+```bash
+GEMINI_API_KEY="your-key-here"
+GITHUB_TOKEN="your-token-here"
+```
+
+2. Run a Makefile smoke prediction:
+
+```bash
+make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+```
+
+Or run batch predictions directly:
+
+```bash
+python scripts/run_vlm_predictor.py \
+  --input data/processed/train/train_only_stairs.csv \
+  --output results/vlm_stairs_gemini.csv \
+  --provider gemini \
+  --model gemini-3-flash-preview \
+  --prompt stairs_v1
+```
+
+3. Evaluate predictions against ground truth:
+
+```bash
+python scripts/evaluate_predictions.py \
+  --predictions results/vlm_stairs_gemini.csv \
+  --ground_truth_dir data/processed/train \
+  --attributes attr_number_of_steps \
+  --model gemini-3-flash-preview
+```
+
+For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md).
+
+## Render the report
+
 The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
 
 ```bash
@@ -139,9 +192,7 @@ PDF rendering also requires a LaTeX installation. If PDF rendering fails because
 quarto install tinytex
 ```
 
-## Render the report
-
-From the repository root, run:
+To render the report, from the repository root, run:
 
 ```bash
 quarto render reports/Image_analysis_of_park_infrastructure_report.qmd
@@ -217,57 +268,6 @@ Run the unit tests:
 ```bash
 pytest -q tests/test_mlflow_utils.py
 ```
-
-## Vision Language Models (VLMs)
-
-This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
-VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
-
-Supported provider families include:
-
-- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
-- **OpenAI** through `OPENAI_API_KEY`
-- **xAI Grok** through `XAI_API_KEY`
-- **Anthropic Claude** through `ANTHROPIC_API_KEY`
-- **GitHub Models** through `GITHUB_TOKEN`
-
-### Quick Start
-
-1. Set up API keys in `.env` file:
-
-```bash
-GEMINI_API_KEY="your-key-here"
-GITHUB_TOKEN="your-token-here"
-```
-
-2. Run a Makefile smoke prediction:
-
-```bash
-make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
-```
-
-Or run batch predictions directly:
-
-```bash
-python scripts/run_vlm_predictor.py \
-  --input data/processed/train/train_only_stairs.csv \
-  --output results/vlm_stairs_gemini.csv \
-  --provider gemini \
-  --model gemini-3-flash-preview \
-  --prompt stairs_v1
-```
-
-3. Evaluate predictions against ground truth:
-
-```bash
-python scripts/evaluate_predictions.py \
-  --predictions results/vlm_stairs_gemini.csv \
-  --ground_truth_dir data/processed/train \
-  --attributes attr_number_of_steps \
-  --model gemini-3-flash-preview
-```
-
-For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see `docs/vlm_walkthrough.md`.
 
 ## Current status
 
