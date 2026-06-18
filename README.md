@@ -43,6 +43,9 @@ conda activate bcparks_capstone
 
 Copy `.env.example` to `.env` and fill only the credentials needed for the targets you plan to run. The `.env` file is gitignored.
 
+- For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
+
 ## Makefile pipeline
 
 From the repository root, list available targets:
