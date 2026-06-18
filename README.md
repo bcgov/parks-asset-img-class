@@ -156,6 +156,9 @@ make download-citywide-images CITYWIDE_PROFILE="337 356" CITYWIDE_LIMIT=100
 
 The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `images_manifest.csv`, and downloaded images under `data/raw/citywide/`.
 
+For the full CityWide API flow, including how linked attributes are downloaded,
+see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
+
 ## To use Vision Language Models (VLMs)
 
 This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
