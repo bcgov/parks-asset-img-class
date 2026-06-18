@@ -318,8 +318,12 @@ def _run_cv_on_subset(
         valid_asset_ids = joined.iloc[valid_idx][group_column].tolist()
 
         if classifier == "logistic_regression_tuned":
+            tuned_c = tuned_params.get("C")
+            tuned_class_weight = tuned_params.get("class_weight")
             inner_macro_f1_mean = tuned_params.get("inner_macro_f1_mean")
         else:
+            tuned_c = pd.NA
+            tuned_class_weight = pd.NA
             inner_macro_f1_mean = pd.NA
 
         # ONE clean row per asset (no duplicate long-format row).
@@ -339,6 +343,9 @@ def _run_cv_on_subset(
                     "target_column": target_column,
                     "classifier": classifier,
                     "strategy": f"dinov3_frozen_embeddings_{classifier}",
+                    "tuned_C": tuned_c,
+                    "tuned_class_weight": _format_class_weight(tuned_class_weight),
+                    "inner_macro_f1_mean": inner_macro_f1_mean,
                 }
             )
 
@@ -363,6 +370,8 @@ def _run_cv_on_subset(
                 "accuracy": accuracy_score(y_valid, predictions),
                 "weighted_f1": f1_score(y_valid, predictions, average="weighted", zero_division=0),
                 "macro_f1": f1_score(y_valid, predictions, average="macro", zero_division=0),
+                "tuned_C": tuned_c,
+                "tuned_class_weight": _format_class_weight(tuned_class_weight),
                 "inner_macro_f1_mean": inner_macro_f1_mean,
             }
         )

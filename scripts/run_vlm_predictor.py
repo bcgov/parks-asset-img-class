@@ -5,6 +5,7 @@ Usage:
     python scripts/run_vlm_predictor.py \
         --input data/processed/train/attr_number_of_steps_train.csv \
         --output results/vlm_stairs_gemini-3-flash.csv \
+        --provider gemini \
         --model gemini-3-flash-preview \
         --prompt stairs_v1
 """
@@ -65,12 +66,12 @@ def get_output_columns(parsed_attrs: list[str]) -> list[str]:
         for suffix in ("value", "confidence")
     ]
     return (
-        ["asset_id", "timestamp", "model", "response", "latency_s"]
+        ["asset_id", "timestamp", "provider", "model", "response", "latency_s"]
         + parsed_cols
         + ["parse_error", "raw_response", "error", "traceback"]
     )
 
-FALLBACK_COLUMNS = ["asset_id", "timestamp", "model", "error", "traceback"]
+FALLBACK_COLUMNS = ["asset_id", "timestamp", "provider", "model", "error", "traceback"]
 
 
 # Retry wrapper for API robustness
@@ -98,11 +99,13 @@ def run_batch(
     output_path,
     model_name,
     prompt_or_fn,
+    provider="auto",
     image_root=DEFAULT_IMAGE_ROOT,
     limit=None,
     offset=0,
     delay=0,
-    buffer_size=20): # batch writes to results CSV instead of row-by-row
+    buffer_size=20,
+    max_tokens=4096): # batch writes to results CSV instead of row-by-row
 
     print(f"Loading input from: {input_path}")
     df = pd.read_csv(input_path)
@@ -131,7 +134,7 @@ def run_batch(
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    print(f"Running model: {model_name}")
+    print(f"Running provider/model: {provider} / {model_name}")
     print(f"Total assets to process: {len(unique_asset_ids)}")
     print(f"Offset: {offset}")
     print(f"Writing results to: {output_path}")
@@ -139,6 +142,7 @@ def run_batch(
     write_header = not os.path.exists(output_path)
 
     output_columns = None  # unknown until first successful parse
+    last_parsed_attrs = None
     buffer = []
 
     def process_asset(asset_id):
@@ -161,13 +165,16 @@ def run_batch(
                     df=asset_df,
                     model_name=model_name,
                     prompt=prompt,
-                    image_root=image_root
+                    image_root=image_root,
+                    provider=provider,
+                    max_tokens=max_tokens
                 )
             )
 
             out = {
                 "asset_id": int(asset_id),
                 "timestamp": datetime.now().isoformat(),
+                "provider": provider,
                 "model": model_name,
                 "response": result.get("response"),
                 "latency_s": round(time.time() - start_time, 3)
@@ -177,6 +184,7 @@ def run_batch(
             out = {
                 "asset_id": int(asset_id),
                 "timestamp": datetime.now().isoformat(),
+                "provider": provider,
                 "model": model_name,
                 "error": str(e)
             }
@@ -208,6 +216,8 @@ def run_batch(
     for asset_id in tqdm(unique_asset_ids):
 
         out, parsed_attrs = process_asset(asset_id)
+        if parsed_attrs is not None:
+            last_parsed_attrs = parsed_attrs
 
         # infer schema and write header from first successful parse
         if output_columns is None and parsed_attrs is not None:
@@ -227,8 +237,8 @@ def run_batch(
 
     # if we never got a successful parse, fall back to minimal schema
     # infer schema and write header from first successful parse
-    if output_columns is None and parsed_attrs is not None:
-        output_columns = get_output_columns(parsed_attrs)
+    if output_columns is None and last_parsed_attrs is not None:
+        output_columns = get_output_columns(last_parsed_attrs)
         # only write header if file doesn't exist OR is empty
         if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
             pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
@@ -238,6 +248,11 @@ def run_batch(
             if list(existing.columns) != output_columns:
                 # schema mismatch - overwrite with new header
                 pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
+
+    if output_columns is None:
+        output_columns = FALLBACK_COLUMNS
+        if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
+            pd.DataFrame(columns=output_columns).to_csv(output_path, index=False)
 
     # flush remaining buffer
     if buffer:
@@ -255,6 +270,11 @@ if __name__ == "__main__":
 
     parser.add_argument("--input", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--provider",
+        default="auto",
+        help="VLM provider: auto, gemini, openai, grok, claude, or github.",
+    )
     parser.add_argument("--model", required=True)
     parser.add_argument(
         "--prompt",
@@ -266,6 +286,7 @@ if __name__ == "__main__":
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--delay", type=float, default=0)
     parser.add_argument("--buffer_size", type=int, default=20)
+    parser.add_argument("--max_tokens", type=int, default=4096)
 
     args = parser.parse_args()
 
@@ -281,9 +302,11 @@ if __name__ == "__main__":
         output_path=args.output,
         model_name=args.model,
         prompt_or_fn=prompt_or_fn,
+        provider=args.provider,
         image_root=args.image_root,
         limit=args.limit,
         offset=args.offset,
         delay=args.delay,
-        buffer_size=args.buffer_size
+        buffer_size=args.buffer_size,
+        max_tokens=args.max_tokens
     )

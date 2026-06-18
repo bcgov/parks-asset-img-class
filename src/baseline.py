@@ -40,6 +40,11 @@ DEFAULT_CLASSIFICATION_TARGETS = [
 ]
 
 DEFAULT_TRAIN_DIR = Path("data/processed/train")
+STRATEGIES = (
+    "majority_class_group_cv",
+    "uniform_random_group_cv",
+    "stratified_random_group_cv",
+)
 
 
 @dataclass(frozen=True)
