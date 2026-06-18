@@ -122,6 +122,9 @@ make download-citywide-images CITYWIDE_PROFILE="337 356" CITYWIDE_LIMIT=100
 
 The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `images_manifest.csv`, and downloaded images under `data/raw/citywide/`.
 
+For the full CityWide API flow, including how linked attributes are downloaded,
+see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
+
 The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
 
 ```bash
