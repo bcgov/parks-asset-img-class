@@ -2,7 +2,7 @@
 
 PYTHON ?= conda run -n bcparks_capstone python
 PYTEST ?= conda run -n bcparks_capstone pytest
-TIME ?= /usr/bin/time -p
+TIME ?= @sh scripts/run_with_timer.sh
 
 SEED ?= 42
 FOLDS ?= 5
@@ -98,7 +98,7 @@ help:
 	@echo "  make clean-dinov3          Remove generated DINOv3 feature CSVs for current DINO_MODEL"
 	@echo "  make clean-pipeline        Remove generated final CSVs + current DINOv3 feature CSVs"
 	@echo "  make clean                 Alias for clean-pipeline"
-	@echo "    Timing: command steps use '$(TIME)' and report real/user/sys seconds"
+	@echo "    Timing: command steps print plain-language durations, for example 'Finished in: 4 sec'"
 
 all: all-start final-dinov3
 
