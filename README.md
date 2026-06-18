@@ -63,7 +63,7 @@ This project uses the `dinov3_vitb16` model. To download the model locally, acce
 
 The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
 
-Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model. \
+Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
 
 Once downloaded, copy it to the following directory in the repository root:
 
