@@ -14,6 +14,7 @@ MASTER_DATA ?= data/processed/master_dataset.csv
 IMAGE_ROOT ?= data/processed/images_clean
 FEATURE_DIR ?= data/features
 FINAL_DIR ?= results/final
+ATTRIBUTE_APPLICABILITY ?= data/processed/attribute_applicability.csv
 
 DINO_MODEL ?= dinov3_vitb16
 DINO_HUB_MODEL ?= dinov3_vitb16
@@ -70,6 +71,7 @@ help:
 	@echo "  make final-dinov3          Reproducible final DINOv3 pipeline + BC Parks CSV"
 	@echo "  make all                   Full final pipeline target alias"
 	@echo "    DINO variables: DINO_WEIGHTS, DINO_IMAGE_FEATURES, DINO_MASTER_FEATURES"
+	@echo "    Attribute map: ATTRIBUTE_APPLICABILITY"
 	@echo "  make model-data-check      Check cleaned image inputs"
 	@echo "  make pii                   Screen, blur, and assemble cleaned image set"
 	@echo "  make pii-ready             Check that the cleaned image set already exists"
@@ -330,10 +332,12 @@ export-bcparks:
 	@printf "\n==> export-bcparks: training final classifiers and exporting partner CSVs\n"
 	@printf "    Long CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv\n"
 	@printf "    Wide CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv\n"
+	@printf "    Attribute map: $(ATTRIBUTE_APPLICABILITY)\n"
 	$(TIME) $(PYTHON) scripts/export_bcparks_predictions.py \
 	  --master $(MASTER_DATA) \
 	  --features $(DINO_MASTER_FEATURES) \
 	  --train-dir $(TRAIN_DIR) \
+	  --applicability $(ATTRIBUTE_APPLICABILITY) \
 	  --classifier $(CLASSIFIER) \
 	  --model-family dinov3 \
 	  --model-name $(DINO_MODEL) \

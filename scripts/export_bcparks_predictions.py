@@ -38,6 +38,7 @@ DEFAULT_METADATA_COLUMNS = [
     "description",
 ]
 
+DEFAULT_APPLICABILITY_PATH = Path("data/processed/attribute_applicability.csv")
 PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
 
 
@@ -81,7 +82,17 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help=(
             "Predict every asset for every target. By default, each target is "
-            "limited to profile_name values observed in that target's train CSV."
+            "limited to applicable profile_name values from the applicability "
+            "matrix."
+        ),
+    )
+    parser.add_argument(
+        "--applicability",
+        type=Path,
+        default=DEFAULT_APPLICABILITY_PATH,
+        help=(
+            "CSV matrix mapping attributes to asset types. Used to avoid "
+            "predicting attributes for asset types where they do not apply."
         ),
     )
     parser.add_argument("--high-threshold", type=float, default=0.80)
@@ -153,13 +164,54 @@ def _applicable_profiles(labels: pd.DataFrame) -> list[str]:
     return sorted(labels["profile_name"].dropna().astype(str).unique().tolist())
 
 
+def load_applicability(path: Path) -> dict[str, set[str]]:
+    """Return {asset_type: set(applicable target names)} from the matrix CSV."""
+    matrix = pd.read_csv(path)
+    if "Attribute" not in matrix.columns:
+        raise ValueError(
+            f"Applicability CSV must contain an 'Attribute' column. "
+            f"Got {matrix.columns.tolist()}."
+        )
+
+    asset_type_columns = [
+        column
+        for column in matrix.columns
+        if column not in {"Attribute", "Want AI to Determine"}
+    ]
+    if not asset_type_columns:
+        raise ValueError(
+            "Applicability CSV must contain one or more asset-type columns."
+        )
+
+    applicable: dict[str, set[str]] = {asset_type: set() for asset_type in asset_type_columns}
+    for _, row in matrix.iterrows():
+        target = str(row["Attribute"]).strip()
+        for asset_type in asset_type_columns:
+            cell = row[asset_type]
+            if pd.notna(cell) and str(cell).strip():
+                applicable[asset_type].add(target)
+    return applicable
+
+
+def _applicable_profiles_for_target(
+    applicability: dict[str, set[str]],
+    target: str,
+) -> list[str]:
+    return sorted(
+        asset_type
+        for asset_type, targets in applicability.items()
+        if target in targets
+    )
+
+
 def _filter_applicable_assets(
     assets: pd.DataFrame,
     labels: pd.DataFrame,
     *,
     predict_all_assets: bool,
+    explicit_profiles: list[str] | None,
 ) -> tuple[pd.DataFrame, str]:
-    profiles = _applicable_profiles(labels)
+    profiles = explicit_profiles if explicit_profiles is not None else _applicable_profiles(labels)
     if predict_all_assets or "profile_name" not in assets.columns or not profiles:
         return assets, "all_profiles"
     filtered = assets[assets["profile_name"].astype(str).isin(profiles)].copy()
@@ -206,6 +258,7 @@ def predict_target(
     predict_all_assets: bool,
     high_threshold: float,
     medium_threshold: float,
+    applicability: dict[str, set[str]],
 ) -> pd.DataFrame:
     """Train a final classifier for one target and return prediction rows."""
     train_path = train_dir / f"{target}_train.csv"
@@ -233,10 +286,12 @@ def predict_target(
         on="asset_id",
         how="inner",
     )
+    explicit_profiles = _applicable_profiles_for_target(applicability, target)
     assets, applicable_profiles = _filter_applicable_assets(
         assets,
         labels,
         predict_all_assets=predict_all_assets,
+        explicit_profiles=explicit_profiles,
     )
     if assets.empty:
         print(f"Skipping {target}: no applicable assets with features.")
@@ -336,11 +391,13 @@ def export_predictions(
     predict_all_assets: bool,
     high_threshold: float,
     medium_threshold: float,
+    applicability_path: Path,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     master = pd.read_csv(master_path)
     asset_metadata = build_asset_metadata(master)
     asset_features = pd.read_csv(features_path)
     asset_features.attrs["source_path"] = str(features_path)
+    applicability = load_applicability(applicability_path)
 
     generated_at = datetime.now(UTC).isoformat()
     frames = []
@@ -358,6 +415,7 @@ def export_predictions(
             predict_all_assets=predict_all_assets,
             high_threshold=high_threshold,
             medium_threshold=medium_threshold,
+            applicability=applicability,
         )
         if not frame.empty:
             frames.append(frame)
@@ -381,6 +439,7 @@ def main() -> int:
         predict_all_assets=args.predict_all_assets,
         high_threshold=args.high_threshold,
         medium_threshold=args.medium_threshold,
+        applicability_path=args.applicability,
     )
 
     args.output_long.parent.mkdir(parents=True, exist_ok=True)
