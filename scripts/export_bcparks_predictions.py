@@ -27,6 +27,10 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from src.baseline import DEFAULT_CLASSIFICATION_TARGETS, infer_target_column  # noqa: E402
+from src.attribute_applicability import (  # noqa: E402
+    applicable_profiles_for_target as _applicable_profiles_for_target,
+    load_applicability,
+)
 from src.dinov3_classifier import CLASSIFIER_CHOICES, make_classifier  # noqa: E402
 from src.dinov3_features import feature_columns  # noqa: E402
 
@@ -164,46 +168,6 @@ def _applicable_profiles(labels: pd.DataFrame) -> list[str]:
     return sorted(labels["profile_name"].dropna().astype(str).unique().tolist())
 
 
-def load_applicability(path: Path) -> dict[str, set[str]]:
-    """Return {asset_type: set(applicable target names)} from the matrix CSV."""
-    matrix = pd.read_csv(path)
-    if "Attribute" not in matrix.columns:
-        raise ValueError(
-            f"Applicability CSV must contain an 'Attribute' column. "
-            f"Got {matrix.columns.tolist()}."
-        )
-
-    asset_type_columns = [
-        column
-        for column in matrix.columns
-        if column not in {"Attribute", "Want AI to Determine"}
-    ]
-    if not asset_type_columns:
-        raise ValueError(
-            "Applicability CSV must contain one or more asset-type columns."
-        )
-
-    applicable: dict[str, set[str]] = {asset_type: set() for asset_type in asset_type_columns}
-    for _, row in matrix.iterrows():
-        target = str(row["Attribute"]).strip()
-        for asset_type in asset_type_columns:
-            cell = row[asset_type]
-            if pd.notna(cell) and str(cell).strip():
-                applicable[asset_type].add(target)
-    return applicable
-
-
-def _applicable_profiles_for_target(
-    applicability: dict[str, set[str]],
-    target: str,
-) -> list[str]:
-    return sorted(
-        asset_type
-        for asset_type, targets in applicability.items()
-        if target in targets
-    )
-
-
 def _filter_applicable_assets(
     assets: pd.DataFrame,
     labels: pd.DataFrame,
@@ -211,9 +175,18 @@ def _filter_applicable_assets(
     predict_all_assets: bool,
     explicit_profiles: list[str] | None,
 ) -> tuple[pd.DataFrame, str]:
-    profiles = explicit_profiles if explicit_profiles is not None else _applicable_profiles(labels)
-    if predict_all_assets or "profile_name" not in assets.columns or not profiles:
+    if predict_all_assets or "profile_name" not in assets.columns:
         return assets, "all_profiles"
+
+    if explicit_profiles is not None:
+        profiles = explicit_profiles
+        if not profiles:
+            return assets.iloc[0:0].copy(), "no_applicable_profiles"
+    else:
+        profiles = _applicable_profiles(labels)
+        if not profiles:
+            return assets, "all_profiles"
+
     filtered = assets[assets["profile_name"].astype(str).isin(profiles)].copy()
     return filtered, "|".join(profiles)
 

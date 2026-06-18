@@ -16,6 +16,7 @@ from src.vlm.config import detect_provider, missing_credentials_for_provider  # 
 
 REQUIRED_PATHS = [
     Path("environment.yml"),
+    Path("data/processed/attribute_applicability.csv"),
     Path("data/processed/master_dataset.csv"),
     Path("data/processed/train")
 ]

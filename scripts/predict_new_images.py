@@ -50,6 +50,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.download_citywide_images import PROFILES  # noqa: E402
+from src.attribute_applicability import load_applicability  # noqa: E402
 from src.baseline import infer_target_column  # noqa: E402
 from src.dinov3_classifier import make_classifier  # noqa: E402
 from src.dinov3_features import (  # noqa: E402
@@ -181,38 +182,6 @@ def limit_asset_rows(rows: pd.DataFrame, limit_assets: int | None) -> pd.DataFra
 
     keep_assets = rows["asset_id"].drop_duplicates().head(limit_assets)
     return rows[rows["asset_id"].isin(keep_assets)].reset_index(drop=True)
-
-
-# ---------------------------------------------------------------------
-# Applicability matrix
-# ---------------------------------------------------------------------
-
-def load_applicability(path: Path) -> dict[str, set[str]]:
-    """Return {asset_type: set(applicable target names)} from the matrix CSV.
-
-    Expects a column 'Attribute' (internal target names) plus one column per
-    asset type whose header matches a PROFILES value, with non-empty cells
-    (e.g. 'X') marking applicability.
-    """
-    matrix = pd.read_csv(path)
-    if "Attribute" not in matrix.columns:
-        raise ValueError(f"Applicability CSV must have an 'Attribute' column. Got {matrix.columns.tolist()}")
-
-    asset_type_columns = [c for c in matrix.columns if c in VALID_ASSET_TYPES]
-    if not asset_type_columns:
-        raise ValueError(
-            "Applicability CSV has no asset-type columns matching PROFILES. "
-            f"Expected some of {sorted(VALID_ASSET_TYPES)}; got {matrix.columns.tolist()}"
-        )
-
-    applicable: dict[str, set[str]] = {atype: set() for atype in asset_type_columns}
-    for _, row in matrix.iterrows():
-        target = str(row["Attribute"]).strip()
-        for atype in asset_type_columns:
-            cell = row[atype]
-            if pd.notna(cell) and str(cell).strip() != "":
-                applicable[atype].add(target)
-    return applicable
 
 
 # ---------------------------------------------------------------------

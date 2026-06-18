@@ -22,10 +22,10 @@ def test_load_applicability_maps_targets_to_asset_types(tmp_path: Path) -> None:
     matrix_path = tmp_path / "attribute_applicability.csv"
     pd.DataFrame(
         {
-            "Attribute": ["attr_bridge_type", "steps_bin"],
-            "Want AI to Determine": ["yes", "yes"],
-            "Trail Bridge": ["X", ""],
-            "Stairs": ["", "X"],
+            "Attribute": ["attr_bridge_type", "steps_bin", "load_capacity_kg"],
+            "Want AI to Determine": ["yes", "yes", "no"],
+            "Trail Bridge": ["X", "", "X"],
+            "Stairs": ["", "X", ""],
         }
     ).to_csv(matrix_path, index=False)
 
@@ -81,3 +81,23 @@ def test_filter_applicable_assets_can_still_predict_all_assets() -> None:
 
     assert filtered["asset_id"].tolist() == [1, 2]
     assert profiles == "all_profiles"
+
+
+def test_filter_applicable_assets_with_empty_explicit_profiles_returns_no_assets() -> None:
+    assets = pd.DataFrame(
+        {
+            "asset_id": [1, 2],
+            "profile_name": ["Trail Bridge", "Stairs"],
+        }
+    )
+    labels = pd.DataFrame({"asset_id": [1], "profile_name": ["Trail Bridge"]})
+
+    filtered, profiles = _filter_applicable_assets(
+        assets,
+        labels,
+        predict_all_assets=False,
+        explicit_profiles=[],
+    )
+
+    assert filtered.empty
+    assert profiles == "no_applicable_profiles"
