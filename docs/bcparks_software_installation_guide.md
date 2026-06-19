@@ -1,7 +1,7 @@
 ---
 title: "BC Parks Asset Image Classification Installation Guide"
 subtitle: "Capstone Project Handoff"
-date: "June 18, 2026"
+date: "June 19, 2026"
 geometry: margin=1in
 fontsize: 11pt
 ---
@@ -15,6 +15,11 @@ It assumes that the workstation already has the basic development tools
 installed, such as Visual Studio Code, Git, a terminal, and Miniforge or Conda.
 For a brand-new Windows workstation, use the separate BC Parks software setup
 guide first.
+
+Use this document for first-time installation. For regular operation after
+setup, use `docs/final_pipeline_runbook.md`. For optional CityWide API details,
+use `docs/citywide_api_runbook.md`. Technical model experiment notes live in
+the DINOv3, SigLIP, and VLM walkthroughs.
 
 # What This Project Produces
 
