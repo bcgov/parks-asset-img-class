@@ -35,6 +35,12 @@ env/
 # Ignore raw data and images from data directory
 data/raw/*
 
+# Ignore raw data and images, except the manifest needed to reproduce EDA figures
+data/raw/*
+!data/raw/citywide/
+data/raw/citywide/*
+!data/raw/citywide/image_attributes_manifest.csv
+
 #ignore test files for now
 data/processed/test/*
 
