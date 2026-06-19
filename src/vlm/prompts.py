@@ -1,10 +1,15 @@
 # src/vlm/prompts.py
 """
 Prompt templates for VLM zero-shot attribute prediction.
+
+Add new prompts as needed, making sure to also add them to the prompt
+registry with a callable label at the bottom of the file.
 """
 
-#update as needed
-# Asset-specific prompts
+# update as needed
+# ---------------------------------------------------------------
+# ----------- (MULTI-ATTRIBUTE) ASSET-SPECIFIC PROMPTS ----------
+# ---------------------------------------------------------------
 
 STAIRS_PROMPT_V1 = """
     You are an expert in park infrastructure analysis.
@@ -96,8 +101,71 @@ BOARDWALK_LOW_PROMPT_V1 = """
     If you cannot determine an attribute from the images, set value to
     "unable to determine" and confidence to 0.0.
     """
+    
+BOARDWALK_HIGH_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
 
-# Attribute-specific prompts
+    Using ALL provided images of this single Boardwalk > 1.2m High asset, identify 
+    the most likely attribute values. For each of the following attributes, the 
+    possible values are given below. Predict exactly ONE value from the listed options 
+    for each attribute, and provide a confidence score (0.0-1.0) for each prediction.
+
+    Attributes to predict:
+    - decking_material: Aluminum | Asphalt | Composite | Concrete |
+                        Steel | Timber
+    - fall_height: low (<0.5m) | medium (0.5-1.2m) | high (>1.2m)
+    - has_edge_guard: Yes | No
+    - has_pedestrian_railing: 2 railings | 1 railing | No railings
+    - length: short (<10m) | medium (10-30m) | long (>30m)
+    - structure_material: Timber | Steel | Aluminum | Concrete | Stone
+    - width: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "<attribute_key>": {
+        "value": "<predicted value or 'unable to determine'>",
+        "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine an attribute from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+VIEWING_PLATFORM_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single Boardwalk < 1.2m High asset, identify 
+    the most likely attribute values. For each of the following attributes, the 
+    possible values are given below. Predict exactly ONE value from the listed options 
+    for each attribute, and provide a confidence score (0.0-1.0) for each prediction.
+
+    Attributes to predict:
+    - decking_material: Aluminum | Asphalt | Composite | Concrete |
+                        Steel | Timber
+    - fall_height: low (<1.2m) | medium (1.2-15m) | high (>15m)
+    - has_edge_guard: Yes | No
+    - has_pedestrian_railing: 2 railings | 1 railing | No railings
+    - length: small (<10m) | medium (10-20m) | large (>20m)
+    - structure_material: Timber | Steel | Aluminum | Concrete | Stone
+    - structure_position: Elevated | At-Grade | Other
+    - width: narrow (<3m) | medium (3-7m) | wide (>7m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "<attribute_key>": {
+        "value": "<predicted value or 'unable to determine'>",
+        "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine an attribute from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
+# ---------------------------------------------------------------
+# --------------- ATTRIBUTE-SPECIFIC PROMPTS --------------------
+# ---------------------------------------------------------------
 
 STRUCTURE_POSITION_PROMPT_V1 = """
     You are an expert in park infrastructure analysis.
@@ -145,8 +213,8 @@ PEDESTRIAN_RAILING_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
-#Dynamic prompts 
-#needed since bins have different ranges per asset type 
+# Dynamic prompts 
+# Needed since bins have different ranges per asset type 
 
 def make_length_prompt(asset_type):
     return f"""
@@ -403,6 +471,8 @@ PROMPT_REGISTRY = {
     "stairs_v1": STAIRS_PROMPT_V1,
     "trail_bridge_v1": TRAIL_BRIDGE_PROMPT_V1,
     "boardwalk_low_v1": BOARDWALK_LOW_PROMPT_V1,
+    "boardwalk_high_v1": BOARDWALK_HIGH_PROMPT_V1,
+    "viewing_platform_v1": VIEWING_PLATFORM_PROMPT_V1,
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,

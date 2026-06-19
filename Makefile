@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
-PYTHON ?= conda run -n bcparks_capstone python
-PYTEST ?= conda run -n bcparks_capstone pytest
+PYTHON ?= python
+PYTEST ?= pytest
 TIME ?= @sh scripts/run_with_timer.sh
 
 SEED ?= 42
@@ -29,7 +29,7 @@ PII_UPLOAD_MARKER ?= $(IMAGE_ROOT)/.upload_set_complete
 
 VLM_PROVIDER ?= gemini
 VLM_MODEL ?= gemini-3-flash-preview
-VLM_PROMPT ?= pedestrian_railing_v1
+VLM_PROMPT ?= stairs_v1
 VLM_INPUT ?= $(TRAIN_DIR)/attr_has_pedestrian_railing_train.csv
 VLM_OUTPUT_DIR ?= results/vlm_predictions
 VLM_OUTPUT ?= $(VLM_OUTPUT_DIR)/$(VLM_PROVIDER)_$(VLM_PROMPT)_$(VLM_MODEL).csv
