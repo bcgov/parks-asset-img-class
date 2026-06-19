@@ -218,8 +218,9 @@ def plot_asset_type(
         report_df = get_report_df(y_true, y_pred)
 
         label = attribute.replace("attr_", "").replace("_", " ")
-        macro_f1 = report_df["f1-score"].mean()
-        title = f"{label}  ·  macro F1={macro_f1:.2f}"
+        support = report_df["support"]
+        weighted_f1 = (report_df["f1-score"] * support).sum() / support.sum()
+        title = f"{label}  ·  weighted F1={weighted_f1:.2f}"
 
         last_im = plot_report_heatmap(ax, report_df, title)
 
@@ -234,12 +235,12 @@ def plot_asset_type(
     cbar.set_label("score", fontsize=8)
     cbar.ax.tick_params(labelsize=7)
 
-    fig.suptitle(
-        f"{asset_type}  ·  {model_name}  ·  {prompt_version}",
-        fontsize=11,
-        fontweight="medium",
-        y=1.01,
-    )
+    # fig.suptitle(
+    #     f"{asset_type}  ·  {model_name}  ·  {prompt_version}",
+    #     fontsize=11,
+    #     fontweight="medium",
+    #     y=1.01,
+    # )
 
     os.makedirs(output_dir, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
