@@ -5,8 +5,8 @@ attributes, attached-file metadata, and image files for the BC Parks image
 classification pipeline.
 
 The CityWide download is optional. It is intended for BC Parks users or graders
-who have CityWide API credentials. The modelling pipeline can run from the
-tracked processed data without re-downloading CityWide data.
+who have CityWide API credentials. The final modelling pipeline can run from
+the tracked processed data without re-downloading CityWide data.
 
 ## Required Credentials
 

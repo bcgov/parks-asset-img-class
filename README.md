@@ -35,6 +35,10 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 
 ## Setup
 
+For a printable BC Parks handoff guide, start with
+[`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md)
+or the matching PDF in the same folder.
+
 **1. Create and activate the Conda environment**
 
 ```bash
@@ -80,6 +84,14 @@ From the repository root, list available targets:
 make help
 ```
 
+Documentation map:
+
+- [`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md): first-time installation and handoff guide
+- [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): day-to-day final pipeline commands
+- [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md): optional CityWide API download details
+- [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
+- [`docs/dinov3_walkthrough.md`](docs/dinov3_walkthrough.md), [`docs/siglip_walkthrough.md`](docs/siglip_walkthrough.md): technical model experiment notes
+
 For a full walkthrough of the final pipeline, see
 [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
 
@@ -87,7 +99,7 @@ Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
 make pii
-make final-dinov3
+make all
 ```
 
 Run `make pii` once before the final pipeline on a fresh checkout. It creates
