@@ -141,6 +141,24 @@ The cache makes the downloader resume-safe. If the per-profile JSON files
 already exist, the downloader reuses them instead of fetching the same metadata
 again.
 
+## How Images Are Downloaded
+
+After asset and attribute metadata are fetched, the downloader calls the
+attached-file endpoint for each asset:
+
+```text
+GET /assets/<asset_id>/attached_files
+```
+
+For image binaries, it then calls:
+
+```text
+GET /assets/<asset_id>/attached_files/<file_id>/content
+```
+
+By default, only attachments with an image MIME type are downloaded. Use the
+script-level `--all-files` option if every attachment type is needed.
+
 ## How This Connects To The Model Pipeline
 
 The model pipeline does not train directly from `data/raw/citywide/`. The raw

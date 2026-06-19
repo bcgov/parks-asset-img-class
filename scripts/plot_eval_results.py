@@ -299,13 +299,16 @@ def plot_comparison(
     include_series: list[str] | None = None,
     include_attributes: list[str] | None = None,
     aggregate: bool = False,
+    asset_types: list[str] | None = None
 ):
     mean_col = f"{metric}_mean"
     std_col  = f"{metric}_std"
 
     vlm_rows = pd.DataFrame()
     if df is not None:
-        if asset_type:
+        if asset_types:
+            df = df[df["asset_type"].isin(asset_types)]
+        elif asset_type:
             df = df[df["asset_type"] == asset_type]
         df = df.copy().reset_index(drop=True)
         # drop any duplicate columns that crept in during concat
@@ -517,6 +520,8 @@ def plot_comparison(
         title = f"Attribute evaluation — {metric}"
     else:
         title = f"{title} — {metric}"
+    if asset_types:
+        title += "  ·  " + " + ".join(asset_types)
     if asset_type:
         title += f"  ·  {asset_type}"
     ax.set_title(title, fontsize=19, pad=16, fontweight="semibold")
@@ -531,8 +536,8 @@ def plot_comparison(
         title="model  (prompt)" if df is not None else "classifier",
         title_fontsize=14,
         fontsize=12,
-        loc="lower right",
-        bbox_to_anchor=(1, 0.75),
+        loc="upper left",
+        bbox_to_anchor=(1.02, 1.0),
         frameon=True,
         framealpha=0.9,
         edgecolor="#D3D1C7",
@@ -592,6 +597,12 @@ if __name__ == "__main__":
         action="store_true",
         help="Plot mean performance across all attributes instead of per-attribute bars.",
     )
+    parser.add_argument(
+        "--asset-types",
+        nargs="+",
+        default=None,
+        help="Average overlapping attributes across these asset types, e.g. Stairs 'Boardwalk < 1.2m High'.",
+    )
 
     args = parser.parse_args()
 
@@ -620,4 +631,5 @@ if __name__ == "__main__":
         include_series=args.include_series,
         include_attributes=args.include_attributes,
         aggregate=args.aggregate,
+        asset_types=args.asset_types
     )

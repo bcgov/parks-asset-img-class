@@ -18,7 +18,7 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 │   ├── processed/
 │   │   ├── master_dataset.csv
 │   │   └── train/
-│   └── raw/                  # ignored; optional CityWide download output
+│   └── raw/                  # optional CityWide download output
 ├── docs/
 │   ├── dinov3_walkthrough.md
 │   ├── siglip_walkthrough.md
@@ -26,6 +26,7 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 ├── scripts/                  # pipeline entry points used by the Makefile
 ├── src/                      # reusable package code
 ├── tests/
+├── models/                   # where to store DINOv3 downloaded model
 └── reports/
     ├── Image_analysis_of_park_infrastructure_report.qmd
     ├── figures/
@@ -38,14 +39,42 @@ For a printable BC Parks handoff guide, start with
 [`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md)
 or the matching PDF in the same folder.
 
-Create and activate the Conda environment:
+**1. Create and activate the Conda environment**
 
 ```bash
 conda env create -f environment.yml
 conda activate bcparks_capstone
 ```
+**2. Set up the VLM API keys**
 
-Copy `.env.example` to `.env` and fill only the credentials needed for the targets you plan to run. The `.env` file is gitignored.
+Create an `.env` file in the project root with the required API keys for the models you want to use.
+
+```bash
+# Google AI Studio
+GEMINI_API_KEY="your-key-here"
+
+# GitHub Models (OpenAI, Llama, Phi)
+GITHUB_TOKEN="your-token-here"
+```
+
+An example of how to set up API keys in an `.env` file is provided in `.env.example`.
+
+- For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
+
+**3. Set up the DINOv3 model**
+
+This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
+
+The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
+
+Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
+
+Once downloaded, copy it to the following directory in the repository root:
+
+```text
+models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+```
 
 ## Makefile pipeline
 
@@ -63,6 +92,9 @@ Documentation map:
 - [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
 - [`docs/dinov3_walkthrough.md`](docs/dinov3_walkthrough.md), [`docs/siglip_walkthrough.md`](docs/siglip_walkthrough.md): technical model experiment notes
 
+For a full walkthrough of the final pipeline, see
+[`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
+
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
@@ -71,7 +103,8 @@ make all
 ```
 
 Run `make pii` once before the final pipeline on a fresh checkout. It creates
-the cleaned image set required by `make all`.
+the cleaned image set and the completion marker required by `make final-dinov3`
+and `make all`.
 
 Run a faster local validation pass:
 
@@ -138,6 +171,59 @@ The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `ima
 For the full CityWide API flow, including how linked attributes are downloaded,
 see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
 
+## To use Vision Language Models (VLMs)
+
+This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
+VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
+
+Supported provider families include:
+
+- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
+- **OpenAI** through `OPENAI_API_KEY`
+- **xAI Grok** through `XAI_API_KEY`
+- **Anthropic Claude** through `ANTHROPIC_API_KEY`
+- **GitHub Models** through `GITHUB_TOKEN`
+
+### Quick Start
+
+1. Set up API keys in `.env` file:
+
+```bash
+GEMINI_API_KEY="your-key-here"
+GITHUB_TOKEN="your-token-here"
+```
+
+2. Run a Makefile smoke prediction:
+
+```bash
+make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+```
+
+Or run batch predictions directly:
+
+```bash
+python scripts/run_vlm_predictor.py \
+  --input data/processed/train/train_only_stairs.csv \
+  --output results/vlm_stairs_gemini.csv \
+  --provider gemini \
+  --model gemini-3-flash-preview \
+  --prompt stairs_v1
+```
+
+3. Evaluate predictions against ground truth:
+
+```bash
+python scripts/evaluate_predictions.py \
+  --predictions results/vlm_stairs_gemini.csv \
+  --ground_truth_dir data/processed/train \
+  --attributes attr_number_of_steps \
+  --model gemini-3-flash-preview
+```
+
+For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md).
+
+## Render the report
+
 The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
 
 ```bash
@@ -150,9 +236,7 @@ PDF rendering also requires a LaTeX installation. If PDF rendering fails because
 quarto install tinytex
 ```
 
-## Render the report
-
-From the repository root, run:
+To render the report, from the repository root, run:
 
 ```bash
 quarto render reports/Image_analysis_of_park_infrastructure_report.qmd
@@ -228,57 +312,6 @@ Run the unit tests:
 ```bash
 pytest -q tests/test_mlflow_utils.py
 ```
-
-## Vision Language Models (VLMs)
-
-This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
-VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
-
-Supported provider families include:
-
-- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
-- **OpenAI** through `OPENAI_API_KEY`
-- **xAI Grok** through `XAI_API_KEY`
-- **Anthropic Claude** through `ANTHROPIC_API_KEY`
-- **GitHub Models** through `GITHUB_TOKEN`
-
-### Quick Start
-
-1. Set up API keys in `.env` file:
-
-```bash
-GEMINI_API_KEY="your-key-here"
-GITHUB_TOKEN="your-token-here"
-```
-
-2. Run a Makefile smoke prediction:
-
-```bash
-make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
-```
-
-Or run batch predictions directly:
-
-```bash
-python scripts/run_vlm_predictor.py \
-  --input data/processed/train/train_only_stairs.csv \
-  --output results/vlm_stairs_gemini.csv \
-  --provider gemini \
-  --model gemini-3-flash-preview \
-  --prompt stairs_v1
-```
-
-3. Evaluate predictions against ground truth:
-
-```bash
-python scripts/evaluate_predictions.py \
-  --predictions results/vlm_stairs_gemini.csv \
-  --ground_truth_dir data/processed/train \
-  --attributes attr_number_of_steps \
-  --model gemini-3-flash-preview
-```
-
-For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see `docs/vlm_walkthrough.md`.
 
 ## Current status
 
