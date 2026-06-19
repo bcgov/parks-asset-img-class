@@ -28,8 +28,8 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 ├── tests/
 ├── models/                   # where to store DINOv3 downloaded model
 └── reports/
-    ├── Image_analysis_of_park_infrastructure_report.qmd
-    ├── figures/
+    ├── bcparks_capstone_final_report.qmd
+    ├── report_images/
     └── references.bib
 ```
 
@@ -239,7 +239,7 @@ quarto install tinytex
 To render the report, from the repository root, run:
 
 ```bash
-quarto render reports/Image_analysis_of_park_infrastructure_report.qmd
+quarto render reports/bcparks_capstone_final_report.qmd
 ```
 
 This command renders all formats listed in the report YAML, currently HTML and PDF.
@@ -247,9 +247,14 @@ This command renders all formats listed in the report YAML, currently HTML and P
 To render only one format:
 
 ```bash
-quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to html
-quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to pdf
+quarto render reports/bcparks_capstone_final_report.qmd --to html
+quarto render reports/bcparks_capstone_final_report.qmd --to pdf
 ```
+
+The older `reports/Image_analysis_of_park_infrastructure_report.qmd` is a
+legacy draft that depends on raw CityWide files under `data/raw/citywide/`,
+including `image_attributes_manifest.csv`. Use
+`reports/bcparks_capstone_final_report.qmd` for the current final report.
 
 ## Experiment tracking with MLflow
 
