@@ -30,7 +30,7 @@ PII_UPLOAD_MARKER ?= $(IMAGE_ROOT)/.upload_set_complete
 VLM_PROVIDER ?= gemini
 VLM_MODEL ?= gemini-3-flash-preview
 VLM_PROMPT ?= stairs_v1
-VLM_INPUT ?= $(TRAIN_DIR)/attr_has_pedestrian_railing_train.csv
+VLM_INPUT ?= $(NEW_BATCH_CLEAN)
 VLM_OUTPUT_DIR ?= results/vlm_predictions
 VLM_OUTPUT ?= $(VLM_OUTPUT_DIR)/$(VLM_PROVIDER)_$(VLM_PROMPT)_$(VLM_MODEL).csv
 VLM_IMAGE_ROOT ?= $(IMAGE_ROOT)
@@ -49,7 +49,14 @@ CITYWIDE_MAX_CALLS_PER_HOUR ?= 900
 CITYWIDE_PROFILE_ARG = $(foreach profile,$(CITYWIDE_PROFILE),--profile $(profile))
 CITYWIDE_LIMIT_ARG = $(if $(CITYWIDE_LIMIT),--limit $(CITYWIDE_LIMIT),)
 
-NEW_IMAGE_FOLDER ?= $(IMAGE_ROOT)/citywide/images
+CITYWIDE_EXPORT_FOLDER ?=
+CITYWIDE_EXPORT_CSV ?=
+NEW_BATCH_RAW ?= data/raw/new_batch
+NEW_BATCH_CLEAN ?= $(IMAGE_ROOT)/new_batch
+CITYWIDE_SORT_OUTPUT ?= $(NEW_BATCH_RAW)
+CITYWIDE_SORT_REPORT ?= results/predictions/citywide_sort_report.csv
+
+NEW_IMAGE_FOLDER ?= $(NEW_BATCH_CLEAN)
 NEW_IMAGE_ASSET_TYPE ?=
 NEW_IMAGE_OUTPUT ?= $(FINAL_DIR)/new_image_predictions_long.csv
 NEW_IMAGE_OUTPUT_WIDE ?= $(FINAL_DIR)/new_image_predictions_wide.csv
@@ -63,7 +70,8 @@ DEMO_ASSET_LIMIT ?= 5
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
 	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo demo-new-images \
-	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean
+	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean \
+	sort-citywide-export pii-batch pii-batch-screen
 
 help:
 	@echo "Final pipeline targets:"
@@ -203,6 +211,14 @@ pii-ready: model-data-check
 
 pii: pii-screen pii-blur pii-upload-set
 
+pii-batch-screen:
+	@printf "\n==> pii-batch-screen: screening $(NEW_BATCH_RAW) for PII\n"
+	$(TIME) test -d $(NEW_BATCH_RAW) || (echo "Missing $(NEW_BATCH_RAW). Run 'make sort-citywide-export' first."; exit 1)
+	$(TIME) $(PYTHON) scripts/screen_images_for_pii.py --image-dir $(NEW_BATCH_RAW)
+
+pii-batch: pii-batch-screen pii-blur pii-upload-set
+	@printf "\n==> pii-batch complete: cleaned batch under $(NEW_BATCH_CLEAN)\n"
+
 baseline:
 	@printf "\n==> baseline: running grouped majority-class baselines\n"
 	$(TIME) $(PYTHON) scripts/run_baseline.py \
@@ -303,6 +319,7 @@ vlm-predict: pii-ready vlm-check
 	  --model $(VLM_MODEL) \
 	  --prompt $(VLM_PROMPT) \
 	  --image_root $(VLM_IMAGE_ROOT) \
+	  $(if $(NEW_IMAGE_ASSET_TYPE), --asset-type "$(NEW_IMAGE_ASSET_TYPE)") \
 	  --offset $(VLM_OFFSET) \
 	  --delay $(VLM_DELAY) \
 	  --buffer_size $(VLM_BUFFER_SIZE) \
@@ -344,6 +361,14 @@ export-bcparks:
 	  --seed $(SEED) \
 	  --output-long $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv \
 	  --output-wide $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
+	  
+sort-citywide-export:
+	@printf "\n==> sort-citywide-export: sorting flat export into per-asset folders\n"
+	$(TIME) $(PYTHON) scripts/sort_citywide_export.py \
+	  --input-folder $(CITYWIDE_EXPORT_FOLDER) \
+	  --mapping-csv $(CITYWIDE_EXPORT_CSV) \
+	  --output-dir $(CITYWIDE_SORT_OUTPUT) \
+	  --report $(CITYWIDE_SORT_REPORT)
 
 predict-new-images: data-check model-data-check features-dinov3-master
 	@printf "\n==> predict-new-images: predicting attributes for $(NEW_IMAGE_FOLDER)\n"
