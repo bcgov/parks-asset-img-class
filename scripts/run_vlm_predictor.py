@@ -87,7 +87,7 @@ def build_input_table_from_folder(
                 for img in sorted(asset_dir.iterdir()):
                     if _is_image(img):
                         rows.append({
-                            "asset_id": asset_dir.name,
+                            "asset_id": int(asset_dir.name),
                             "image_path": rel_image_path(img),
                             "profile_name": asset_type,
                         })
@@ -110,7 +110,7 @@ def build_input_table_from_folder(
                 for img in sorted(asset_dir.iterdir()):
                     if _is_image(img):
                         rows.append({
-                            "asset_id": asset_dir.name,
+                            "asset_id": int(asset_dir.name),
                             "image_path": rel_image_path(img),
                             "profile_name": profile_name,
                         })
