@@ -55,6 +55,7 @@ GT_COLUMN = "true_value"
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Inspect embedding-model prediction errors with images."
     )
@@ -159,6 +160,7 @@ def build_wrong_predictions_frame(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
 
     try:

@@ -43,6 +43,7 @@ def _rel_under_raw(image_path: str) -> Path:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--screen-csv", type=Path, default=Path("results/predictions/pii_screen.csv"))
     p.add_argument("--blurred-root", type=Path, default=Path("data/pii_review/blurred"))
@@ -54,6 +55,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     args = parse_args()
 

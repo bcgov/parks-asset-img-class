@@ -33,8 +33,8 @@ Usage — DINOv3 + logistic regression, gemini-3-flash-preview
         --dinov3_dir results/dinov3_results \
         --input_dir results/vlm_eval_results/ \
         --include-series \
-            "DINOv3 + Logistic Regression" \ 
-            "gemini-3-flash-preview"$'\n'"(multi-attribute prompts)" \
+            "DINOv3 + Logistic Regression" \
+            "gemini-3-flash-preview (multi-attribute prompts)" \
         --output results/eval_results_plots/gemini_vs_dinov3_macro_f1.png \
         --title "DINOv3 vs. gemini-3-flash-preview (multi-atttribute prompts)"
     
@@ -139,6 +139,7 @@ def normalise_attribute(attr: str) -> str:
 
 
 def _scalar(df: pd.DataFrame, attr: str, col: str) -> float:
+    """Convert a pandas value to a display-safe scalar."""
     if attr not in df.index:
         return np.nan
     val = df.loc[attr, col]
@@ -152,6 +153,7 @@ def _scalar(df: pd.DataFrame, attr: str, col: str) -> float:
 # ---------------------------------------------------------------------
 
 def load_results(input_dir: str, individual_prompt_label: str = "attribute-specific prompt") -> pd.DataFrame:
+    """Load VLM evaluation result CSVs from a directory."""
     pattern = os.path.join(input_dir, "*.csv")
     files = glob.glob(pattern)
 
@@ -260,16 +262,20 @@ def load_embedding_results(results_dir: str, metric: str, subdirs: list, labels:
 
 
 def load_dinov3_results(dinov3_dir: str, metric: str) -> pd.DataFrame:
+    """Load DINOv3 result CSVs for plotting."""
     return load_embedding_results(dinov3_dir, metric, DINOV3_SUBDIRS, DINOV3_LABELS)
 
 
 def load_siglip_results(siglip_dir: str, metric: str) -> pd.DataFrame:
+    """Load SigLIP result CSVs for plotting."""
     return load_embedding_results(siglip_dir, metric, SIGLIP_SUBDIRS, SIGLIP_LABELS)
 
 def load_openclip_results(siglip_dir: str, metric: str) -> pd.DataFrame:
+    """Load OpenCLIP result CSVs for plotting."""
     return load_embedding_results(siglip_dir, metric, OPENCLIP_SUBDIRS, OPENCLIP_LABELS)
 
 def load_baseline(baseline_path: str) -> pd.DataFrame:
+    """Load baseline result CSVs for plotting."""
     df = pd.read_csv(baseline_path)
     if "target_column" in df.columns:
         df["attribute"] = df["target_column"]
@@ -301,6 +307,7 @@ def plot_comparison(
     aggregate: bool = False,
     asset_types: list[str] | None = None
 ):
+    """Plot model comparison bars from standardized result tables."""
     mean_col = f"{metric}_mean"
     std_col  = f"{metric}_std"
 

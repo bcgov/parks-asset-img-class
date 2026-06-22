@@ -130,6 +130,7 @@ BIN_COL_MAPPING = {
 
 # JSON parsing (handles markdown and bad outputs)
 def safe_json_loads(text: str):
+    """Parse a JSON string and return None when parsing fails."""
     if not text:
         return None
 
@@ -151,6 +152,7 @@ def safe_json_loads(text: str):
 
 # Results CSV header inference
 def get_output_columns(parsed_attrs: list[str]) -> list[str]:
+    """Return the output columns expected for a prompt template."""
     parsed_cols = [
         f"{BIN_COL_MAPPING.get(attr, attr)}_{suffix}"
         for attr in parsed_attrs
@@ -167,6 +169,7 @@ FALLBACK_COLUMNS = ["asset_id", "timestamp", "provider", "model", "error", "trac
 
 # Retry wrapper for API robustness
 def with_retry(fn, retries=2, delay=1.5):
+    """Call a provider function with simple retry handling."""
     for i in range(retries + 1):
         try:
             return fn()
@@ -177,6 +180,7 @@ def with_retry(fn, retries=2, delay=1.5):
 
 # Buffer flush
 def flush_buffer(buffer: list, output_path: str, output_columns: list):
+    """Append buffered prediction rows to disk."""
     pd.DataFrame(buffer) \
       .reindex(columns=output_columns) \
       .to_csv(output_path, mode="a", header=False, index=False)
@@ -199,6 +203,7 @@ def run_batch(
     max_tokens=4096,
     asset_type=None): # batch writes to results CSV instead of row-by-row
 
+    """Run VLM prediction over an input batch and write outputs incrementally."""
     print(f"Loading input from: {input_path}")
     input_path_obj = Path(input_path)
     if input_path_obj.is_dir():
@@ -243,6 +248,7 @@ def run_batch(
     buffer = []
 
     def process_asset(asset_id):
+        """Run one VLM prediction request and return a row for one asset."""
         asset_df = df[df["asset_id"] == asset_id]
         asset_type = asset_df["profile_name"].iloc[0]
 

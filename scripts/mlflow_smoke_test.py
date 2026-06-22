@@ -30,6 +30,7 @@ import dagshub
 dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     setup_mlflow()
     mlflow.autolog()
     

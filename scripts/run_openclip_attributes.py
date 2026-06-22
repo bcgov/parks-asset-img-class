@@ -1,5 +1,12 @@
 """Run OpenCLIP experiments for all classification attributes.
 
+Pipeline role:
+- builds one union image manifest from the requested train CSVs;
+- calls ``scripts/extract_openclip_features.py`` once to create reusable
+  OpenCLIP embeddings;
+- calls ``scripts/run_openclip_classifier.py`` once per target attribute;
+- writes result tables used in embedding-model comparisons.
+
 The expensive step is OpenCLIP feature extraction. Because OpenCLIP features
 do not depend on the target label, this script extracts one shared feature
 table from the union of all train CSVs, then reuses it for each attribute.
@@ -59,6 +66,7 @@ from scripts.run_dinov3_remaining_attributes import (
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Extract shared OpenCLIP features and run classifiers for all attributes."
     )
@@ -136,6 +144,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def selected_targets(args: argparse.Namespace) -> list[str]:
+    """Resolve the requested attribute targets in pipeline order."""
     if args.targets is not None:
         return args.targets
     return DEFAULT_TARGETS
@@ -146,6 +155,7 @@ def selected_targets(args: argparse.Namespace) -> list[str]:
 
 
 def build_union_input(targets: list[str], train_dir: Path, union_path: Path) -> None:
+    """Build one shared image manifest from the requested target train files."""
     frames = []
     for target in targets:
         csv_path = target_train_path(train_dir, target)
@@ -166,11 +176,13 @@ def build_union_input(targets: list[str], train_dir: Path, union_path: Path) -> 
 
 
 def run_command(command: list[str]) -> None:
+    """Run a child pipeline command and fail if it exits unsuccessfully."""
     print("\n$", " ".join(command))
     subprocess.run(command, check=True, cwd=REPO_ROOT)
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     targets = selected_targets(args)
 

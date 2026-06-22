@@ -1,5 +1,13 @@
 """Run DINOv3 experiments for all classification attributes.
 
+Pipeline role:
+- builds one union image manifest from the requested train CSVs;
+- calls ``scripts/extract_dinov3_features.py`` once to create reusable DINOv3
+  embeddings;
+- calls ``scripts/run_dinov3_classifier.py`` once per target attribute;
+- writes the cross-validation result tables used in model comparison figures
+  and the final report.
+
 The expensive step is DINOv3 feature extraction. Because DINOv3 features do
 not depend on the target label, this script extracts one shared feature table
 from the union of the requested train CSVs, then reuses that feature table for
@@ -75,6 +83,7 @@ PER_ASSET_TYPE_TARGETS = {
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Extract shared DINOv3 features and run classifiers for all attributes."
     )
@@ -146,16 +155,19 @@ def parse_args() -> argparse.Namespace:
 
 
 def selected_targets(args: argparse.Namespace) -> list[str]:
+    """Resolve the requested attribute targets in pipeline order."""
     if args.targets is not None:
         return args.targets
     return DEFAULT_TARGETS
 
 
 def target_train_path(train_dir: Path, target: str) -> Path:
+    """Return the processed training CSV path for one target attribute."""
     return train_dir / f"{target}_train.csv"
 
 
 def build_union_input(targets: list[str], train_dir: Path, union_path: Path) -> None:
+    """Build one shared image manifest from the requested target train files."""
     frames = []
     for target in targets:
         csv_path = target_train_path(train_dir, target)
@@ -176,11 +188,13 @@ def build_union_input(targets: list[str], train_dir: Path, union_path: Path) -> 
 
 
 def run_command(command: list[str]) -> None:
+    """Run a child pipeline command and fail if it exits unsuccessfully."""
     print("\n$", " ".join(command))
     subprocess.run(command, check=True, cwd=REPO_ROOT)
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     targets = selected_targets(args)
     output_dir = args.output_dir or default_output_dir(args.classifier)

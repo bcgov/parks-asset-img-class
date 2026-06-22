@@ -1,5 +1,13 @@
 """Run a grouped classifier on frozen OpenCLIP asset embeddings.
 
+Pipeline role:
+- reads one target label CSV from ``data/processed/train``;
+- reads asset embeddings produced by ``scripts/extract_openclip_features.py``;
+- evaluates a lightweight classifier with grouped cross-validation by
+  ``asset_id``;
+- writes OpenCLIP metrics, fold metrics, and out-of-fold predictions to the
+  organized OpenCLIP results/prediction folders.
+
 Self-contained per-model runner (mirrors run_siglip_classifier.py). Saves
 metrics, per-fold metrics, and per-asset predictions.
 
@@ -56,12 +64,15 @@ CLASSIFIER_OUTPUT_DIRS = {
 }
 
 def default_output_dir(classifier: str) -> Path:
+    """Return the organized results directory for a classifier type."""
     return OPENCLIP_RESULTS_ROOT / CLASSIFIER_OUTPUT_DIRS[classifier]
 
 def default_prediction_dir(classifier: str) -> Path:
+    """Return the organized prediction directory for a classifier type."""
     return default_output_dir(classifier) / "predictions"
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Evaluate frozen OpenCLIP embeddings with grouped CV."
     )
@@ -174,6 +185,7 @@ def log_results_to_mlflow(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     summary, folds, predictions = run_task_from_files(
         labels_path=args.labels,

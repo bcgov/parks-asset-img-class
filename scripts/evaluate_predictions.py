@@ -32,6 +32,7 @@ dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=Tr
 
 def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_type, prompt_version):
     
+    """Compute classification metrics for one prediction file against ground truth."""
     preds_df = pd.read_csv(predictions_path)
     gt_df = pd.read_csv(ground_truth_path)
     

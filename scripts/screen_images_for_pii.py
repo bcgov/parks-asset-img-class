@@ -48,12 +48,14 @@ IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"}
 
 
 def iter_image_paths(image_dir: Path) -> Iterable[Path]:
+    """Yield supported image files under a root directory."""
     for p in sorted(image_dir.rglob("*")):
         if p.suffix in IMAGE_SUFFIXES and p.is_file():
             yield p
 
 
 def _select_device() -> str:
+    """Choose the best available local inference device."""
     import torch
 
     if torch.cuda.is_available():
@@ -101,6 +103,7 @@ def screen_images(
     batch_size: int,
     repo_root: Path,
 ) -> pd.DataFrame:
+    """Run local PII object detection over image files and return screening rows."""
     from ultralytics import YOLO
 
     logger.info("Loading YOLO general model %s on %s", general_model_id, device)
@@ -113,6 +116,7 @@ def screen_images(
     rows: list[dict] = []
 
     def _batches(items: list[Path]) -> Iterable[list[Path]]:
+        """Yield fixed-size image batches for detector inference."""
         for i in range(0, len(items), batch_size):
             yield items[i : i + batch_size]
 
@@ -151,6 +155,7 @@ def screen_images(
 
 
 def _flag_reason(row: pd.Series) -> str:
+    """Summarize why an image was flagged during PII screening."""
     reasons: list[str] = []
     if row["n_faces"] > 0:
         reasons.append(f"face×{row['n_faces']}")
@@ -164,6 +169,7 @@ def _flag_reason(row: pd.Series) -> str:
 def render_summary(
     df: pd.DataFrame, out_path: Path, *, conf: float, face_model_used: bool
 ) -> None:
+    """Write a human-readable Markdown summary of PII screening results."""
     n_total = len(df)
     n_flagged = int(df["flagged"].sum())
     n_with_face = int((df["n_faces"] > 0).sum())
@@ -232,6 +238,7 @@ def render_summary(
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument(
         "--image-dir",
@@ -263,6 +270,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     args = parse_args()
 

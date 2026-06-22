@@ -64,6 +64,7 @@ class UniformRandomPredictor:
     random_state: int = 42
 
     def predict(self, n_rows: int) -> list:
+        """Return ``n_rows`` labels sampled uniformly from observed classes."""
         rng = np.random.default_rng(self.random_state)
         return rng.choice(self.classes, size=n_rows).tolist()
 
@@ -76,6 +77,7 @@ class StratifiedRandomPredictor:
     random_state: int = 42
 
     def predict(self, n_rows: int) -> list:
+        """Return ``n_rows`` labels sampled by observed class frequency."""
         rng = np.random.default_rng(self.random_state)
         return rng.choice(self.classes, size=n_rows, p=self.probabilities).tolist()
 

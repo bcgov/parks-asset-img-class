@@ -1,5 +1,17 @@
 """Run a grouped classifier on frozen DINOv3 asset embeddings.
 
+Pipeline role:
+- reads a target label CSV from ``data/processed/train``;
+- reads asset embeddings produced by ``scripts/extract_dinov3_features.py``;
+- runs grouped cross-validation by ``asset_id`` so images from the same asset
+  do not appear in both train and validation folds;
+- writes summary metrics, fold metrics, and out-of-fold predictions under the
+  organized DINOv3 results/prediction folders.
+
+This script is for model evaluation. The final deployment-style model artifact
+is trained separately by ``scripts/train_final_classifiers.py`` after the
+evaluation phase identifies the preferred embedding/classifier combination.
+
 Example (categorical attribute, pooled — unchanged behaviour):
     python scripts/run_dinov3_classifier.py \
         --labels data/processed/train/attr_decking_material_train.csv \
@@ -65,6 +77,7 @@ PARAM_COLUMNS = [
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Evaluate frozen DINOv3 embeddings with grouped CV."
     )
@@ -231,6 +244,7 @@ def log_results_to_mlflow(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     summary, folds, predictions = run_task_from_files(
         labels_path=args.labels,
