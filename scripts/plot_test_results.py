@@ -30,8 +30,9 @@ import pandas as pd
 MEASUREMENT_ATTRS = {"length_bin", "width_bin", "fall_height_bin", "steps_bin"}
 
 # Colours kept consistent with the other report figures.
-WEIGHTED_COLOR = "#0B4C8D"   # blue
-MACRO_COLOR = "#FF9470"      # light coral
+WEIGHTED_COLOR = "#0B4C8D"     # blue (categorical bars)
+MEASUREMENT_COLOR = "#BD431A"  # coral/red (measurement bars)
+MACRO_COLOR = "#FF9470"        # light coral (macro F1, when shown)
 CATEGORICAL_BAND = "#F2F6FA"
 MEASUREMENT_BAND = "#FBF1EC"
 
@@ -60,7 +61,7 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
     labels = [prettify(a) for a in attributes]
     x = np.arange(len(attributes))
 
-    show_macro = not args.no_macro
+    show_macro = args.macro
     bar_w = 0.38 if show_macro else 0.6
 
     fig, ax = plt.subplots(figsize=tuple(args.figsize))
@@ -78,9 +79,12 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
                         label="macro F1", color=MACRO_COLOR, zorder=3)
         bar_groups = [w_bars, m_bars]
     else:
+        bar_colors = [
+            MEASUREMENT_COLOR if attr in MEASUREMENT_ATTRS else WEIGHTED_COLOR
+            for attr in attributes
+        ]
         w_bars = ax.bar(x, df[args.metric], bar_w,
-                        label=args.metric.replace("_", " "),
-                        color=WEIGHTED_COLOR, zorder=3)
+                        color=bar_colors, zorder=3)
         bar_groups = [w_bars]
 
     for bars in bar_groups:
@@ -114,7 +118,15 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
     ax.yaxis.grid(True, linestyle="--", linewidth=0.5, color="#D3D1C7", zorder=1)
     ax.spines[["top", "right"]].set_visible(False)
     if show_macro:
-        ax.legend(fontsize=10, loc="lower left", frameon=True, framealpha=0.9)
+        ax.legend(fontsize=10, loc="upper right", frameon=True, framealpha=0.9)
+    else:
+        from matplotlib.patches import Patch
+        legend_handles = [
+            Patch(color=WEIGHTED_COLOR, label="categorical"),
+            Patch(color=MEASUREMENT_COLOR, label="measurement"),
+        ]
+        ax.legend(handles=legend_handles, fontsize=10, loc="upper right",
+                  frameon=True, framealpha=0.9)
 
     fig.tight_layout()
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -132,8 +144,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--metric", default="weighted_f1",
                    choices=["weighted_f1", "macro_f1"],
                    help="Metric to plot when --no-macro is set.")
-    p.add_argument("--no-macro", action="store_true",
-                   help="Plot a single metric instead of weighted + macro side by side.")
+    p.add_argument("--macro", action="store_true",
+                   help="Also plot macro F1 alongside weighted F1 (off by default).")
     p.add_argument("--title", default=None)
     p.add_argument("--figsize", nargs=2, type=float, default=[12, 6],
                    metavar=("W", "H"))
