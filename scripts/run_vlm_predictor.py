@@ -63,7 +63,7 @@ def build_input_table_from_folder(
     def rel_image_path(img: Path) -> str:
         # path the loader expects: "data/" + (image relative to image_root)
         rel = img.resolve().relative_to(image_root_abs)
-        return "data/" + str(rel)
+        return "data/" + rel.as_posix()
 
     rows: list[dict[str, object]] = []
 
