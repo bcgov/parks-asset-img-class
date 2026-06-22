@@ -8,6 +8,10 @@ The CityWide download is optional. It is intended for BC Parks users or graders
 who have CityWide API credentials. The final modelling pipeline can run from
 the tracked processed data without re-downloading CityWide data.
 
+For the end-to-end path from raw files to cleaned images and final prediction
+CSVs, start with `docs/raw_data_to_pipeline.md`. This runbook focuses only on
+the CityWide API download details.
+
 ## Required Credentials
 
 Create a local `.env` file from `.env.example` and set:
