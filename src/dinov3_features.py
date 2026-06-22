@@ -90,31 +90,30 @@ def aggregate_asset_features(image_features: pd.DataFrame) -> pd.DataFrame:
 def _load_dinov3_model(
     model_name: str = DEFAULT_DINOV3_MODEL,
     *,
-    model_source: str = "facebookresearch/dinov3",
+    model_source: str | None = None,
     weights: str | Path | None = None,
     device: str | None = None,
 ) -> tuple[Any, str]:
-    """Load a DINOv3 model with torch.hub.
-
-    ``model_source`` may be the GitHub repo name or a local checkout path. A
-    local checkout is useful on machines without network access.
-    """
     import torch
+
+    # Auto-detect cached hub repo to avoid GitHub SSL call
+    if model_source is None or model_source == "facebookresearch/dinov3":
+        hub_cache = Path(torch.hub.get_dir()) / "facebookresearch_dinov3_main"
+        if hub_cache.exists():
+            model_source = str(hub_cache)
+        else:
+            model_source = "facebookresearch/dinov3"
 
     resolved_device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     source_kind = "local" if Path(model_source).exists() else "github"
-    try:
-        load_kwargs = {
-            "source": source_kind,
-            "trust_repo": True,
-        }
-        if weights is not None:
-            load_kwargs["weights"] = str(weights)
 
+    try:
         model = torch.hub.load(
             model_source,
             model_name,
-            **load_kwargs,
+            source=source_kind,
+            pretrained=(weights is None),
+            trust_repo=True,
         )
     except ModuleNotFoundError as exc:
         missing = exc.name or str(exc)
@@ -134,6 +133,16 @@ def _load_dinov3_model(
                 "checkpoint first, pass the local .pth path."
             ) from exc
         raise
+
+    if weights is not None:
+        weights_path = Path(weights)
+        if not weights_path.exists():
+            raise FileNotFoundError(f"Weights file not found: {weights_path}")
+        state_dict = torch.load(weights_path, map_location=resolved_device)
+        if isinstance(state_dict, dict):
+            state_dict = state_dict.get("model", state_dict.get("state_dict", state_dict))
+        model.load_state_dict(state_dict, strict=False)
+
     model.eval().to(resolved_device)
     return model, resolved_device
 
@@ -183,7 +192,7 @@ def extract_image_features(
     *,
     image_root: str | Path = DEFAULT_IMAGE_ROOT,
     model_name: str = DEFAULT_DINOV3_MODEL,
-    model_source: str = "facebookresearch/dinov3",
+    model_source: str | None = None,
     weights: str | Path | None = None,
     device: str | None = None,
     image_size: int = 224,
