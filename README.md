@@ -118,11 +118,36 @@ Run a small new-image demo from the cleaned training image folder:
 make demo-new-images
 ```
 
-Predict on a separate folder of new images:
+Predict on a separate folder of already-cleaned new images:
 
 ```bash
-make predict-new-images NEW_IMAGE_FOLDER=data/raw/citywide/images
+make predict-new-images NEW_IMAGE_FOLDER=data/processed/images_clean/citywide/images NEW_IMAGE_LIMIT=5
 ```
+
+
+### Predicting on a new CityWide bulk export
+
+When BC Parks provides a bulk CityWide export — a flat folder of images plus a CSV mapping image file names to asset IDs — the pipeline sorts, screens, and predicts in three steps. Exports are processed one asset type at a time.
+
+```bash
+# 1. Sort the flat export into per-asset folders (data/raw/new_batch/<asset_id>/)
+make sort-citywide-export \
+  CITYWIDE_EXPORT_FOLDER=<path to the flat image folder> \
+  CITYWIDE_EXPORT_CSV=<path to the export CSV>
+
+# 2. Screen and blur for PII (writes cleaned images to data/processed/images_clean/new_batch/)
+make pii-batch
+
+# 3. Predict attributes (DINOv3 default)
+make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs"
+
+# or, optionally, with the cloud VLM
+make vlm-predict NEW_IMAGE_ASSET_TYPE="Stairs" VLM_PROMPT=stairs_v1
+```
+
+Replace `"Stairs"` with the export's asset type — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
+
+To test on the existing training images instead of a new export, use `make demo`, or override the folder as shown above. Training data uses the `profile_id/asset_id` layout, so no `NEW_IMAGE_ASSET_TYPE` is needed — the type is inferred from the profile_id folder.
 
 Optional cloud VLM predictions are available when provider credentials are set:
 
@@ -205,6 +230,18 @@ Or run batch predictions directly:
 python scripts/run_vlm_predictor.py \
   --input data/processed/train/train_only_stairs.csv \
   --output results/vlm_stairs_gemini.csv \
+  --provider gemini \
+  --model gemini-3-flash-preview \
+  --prompt stairs_v1
+```
+
+`--input` also accepts a folder of images, not just a CSV. For a flat folder of one asset type, pass `--asset-type`:
+
+```bash
+python scripts/run_vlm_predictor.py \
+  --input data/processed/images_clean/new_batch \
+  --asset-type "Stairs" \
+  --output results/vlm_new_batch_gemini.csv \
   --provider gemini \
   --model gemini-3-flash-preview \
   --prompt stairs_v1
