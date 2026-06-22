@@ -16,6 +16,9 @@ FEATURE_DIR ?= data/features
 FINAL_DIR ?= results/final
 ATTRIBUTE_APPLICABILITY ?= data/processed/attribute_applicability.csv
 
+TEST_DIR ?= data/processed/test
+TEST_RESULTS ?= $(FINAL_DIR)/test_set_results.csv
+
 DINO_MODEL ?= dinov3_vitb16
 DINO_HUB_MODEL ?= dinov3_vitb16
 DINO_WEIGHTS ?= models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
@@ -71,7 +74,7 @@ DEMO_ASSET_LIMIT ?= 5
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
 	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo demo-new-images \
 	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean \
-	sort-citywide-export pii-batch pii-batch-screen
+	sort-citywide-export pii-batch pii-batch-screen evaluate-test
 
 help:
 	@echo "Final pipeline targets:"
@@ -388,6 +391,22 @@ predict-new-images: data-check model-data-check features-dinov3-master
 	  --output $(NEW_IMAGE_OUTPUT) \
 	  --output-wide $(NEW_IMAGE_OUTPUT_WIDE) \
 	  $(NEW_IMAGE_LIMIT_ARG)
+
+evaluate-test: data-check model-data-check features-dinov3-master
+	@printf "\n==> evaluate-test: scoring the held-out test set\n"
+	$(TIME) $(PYTHON) scripts/check_pipeline_inputs.py \
+	  --require-dinov3-weights --dinov3-weights $(DINO_WEIGHTS) \
+	  --feature-file $(DINO_MASTER_FEATURES)
+	$(TIME) $(PYTHON) scripts/evaluate_test_set.py \
+	  --train-dir $(TRAIN_DIR) \
+	  --test-dir $(TEST_DIR) \
+	  --training-features $(DINO_MASTER_FEATURES) \
+	  --weights $(DINO_WEIGHTS) \
+	  --model $(DINO_MODEL) \
+	  --image-root $(IMAGE_ROOT) \
+	  --classifier $(CLASSIFIER) \
+	  --seed $(SEED) \
+	  --output $(TEST_RESULTS)
 
 demo-new-images: NEW_IMAGE_FOLDER = $(IMAGE_ROOT)/citywide/images
 demo-new-images: NEW_IMAGE_LIMIT = $(DEMO_ASSET_LIMIT)
