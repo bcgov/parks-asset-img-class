@@ -1,5 +1,13 @@
 """Extract frozen OpenCLIP features for project images.
 
+Pipeline role:
+- reads processed image manifests from the same train/master tables used by
+  DINOv3 and SigLIP;
+- loads a frozen OpenCLIP vision model and writes image-level and asset-level
+  embeddings under ``data/features``;
+- feeds ``scripts/run_openclip_classifier.py`` for cross-validation and model
+  comparison.
+
 Mirrors scripts/extract_dinov3_features.py but uses OpenCLIP as the backbone.
 Model weights are downloaded automatically on first run (~2-3GB for ViT-H-14).
 
@@ -38,6 +46,7 @@ from src.openclip_features import (  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Extract OpenCLIP image embeddings and aggregate them by asset_id."
     )
@@ -95,6 +104,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     rows = pd.read_csv(args.input)
 

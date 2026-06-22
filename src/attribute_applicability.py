@@ -11,6 +11,7 @@ NON_ASSET_COLUMNS = {"Attribute", "Want AI to Determine", "Weight Priority"}
 
 
 def _wants_ai(row: pd.Series) -> bool:
+    """Return whether an applicability value means the attribute should be predicted."""
     if "Want AI to Determine" not in row:
         return True
     return str(row["Want AI to Determine"]).strip().lower() == "yes"

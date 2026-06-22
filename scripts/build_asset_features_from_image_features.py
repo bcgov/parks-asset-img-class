@@ -1,4 +1,12 @@
-"""Aggregate precomputed image-level features to asset-level features."""
+"""Aggregate precomputed image-level features to asset-level features.
+
+Pipeline role:
+- reads image-level embeddings and the master image/asset table;
+- averages image embeddings for each asset to create one feature vector per
+  asset;
+- writes the asset-level feature CSV used by final classifier training and
+  prediction export.
+"""
 
 from __future__ import annotations
 
@@ -16,6 +24,7 @@ from src.dinov3_features import feature_columns
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--master",
@@ -72,6 +81,7 @@ def build_asset_features(master: pd.DataFrame, image_features: pd.DataFrame) -> 
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     master = pd.read_csv(args.master)
     image_features = read_features(args.image_features)

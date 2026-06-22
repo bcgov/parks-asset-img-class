@@ -39,6 +39,7 @@ if str(ROOT) not in sys.path:
 # ---------------------------------------------------------------------
 
 def ground_truth_path_for(attribute: str, ground_truth_dir: str) -> str:
+    """Return the expected ground-truth CSV path for an attribute."""
     filename = (
         attribute
         .replace("attr_", "")
@@ -57,6 +58,7 @@ def ground_truth_path_for(attribute: str, ground_truth_dir: str) -> str:
 
 
 def pred_col_for(attribute: str) -> str:
+    """Return the prediction column name for an attribute."""
     attr_key = attribute.replace("attr_", "").replace(",", "")
     return f"{attr_key}_value"
 
@@ -77,6 +79,7 @@ def get_report_df(y_true, y_pred) -> pd.DataFrame:
 
 
 def load_attribute_data(attribute, predictions_df, ground_truth_dir):
+    """Load predictions and ground truth for one classification-report panel."""
     gt_path = ground_truth_path_for(attribute, ground_truth_dir)
     if not os.path.exists(gt_path):
         print(f"  Warning: ground truth not found: {gt_path}", file=sys.stderr)
@@ -117,6 +120,7 @@ def load_attribute_data(attribute, predictions_df, ground_truth_dir):
 # ---------------------------------------------------------------------
 
 def plot_report_heatmap(ax, report_df, title):
+    """Plot a heatmap from a sklearn classification report table."""
     metrics = ["precision", "recall", "f1-score"]
     data = report_df[metrics].values.astype(float)
     classes = report_df.index.tolist()
@@ -174,6 +178,7 @@ def plot_asset_type(
     dpi: int,
     max_cols: int,
 ):
+    """Plot all requested attribute reports for one asset type."""
     n = len(attribute_data)
     if n == 0:
         print("No valid attributes to plot.", file=sys.stderr)

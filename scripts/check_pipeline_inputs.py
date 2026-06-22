@@ -1,4 +1,12 @@
-"""Validate required inputs for the final Makefile pipeline."""
+"""Validate required inputs for the final Makefile pipeline.
+
+Pipeline role:
+- runs near the start of ``make all`` and related Makefile targets;
+- checks that committed configuration, processed training data, cleaned-image
+  markers, and optional credentials are present before expensive work starts;
+- fails early with actionable messages instead of letting downstream scripts
+  fail halfway through the pipeline.
+"""
 
 from __future__ import annotations
 
@@ -29,6 +37,7 @@ CITYWIDE_CREDENTIALS = [
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--require-images",
@@ -81,6 +90,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     required = list(REQUIRED_PATHS)
     if args.require_images:

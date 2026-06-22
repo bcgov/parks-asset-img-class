@@ -162,6 +162,7 @@ def attribute_columns(df: pd.DataFrame) -> list[str]:
 
 
 def plot_fill_rate(attributes_df: pd.DataFrame, output_dir: Path) -> Path:
+    """Plot attribute fill rates for the EDA report."""
     records = []
     for category, info in PROFILE_ATTRS.items():
         subset = attributes_df[attributes_df["profile_name"] == category]
@@ -204,6 +205,7 @@ def plot_fill_rate(attributes_df: pd.DataFrame, output_dir: Path) -> Path:
 
 def plot_categorical_distributions(attributes_df: pd.DataFrame, cat_attrs: list[str],
                                    output_dir: Path) -> Path:
+    """Plot categorical attribute distributions for EDA."""
     ncols = 2
     nrows = math.ceil(len(cat_attrs) / ncols)
     fig, axes = plt.subplots(nrows, ncols, figsize=(12, nrows * 4))
@@ -239,6 +241,7 @@ def plot_categorical_distributions(attributes_df: pd.DataFrame, cat_attrs: list[
 
 def plot_numerical_distributions(attributes_df: pd.DataFrame, num_attrs: list[str],
                                  output_dir: Path) -> Path:
+    """Plot numerical attribute distributions for EDA."""
     ncols = 2
     nrows = math.ceil(len(num_attrs) / ncols)
     fig, axes = plt.subplots(nrows, ncols, figsize=(12, nrows * 4))
@@ -272,6 +275,7 @@ def plot_numerical_distributions(attributes_df: pd.DataFrame, num_attrs: list[st
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--input",
@@ -289,6 +293,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
 
     if not args.input.exists():

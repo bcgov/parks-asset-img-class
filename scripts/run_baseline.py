@@ -1,4 +1,14 @@
 """Run all three baseline strategies from processed train CSVs.
+
+Pipeline role:
+- reads every ``*_train.csv`` label file under ``data/processed/train``;
+- evaluates simple non-image baselines with the same grouped cross-validation
+  setup used by the embedding classifiers;
+- writes baseline result tables under ``results/baseline_results``.
+
+These baselines are consumed by comparison scripts such as
+``scripts/compare_dinov3_to_baseline.py`` and report figures, giving the image
+embedding models a meaningful reference point.
  
 Strategies:
     - majority_class_group_cv   : always predict the most common training label
@@ -51,6 +61,7 @@ STRATEGIES = [
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Run all three grouped baseline strategies."
     )
@@ -177,6 +188,7 @@ def log_results_to_mlflow(
  
  
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     summary, fold_results = cross_validate_train_folder(
         train_dir=args.train_dir,

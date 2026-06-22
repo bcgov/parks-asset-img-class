@@ -50,6 +50,7 @@ def selected_profiles(profile_ids: list[int] | None) -> dict[int, str]:
 
 
 def _profile_dir(output_dir: Path, profile_id: int) -> Path:
+    """Return the local image directory for a CityWide profile."""
     return output_dir / "by_profile" / str(profile_id)
 
 
@@ -319,6 +320,7 @@ def probe_quota(client: CitywideClient) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--output-dir",
@@ -365,6 +367,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     output_dir = args.output_dir
     profiles = selected_profiles(args.profile)

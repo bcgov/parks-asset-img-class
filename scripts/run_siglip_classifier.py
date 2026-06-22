@@ -1,5 +1,16 @@
 """Run a grouped classifier on frozen SigLIP asset embeddings.
 
+Pipeline role:
+- reads one target label CSV from ``data/processed/train``;
+- reads asset embeddings produced by ``scripts/extract_siglip_features.py``;
+- evaluates a lightweight classifier with grouped cross-validation by
+  ``asset_id``;
+- writes SigLIP metrics, fold metrics, and out-of-fold predictions to the
+  organized SigLIP results/prediction folders.
+
+This mirrors ``scripts/run_dinov3_classifier.py`` so SigLIP and DINOv3 results
+can be compared consistently in ``scripts/create_model_comparison_figures.py``.
+
 Example:
     python scripts/run_siglip_classifier.py \
         --labels data/processed/train/attr_decking_material_train.csv \
@@ -55,6 +66,7 @@ CLASSIFIER_OUTPUT_DIRS = {
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Evaluate frozen SigLIP embeddings with grouped CV."
     )
@@ -212,6 +224,7 @@ def log_results_to_mlflow(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     summary, folds, predictions = run_task_from_files(
         labels_path=args.labels,

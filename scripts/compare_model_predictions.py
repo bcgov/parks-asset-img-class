@@ -141,6 +141,7 @@ COLORS = {  # just for console readability
 
 
 def _norm(series: pd.Series) -> pd.Series:
+    """Normalize a label value for robust string comparisons."""
     return series.astype(str).str.strip().str.lower()
 
 
@@ -233,6 +234,7 @@ def build_comparison(attr: str, cfg: dict, vlm_files, embed_dir, gt_dir):
         return merged
 
     def bucket(row):
+        """Assign an overlap row to a VLM/embedding correctness bucket."""
         if row["vlm_correct"] and row["embed_correct"]:
             return "both_right"
         if row["vlm_correct"] and not row["embed_correct"]:
@@ -246,6 +248,7 @@ def build_comparison(attr: str, cfg: dict, vlm_files, embed_dir, gt_dir):
 
 
 def print_overview(vlm_files, embed_dir, gt_dir):
+    """Print overlap and correctness summaries for compared predictions."""
     print("\n=== VLM files found ===")
     for atype, path in vlm_files.items():
         print(f"  {atype:14s} -> {path}")
@@ -282,6 +285,7 @@ def print_overview(vlm_files, embed_dir, gt_dir):
 
 def generate_html(attr, cfg, vlm_files, embed_dir, gt_dir, train_dir,
                   buckets, output_dir, limit):
+    """Generate an HTML report showing compared model predictions and images."""
     merged = build_comparison(attr, cfg, vlm_files, embed_dir, gt_dir)
     if merged is None or merged.empty:
         print(f"No overlapping assets for {attr}; nothing to render.")
@@ -408,6 +412,7 @@ def plot_matched_f1(df, metric, output_path, min_overlap=30):
 
 
 def parse_args():
+    """Parse command-line arguments for this script."""
     ap = argparse.ArgumentParser(description="Compare VLM vs DINOv3 per asset.")
     ap.add_argument("--results-root", default="results",
                     help="Root to search for VLM prediction CSVs.")
@@ -436,6 +441,7 @@ def parse_args():
 
 
 def main():
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     vlm_files = find_vlm_files(args.results_root)
     if not vlm_files:

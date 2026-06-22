@@ -1,5 +1,13 @@
 """Run SigLIP experiments for multiple classification attributes.
 
+Pipeline role:
+- builds one union image manifest from the requested train CSVs;
+- calls ``scripts/extract_siglip_features.py`` once to create reusable SigLIP
+  embeddings;
+- calls ``scripts/run_siglip_classifier.py`` once per target attribute;
+- writes result tables used to compare SigLIP against DINOv3, OpenCLIP, and the
+  baseline.
+
 The expensive step is SigLIP feature extraction. Since SigLIP features do not
 depend on the target label, this script extracts one shared feature table from
 the union of the requested train CSVs, then reuses it for each classifier.
@@ -34,6 +42,7 @@ from src.dinov3_classifier import CLASSIFIER_CHOICES  # noqa: E402
 from src.siglip_features import DEFAULT_IMAGE_ROOT, DEFAULT_SIGLIP_MODEL, model_slug  # noqa: E402
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Extract shared SigLIP features and run classifiers for multiple attributes."
     )
@@ -115,6 +124,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def selected_targets(args: argparse.Namespace) -> list[str]:
+    """Resolve the requested attribute targets in pipeline order."""
     if args.targets is not None:
         return args.targets
     return DEFAULT_TARGETS
@@ -128,6 +138,7 @@ def target_set_slug(args: argparse.Namespace, targets: list[str]) -> str:
 
 
 def _target_column(frame: pd.DataFrame, target: str) -> str:
+    """Return the label column name used by a target training CSV."""
     if target in frame.columns:
         return target
     attr_columns = [column for column in frame.columns if column.startswith("attr_")]
@@ -137,6 +148,7 @@ def _target_column(frame: pd.DataFrame, target: str) -> str:
 
 
 def _class_balanced_asset_sample(frame: pd.DataFrame, target: str, per_class: int) -> pd.DataFrame:
+    """Select a small class-balanced asset subset for smoke tests."""
     target_column = _target_column(frame, target)
     labelled = frame.dropna(subset=["asset_id", target_column])
     asset_labels = labelled[["asset_id", target_column]].drop_duplicates("asset_id")
@@ -154,6 +166,7 @@ def build_union_input(
     *,
     smoke_assets_per_class: int | None = None,
 ) -> None:
+    """Build one shared image manifest from the requested target train files."""
     frames = []
     for target in targets:
         csv_path = target_train_path(train_dir, target)
@@ -177,11 +190,13 @@ def build_union_input(
 
 
 def run_command(command: list[str]) -> None:
+    """Run a child pipeline command and fail if it exits unsuccessfully."""
     print("\n$", " ".join(command))
     subprocess.run(command, check=True, cwd=REPO_ROOT)
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     targets = selected_targets(args)
     slug = model_slug(args.model_name)

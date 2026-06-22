@@ -379,6 +379,7 @@ def create_error_report_html(
 
 
 def main():
+    """Run the script from parsed command-line arguments."""
     parser = argparse.ArgumentParser(
         description="Visualize VLM prediction errors with images"
     )

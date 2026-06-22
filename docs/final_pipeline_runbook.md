@@ -2,7 +2,7 @@
 
 This guide explains how to run the final BC Parks image-attribute prediction pipeline and what each step does.
 
-The pipeline is controlled by the project `Makefile`. It checks the project inputs, confirms the cleaned image set is ready, builds or reuses DINOv3 image features, and writes partner-facing prediction CSV files with confidence scores.
+The pipeline is controlled by the project `Makefile`. It checks the project inputs, confirms the cleaned image set is ready, builds or reuses DINOv3 image features, trains or reuses saved final classifiers, and writes partner-facing prediction CSV files with confidence scores.
 
 ## Quick Start
 
@@ -27,6 +27,13 @@ results/final/bcparks_asset_attribute_predictions_long.csv
 results/final/bcparks_asset_attribute_predictions_wide.csv
 ```
 
+The saved final classifier artifact is written to:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
+models/final/dinov3_vitb16_logistic_regression/manifest.json
+```
+
 ## What `make all` Does
 
 When you run:
@@ -45,6 +52,7 @@ make all
        -> pii-ready
        -> model-data-check
        -> features-dinov3-master
+       -> train-final-models
        -> export-bcparks
 ```
 
@@ -69,8 +77,11 @@ In plain language:
 5. `features-dinov3-master`
    Builds or reuses asset-level DINOv3 embeddings. If the feature files already exist, Make skips the expensive feature extraction step.
 
-6. `export-bcparks`
-   Trains the final lightweight classifiers on the DINOv3 embeddings and exports the BC Parks prediction CSV files.
+6. `train-final-models`
+   Trains the final lightweight classifiers on the DINOv3 asset embeddings and saves them as a reusable local model bundle. This is fast because DINOv3 is frozen and the embeddings already exist.
+
+7. `export-bcparks`
+   Loads the saved final classifier bundle and exports the BC Parks prediction CSV files.
 
 Each step prints a readable duration line, for example:
 
@@ -97,6 +108,38 @@ The DINOv3 model weights are not committed to git. They must be placed locally a
 ```text
 models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 ```
+
+## Saved Final Classifiers
+
+The final pipeline separates training from inference:
+
+```text
+train-final-models
+  -> trains final sklearn classifiers on cached asset embeddings
+  -> writes models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
+
+export-bcparks / predict-new-images
+  -> loads the saved classifier bundle
+  -> predicts attributes
+```
+
+This means DINOv3 is not retrained. DINOv3 is used as a frozen feature extractor. The saved model bundle contains the small classifiers trained on top of the DINOv3 embeddings.
+
+The model manifest is human-readable:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/manifest.json
+```
+
+It records the model family, DINOv3 model name, classifier type, feature columns, and the target attributes included in the bundle.
+
+Run only the saved-model training step:
+
+```bash
+make train-final-models
+```
+
+This retrains the saved classifiers when the training CSVs, applicability matrix, or asset feature file are newer than the saved bundle.
 
 ## Attribute Applicability
 
@@ -131,8 +174,12 @@ Use this format when you want to filter, audit, or summarize predictions by attr
 Important columns include:
 
 - `asset_id`
+- `profile_id`
 - `profile_name`
+- `description`
+- `image_count`
 - `attribute`
+- `target_column`
 - `predicted_value`
 - `confidence_score`
 - `confidence_level`
@@ -177,6 +224,19 @@ These are model confidence levels, not manual verification labels.
 make help
 ```
 
+### Train or Refresh Saved Final Classifiers
+
+```bash
+make train-final-models
+```
+
+This creates or refreshes:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
+models/final/dinov3_vitb16_logistic_regression/manifest.json
+```
+
 ### Run the Final Partner Deliverable Pipeline
 
 ```bash
@@ -215,6 +275,12 @@ This is useful for showing the pipeline on a small sample.
 
 ```bash
 make predict-new-images NEW_IMAGE_FOLDER=path/to/new/images
+```
+
+This command extracts DINOv3 embeddings for the new images and loads the saved final classifier bundle from:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
 ```
 
 For a flat folder where all assets are the same type:
@@ -257,13 +323,19 @@ Remove generated final prediction CSVs:
 make clean-final
 ```
 
+Remove the saved final classifier artifact:
+
+```bash
+make clean-final-models
+```
+
 Remove generated DINOv3 feature CSVs for the current DINO model:
 
 ```bash
 make clean-dinov3
 ```
 
-Remove both final prediction CSVs and current DINOv3 feature CSVs:
+Remove final prediction CSVs, saved final classifiers, and current DINOv3 feature CSVs:
 
 ```bash
 make clean
@@ -283,6 +355,7 @@ Do commit:
 Do not commit:
 
 - generated prediction CSVs under `results/final/`
+- saved final classifier artifacts under `models/final/`
 - DINOv3 model weights under `models/downloaded_model/`
 - raw downloaded image folders
 - `.env`
@@ -327,6 +400,30 @@ Then check:
 results/final/
 ```
 
+### Saved Final Classifier Bundle Is Missing
+
+Run:
+
+```bash
+make train-final-models
+```
+
+Then check:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
+models/final/dinov3_vitb16_logistic_regression/manifest.json
+```
+
 ### The Pipeline Skips DINOv3 Feature Extraction
 
 This is expected when feature CSVs already exist. Make only reruns steps whose outputs are missing or older than their inputs.
+
+### The Pipeline Skips Final Classifier Training
+
+This is expected when the saved model bundle already exists and is newer than the training CSVs, applicability matrix, and asset feature file. To force retraining:
+
+```bash
+make clean-final-models
+make train-final-models
+```

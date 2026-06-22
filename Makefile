@@ -10,6 +10,7 @@ CLASSIFIER ?= logistic_regression
 DATA_VERSION ?= processed-train
 
 TRAIN_DIR ?= data/processed/train
+TRAIN_FILES := $(wildcard $(TRAIN_DIR)/*_train.csv)
 MASTER_DATA ?= data/processed/master_dataset.csv
 IMAGE_ROOT ?= data/processed/images_clean
 FEATURE_DIR ?= data/features
@@ -23,6 +24,8 @@ GENERATED_DINO_IMAGE_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_images.csv
 DINO_IMAGE_FEATURES ?= $(GENERATED_DINO_IMAGE_FEATURES)
 DINO_MASTER_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_master_assets.csv
 DINO_RUN_FEATURES ?= $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
+FINAL_MODEL_DIR ?= models/final/$(DINO_MODEL)_$(CLASSIFIER)
+FINAL_MODEL_BUNDLE ?= $(FINAL_MODEL_DIR)/final_classifiers.joblib
 PII_SCREEN_CSV ?= results/predictions/pii_screen.csv
 PII_BLUR_LOG ?= data/pii_review/blur_log.csv
 PII_UPLOAD_MARKER ?= $(IMAGE_ROOT)/.upload_set_complete
@@ -59,11 +62,11 @@ DEMO_ASSET_LIMIT ?= 5
 
 .PHONY: help all final-dinov3 smoke env-check data-check model-data-check test \
 	pii pii-ready pii-screen pii-blur pii-upload-set baseline \
-	features-dinov3-master features-dinov3-extract-master train-dinov3 train-siglip train-openclip models \
+	features-dinov3-master features-dinov3-extract-master train-final-models train-dinov3 train-siglip train-openclip models \
 	vlm-check vlm-predict vlm-smoke final-with-vlm \
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
 	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo demo-new-images \
-	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean
+	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-final-models clean-dinov3 clean-pipeline clean
 
 help:
 	@echo "Final pipeline targets:"
@@ -77,6 +80,7 @@ help:
 	@echo "  make pii-ready             Check that the cleaned image set already exists"
 	@echo "  make baseline              Run grouped baseline strategies"
 	@echo "  make features-dinov3-master Build asset features from DINOv3 image features"
+	@echo "  make train-final-models    Train and save final classifiers for inference"
 	@echo "  make train-dinov3          Run grouped CV for DINOv3 final classifier"
 	@echo "  make predict-new-images    Predict attributes for a folder of new images"
 	@echo "  make demo                  Alias for demo-new-images with DEMO_ASSET_LIMIT=10"
@@ -95,6 +99,7 @@ help:
 	@echo "    CityWide credentials: CITYWIDE_API_KEY, CITYWIDE_DB, CITYWIDE_USER"
 	@echo "  make export-bcparks        Write partner-facing prediction CSVs"
 	@echo "  make clean-final           Remove generated partner-facing final CSVs"
+	@echo "  make clean-final-models    Remove saved final classifier artifacts"
 	@echo "  make clean-dinov3          Remove generated DINOv3 feature CSVs for current DINO_MODEL"
 	@echo "  make clean-pipeline        Remove generated final CSVs + current DINOv3 feature CSVs"
 	@echo "  make clean                 Alias for clean-pipeline"
@@ -105,8 +110,8 @@ all: all-start final-dinov3
 all-start:
 	@printf "\n==> make all: running the final DINOv3 partner-deliverable pipeline\n"
 
-# Partner deliverable: prediction + confidence CSVs only
-final-dinov3: final-dinov3-start test data-check pii-ready model-data-check features-dinov3-master export-bcparks
+# Partner deliverable: saved final classifiers + prediction/confidence CSVs
+final-dinov3: final-dinov3-start test data-check pii-ready model-data-check features-dinov3-master train-final-models export-bcparks
 	@printf "\n==> final-dinov3 complete: prediction CSVs are in $(FINAL_DIR)\n"
 
 final-dinov3-start:
@@ -115,6 +120,7 @@ final-dinov3-start:
 	@printf "    DINO_WEIGHTS=$(DINO_WEIGHTS)\n"
 	@printf "    DINO_IMAGE_FEATURES=$(DINO_IMAGE_FEATURES)\n"
 	@printf "    DINO_MASTER_FEATURES=$(DINO_MASTER_FEATURES)\n"
+	@printf "    FINAL_MODEL_BUNDLE=$(FINAL_MODEL_BUNDLE)\n"
 
 # Analysis/evaluation (run manually when regenerating report numbers/figures)
 evaluate: evaluate-start baseline train-dinov3 compare-dinov3 figures
@@ -246,6 +252,22 @@ features-dinov3-master: $(DINO_MASTER_FEATURES) $(DINO_RUN_FEATURES)
 features-dinov3-extract-master: $(DINO_IMAGE_FEATURES) $(DINO_MASTER_FEATURES)
 	@printf "\n==> features-dinov3-extract-master complete\n"
 
+$(FINAL_MODEL_BUNDLE): scripts/train_final_classifiers.py $(DINO_MASTER_FEATURES) $(TRAIN_FILES) $(ATTRIBUTE_APPLICABILITY)
+	@printf "\n==> train-final-models: training saved final classifiers\n"
+	@printf "    Output: $(FINAL_MODEL_BUNDLE)\n"
+	$(TIME) $(PYTHON) scripts/train_final_classifiers.py \
+	  --features $(DINO_MASTER_FEATURES) \
+	  --train-dir $(TRAIN_DIR) \
+	  --applicability $(ATTRIBUTE_APPLICABILITY) \
+	  --classifier $(CLASSIFIER) \
+	  --model-family dinov3 \
+	  --model-name $(DINO_MODEL) \
+	  --seed $(SEED) \
+	  --model-dir $(FINAL_MODEL_DIR)
+
+train-final-models: $(FINAL_MODEL_BUNDLE)
+	@printf "\n==> train-final-models complete: saved classifiers are in $(FINAL_MODEL_DIR)\n"
+
 train-dinov3:
 	@printf "\n==> train-dinov3: running grouped CV classifiers on DINOv3 embeddings\n"
 	$(TIME) $(PYTHON) scripts/run_dinov3_remaining_attributes.py \
@@ -329,7 +351,7 @@ figures:
 	$(TIME) $(PYTHON) scripts/create_model_comparison_figures.py
 
 export-bcparks:
-	@printf "\n==> export-bcparks: training final classifiers and exporting partner CSVs\n"
+	@printf "\n==> export-bcparks: loading saved final classifiers and exporting partner CSVs\n"
 	@printf "    Long CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv\n"
 	@printf "    Wide CSV: $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv\n"
 	@printf "    Attribute map: $(ATTRIBUTE_APPLICABILITY)\n"
@@ -341,19 +363,22 @@ export-bcparks:
 	  --classifier $(CLASSIFIER) \
 	  --model-family dinov3 \
 	  --model-name $(DINO_MODEL) \
+	  --model-dir $(FINAL_MODEL_DIR) \
 	  --seed $(SEED) \
 	  --output-long $(FINAL_DIR)/bcparks_asset_attribute_predictions_long.csv \
 	  --output-wide $(FINAL_DIR)/bcparks_asset_attribute_predictions_wide.csv
 
-predict-new-images: data-check model-data-check features-dinov3-master
+predict-new-images: data-check model-data-check features-dinov3-master train-final-models
 	@printf "\n==> predict-new-images: predicting attributes for $(NEW_IMAGE_FOLDER)\n"
 	$(TIME) $(PYTHON) scripts/check_pipeline_inputs.py \
 	  --require-dinov3-weights \
 	  --dinov3-weights $(DINO_WEIGHTS) \
-	  --feature-file $(DINO_MASTER_FEATURES)
+	  --feature-file $(DINO_MASTER_FEATURES) \
+	  --feature-file $(FINAL_MODEL_BUNDLE)
 	$(TIME) $(PYTHON) scripts/predict_new_images.py \
 	  --image-folder $(NEW_IMAGE_FOLDER)$(if $(NEW_IMAGE_ASSET_TYPE), --asset-type "$(NEW_IMAGE_ASSET_TYPE)") \
 	  --training-features $(DINO_MASTER_FEATURES) \
+	  --model-dir $(FINAL_MODEL_DIR) \
 	  --train-dir $(TRAIN_DIR) \
 	  --weights $(DINO_WEIGHTS) \
 	  --model $(DINO_HUB_MODEL) \
@@ -382,6 +407,11 @@ clean-final:
 	$(TIME) rm -f $(FINAL_DIR)/demo_new_image_predictions_long.csv
 	$(TIME) rm -f $(FINAL_DIR)/demo_new_image_predictions_wide.csv
 
+clean-final-models:
+	@printf "\n==> clean-final-models: removing saved final classifier artifacts from $(FINAL_MODEL_DIR)\n"
+	$(TIME) rm -f $(FINAL_MODEL_DIR)/final_classifiers.joblib
+	$(TIME) rm -f $(FINAL_MODEL_DIR)/manifest.json
+
 clean-dinov3:
 	@printf "\n==> clean-dinov3: removing generated DINOv3 feature CSVs for $(DINO_MODEL)\n"
 	$(TIME) rm -f $(GENERATED_DINO_IMAGE_FEATURES)
@@ -392,7 +422,7 @@ clean-dinov3:
 	$(TIME) rm -f $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_assets.csv
 	$(TIME) rm -f $(FEATURE_DIR)/$(DINO_MODEL)_all_attributes_union_input.csv
 
-clean-pipeline: clean-final clean-dinov3
+clean-pipeline: clean-final clean-final-models clean-dinov3
 	@printf "\n==> clean-pipeline complete. Model weights, raw data, train data, and cleaned images were preserved.\n"
 
 clean: clean-pipeline

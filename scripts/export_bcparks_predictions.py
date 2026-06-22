@@ -1,15 +1,15 @@
 """Export final asset-attribute predictions for BC Parks.
 
-This script trains one final classifier per target attribute using all available
-labels, then predicts labels for asset-level embeddings from the master dataset.
-It writes:
+Pipeline role:
+- reads the master asset table from ``data/processed/master_dataset.csv``;
+- reads asset-level embeddings from ``data/features/..._master_assets.csv``;
+- usually loads the saved classifier bundle written by
+  ``scripts/train_final_classifiers.py`` via ``--model-dir``;
+- writes partner-facing long and wide CSVs under ``results/final``.
 
-- a long CSV with one row per asset x predicted attribute
-- a wide CSV with one row per asset and prediction/confidence columns per target
-
-The default model path is intentionally non-VLM: frozen image embeddings plus a
-small supervised classifier. Confidence is included only when the classifier
-supports ``predict_proba``.
+The script still supports the older train-inside-export path when no
+``--model-dir`` is supplied, but the final Makefile pipeline uses saved
+classifiers so export is an inference step rather than a training step.
 """
 
 from __future__ import annotations
@@ -33,6 +33,10 @@ from src.attribute_applicability import (  # noqa: E402
 )
 from src.dinov3_classifier import CLASSIFIER_CHOICES, make_classifier  # noqa: E402
 from src.dinov3_features import feature_columns  # noqa: E402
+from src.final_model_artifacts import (  # noqa: E402
+    load_final_model_bundle,
+    predict_with_final_model_bundle,
+)
 
 
 DEFAULT_METADATA_COLUMNS = [
@@ -47,6 +51,7 @@ PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--master",
@@ -77,6 +82,16 @@ def parse_args() -> argparse.Namespace:
         choices=CLASSIFIER_CHOICES,
         default="logistic_regression",
         help="Final supervised classifier trained on frozen embeddings.",
+    )
+    parser.add_argument(
+        "--model-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Optional saved final model directory or final_classifiers.joblib path. "
+            "When supplied, predictions are made from saved classifiers instead "
+            "of retraining inside this export step."
+        ),
     )
     parser.add_argument("--model-family", default="dinov3")
     parser.add_argument("--model-name", default="dinov3_vitb16")
@@ -152,6 +167,7 @@ def build_asset_metadata(master: pd.DataFrame) -> pd.DataFrame:
 
 
 def _labelled_assets(labels: pd.DataFrame, target: str) -> tuple[pd.DataFrame, str]:
+    """Return one labelled row per asset for a target column."""
     target_column = infer_target_column(labels, target)
     keep = ["asset_id", target_column]
     if "profile_name" in labels.columns:
@@ -163,6 +179,7 @@ def _labelled_assets(labels: pd.DataFrame, target: str) -> tuple[pd.DataFrame, s
 
 
 def _applicable_profiles(labels: pd.DataFrame) -> list[str]:
+    """Return the asset profiles where a target should be predicted."""
     if "profile_name" not in labels.columns:
         return []
     return sorted(labels["profile_name"].dropna().astype(str).unique().tolist())
@@ -175,6 +192,7 @@ def _filter_applicable_assets(
     predict_all_assets: bool,
     explicit_profiles: list[str] | None,
 ) -> tuple[pd.DataFrame, str]:
+    """Filter assets to only the profiles where a target is applicable."""
     if predict_all_assets or "profile_name" not in assets.columns:
         return assets, "all_profiles"
 
@@ -192,6 +210,7 @@ def _filter_applicable_assets(
 
 
 def _predict_confidence(model: object, X: pd.DataFrame) -> list[object]:
+    """Return the model confidence for each predicted class when available."""
     if not hasattr(model, "predict_proba"):
         return [pd.NA] * len(X)
     probabilities = model.predict_proba(X)
@@ -365,11 +384,27 @@ def export_predictions(
     high_threshold: float,
     medium_threshold: float,
     applicability_path: Path,
+    model_dir: Path | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Create long and wide final prediction tables from features and labels."""
     master = pd.read_csv(master_path)
     asset_metadata = build_asset_metadata(master)
     asset_features = pd.read_csv(features_path)
     asset_features.attrs["source_path"] = str(features_path)
+    if model_dir is not None:
+        bundle = load_final_model_bundle(model_dir)
+        long_predictions = predict_with_final_model_bundle(
+            bundle=bundle,
+            asset_features=asset_features,
+            asset_metadata=asset_metadata,
+            predict_all_assets=predict_all_assets,
+            high_threshold=high_threshold,
+            medium_threshold=medium_threshold,
+        )
+        long_predictions["feature_source"] = str(features_path)
+        wide_predictions = build_wide_output(long_predictions, asset_metadata)
+        return long_predictions, wide_predictions
+
     applicability = load_applicability(applicability_path)
 
     generated_at = datetime.now(UTC).isoformat()
@@ -399,6 +434,7 @@ def export_predictions(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     long_predictions, wide_predictions = export_predictions(
         master_path=args.master,
@@ -413,6 +449,7 @@ def main() -> int:
         high_threshold=args.high_threshold,
         medium_threshold=args.medium_threshold,
         applicability_path=args.applicability,
+        model_dir=args.model_dir,
     )
 
     args.output_long.parent.mkdir(parents=True, exist_ok=True)
