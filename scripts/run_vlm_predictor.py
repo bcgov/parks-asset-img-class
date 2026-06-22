@@ -28,6 +28,97 @@ sys.path.append(ROOT)
 from src.vlm.predictors import predict_asset_attributes
 from src.vlm.prompts import PROMPT_REGISTRY
 
+from pathlib import Path
+from scripts.download_citywide_images import PROFILES
+
+VALID_ASSET_TYPES = set(PROFILES.values())
+PROFILE_ID_TO_NAME = {str(pid): name for pid, name in PROFILES.items()}
+
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
+
+
+def _is_image(path: Path) -> bool:
+    return path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
+
+
+def build_input_table_from_folder(
+    image_folder: Path, asset_type: str | None, image_root: str
+) -> pd.DataFrame:
+    """Walk a folder of images into rows of asset_id, image_path, profile_name.
+
+    Mirrors predict_new_images.build_input_table so the VLM reads the same
+    structure DINOv3 does. image_path is written as ``data/<path relative to
+    image_root>`` so src/vlm/image_loader.py resolves it via its
+    ``.replace("data/", image_root + "/")`` step.
+
+    Flat mode (asset_type given):  <folder>/<asset_id>/<images>
+    Profile mode (no asset_type):  <folder>/<profile_id>/<asset_id>/<images>
+    """
+    if not image_folder.exists():
+        raise FileNotFoundError(f"Image folder not found: {image_folder}")
+
+    root = Path(ROOT)
+    image_root_abs = (root / image_root).resolve()
+
+    def rel_image_path(img: Path) -> str:
+        # path the loader expects: "data/" + (image relative to image_root)
+        rel = img.resolve().relative_to(image_root_abs)
+        return "data/" + rel.as_posix()
+
+    rows: list[dict[str, object]] = []
+
+    if asset_type is not None:
+        if asset_type not in VALID_ASSET_TYPES:
+            raise ValueError(
+                f"--asset-type {asset_type!r} is not a known asset type. "
+                f"Valid: {sorted(VALID_ASSET_TYPES)}"
+            )
+        asset_dirs = [p for p in sorted(image_folder.iterdir()) if p.is_dir()]
+        if not asset_dirs:
+            for img in sorted(image_folder.iterdir()):
+                if _is_image(img):
+                    rows.append({
+                        "asset_id": img.stem,
+                        "image_path": rel_image_path(img),
+                        "profile_name": asset_type,
+                    })
+        else:
+            for asset_dir in asset_dirs:
+                for img in sorted(asset_dir.iterdir()):
+                    if _is_image(img):
+                        rows.append({
+                            "asset_id": int(asset_dir.name),
+                            "image_path": rel_image_path(img),
+                            "profile_name": asset_type,
+                        })
+    else:
+        profile_dirs = [p for p in sorted(image_folder.iterdir()) if p.is_dir()]
+        if not profile_dirs:
+            raise ValueError(
+                "No profile_id subfolders found and no --asset-type given. "
+                "Either pass --asset-type for a flat folder, or use the "
+                "<profile_id>/<asset_id>/<images> layout."
+            )
+        for profile_dir in profile_dirs:
+            profile_name = PROFILE_ID_TO_NAME.get(profile_dir.name)
+            if profile_name is None:
+                print(f"  [skip] '{profile_dir.name}' is not a known profile_id; skipping.")
+                continue
+            for asset_dir in sorted(profile_dir.iterdir()):
+                if not asset_dir.is_dir():
+                    continue
+                for img in sorted(asset_dir.iterdir()):
+                    if _is_image(img):
+                        rows.append({
+                            "asset_id": int(asset_dir.name),
+                            "image_path": rel_image_path(img),
+                            "profile_name": profile_name,
+                        })
+
+    if not rows:
+        raise ValueError(f"No images found under {image_folder}.")
+    return pd.DataFrame(rows)
+
 DEFAULT_IMAGE_ROOT = "data/processed/images_clean"
 
 BIN_COL_MAPPING = {
@@ -109,11 +200,17 @@ def run_batch(
     offset=0,
     delay=0,
     buffer_size=20,
-    max_tokens=4096): # batch writes to results CSV instead of row-by-row
+    max_tokens=4096,
+    asset_type=None): # batch writes to results CSV instead of row-by-row
 
     """Run VLM prediction over an input batch and write outputs incrementally."""
     print(f"Loading input from: {input_path}")
-    df = pd.read_csv(input_path)
+    input_path_obj = Path(input_path)
+    if input_path_obj.is_dir():
+        print(f"Detected folder input; walking {input_path_obj}")
+        df = build_input_table_from_folder(input_path_obj, asset_type, image_root)
+    else:
+        df = pd.read_csv(input_path)
 
     # early validation
     if "asset_id" not in df.columns:
@@ -293,6 +390,9 @@ if __name__ == "__main__":
     parser.add_argument("--delay", type=float, default=0)
     parser.add_argument("--buffer_size", type=int, default=20)
     parser.add_argument("--max_tokens", type=int, default=4096)
+    parser.add_argument("--asset-type", default=None,
+                        help="Asset type for flat folder input, e.g. 'Stairs'. "
+                             "Omit for CSV input or profile_id/asset_id folder layout.")
 
     args = parser.parse_args()
 
@@ -309,10 +409,11 @@ if __name__ == "__main__":
         model_name=args.model,
         prompt_or_fn=prompt_or_fn,
         provider=args.provider,
-        image_root=args.image_root,
         limit=args.limit,
         offset=args.offset,
         delay=args.delay,
         buffer_size=args.buffer_size,
-        max_tokens=args.max_tokens
+        max_tokens=args.max_tokens,
+        image_root=args.image_root,
+        asset_type=args.asset_type,
     )
