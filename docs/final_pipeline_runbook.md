@@ -4,6 +4,11 @@ This guide explains how to run the final BC Parks image-attribute prediction pip
 
 The pipeline is controlled by the project `Makefile`. It checks the project inputs, confirms the cleaned image set is ready, builds or reuses DINOv3 image features, trains or reuses saved final classifiers, and writes partner-facing prediction CSV files with confidence scores.
 
+If you are starting from raw CityWide data or a new BC Parks bulk export, read
+`docs/raw_data_to_pipeline.md` first. That guide explains where to place raw
+files and which cleaning/preprocessing commands to run before using this
+runbook.
+
 ## Quick Start
 
 Run these commands from the repository root.

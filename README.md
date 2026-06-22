@@ -20,6 +20,9 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 │   │   └── train/
 │   └── raw/                  # optional CityWide download output
 ├── docs/
+│   ├── raw_data_to_pipeline.md
+│   ├── final_pipeline_runbook.md
+│   ├── citywide_api_runbook.md
 │   ├── dinov3_walkthrough.md
 │   ├── siglip_walkthrough.md
 │   └── vlm_walkthrough.md
@@ -87,6 +90,7 @@ make help
 Documentation map:
 
 - [`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md): first-time installation and handoff guide
+- [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md): start from raw BC Parks files and feed them through cleaning, preprocessing, and prediction
 - [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): day-to-day final pipeline commands
 - [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md): optional CityWide API download details
 - [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
@@ -94,6 +98,8 @@ Documentation map:
 
 For a full walkthrough of the final pipeline, see
 [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
+If you are starting from raw CityWide files or a new BC Parks bulk export, start
+with [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md) first.
 
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 

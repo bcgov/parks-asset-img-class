@@ -16,10 +16,11 @@ installed, such as Visual Studio Code, Git, a terminal, and Miniforge or Conda.
 For a brand-new Windows workstation, use the separate BC Parks software setup
 guide first.
 
-Use this document for first-time installation. For regular operation after
-setup, use `docs/final_pipeline_runbook.md`. For optional CityWide API details,
-use `docs/citywide_api_runbook.md`. Technical model experiment notes live in
-the DINOv3, SigLIP, and VLM walkthroughs.
+Use this document for first-time installation. If you are starting from raw BC
+Parks files, use `docs/raw_data_to_pipeline.md` next. For regular operation
+after setup, use `docs/final_pipeline_runbook.md`. For optional CityWide API
+details, use `docs/citywide_api_runbook.md`. Technical model experiment notes
+live in the DINOv3, SigLIP, and VLM walkthroughs.
 
 # What This Project Produces
 
@@ -145,6 +146,13 @@ data/processed/attribute_applicability.csv
 
 The repository tracks the processed metadata and training CSVs. Large raw
 images and generated feature files are intentionally not committed.
+
+For clear instructions on where to place raw CityWide downloads or one-off
+partner export files before running the pipeline, see:
+
+```text
+docs/raw_data_to_pipeline.md
+```
 
 Check the required processed inputs:
 
