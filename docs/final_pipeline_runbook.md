@@ -141,6 +141,63 @@ make train-final-models
 
 This retrains the saved classifiers when the training CSVs, applicability matrix, or asset feature file are newer than the saved bundle.
 
+## When Make Reuses Outputs
+
+The pipeline uses normal Makefile timestamp logic. Each generated output is
+reused when it already exists and is newer than the files it depends on. A step
+reruns when the output is missing or older than one of its inputs.
+
+### DINOv3 Embeddings
+
+The final asset-level embedding file is:
+
+```text
+data/features/dinov3_vitb16_master_assets.csv
+```
+
+Make reuses this file when it is already present and up to date. It rebuilds it
+when the file is missing or when an upstream dependency changes, such as the
+master dataset, the image-level feature file, the DINOv3 extraction script, or
+the configured cleaned-image inputs.
+
+To force DINOv3 feature rebuilding:
+
+```bash
+make clean-dinov3
+make features-dinov3-master
+```
+
+### Saved Sklearn Classifiers
+
+The final saved classifier bundle is:
+
+```text
+models/final/dinov3_vitb16_logistic_regression/final_classifiers.joblib
+```
+
+Make reuses this bundle when it already exists and is newer than the training
+CSV files, the asset-level DINOv3 feature file, the applicability matrix, and
+the final-model training script. It retrains the classifiers when the bundle is
+missing or stale.
+
+To force final classifier retraining:
+
+```bash
+make clean-final-models
+make train-final-models
+```
+
+### Final Prediction CSVs
+
+The partner-facing CSVs are generated under:
+
+```text
+results/final/
+```
+
+These are export artifacts. They can be regenerated from the saved classifier
+bundle and asset embeddings without retraining DINOv3.
+
 ## Attribute Applicability
 
 The pipeline uses this matrix:
