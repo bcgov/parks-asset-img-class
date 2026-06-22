@@ -31,6 +31,7 @@ MODEL_COLORS = {
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Create clean comparison figures for baseline, DINOv3, and SigLIP."
     )
@@ -62,6 +63,7 @@ def _read_inputs(
     dinov3_path: Path,
     siglip_path: Path,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Load comparison result tables used to build report figures."""
     for path in [baseline_path, dinov3_path, siglip_path]:
         if not path.exists():
             raise FileNotFoundError(f"Required result file is missing: {path}")
@@ -136,6 +138,7 @@ def add_deltas(summary: pd.DataFrame) -> pd.DataFrame:
 
 
 def _configure_style() -> None:
+    """Apply the shared Matplotlib/Seaborn figure style."""
     sns.set_theme(style="whitegrid", context="talk")
     plt.rcParams.update(
         {
@@ -153,6 +156,7 @@ def _configure_style() -> None:
 
 
 def _ordered_attributes(summary: pd.DataFrame) -> list[str]:
+    """Return attributes in a stable display order for figures."""
     siglip = summary[summary["model"].eq("SigLIP")]
     return (
         siglip.sort_values("macro_f1_mean", ascending=False)["attribute"]
@@ -162,6 +166,7 @@ def _ordered_attributes(summary: pd.DataFrame) -> list[str]:
 
 
 def plot_macro_f1_by_attribute(summary: pd.DataFrame, output_path: Path) -> None:
+    """Plot macro-F1 values by model and attribute."""
     ordered_attributes = _ordered_attributes(summary)
     figure, axis = plt.subplots(figsize=(12, 7))
     sns.barplot(
@@ -185,6 +190,7 @@ def plot_macro_f1_by_attribute(summary: pd.DataFrame, output_path: Path) -> None
 
 
 def plot_macro_f1_delta_vs_baseline(deltas: pd.DataFrame, output_path: Path) -> None:
+    """Plot each embedding model's macro-F1 gain over baseline."""
     rows = []
     for _, row in deltas.iterrows():
         rows.append(
@@ -230,6 +236,7 @@ def plot_macro_f1_delta_vs_baseline(deltas: pd.DataFrame, output_path: Path) -> 
 
 
 def plot_average_metric_summary(summary: pd.DataFrame, output_path: Path) -> None:
+    """Plot average model metrics across attributes."""
     average = summary.groupby("model", observed=False)[METRICS].mean().reset_index()
     long = average.melt(id_vars="model", var_name="metric", value_name="score")
     long["metric"] = long["metric"].map(
@@ -261,6 +268,7 @@ def plot_average_metric_summary(summary: pd.DataFrame, output_path: Path) -> Non
 
 
 def plot_siglip_minus_dinov3_macro_f1(deltas: pd.DataFrame, output_path: Path) -> None:
+    """Plot the per-attribute macro-F1 difference between SigLIP and DINOv3."""
     data = deltas[["attribute", "siglip_minus_dinov3_macro_f1_mean"]].copy()
     data = data.sort_values("siglip_minus_dinov3_macro_f1_mean", ascending=True)
     data["color"] = data["siglip_minus_dinov3_macro_f1_mean"].map(
@@ -283,6 +291,7 @@ def plot_siglip_minus_dinov3_macro_f1(deltas: pd.DataFrame, output_path: Path) -
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     _configure_style()
 

@@ -1,11 +1,17 @@
 """Predict asset attributes for a folder of NEW images (BC Parks deployment).
 
-Point this at a folder of images, and it encodes them with DINOv3, trains the
-final per-attribute classifiers from the labelled training data plus precomputed
-training embeddings, and writes predictions + confidence scores to CSV. Only
-attributes that apply to each asset type are predicted (per the applicability
-matrix), and binned numeric attributes (length, width, fall height) are trained
-per asset type so each asset is labelled in its own bin scheme.
+Pipeline role:
+- reads new image folders that are not part of the labelled training set;
+- extracts DINOv3 features using the same feature code as the training pipeline;
+- normally loads the saved classifier bundle written by
+  ``scripts/train_final_classifiers.py`` via ``--model-dir``;
+- writes long-form predictions with confidence scores to ``results/final``.
+
+Only attributes that apply to each asset type are predicted using the
+applicability matrix. Binned numeric attributes (length, width, fall height)
+use the saved per-asset-type models so each asset is labelled in its own bin
+scheme. The older train-on-the-fly path is retained for debugging when no
+``--model-dir`` is supplied.
 
 Two input layouts are supported:
 
@@ -49,7 +55,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.download_citywide_images import PROFILES  # noqa: E402
 from src.attribute_applicability import load_applicability  # noqa: E402
 from src.baseline import infer_target_column  # noqa: E402
 from src.dinov3_classifier import make_classifier  # noqa: E402
@@ -58,10 +63,25 @@ from src.dinov3_features import (  # noqa: E402
     extract_image_features,
     feature_columns,
 )
+from src.final_model_artifacts import (  # noqa: E402
+    load_final_model_bundle,
+    predict_with_final_model_bundle,
+)
 
 # Binned numeric attributes whose bin ranges differ across asset types — trained
 # per asset type. steps_bin is Stairs-only (single scheme) so it is pooled.
 PER_ASSET_TYPE_TARGETS = {"length_bin", "width_bin", "fall_height_bin"}
+
+# Keep this profile-id map aligned with scripts/download_citywide_images.py.
+# It is duplicated here so prediction/help does not need to import the CityWide
+# API client or its credential-loading dependencies.
+PROFILES: dict[int, str] = {
+    337: "Boardwalk < 1.2m High",
+    573: "Boardwalk > 1.2m High",
+    356: "Stairs",
+    253: "Trail Bridge",
+    359: "Viewing Platform",
+}
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
 
@@ -79,6 +99,7 @@ def confidence_bucket(
     high_threshold: float = 0.80,
     medium_threshold: float = 0.60,
 ) -> str:
+    """Convert a numeric confidence score into a readable confidence bucket."""
     if pd.isna(score):
         return "unavailable"
     value = float(score)
@@ -90,6 +111,7 @@ def confidence_bucket(
 
 
 def _predict_confidence(model: object, X: pd.DataFrame) -> list[object]:
+    """Return the model confidence for each predicted class when available."""
     if not hasattr(model, "predict_proba"):
         return [pd.NA] * len(X)
     return model.predict_proba(X).max(axis=1).tolist()
@@ -100,6 +122,7 @@ def _predict_confidence(model: object, X: pd.DataFrame) -> list[object]:
 # ---------------------------------------------------------------------
 
 def _is_image(path: Path) -> bool:
+    """Return True when a path has a supported image extension."""
     return path.suffix.lower() in IMAGE_EXTENSIONS
 
 
@@ -255,6 +278,7 @@ def predict_attribute_for_type(
 # ---------------------------------------------------------------------
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--image-folder", type=Path, required=True,
                         help="Folder of new images (flat with --asset-type, or profile_id structure).")
@@ -267,6 +291,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--training-features", type=Path,
                         default=Path("data/features/dinov3_vitb16_master_assets.csv"),
                         help="Asset-level feature CSV used to train the classifiers.")
+    parser.add_argument("--model-dir", type=Path, default=None,
+                        help="Optional saved final model directory or final_classifiers.joblib path.")
     parser.add_argument("--weights", type=Path,
                         default=Path("models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth"))
     parser.add_argument("--model", default="dinov3_vitb16")
@@ -288,6 +314,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
 
     # 1. Build the input table from the folder.
@@ -336,44 +363,58 @@ def main() -> int:
         )
         return 1
 
-    # 3. Applicability matrix.
-    applicable = load_applicability(args.applicability)
+    if args.model_dir is not None:
+        bundle = load_final_model_bundle(args.model_dir)
+        asset_metadata = asset_features[["asset_id", "profile_name"]].drop_duplicates("asset_id")
+        long_df = predict_with_final_model_bundle(
+            bundle=bundle,
+            asset_features=asset_features,
+            asset_metadata=asset_metadata,
+            high_threshold=args.high_threshold,
+            medium_threshold=args.medium_threshold,
+        )
+        if long_df.empty:
+            print("No predictions produced.", file=sys.stderr)
+            return 1
+    else:
+        # 3. Applicability matrix.
+        applicable = load_applicability(args.applicability)
 
-    # 4. Predict each applicable attribute, per asset type present.
-    all_predictions: list[pd.DataFrame] = []
-    for asset_type in asset_types_present:
-        type_assets = asset_features[asset_features["profile_name"] == asset_type].reset_index(drop=True)
-        if type_assets.empty:
-            continue
-        targets = sorted(applicable.get(asset_type, set()))
-        if not targets:
-            print(f"[{asset_type}] no applicable attributes in matrix; skipping.")
-            continue
-        print(f"[{asset_type}] predicting {len(targets)} applicable attribute(s): {targets}")
-        for target in targets:
-            preds = predict_attribute_for_type(
-                target=target,
-                asset_type=asset_type,
-                train_dir=args.train_dir,
-                new_assets=type_assets,
-                train_asset_features=train_asset_features,
-                features=features,
-                classifier=args.classifier,
-                random_state=args.seed,
-                high_threshold=args.high_threshold,
-                medium_threshold=args.medium_threshold,
-            )
-            if not preds.empty:
-                all_predictions.append(preds)
+        # 4. Predict each applicable attribute, per asset type present.
+        all_predictions: list[pd.DataFrame] = []
+        for asset_type in asset_types_present:
+            type_assets = asset_features[asset_features["profile_name"] == asset_type].reset_index(drop=True)
+            if type_assets.empty:
+                continue
+            targets = sorted(applicable.get(asset_type, set()))
+            if not targets:
+                print(f"[{asset_type}] no applicable attributes in matrix; skipping.")
+                continue
+            print(f"[{asset_type}] predicting {len(targets)} applicable attribute(s): {targets}")
+            for target in targets:
+                preds = predict_attribute_for_type(
+                    target=target,
+                    asset_type=asset_type,
+                    train_dir=args.train_dir,
+                    new_assets=type_assets,
+                    train_asset_features=train_asset_features,
+                    features=features,
+                    classifier=args.classifier,
+                    random_state=args.seed,
+                    high_threshold=args.high_threshold,
+                    medium_threshold=args.medium_threshold,
+                )
+                if not preds.empty:
+                    all_predictions.append(preds)
 
-    if not all_predictions:
-        print("No predictions produced.", file=sys.stderr)
-        return 1
+        if not all_predictions:
+            print("No predictions produced.", file=sys.stderr)
+            return 1
 
-    long_df = pd.concat(all_predictions, ignore_index=True)
-    long_df["model_name"] = args.model
-    long_df["classifier"] = args.classifier
-    long_df["generated_at"] = datetime.now(UTC).isoformat()
+        long_df = pd.concat(all_predictions, ignore_index=True)
+        long_df["model_name"] = args.model
+        long_df["classifier"] = args.classifier
+        long_df["generated_at"] = datetime.now(UTC).isoformat()
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     long_df.to_csv(args.output, index=False)

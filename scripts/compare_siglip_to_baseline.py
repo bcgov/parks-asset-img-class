@@ -28,6 +28,7 @@ DEFAULT_BASELINE_STRATEGY = "majority_class_group_cv"
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Compare SigLIP classifier metrics with baseline metrics."
     )
@@ -97,6 +98,7 @@ def default_comparison_output(classifier: str) -> Path:
 
 
 def read_siglip_results(pattern: str) -> pd.DataFrame:
+    """Read and standardize SigLIP result CSVs for comparison."""
     paths = sorted(Path().glob(pattern))
     if not paths:
         raise FileNotFoundError(f"No SigLIP result files matched: {pattern}")
@@ -122,6 +124,7 @@ def make_comparison(
     include_missing: bool = False,
     baseline_strategy: str | None = DEFAULT_BASELINE_STRATEGY,
 ) -> pd.DataFrame:
+    """Join model results to baseline rows and compute metric deltas."""
     if baseline_strategy is not None and "strategy" in baseline.columns:
         filtered = baseline[baseline["strategy"].eq(baseline_strategy)].copy()
         if filtered.empty:
@@ -186,6 +189,7 @@ def make_comparison(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     baseline = pd.read_csv(args.baseline or default_baseline_path())
     siglip_glob = args.siglip_glob or default_result_glob(args.classifier)

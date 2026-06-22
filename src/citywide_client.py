@@ -35,12 +35,14 @@ class _RateLimiter:
     """Sliding-window rate limiter for CityWide's hourly request cap."""
 
     def __init__(self, max_calls: int, window: float = 3600.0) -> None:
+        """Configure the maximum number of calls allowed in one time window."""
         self.max_calls = max_calls
         self.window = window
         self._calls: collections.deque[float] = collections.deque()
         self._lock = threading.Lock()
 
     def acquire(self) -> None:
+        """Block until another API request can be made within the rate limit."""
         while True:
             with self._lock:
                 now = time.monotonic()
@@ -65,6 +67,7 @@ class CitywideClient:
         timeout: float = 120.0,
         max_calls_per_hour: int = 900,
     ) -> None:
+        """Create an authenticated CityWide client from arguments or env vars."""
         self.api_key = api_key or os.getenv("CITYWIDE_API_KEY")
         self.client_db = client_db or os.getenv("CITYWIDE_DB")
         self.username = username or os.getenv("CITYWIDE_USER")
@@ -92,6 +95,7 @@ class CitywideClient:
         self._limiter = _RateLimiter(max_calls=max_calls_per_hour, window=3600.0)
 
     def _authenticate(self) -> None:
+        """Request a fresh bearer token from the CityWide API."""
         response = self._http.post(
             f"{self.url}/authenticate",
             json={
@@ -106,12 +110,14 @@ class CitywideClient:
         self._expires_at = time.time() + int(body.get("expires_in", 3600)) - 60
 
     def _ensure_token(self) -> str:
+        """Return a valid bearer token, refreshing it when needed."""
         if self._token is None or time.time() >= self._expires_at:
             self._authenticate()
         assert self._token is not None
         return self._token
 
     def _headers(self) -> dict[str, str]:
+        """Build standard JSON request headers with authorization."""
         return {
             "Authorization": f"Bearer {self._ensure_token()}",
             "Accept": "application/json",
@@ -165,10 +171,12 @@ class CitywideClient:
             return response
 
     def get(self, path: str, params: dict[str, Any] | None = None) -> httpx.Response:
+        """Send an authenticated GET request to a CityWide API path."""
         url = f"{self.url}{path}" if path.startswith("/") else f"{self.url}/{path}"
         return self._request_with_retry(url, self._headers(), params=params)
 
     def get_binary(self, path: str) -> httpx.Response:
+        """Send an authenticated GET request for binary file content."""
         url = f"{self.url}{path}" if path.startswith("/") else f"{self.url}/{path}"
         return self._request_with_retry(
             url,
@@ -177,6 +185,7 @@ class CitywideClient:
 
     @staticmethod
     def _extract_cursor(link: str | None) -> str | None:
+        """Extract the CityWide pagination cursor from a Link header."""
         if not link:
             return None
         match = re.search(r"\$cursor=([^&>]+)", link)
@@ -222,10 +231,13 @@ class CitywideClient:
             page += 1
 
     def close(self) -> None:
+        """Close the underlying HTTP client."""
         self._http.close()
 
     def __enter__(self) -> "CitywideClient":
+        """Return this client for use as a context manager."""
         return self
 
     def __exit__(self, *exc: object) -> None:
+        """Close network resources when leaving a context manager."""
         self.close()

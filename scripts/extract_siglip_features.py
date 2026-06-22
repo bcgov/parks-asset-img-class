@@ -1,5 +1,15 @@
 """Extract frozen SigLIP features for project images.
 
+Pipeline role:
+- reads the same processed train/master image manifests used by the DINOv3
+  pipeline;
+- loads a frozen Hugging Face SigLIP vision encoder;
+- writes image-level and asset-level feature CSVs under ``data/features``.
+
+The asset-level CSV is consumed by ``scripts/run_siglip_classifier.py`` for
+cross-validation and by comparison scripts/figures when benchmarking SigLIP
+against DINOv3 and the baseline.
+
 Example:
     python scripts/extract_siglip_features.py \
         --input data/processed/train/attr_decking_material_train.csv \
@@ -29,6 +39,7 @@ from src.siglip_features import (  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Extract SigLIP image embeddings and aggregate them by asset_id."
     )
@@ -48,6 +59,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
     rows = pd.read_csv(args.input)
     if args.limit_assets is not None:

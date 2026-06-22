@@ -92,6 +92,7 @@ def make_classifier(
 
 
 def _format_class_weight(class_weight: str | None) -> str:
+    """Normalize class-weight options passed from the command line."""
     return "none" if class_weight is None else class_weight
 
 
@@ -148,6 +149,7 @@ def _make_group_splitter(
     n_splits: int,
     random_state: int,
 ) -> tuple[object, str]:
+    """Create the grouped cross-validation splitter used for asset-level CV."""
     class_group_counts = labelled.groupby(target_column)[group_column].nunique()
     if int(class_group_counts.min()) >= n_splits:
         return (

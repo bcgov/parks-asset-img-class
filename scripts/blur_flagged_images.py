@@ -53,6 +53,7 @@ COLORS = {
 
 
 def _select_device() -> str:
+    """Choose the best available local inference device."""
     import torch
 
     if torch.cuda.is_available():
@@ -82,6 +83,7 @@ def _boxes_above(results, class_names: set[str], conf: float) -> list[tuple[floa
 
 
 def _pad_box(box: tuple[float, float, float, float], pad: int, w: int, h: int) -> tuple[int, int, int, int]:
+    """Expand a bounding box by a fixed pixel margin within image bounds."""
     x1, y1, x2, y2 = box
     return (
         max(0, int(x1) - pad),
@@ -92,6 +94,7 @@ def _pad_box(box: tuple[float, float, float, float], pad: int, w: int, h: int) -
 
 
 def draw_boxes(img: Image.Image, detections: list[tuple[int, int, int, int, str, float]]) -> Image.Image:
+    """Draw detection boxes on a copy of an image for review."""
     out = img.copy()
     draw = ImageDraw.Draw(out)
     line_w = max(2, min(img.width, img.height) // 200)
@@ -181,6 +184,7 @@ def process_one_image(
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--screen-csv", type=Path, default=Path("results/predictions/pii_screen.csv"))
     p.add_argument("--output-root", type=Path, default=Path("data/pii_review"))
@@ -200,6 +204,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     args = parse_args()
 

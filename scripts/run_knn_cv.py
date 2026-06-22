@@ -50,6 +50,7 @@ PARAM_COLUMNS = [
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for this script."""
     parser = argparse.ArgumentParser(
         description="Evaluate frozen DINOv3 embeddings with grouped k-NN CV."
     )
@@ -172,6 +173,7 @@ def run_single_target(
 def find_attribute_pairs(
     feature_dir: Path, train_dir: Path
 ) -> list[tuple[str, Path, Path]]:
+    """Find matching label and feature files for k-NN experiments."""
     pairs = []
     feature_dir = Path(feature_dir)
     train_dir = Path(train_dir)
@@ -209,6 +211,7 @@ def find_attribute_pairs(
 
 
 def main() -> int:
+    """Run the script from parsed command-line arguments."""
     args = parse_args()
 
     if args.all:
