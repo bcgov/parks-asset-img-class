@@ -95,7 +95,7 @@ steps_fill = master_df["steps_bin"].notna().mean()
 
 # Executive summary
 
-[to be completed after running pipeline with test set + obtaining results]
+[to be completed after running pipeline with test set + obtaining results] **pending completion**
 
 
 # Introduction
@@ -110,7 +110,7 @@ The dataset for this project contains images and attribute values for assets in 
 
 Across the evaluated asset categories, the pipeline achieved strong performance on structural attributes such as bridge type, decking material, and pedestrian railing presence, with a mean weighted F1-score of 0.88. Performance was lower for measurement-related attributes such as length, width, number of steps, and fall height, which achieved a mean weighted F1-score of 0.62. These results demonstrate the potential for image-based machine learning to improve the completeness and usability of BC Parks' infrastructure inventory while providing a scalable foundation for future expansion to additional asset types.
 
-This report describes the development and evaluation of the proposed image-analysis pipeline. We first present the dataset and key findings from the exploratory data analysis, followed by the modelling approaches investigated, including both vision-language models and embedding-based classifiers. We then describe the final data product delivered to BC Parks, evaluate its performance and conclude with recommendations for deployment and future improvements.
+This report describes the development and evaluation of the proposed image-analysis pipeline. We first present key features of the BCParks dataset, followed by the modelling approaches investigated, their results and how this led us to the final design and implementation of our data pipeline for attribute labelling.
 
 
 # Data and exploratory data analysis (EDA)
