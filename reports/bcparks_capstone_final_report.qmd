@@ -95,7 +95,47 @@ steps_fill = master_df["steps_bin"].notna().mean()
 
 # Executive summary
 
-[to be completed after running pipeline with test set + obtaining results] **pending completion**
+BC Parks manages a large inventory of infrastructure assets, including stairs,
+trail bridges, boardwalks, viewing platforms, campsites, and related park
+facilities. Many asset records contain missing or incomplete attributes, which
+limits their usefulness for maintenance planning, inspection prioritization, and
+replacement-cost estimation. This project investigated whether existing asset
+photographs can be used to predict missing infrastructure attributes and support
+a more scalable asset-management workflow.
+
+Using the processed BC Parks image dataset, we developed a reproducible
+image-analysis pipeline that predicts asset attributes from one or more
+photographs per asset. The pipeline first screens images for privacy-sensitive
+content, then uses image embeddings and attribute-specific classifiers to
+generate predicted labels with confidence scores. Optional vision-language model
+components can be used to support or cross-check selected attributes where image
+interpretation is more difficult.
+
+On the final test set, the pipeline achieved an overall weighted F1-score of
+`[insert overall weighted F1]` across `[insert number]` evaluated attributes.
+Performance was strongest for `[insert strongest attribute group, e.g.,
+material or structural attributes]`, including `[insert example attributes]`,
+where the model achieved weighted F1-scores between `[insert range]`.
+Performance was lower for `[insert weakest attribute group, e.g.,
+measurement-related attributes]`, including `[insert example attributes]`,
+where image-only prediction was limited by missing scale references, inconsistent
+photo angles, and sparse labels.
+
+The final data product exports partner-facing prediction tables in both long and
+wide formats. Each prediction includes the asset identifier, asset category,
+predicted attribute value, confidence score, and confidence level. This output is
+designed to help BC Parks prioritize manual review: high-confidence predictions
+can be used to fill routine missing fields, while low-confidence or
+high-consequence predictions can be flagged for staff verification.
+
+Overall, the project demonstrates that image-based machine learning can improve
+the completeness of the BC Parks asset inventory, especially for visual
+structural and material attributes. We recommend using the current pipeline as a
+decision-support tool rather than a fully automated replacement for field review.
+Future work should focus on expanding the labelled dataset, improving
+measurement-related attributes, testing the workflow on new asset categories,
+and integrating prediction outputs into existing CityWide asset-management
+processes.
 
 
 # Introduction
