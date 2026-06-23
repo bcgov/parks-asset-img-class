@@ -47,6 +47,7 @@ or the matching PDF in the same folder.
 ```bash
 conda env create -f environment.yml
 conda activate bcparks_capstone
+cd parks-asset-img-class
 ```
 
 **2. Set up the DINOv3 model**
