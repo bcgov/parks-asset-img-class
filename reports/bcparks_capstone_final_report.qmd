@@ -149,7 +149,7 @@ Most assets have a single image, but `{python} f"{multi_image_assets:,}"` assets
 
 ## Approaches considered
 
-Our exploratory analysis established that this is primarily a missing-attribute prediction problem on imbalanced and sparsely labelled data. Attribute coverage varies sharply across attributes: structural categories such as decking material and pedestrian-railing presence are relatively well populated, whereas measurement attributes are far sparser, with fall height labelled for only about `{python} f"{fall_height_fill:.1%}` of rows and number of steps for about `{python} f"{steps_fill:.1%}` (@fig-attribute-fill-rate). The categorical labels are also heavily imbalanced, with several material fields dominated by timber. Lastly, many assets possess multiple images of varying quality, and not every record has a usable local image. Together, the scarcity of labels, the class imbalance, and the multi-image structure of the data motivated the approaches, the evaluation metric, and the preprocessing decisions carried out in order to build our final data pipeline.
+Our exploratory analysis established that this is primarily a missing-attribute prediction problem on imbalanced and sparsely labelled data. Attribute coverage varies sharply across attributes: structural categories such as decking material and pedestrian-railing presence are relatively well populated, whereas measurement attributes are far sparser, with fall height labelled for only about `{python} f"{fall_height_fill:.1%}"` of rows and number of steps for about `{python} f"{steps_fill:.1%}"` (@fig-attribute-fill-rate). The categorical labels are also heavily imbalanced, with several material fields dominated by timber. Lastly, many assets possess multiple images of varying quality, and not every record has a usable local image. Together, the scarcity of labels, the class imbalance, and the multi-image structure of the data motivated the approaches, the evaluation metric, and the preprocessing decisions carried out in order to build our final data pipeline.
 
 To address BCPark's main objective, automating attribute labelling and filling in missing attribute labels where possible, we started with a simple no-training-required approach, using zero-shot vision language models. We then explored whether pretrained embedding models, trained on billions of images, could better capture the fine-grained visual details that distinguish material types, pairing them with a simple classifier to label all attributes from our images. We anticipated that embedding models, by capturing visual similarity through vector representations, might outperform VLM reasoning for structurally distinct material types, but would likely not differ for the numeric, measurement based attributes.
 
@@ -217,7 +217,7 @@ practical choice at scale.
 
 We found that classifiers performed similarly but logisitic regression occassionally outperformed the rest, especially on numeric attributes (see @fig-dinov3-classifiers). Since this was the simplest classifier, it indicated that the embedding space already separates the attribute classes reasonably well, and so a simple linear classifier like logisitic regression was adequate for classification purposes. We also tested a tuned logistic-regression variant by searching over regularization strength and class weighting inside the training folds. In practice, the tuned variant did not consistently improve over the simpler default logistic-regression setup, so the untuned logistic model remained the main embedding classifier.
 
-![Dinov3 Embedding Model: Comparison across different classifier models](report_images/dinov3_classifiers_subset_weighted_f1.png){#fig-dinov3-classifiers width=90%}
+![Dinov3 Embedding Model: Comparison across different classifier models](report_images/dinov3_classifiers_subset_weighted_f1.png){#fig-dinov3-classifiers width=100%}
 
 Comparing the three embedding models with a fixed logistic-regression head, the mean weighted F1 across all twelve attributes was very similar for DINOv3,SigLIP, and OpenCLIP (@fig-emb-comparison).
 
@@ -235,13 +235,13 @@ Comparing the two approaches directly (see @fig-vlm-vs-emb) revealed a consisten
 
 Because performance was broadly comparable and due to the strengths noted above, DINOv3 was chosen as the default model. Evaluation scores on numeric based attributes were less reliable due to the limited labelled data we had for validation, however, since the VLM did occassionally outperform the embedding model on attributes like number of steps and abutment material, we kept the option for VLM use available, if BCParks wishes to explore that approach further. This was optionally configured into our pipeline and can replace DINOv3 labelling.
 
-![VLM vs Dinov3 result comparison](../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png){#fig-vlm-vs-emb width=90%}
+![VLM vs Dinov3 result comparison](../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png){#fig-vlm-vs-emb width=100%}
 
 ![VLM vs Dinov3 result comparison on SHARED assets](../results/model_comparison/matched/matched_weighted_f1.png){#fig-vlm-vs-emb-matched width=90%}**need to regenerate with baselines
 
 ### Evaluation of DINOv3 on the final held-out test dataset
 
-![Weighted f1 scores of DINOv3 model on all 12 attributes, evaluated on a helf-out test set](report_images/test_set_results.png){#fig-test-set-results width=90%}
+![Weighted f1 scores of DINOv3 model on all 12 attributes, evaluated on a helf-out test set](report_images/test_set_results.png){#fig-test-set-results width=100%}
 
 @fig-test-set-results reports the final DINOv3 pipeline's weighted F1 on the held-out test set, the data the classifiers never saw during training, and so represents our most honest estimate of deployment performance. The reference lines show the majority-class and uniform-random baselines computed on the same test assets, so the height of each bar above its baseline is the genuine value the model adds compared to random guessing or choosing the most common attribute label. 
 
