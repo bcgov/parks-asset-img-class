@@ -48,24 +48,8 @@ or the matching PDF in the same folder.
 conda env create -f environment.yml
 conda activate bcparks_capstone
 ```
-**2. Set up the VLM API keys**
 
-Create an `.env` file in the project root with the required API keys for the models you want to use.
-
-```bash
-# Google AI Studio
-GEMINI_API_KEY="your-key-here"
-
-# GitHub Models (OpenAI, Llama, Phi)
-GITHUB_TOKEN="your-token-here"
-```
-
-An example of how to set up API keys in an `.env` file is provided in `.env.example`.
-
-- For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-- For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
-
-**3. Set up the DINOv3 model**
+**2. Set up the DINOv3 model**
 
 This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
 
@@ -217,12 +201,22 @@ Supported provider families include:
 
 ### Quick Start
 
-1. Set up API keys in `.env` file:
+1. Set up the VLM API keys**
+
+Create an `.env` file in the project root with the required API keys for the models you want to use.
 
 ```bash
+# Google AI Studio
 GEMINI_API_KEY="your-key-here"
+
+# GitHub Models (OpenAI, Llama, Phi)
 GITHUB_TOKEN="your-token-here"
 ```
+
+An example of how to set up API keys in an `.env` file is provided in `.env.example`.
+
+- For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
 
 2. Run a Makefile smoke prediction:
 
@@ -294,10 +288,11 @@ quarto render reports/bcparks_capstone_final_report.qmd --to html
 quarto render reports/bcparks_capstone_final_report.qmd --to pdf
 ```
 
-The older `reports/Image_analysis_of_park_infrastructure_report.qmd` is a
-legacy draft that depends on raw CityWide files under `data/raw/citywide/`,
-including `image_attributes_manifest.csv`. Use
-`reports/bcparks_capstone_final_report.qmd` for the current final report.
+To regenerate the EDA figures and plots used in the above report:
+
+```bash
+python scripts/generate_eda_figures.py
+```
 
 ## Experiment tracking with MLflow
 
