@@ -50,7 +50,7 @@ def normalise(attr: str) -> str:
 BASELINE_STYLES = {
     "majority_class_group_cv": {"color": "#444441", "linestyle": "--",
                                 "label": "baseline (majority class)"},
-    "uniform_random_group_cv": {"color": "#9A9A9A", "linestyle": ":",
+    "uniform_random_group_cv": {"color": "#5A5A5A", "linestyle": ":",
                                 "label": "baseline (uniform random)"},
 }
 
@@ -132,8 +132,9 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
                 if style is None or np.isnan(row["value"]):
                     continue
                 ax.plot([j - 0.45, j + 0.45], [row["value"], row["value"]],
-                        color=style["color"], linewidth=1.8,
-                        linestyle=style["linestyle"], zorder=4)
+                        color=style["color"], linewidth=2.6,
+                        linestyle=style["linestyle"], zorder=5,
+                        solid_capstyle="butt")
                 if row["strategy"] not in legend_added:
                     ax.plot([], [], color=style["color"], linewidth=1.8,
                             linestyle=style["linestyle"], label=style["label"])
@@ -141,7 +142,7 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=40, ha="right", fontsize=10)
-    ax.set_ylabel("F1 score", fontsize=12)
+    ax.set_ylabel("weighted F1 score", fontsize=12)
     ax.set_ylim(0, 1.08)
     ax.yaxis.set_major_locator(mticker.MultipleLocator(0.1))
     ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("%.1f"))
@@ -175,8 +176,8 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
         line_handles, line_labels = ax.get_legend_handles_labels()
         handles += [h for h, lab in zip(line_handles, line_labels)
                     if lab.startswith("baseline")]
-    ax.legend(handles=handles, fontsize=9, loc="upper right",
-              frameon=True, framealpha=0.9)
+    ax.legend(handles=handles, fontsize=9, loc="upper left",
+              bbox_to_anchor=(1.01, 1.0), frameon=True, framealpha=0.9)
 
     fig.tight_layout()
     args.output.parent.mkdir(parents=True, exist_ok=True)
