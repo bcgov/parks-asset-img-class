@@ -72,10 +72,8 @@ make help
 ```
 
 Documentation map:
-
-- [`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md): first-time installation and handoff guide
+- [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): running final pipeline and day-to-day commands
 - [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md): start from raw BC Parks files and feed them through cleaning, preprocessing, and prediction
-- [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): day-to-day final pipeline commands
 - [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md): optional CityWide API download details
 - [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
 - [`docs/dinov3_walkthrough.md`](docs/dinov3_walkthrough.md), [`docs/siglip_walkthrough.md`](docs/siglip_walkthrough.md): technical model experiment notes
@@ -151,7 +149,7 @@ The partner-facing prediction exports are written to:
 - `results/final/bcparks_asset_attribute_predictions_long.csv`
 - `results/final/bcparks_asset_attribute_predictions_wide.csv`
 
-## Optional CityWide download
+## (Optional) CityWide download
 
 The raw CityWide downloader is available as an upstream Makefile branch for BC Parks or graders who have API credentials. Required `.env` keys are:
 
@@ -186,12 +184,12 @@ The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `ima
 For the full CityWide API flow, including how linked attributes are downloaded,
 see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
 
-## To use Vision Language Models (VLMs)
+## (Optional) Using Vision Language Models (VLMs)
 
 This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
 VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
 
-Supported provider families include:
+Supported VLM provider families include:
 
 - **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
 - **OpenAI** through `OPENAI_API_KEY`
@@ -209,7 +207,7 @@ Create an `.env` file in the project root with the required API keys for the mod
 # Google AI Studio
 GEMINI_API_KEY="your-key-here"
 
-# GitHub Models (OpenAI, Llama, Phi)
+# GitHub Models (Llama, Phi)
 GITHUB_TOKEN="your-token-here"
 ```
 
@@ -218,24 +216,29 @@ An example of how to set up API keys in an `.env` file is provided in `.env.exam
 - For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 - For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
 
-2. Run a Makefile smoke prediction:
+2. Get VLM predictions:
 
 ```bash
-make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+make vlm-predict
+    VLM_INPUT=path/to/image/folder \
+    NEW_IMAGE_ASSET_TYPE="Stairs" \
+    VLM_PROMPT=stairs_v1 \
+    VLM_LIMIT=5
 ```
 
-Or run batch predictions directly:
+- `NEW_IMAGE_ASSET_TYPE` is asset category of the asset images in `VLM_INPUT` — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
+- `VLM_PROMPT` is the prompt used when generating predictions from the VLM and should correspond to the asset category of `VLM_INPUT` — one of: `stairs_v1`, `trail_bridge_v1`, `boardwalk_low_v1`, `boardwalk_high_v1`, `viewing_platform_v1`.
+- `VLM_LIMIT` corresponds to the number of assets to process by the VLM.
 
-```bash
-python scripts/run_vlm_predictor.py \
-  --input data/processed/train/train_only_stairs.csv \
-  --output results/vlm_stairs_gemini.csv \
-  --provider gemini \
-  --model gemini-3-flash-preview \
-  --prompt stairs_v1
-```
+Note: the default VLM model used is the `gemini-3-flash-preview` model from Google AI Studio, but this can be changed by using the arguments `VLM_PROVIDER=<model_provider> VLM_MODEL=<model_name>`. The following VLM providers and associated models are available: 
 
-`--input` also accepts a folder of images, not just a CSV. For a flat folder of one asset type, pass `--asset-type`:
+- VLM_PROVIDER: `gemini`, VLM_MODEL (one of): `gemini-3-flash-preview`, `gemini-3.1-flash-lite`, `gemini-2.5-pro`, `gemini-2.5-flash`, `gemma-4-26b-a4b-it`
+- VLM_PROVIDER: `openai`, VLM_MODEL (one of): `gpt-4o`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-5`, `gpt-5-mini`
+- VLM_PROVIDER: `grok`, VLM_MODEL (one of): `grok-4`, `grok-4.1`, `grok-4.1-fast`
+- VLM_PROVIDER: `claude`, VLM_MODEL (one of): `claude-3-5-sonnet-latest`, `claude-3-7-sonnet-latest`, `claude-sonnet-4`, `claude-opus-4`
+- VLM_PROVIDER: `github`, VLM_MODEL (one of): `Phi-4-multimodal-instruct`, `Llama-3.2-11B-Vision-Instruct`
+
+It is also possible to run batch predictions directly from the terminal:
 
 ```bash
 python scripts/run_vlm_predictor.py \
@@ -245,16 +248,6 @@ python scripts/run_vlm_predictor.py \
   --provider gemini \
   --model gemini-3-flash-preview \
   --prompt stairs_v1
-```
-
-3. Evaluate predictions against ground truth:
-
-```bash
-python scripts/evaluate_predictions.py \
-  --predictions results/vlm_stairs_gemini.csv \
-  --ground_truth_dir data/processed/train \
-  --attributes attr_number_of_steps \
-  --model gemini-3-flash-preview
 ```
 
 For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md).
