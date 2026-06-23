@@ -240,6 +240,86 @@ Source Page Link
 Process one asset type at a time, because a flat export does not include enough
 folder structure for the model to infer the asset type automatically.
 
+### 1. Copy The Raw Export Locally
+
+Use a local folder like this:
+
+```text
+data/raw/partner_exports/stairs/
+  images/
+    image_001.jpg
+    image_002.jpg
+  export.csv
+```
+
+Do not commit this folder to Git.
+
+### 2. Sort Images Into Asset Folders
+
+Run:
+
+```bash
+make sort-citywide-export \
+  CITYWIDE_EXPORT_FOLDER=data/raw/partner_exports/stairs/images \
+  CITYWIDE_EXPORT_CSV=data/raw/partner_exports/stairs/export.csv
+```
+
+This creates:
+
+```text
+data/raw/new_batch/<asset_id>/<image_file>
+results/predictions/citywide_sort_report.csv
+```
+
+The sort report lists copied images, missing files, and images that were in the
+folder but not referenced by the CSV.
+
+### 3. Screen And Clean The New Batch
+
+Run:
+
+```bash
+make pii-batch
+```
+
+This screens `data/raw/new_batch/`, blurs flagged images, and writes the cleaned
+batch under:
+
+```text
+data/processed/images_clean/new_batch/
+```
+
+### 4. Predict Attributes For The New Batch
+
+Run the prediction command with the exact asset type:
+
+```bash
+make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs"
+```
+
+Valid asset type values are:
+
+```text
+Boardwalk < 1.2m High
+Boardwalk > 1.2m High
+Stairs
+Trail Bridge
+Viewing Platform
+```
+
+The new-batch outputs are:
+
+```text
+results/final/new_image_predictions_long.csv
+results/final/new_image_predictions_wide.csv
+```
+
+To limit a run for a quick check:
+
+```bash
+make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs" NEW_IMAGE_LIMIT=10
+```
+
 ## Saved Final Classifiers
 
 The final pipeline separates training from inference:
