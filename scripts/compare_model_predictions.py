@@ -335,11 +335,18 @@ def generate_html(attr, cfg, vlm_files, embed_dir, gt_dir, train_dir,
 # ---------------------------------------------------------------------------
 # Matched per-attribute F1 on the SHARED assets (the rigorous comparison)
 # ---------------------------------------------------------------------------
-def compute_matched_f1(vlm_files, embed_dir, gt_dir, min_overlap=30):
+def compute_matched_f1(vlm_files, embed_dir, gt_dir, min_overlap=30,
+                       baseline_seed=42, n_uniform_draws=100):
     """For each attribute, compute weighted & macro F1 for BOTH models on the
-    identical set of shared assets. Returns a tidy DataFrame.
+    identical set of shared assets, PLUS majority-class and uniform-random
+    baselines on those same shared assets. Returns a tidy DataFrame.
     """
     from sklearn.metrics import f1_score
+    import numpy as np
+
+    def _first_mode(s):
+        m = s.dropna().mode()
+        return m.iloc[0] if not m.empty else s.iloc[0]
 
     records = []
     for attr, cfg in ATTRIBUTES.items():
@@ -363,35 +370,87 @@ def compute_matched_f1(vlm_files, embed_dir, gt_dir, min_overlap=30):
                                      zero_division=0),
                 "low_overlap": n < min_overlap,
             })
+
+        # majority-class baseline (deterministic) on the same shared assets
+        majority_label = _first_mode(y_true)
+        y_majority = pd.Series([majority_label] * n, index=y_true.index)
+        records.append({
+            "attribute": attr,
+            "model": "baseline (majority class)",
+            "n_shared": n,
+            "weighted_f1": f1_score(y_true, y_majority, average="weighted",
+                                    zero_division=0),
+            "macro_f1": f1_score(y_true, y_majority, average="macro",
+                                 zero_division=0),
+            "low_overlap": n < min_overlap,
+        })
+
+        # uniform-random baseline, averaged over seeded draws for stability
+        classes = y_true.dropna().unique().tolist()
+        rng = np.random.default_rng(baseline_seed)
+        w_vals, m_vals = [], []
+        for _ in range(n_uniform_draws):
+            y_rand = rng.choice(classes, size=n)
+            w_vals.append(f1_score(y_true, y_rand, average="weighted",
+                                   zero_division=0))
+            m_vals.append(f1_score(y_true, y_rand, average="macro",
+                                   zero_division=0))
+        records.append({
+            "attribute": attr,
+            "model": "baseline (uniform random)",
+            "n_shared": n,
+            "weighted_f1": float(np.mean(w_vals)),
+            "macro_f1": float(np.mean(m_vals)),
+            "low_overlap": n < min_overlap,
+        })
+
     return pd.DataFrame(records)
 
 
 def plot_matched_f1(df, metric, output_path, min_overlap=30):
-    """Grouped bar chart of matched F1 per attribute, VLM vs DINOv3."""
+    """Grouped bar chart of matched F1 per attribute, VLM vs DINOv3, with
+    majority-class and uniform-random baseline lines (on the shared assets)."""
     import matplotlib.pyplot as plt
     import numpy as np
 
     attrs = sorted(df["attribute"].unique())
     models = ["VLM (gemini)", "DINOv3 + LogReg"]
     colors = {"VLM (gemini)": "#1f4e79", "DINOv3 + LogReg": "#2e9e8f"}
+    baseline_styles = {
+        "baseline (majority class)": {"color": "#444441", "linestyle": "--"},
+        "baseline (uniform random)": {"color": "#5A5A5A", "linestyle": ":"},
+    }
 
     x = np.arange(len(attrs))
     width = 0.38
     fig, ax = plt.subplots(figsize=(15, 7))
 
     for i, model in enumerate(models):
-        vals, ns = [], []
+        vals = []
         for a in attrs:
             row = df[(df["attribute"] == a) & (df["model"] == model)]
             vals.append(row[metric].values[0] if len(row) else 0)
-            ns.append(row["n_shared"].values[0] if len(row) else 0)
         bars = ax.bar(x + (i - 0.5) * width, vals, width,
-                      label=model, color=colors[model])
+                      label=model, color=colors[model], zorder=3)
         for b, v in zip(bars, vals):
             ax.text(b.get_x() + b.get_width() / 2, v + 0.01, f"{v:.2f}",
                     ha="center", va="bottom", fontsize=10, fontweight="bold")
 
-    # annotate n_shared under each attribute (small)
+    # baseline reference lines per attribute
+    for label, style in baseline_styles.items():
+        legend_added = False
+        for j, a in enumerate(attrs):
+            row = df[(df["attribute"] == a) & (df["model"] == label)]
+            if row.empty or pd.isna(row[metric].values[0]):
+                continue
+            val = row[metric].values[0]
+            ax.plot([j - 0.45, j + 0.45], [val, val],
+                    color=style["color"], linewidth=2.4,
+                    linestyle=style["linestyle"], zorder=5,
+                    solid_capstyle="butt",
+                    label=label if not legend_added else None)
+            legend_added = True
+
     ns_by_attr = [df[df["attribute"] == a]["n_shared"].iloc[0] for a in attrs]
     labels = [a.replace("attr_", "").replace("_", "\n") for a in attrs]
     ax.set_xticks(x)
@@ -402,7 +461,7 @@ def plot_matched_f1(df, metric, output_path, min_overlap=30):
     ax.set_ylim(0, 1.1)
     ax.set_title(f"VLM vs. DINOv3 on SHARED assets \u2014 {metric}",
                  fontsize=19, pad=16, fontweight="semibold")
-    ax.legend(title="model", fontsize=12, title_fontsize=14)
+    ax.legend(fontsize=11, ncol=2, loc="upper right")
     ax.grid(axis="y", linestyle=":", alpha=0.4)
 
     plt.tight_layout()

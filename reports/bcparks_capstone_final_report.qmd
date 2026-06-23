@@ -231,7 +231,7 @@ The two did not differ meaningfully in weighted F1 across all attributes and ass
 
 ![Prompt Approach & VLM model comparison with Trail Bridge Attributes](../results/eval_results_plots/trail_bridge_weighted_f1.png){#fig-bridge-vlm-comparison width=90%}
 
-![Prompt Approach & VLM model comparison with Boardwalk Attribute - Has Edge Guard](../results/eval_results_plots/boardwalk_low_edge_guard_weighted_f1.png){#fig-boardwalk-low-vlm-comparison width=90%}
+![Prompt Approach & VLM model comparison with Boardwalk Attribute - Has Edge Guard](../results/eval_results_plots/boardwalk_low_edge_guard_weighted_f1.png){#fig-boardwalk-low-vlm-comparison width=70%}
 
 **more results + better plots (some are hard to read)
 **classification reports?
@@ -246,7 +246,7 @@ The overall pattern from the embedding experiments was that frozen embeddings ou
 
 ![Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (aggregated f1 across all 12 attributes)](../results/eval_results_plots/agg_logistic_comparison_weighted_f1.png){#fig-emb-comparison width=90%} 
 
-![Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (per attribute f1 score )](../results/eval_results_plots/logistic_comparison_weighted_f1.png){#fig-emb-comparison-per-attribute width=90%} 
+![Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (per attribute f1 score )](../results/eval_results_plots/embedding_comparison_subset_weighted_f1.png){#fig-emb-comparison-per-attribute width=90%} 
 
 Because the three embedding models performed comparably, our final choice was guided by practical deployment considerations rather than negligible accuracy differences. We selected DINOv3 as the most suitable embedding model because it occasionally outperformed the alternatives on the hardest attributes (see @fig-emb-comparison-per-attribute), it is lightweight enough to download and run locally at no cost (the model takes up approximately 0.3 GB of disk space), and its self-supervised features captured structural and material cues central to the infrastructure attributes. Running locally also avoids the per-request limits and ongoing costs associated with the cloud VLM approach, making DINOv3 the more sustainable option for processing BC Parks' image inventory at scale.
 
@@ -283,7 +283,7 @@ Our default implementation involves running the (DINOv3) embedding model where i
 
 BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, and for which many have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. The original problem was therefore whether these missing attributes could be predicted directly from existing asset photographs, reducing the manual effort required to keep records complete and shiftng to a more automated attribute-labelling-pipeline, so that manual resources can be allocated elsewhere. Our product addressed this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, whilst the more confident predictions rely on automated labelling.
 
-The extent to which the product meets BC Parks' needs varies by attribute. For categorical attributes that are visually distinctive like decking material, structure material, and the presence of pedestrian railings, our pipeline provides labels that are dependable enough to reduce manual labelling meaningfully. Measurement-based attributes such as length, width, fall height and number of steps are considerably harder. Here, the model will help but more manual review will be required, rather than fully relying on automated labelling from our pipeline.The accompanying confidence score will also help prioritize which assets need manual intervention. The VLM and it's corresponding prompt templates will be provided and BCParks can choose whether or not they wish to include it or substitute it for DINOv3.
+The extent to which the product meets BC Parks' needs varies by attribute. For categorical attributes that are visually distinctive like decking material, structure material, and the presence of pedestrian railings, our pipeline provides labels that are dependable enough to reduce manual labelling meaningfully. Measurement-based attributes such as length, width, fall height and number of steps are considerably harder. Here, the model will help but more manual review will be required, rather than fully relying on automated labelling from our pipeline.The accompanying confidence score will also help prioritize which assets need manual intervention. Based on our results, DINOv3 is the recommended default for large-scale processing. The VLM and its corresponding prompt templates are also provided, and BC Parks can optionally incorporate them for assets where higher accuracy justifies the additional cost.
 
 ## Strengths and limitations of current design
 
