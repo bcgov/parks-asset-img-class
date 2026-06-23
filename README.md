@@ -47,6 +47,7 @@ or the matching PDF in the same folder.
 ```bash
 conda env create -f environment.yml
 conda activate bcparks_capstone
+cd parks-asset-img-class
 ```
 
 **2. Set up the DINOv3 model**
@@ -81,7 +82,7 @@ Documentation map:
 For a full walkthrough of the final pipeline, see
 [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
 If you are starting from raw CityWide files or a new BC Parks bulk export, start
-with [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md) first.
+with **Path 2** or **Path 3** in [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md) first.
 
 Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
 
