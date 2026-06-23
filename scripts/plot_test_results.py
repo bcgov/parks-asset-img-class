@@ -41,6 +41,31 @@ def prettify(attr: str) -> str:
     return attr.replace("attr_", "").replace("_", " ")
 
 
+def normalise(attr: str) -> str:
+    """Canonical form for matching attribute names across files."""
+    return str(attr).strip().lower().replace(",", "").replace(" ", "_")
+
+
+# Baseline reference-line styles (cross-validation baselines).
+BASELINE_STYLES = {
+    "majority_class_group_cv": {"color": "#444441", "linestyle": "--",
+                                "label": "baseline (majority class)"},
+    "uniform_random_group_cv": {"color": "#9A9A9A", "linestyle": ":",
+                                "label": "baseline (uniform random)"},
+}
+
+
+def load_baseline(path: Path, metric: str) -> pd.DataFrame:
+    """Load per-attribute baseline values, normalised for name matching."""
+    df = pd.read_csv(path)
+    if "target_column" in df.columns:
+        df["attribute"] = df["target_column"]
+    df["attribute"] = df["attribute"].map(normalise)
+    df = df[df["strategy"].isin(BASELINE_STYLES)]
+    col = f"{metric}_mean"
+    return df[["attribute", "strategy", col]].rename(columns={col: "value"})
+
+
 def load_results(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path)
     required = {"attribute", "weighted_f1", "macro_f1"}
@@ -95,6 +120,25 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
                         f"{h:.2f}", ha="center", va="bottom",
                         fontsize=8.5, fontweight="medium", color="#333333")
 
+    # --- baseline reference lines (per attribute, from cross-validation) ---
+    if args.baseline is not None and Path(args.baseline).exists():
+        baseline = load_baseline(Path(args.baseline), args.metric)
+        norm_attrs = [normalise(a) for a in attributes]
+        legend_added = set()
+        for j, attr_norm in enumerate(norm_attrs):
+            rows = baseline[baseline["attribute"] == attr_norm]
+            for _, row in rows.iterrows():
+                style = BASELINE_STYLES.get(row["strategy"])
+                if style is None or np.isnan(row["value"]):
+                    continue
+                ax.plot([j - 0.45, j + 0.45], [row["value"], row["value"]],
+                        color=style["color"], linewidth=1.8,
+                        linestyle=style["linestyle"], zorder=4)
+                if row["strategy"] not in legend_added:
+                    ax.plot([], [], color=style["color"], linewidth=1.8,
+                            linestyle=style["linestyle"], label=style["label"])
+                    legend_added.add(row["strategy"])
+
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=40, ha="right", fontsize=10)
     ax.set_ylabel("F1 score", fontsize=12)
@@ -117,16 +161,22 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
     ax.set_axisbelow(True)
     ax.yaxis.grid(True, linestyle="--", linewidth=0.5, color="#D3D1C7", zorder=1)
     ax.spines[["top", "right"]].set_visible(False)
+
+    # build legend: color key (categorical/measurement) + any baseline lines
+    from matplotlib.patches import Patch
     if show_macro:
-        ax.legend(fontsize=10, loc="upper right", frameon=True, framealpha=0.9)
+        handles, _ = ax.get_legend_handles_labels()
     else:
-        from matplotlib.patches import Patch
-        legend_handles = [
+        handles = [
             Patch(color=WEIGHTED_COLOR, label="categorical"),
             Patch(color=MEASUREMENT_COLOR, label="measurement"),
         ]
-        ax.legend(handles=legend_handles, fontsize=10, loc="upper right",
-                  frameon=True, framealpha=0.9)
+        # append baseline line handles (added via ax.plot([], [], label=...))
+        line_handles, line_labels = ax.get_legend_handles_labels()
+        handles += [h for h, lab in zip(line_handles, line_labels)
+                    if lab.startswith("baseline")]
+    ax.legend(handles=handles, fontsize=9, loc="upper right",
+              frameon=True, framealpha=0.9)
 
     fig.tight_layout()
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -150,6 +200,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--figsize", nargs=2, type=float, default=[12, 6],
                    metavar=("W", "H"))
     p.add_argument("--dpi", type=int, default=150)
+    p.add_argument("--baseline", type=Path,
+                   default=Path("results/baseline_results/baseline_classification_results.csv"),
+                   help="Baseline results CSV for reference lines (cross-validation). "
+                        "Pass an empty/nonexistent path to omit baseline lines.")
     return p.parse_args()
 
 
