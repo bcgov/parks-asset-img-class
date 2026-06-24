@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,18 +48,19 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="bcparks_capstone_final_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="bcparks_capstone_final_report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="bcparks_capstone_final_report_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="bcparks_capstone_final_report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="bcparks_capstone_final_report_files/libs/quarto-html/popper.min.js"></script>
 <script src="bcparks_capstone_final_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="bcparks_capstone_final_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="bcparks_capstone_final_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="bcparks_capstone_final_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="bcparks_capstone_final_report_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<link href="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -139,11 +140,10 @@ div.csl-indent {
 
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
-<p>BC Parks manages a large inventory of infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, campsites, and related park facilities. Many asset records contain missing or incomplete attributes, which limits their usefulness for maintenance planning, inspection prioritization, and replacement-cost estimation. This project investigated whether existing asset photographs can be used to predict missing infrastructure attributes and support a more scalable asset-management workflow.</p>
-<p>Using the processed BC Parks image dataset, we developed a reproducible image-analysis pipeline that predicts asset attributes from one or more photographs per asset. The pipeline first screens images for privacy-sensitive content, then uses image embeddings and attribute-specific classifiers to generate predicted labels with confidence scores. Optional vision-language model components can be used to support or cross-check selected attributes where image interpretation is more difficult.</p>
-<p>On the final test set, the pipeline achieved an overall weighted F1-score of <code>[insert overall weighted F1]</code> across <code>[insert number]</code> evaluated attributes. Performance was strongest for <code>[insert strongest attribute group, e.g., material or structural attributes]</code>, including <code>[insert example attributes]</code>, where the model achieved weighted F1-scores between <code>[insert range]</code>. Performance was lower for <code>[insert weakest attribute group, e.g., measurement-related attributes]</code>, including <code>[insert example attributes]</code>, where image-only prediction was limited by missing scale references, inconsistent photo angles, and sparse labels.</p>
-<p>The final data product exports partner-facing prediction tables in both long and wide formats. Each prediction includes the asset identifier, asset category, predicted attribute value, confidence score, and confidence level. This output is designed to help BC Parks prioritize manual review: high-confidence predictions can be used to fill routine missing fields, while low-confidence or high-consequence predictions can be flagged for staff verification.</p>
-<p>Overall, the project demonstrates that image-based machine learning can improve the completeness of the BC Parks asset inventory, especially for visual structural and material attributes. We recommend using the current pipeline as a decision-support tool rather than a fully automated replacement for field review. Future work should focus on expanding the labelled dataset, improving measurement-related attributes, testing the workflow on new asset categories, and integrating prediction outputs into existing CityWide asset-management processes.</p>
+<p>BC Parks manages a large inventory of infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, and related park facilities. Many asset records contain missing or incomplete attributes, which limits their value for maintenance planning, inspection prioritization, and replacement cost estimation. This project developed a reproducible image analysis pipeline that uses existing asset photographs to predict missing attributes. The default workflow screens images for privacy sensitive content, groups photos by asset, extracts DINOv3 image embeddings, and applies lightweight attribute specific logistic regression classifiers to produce predicted labels with confidence scores.</p>
+<p>On the final held out test set, the default DINOv3 pipeline achieved a mean weighted F1 score of 0.83 across 12 evaluated attributes. Performance was strongest for visually distinctive categorical attributes, including decking material, structure material, edge guard presence, pedestrian railing presence, and bridge type, with several scores above 0.90. Attributes related to measurements were harder because photos often lack a reliable scale reference; length and width were the weakest targets, reaching 0.66 and 0.63.</p>
+<p>The final data product exports prediction tables for partners in both long and wide formats. Each prediction includes the asset identifier, asset category, predicted attribute value, confidence score, and confidence level. These confidence values are intended to help prioritize manual review, but formal confidence calibration was not completed in this project, so they should initially be treated as triage guidance rather than definitive risk thresholds.</p>
+<p>Overall, the project demonstrates that machine learning from images can improve the completeness of the BC Parks asset inventory, especially for visual structural and material attributes. We recommend using the current DINOv3 pipeline as a decision support tool rather than a fully automated replacement for field review, with future work focused on confidence calibration, attributes related to measurements, new asset categories, and CityWide integration.</p>
 </section>
 <section id="introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
@@ -176,11 +176,11 @@ div.csl-indent {
 Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_dataset.csv</code>.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -190,37 +190,37 @@ Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_datas
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>Image-asset rows</td>
 <td>5,562</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>Unique assets</td>
 <td>3,584</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>Rows with local image files</td>
 <td>5,310</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>Assets with more than one image</td>
 <td>1,088 (30.4%)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>Mean images per asset</td>
 <td>1.55</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>Median images per asset</td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>Maximum images for one asset</td>
 <td>10</td>
 </tr>
@@ -240,11 +240,11 @@ Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_datas
 Table&nbsp;2: Image-asset rows by CityWide asset category.
 </figcaption>
 <div aria-describedby="tbl-asset-category-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -254,27 +254,27 @@ Table&nbsp;2: Image-asset rows by CityWide asset category.
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>Boardwalk &lt; 1.2m High</td>
 <td>2,096</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>Trail Bridge</td>
 <td>1,995</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>Stairs</td>
 <td>1,093</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>Viewing Platform</td>
 <td>228</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>Boardwalk &gt; 1.2m High</td>
 <td>150</td>
 </tr>
@@ -466,7 +466,6 @@ Figure&nbsp;13: VLM vs Dinov3 result comparison
 </figcaption>
 </figure>
 </div>
-<p><img src="../results/model_comparison/matched/matched_weighted_f1.png" id="fig-vlm-vs-emb-matched" class="img-fluid" style="width:90.0%" alt="VLM vs Dinov3 result comparison on SHARED assets">**need to regenerate with baselines</p>
 </section>
 <section id="evaluation-of-dinov3-on-the-final-held-out-test-dataset" class="level3" data-number="4.4.4">
 <h3 data-number="4.4.4" class="anchored" data-anchor-id="evaluation-of-dinov3-on-the-final-held-out-test-dataset"><span class="header-section-number">4.4.4</span> Evaluation of DINOv3 on the final held-out test dataset</h3>
@@ -597,13 +596,14 @@ Zhai, Xiaohua, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. 2023. <span
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

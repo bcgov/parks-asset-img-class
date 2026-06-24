@@ -96,46 +96,37 @@ steps_fill = master_df["steps_bin"].notna().mean()
 # Executive summary
 
 BC Parks manages a large inventory of infrastructure assets, including stairs,
-trail bridges, boardwalks, viewing platforms, campsites, and related park
-facilities. Many asset records contain missing or incomplete attributes, which
-limits their usefulness for maintenance planning, inspection prioritization, and
-replacement-cost estimation. This project investigated whether existing asset
-photographs can be used to predict missing infrastructure attributes and support
-a more scalable asset-management workflow.
+trail bridges, boardwalks, viewing platforms, and related park facilities. Many
+asset records contain missing or incomplete attributes, which limits their value
+for maintenance planning, inspection prioritization, and replacement cost
+estimation. This project developed a reproducible image analysis pipeline that
+uses existing asset photographs to predict missing attributes. The default
+workflow screens images for privacy sensitive content, groups photos by asset,
+extracts DINOv3 image embeddings, and applies lightweight attribute specific
+logistic regression classifiers to produce predicted labels with confidence
+scores.
 
-Using the processed BC Parks image dataset, we developed a reproducible
-image-analysis pipeline that predicts asset attributes from one or more
-photographs per asset. The pipeline first screens images for privacy-sensitive
-content, then uses image embeddings and attribute-specific classifiers to
-generate predicted labels with confidence scores. Optional vision-language model
-components can be used to support or cross-check selected attributes where image
-interpretation is more difficult.
+On the final held out test set, the default DINOv3 pipeline achieved a mean
+weighted F1 score of 0.83 across 12 evaluated attributes. Performance was
+strongest for visually distinctive categorical attributes, including decking
+material, structure material, edge guard presence, pedestrian railing presence,
+and bridge type, with several scores above 0.90. Attributes related to
+measurements were harder because photos often lack a reliable scale reference;
+length and width were the weakest targets, reaching 0.66 and 0.63.
 
-On the final test set, the pipeline achieved an overall weighted F1-score of
-`[insert overall weighted F1]` across `[insert number]` evaluated attributes.
-Performance was strongest for `[insert strongest attribute group, e.g.,
-material or structural attributes]`, including `[insert example attributes]`,
-where the model achieved weighted F1-scores between `[insert range]`.
-Performance was lower for `[insert weakest attribute group, e.g.,
-measurement-related attributes]`, including `[insert example attributes]`,
-where image-only prediction was limited by missing scale references, inconsistent
-photo angles, and sparse labels.
-
-The final data product exports partner-facing prediction tables in both long and
+The final data product exports prediction tables for partners in both long and
 wide formats. Each prediction includes the asset identifier, asset category,
-predicted attribute value, confidence score, and confidence level. This output is
-designed to help BC Parks prioritize manual review: high-confidence predictions
-can be used to fill routine missing fields, while low-confidence or
-high-consequence predictions can be flagged for staff verification.
+predicted attribute value, confidence score, and confidence level. These
+confidence values are intended to help prioritize manual review, but formal
+confidence calibration was not completed in this project, so they should
+initially be treated as triage guidance rather than definitive risk thresholds.
 
-Overall, the project demonstrates that image-based machine learning can improve
+Overall, the project demonstrates that machine learning from images can improve
 the completeness of the BC Parks asset inventory, especially for visual
-structural and material attributes. We recommend using the current pipeline as a
-decision-support tool rather than a fully automated replacement for field review.
-Future work should focus on expanding the labelled dataset, improving
-measurement-related attributes, testing the workflow on new asset categories,
-and integrating prediction outputs into existing CityWide asset-management
-processes.
+structural and material attributes. We recommend using the current DINOv3
+pipeline as a decision support tool rather than a fully automated replacement for
+field review, with future work focused on confidence calibration, attributes
+related to measurements, new asset categories, and CityWide integration.
 
 
 # Introduction
@@ -276,8 +267,6 @@ Comparing the two approaches directly (see @fig-vlm-vs-emb) revealed a consisten
 Because performance was broadly comparable and due to the strengths noted above, DINOv3 was chosen as the default model. Evaluation scores on numeric based attributes were less reliable due to the limited labelled data we had for validation, however, since the VLM did occassionally outperform the embedding model on attributes like number of steps and abutment material, we kept the option for VLM use available, if BCParks wishes to explore that approach further. This was optionally configured into our pipeline and can replace DINOv3 labelling.
 
 ![VLM vs Dinov3 result comparison](../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png){#fig-vlm-vs-emb width=100%}
-
-![VLM vs Dinov3 result comparison on SHARED assets](../results/model_comparison/matched/matched_weighted_f1.png){#fig-vlm-vs-emb-matched width=90%}**need to regenerate with baselines
 
 ### Evaluation of DINOv3 on the final held-out test dataset
 
