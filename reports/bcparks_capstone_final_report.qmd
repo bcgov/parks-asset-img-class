@@ -240,7 +240,7 @@ Comparing the two approaches directly (see @fig-vlm-vs-emb) revealed a consisten
 
 ![Examples of VLM & DINOv3 Embedding Successes](report_images/model_success_examples.png){#fig-model-success width=90%}
 
-![Where DINOv3 Embedding outperforms VLM: Material (frame, tank, body) attribute example - Box Steps](report_images/emb_success_example.png.png){#fig-emb-boxstep width=90%}
+![Where DINOv3 Embedding outperforms VLM: Material (frame, tank, body) attribute example - Box Steps](report_images/emb_success_example.png){#fig-emb-boxstep width=90%}
 
 Because performance was broadly comparable and due to the strengths noted above, DINOv3 was chosen as the default model.
 
