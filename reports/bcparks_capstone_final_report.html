@@ -140,10 +140,10 @@ div.csl-indent {
 
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
-<p>BC Parks manages a large inventory of infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, and related park facilities. Many asset records contain missing or incomplete attributes, which limits their value for maintenance planning, inspection prioritization, and replacement cost estimation. This project developed a reproducible image analysis pipeline that uses existing asset photographs to predict missing attributes. The default workflow screens images for privacy sensitive content, groups photos by asset, extracts DINOv3 image embeddings, and applies lightweight attribute specific logistic regression classifiers to produce predicted labels with confidence scores.</p>
-<p>On the final held out test set, the default DINOv3 pipeline achieved a mean weighted F1 score of 0.83 across 12 evaluated attributes. Performance was strongest for visually distinctive categorical attributes, including decking material, structure material, edge guard presence, pedestrian railing presence, and bridge type, with several scores above 0.90. Attributes related to measurements were harder because photos often lack a reliable scale reference; length and width were the weakest targets, reaching 0.66 and 0.63.</p>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, campsites, and related park facilities <span class="citation" data-cites="parry2026proposal">(<a href="#ref-parry2026proposal" role="doc-biblioref">Parry 2026</a>)</span>. Many asset records contain missing or incomplete attributes, which limits their value for maintenance planning, inspection prioritization, and replacement cost estimation. This project developed a reproducible image analysis pipeline that uses existing asset photographs to predict missing attributes. The default workflow screens images for privacy sensitive content, groups photos by asset, extracts DINOv3 image embeddings, and applies lightweight attribute specific logistic regression classifiers to produce predicted labels with confidence scores.</p>
+<p>On the final held out test set, the default DINOv3 pipeline<span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> achieved a mean weighted F1 score of 0.83 across 12 evaluated attributes. Performance was strongest for visually distinctive categorical attributes, including decking material, structure material, edge guard presence, pedestrian railing presence, and bridge type, with several scores above 0.90. Attributes related to measurements were harder because photos often lack a reliable scale reference; length and width were the weakest targets, reaching 0.66 and 0.63.</p>
 <p>The final data product exports prediction tables for partners in both long and wide formats. Each prediction includes the asset identifier, asset category, predicted attribute value, confidence score, and confidence level. These confidence values are intended to help prioritize manual review, but formal confidence calibration was not completed in this project, so they should initially be treated as triage guidance rather than definitive risk thresholds.</p>
-<p>Overall, the project demonstrates that machine learning from images can improve the completeness of the BC Parks asset inventory, especially for visual structural and material attributes. We recommend using the current DINOv3 pipeline as a decision support tool rather than a fully automated replacement for field review, with future work focused on confidence calibration, attributes related to measurements, new asset categories, and CityWide integration.</p>
+<p>Overall, the project demonstrates that machine learning from images can improve the completeness of the BC Parks asset inventory, especially for visual structural and material attributes. We recommend using the current DINOv3 pipeline<span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> as a decision support tool rather than a fully automated replacement for field review, with future work focused on confidence calibration, attributes related to measurements, new asset categories, and CityWide integration.</p>
 </section>
 <section id="introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
@@ -176,7 +176,7 @@ div.csl-indent {
 Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_dataset.csv</code>.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -240,7 +240,7 @@ Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_datas
 Table&nbsp;2: Image-asset rows by CityWide asset category.
 </figcaption>
 <div aria-describedby="tbl-asset-category-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 

@@ -95,8 +95,9 @@ steps_fill = master_df["steps_bin"].notna().mean()
 
 # Executive summary
 
-BC Parks manages a large inventory of infrastructure assets, including stairs,
-trail bridges, boardwalks, viewing platforms, and related park facilities. Many
+BC Parks manages over 100,000 infrastructure assets, including stairs,
+trail bridges, boardwalks, viewing platforms, campsites, and related park
+facilities [@parry2026proposal]. Many
 asset records contain missing or incomplete attributes, which limits their value
 for maintenance planning, inspection prioritization, and replacement cost
 estimation. This project developed a reproducible image analysis pipeline that
@@ -106,7 +107,7 @@ extracts DINOv3 image embeddings, and applies lightweight attribute specific
 logistic regression classifiers to produce predicted labels with confidence
 scores.
 
-On the final held out test set, the default DINOv3 pipeline achieved a mean
+On the final held out test set, the default DINOv3 pipeline[@simeoni2025dinov3] achieved a mean
 weighted F1 score of 0.83 across 12 evaluated attributes. Performance was
 strongest for visually distinctive categorical attributes, including decking
 material, structure material, edge guard presence, pedestrian railing presence,
@@ -124,7 +125,7 @@ initially be treated as triage guidance rather than definitive risk thresholds.
 Overall, the project demonstrates that machine learning from images can improve
 the completeness of the BC Parks asset inventory, especially for visual
 structural and material attributes. We recommend using the current DINOv3
-pipeline as a decision support tool rather than a fully automated replacement for
+pipeline[@simeoni2025dinov3] as a decision support tool rather than a fully automated replacement for
 field review, with future work focused on confidence calibration, attributes
 related to measurements, new asset categories, and CityWide integration.
 
