@@ -34,6 +34,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+import numpy as np
 from sklearn.metrics import f1_score
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -45,6 +46,7 @@ from scripts.export_bcparks_predictions import (  # noqa: E402
     _fit_and_predict,
     _labelled_assets,
 )
+from src.baseline import first_mode  # noqa: E402
 from src.dinov3_features import (  # noqa: E402
     aggregate_asset_features,
     extract_image_features,
@@ -74,6 +76,73 @@ def _score(y_true: list, y_pred: list) -> tuple[float, float, int]:
     weighted = f1_score(y_true, y_pred, average="weighted", zero_division=0)
     macro = f1_score(y_true, y_pred, average="macro", zero_division=0)
     return float(weighted), float(macro), len(y_true)
+
+
+def _baseline_predictions(
+    y_train: pd.Series, n_test: int, strategy: str, seed: int = 42
+) -> list:
+    """Baseline predictions fit on TRAIN labels, emitted for the test set.
+
+    Mirrors src/baseline.py: the baseline learns only from the training labels
+    (majority class / observed classes / class frequencies) and applies that to
+    the held-out test rows -- exactly how the CV baseline fits on the train fold
+    and scores on the validation fold.
+    """
+    y_train = y_train.dropna()
+    if strategy == "majority_class":
+        return [first_mode(y_train)] * n_test
+    counts = y_train.value_counts()
+    classes = counts.index.tolist()
+    rng = np.random.default_rng(seed)
+    if strategy == "uniform_random":
+        return rng.choice(classes, size=n_test).tolist()
+    if strategy == "stratified_random":
+        probs = (counts / counts.sum()).tolist()
+        return rng.choice(classes, size=n_test, p=probs).tolist()
+    raise ValueError(f"Unknown baseline strategy: {strategy}")
+
+
+def _baseline_scores(
+    train: pd.DataFrame,
+    test_assets: pd.DataFrame,
+    target_column: str,
+    per_type: bool,
+    seed: int = 42,
+) -> dict:
+    """Compute majority-class + uniform-random baseline F1 on the test set.
+
+    Follows the same per-asset-type vs pooled structure as the model, so the
+    baseline is a fair reference: per-type majority fit on each type's training
+    labels and scored on that type's test assets (pooled), else pooled overall.
+    """
+    out = {}
+    for strategy in ("majority_class", "uniform_random"):
+        y_true: list = []
+        y_pred: list = []
+        if per_type:
+            for atype in sorted(train["profile_name"].dropna().unique()):
+                tr = train[train["profile_name"] == atype]
+                mask = test_assets["profile_name"].astype(str) == str(atype)
+                if not mask.any() or tr[target_column].dropna().empty:
+                    continue
+                truths = test_assets.loc[mask, target_column].tolist()
+                preds = _baseline_predictions(
+                    tr[target_column], len(truths), strategy, seed
+                )
+                y_true.extend(truths)
+                y_pred.extend(preds)
+        else:
+            y_true = test_assets[target_column].tolist()
+            y_pred = _baseline_predictions(
+                train[target_column], len(y_true), strategy, seed
+            )
+        if y_true:
+            w, m, _ = _score(y_true, y_pred)
+        else:
+            w, m = float("nan"), float("nan")
+        out[f"baseline_{strategy}_weighted_f1"] = round(w, 4)
+        out[f"baseline_{strategy}_macro_f1"] = round(m, 4)
+    return out
 
 
 def _build_asset_features(
@@ -199,13 +268,16 @@ def evaluate_target(
 
     weighted, macro, n = _score(y_true, y_pred)
     print(f"  {target}: weighted_f1={weighted:.3f} macro_f1={macro:.3f} n={n}")
-    return {
+    result = {
         "attribute": target,
         "weighted_f1": round(weighted, 4),
         "macro_f1": round(macro, 4),
         "n_test_assets": n,
         "per_asset_type": per_type,
     }
+    # baselines computed on the SAME test assets (fit on train, scored on test)
+    result.update(_baseline_scores(train, test_assets, target_column, per_type, args.seed))
+    return result
 
 
 def parse_args() -> argparse.Namespace:

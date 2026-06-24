@@ -46,24 +46,14 @@ def normalise(attr: str) -> str:
     return str(attr).strip().lower().replace(",", "").replace(" ", "_")
 
 
-# Baseline reference-line styles (cross-validation baselines).
+# Baseline reference-line styles. Baselines are computed on the test set itself
+# (see evaluate_test_set.py), written as per-attribute columns in the results CSV.
 BASELINE_STYLES = {
-    "majority_class_group_cv": {"color": "#444441", "linestyle": "--",
-                                "label": "baseline (majority class)"},
-    "uniform_random_group_cv": {"color": "#5A5A5A", "linestyle": ":",
-                                "label": "baseline (uniform random)"},
+    "majority_class": {"color": "#444441", "linestyle": "--",
+                       "label": "baseline (majority class)"},
+    "uniform_random": {"color": "#5A5A5A", "linestyle": ":",
+                       "label": "baseline (uniform random)"},
 }
-
-
-def load_baseline(path: Path, metric: str) -> pd.DataFrame:
-    """Load per-attribute baseline values, normalised for name matching."""
-    df = pd.read_csv(path)
-    if "target_column" in df.columns:
-        df["attribute"] = df["target_column"]
-    df["attribute"] = df["attribute"].map(normalise)
-    df = df[df["strategy"].isin(BASELINE_STYLES)]
-    col = f"{metric}_mean"
-    return df[["attribute", "strategy", col]].rename(columns={col: "value"})
 
 
 def load_results(path: Path) -> pd.DataFrame:
@@ -120,25 +110,27 @@ def plot(df: pd.DataFrame, args: argparse.Namespace) -> None:
                         f"{h:.2f}", ha="center", va="bottom",
                         fontsize=8.5, fontweight="medium", color="#333333")
 
-    # --- baseline reference lines (per attribute, from cross-validation) ---
-    if args.baseline is not None and Path(args.baseline).exists():
-        baseline = load_baseline(Path(args.baseline), args.metric)
-        norm_attrs = [normalise(a) for a in attributes]
-        legend_added = set()
-        for j, attr_norm in enumerate(norm_attrs):
-            rows = baseline[baseline["attribute"] == attr_norm]
-            for _, row in rows.iterrows():
-                style = BASELINE_STYLES.get(row["strategy"])
-                if style is None or np.isnan(row["value"]):
-                    continue
-                ax.plot([j - 0.45, j + 0.45], [row["value"], row["value"]],
-                        color=style["color"], linewidth=2.6,
-                        linestyle=style["linestyle"], zorder=5,
-                        solid_capstyle="butt")
-                if row["strategy"] not in legend_added:
-                    ax.plot([], [], color=style["color"], linewidth=1.8,
-                            linestyle=style["linestyle"], label=style["label"])
-                    legend_added.add(row["strategy"])
+    # --- baseline reference lines (per attribute, computed on the test set) ---
+    # Baselines come from columns in the results CSV, e.g.
+    # baseline_majority_class_weighted_f1, written by evaluate_test_set.py.
+    metric_for_baseline = "weighted_f1" if not show_macro else args.metric
+    legend_added = set()
+    for j, (_, row) in enumerate(df.iterrows()):
+        for strategy, style in BASELINE_STYLES.items():
+            col = f"baseline_{strategy}_{metric_for_baseline}"
+            if col not in df.columns:
+                continue
+            val = row[col]
+            if pd.isna(val):
+                continue
+            ax.plot([j - 0.45, j + 0.45], [val, val],
+                    color=style["color"], linewidth=2.6,
+                    linestyle=style["linestyle"], zorder=5,
+                    solid_capstyle="butt")
+            if strategy not in legend_added:
+                ax.plot([], [], color=style["color"], linewidth=1.8,
+                        linestyle=style["linestyle"], label=style["label"])
+                legend_added.add(strategy)
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=40, ha="right", fontsize=10)
@@ -201,10 +193,6 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--figsize", nargs=2, type=float, default=[12, 6],
                    metavar=("W", "H"))
     p.add_argument("--dpi", type=int, default=150)
-    p.add_argument("--baseline", type=Path,
-                   default=Path("results/baseline_results/baseline_classification_results.csv"),
-                   help="Baseline results CSV for reference lines (cross-validation). "
-                        "Pass an empty/nonexistent path to omit baseline lines.")
     return p.parse_args()
 
 

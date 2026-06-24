@@ -1,4 +1,4 @@
-"""Majority-class baselines for park asset attribute files.
+"""Baselines for park asset attribute files.
  
 The baseline intentionally learns only one thing from each training fold: the
 most common label. Cross-validation is grouped by ``asset_id`` so images or

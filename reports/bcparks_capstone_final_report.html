@@ -71,38 +71,7 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul class="collapse">
-  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><span class="header-section-number">1</span> Executive summary</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
-  <li><a href="#data-and-exploratory-data-analysis-eda" id="toc-data-and-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#data-and-exploratory-data-analysis-eda"><span class="header-section-number">3</span> Data and exploratory data analysis (EDA)</a>
-  <ul class="collapse">
-  <li><a href="#data-sources-and-collection" id="toc-data-sources-and-collection" class="nav-link" data-scroll-target="#data-sources-and-collection"><span class="header-section-number">3.1</span> Data sources and collection</a></li>
-  <li><a href="#size-and-characteristics" id="toc-size-and-characteristics" class="nav-link" data-scroll-target="#size-and-characteristics"><span class="header-section-number">3.2</span> Size and characteristics</a></li>
-  <li><a href="#exploratory-findings" id="toc-exploratory-findings" class="nav-link" data-scroll-target="#exploratory-findings"><span class="header-section-number">3.3</span> Exploratory findings</a></li>
-  <li><a href="#data-quality-limitations-and-preprocessing" id="toc-data-quality-limitations-and-preprocessing" class="nav-link" data-scroll-target="#data-quality-limitations-and-preprocessing"><span class="header-section-number">3.4</span> Data quality, limitations, and preprocessing</a></li>
-  </ul></li>
-  <li><a href="#data-science-methods" id="toc-data-science-methods" class="nav-link" data-scroll-target="#data-science-methods"><span class="header-section-number">4</span> Data science methods</a>
-  <ul class="collapse">
-  <li><a href="#approaches-considered" id="toc-approaches-considered" class="nav-link" data-scroll-target="#approaches-considered"><span class="header-section-number">4.1</span> Approaches considered</a></li>
-  <li><a href="#vlm-approach" id="toc-vlm-approach" class="nav-link" data-scroll-target="#vlm-approach"><span class="header-section-number">4.2</span> VLM Approach</a></li>
-  <li><a href="#embedding-based-classification" id="toc-embedding-based-classification" class="nav-link" data-scroll-target="#embedding-based-classification"><span class="header-section-number">4.3</span> Embedding-based classification</a></li>
-  <li><a href="#leveraging-the-two-models-into-a-unified-pipeline" id="toc-leveraging-the-two-models-into-a-unified-pipeline" class="nav-link" data-scroll-target="#leveraging-the-two-models-into-a-unified-pipeline"><span class="header-section-number">4.4</span> Leveraging the two models into a unified pipeline</a></li>
-  </ul></li>
-  <li><a href="#data-product-and-results" id="toc-data-product-and-results" class="nav-link" data-scroll-target="#data-product-and-results"><span class="header-section-number">5</span> Data product and results</a>
-  <ul class="collapse">
-  <li><a href="#the-data-product" id="toc-the-data-product" class="nav-link" data-scroll-target="#the-data-product"><span class="header-section-number">5.1</span> The Data Product</a></li>
-  <li><a href="#final-results" id="toc-final-results" class="nav-link" data-scroll-target="#final-results"><span class="header-section-number">5.2</span> Final results</a></li>
-  <li><a href="#strengths-and-limitations-of-current-design" id="toc-strengths-and-limitations-of-current-design" class="nav-link" data-scroll-target="#strengths-and-limitations-of-current-design"><span class="header-section-number">5.3</span> Strengths and limitations of current design</a></li>
-  <li><a href="#future-product-improvements" id="toc-future-product-improvements" class="nav-link" data-scroll-target="#future-product-improvements"><span class="header-section-number">5.4</span> Future product improvements</a></li>
-  </ul></li>
-  <li><a href="#conclusions-and-recommendations" id="toc-conclusions-and-recommendations" class="nav-link" data-scroll-target="#conclusions-and-recommendations"><span class="header-section-number">6</span> Conclusions and recommendations</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../bcparks_capstone_final_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../bcparks_capstone_final_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -170,15 +139,17 @@ div.csl-indent {
 
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
-<p>[to be completed after running pipeline with test set + obtaining results]</p>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, campsites, and related park facilities <span class="citation" data-cites="parry2026proposal">(<a href="#ref-parry2026proposal" role="doc-biblioref">Parry 2026</a>)</span>. Many asset records contain missing or incomplete attributes, which limits their value for maintenance planning, inspection prioritization, and replacement cost estimation. This project developed a reproducible image analysis pipeline that uses existing asset photographs to predict attribute labels. The default workflow screens images for privacy sensitive content, groups photos by asset, extracts DINOv3 image embeddings, and applies lightweight attribute specific logistic regression classifiers to produce predicted labels with confidence scores.</p>
+<p>On the final held out test set, the default DINOv3 pipeline <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> achieved a mean weighted F1 score of 0.83 across 12 evaluated attributes. Performance was strongest for visually distinctive categorical attributes, including decking material, structure material, edge guard presence, pedestrian railing presence, and bridge type, with several scores above 0.90. Attributes related to measurements were harder to predict because photos often lack a reliable scale reference. Length and width were the weakest targets, reaching 0.66 and 0.63.</p>
+<p>The final data product exports prediction tables for partners in both long and wide formats. Each prediction includes the asset identifier, asset category, predicted attribute value, confidence score, and confidence level.</p>
+<p>Overall, we recommend using the current DINOv3 pipeline <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> as a decision support tool rather than a fully automated replacement for field review, with future work focused on improving model performance on measurement attributes and expanding to new asset categories.</p>
 </section>
 <section id="introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
-<p>BC Parks manages over 100,000 infrastructure records across provincial parks, including assets such as stairs, trail bridges, boardwalks, viewing platforms, campsites, and picnic facilities [reference/cite official MDS capstone proposal page]. Accurate information about these assets is essential for maintenance planning, replacement cost estimation, safety inspections, and long-term asset management. Infrastructure characteristics such as material type, dimensions, and structural features are used to determine maintenance requirements and whether an asset requires inspection by a qualified professional. However, many records in the BC Parks asset inventory contain incomplete attribute information, limiting the ability of staff to confidently use the database for operational planning and decision-making.</p>
-<p>To maintain this inventory, field inspectors collect photos and record asset characteristics during site visits. As a result, BC Parks has accumulated a large repository of infrastructure images, with approximately 50,000 asset records containing one or more photographs. While these images capture valuable visual information about asset characteristics, many records still contain missing attributes due to incomplete field measurements, inconsistent data collection practices, or historical gaps in the inventory. Manually reviewing and labeling tens of thousands of images would require substantial staff time and is not feasible at scale. Consequently, incomplete records persist, limiting its value as a decision-support tool.</p>
-<p>Recent advances in computer vision and vision-language models (VLMs) have demonstrated strong capabilities for extracting structured information from images, creating an opportunity to enrich infrastructure records using existing photographic data [in-text citation to be added in later upon further research]. In collaboration with BC Parks, the broad objective of applying image analysis to infrastructure photographs was refined into three specific goals: (1) automate the prediction of missing asset attributes from photographs, (2) provide a confidence score for every prediction so that uncertain predictions can be flagged for manual review, and (3) develop a modular workflow that can be extended to additional asset categories in the future, such as picnic tables, campsites, and tent pads. Together, these objectives aim to improve the completeness and reliability of the BC Parks asset inventory while minimizing the need for manual data entry and review.</p>
-<p>The dataset provided for this project contains 5,562 images corresponding to 3,584 unique assets across 5 infrastructure categories: stairs, trail bridges, boardwalks (above and below 1.2 meters high), and viewing platforms. Exploratory analysis revealed several challenges that influenced both model development and evaluation. Image quality and framing vary considerably across the dataset, with some photos capturing the entire structure and others focusing on individual components. In addition, attribute coverage is highly uneven, resulting in highly limited labelled data for some attributes and substantial class imbalance for others. Measurement-related attributes such as length, width, number of steps, and fall height present an additional challenge because they are often difficult to infer from photos alone in the absence of a consistent scale reference.</p>
-<p>To address these challenges, we developed a reproducible machine learning pipeline that outputs structured attribute predictions based on one or more asset photos. Individual attributes are predicted using either VLMs or lightweight classifiers trained on image embeddings, depending on the attribute. Predictions are then combined with confidence scores and exported in a structured format that can be integrated into existing asset management processes. Across the evaluated asset categories, the pipeline achieved strong performance on structural attributes such as bridge type, decking material, and pedestrian railing presence, with a mean weighted F1-score of 0.88. Performance was lower for measurement-related attributes such as length, width, number of steps, and fall height, which achieved a mean weighted F1-score of 0.62. These results demonstrate the potential for image-based machine learning to improve the completeness and usability of BC Parks’ infrastructure inventory while providing a scalable foundation for future expansion to additional asset types.</p>
+<p>BC Parks manages over 100,000 infrastructure records across provincial parks, including assets such as stairs, trail bridges, boardwalks, viewing platforms, campsites, and picnic facilities <span class="citation" data-cites="parry2026proposal">(<a href="#ref-parry2026proposal" role="doc-biblioref">Parry 2026</a>)</span>. Accurate information about these assets is essential for maintenance planning, replacement cost estimation, safety inspections, and long-term asset management. However, many records in the BC Parks asset inventory contain incomplete attribute information, limiting the ability of staff to confidently use the database for operational planning and decision-making. To maintain this inventory, field inspectors collect photos and record asset characteristics during site visits. While these images capture valuable visual information about asset characteristics, many records still contain missing attributes due to incomplete field measurements, inconsistent data collection practices, or historical gaps in the inventory. Manually reviewing and labeling tens of thousands of images would require substantial staff time and is not feasible at scale.</p>
+<p>Recent advances in computer vision and vision language models create an opportunity to use these existing photographs to enrich the inventory <span class="citation" data-cites="volkov2025imagerecognitionvisionlanguage">(<a href="#ref-volkov2025imagerecognitionvisionlanguage" role="doc-biblioref">Volkov et al. 2025</a>)</span>. In collaboration with BC Parks, this project focused on three goals: predicting missing attributes, providing confidence scores alongisde attribute labels to flag for manual review, and building a modular workflow that can be extended to additional asset categories. Together, these objectives aim to improve the completeness and reliability of the BC Parks asset inventory while minimizing the need for manual data entry and review.</p>
+<p>The dataset for this project contains images and attribute values for assets in 5 infrastructure categories: stairs, trail bridges, low boardwalks, elevated boardwalks, and viewing platforms. Exploratory data analysis revealed several challenges, such as attribute class imbalances and inconsistent image quality and framing. To address these challenges, we developed a reproducible machine learning pipeline that generates structured asset attribute predictions from one or more photographs. Images first pass through a privacy-screening stage, where personally identifiable information (PII), such as faces, is detected and blurred. They are then transformed into numerical image embeddings and passed to a collection of lightweight, attribute-specific classifiers. The resulting predictions are combined with confidence scores and exported in a structured format that can be integrated into existing asset management workflows.</p>
+<p>This report describes the development and evaluation of the proposed image-analysis pipeline. We first present key features of the BCParks dataset, followed by the modelling approaches investigated, their results and how this led us to the final design and implementation of our data pipeline for attribute labelling.</p>
 </section>
 <section id="data-and-exploratory-data-analysis-eda" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Data and exploratory data analysis (EDA)</h1>
@@ -190,7 +161,7 @@ div.csl-indent {
 <li>Asset attribute records: including materials, structural features, and measurements recorded by field staff</li>
 <li>Image attachment records and downloaded image files</li>
 </ul>
-<p>The working dataset is organized around an image-asset attachment row. Each row contains an <code>asset_id</code>, image path, CityWide profile, file metadata, and the available attribute values for that asset. For modelling, however, the asset is the prediction unit: multiple images linked to the same asset are grouped together so one asset does not appear in both training and validation folds.</p>
+<p>The working dataset is organized around an image-asset attachment row. Each row contains an <code>asset_id</code>, image path, CityWide profile, file metadata, and the available attribute values for that asset. For modelling, however, the asset is the prediction unit: multiple images linked to the same asset are grouped together.</p>
 </section>
 <section id="size-and-characteristics" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="size-and-characteristics"><span class="header-section-number">3.2</span> Size and characteristics</h2>
@@ -313,33 +284,39 @@ Table&nbsp;2: Image-asset rows by CityWide asset category.
 </figure>
 </div>
 </div>
-<p>Most assets have a single image, but 1,088 assets, or 30.4% of assets, have more than one image. The mean number of images per asset is 1.55, the median is 1, and the largest asset has 10 images. This is useful because multiple viewpoints can reveal different details, but it also makes grouped evaluation essential.</p>
 </section>
-<section id="exploratory-findings" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="exploratory-findings"><span class="header-section-number">3.3</span> Exploratory findings</h2>
-<p>The EDA showed that the project is primarily a missing-attribute prediction problem rather than a clean image classification problem. Attribute coverage varies sharply by field. Relatively common labels include pedestrian railing presence, decking material, width, structure material, length, and edge guard presence. Other targets are much sparser: fall height is available for only about 5.1% of rows, and number of steps is available for about 1.0% of rows.</p>
+</section>
+<section id="data-science-methods" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Data science methods</h1>
+<section id="approaches-considered" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="approaches-considered"><span class="header-section-number">4.1</span> Approaches considered</h2>
+<p>Our exploratory analysis established that this is primarily a missing-attribute prediction problem on imbalanced and sparsely labelled data. Attribute coverage varies sharply across attributes: structural categories such as decking material and pedestrian-railing presence are relatively well populated, whereas measurement attributes are far sparser, with fall height labelled for only about 5.1% of rows and number of steps for about 1.0% (<a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>). The categorical labels are also heavily imbalanced, with several material fields dominated by labels like ‘Timber/Wood’.</p>
+<p>To address BC Parks’ main objective of automating attribute labelling with the limited labels we had, we decided to start with a simple no-training approach, using zero-shot vision language models (VLMs). We then explored whether pre-trained embedding models could better capture the fine-grained visual details that distinguish material types, pairing them with a simple classifier to output prediction labels for all attributes.</p>
+<p>To establish a comparable benchmark, we implemented three baseline classifiers. Given the class imbalance present across some attributes, we included a majority class classifier that always predicts the most frequent category, a uniform random classifier that selects a label at random from all possible labels, and a stratified random classifier whose predictions reflect the observed class distribution.</p>
+</section>
+<section id="vlm-approach" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="vlm-approach"><span class="header-section-number">4.2</span> VLM Approach</h2>
+<div id="fig-vlm-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vlm-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/vlm_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vlm-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: VLM Model Workflow
+</figcaption>
+</figure>
+</div>
+<p>We started with a zero-shot VLM approach which was motivated by the limited labelled data we had available (<a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>), especially for measurement-based attributes. This was also important given that many of our ground-truth labels are themselves sometimes unreliable. Additionally, to reduce measurement error and becuase of the sparse and irregular numeric distributions in our labelled data (see <a href="#fig-numeric-distributions" class="quarto-xref">Figure&nbsp;3</a>), we switched our numerical attributes from continuous to binned ranges, making them easier and simpler to infer from images.</p>
 <div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="report_images/attribute_fill_rate.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Attribute fill rate by asset category
+Figure&nbsp;2: Attribute fill rate by asset category
 </figcaption>
 </figure>
 </div>
-<p>The categorical targets are also imbalanced. Several material fields are dominated by timber, and binary structural fields are often dominated by one class. Because of this imbalance, model evaluation cannot rely on accuracy alone; the primary evaluation metric (weighted F1) is discussed in the Methods section.</p>
-<div id="fig-categorical-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="report_images/categorical_distributions.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Class distributions for categorical attributes
-</figcaption>
-</figure>
-</div>
-<p>The numerical fields are not treated as exact measurement regression targets in the final pipeline. Image-only prediction does not provide a stable scale reference, and the original measurements are sparse and irregular. We therefore bin length, width, fall height, and number of steps into ordered categories before modelling.</p>
 <div id="fig-numeric-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-numeric-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -350,34 +327,8 @@ Figure&nbsp;3: Distributions for numeric attributes
 </figcaption>
 </figure>
 </div>
-</section>
-<section id="data-quality-limitations-and-preprocessing" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="data-quality-limitations-and-preprocessing"><span class="header-section-number">3.4</span> Data quality, limitations, and preprocessing</h2>
-<p>The EDA identified several practical data issues that shaped the final pipeline:</p>
-<ul>
-<li>Missing labels are common, and some fields use placeholder values such as <code>TBD</code>; these are treated as unavailable labels during modelling.</li>
-<li>Some assets have several photos while others have only one, so train and validation splits are grouped by <code>asset_id</code> to prevent leakage.</li>
-<li>Image quality is inconsistent. Some photos are close-ups, poorly framed, or focused on only part of the structure, which can make visual attributes impossible to determine from the available image.</li>
-<li>Not every attachment row has a usable local image file, so the pipeline checks image availability before feature extraction via embeddings or VLM model inference.</li>
-<li>Because photos may contain people or vehicles, a YOLO model screens out these images and applies blurring around individuals before passing to any cloud VLM workflows. Flagged images are blurred or excluded from the cleaned upload set.</li>
-</ul>
-<p>The processed training files in <code>data/processed/train/</code> are attribute-specific datasets derived from the master table. Each file keeps the relevant assets, image paths, and target label for one prediction task. For DINOv3 and related embedding models, image-level embeddings are averaged to one feature vector per asset. This keeps the output aligned with the partner use case: one row of predicted attributes per infrastructure asset, with confidence values where the model can provide them.</p>
-</section>
-</section>
-<section id="data-science-methods" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Data science methods</h1>
-<section id="approaches-considered" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="approaches-considered"><span class="header-section-number">4.1</span> Approaches considered</h2>
-<p>To address BCPark’s main objective, automating attribute labelling and filing in missing attribute labels where possible, we started with a simple no-training-required approach, using zero-shot vision language models. This was motivated by our limited labelled data, especially across complex attributes like length, width, fall height and number of steps, which are difficult to extract from images without a scale or size reference. After assessing this method, we also wanted to see whether fine grained visual details that distinguish material types, could be better captured by embedding models, prompting us to explore different pretrained embedding models, often trained on billions of images, in combination with a simple classifier to label all attributes from images. We anticipated that because embedding models use vector embeddings that can capture similarity from images, that these could potentially outperform the VLM’s reasoning when it came to structurally distinct material types, but would likely not differ in the performance on the numerical, measuremeant based attributes.</p>
-<p>We used <strong>weighted F1</strong> as the primary model-selection metric because the attribute labels are highly imbalanced. A metric that only rewards the dominant class would overstate model quality for attributes where one material or one structural category appears much more often than the others. Weighted F1 balances precision and recall while weighting each class by its support, making it a better summary of performance on the distribution of labels BC Parks is most likely to encounter. Macro F1 was retained only as a diagnostic for minority-class behaviour because it gives each class equal weight regardless of frequency.</p>
-<p>To ensure we had a comparable benchmark, we implemeneted a majority class ‘dummy’ baseline classifier, that always predicted the majority category for each attribute, to reflect the nature of the class imbalance in some of our data, a uniform random guessing classifier, that predicted a label at random (from all possible labels) and a non-uniform (stratified) random guesser, where the predicted label also reflected the distribution of classes in the data.</p>
-</section>
-<section id="vlm-approach" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="vlm-approach"><span class="header-section-number">4.2</span> VLM Approach</h2>
-<p>[diagram of VLM workflow: asset image –&gt; vlm model –&gt; csv output with confidence score, include prompt engineering methods + different vlm model comparisons]</p>
-<p>We chose a zero-shot vision-language model approach because it requires no training, which suited our very limited labelled data, particularly for the measurement-based numeric attributes, where labelled examples are scarcest (see the attribute fill rates in <a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;1</a>). Approaches that require training a model from scratch were not feasible given the size of our dataset, and were further complicated by the fact that many of our ground-truth labels are themselves unreliable. A zero-shot VLM was therefore most our most suitable starting point.</p>
-<p>There are several practical strengths that come with using VLMs for attribute predcition. It is non-technical to operate, the prompt is easy to configure, and it offers high flexibility where the prompt template can be adapted or expanded to additional asset types if BC Parks chooses to extend its system beyond the 5 assets we validated.</p>
-<p>Its limitations are equally important to note. Running VLMs at scale can become costly if the free API tier does not meet demand, requiring the purchase of additional capacity to process enough images at once. Alternatively, the models can be run locally, but this demands computational resources BC Parks may not have. Also, there are privacy considerations when sending park imagery to an open source cloud service like <code>gemini-flash-preview</code>, which we mitigated by blurring people in images with YOLO before any cloud inference. Finally, validation is difficult for attributes such as length and width when ground-truth labels are limited and when there are rare classes within material-based attributes. For example, <code>Aluminum</code> was a very rare class in the <code>decking material</code> of trail bridges, so it was difficult to validate whether the VLM was actually performing poorly or if it could capture this material with more labelled data. The same was seen for the <code>Aluminium Sill Fil</code> category of the <code>abutment material</code> attribute. See <a href="#fig-bridge-rare-class" class="quarto-xref">Figure&nbsp;4</a></p>
+<p>There are several practical strengths that come with using VLMs for attribute predcition. It is non-technical to operate, the prompt is easy to configure, and it offers high flexibility where the prompt template can be adapted or expanded to additional asset types.</p>
+<p>Its limitations are equally important to note. Running VLMs at scale can become costly if the free API tier does not meet demand, requiring the purchase of additional capacity to process enough images at once. Alternatively, the models can be run locally, but this demands computational resources BC Parks may not have. Also, there are privacy considerations when sending park imagery to an open source cloud service, which we mitigated by blurring people in images with YOLO before any cloud inference. Finally, validation is difficult for attributes such as length and width when ground-truth labels are limited and when there are rare classes within material-based attributes. For example, <code>Aluminum</code> was a very rare class in the <code>decking material</code> of trail bridges, so it was difficult to validate whether the VLM was actually performing poorly on this class (see <a href="#fig-bridge-rare-class" class="quarto-xref">Figure&nbsp;4</a>).</p>
 <div id="fig-bridge-rare-class" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bridge-rare-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -388,15 +339,48 @@ Figure&nbsp;4: Rare Class Issue Example: Decking Material &amp; Abutment Materia
 </figcaption>
 </figure>
 </div>
-<p>For prompt design, we compared attribute-specific prompts against a single multi-attribute prompt that requests all of an asset’s attributes at once. The two did not differ meaningfully in weighted F1 across all attributes and asset types (see <a href="#fig-stair-vlm-comparison" class="quarto-xref">Figure&nbsp;5</a>, <a href="#fig-bridge-vlm-comparison" class="quarto-xref">Figure&nbsp;6</a>, <a href="#fig-boardwalk-low-vlm-comparison" class="quarto-xref">Figure&nbsp;7</a>), and the multi-attribute prompt is more cost-efficient because each asset is sent to the model only once rather than once per attribute, so we favoured it.</p>
-<p>For VLM model comparison, <strong>Google AI Models</strong> performed most accuratly upon initial exploration, narrowing our later tests on the <code>gemma-4-26-b</code> vs <code>gemini-flash-preview</code> models, where the gemma was significantly cheaper and allowed for more requests per day (1500 assets labelled a day with free-tier token) vs the more expensive and slightly more accurate <strong>gemini</strong> model (maximum of 20 assets labelled per day). See <a href="#fig-stair-vlm-comparison" class="quarto-xref">Figure&nbsp;5</a>, <a href="#fig-bridge-vlm-comparison" class="quarto-xref">Figure&nbsp;6</a>, <a href="#fig-boardwalk-low-vlm-comparison" class="quarto-xref">Figure&nbsp;7</a></p>
+<p>We compared attribute-specific prompts with a single multi-attribute prompt, and tested the two strongest available Google models: <code>gemma-4-26b</code> and <code>gemini-3-flash-preview</code>. We continued further prompt engineering and prediction labelling with both models since <strong>gemma</strong> was significantly cheaper and allowed for more requests per day (1500 assets labelled per day with the free-tier token) versus, the more expensive and slightly more accurate <strong>gemini</strong> model (20 assets labelled per day).</p>
+</section>
+<section id="embedding-based-classification" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="embedding-based-classification"><span class="header-section-number">4.3</span> Embedding-based classification</h2>
+<div id="fig-emb-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/embedding_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Embedding Model Workflow
+</figcaption>
+</figure>
+</div>
+<p>The second modelling path treated each image as input to a pre-trained vision encoder and used the resulting embedding as a fixed feature representation. The motivation was practical: our labelled dataset is useful, but not large enough to train a high-capacity image model from scratch. Instead, we used foundation models that had already learned general visual representations from large-scale pretraining and trained lightweight classifiers on top of their embeddings.</p>
+<p>First, images were loaded from the cleaned local image directory and passed through a frozen image encoder, meaning the model was not fine tuned or adjusted. Each image was converted into a numeric vector, image vectors were averaged to one embedding per asset, and one classifier was trained for each target attribute.</p>
+<p>To ensure we explored multiple pre-trained embedding models, we evaluated three ditinct embedding models <strong>DINOv3</strong> <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span>, <strong>SigLIP</strong> <span class="citation" data-cites="zhai2023sigmoid">(<a href="#ref-zhai2023sigmoid" role="doc-biblioref">Zhai et al. 2023</a>)</span> and <strong>OpenCLIP</strong> <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, comparing their performance.</p>
+<p>For the classifier layer, we compared logistic regression, linear support vector machines, random forests, and histogram-based gradient boosting using scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.</p>
+</section>
+<section id="results-evaluation" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="results-evaluation"><span class="header-section-number">4.4</span> Results &amp; Evaluation</h2>
+<p>We used <strong>weighted F1</strong> as the primary model-selection metric because the attribute labels are highly imbalanced (see <a href="#fig-categorical-distributions" class="quarto-xref">Figure&nbsp;6</a>). A metric that only rewards the dominant class would overstate model quality for attributes where one material or one structural category appears much more often than the others. Weighted F1 balances precision (how often the model is correct when it predicts a particular label) and recall (how many of the assets that truly hold that label does the model actually recover), while weighing each class proportionally to how often it appears in the dataset. This makes it a better summary of performance on the distribution of labels BC Parks is most likely to encounter.</p>
+<div id="fig-categorical-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/categorical_distributions.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Class distributions for categorical attributes
+</figcaption>
+</figure>
+</div>
+<section id="evaluations-of-vlm" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="evaluations-of-vlm"><span class="header-section-number">4.4.1</span> Evaluations of VLM</h3>
+<p>The attribute-specific and multi-attribute VLM prompts produced consistently similar weighted F1 scores across stairs, trail bridges, and boardwalk attributes (<a href="#fig-stair-vlm-comparison" class="quarto-xref">Figure&nbsp;7</a>, <a href="#fig-bridge-vlm-comparison" class="quarto-xref">Figure&nbsp;8</a>, <a href="#fig-boardwalk-low-vlm-comparison" class="quarto-xref">Figure&nbsp;9</a>). Because the multi-attribute prompt labels each asset once instead of once per attribute, it is the more practical option. The two models,<code>gemma-4-26b</code> and <code>gemini-3-flash-preview</code>, also performed similarly on weighted F1, with the exception of <code>gemini-3-flash-preview</code> occasionally performing better on fall height. Nonetheless, we retained both models because of <strong>gemma</strong>’s higher free-tier allowance, which makes it the practical choice at scale.</p>
 <div id="fig-stair-vlm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stair-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../results/eval_results_plots/stairs_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stair-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Prompt Approach &amp; VLM model comparison with Stair Attributes
+Figure&nbsp;7: Prompt Approach &amp; VLM model comparison with Stair Attributes
 </figcaption>
 </figure>
 </div>
@@ -406,117 +390,141 @@ Figure&nbsp;5: Prompt Approach &amp; VLM model comparison with Stair Attributes
 <img src="../results/eval_results_plots/trail_bridge_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bridge-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Prompt Approach &amp; VLM model comparison with Trail Bridge Attributes
+Figure&nbsp;8: Prompt Approach &amp; VLM model comparison with Trail Bridge Attributes
 </figcaption>
 </figure>
 </div>
 <div id="fig-boardwalk-low-vlm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boardwalk-low-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../results/eval_results_plots/boardwalk_low_edge_guard_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="../results/eval_results_plots/boardwalk_low_edge_guard_weighted_f1.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boardwalk-low-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Prompt Approach &amp; VLM model comparison with Boardwalk Attribute - Has Edge Guard
+Figure&nbsp;9: Prompt Approach &amp; VLM model comparison with Boardwalk Attribute - Has Edge Guard
 </figcaption>
 </figure>
 </div>
-<p>The stakeholders most affected by these predictions are BC Parks’ asset-management team, who use the resulting labels to decide when and whether to dispatch field engineers for periodic inspection and repair. This raises a clear ethical consideration: an inaccurate prediction risks a high-risk asset being overlooked. The pipeline therefore attaches a confidence score to every prediction and flags low-confidence cases for manual review, which is especially important for high-priority attributes such as length and fall height.</p>
 </section>
-<section id="embedding-based-classification" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="embedding-based-classification"><span class="header-section-number">4.3</span> Embedding-based classification</h2>
-<p>[add embedding workflow diagram: Asset images are input and each input is embedded (becomes numerical matrix) → embeddings are averaged and passed to lightweight classifier for each relevant attribute → predicted label with probability score is output]</p>
-<p>The second modelling path treated each image as input to a pre-trained vision encoder and used the resulting embedding as a fixed feature representation. The motivation was practical: our labelled dataset is useful, but not large enough to train a high-capacity image model from scratch. Instead, we used foundation models that had already learned general visual representations from large-scale pretraining, froze their weights, and trained lightweight classifiers on top of their embeddings. This gave us a supervised image-based approach while keeping the number of trainable parameters small and the experiments reproducible.</p>
-<p>First, images were loaded from the cleaned local image directory and passed through a frozen image encoder. Each photo was converted into a dense numeric vector. Because many BC Parks assets have multiple photos, we then averaged the image-level vectors for the same <code>asset_id</code> to create one asset-level embedding. This asset-level table was joined to the attribute-specific training labels, and one classifier was trained per target attribute. This design avoided duplicating labels across multiple photos while still allowing all available visual evidence for an asset to contribute to the final representation.</p>
-<p>To ensure we explored multiple pre-trained embedding models, we evaluated three ditinct models and compared their performance:</p>
-<ul>
-<li><strong>DINOv3</strong>: a self-supervised vision transformer trained to produce general visual features without relying on image-text labels <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span>. We used DINOv3 as the main representation learner because self-supervised visual features are often strong for object shape, structure, texture, and material cues, all of which are central to infrastructure attributes.</li>
-<li><strong>SigLIP</strong>: a vision-language model trained with a sigmoid image-text pretraining loss <span class="citation" data-cites="zhai2023sigmoid">(<a href="#ref-zhai2023sigmoid" role="doc-biblioref">Zhai et al. 2023</a>)</span>. We used only the vision encoder, not the text encoder. The reason for including SigLIP was that language-aligned pretraining can sometimes encode higher-level semantic scene information that is useful for attributes such as structure position or decking material.</li>
-<li><strong>OpenCLIP / CLIP-style embeddings</strong>: a contrastive image-text baseline based on the CLIP family of models <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>. This provided an additional comparison point for language-aligned embeddings.</li>
-</ul>
-<p>For the classifier layer, we tested logistic regression, linear support vector machines, random forests, and histogram-based gradient boosting using scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>. We found that logisitic regression outperformed other classifer models (see <a href="#fig-dinov3-classifiers" class="quarto-xref">Figure&nbsp;8</a>). This indicated that the embedding space already separates the attribute classes reasonably well, and so a simple linear classifier like logisitic regression was adequate for classification purposes. We also tested a tuned logistic-regression variant by searching over regularization strength and class weighting inside the training folds. In practice, the tuned variant did not consistently improve over the simpler default logistic-regression setup, so the untuned logistic model remained the main embedding classifier.</p>
+<section id="evaluations-of-embedding-models" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="evaluations-of-embedding-models"><span class="header-section-number">4.4.2</span> Evaluations of Embedding models</h3>
+<p>We found that ogisitic regression was consistently competitive and often strongest, especially on binned numeric attributes seen in <a href="#fig-dinov3-classifiers" class="quarto-xref">Figure&nbsp;10</a>. Since this was the simplest classifier, this suggested that the embedding space already separated many attribute classes well enough for a simple linear classifier to predict the labels. This result also supported a simpler final pipeline. More complex classifiers did not provide enough improvement to justify extra tuning or reduced interpretability. Logistic regression is fast to train, easy to rerun when new labels are added, and produces scores that can be converted into confidence levels for partner review.</p>
 <div id="fig-dinov3-classifiers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dinov3-classifiers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../results/eval_results_plots/dinov3_comparison_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="report_images/dinov3_classifiers_subset_weighted_f1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dinov3-classifiers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Dinov3 Embedding Model: Comparison across different classifier models
+Figure&nbsp;10: Dinov3 Embedding Model: Comparison across different classifier models
 </figcaption>
 </figure>
 </div>
-<p>The overall pattern from the embedding experiments was that frozen embeddings outperformed the majority-class and random uniform baselines. Although, the 3 embedding models didn’t differ significantly in terms of weighted F1. See <a href="#fig-emb-comparison" class="quarto-xref">Figure&nbsp;9</a>. Across attributes, Dinov3 tended to occassionally outperform the other models, examples like fall height and length (but these had limited data so performance on them is less trustworthy) Refer to <a href="#fig-emb-comparison-per-attribute" class="quarto-xref">Figure&nbsp;10</a> for the full per-attribute comparison.</p>
+<p>Comparing the three embedding models with a fixed logistic-regression head, the mean weighted F1 across all twelve attributes was very similar for DINOv3,SigLIP, and OpenCLIP (<a href="#fig-emb-comparison" class="quarto-xref">Figure&nbsp;11</a>).</p>
 <div id="fig-emb-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-emb-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../results/eval_results_plots/agg_logistic_comparison_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (aggregated f1 across all 12 attributes)
+Figure&nbsp;11: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (aggregated f1 across all 12 attributes)
 </figcaption>
 </figure>
 </div>
 <div id="fig-emb-comparison-per-attribute" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-emb-comparison-per-attribute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../results/eval_results_plots/logistic_comparison_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="../results/eval_results_plots/embedding_comparison_subset_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-comparison-per-attribute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (per attribute f1 score )
+Figure&nbsp;12: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (per attribute f1 score )
 </figcaption>
 </figure>
 </div>
-<p>Because the three embedding models performed comparably, our final choice was guided by practical deployment considerations rather than negligible accuracy differences. We selected DINOv3 as the most suitable embedding model because it occasionally outperformed the alternatives on the hardest attributes (see <a href="#fig-emb-comparison-per-attribute" class="quarto-xref">Figure&nbsp;10</a>), it is lightweight enough to download and run locally at no cost (the model takes up approximately 0.3 GB of disk space), and its self-supervised features captured structural and material cues central to the infrastructure attributes. Running locally also avoids the per-request limits and ongoing costs associated with the cloud VLM approach, making DINOv3 the more sustainable option for processing BC Parks’ image inventory at scale.</p>
+<p>Because the three embedding models performed comparably, our final choice was guided by practical deployment considerations rather than negligible accuracy differences. We selected DINOv3 as the most suitable embedding model because it occasionally outperformed the alternatives on the hardest attributes (see <a href="#fig-emb-comparison-per-attribute" class="quarto-xref">Figure&nbsp;12</a>), it is the most lightweight to download and run locally at no extra cost, taking up approximately 0.3 GB of disk space, and its self-supervised features captured structural and material cues central to the infrastructure attributes. Running locally also avoids the per-request limits and ongoing costs associated with the cloud VLM approach, making DINOv3 the more sustainable option for processing BC Parks’ image inventory at scale.</p>
 </section>
-<section id="leveraging-the-two-models-into-a-unified-pipeline" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="leveraging-the-two-models-into-a-unified-pipeline"><span class="header-section-number">4.4</span> Leveraging the two models into a unified pipeline</h2>
-<p>Comparing the two approaches directly (see <a href="#fig-vlm-vs-emb" class="quarto-xref">Figure&nbsp;11</a>) revealed a consistent pattern. Both the VLM and the DINOv3 embedding classifier performed well on categorical, material-based attributes, with the exception of DINOv3 on the material (frame, tank, body) attribute specific to the stair asset. Both performed less well on the numeric attributes, even after these were binned into ordered categories.</p>
-<p>Because performance was broadly comparable and due to the strengths noted above, DINOv3 is the default model. For the attributes where the VLM showed a relative advantage (length and number of steps), the pipeline can combine the two models, using the VLM to predict or cross-check these harder attributes.</p>
+<section id="comparing-the-two-approaches-vlm-vs-embeddings" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="comparing-the-two-approaches-vlm-vs-embeddings"><span class="header-section-number">4.4.3</span> Comparing the two approaches: VLM vs Embeddings</h3>
+<p>Comparing the two approaches directly (see <a href="#fig-vlm-vs-emb" class="quarto-xref">Figure&nbsp;15</a>) revealed a consistent pattern. Both the VLM and the DINOv3 embedding classifier performed well on categorical, material-based attributes (0.7-0.97 weighted f1), with the exception of DINOv3 outperforming the VLM on the <strong>material (frame, tank, body)</strong> as shown in <a href="#fig-emb-boxstep" class="quarto-xref">Figure&nbsp;14</a> and <strong>fall height</strong>. Both performed less well on the numeric attributes overall (0.3-0.6 weighted f1), even after these were binned into ordered categories.</p>
+<div id="fig-model-success" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-success-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/model_success_examples.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-success-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Examples of VLM &amp; DINOv3 Embedding Successes
+</figcaption>
+</figure>
+</div>
+<div id="fig-emb-boxstep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-boxstep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/emb_success_example.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-boxstep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Where DINOv3 Embedding outperforms VLM: Material (frame, tank, body) attribute example - Box Steps
+</figcaption>
+</figure>
+</div>
+<p>Because performance was broadly comparable and due to the strengths noted above, DINOv3 was chosen as the default model.</p>
 <div id="fig-vlm-vs-emb" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vlm-vs-emb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vlm-vs-emb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: VLM vs Dinov3 result comparison
+Figure&nbsp;15: VLM vs Dinov3 result comparison
 </figcaption>
 </figure>
 </div>
 </section>
+<section id="evaluation-of-dinov3-on-the-final-held-out-test-dataset" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="evaluation-of-dinov3-on-the-final-held-out-test-dataset"><span class="header-section-number">4.4.4</span> Evaluation of DINOv3 on the final held-out test dataset</h3>
+<div id="fig-test-set-results" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-test-set-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/test_set_results.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-test-set-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Weighted f1 scores of DINOv3 model on all 12 attributes, evaluated on a helf-out test set
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-test-set-results" class="quarto-xref">Figure&nbsp;16</a> reports the final DINOv3 pipeline’s weighted F1 on the held-out test set. The reference lines show the majority-class and uniform-random baselines computed on the same test assets, so the height of each bar above its baseline is the genuine value the model adds compared to random guessing or choosing the most common attribute label.</p>
+<p>As we expected, the results reflected the same divide seen consistently throughout the project and are comparable with our initial results above. The model performed best on visually distinctive categorical attributes: decking material reached 0.97, structure material, edge guard, structure position, and pedestrian railing reached 0.92 to 0.93, and bridge type reached 0.86. Abutment material and the stair specific material attribute (material - frame, tank, body) were lower at 0.72, likely because rare classes had fewer examples.</p>
+<p>The measurement attributes performed better than we had expected given how little labelled data they have. Fall height and number of steps reached 0.84 and 0.81 respectively, while length and width were the hardest targets at 0.66 and 0.63, consistent with the difficulty of judging absolute dimensions from images without a scale or size reference.</p>
 </section>
-<section id="data-product-and-results" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Data product and results</h1>
-<section id="the-data-product" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="the-data-product"><span class="header-section-number">5.1</span> The Data Product</h2>
-<p>The primary deliverable of this project is a machine learning pipeline that predicts missing infrastructure attributes from photos of BC Parks assets. The pipeline was designed to help BC Parks improve the completeness of its asset inventory without requiring staff to manually review and label thousands of photographs. Rather than replacing existing asset management workflows, the data product is intended to augment them by generating attribute predictions and confidence scores that can be incorporated into existing review and data management processes.</p>
-<p>[Data pipeline workflow diagram]</p>
+</section>
+</section>
+<section id="data-product" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Data product</h1>
+<p>The primary deliverable of this project is a machine learning pipeline that predicts missing infrastructure attributes from photos of BC Parks assets. Rather than replacing existing asset management workflows, the data product is intended to augment them by generating attribute predictions and confidence scores that can be incorporated into existing review and data management processes.</p>
+<div id="fig-data-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/data_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Final Data Pipeline Structure
+</figcaption>
+</figure>
+</div>
 <p>A key design requirement identified by BC Parks was modularity and flexibility. The organization manages many different infrastructure categories, each with distinct attribute requirements. For example, trail bridges require information about bridge type, decking material, and structure length, while stairs require information about number of steps and fall height. To accommodate these differences, we developed a modular pipeline that routes assets to category-specific prediction workflows and treats each attribute as an independent prediction task. This design allows individual models to be updated or replaced without affecting the rest of the system and makes it straightforward to extend the pipeline to new asset categories in the future.</p>
-<p>The pipeline supports two complementary prediction approaches. The first uses vision-language models (VLMs), which classify attributes directly from images using natural language prompts. The second uses image embeddings generated by the pre-trained DINOv3 computer vision model combined with lightweight logistic regression classifiers. This dual-model architecture was chosen because no single approach consistently performed best across all prediction tasks. In practice, BC Parks can choose between a simple, low-cost deployment that relies entirely on DINOv3-based classifiers or a hybrid approach that uses whichever model performs best for each attribute.</p>
-</section>
-<section id="final-results" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="final-results"><span class="header-section-number">5.2</span> Final results</h2>
-<p>[Bar-chart showing weighted-F1 score of final pipeline on each attribute test set]</p>
-<p>[Discussion of final results]</p>
-</section>
-<section id="strengths-and-limitations-of-current-design" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="strengths-and-limitations-of-current-design"><span class="header-section-number">5.3</span> Strengths and limitations of current design</h2>
-<p>One of the major strengths of the pipeline is that both approaches rely on pre-trained foundation models. This was particularly important because the available labelled dataset was relatively small for many attributes. By leveraging representations learned from large external image datasets, both DINOv3 and the VLMs were able to achieve useful performance despite limited training data. The DINOv3-based workflow also provides significant operational advantages. The model is lightweight (approximately 0.3 GB), can be downloaded and executed locally at no cost, and generates predictions rapidly. This makes it particularly well suited for large-scale processing of BC Parks’ image inventory.</p>
-<p>Since model performance varied substantially by attribute type, we incorporated both prediction approaches into a confidence-based review workflow. For measurement-related attributes, a DINOv3 classifier first generates an initial prediction and a VLM independently evaluates whether that prediction appears consistent with the image. When the two approaches disagree, the prediction is flagged for manual review (**Note: this part of our pipeline is still unclear, will likely only apply to length and number of steps attribute or will be adjustable through optional argument). This strategy recognizes that fully automated predictions may not always be reliable for difficult attributes and instead focuses staff attention on cases with high uncertainty.</p>
-<p>Despite these strengths, the current design has several limitations. Because the models are pre-trained on large general-purpose image datasets, they do not always transfer perfectly to the specialized infrastructure categories used by BC Parks. For example, the VLM achieved an F1-score of only 0.01 for the Box Step class within the Material (Frame, Tank, Body) attribute, indicating that it struggled to distinguish this stair type from other classes. This suggests that similar infrastructure examples may have been underrepresented in the data used during model pre-training. In addition, several attributes contained relatively few labelled examples, making both model training and performance evaluation less reliable. For rare classes, it is therefore difficult to determine whether poor performance reflects a true limitation of the model or simply insufficient evaluation data.</p>
-<p>Another limitation is the reliance on external VLM APIs. While large models such as Gemini 3 Flash Preview often achieved stronger predictive performance than smaller alternatives, they are subject to usage limits and operational costs. These constraints can become significant when processing large image collections. These constraints make it difficult to use high-performing VLMs alone for large-scale processing and further justify the inclusion of local embedding-based classifiers in the pipeline.</p>
-</section>
-<section id="future-product-improvements" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="future-product-improvements"><span class="header-section-number">5.4</span> Future product improvements</h2>
-<p>Several opportunities exist for future improvement. Few-shot VLM prompting or DINOv3 fine-tuning could potentially improve performance by providing examples of BC Parks-specific infrastructure during training or inference. However, these approaches require substantially more labelled data and computational resources than were available during this project. Additional gains may also be achieved by incorporating open-source infrastructure image datasets to improve representation of rare classes and underrepresented asset types. Finally, future work could explore depth-estimation models for measurement-based attributes. Because many of the weakest-performing attributes require estimating physical dimensions from two-dimensional images, incorporating geometric information may provide a more principled solution than image classification alone.</p>
-<p>Overall, the resulting data product demonstrates that image-based machine learning can substantially improve the completeness of BC Parks’ infrastructure records while providing a scalable, cost-effective, and extensible framework that can continue to evolve as additional data and asset categories become available.</p>
-</section>
+<p>Our default implementation using a logistic regression classifier to output attribute prediction labels from image embeddings generated with the pre-trained DINOv3 computer vision model. This was chosen due to its advantgeous deployment described in the methods section above. The pipeline still supports the ability to switch to the VLM approach if needed, allowing BC Parks staff to continue exploring prompt engineering with the provided prompt templates.</p>
 </section>
 <section id="conclusions-and-recommendations" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Conclusions and recommendations</h1>
-<p>BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, and for which many have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. The original problem was therefore whether these missing attributes could be predicted directly from existing asset photographs, reducing the manual effort required to keep records complete and shiftng to a more automated attribute-labelling-pipeline, so that manual resources can be allocated elsewhere.</p>
-<p>Our product addresses this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, whilst the more confident predictions rely on automated labelling.</p>
-<p>The extent to which the product meets BC Parks’ needs varies by attribute: - Categorical attributes that are visually distinctive such as [decking material, structure material, and the presence of railings], both VLM and Embedding models (DINOv3) provide labels that are dependable enough to reduce manual labelling meaningfully. - Measurement-based attributes such as length, width, fall height and number of steps are considerably harder, because estimating a physical dimension or bin from a photograph without a scale reference is inherently difficult, and because each asset type defines these bins differently. - Here the model will help but more manual review will be required, rather than fully relying on automated labelling from our pipeline. This signals to BCParks that our model’s performance is not as trustworthy for these attributes (refer to weighted f1 scores showing lower f1 for numeric attributes compared to categorical/material attributes). - DINOv3 (embedding-based model) performs consistently well across all attributes (with exception of length &amp; number of steps). We recommend using it as the default model. - For length and number of steps, a combined sub-pipeline (where length is predicted and verified by both models) is recommended for optimal labelling accuracy.***subject to change - The VLM and it’s corresponding prompt templates will be provided and BCParks can choose whether or not they wish to include it or substitute it for DINOv3 for a set chosen attributes, given the result comparison provided (refer to bar plot comparing VLM vs DINOv3).</p>
-<p>Gap that persist: - Less trustworthy performance on rare and ambigious attribute classes (data quality issue that our pipeline cannot fix) - Predicting measurement based attributes reliably</p>
-<p>Key lesson learned: - Difficulty of an attribute depends less on the choice of model than on whether the attribute is visually determinable at all - Visually distinctive attributes were learned well by multiple approaches whereas measurement attributes weren’t. - From this, we shifted our framework from “which model is best” toward “which attributes can be automated reliably, and which”need a human in the loop.”</p>
+<p>BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, many of which have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. Our product addressed this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, whilst the more confident predictions rely on automated labelling.</p>
+<p>The extent to which the product meets BC Parks’ needs varies by attribute. For categorical attributes that are visually distinctive like decking material, structure material, and the presence of pedestrian railings, our pipeline provides labels that are dependable enough to reduce manual labelling meaningfully. For measurement-based attributes, the model will help but more manual review will be required. Based on our results, DINOv3 is the recommended default for large-scale processing.</p>
+<section id="strengths-and-limitations-of-current-design" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="strengths-and-limitations-of-current-design"><span class="header-section-number">6.1</span> Strengths and limitations of current design</h2>
+<p>One of the major strengths of the pipeline is that both approaches rely on pre-trained foundation models. This was particularly important because the available labelled dataset was relatively small for many attributes. By leveraging representations learned from large external image datasets, both DINOv3 and the VLMs were able to achieve useful performance despite limited training data.</p>
+<p>Since model performance varied by attribute type, we incorporated a confidence-based review workflow. This is especially important for the measurement-based attributes, where a DINOv3 classifier first generates an initial prediction and if it is accompanied by a low confidence score, it is easily identifiable for manual review. This strategy recognizes that fully automated predictions may not always be reliable for difficult attributes and instead focuses staff attention on cases with high uncertainty.</p>
+<p>Despite these strengths, the current design has several limitations. Because the pipeline leverages models that have been trained on large general-purpose image datasets, they do not always transfer perfectly to the specialized infrastructure categories used by BC Parks. In addition, several attributes contained relatively few labelled examples, making both model training and performance evaluation less reliable. Rare classes that performed poorly were more prominently affected by this. These gaps, unreliable performance on rare and ambiguous attribute classes, and the difficulty of predicting measurement-based attributes, are ultimately data quality and task-design constraints that the pipeline itself cannot fully resolve.</p>
+</section>
+<section id="future-product-improvements" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="future-product-improvements"><span class="header-section-number">6.2</span> Future product improvements</h2>
+<p>Several opportunities exist for future improvement. Few-shot VLM prompting or DINOv3 fine-tuning could potentially improve performance by providing examples of BC Parks-specific infrastructure during training or inference. However, these approaches require substantially more labelled data and computational resources than were available during this project. Additional gains may also be achieved by incorporating open-source infrastructure image datasets to improve representation of rare classes and underrepresented asset types. Finally, future work could explore depth-estimation models for measurement-based attributes.</p>
+<p>Overall, the resulting data product demonstrates that image-based machine learning can substantially improve the completeness of BC Parks’ infrastructure records. A key insight from this work is that attribute difficulty depends less on model choice than on whether an attribute is visually determinable at all: visually distinctive attributes were learned well across multiple approaches, while measurement-based attributes remained challenging regardless of method.</p>
+</section>
 </section>
 <section id="references" class="level1 unnumbered" data-number="7">
 
@@ -524,6 +532,9 @@ Figure&nbsp;11: VLM vs Dinov3 result comparison
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-parry2026proposal" class="csl-entry" role="listitem">
+Parry, Hilary. 2026. <span>“Image Analysis of Park Infrastructure.”</span> University of British Columbia Master of Data Science. 2026. <a href="https://pages.github.ubc.ca/mds-2025-26/DSCI_591_capstone-proj_students/proposals/Image_analysis_of_park_infrastructure.html">https://pages.github.ubc.ca/mds-2025-26/DSCI_591_capstone-proj_students/proposals/Image_analysis_of_park_infrastructure.html</a>.
+</div>
 <div id="ref-pedregosa2011scikit" class="csl-entry" role="listitem">
 Pedregosa, Fabian, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, et al. 2011. <span>“Scikit-Learn: Machine Learning in Python.”</span> <em>Journal of Machine Learning Research</em> 12: 2825–30. <a href="https://jmlr.org/papers/v12/pedregosa11a.html">https://jmlr.org/papers/v12/pedregosa11a.html</a>.
 </div>
@@ -532,6 +543,9 @@ Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhin
 </div>
 <div id="ref-simeoni2025dinov3" class="csl-entry" role="listitem">
 Simeoni, Oriane, Huy V. Vo, Maximilian Seitzer, Federico Baldassarre, Maxime Oquab, Cijo Jose, Vasil Khalidov, et al. 2025. <span>“<span>DINOv3</span>.”</span> <em>arXiv Preprint arXiv:2508.10104</em>. <a href="https://arxiv.org/abs/2508.10104">https://arxiv.org/abs/2508.10104</a>.
+</div>
+<div id="ref-volkov2025imagerecognitionvisionlanguage" class="csl-entry" role="listitem">
+Volkov, Illia, Nikita Kisel, Klara Janouskova, and Jiri Matas. 2025. <span>“Image Recognition with Vision and Language Embeddings of VLMs.”</span> <a href="https://arxiv.org/abs/2509.09311">https://arxiv.org/abs/2509.09311</a>.
 </div>
 <div id="ref-zhai2023sigmoid" class="csl-entry" role="listitem">
 Zhai, Xiaohua, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. 2023. <span>“Sigmoid Loss for Language Image Pre-Training.”</span> <em>arXiv Preprint arXiv:2303.15343</em>. <a href="https://arxiv.org/abs/2303.15343">https://arxiv.org/abs/2303.15343</a>.
