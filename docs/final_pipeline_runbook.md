@@ -350,6 +350,17 @@ batch under:
 data/processed/images_clean/new_batch/
 ```
 
+Batch PII outputs are kept separate from the full pipeline outputs:
+
+```text
+results/predictions/pii_screen_new_batch.csv
+data/pii_review/new_batch/
+data/processed/images_clean/new_batch/.upload_set_complete
+```
+
+This prevents a small/new-batch run from overwriting the full-pipeline
+`results/predictions/pii_screen.csv`.
+
 ### 4. Predict Attributes For The New Batch
 
 Run the prediction command with the exact asset type:
@@ -795,10 +806,14 @@ raw images or cleaned images were ready. Rebuild the cleaned image set and
 regenerate DINOv3 features:
 
 ```bash
-make pii
+make -B pii
 make clean-dinov3
 make all
 ```
+
+The `-B` flag forces Make to rebuild the PII screen, blur log, and cleaned image
+set even if old output files already exist. This is useful when
+`results/predictions/pii_screen.csv` came from a small sample run.
 
 ### Final CSVs Are Missing
 
@@ -890,6 +905,17 @@ batch under:
 ```text
 data/processed/images_clean/new_batch/
 ```
+
+Batch PII outputs are kept separate from the full pipeline outputs:
+
+```text
+results/predictions/pii_screen_new_batch.csv
+data/pii_review/new_batch/
+data/processed/images_clean/new_batch/.upload_set_complete
+```
+
+This prevents a small/new-batch run from overwriting the full-pipeline
+`results/predictions/pii_screen.csv`.
 
 ### 4. Predict Attributes For The New Batch
 

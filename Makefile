@@ -59,6 +59,9 @@ CITYWIDE_EXPORT_FOLDER ?=
 CITYWIDE_EXPORT_CSV ?=
 NEW_BATCH_RAW ?= data/raw/new_batch
 NEW_BATCH_CLEAN ?= $(IMAGE_ROOT)/new_batch
+NEW_BATCH_PII_SCREEN_CSV ?= results/predictions/pii_screen_new_batch.csv
+NEW_BATCH_PII_REVIEW ?= data/pii_review/new_batch
+NEW_BATCH_UPLOAD_MARKER ?= $(NEW_BATCH_CLEAN)/.upload_set_complete
 CITYWIDE_SORT_OUTPUT ?= $(NEW_BATCH_RAW)
 CITYWIDE_SORT_REPORT ?= results/predictions/citywide_sort_report.csv
 
@@ -77,7 +80,7 @@ DEMO_ASSET_LIMIT ?= 5
 	citywide-check download-citywide-probe download-citywide-metadata download-citywide-images download-citywide-sample \
 	compare-dinov3 compare-siglip compare figures export-bcparks predict-new-images demo demo-new-images \
 	all-start final-dinov3-start evaluate-start smoke-start clean-final clean-dinov3 clean-pipeline clean \
-	sort-citywide-export pii-batch pii-batch-screen evaluate-test
+	sort-citywide-export pii-batch pii-batch-screen pii-batch-blur pii-batch-upload-set evaluate-test
 
 help:
 	@echo "Final pipeline targets:"
@@ -88,6 +91,7 @@ help:
 	@echo "    Attribute map: ATTRIBUTE_APPLICABILITY"
 	@echo "  make model-data-check      Check cleaned image inputs"
 	@echo "  make pii                   Screen, blur, and assemble cleaned image set"
+	@echo "  make pii-batch             Screen/blur a new batch into data/processed/images_clean/new_batch"
 	@echo "  make pii-ready             Check that the cleaned image set already exists"
 	@echo "  make baseline              Run grouped baseline strategies"
 	@echo "  make features-dinov3-master Build asset features from DINOv3 image features"
@@ -222,10 +226,27 @@ pii: pii-screen pii-blur pii-upload-set
 
 pii-batch-screen:
 	@printf "\n==> pii-batch-screen: screening $(NEW_BATCH_RAW) for PII\n"
+	@printf "    Output: $(NEW_BATCH_PII_SCREEN_CSV)\n"
 	$(TIME) test -d $(NEW_BATCH_RAW) || (echo "Missing $(NEW_BATCH_RAW). Run 'make sort-citywide-export' first."; exit 1)
-	$(TIME) $(PYTHON) scripts/screen_images_for_pii.py --image-dir $(NEW_BATCH_RAW)
+	$(TIME) $(PYTHON) scripts/screen_images_for_pii.py \
+	  --image-dir $(NEW_BATCH_RAW) \
+	  --output-csv $(NEW_BATCH_PII_SCREEN_CSV)
 
-pii-batch: pii-batch-screen pii-blur pii-upload-set
+pii-batch-blur: pii-batch-screen
+	@printf "\n==> pii-batch-blur: blurring flagged new-batch images under $(NEW_BATCH_PII_REVIEW)\n"
+	$(TIME) $(PYTHON) scripts/blur_flagged_images.py \
+	  --screen-csv $(NEW_BATCH_PII_SCREEN_CSV) \
+	  --output-root $(NEW_BATCH_PII_REVIEW)
+
+pii-batch-upload-set: pii-batch-screen pii-batch-blur
+	@printf "\n==> pii-batch-upload-set: assembling cleaned new batch under $(NEW_BATCH_CLEAN)\n"
+	$(TIME) $(PYTHON) scripts/build_upload_set.py \
+	  --screen-csv $(NEW_BATCH_PII_SCREEN_CSV) \
+	  --blurred-root $(NEW_BATCH_PII_REVIEW)/blurred \
+	  --output-root $(NEW_BATCH_CLEAN)
+	$(TIME) touch $(NEW_BATCH_UPLOAD_MARKER)
+
+pii-batch: pii-batch-upload-set
 	@printf "\n==> pii-batch complete: cleaned batch under $(NEW_BATCH_CLEAN)\n"
 
 baseline:
