@@ -1,0 +1,138 @@
+# Raw Data To Pipeline Guide
+
+This guide explains how to add the image data required before running the final
+pipeline. The repository tracks processed CSV files, but raw images are not
+stored in Git.
+
+Start here if you see an error during `make pii` about missing image data.
+
+## 1. Clone The Repository
+
+```bash
+git clone https://github.com/sgauth01/parks-asset-img-class.git
+cd parks-asset-img-class
+```
+
+## 2. Create The Environment
+
+```bash
+conda env create -f environment.yml
+conda activate bcparks_capstone
+```
+
+The environment includes `make`, which is required because the pipeline is
+Makefile driven.
+
+## 3. Add The DINOv3 Model Weights
+
+Download the `dinov3_vitb16` checkpoint after receiving access from Meta, then
+place it here:
+
+```text
+models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+```
+
+## 4. Add Image Data
+
+Choose one of the two paths below. This step must be completed before running
+`make pii`.
+
+### Option A: BC Parks SharePoint Zip, No API Required
+
+BC Parks users can download the prepared image export from the internal
+SharePoint folder:
+
+[BC Parks SharePoint Round2_ImageDownload folder](https://bcgov.sharepoint.com/sites/ENV-amtraining/temp_ai_image/Forms/AllItems.aspx?id=%2Fsites%2FENV%2Damtraining%2Ftemp%5Fai%5Fimage%2FRound2%5FImageDownload&viewid=b969c8d6%2De7f5%2D465f%2Db3c3%2De32131305fd4)
+
+Download:
+
+```text
+temp_ai_image/Round2_ImageDownload/bc_park-api-data.zip
+```
+
+Unzip the file locally. If the zip contains a `data/` folder, copy that folder
+into the repository root so the paths merge with this project. After copying,
+the repository should contain:
+
+```text
+data/raw/citywide/images/
+```
+
+The PII screen recursively searches `data/raw/citywide/images/`, so nested
+folders are okay. Do not commit these raw images to Git.
+
+### Option B: CityWide API Download
+
+If you have CityWide API credentials, create `.env` in the repository root:
+
+```text
+CITYWIDE_API_KEY=
+CITYWIDE_DB=
+CITYWIDE_USER=
+CITYWIDE_API_URL=https://v4.citywidesolutions.com/v4_server/external/v1
+```
+
+Then run:
+
+```bash
+make citywide-check
+make download-citywide-images
+```
+
+The API downloader writes images to the same folder expected by `make pii`:
+
+```text
+data/raw/citywide/images/
+```
+
+The API path can take a long time for the full image set. For most BC Parks
+handoff testing, the SharePoint zip is faster.
+
+For more detail, see [`citywide_api_runbook.md`](citywide_api_runbook.md).
+
+## 5. Run Privacy Screening
+
+After raw images are in place, run:
+
+```bash
+make pii
+```
+
+This screens raw images for PII, blurs flagged images, and writes the cleaned
+image set to:
+
+```text
+data/processed/images_clean/
+```
+
+It also creates the marker required by the final pipeline:
+
+```text
+data/processed/images_clean/.upload_set_complete
+```
+
+## 6. Run The Final Pipeline
+
+```bash
+make all
+```
+
+Final partner-facing outputs are written to:
+
+```text
+results/final/bcparks_asset_attribute_predictions_long.csv
+results/final/bcparks_asset_attribute_predictions_wide.csv
+```
+
+For the full final pipeline walkthrough, see
+[`final_pipeline_runbook.md`](final_pipeline_runbook.md).
+
+## What Not To Commit
+
+Keep these local only:
+
+- raw image folders under `data/raw/`
+- cleaned image folders under `data/processed/images_clean/`
+- downloaded DINOv3 model weights under `models/downloaded_model/`
+- generated feature files under `data/features/`
+- saved classifier artifacts under `models/final/`

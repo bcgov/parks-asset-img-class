@@ -20,7 +20,6 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 │   │   └── train/
 │   └── raw/                  # optional CityWide download output
 ├── docs/
-│   ├── raw_data_to_pipeline.md
 │   ├── final_pipeline_runbook.md
 │   ├── citywide_api_runbook.md
 │   ├── dinov3_walkthrough.md
@@ -38,31 +37,26 @@ The main runnable artifact is the Makefile pipeline. It validates inputs, screen
 
 ## Setup
 
-For a printable BC Parks handoff guide, start with
-[`docs/bcparks_software_installation_guide.md`](docs/bcparks_software_installation_guide.md)
-or the matching PDF in the same folder.
+**0. Clone the repository and enter the project folder**
+
+```bash
+git clone https://github.com/sgauth01/parks-asset-img-class.git
+cd parks-asset-img-class
+```
 
 **1. Create and activate the Conda environment**
 
 ```bash
 conda env create -f environment.yml
 conda activate bcparks_capstone
-cd parks-asset-img-class
 ```
 
-**2. Set up the DINOv3 model**
+**2. Add local model and image data**
 
-This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
-
-The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
-
-Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
-
-Once downloaded, copy it to the following directory in the repository root:
-
-```text
-models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
-```
+Before running `make pii`, follow
+[`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md). That guide is
+the single source for where to place DINOv3 weights and how to add image data
+from the BC Parks SharePoint zip or the CityWide API.
 
 ## Makefile pipeline
 
@@ -74,17 +68,19 @@ make help
 
 Documentation map:
 - [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): running final pipeline and day-to-day commands
-- [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md): start from raw BC Parks files and feed them through cleaning, preprocessing, and prediction
+- [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md): adding raw image data from SharePoint or the CityWide API before running `make pii`
 - [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md): optional CityWide API download details
 - [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
 - [`docs/dinov3_walkthrough.md`](docs/dinov3_walkthrough.md), [`docs/siglip_walkthrough.md`](docs/siglip_walkthrough.md): technical model experiment notes
 
 For a full walkthrough of the final pipeline, see
 [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
-If you are starting from raw CityWide files or a new BC Parks bulk export, start
-with **Path 2** or **Path 3** in [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md) first.
+If you are starting from raw CityWide files, a SharePoint image export, or a new
+BC Parks bulk export, start with
+[`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md) first.
 
-Run the final DINOv3 pipeline and export partner-facing prediction CSVs:
+After the raw images and DINOv3 model weights are in place, run the final
+DINOv3 pipeline and export partner-facing prediction CSVs:
 
 ```bash
 make pii
