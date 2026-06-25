@@ -49,10 +49,26 @@ def parse_args() -> argparse.Namespace:
 
 def read_features(path: Path) -> pd.DataFrame:
     """Read a CSV or parquet feature file."""
+    if not path.exists():
+        raise FileNotFoundError(f"Image feature file not found: {path}")
+    if path.stat().st_size == 0:
+        raise ValueError(
+            f"Image feature file is empty: {path}. This usually means an earlier "
+            "DINOv3 feature extraction run found no readable images or was "
+            "interrupted. Run `make clean-dinov3`, confirm raw images were added "
+            "and `make pii` completed, then rerun `make all`."
+        )
     if path.suffix == ".parquet":
         return pd.read_parquet(path)
     if path.suffix == ".csv":
-        return pd.read_csv(path)
+        try:
+            return pd.read_csv(path)
+        except pd.errors.EmptyDataError as exc:
+            raise ValueError(
+                f"Image feature file has no readable columns: {path}. Run "
+                "`make clean-dinov3`, confirm raw images were added and "
+                "`make pii` completed, then rerun `make all`."
+            ) from exc
     raise ValueError(f"Unsupported feature file extension: {path.suffix}")
 
 
@@ -83,9 +99,13 @@ def build_asset_features(master: pd.DataFrame, image_features: pd.DataFrame) -> 
 def main() -> int:
     """Run the script from parsed command-line arguments."""
     args = parse_args()
-    master = pd.read_csv(args.master)
-    image_features = read_features(args.image_features)
-    asset_features = build_asset_features(master, image_features)
+    try:
+        master = pd.read_csv(args.master)
+        image_features = read_features(args.image_features)
+        asset_features = build_asset_features(master, image_features)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
 
     args.asset_output.parent.mkdir(parents=True, exist_ok=True)
     asset_features.to_csv(args.asset_output, index=False)
