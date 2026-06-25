@@ -25,8 +25,13 @@ Makefile driven.
 
 ## 3. Add The DINOv3 Model Weights
 
-Download the `dinov3_vitb16` checkpoint after receiving access from Meta, then
-place it here:
+To download the DINOv3 model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
+
+The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
+
+Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
+
+Once downloaded, copy it to the following directory in the repository root:
 
 ```text
 models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
