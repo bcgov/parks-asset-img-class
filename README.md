@@ -130,6 +130,11 @@ make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs"
 make vlm-predict NEW_IMAGE_ASSET_TYPE="Stairs" VLM_PROMPT=stairs_v1
 ```
 
+`make pii-batch` writes batch-specific PII files under
+`results/predictions/pii_screen_new_batch.csv`, `data/pii_review/new_batch/`,
+and `data/processed/images_clean/new_batch/`, so it does not overwrite the
+full-pipeline PII screen.
+
 Replace `"Stairs"` with the export's asset type — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
 
 To test on the existing training images instead of a new export, use `make demo`, or override the folder as shown above. Training data uses the `profile_id/asset_id` layout, so no `NEW_IMAGE_ASSET_TYPE` is needed — the type is inferred from the profile_id folder.

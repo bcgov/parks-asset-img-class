@@ -41,9 +41,12 @@ def test_aggregate_asset_features_averages_images() -> None:
 
 
 def test_resolve_image_path_prefers_clean_image_root(tmp_path: Path) -> None:
+    raw = tmp_path / "data" / "citywide" / "images" / "1.jpg"
+    raw.parent.mkdir(parents=True)
+    raw.write_bytes(b"raw")
     image = tmp_path / "data" / "processed" / "images_clean" / "citywide" / "images" / "1.jpg"
     image.parent.mkdir(parents=True)
-    image.write_bytes(b"fake")
+    image.write_bytes(b"clean")
 
     resolved = resolve_image_path(
         "data/citywide/images/1.jpg",
@@ -52,4 +55,3 @@ def test_resolve_image_path_prefers_clean_image_root(tmp_path: Path) -> None:
     )
 
     assert resolved == image
-

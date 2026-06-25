@@ -19,6 +19,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+import pandas as pd  # noqa: E402
+
+from src.dinov3_features import resolve_image_path  # noqa: E402
 from src.vlm.config import detect_provider, missing_credentials_for_provider  # noqa: E402
 
 
@@ -82,6 +85,18 @@ def parse_args() -> argparse.Namespace:
         default=Path("data/processed/images_clean"),
     )
     parser.add_argument(
+        "--master-data",
+        type=Path,
+        default=Path("data/processed/master_dataset.csv"),
+        help="Master dataset used to verify cleaned image paths.",
+    )
+    parser.add_argument(
+        "--image-check-limit",
+        type=int,
+        default=50,
+        help="Number of master image paths to sample when --require-images is set.",
+    )
+    parser.add_argument(
         "--dinov3-weights",
         type=Path,
         default=Path("models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth"),
@@ -105,6 +120,43 @@ def main() -> int:
         for path in missing:
             print(f"  - {path}")
         return 1
+
+    if args.require_images:
+        try:
+            master_images = (
+                pd.read_csv(args.master_data, usecols=["image_path"])
+                ["image_path"]
+                .dropna()
+                .drop_duplicates()
+                .head(args.image_check_limit)
+            )
+        except ValueError:
+            print(f"Cannot verify cleaned images because {args.master_data} has no image_path column.")
+            return 1
+
+        if master_images.empty:
+            print(f"Cannot verify cleaned images because {args.master_data} has no image paths.")
+            return 1
+
+        resolved = [
+            resolve_image_path(
+                image_path,
+                image_root=args.image_root,
+                repo_root=REPO_ROOT,
+            )
+            for image_path in master_images
+        ]
+        matches = [path for path in resolved if path.exists()]
+        if not matches:
+            print("Cleaned image directory exists, but no sampled master image paths were found there.")
+            print(f"  Image root checked: {args.image_root}")
+            print(f"  Master data checked: {args.master_data}")
+            print("  Expected paths like:")
+            for path in resolved[:3]:
+                print(f"    - {path}")
+            print("Run `make pii` after adding raw images, or check that the SharePoint/API data")
+            print("was copied so cleaned images are under data/processed/images_clean/citywide/images/.")
+            return 1
 
     if args.require_vlm_credentials:
         provider = detect_provider(args.vlm_model, args.vlm_provider)

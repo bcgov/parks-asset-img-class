@@ -46,13 +46,12 @@ def resolve_image_path(
     if raw_path.is_absolute():
         candidates.append(raw_path)
     else:
-        candidates.append(root / raw_path)
-
         path_text = raw_path.as_posix()
         if path_text.startswith("data/"):
             candidates.append(root / Path(path_text.replace("data/", f"{image_root_path.as_posix()}/", 1)))
             candidates.append(root / image_root_path / Path(path_text.removeprefix("data/")))
 
+        candidates.append(root / raw_path)
         candidates.append(root / image_root_path / raw_path)
 
     for candidate in candidates:

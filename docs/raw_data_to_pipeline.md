@@ -98,6 +98,13 @@ After raw images are in place, run:
 make pii
 ```
 
+If you previously ran a small sample or partial PII screen, force a full rebuild
+of the PII outputs instead:
+
+```bash
+make -B pii
+```
+
 This screens raw images for PII, blurs flagged images, and writes the cleaned
 image set to:
 
@@ -110,6 +117,36 @@ It also creates the marker required by the final pipeline:
 ```text
 data/processed/images_clean/.upload_set_complete
 ```
+
+### Optional: Run PII On A Small Sample
+
+For a quick PII test, write sample outputs to separate file names so you do not
+overwrite the default files used by `make pii`:
+
+```bash
+python scripts/screen_images_for_pii.py \
+  --image-dir data/raw/citywide/images \
+  --output-csv results/predictions/pii_screen_sample.csv \
+  --max-images 20
+```
+
+Then blur and assemble a small cleaned image folder from that sample:
+
+```bash
+python scripts/blur_flagged_images.py \
+  --input-csv results/predictions/pii_screen_sample.csv \
+  --output-log data/pii_review/blur_log_sample.csv
+```
+
+```bash
+python scripts/build_upload_set.py \
+  --screen-csv results/predictions/pii_screen_sample.csv \
+  --output-root data/processed/images_clean_sample
+```
+
+Do not write small sample runs to
+`results/predictions/pii_screen.csv`. That default file is used by `make pii`
+for the full pipeline.
 
 ## 6. Run The Final Pipeline
 
