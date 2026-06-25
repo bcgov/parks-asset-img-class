@@ -114,17 +114,27 @@ def process_one(
         repo_root=REPO_ROOT,
     )
 
+    if features.empty:
+        if not skipped.empty:
+            skipped_output_path.parent.mkdir(parents=True, exist_ok=True)
+            skipped.to_csv(skipped_output_path, index=False)
+            print(f"  Wrote {len(skipped)} skipped rows → {skipped_output_path}")
+        raise SystemExit(
+            "No image features extracted, so feature CSVs were not written. "
+            "Check that raw images were added, `make pii` completed, and "
+            f"--image-root points to the cleaned image folder: {args.image_root}. "
+            "If an earlier run created empty feature files, run "
+            "`make clean-dinov3` and then rerun `make all`."
+        )
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     asset_output_path.parent.mkdir(parents=True, exist_ok=True)
     features.to_csv(output_path, index=False)
 
-    if features.empty:
-        print("No image features extracted. Check --image-root and image availability.")
-    else:
-        asset_features = aggregate_asset_features(features)
-        asset_features.to_csv(asset_output_path, index=False)
-        print(f"  Wrote {len(features)} image rows  → {output_path}")
-        print(f"  Wrote {len(asset_features)} asset rows → {asset_output_path}")
+    asset_features = aggregate_asset_features(features)
+    asset_features.to_csv(asset_output_path, index=False)
+    print(f"  Wrote {len(features)} image rows  → {output_path}")
+    print(f"  Wrote {len(asset_features)} asset rows → {asset_output_path}")
 
     if not skipped.empty:
         skipped_output_path.parent.mkdir(parents=True, exist_ok=True)

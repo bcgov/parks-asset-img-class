@@ -781,6 +781,25 @@ make pii
 
 This screens images for PII, blurs flagged images, and assembles the cleaned image set.
 
+### Empty DINOv3 Feature File
+
+If `make all` fails with:
+
+```text
+pandas.errors.EmptyDataError: No columns to parse from file
+```
+
+or reports that `data/features/dinov3_vitb16_master_images.csv` is empty, an
+earlier DINOv3 extraction run likely created an empty feature file before the
+raw images or cleaned images were ready. Rebuild the cleaned image set and
+regenerate DINOv3 features:
+
+```bash
+make pii
+make clean-dinov3
+make all
+```
+
 ### Final CSVs Are Missing
 
 Run:
