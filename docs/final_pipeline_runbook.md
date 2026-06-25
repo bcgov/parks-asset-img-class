@@ -4,18 +4,17 @@ This guide explains how to run the final BC Parks image-attribute prediction pip
 
 The pipeline is controlled by the project `Makefile`. It checks the project inputs, confirms the cleaned image set is ready, builds or reuses DINOv3 image features, trains or reuses saved final classifiers, and writes partner-facing prediction CSV files with confidence scores.
 
-If you are starting from raw CityWide data or a new BC Parks bulk export, read
-`docs/raw_data_to_pipeline.md` first. That guide explains where to place raw
-files and which cleaning/preprocessing commands to run before using this
-runbook.
+This runbook covers the full path from a fresh clone to final prediction CSVs,
+including how to add the image data required before running `make pii`.
 
 ## Which Starting Point Applies?
 
-There are three common starting points.
+There are four common starting points.
 
 | Starting point | Use when | Main command path |
 | --- | --- | --- |
-| Existing processed project data | You cloned the repo and want to reproduce the final project outputs. | `make pii`, then `make all` |
+| Existing processed project data plus local images | You cloned the repo, have the raw image files locally, and want to reproduce the final project outputs. | Put images under `data/raw/citywide/images/`, then `make pii`, then `make all` |
+| BC Parks SharePoint zip/export | You do not have API credentials but can download the internal BC Parks image export. | Download/unzip to `data/raw/citywide/images/`, then `make pii`, then `make all` |
 | CityWide API download | You have CityWide API credentials and want to refresh metadata or images directly from CityWide. | `make download-citywide-images`, then `make pii`, then `make all` |
 | New CityWide bulk export | BC Parks gives you a flat folder of exported images plus a CSV mapping images to asset IDs. | `make sort-citywide-export`, then `make pii-batch`, then `make predict-new-images` |
 
@@ -25,29 +24,90 @@ local files.
 
 ## Quick Start
 
-Most users run **Path 1** (reproduce the final outputs from the processed data
-already in the repo). From the repository root:
+Most users run **Path 1** or **Path 2**. The important point is that the image
+data stage must happen before `make pii`.
 
 ```bash
+git clone https://github.com/sgauth01/parks-asset-img-class.git
+cd parks-asset-img-class
+conda env create -f environment.yml
 conda activate bcparks_capstone
-make pii      
-make all      
+
+# Add raw images before this step. See "Stage 3: Add Image Data".
+make pii
+make all
 ```
 
 Outputs land in `results/final/`. For details and the other starting points
 (CityWide API download, or a new bulk export), see the numbered paths below.
 
+## Stage 0: Clone The Repository
+
+```bash
+git clone https://github.com/sgauth01/parks-asset-img-class.git
+cd parks-asset-img-class
+```
+
+Run all commands below from the repository root unless a command says
+otherwise.
+
+## Stage 1: Create The Environment
+
+```bash
+conda env create -f environment.yml
+conda activate bcparks_capstone
+```
+
+The environment includes `make`, which is required because the pipeline is
+Makefile driven.
+
+## Stage 2: Add The DINOv3 Model Weights
+
+Download the `dinov3_vitb16` checkpoint after receiving access from Meta, then
+place it here:
+
+```text
+models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+```
+
+## Stage 3: Add Image Data
+
+This stage is required before `make pii`. The repository tracks processed CSVs,
+but it does not store raw image files in Git. Add image data from either the
+BC Parks SharePoint zip or the CityWide API by following
+[`docs/raw_data_to_pipeline.md`](raw_data_to_pipeline.md).
+
+After this stage, the project should contain:
+
+```text
+data/raw/citywide/images/
+```
+
+Do not commit raw images, downloaded model weights, generated features, or
+saved classifier artifacts to Git.
+
 ## Required Inputs
 
-The final pipeline expects these files/directories:
+Before running `make pii`, the project expects:
 
 ```text
 environment.yml
 data/processed/master_dataset.csv
 data/processed/train/
 data/processed/attribute_applicability.csv
+data/raw/citywide/images/
+```
+
+After `make pii` runs successfully, it creates:
+
+```text
 data/processed/images_clean/
 data/processed/images_clean/.upload_set_complete
+```
+
+Before running `make all`, the project also expects the local DINOv3 checkpoint:
+
+```text
 models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 ```
 
@@ -125,9 +185,10 @@ data/processed/train/
 data/processed/attribute_applicability.csv
 ```
 
-The raw images are **not** committed. They must already exist locally under
-`data/raw/citywide/images/`, or be downloaded via the CityWide API (Path 2)
-before running this path.
+The raw images are **not** committed. Before running this path, complete
+**Stage 3: Add Image Data**. You can place a BC Parks SharePoint zip/export
+under `data/raw/citywide/images/`, or download images through the CityWide API
+in Path 2.
 
 **1. Build the cleaned image set:**
 
@@ -841,4 +902,3 @@ To limit a run for a quick check:
 ```bash
 make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs" NEW_IMAGE_LIMIT=10
 ```
-

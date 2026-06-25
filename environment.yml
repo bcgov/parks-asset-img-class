@@ -15,6 +15,7 @@ dependencies:
   - pillow
   - requests
   - tqdm
+  - make
   - pip
   - pip:
     - ultralytics
