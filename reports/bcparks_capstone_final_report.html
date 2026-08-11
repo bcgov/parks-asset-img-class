@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sarah Gauthier">
+<meta name="author" content="Nour Shawky">
+<meta name="author" content="Ssemakula Peter Wasswa">
+<meta name="author" content="Mehmet Imga">
+<meta name="dcterms.date" content="2026-06-24">
+
+<title>Image Analysis of Park Infrastructure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="bcparks_capstone_final_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="bcparks_capstone_final_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="bcparks_capstone_final_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="bcparks_capstone_final_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="bcparks_capstone_final_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="report-styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../bcparks_capstone_final_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Image Analysis of Park Infrastructure</h1>
+<p class="subtitle lead">Final Report</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Sarah Gauthier </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nour Shawky </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Ssemakula Peter Wasswa </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Mehmet Imga </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 24, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="executive-summary" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Executive summary</h1>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, viewing platforms, campsites, and related park facilities <span class="citation" data-cites="parry2026proposal">(<a href="#ref-parry2026proposal" role="doc-biblioref">Parry 2026</a>)</span>. Many asset records contain missing or incomplete attributes, which limits their value for maintenance planning, inspection prioritization, and replacement cost estimation. This project developed a reproducible image analysis pipeline that uses existing asset photographs to predict attribute labels. The default workflow screens images for privacy sensitive content, groups photos by asset, extracts DINOv3 image embeddings, and applies lightweight attribute specific logistic regression classifiers to produce predicted labels with confidence scores.</p>
+<p>On the final held out test set, the default DINOv3 pipeline <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> achieved a mean weighted F1 score of 0.83 across 12 evaluated attributes. Performance was strongest for visually distinctive categorical attributes, including decking material, structure material, edge guard presence, pedestrian railing presence, and bridge type, with several scores above 0.90. Attributes related to measurements were harder to predict because photos often lack a reliable scale reference. Length and width were the weakest targets, reaching 0.66 and 0.63.</p>
+<p>The final data product exports prediction tables for partners in both long and wide formats. Each prediction includes the asset identifier, asset category, predicted attribute value, confidence score, and confidence level.</p>
+<p>Overall, we recommend using the current DINOv3 pipeline <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span> as a decision support tool rather than a fully automated replacement for field review, with future work focused on improving model performance on measurement attributes and expanding to new asset categories.</p>
+</section>
+<section id="introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
+<p>BC Parks manages over 100,000 infrastructure records across provincial parks, including assets such as stairs, trail bridges, boardwalks, viewing platforms, campsites, and picnic facilities <span class="citation" data-cites="parry2026proposal">(<a href="#ref-parry2026proposal" role="doc-biblioref">Parry 2026</a>)</span>. Accurate information about these assets is essential for maintenance planning, replacement cost estimation, safety inspections, and long-term asset management. However, many records in the BC Parks asset inventory contain incomplete attribute information, limiting the ability of staff to confidently use the database for operational planning and decision-making. To maintain this inventory, field inspectors collect photos and record asset characteristics during site visits. While these images capture valuable visual information about asset characteristics, many records still contain missing attributes due to incomplete field measurements, inconsistent data collection practices, or historical gaps in the inventory. Manually reviewing and labeling tens of thousands of images would require substantial staff time and is not feasible at scale.</p>
+<p>Recent advances in computer vision and vision language models create an opportunity to use these existing photographs to enrich the inventory <span class="citation" data-cites="volkov2025imagerecognitionvisionlanguage">(<a href="#ref-volkov2025imagerecognitionvisionlanguage" role="doc-biblioref">Volkov et al. 2025</a>)</span>. In collaboration with BC Parks, this project focused on three goals: predicting missing attributes, providing confidence scores alongisde attribute labels to flag for manual review, and building a modular workflow that can be extended to additional asset categories. Together, these objectives aim to improve the completeness and reliability of the BC Parks asset inventory while minimizing the need for manual data entry and review.</p>
+<p>The dataset for this project contains images and attribute values for assets in 5 infrastructure categories: stairs, trail bridges, low boardwalks, elevated boardwalks, and viewing platforms. Exploratory data analysis revealed several challenges, such as attribute class imbalances and inconsistent image quality and framing. To address these challenges, we developed a reproducible machine learning pipeline that generates structured asset attribute predictions from one or more photographs. Images first pass through a privacy-screening stage, where personally identifiable information (PII), such as faces, is detected and blurred. They are then transformed into numerical image embeddings and passed to a collection of lightweight, attribute-specific classifiers. The resulting predictions are combined with confidence scores and exported in a structured format that can be integrated into existing asset management workflows.</p>
+<p>This report describes the development and evaluation of the proposed image-analysis pipeline. We first present key features of the BCParks dataset, followed by the modelling approaches investigated, their results and how this led us to the final design and implementation of our data pipeline for attribute labelling.</p>
+</section>
+<section id="data-and-exploratory-data-analysis-eda" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Data and exploratory data analysis (EDA)</h1>
+<section id="data-sources-and-collection" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="data-sources-and-collection"><span class="header-section-number">3.1</span> Data sources and collection</h2>
+<p>BC Parks provided infrastructure asset records and attached image metadata from the CityWide asset management system. The export covers the asset families explored during this project: trail bridges, stairs, boardwalks, and viewing platforms. The raw data contains three linked components:</p>
+<ul>
+<li>Asset records: including asset identifier and asset category</li>
+<li>Asset attribute records: including materials, structural features, and measurements recorded by field staff</li>
+<li>Image attachment records and downloaded image files</li>
+</ul>
+<p>The working dataset is organized around an image-asset attachment row. Each row contains an <code>asset_id</code>, image path, CityWide profile, file metadata, and the available attribute values for that asset. For modelling, however, the asset is the prediction unit: multiple images linked to the same asset are grouped together.</p>
+</section>
+<section id="size-and-characteristics" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="size-and-characteristics"><span class="header-section-number">3.2</span> Size and characteristics</h2>
+<p>The final processed master dataset contains 5,562 image-asset rows linked to 3,584 unique assets. Of these rows, 5,310 have corresponding local image files. The image coverage is uneven by asset type, with most rows belonging to boardwalks (lower than 1.2 meters) and trail bridges.</p>
+<div class="cell" data-execution_count="2">
+<div id="tbl-data-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Reproducible summary counts from <code>data/processed/master_dataset.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Measure</th>
+<th data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Image-asset rows</td>
+<td>5,562</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Unique assets</td>
+<td>3,584</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Rows with local image files</td>
+<td>5,310</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Assets with more than one image</td>
+<td>1,088 (30.4%)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Mean images per asset</td>
+<td>1.55</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Median images per asset</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Maximum images for one asset</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div id="tbl-asset-category-counts" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-asset-category-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Image-asset rows by CityWide asset category.
+</figcaption>
+<div aria-describedby="tbl-asset-category-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Asset category</th>
+<th data-quarto-table-cell-role="th">Image-asset rows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Boardwalk &lt; 1.2m High</td>
+<td>2,096</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Trail Bridge</td>
+<td>1,995</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Stairs</td>
+<td>1,093</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Viewing Platform</td>
+<td>228</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Boardwalk &gt; 1.2m High</td>
+<td>150</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="data-science-methods" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Data science methods</h1>
+<section id="approaches-considered" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="approaches-considered"><span class="header-section-number">4.1</span> Approaches considered</h2>
+<p>Our exploratory analysis established that this is primarily a missing-attribute prediction problem on imbalanced and sparsely labelled data. Attribute coverage varies sharply across attributes: structural categories such as decking material and pedestrian-railing presence are relatively well populated, whereas measurement attributes are far sparser, with fall height labelled for only about 5.1% of rows and number of steps for about 1.0% (<a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>). The categorical labels are also heavily imbalanced, with several material fields dominated by labels like ‘Timber/Wood’.</p>
+<p>To address BC Parks’ main objective of automating attribute labelling with the limited labels we had, we decided to start with a simple no-training approach, using zero-shot vision language models (VLMs). We then explored whether pre-trained embedding models could better capture the fine-grained visual details that distinguish material types, pairing them with a simple classifier to output prediction labels for all attributes.</p>
+<p>To establish a comparable benchmark, we implemented three baseline classifiers. Given the class imbalance present across some attributes, we included a majority class classifier that always predicts the most frequent category, a uniform random classifier that selects a label at random from all possible labels, and a stratified random classifier whose predictions reflect the observed class distribution.</p>
+</section>
+<section id="vlm-approach" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="vlm-approach"><span class="header-section-number">4.2</span> VLM Approach</h2>
+<div id="fig-vlm-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vlm-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/vlm_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vlm-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: VLM Model Workflow
+</figcaption>
+</figure>
+</div>
+<p>We started with a zero-shot VLM approach which was motivated by the limited labelled data we had available (<a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>), especially for measurement-based attributes. This was also important given that many of our ground-truth labels are themselves sometimes unreliable. Additionally, to reduce measurement error and becuase of the sparse and irregular numeric distributions in our labelled data (see <a href="#fig-numeric-distributions" class="quarto-xref">Figure&nbsp;3</a>), we switched our numerical attributes from continuous to binned ranges, making them easier and simpler to infer from images.</p>
+<div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/attribute_fill_rate.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Attribute fill rate by asset category
+</figcaption>
+</figure>
+</div>
+<div id="fig-numeric-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-numeric-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/numerical_distributions.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-numeric-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Distributions for numeric attributes
+</figcaption>
+</figure>
+</div>
+<p>There are several practical strengths that come with using VLMs for attribute predcition. It is non-technical to operate, the prompt is easy to configure, and it offers high flexibility where the prompt template can be adapted or expanded to additional asset types.</p>
+<p>Its limitations are equally important to note. Running VLMs at scale can become costly if the free API tier does not meet demand, requiring the purchase of additional capacity to process enough images at once. Alternatively, the models can be run locally, but this demands computational resources BC Parks may not have. Also, there are privacy considerations when sending park imagery to an open source cloud service, which we mitigated by blurring people in images with YOLO before any cloud inference. Finally, validation is difficult for attributes such as length and width when ground-truth labels are limited and when there are rare classes within material-based attributes. For example, <code>Aluminum</code> was a very rare class in the <code>decking material</code> of trail bridges, so it was difficult to validate whether the VLM was actually performing poorly on this class (see <a href="#fig-bridge-rare-class" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<div id="fig-bridge-rare-class" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bridge-rare-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/vlm_classification_reports/classification_report_Trail_Bridge_gemini-3-flash-preview_trail_bridge_v1_20260617_223643.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bridge-rare-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Rare Class Issue Example: Decking Material &amp; Abutment Material Class distribution in Trail Bridge assets using Multi attribute prompt with <code>gemini-flash-preview</code> model
+</figcaption>
+</figure>
+</div>
+<p>We compared attribute-specific prompts with a single multi-attribute prompt, and tested the two strongest available Google models: <code>gemma-4-26b</code> and <code>gemini-3-flash-preview</code>. We continued further prompt engineering and prediction labelling with both models since <strong>gemma</strong> was significantly cheaper and allowed for more requests per day (1500 assets labelled per day with the free-tier token) versus, the more expensive and slightly more accurate <strong>gemini</strong> model (20 assets labelled per day).</p>
+</section>
+<section id="embedding-based-classification" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="embedding-based-classification"><span class="header-section-number">4.3</span> Embedding-based classification</h2>
+<div id="fig-emb-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/embedding_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Embedding Model Workflow
+</figcaption>
+</figure>
+</div>
+<p>The second modelling path treated each image as input to a pre-trained vision encoder and used the resulting embedding as a fixed feature representation. The motivation was practical: our labelled dataset is useful, but not large enough to train a high-capacity image model from scratch. Instead, we used foundation models that had already learned general visual representations from large-scale pretraining and trained lightweight classifiers on top of their embeddings.</p>
+<p>First, images were loaded from the cleaned local image directory and passed through a frozen image encoder, meaning the model was not fine tuned or adjusted. Each image was converted into a numeric vector, image vectors were averaged to one embedding per asset, and one classifier was trained for each target attribute.</p>
+<p>To ensure we explored multiple pre-trained embedding models, we evaluated three ditinct embedding models <strong>DINOv3</strong> <span class="citation" data-cites="simeoni2025dinov3">(<a href="#ref-simeoni2025dinov3" role="doc-biblioref">Simeoni et al. 2025</a>)</span>, <strong>SigLIP</strong> <span class="citation" data-cites="zhai2023sigmoid">(<a href="#ref-zhai2023sigmoid" role="doc-biblioref">Zhai et al. 2023</a>)</span> and <strong>OpenCLIP</strong> <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, comparing their performance.</p>
+<p>For the classifier layer, we compared logistic regression, linear support vector machines, random forests, and histogram-based gradient boosting using scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.</p>
+</section>
+<section id="results-evaluation" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="results-evaluation"><span class="header-section-number">4.4</span> Results &amp; Evaluation</h2>
+<p>We used <strong>weighted F1</strong> as the primary model-selection metric because the attribute labels are highly imbalanced (see <a href="#fig-categorical-distributions" class="quarto-xref">Figure&nbsp;6</a>). A metric that only rewards the dominant class would overstate model quality for attributes where one material or one structural category appears much more often than the others. Weighted F1 balances precision (how often the model is correct when it predicts a particular label) and recall (how many of the assets that truly hold that label does the model actually recover), while weighing each class proportionally to how often it appears in the dataset. This makes it a better summary of performance on the distribution of labels BC Parks is most likely to encounter.</p>
+<div id="fig-categorical-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/categorical_distributions.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categorical-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Class distributions for categorical attributes
+</figcaption>
+</figure>
+</div>
+<section id="evaluations-of-vlm" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="evaluations-of-vlm"><span class="header-section-number">4.4.1</span> Evaluations of VLM</h3>
+<p>The attribute-specific and multi-attribute VLM prompts produced consistently similar weighted F1 scores across stairs, trail bridges, and boardwalk attributes (<a href="#fig-stair-vlm-comparison" class="quarto-xref">Figure&nbsp;7</a>, <a href="#fig-bridge-vlm-comparison" class="quarto-xref">Figure&nbsp;8</a>, <a href="#fig-boardwalk-low-vlm-comparison" class="quarto-xref">Figure&nbsp;9</a>). Because the multi-attribute prompt labels each asset once instead of once per attribute, it is the more practical option. The two models,<code>gemma-4-26b</code> and <code>gemini-3-flash-preview</code>, also performed similarly on weighted F1, with the exception of <code>gemini-3-flash-preview</code> occasionally performing better on fall height. Nonetheless, we retained both models because of <strong>gemma</strong>’s higher free-tier allowance, which makes it the practical choice at scale.</p>
+<div id="fig-stair-vlm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stair-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/stairs_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stair-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Prompt Approach &amp; VLM model comparison with Stair Attributes
+</figcaption>
+</figure>
+</div>
+<div id="fig-bridge-vlm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bridge-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/trail_bridge_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bridge-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Prompt Approach &amp; VLM model comparison with Trail Bridge Attributes
+</figcaption>
+</figure>
+</div>
+<div id="fig-boardwalk-low-vlm-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boardwalk-low-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/boardwalk_low_edge_guard_weighted_f1.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boardwalk-low-vlm-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Prompt Approach &amp; VLM model comparison with Boardwalk Attribute - Has Edge Guard
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="evaluations-of-embedding-models" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="evaluations-of-embedding-models"><span class="header-section-number">4.4.2</span> Evaluations of Embedding models</h3>
+<p>We found that ogisitic regression was consistently competitive and often strongest, especially on binned numeric attributes seen in <a href="#fig-dinov3-classifiers" class="quarto-xref">Figure&nbsp;10</a>. Since this was the simplest classifier, this suggested that the embedding space already separated many attribute classes well enough for a simple linear classifier to predict the labels. This result also supported a simpler final pipeline. More complex classifiers did not provide enough improvement to justify extra tuning or reduced interpretability. Logistic regression is fast to train, easy to rerun when new labels are added, and produces scores that can be converted into confidence levels for partner review.</p>
+<div id="fig-dinov3-classifiers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dinov3-classifiers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/dinov3_classifiers_subset_weighted_f1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dinov3-classifiers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Dinov3 Embedding Model: Comparison across different classifier models
+</figcaption>
+</figure>
+</div>
+<p>Comparing the three embedding models with a fixed logistic-regression head, the mean weighted F1 across all twelve attributes was very similar for DINOv3,SigLIP, and OpenCLIP (<a href="#fig-emb-comparison" class="quarto-xref">Figure&nbsp;11</a>).</p>
+<div id="fig-emb-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/agg_logistic_comparison_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (aggregated f1 across all 12 attributes)
+</figcaption>
+</figure>
+</div>
+<div id="fig-emb-comparison-per-attribute" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-comparison-per-attribute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/embedding_comparison_subset_weighted_f1.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-comparison-per-attribute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Dinov3 vs OpenClip vs Siglip: Comparison across different embedding models with logisitic regression classifier (per attribute f1 score )
+</figcaption>
+</figure>
+</div>
+<p>Because the three embedding models performed comparably, our final choice was guided by practical deployment considerations rather than negligible accuracy differences. We selected DINOv3 as the most suitable embedding model because it occasionally outperformed the alternatives on the hardest attributes (see <a href="#fig-emb-comparison-per-attribute" class="quarto-xref">Figure&nbsp;12</a>), it is the most lightweight to download and run locally at no extra cost, taking up approximately 0.3 GB of disk space, and its self-supervised features captured structural and material cues central to the infrastructure attributes. Running locally also avoids the per-request limits and ongoing costs associated with the cloud VLM approach, making DINOv3 the more sustainable option for processing BC Parks’ image inventory at scale.</p>
+</section>
+<section id="comparing-the-two-approaches-vlm-vs-embeddings" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="comparing-the-two-approaches-vlm-vs-embeddings"><span class="header-section-number">4.4.3</span> Comparing the two approaches: VLM vs Embeddings</h3>
+<p>Comparing the two approaches directly (see <a href="#fig-vlm-vs-emb" class="quarto-xref">Figure&nbsp;15</a>) revealed a consistent pattern. Both the VLM and the DINOv3 embedding classifier performed well on categorical, material-based attributes (0.7-0.97 weighted f1), with the exception of DINOv3 outperforming the VLM on the <strong>material (frame, tank, body)</strong> as shown in <a href="#fig-emb-boxstep" class="quarto-xref">Figure&nbsp;14</a> and <strong>fall height</strong>. Both performed less well on the numeric attributes overall (0.3-0.6 weighted f1), even after these were binned into ordered categories.</p>
+<div id="fig-model-success" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-success-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/model_success_examples.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-success-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Examples of VLM &amp; DINOv3 Embedding Successes
+</figcaption>
+</figure>
+</div>
+<div id="fig-emb-boxstep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-emb-boxstep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/emb_success_example.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-emb-boxstep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Where DINOv3 Embedding outperforms VLM: Material (frame, tank, body) attribute example - Box Steps
+</figcaption>
+</figure>
+</div>
+<p>Because performance was broadly comparable and due to the strengths noted above, DINOv3 was chosen as the default model.</p>
+<div id="fig-vlm-vs-emb" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vlm-vs-emb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/eval_results_plots/gemini_vs_dinov3_weighted_f1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vlm-vs-emb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: VLM vs Dinov3 result comparison
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="evaluation-of-dinov3-on-the-final-held-out-test-dataset" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="evaluation-of-dinov3-on-the-final-held-out-test-dataset"><span class="header-section-number">4.4.4</span> Evaluation of DINOv3 on the final held-out test dataset</h3>
+<div id="fig-test-set-results" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-test-set-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/test_set_results.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-test-set-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Weighted f1 scores of DINOv3 model on all 12 attributes, evaluated on a helf-out test set
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-test-set-results" class="quarto-xref">Figure&nbsp;16</a> reports the final DINOv3 pipeline’s weighted F1 on the held-out test set. The reference lines show the majority-class and uniform-random baselines computed on the same test assets, so the height of each bar above its baseline is the genuine value the model adds compared to random guessing or choosing the most common attribute label.</p>
+<p>As we expected, the results reflected the same divide seen consistently throughout the project and are comparable with our initial results above. The model performed best on visually distinctive categorical attributes: decking material reached 0.97, structure material, edge guard, structure position, and pedestrian railing reached 0.92 to 0.93, and bridge type reached 0.86. Abutment material and the stair specific material attribute (material - frame, tank, body) were lower at 0.72, likely because rare classes had fewer examples.</p>
+<p>The measurement attributes performed better than we had expected given how little labelled data they have. Fall height and number of steps reached 0.84 and 0.81 respectively, while length and width were the hardest targets at 0.66 and 0.63, consistent with the difficulty of judging absolute dimensions from images without a scale or size reference.</p>
+</section>
+</section>
+</section>
+<section id="data-product" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Data product</h1>
+<p>The primary deliverable of this project is a machine learning pipeline that predicts missing infrastructure attributes from photos of BC Parks assets. Rather than replacing existing asset management workflows, the data product is intended to augment them by generating attribute predictions and confidence scores that can be incorporated into existing review and data management processes.</p>
+<div id="fig-data-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="report_images/data_pipeline_diagram.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: Final Data Pipeline Structure
+</figcaption>
+</figure>
+</div>
+<p>A key design requirement identified by BC Parks was modularity and flexibility. The organization manages many different infrastructure categories, each with distinct attribute requirements. For example, trail bridges require information about bridge type, decking material, and structure length, while stairs require information about number of steps and fall height. To accommodate these differences, we developed a modular pipeline that routes assets to category-specific prediction workflows and treats each attribute as an independent prediction task. This design allows individual models to be updated or replaced without affecting the rest of the system and makes it straightforward to extend the pipeline to new asset categories in the future.</p>
+<p>Our default implementation using a logistic regression classifier to output attribute prediction labels from image embeddings generated with the pre-trained DINOv3 computer vision model. This was chosen due to its advantgeous deployment described in the methods section above. The pipeline still supports the ability to switch to the VLM approach if needed, allowing BC Parks staff to continue exploring prompt engineering with the provided prompt templates.</p>
+</section>
+<section id="conclusions-and-recommendations" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Conclusions and recommendations</h1>
+<p>BC Parks maintains a large inventory of infrastructure assets that are not just limited to stairs, trail bridges, boardwalks and viewing platforms, many of which have incomplete labels. Verifying these attributes in the field is costly and slow, but is necessary to make decisions about safety, inspection scheduling, and resource allocation. Our product addressed this by predicting attribute labels given a set of asset images alongside corresponding confidence scores that may signal the need for manual intervention, which helps direct limited field-verification effort toward the predictions that most warrant a human check, whilst the more confident predictions rely on automated labelling.</p>
+<p>The extent to which the product meets BC Parks’ needs varies by attribute. For categorical attributes that are visually distinctive like decking material, structure material, and the presence of pedestrian railings, our pipeline provides labels that are dependable enough to reduce manual labelling meaningfully. For measurement-based attributes, the model will help but more manual review will be required. Based on our results, DINOv3 is the recommended default for large-scale processing.</p>
+<section id="strengths-and-limitations-of-current-design" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="strengths-and-limitations-of-current-design"><span class="header-section-number">6.1</span> Strengths and limitations of current design</h2>
+<p>One of the major strengths of the pipeline is that both approaches rely on pre-trained foundation models. This was particularly important because the available labelled dataset was relatively small for many attributes. By leveraging representations learned from large external image datasets, both DINOv3 and the VLMs were able to achieve useful performance despite limited training data.</p>
+<p>Since model performance varied by attribute type, we incorporated a confidence-based review workflow. This is especially important for the measurement-based attributes, where a DINOv3 classifier first generates an initial prediction and if it is accompanied by a low confidence score, it is easily identifiable for manual review. This strategy recognizes that fully automated predictions may not always be reliable for difficult attributes and instead focuses staff attention on cases with high uncertainty.</p>
+<p>Despite these strengths, the current design has several limitations. Because the pipeline leverages models that have been trained on large general-purpose image datasets, they do not always transfer perfectly to the specialized infrastructure categories used by BC Parks. In addition, several attributes contained relatively few labelled examples, making both model training and performance evaluation less reliable. Rare classes that performed poorly were more prominently affected by this. These gaps, unreliable performance on rare and ambiguous attribute classes, and the difficulty of predicting measurement-based attributes, are ultimately data quality and task-design constraints that the pipeline itself cannot fully resolve.</p>
+</section>
+<section id="future-product-improvements" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="future-product-improvements"><span class="header-section-number">6.2</span> Future product improvements</h2>
+<p>Several opportunities exist for future improvement. Few-shot VLM prompting or DINOv3 fine-tuning could potentially improve performance by providing examples of BC Parks-specific infrastructure during training or inference. However, these approaches require substantially more labelled data and computational resources than were available during this project. Additional gains may also be achieved by incorporating open-source infrastructure image datasets to improve representation of rare classes and underrepresented asset types. Finally, future work could explore depth-estimation models for measurement-based attributes.</p>
+<p>Overall, the resulting data product demonstrates that image-based machine learning can substantially improve the completeness of BC Parks’ infrastructure records. A key insight from this work is that attribute difficulty depends less on model choice than on whether an attribute is visually determinable at all: visually distinctive attributes were learned well across multiple approaches, while measurement-based attributes remained challenging regardless of method.</p>
+</section>
+</section>
+<section id="references" class="level1 unnumbered" data-number="7">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-parry2026proposal" class="csl-entry" role="listitem">
+Parry, Hilary. 2026. <span>“Image Analysis of Park Infrastructure.”</span> University of British Columbia Master of Data Science. 2026. <a href="https://pages.github.ubc.ca/mds-2025-26/DSCI_591_capstone-proj_students/proposals/Image_analysis_of_park_infrastructure.html">https://pages.github.ubc.ca/mds-2025-26/DSCI_591_capstone-proj_students/proposals/Image_analysis_of_park_infrastructure.html</a>.
+</div>
+<div id="ref-pedregosa2011scikit" class="csl-entry" role="listitem">
+Pedregosa, Fabian, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, et al. 2011. <span>“Scikit-Learn: Machine Learning in Python.”</span> <em>Journal of Machine Learning Research</em> 12: 2825–30. <a href="https://jmlr.org/papers/v12/pedregosa11a.html">https://jmlr.org/papers/v12/pedregosa11a.html</a>.
+</div>
+<div id="ref-radford2021clip" class="csl-entry" role="listitem">
+Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, et al. 2021. <span>“Learning Transferable Visual Models from Natural Language Supervision.”</span> In <em>Proceedings of the 38th International Conference on Machine Learning</em>, 8748–63. <a href="https://arxiv.org/abs/2103.00020">https://arxiv.org/abs/2103.00020</a>.
+</div>
+<div id="ref-simeoni2025dinov3" class="csl-entry" role="listitem">
+Simeoni, Oriane, Huy V. Vo, Maximilian Seitzer, Federico Baldassarre, Maxime Oquab, Cijo Jose, Vasil Khalidov, et al. 2025. <span>“<span>DINOv3</span>.”</span> <em>arXiv Preprint arXiv:2508.10104</em>. <a href="https://arxiv.org/abs/2508.10104">https://arxiv.org/abs/2508.10104</a>.
+</div>
+<div id="ref-volkov2025imagerecognitionvisionlanguage" class="csl-entry" role="listitem">
+Volkov, Illia, Nikita Kisel, Klara Janouskova, and Jiri Matas. 2025. <span>“Image Recognition with Vision and Language Embeddings of VLMs.”</span> <a href="https://arxiv.org/abs/2509.09311">https://arxiv.org/abs/2509.09311</a>.
+</div>
+<div id="ref-zhai2023sigmoid" class="csl-entry" role="listitem">
+Zhai, Xiaohua, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. 2023. <span>“Sigmoid Loss for Language Image Pre-Training.”</span> <em>arXiv Preprint arXiv:2303.15343</em>. <a href="https://arxiv.org/abs/2303.15343">https://arxiv.org/abs/2303.15343</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

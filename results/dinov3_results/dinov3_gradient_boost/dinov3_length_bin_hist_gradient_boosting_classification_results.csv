@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+length_bin,length_bin,data/processed/train/length_bin_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_hist_gradient_boosting,hist_gradient_boosting,GroupKFold,5,1599,1599,768,0.5741202978056427,0.021554779813301107,0.5262305138638705,0.025165818747245015,0.26763864802976034,0.027462572621057852

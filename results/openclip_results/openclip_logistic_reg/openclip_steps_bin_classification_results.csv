@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+steps_bin,steps_bin,data/processed/train/steps_bin_train.csv,data/features/openclip_vitb16_all_attributes_assets.csv,classification,openclip_frozen_embeddings_logistic_regression,logistic_regression,GroupKFold,5,29,29,512,0.4133333333333333,0.07483314773547883,0.3744444444444444,0.13497141901386855,0.3355555555555555,0.13116759611887735

@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+fall_height_bin,data\processed\train\fall_height_bin_train.csv,data\features\dinov3_attr_fall_height_train_assets.csv,GroupKFold,10,classification,5,122,0.45166666666666666,0.1400099202834491,0.3945497145555969,0.14216144571352193,0.3201573480985246,0.10162139872644403

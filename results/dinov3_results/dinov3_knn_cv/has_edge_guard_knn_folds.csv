@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,1,5,StratifiedGroupKFold,10,1292,324,classification,0.9351851851851852,0.9163205397063294,0.6442724943796727
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,2,5,StratifiedGroupKFold,10,1293,323,classification,0.9164086687306502,0.8875653848063799,0.5126026937908679
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,3,5,StratifiedGroupKFold,10,1293,323,classification,0.913312693498452,0.880799943891711,0.4773462783171521
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,4,5,StratifiedGroupKFold,10,1293,323,classification,0.9226006191950464,0.9000770543009534,0.5764489902963545
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,5,5,StratifiedGroupKFold,10,1293,323,classification,0.9226006191950464,0.8884302258915263,0.47987117552334946

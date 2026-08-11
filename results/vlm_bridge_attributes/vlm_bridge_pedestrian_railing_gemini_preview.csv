@@ -1,0 +1,1820 @@
+asset_id,timestamp,model,response,latency_s,has_pedestrian_railing_value,has_pedestrian_railing_confidence,parse_error,raw_response,error,traceback
+46926,2026-05-27T18:11:11.565460,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.421,No railings,1.0,,,,
+47182,2026-05-27T18:11:13.972858,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.403,2 railings,1.0,,,,
+47389,2026-05-27T18:11:17.637832,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.647,No railings,1.0,,,,
+48340,2026-05-27T18:11:21.551265,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.89,No railings,1.0,,,,
+48627,2026-05-27T18:11:25.592353,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.031,2 railings,1.0,,,,
+48693,2026-05-27T18:11:28.709022,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.111,1 railing,1.0,,,,
+48694,2026-05-27T18:11:31.449954,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.74,No railings,1.0,,,,
+48695,2026-05-27T18:11:35.062225,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.9
+    }
+}",3.611,No railings,0.9,,,,
+49057,2026-05-27T18:11:38.241129,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.178,No railings,1.0,,,,
+49059,2026-05-27T18:11:40.997803,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.75,No railings,1.0,,,,
+49060,2026-05-27T18:11:44.664497,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.665,No railings,1.0,,,,
+49061,2026-05-27T18:11:47.675153,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.007,No railings,1.0,,,,
+49243,2026-05-27T18:11:50.219164,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.54,No railings,1.0,,,,
+49430,2026-05-27T18:11:53.797689,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.573,No railings,1.0,,,,
+49679,2026-05-27T18:11:56.631112,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.832,1 railing,1.0,,,,
+49681,2026-05-27T18:11:59.881714,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.249,2 railings,1.0,,,,
+49682,2026-05-27T18:12:02.927535,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.044,No railings,1.0,,,,
+50231,2026-05-27T18:12:07.624044,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.69,2 railings,1.0,,,,
+50235,2026-05-27T18:12:12.201056,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.576,No railings,1.0,,,,
+50625,2026-05-27T18:12:16.019585,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.815,2 railings,1.0,,,,
+50654,2026-05-27T18:12:18.735999,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.686,No railings,1.0,,,,
+50749,2026-05-27T18:12:33.845479,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",15.108,2 railings,1.0,,,,
+51216,2026-05-27T18:12:39.182497,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",5.333,2 railings,1.0,,,,
+51214,2026-05-27T18:12:44.800424,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",5.614,2 railings,1.0,,,,
+51218,2026-05-27T18:12:47.869002,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.067,2 railings,1.0,,,,
+51244,2026-05-27T18:12:54.956374,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",7.086,1 railing,1.0,,,,
+52242,2026-05-27T18:12:58.331844,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.371,2 railings,1.0,,,,
+52457,2026-05-27T18:13:03.029190,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",4.696,1 railing,1.0,,,,
+52456,2026-05-27T18:13:07.841475,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.809,No railings,1.0,,,,
+54184,2026-05-27T18:13:10.723420,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.878,No railings,1.0,,,,
+55272,2026-05-27T18:13:13.876190,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.144,No railings,1.0,,,,
+55636,2026-05-27T18:13:16.553231,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.675,2 railings,1.0,,,,
+55640,2026-05-27T18:13:20.312795,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.749,2 railings,1.0,,,,
+55641,2026-05-27T18:13:23.502249,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.178,No railings,1.0,,,,
+56204,2026-05-27T18:13:27.498036,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.995,2 railings,1.0,,,,
+56205,2026-05-27T18:13:31.499618,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.995,2 railings,1.0,,,,
+56469,2026-05-27T18:13:36.291654,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.791,No railings,1.0,,,,
+56777,2026-05-27T18:13:39.807073,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.504,2 railings,1.0,,,,
+56876,2026-05-27T18:13:44.647730,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.84,2 railings,1.0,,,,
+57507,2026-05-27T18:13:50.819194,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",6.167,2 railings,0.95,,,,
+58164,2026-05-27T18:13:54.621285,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.722,No railings,1.0,,,,
+58955,2026-05-27T18:13:57.734644,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.109,No railings,1.0,,,,
+58957,2026-05-27T18:14:00.896406,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.157,No railings,1.0,,,,
+60126,2026-05-27T18:14:04.369428,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.466,2 railings,1.0,,,,
+60528,2026-05-27T18:14:06.819710,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.449,2 railings,1.0,,,,
+60956,2026-05-27T18:14:09.789212,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.968,No railings,1.0,,,,
+61003,2026-05-27T18:14:12.865648,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.075,1 railing,1.0,,,,
+61110,2026-05-27T18:14:15.576136,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.707,1 railing,1.0,,,,
+61113,2026-05-27T18:14:22.302176,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",6.716,No railings,1.0,,,,
+63071,2026-05-27T18:14:27.505004,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.198,No railings,1.0,,,,
+63217,2026-05-27T18:14:30.883900,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.378,2 railings,1.0,,,,
+63218,2026-05-27T18:14:34.477280,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.592,1 railing,1.0,,,,
+63219,2026-05-27T18:14:38.475066,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.986,1 railing,1.0,,,,
+63389,2026-05-27T18:14:41.430592,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.943,2 railings,1.0,,,,
+64100,2026-05-27T18:14:45.071641,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.639,1 railing,1.0,,,,
+64105,2026-05-27T18:14:48.459585,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.386,2 railings,1.0,,,,
+64108,2026-05-27T18:14:51.375072,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.91,2 railings,1.0,,,,
+64111,2026-05-27T18:14:55.471861,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.087,2 railings,1.0,,,,
+64114,2026-05-27T18:14:59.161647,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.679,2 railings,1.0,,,,
+64118,2026-05-27T18:15:02.401338,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.228,2 railings,1.0,,,,
+64142,2026-05-27T18:15:06.249331,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.824,1 railing,1.0,,,,
+65426,2026-05-27T18:15:09.509006,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.254,No railings,1.0,,,,
+65427,2026-05-27T18:15:12.868526,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.358,No railings,1.0,,,,
+66171,2026-05-27T18:15:16.766746,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.896,2 railings,1.0,,,,
+66173,2026-05-27T18:15:19.448939,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.68,No railings,1.0,,,,
+66920,2026-05-27T18:15:22.701674,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.251,2 railings,1.0,,,,
+66922,2026-05-27T18:15:28.952466,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",6.25,No railings,0.95,,,,
+80432,2026-05-27T18:15:33.198160,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.244,No railings,1.0,,,,
+81415,2026-05-27T18:15:36.683762,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.484,No railings,1.0,,,,
+81419,2026-05-27T18:15:40.307086,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.62,No railings,1.0,,,,
+82270,2026-05-27T18:15:43.704114,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.394,No railings,1.0,,,,
+82304,2026-05-27T18:15:48.694049,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.987,No railings,1.0,,,,
+83138,2026-05-27T18:15:53.121155,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.425,No railings,1.0,,,,
+83513,2026-05-27T18:15:56.641749,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.518,No railings,1.0,,,,
+83815,2026-05-27T18:15:59.773847,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.129,2 railings,1.0,,,,
+85208,2026-05-27T18:16:02.741190,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.961,No railings,1.0,,,,
+86350,2026-05-27T18:16:06.731369,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.987,2 railings,1.0,,,,
+86352,2026-05-27T18:16:09.704565,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.971,2 railings,1.0,,,,
+86356,2026-05-27T18:16:12.681629,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.974,2 railings,1.0,,,,
+86365,2026-05-27T18:16:16.486437,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.798,2 railings,1.0,,,,
+86369,2026-05-27T18:16:19.328821,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.81,2 railings,1.0,,,,
+87188,2026-05-27T18:16:23.831470,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.501,No railings,1.0,,,,
+87769,2026-05-27T18:16:27.548563,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.716,No railings,1.0,,,,
+88095,2026-05-27T18:16:32.962710,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",5.409,1 railing,0.95,,,,
+88104,2026-05-27T18:16:32.986753,gemini-3-flash-preview,,0.004,,,True,,,
+88129,2026-05-27T18:16:37.076775,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.09,2 railings,1.0,,,,
+88131,2026-05-27T18:16:41.651822,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.573,2 railings,1.0,,,,
+88132,2026-05-27T18:16:45.550610,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.894,1 railing,1.0,,,,
+88133,2026-05-27T18:16:50.359146,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.804,2 railings,1.0,,,,
+88135,2026-05-27T18:16:54.052462,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.689,2 railings,1.0,,,,
+88136,2026-05-27T18:16:57.524645,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.47,2 railings,1.0,,,,
+88195,2026-05-27T18:17:00.114914,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.589,2 railings,1.0,,,,
+88199,2026-05-27T18:17:02.962487,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.818,2 railings,1.0,,,,
+88201,2026-05-27T18:17:05.819204,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.851,2 railings,1.0,,,,
+88267,2026-05-27T18:17:08.581912,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.761,No railings,1.0,,,,
+88280,2026-05-27T18:17:11.562727,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.98,1 railing,1.0,,,,
+88467,2026-05-27T18:17:16.891598,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",5.324,2 railings,1.0,,,,
+88736,2026-05-27T18:17:22.111399,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",5.217,2 railings,1.0,,,,
+88741,2026-05-27T18:17:24.845938,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.732,No railings,1.0,,,,
+88812,2026-05-27T18:17:28.869356,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.019,No railings,1.0,,,,
+88814,2026-05-27T18:17:33.165768,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.286,No railings,1.0,,,,
+88818,2026-05-27T18:17:38.298140,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.128,No railings,1.0,,,,
+88823,2026-05-27T18:17:42.485126,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.18,No railings,1.0,,,,
+88824,2026-05-27T18:17:46.677638,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.157,No railings,1.0,,,,
+88838,2026-05-27T18:17:50.165770,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.482,No railings,1.0,,,,
+88842,2026-05-27T18:17:54.771594,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.6,No railings,1.0,,,,
+88845,2026-05-27T18:17:58.192585,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.417,No railings,1.0,,,,
+88847,2026-05-27T18:18:02.053620,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.857,No railings,1.0,,,,
+88848,2026-05-27T18:18:05.928331,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.872,No railings,1.0,,,,
+88856,2026-05-27T18:18:09.831927,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.903,No railings,1.0,,,,
+88857,2026-05-27T18:18:13.179227,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.344,No railings,1.0,,,,
+88859,2026-05-27T18:18:16.583686,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.401,No railings,1.0,,,,
+88865,2026-05-27T18:18:20.065804,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.478,No railings,1.0,,,,
+88866,2026-05-27T18:18:23.231967,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.162,No railings,1.0,,,,
+88869,2026-05-27T18:18:27.348073,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.115,No railings,1.0,,,,
+88871,2026-05-27T18:18:31.544768,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.852,No railings,1.0,,,,
+89154,2026-05-27T18:18:35.425300,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.876,2 railings,1.0,,,,
+89155,2026-05-27T18:18:39.107912,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.676,2 railings,1.0,,,,
+89163,2026-05-27T18:18:42.267229,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.156,2 railings,1.0,,,,
+89177,2026-05-27T18:18:45.661703,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.393,2 railings,1.0,,,,
+89447,2026-05-27T18:18:48.339462,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.656,No railings,1.0,,,,
+89450,2026-05-27T18:19:04.530017,gemini-3-flash-preview,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.8
+    }
+}
+```",16.168,1 railing,0.8,,,,
+89576,2026-05-27T18:19:07.983601,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.448,No railings,1.0,,,,
+89580,2026-05-27T18:19:10.262417,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.277,No railings,1.0,,,,
+89761,2026-05-27T18:19:15.786963,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.52,No railings,1.0,,,,
+90361,2026-05-27T18:19:18.435048,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.641,No railings,1.0,,,,
+90641,2026-05-27T18:19:21.392861,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.945,No railings,1.0,,,,
+90647,2026-05-27T18:19:24.440749,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.046,2 railings,1.0,,,,
+91248,2026-05-27T18:19:27.330746,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.882,2 railings,1.0,,,,
+92090,2026-05-27T18:19:30.280929,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.942,No railings,1.0,,,,
+92151,2026-05-27T18:19:33.178401,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.892,No railings,1.0,,,,
+92160,2026-05-27T18:19:35.785033,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.601,No railings,1.0,,,,
+92164,2026-05-27T18:19:38.599998,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.813,No railings,1.0,,,,
+92801,2026-05-27T18:19:41.802211,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.201,No railings,1.0,,,,
+92854,2026-05-27T18:19:46.902543,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.093,No railings,1.0,,,,
+93036,2026-05-27T18:19:50.167221,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",3.257,1 railing,0.95,,,,
+93038,2026-05-27T18:19:53.538451,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.37,No railings,1.0,,,,
+93043,2026-05-27T18:19:55.910658,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.367,No railings,1.0,,,,
+94172,2026-05-27T18:19:59.188635,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 0.95
+    }
+}",3.278,2 railings,0.95,,,,
+95947,2026-05-27T18:20:02.445199,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.241,2 railings,1.0,,,,
+95948,2026-05-27T18:20:05.341207,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.868,2 railings,1.0,,,,
+96291,2026-05-27T18:20:08.604008,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.252,No railings,1.0,,,,
+96292,2026-05-27T18:20:11.986901,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.381,No railings,1.0,,,,
+96884,2026-05-27T18:20:15.061238,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.069,1 railing,1.0,,,,
+97442,2026-05-27T18:20:18.285375,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.223,No railings,1.0,,,,
+97444,2026-05-27T18:20:21.074445,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.779,No railings,1.0,,,,
+97446,2026-05-27T18:20:23.975193,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.888,No railings,1.0,,,,
+97447,2026-05-27T18:20:28.490250,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.506,No railings,1.0,,,,
+99455,2026-05-27T18:20:31.837019,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.34,No railings,1.0,,,,
+100347,2026-05-27T18:20:37.775782,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.937,No railings,1.0,,,,
+100348,2026-05-27T18:20:41.555923,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.776,No railings,1.0,,,,
+100751,2026-05-27T18:20:44.444601,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.886,No railings,1.0,,,,
+100752,2026-05-27T18:20:50.190831,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",5.744,1 railing,1.0,,,,
+100826,2026-05-27T18:20:53.888930,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.694,No railings,1.0,,,,
+100837,2026-05-27T18:20:56.514479,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.608,No railings,1.0,,,,
+101541,2026-05-27T18:20:59.705556,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.179,2 railings,1.0,,,,
+101826,2026-05-27T18:21:02.778250,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.067,2 railings,1.0,,,,
+101831,2026-05-27T18:21:05.969345,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",3.187,No railings,0.95,,,,
+101890,2026-05-27T18:21:09.600651,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",3.621,No railings,0.95,,,,
+101988,2026-05-27T18:21:12.395551,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.793,No railings,1.0,,,,
+102341,2026-05-27T18:21:16.393194,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.919,No railings,1.0,,,,
+102344,2026-05-27T18:21:19.607817,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",3.212,No railings,0.95,,,,
+102352,2026-05-27T18:21:22.702024,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.092,No railings,1.0,,,,
+102353,2026-05-27T18:21:25.285300,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.578,No railings,1.0,,,,
+102354,2026-05-27T18:21:28.535123,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.24,No railings,1.0,,,,
+102355,2026-05-27T18:21:31.576666,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.041,No railings,1.0,,,,
+102359,2026-05-27T18:21:34.724189,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.142,No railings,1.0,,,,
+102370,2026-05-27T18:21:38.032117,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.304,No railings,1.0,,,,
+102471,2026-05-27T18:21:41.277407,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.243,No railings,1.0,,,,
+102849,2026-05-27T18:21:45.272198,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.992,No railings,1.0,,,,
+102851,2026-05-27T18:21:59.005502,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",13.733,No railings,1.0,,,,
+103253,2026-05-27T18:22:15.690381,gemini-3-flash-preview,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.8
+    }
+}
+```",16.674,1 railing,0.8,,,,
+103256,2026-05-27T18:22:18.504316,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.807,2 railings,1.0,,,,
+104066,2026-05-27T18:22:21.416765,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.904,No railings,1.0,,,,
+104086,2026-05-27T18:22:24.393570,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.97,No railings,1.0,,,,
+104159,2026-05-27T18:22:26.676718,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.274,1 railing,1.0,,,,
+104170,2026-05-27T18:22:29.485494,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.808,1 railing,1.0,,,,
+105042,2026-05-27T18:22:32.684282,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.196,No railings,1.0,,,,
+105438,2026-05-27T18:22:35.811712,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.124,No railings,1.0,,,,
+105440,2026-05-27T18:22:39.536671,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.724,No railings,1.0,,,,
+105442,2026-05-27T18:22:42.927515,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.374,No railings,1.0,,,,
+105443,2026-05-27T18:22:46.096559,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.154,No railings,1.0,,,,
+105444,2026-05-27T18:22:49.285235,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.187,No railings,1.0,,,,
+105449,2026-05-27T18:22:51.522502,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.222,No railings,1.0,,,,
+106027,2026-05-27T18:22:54.492281,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.968,No railings,1.0,,,,
+106030,2026-05-27T18:22:57.257310,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.761,No railings,1.0,,,,
+106045,2026-05-27T18:23:00.379382,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.12,No railings,1.0,,,,
+106273,2026-05-27T18:23:03.709305,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.316,No railings,1.0,,,,
+106350,2026-05-27T18:23:06.864261,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.152,No railings,1.0,,,,
+106920,2026-05-27T18:23:09.652098,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.785,No railings,1.0,,,,
+106925,2026-05-27T18:23:12.659456,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.998,No railings,1.0,,,,
+107041,2026-05-27T18:23:17.030520,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.356,No railings,1.0,,,,
+107058,2026-05-27T18:23:22.734905,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.9
+    }
+}",5.696,1 railing,0.9,,,,
+107068,2026-05-27T18:23:25.167192,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.428,No railings,1.0,,,,
+107108,2026-05-27T18:23:27.768221,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.6,No railings,1.0,,,,
+107109,2026-05-27T18:23:30.591302,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.822,No railings,1.0,,,,
+107114,2026-05-27T18:23:33.507491,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.913,No railings,1.0,,,,
+107115,2026-05-27T18:23:35.862331,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.353,No railings,1.0,,,,
+107117,2026-05-27T18:23:39.037132,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.173,No railings,1.0,,,,
+107118,2026-05-27T18:23:41.801132,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.762,No railings,1.0,,,,
+107122,2026-05-27T18:23:44.817658,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.986,No railings,1.0,,,,
+107473,2026-05-27T18:23:47.954231,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.134,No railings,1.0,,,,
+107885,2026-05-27T18:23:51.735279,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.774,2 railings,1.0,,,,
+107969,2026-05-27T18:23:54.770670,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.033,2 railings,1.0,,,,
+107973,2026-05-27T18:23:58.917085,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.138,2 railings,1.0,,,,
+108019,2026-05-27T18:24:04.410490,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",5.49,No railings,1.0,,,,
+108037,2026-05-27T18:24:09.150681,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.761,2 railings,1.0,,,,
+108040,2026-05-27T18:24:12.447304,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.169,No railings,1.0,,,,
+108107,2026-05-27T18:24:15.967946,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.517,No railings,1.0,,,,
+108380,2026-05-27T18:24:19.178654,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.208,No railings,1.0,,,,
+108725,2026-05-27T18:24:22.771137,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}",3.589,No railings,0.95,,,,
+108731,2026-05-27T18:24:25.333090,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.558,No railings,1.0,,,,
+109160,2026-05-27T18:24:28.168755,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.834,No railings,1.0,,,,
+109560,2026-05-27T18:24:30.669661,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.493,No railings,1.0,,,,
+109619,2026-05-27T18:24:34.298466,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.625,No railings,1.0,,,,
+109658,2026-05-27T18:24:38.127471,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.826,2 railings,1.0,,,,
+110121,2026-05-27T18:24:41.896358,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.765,2 railings,1.0,,,,
+110131,2026-05-27T18:24:45.089570,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.191,No railings,1.0,,,,
+110139,2026-05-27T18:24:47.870435,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.776,No railings,1.0,,,,
+110156,2026-05-27T18:24:51.051897,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.176,No railings,1.0,,,,
+110299,2026-05-27T18:24:54.608026,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.534,No railings,1.0,,,,
+110356,2026-05-27T18:24:57.899407,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.287,No railings,1.0,,,,
+110775,2026-05-27T18:25:01.043508,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.141,No railings,1.0,,,,
+110788,2026-05-27T18:25:03.734525,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.68,No railings,1.0,,,,
+110870,2026-05-27T18:25:07.836697,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.096,2 railings,1.0,,,,
+110996,2026-05-27T18:25:10.734197,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.885,No railings,1.0,,,,
+110997,2026-05-27T18:25:14.801737,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.066,No railings,1.0,,,,
+111426,2026-05-27T18:25:18.477238,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.673,2 railings,1.0,,,,
+111439,2026-05-27T18:25:21.231886,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.75,2 railings,1.0,,,,
+111447,2026-05-27T18:25:25.092797,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.86,2 railings,1.0,,,,
+111452,2026-05-27T18:25:28.099617,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.0,2 railings,1.0,,,,
+111914,2026-05-27T18:25:30.655780,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",2.55,1 railing,1.0,,,,
+112071,2026-05-27T18:25:33.561589,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.899,No railings,1.0,,,,
+112087,2026-05-27T18:25:36.094195,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.527,No railings,1.0,,,,
+112129,2026-05-27T18:25:39.092094,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.995,No railings,1.0,,,,
+112141,2026-05-27T18:25:41.929701,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.834,No railings,1.0,,,,
+112145,2026-05-27T18:25:45.614526,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.677,No railings,1.0,,,,
+112154,2026-05-27T18:25:49.290408,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.666,No railings,1.0,,,,
+112165,2026-05-27T18:25:52.682281,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.39,No railings,1.0,,,,
+112236,2026-05-27T18:25:55.867470,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.182,No railings,1.0,,,,
+112248,2026-05-27T18:25:58.603264,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.717,No railings,1.0,,,,
+112262,2026-05-27T18:26:01.684040,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.077,No railings,1.0,,,,
+112276,2026-05-27T18:26:03.940832,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.251,No railings,1.0,,,,
+112301,2026-05-27T18:26:07.163143,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.217,No railings,1.0,,,,
+112338,2026-05-27T18:26:09.664749,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.496,No railings,1.0,,,,
+112340,2026-05-27T18:26:12.912384,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.247,No railings,1.0,,,,
+112348,2026-05-27T18:26:16.374832,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.45,No railings,1.0,,,,
+112386,2026-05-27T18:26:19.741509,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.34,No railings,1.0,,,,
+112406,2026-05-27T18:26:22.168150,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.424,No railings,1.0,,,,
+112411,2026-05-27T18:26:25.188905,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.02,No railings,1.0,,,,
+112422,2026-05-27T18:26:28.121526,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.93,No railings,1.0,,,,
+112524,2026-05-27T18:26:31.480505,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.355,No railings,1.0,,,,
+112526,2026-05-27T18:26:33.989198,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.503,No railings,1.0,,,,
+113217,2026-05-27T18:26:37.240170,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.233,No railings,1.0,,,,
+113731,2026-05-27T18:26:40.599178,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.333,No railings,1.0,,,,
+113733,2026-05-27T18:26:43.260390,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.658,No railings,1.0,,,,
+113804,2026-05-27T18:26:46.228081,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.965,No railings,1.0,,,,
+113958,2026-05-27T18:26:48.601414,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.369,No railings,1.0,,,,
+114291,2026-05-27T18:26:51.455214,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.852,No railings,1.0,,,,
+114635,2026-05-27T18:26:55.136733,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.675,No railings,1.0,,,,
+114923,2026-05-27T18:26:57.810367,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.66,No railings,1.0,,,,
+114963,2026-05-27T18:27:01.814099,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.996,2 railings,1.0,,,,
+115806,2026-05-27T18:27:10.882228,gemini-3-flash-preview,"```json
+{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 0.95
+    }
+}
+```",9.062,No railings,0.95,,,,
+115807,2026-05-27T18:27:13.624845,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.741,No railings,1.0,,,,
+115809,2026-05-27T18:27:17.272342,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.641,No railings,1.0,,,,
+115814,2026-05-27T18:27:20.428669,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.151,No railings,1.0,,,,
+118143,2026-05-27T18:27:22.892676,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.462,No railings,1.0,,,,
+118246,2026-05-27T18:27:33.444677,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 0.95
+    }
+}",10.549,1 railing,0.95,,,,
+118757,2026-05-27T18:27:36.833047,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.387,No railings,1.0,,,,
+118797,2026-05-27T18:27:39.680812,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.842,No railings,1.0,,,,
+119811,2026-05-27T18:27:43.371797,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.69,No railings,1.0,,,,
+119851,2026-05-27T18:27:45.618001,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.243,No railings,1.0,,,,
+120548,2026-05-27T18:27:48.543810,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.924,No railings,1.0,,,,
+121354,2026-05-27T18:27:51.379079,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.834,2 railings,1.0,,,,
+121497,2026-05-27T18:27:54.172242,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.791,No railings,1.0,,,,
+121755,2026-05-27T18:27:57.090177,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.914,No railings,1.0,,,,
+121990,2026-05-27T18:27:59.704023,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.612,2 railings,1.0,,,,
+121993,2026-05-27T18:28:02.298971,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.59,No railings,1.0,,,,
+122263,2026-05-27T18:28:04.797037,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.492,No railings,1.0,,,,
+122444,2026-05-27T18:28:07.532357,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.734,No railings,1.0,,,,
+123219,2026-05-27T18:28:09.886199,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.342,No railings,1.0,,,,
+123352,2026-05-27T18:28:14.305359,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",4.417,No railings,1.0,,,,
+123354,2026-05-27T18:28:18.170272,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.862,No railings,1.0,,,,
+124927,2026-05-27T18:28:23.308954,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",5.136,2 railings,1.0,,,,
+124929,2026-05-27T18:28:26.582437,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.271,No railings,1.0,,,,
+126178,2026-05-27T18:28:29.447572,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.863,No railings,1.0,,,,
+126199,2026-05-27T18:28:33.145504,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.696,2 railings,1.0,,,,
+126334,2026-05-27T18:28:36.309997,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.158,2 railings,1.0,,,,
+126340,2026-05-27T18:28:39.996054,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.684,2 railings,1.0,,,,
+126721,2026-05-27T18:28:44.497327,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.499,2 railings,1.0,,,,
+126709,2026-05-27T18:28:47.369047,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.87,No railings,1.0,,,,
+127136,2026-05-27T18:28:51.584938,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",4.214,2 railings,1.0,,,,
+127147,2026-05-27T18:28:54.840384,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",3.249,1 railing,1.0,,,,
+127145,2026-05-27T18:28:57.838365,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",2.996,2 railings,1.0,,,,
+127203,2026-05-27T18:29:01.194340,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.349,No railings,1.0,,,,
+127204,2026-05-27T18:29:04.880099,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.685,No railings,1.0,,,,
+127205,2026-05-27T18:29:08.617964,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.736,No railings,1.0,,,,
+127388,2026-05-27T18:29:12.045550,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.427,2 railings,1.0,,,,
+127525,2026-05-27T18:29:14.578282,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.53,No railings,1.0,,,,
+128273,2026-05-27T18:29:17.836886,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""2 railings"",
+        ""confidence"": 1.0
+    }
+}",3.252,2 railings,1.0,,,,
+129739,2026-05-27T18:29:21.788063,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",3.946,No railings,1.0,,,,
+129491,2026-05-27T18:29:25.820750,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""1 railing"",
+        ""confidence"": 1.0
+    }
+}",4.027,1 railing,1.0,,,,
+102358,2026-05-27T18:29:28.305418,gemini-3-flash-preview,"{
+    ""has_pedestrian_railing"": {
+        ""value"": ""No railings"",
+        ""confidence"": 1.0
+    }
+}",2.483,No railings,1.0,,,,

@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,GroupKFold,10,classification,5,1774,0.9656067478316226,0.016858093668290382,0.956707175423991,0.021226459940208088,0.4196673027159191,0.10845461948187636

@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_bridge_type,data\processed\train\attr_bridge_type_train.csv,data\features\dinov3_attr_bridge_type_train_assets.csv,StratifiedGroupKFold,10,classification,5,612,0.8709849393575902,0.022144296057557092,0.8458997835054257,0.016673966305807676,0.3844258054296943,0.05961260934695927

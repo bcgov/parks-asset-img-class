@@ -2,9 +2,358 @@
 
 # parks-asset-img-class
 
-## Usage
+## Project overview
 
-This repository is a collaboration space for a 2026 UBC MDS capstone project. This README will be completed by the Capstone team. (please replace when ready)
+This repository contains a 2026 UBC MDS capstone project on using image analysis to classify BC Parks infrastructure assets and predict attributes such as asset type, material, railing presence, size ranges, structure position, and number of steps.
+
+The main runnable artifact is the Makefile pipeline. It validates inputs, screens raw images for PII, builds cleaned image sets, runs baseline and DINOv3 embedding classifiers, and exports partner-facing prediction CSVs. The Quarto report is rendered separately.
+
+## Repository structure
+
+```text
+.
+├── Makefile
+├── environment.yml
+├── data/
+│   ├── processed/
+│   │   ├── master_dataset.csv
+│   │   └── train/
+│   └── raw/                  # optional CityWide download output
+├── docs/
+│   ├── final_pipeline_runbook.md
+│   ├── citywide_api_runbook.md
+│   ├── dinov3_walkthrough.md
+│   ├── siglip_walkthrough.md
+│   └── vlm_walkthrough.md
+├── scripts/                  # pipeline entry points used by the Makefile
+├── src/                      # reusable package code
+├── tests/
+├── models/                   # where to store DINOv3 downloaded model
+└── reports/
+    ├── bcparks_capstone_final_report.qmd
+    ├── report_images/
+    └── references.bib
+```
+
+## Setup
+
+**0. Clone the repository and enter the project folder**
+
+```bash
+git clone https://github.com/sgauth01/parks-asset-img-class.git
+cd parks-asset-img-class
+```
+
+**1. Create and activate the Conda environment**
+
+```bash
+conda env create -f environment.yml
+conda activate bcparks_capstone
+```
+
+**2. Add local model and image data**
+
+Before running `make pii`, follow
+[`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md). That guide is
+the single source for where to place DINOv3 weights and how to add image data
+from the BC Parks SharePoint zip or the CityWide API.
+
+## Makefile pipeline
+
+From the repository root, list available targets:
+
+```bash
+make help
+```
+
+Documentation map:
+- [`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md): running final pipeline and day-to-day commands
+- [`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md): adding raw image data from SharePoint or the CityWide API before running `make pii`
+- [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md): optional CityWide API download details
+- [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md): optional cloud VLM workflow
+- [`docs/dinov3_walkthrough.md`](docs/dinov3_walkthrough.md), [`docs/siglip_walkthrough.md`](docs/siglip_walkthrough.md): technical model experiment notes
+
+For a full walkthrough of the final pipeline, see
+[`docs/final_pipeline_runbook.md`](docs/final_pipeline_runbook.md).
+If you are starting from raw CityWide files, a SharePoint image export, or a new
+BC Parks bulk export, start with
+[`docs/raw_data_to_pipeline.md`](docs/raw_data_to_pipeline.md) first.
+
+After the raw images and DINOv3 model weights are in place, run the final
+DINOv3 pipeline and export partner-facing prediction CSVs:
+
+```bash
+make pii
+make all
+```
+
+Run `make pii` once before the final pipeline on a fresh checkout. It creates
+the cleaned image set and the completion marker required by `make final-dinov3`
+and `make all`.
+
+Run a faster local validation pass:
+
+```bash
+make smoke
+```
+
+Run a small new-image demo from the cleaned training image folder:
+
+```bash
+make demo-new-images
+```
+
+Predict on a separate folder of already-cleaned new images:
+
+```bash
+make predict-new-images NEW_IMAGE_FOLDER=data/processed/images_clean/citywide/images NEW_IMAGE_LIMIT=5
+```
+
+
+### Predicting on a new CityWide bulk export
+
+When BC Parks provides a bulk CityWide export — a flat folder of images plus a CSV mapping image file names to asset IDs — the pipeline sorts, screens, and predicts in three steps. Exports are processed one asset type at a time.
+
+```bash
+# 1. Sort the flat export into per-asset folders (data/raw/new_batch/<asset_id>/)
+make sort-citywide-export \
+  CITYWIDE_EXPORT_FOLDER=<path to the flat image folder> \
+  CITYWIDE_EXPORT_CSV=<path to the export CSV>
+
+# 2. Screen and blur for PII (writes cleaned images to data/processed/images_clean/new_batch/)
+make pii-batch
+
+# 3. Predict attributes (DINOv3 default)
+make predict-new-images NEW_IMAGE_ASSET_TYPE="Stairs"
+
+# or, optionally, with the cloud VLM
+make vlm-predict NEW_IMAGE_ASSET_TYPE="Stairs" VLM_PROMPT=stairs_v1
+```
+
+`make pii-batch` writes batch-specific PII files under
+`results/predictions/pii_screen_new_batch.csv`, `data/pii_review/new_batch/`,
+and `data/processed/images_clean/new_batch/`, so it does not overwrite the
+full-pipeline PII screen.
+
+Replace `"Stairs"` with the export's asset type — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
+
+To test on the existing training images instead of a new export, use `make demo`, or override the folder as shown above. Training data uses the `profile_id/asset_id` layout, so no `NEW_IMAGE_ASSET_TYPE` is needed — the type is inferred from the profile_id folder.
+
+Optional cloud VLM predictions are available when provider credentials are set:
+
+```bash
+make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+make final-with-vlm VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+```
+
+The partner-facing prediction exports are written to:
+
+- `results/final/bcparks_asset_attribute_predictions_long.csv`
+- `results/final/bcparks_asset_attribute_predictions_wide.csv`
+
+## (Optional) CityWide download
+
+The raw CityWide downloader is available as an upstream Makefile branch for BC Parks or graders who have API credentials. Required `.env` keys are:
+
+```bash
+CITYWIDE_API_KEY=
+CITYWIDE_DB=
+CITYWIDE_USER=
+CITYWIDE_API_URL=https://v4.citywidesolutions.com/v4_server/external/v1
+```
+
+Download metadata only:
+
+```bash
+make download-citywide-metadata
+```
+
+Download metadata and images:
+
+```bash
+make download-citywide-images
+```
+
+Useful controls:
+
+```bash
+make download-citywide-sample
+make download-citywide-images CITYWIDE_PROFILE="337 356" CITYWIDE_LIMIT=100
+```
+
+The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `images_manifest.csv`, and downloaded images under `data/raw/citywide/`.
+
+For the full CityWide API flow, including how linked attributes are downloaded,
+see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
+
+## (Optional) Using Vision Language Models (VLMs)
+
+This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
+VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
+
+Supported VLM provider families include:
+
+- **Google Gemini** through `GEMINI_API_KEY` or `GOOGLE_API_KEY`
+- **OpenAI** through `OPENAI_API_KEY`
+- **xAI Grok** through `XAI_API_KEY`
+- **Anthropic Claude** through `ANTHROPIC_API_KEY`
+- **GitHub Models** through `GITHUB_TOKEN`
+
+### Quick Start
+
+1. Set up the VLM API keys**
+
+Create an `.env` file in the project root with the required API keys for the models you want to use.
+
+```bash
+# Google AI Studio
+GEMINI_API_KEY="your-key-here"
+
+# GitHub Models (Llama, Phi)
+GITHUB_TOKEN="your-token-here"
+```
+
+An example of how to set up API keys in an `.env` file is provided in `.env.example`.
+
+- For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
+
+2. Get VLM predictions:
+
+```bash
+make vlm-predict
+    VLM_INPUT=path/to/image/folder \
+    NEW_IMAGE_ASSET_TYPE="Stairs" \
+    VLM_PROMPT=stairs_v1 \
+    VLM_LIMIT=5
+```
+
+- `NEW_IMAGE_ASSET_TYPE` is asset category of the asset images in `VLM_INPUT` — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
+- `VLM_PROMPT` is the prompt used when generating predictions from the VLM and should correspond to the asset category of `VLM_INPUT` — one of: `stairs_v1`, `trail_bridge_v1`, `boardwalk_low_v1`, `boardwalk_high_v1`, `viewing_platform_v1`.
+- `VLM_LIMIT` corresponds to the number of assets to process by the VLM.
+
+Note: the default VLM model used is the `gemini-3-flash-preview` model from Google AI Studio, but this can be changed by using the arguments `VLM_PROVIDER=<model_provider> VLM_MODEL=<model_name>`. The following VLM providers and associated models are available: 
+
+- VLM_PROVIDER: `gemini`, VLM_MODEL (one of): `gemini-3-flash-preview`, `gemini-3.1-flash-lite`, `gemini-2.5-pro`, `gemini-2.5-flash`, `gemma-4-26b-a4b-it`
+- VLM_PROVIDER: `openai`, VLM_MODEL (one of): `gpt-4o`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-5`, `gpt-5-mini`
+- VLM_PROVIDER: `grok`, VLM_MODEL (one of): `grok-4`, `grok-4.1`, `grok-4.1-fast`
+- VLM_PROVIDER: `claude`, VLM_MODEL (one of): `claude-3-5-sonnet-latest`, `claude-3-7-sonnet-latest`, `claude-sonnet-4`, `claude-opus-4`
+- VLM_PROVIDER: `github`, VLM_MODEL (one of): `Phi-4-multimodal-instruct`, `Llama-3.2-11B-Vision-Instruct`
+
+It is also possible to run batch predictions directly from the terminal:
+
+```bash
+python scripts/run_vlm_predictor.py \
+  --input data/processed/images_clean/new_batch \
+  --asset-type "Stairs" \
+  --output results/vlm_new_batch_gemini.csv \
+  --provider gemini \
+  --model gemini-3-flash-preview \
+  --prompt stairs_v1
+```
+
+For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md).
+
+## Render the report
+
+The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
+
+```bash
+quarto --version
+```
+
+PDF rendering also requires a LaTeX installation. If PDF rendering fails because LaTeX is missing, install TinyTeX with:
+
+```bash
+quarto install tinytex
+```
+
+To render the report, from the repository root, run:
+
+```bash
+quarto render reports/bcparks_capstone_final_report.qmd
+```
+
+This command renders all formats listed in the report YAML, currently HTML and PDF.
+
+To render only one format:
+
+```bash
+quarto render reports/bcparks_capstone_final_report.qmd --to html
+quarto render reports/bcparks_capstone_final_report.qmd --to pdf
+```
+
+To regenerate the EDA figures and plots used in the above report:
+
+```bash
+python scripts/generate_eda_figures.py
+```
+
+## Experiment tracking with MLflow
+
+All model runs are tracked with [MLflow](https://mlflow.org/). The
+default tracking store is a local SQLite database at `./mlflow.db`
+(gitignored), so no server is required and nothing leaves the machine.
+
+End-to-end smoke test (synthetic data only, no SharePoint download needed):
+
+```bash
+python scripts/mlflow_smoke_test.py
+```
+
+This fits a `MajorityClassPredictor` on a synthetic 3-class target and a
+`MedianRegressor` on a synthetic numeric target, and writes both runs
+to `./mlflow.db` under the experiment **`parks-asset-img-class`**.
+
+View the runs in your browser:
+
+```bash
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+```
+
+Programmatic logging:
+
+```python
+from src.baseline import MajorityClassPredictor
+from src.mlflow_utils import (
+    setup_mlflow, log_classification_run,
+    make_run_name, make_standard_tags,
+)
+
+setup_mlflow()  # uses ./mlflow.db
+
+clf = MajorityClassPredictor().fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+log_classification_run(
+    run_name=make_run_name("T2_decking_material", "majority_class"),
+    tags=make_standard_tags(
+        task="T2_decking_material",
+        model_family="baseline",
+        model_name="majority_class",
+        data_version="2026-05-05",
+        split_seed=42,
+    ),
+    params={"n_train": len(y_train), "majority_class": str(clf.fitted_value_)},
+    y_true=y_test,
+    y_pred=y_pred,
+)
+```
+
+Standard tags every run carries: `task`, `model_family`, `model_name`,
+`data_version`, `split_seed`. Standard metrics: `accuracy`, `macro_f1`,
+`weighted_f1`, `per_class_f1.json`, and `confusion_matrix.json` for
+classification; `mae`, `rmse`, `r2` for regression.
+
+Run the unit tests:
+
+```bash
+pytest -q tests/test_mlflow_utils.py
+```
+
+## Current status
+
+The final pipeline is Makefile-driven and centered on the DINOv3 embedding classifier, with optional cloud VLM and CityWide download branches for credentialed runs.
 
 ## Getting Help or Reporting an Issue
 

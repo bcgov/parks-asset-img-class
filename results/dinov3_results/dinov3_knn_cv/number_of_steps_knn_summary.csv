@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,mae_mean,mae_std,rmse_mean,rmse_std,r2_mean,r2_std
+attr_number_of_steps,data\processed\train\attr_number_of_steps_train.csv,data\features\dinov3_attr_number_of_steps_train_assets.csv,GroupKFold,10,regression,5,29,11.156000000000002,4.958291260325701,15.358071281482433,10.346080971772068,-4.607215226292361,6.255041944752905

@@ -1,0 +1,13 @@
+attribute,weighted_f1,macro_f1,n_test_assets,per_asset_type,baseline_majority_class_weighted_f1,baseline_majority_class_macro_f1,baseline_uniform_random_weighted_f1,baseline_uniform_random_macro_f1
+attr_abutment_material,0.7204,0.5304,102,False,0.5971,0.2086,0.2604,0.1073
+attr_bridge_type,0.8555,0.4303,108,False,0.7576,0.1818,0.23,0.0785
+attr_decking_material,0.9668,0.5604,313,False,0.9193,0.243,0.2602,0.0511
+attr_has_edge_guard,0.9275,0.6866,276,False,0.9086,0.4841,0.6148,0.3645
+attr_has_pedestrian_railing,0.9247,0.6421,417,False,0.8725,0.3183,0.4371,0.1921
+attr_material_frame_tank_body,0.7151,0.4399,141,False,0.3138,0.0813,0.0992,0.0416
+attr_structure_material,0.9276,0.5453,302,False,0.8488,0.3153,0.3131,0.1022
+attr_structure_position,0.9265,0.8133,107,False,0.4029,0.2395,0.3531,0.2399
+length_bin,0.664,0.4243,295,True,0.4483,0.2058,0.4213,0.3595
+width_bin,0.6272,0.4,287,True,0.4169,0.2355,0.3213,0.2602
+fall_height_bin,0.8445,0.6404,22,True,0.5187,0.3089,0.4377,0.2821
+steps_bin,0.8148,0.7778,6,False,0.5333,0.4,0.4,0.2667

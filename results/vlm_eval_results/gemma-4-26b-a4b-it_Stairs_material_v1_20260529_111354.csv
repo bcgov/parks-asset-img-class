@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+"attr_material_frame,_tank,_body",gemma-4-26b-a4b-it,Stairs,material_v1,221,0.4519506021715153,0.5853241159487369,2026-05-29T11:13:54.453527

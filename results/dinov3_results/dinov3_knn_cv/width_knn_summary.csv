@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,mae_mean,mae_std,rmse_mean,rmse_std,r2_mean,r2_std
+attr_width,data\processed\train\attr_width_train.csv,data\features\dinov3_attr_width_train_assets.csv,GroupKFold,10,regression,5,1630,0.3692833619631902,0.03765741094797216,1.0083290530719669,0.33414654788311765,0.15089132025217583,0.09279937343177296

@@ -1,0 +1,6 @@
+target_column,target_file,feature_file,fold,n_folds,splitter,knn_k,n_train_assets,n_valid_assets,task_type,accuracy,weighted_f1,macro_f1
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,1,5,GroupKFold,10,1419,355,classification,0.9464788732394366,0.930721169119983,0.27669172932330827
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,2,5,GroupKFold,10,1419,355,classification,0.9690140845070423,0.9643128509466289,0.5644764219119772
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,3,5,GroupKFold,10,1419,355,classification,0.9887323943661972,0.9857318510657901,0.47930295510940674
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,4,5,GroupKFold,10,1419,355,classification,0.971830985915493,0.9606058692144716,0.3791275988585405
+attr_decking_material,data\processed\train\attr_decking_material_train.csv,data\features\dinov3_attr_decking_material_train_assets.csv,5,5,GroupKFold,10,1420,354,classification,0.9519774011299436,0.9421641367730811,0.39873780837636263

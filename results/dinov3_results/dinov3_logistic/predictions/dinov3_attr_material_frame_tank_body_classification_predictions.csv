@@ -1,0 +1,786 @@
+attribute,asset_type,fold,asset_id,true_label,predicted_label,correct,confidence,target_column,classifier,strategy
+attr_material_frame_tank_body,,1,48120,Timber/Wood,Timber/Wood,True,0.9995024083263162,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,48121,Timber/Wood,Timber/Wood,True,0.9787045825286357,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51255,Timber/Wood,Timber/Wood,True,0.9605681243319912,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51256,Timber/Wood,Timber/Wood,True,0.9922511348867638,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51440,Timber/Wood,Timber/Wood,True,0.9980965236798278,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,53103,Timber/Wood,Timber/Wood,True,0.5695368656781449,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,58824,Timber/Wood,Timber/Wood,True,0.9999711553675233,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,61005,Timber/Wood,Timber/Wood,True,0.9498548925284909,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,62364,Timber/Wood,Timber/Wood,True,0.9986531402427418,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,64272,Timber/Wood,Timber/Wood,True,0.9961076037768202,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,64889,Timber/Wood,Timber/Wood,True,0.9999578209721128,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,67630,Timber/Wood,Timber/Wood,True,0.9599578612243543,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,46588,Rock/Stone,Concrete,False,0.8214445235191831,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,47184,Timber/Wood,Timber/Wood,True,0.9887553453823265,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,48131,Box Step,Box Step,True,0.5708737653358678,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,48269,Box Step,Concrete,False,0.594842166969916,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49705,Box Step,Timber/Wood,False,0.752481113047171,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49707,Timber/Wood,Timber/Wood,True,0.9936005859555455,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49710,Timber/Wood,Timber/Wood,True,0.9178839118762829,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49711,Box Step,Timber/Wood,False,0.9487186881636734,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,50723,Concrete,Timber/Wood,False,0.7044956252617123,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51537,Timber/Wood,Timber/Wood,True,0.9939884949259381,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51804,Box Step,Box Step,True,0.9960042420327643,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,53111,Timber/Wood,Box Step,False,0.41632435492593844,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,55652,Timber/Wood,Timber/Wood,True,0.9521315618414327,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,57224,Box Step,Timber/Wood,False,0.9980946197491808,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,57611,Timber/Wood,Timber/Wood,True,0.6817929769772867,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,57614,Timber/Wood,Timber/Wood,True,0.9979702160912942,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,58180,Box Step,Concrete,False,0.9741887916221144,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,60444,Concrete,Concrete,True,0.9977706629031294,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,61611,Rock/Stone,Rock/Stone,True,0.9938946694849554,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,64840,Rock/Stone,Concrete,False,0.6978820867827087,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,65318,Concrete,Concrete,True,0.9962749467079053,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80433,Rock/Stone,Rock/Stone,True,0.9997450022574306,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80436,Timber/Wood,Timber/Wood,True,0.6692436441521705,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80450,Timber/Wood,Timber/Wood,True,0.9740606112270566,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80458,Rock/Stone,Rock/Stone,True,0.9728937798171021,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80607,Timber/Wood,Timber/Wood,True,0.8885589549076891,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80641,Box Step,Timber/Wood,False,0.8916076120750566,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,80909,Box Step,Box Step,True,0.9739798105994044,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,82461,Concrete,Concrete,True,0.9997962668350234,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,82812,Concrete,Concrete,True,0.9919846058060368,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,84944,Timber/Wood,Timber/Wood,True,0.9938377653757706,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,85481,Timber/Wood,Timber/Wood,True,0.7232119511460746,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,85492,Earth-Filled,Box Step,False,0.48898592964327225,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,85989,Timber/Wood,Box Step,False,0.9984613102276796,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,86091,Timber/Wood,Timber/Wood,True,0.7777787550672973,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,88087,Box Step,Box Step,True,0.9836777546545048,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,88138,Timber/Wood,Timber/Wood,True,0.9985336496601209,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,89546,Concrete,Concrete,True,0.9980786494763936,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,89561,Concrete,Rock/Stone,False,0.8515588124784335,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,89639,Rock/Stone,Rock/Stone,True,0.9872974644389575,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,92015,Timber/Wood,Box Step,False,0.8595990776019775,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,92068,Box Step,Box Step,True,0.8912046702660666,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,92939,Timber/Wood,Box Step,False,0.4338501426970111,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94328,Timber/Wood,Box Step,False,0.5427080325696234,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94333,Timber/Wood,Timber/Wood,True,0.9985952487408388,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94340,Timber/Wood,Timber/Wood,True,0.8388358191410532,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94341,Timber/Wood,Timber/Wood,True,0.9587535255117133,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94343,Timber/Wood,Box Step,False,0.6257971831128547,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94402,Concrete,Timber/Wood,False,0.8554564956523006,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94426,Timber/Wood,Timber/Wood,True,0.9951572308511945,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,94748,Box Step,Box Step,True,0.8372286947894109,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,97124,Timber/Wood,Timber/Wood,True,0.9030741255295776,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,98672,Concrete,Concrete,True,0.9797688544778423,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,98951,Rock/Stone,Concrete,False,0.3951215323055161,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,101031,Rock/Stone,Rock/Stone,True,0.9991177830374021,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,101380,Timber/Wood,Timber/Wood,True,0.99159191989749,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,101714,Steel,Metal,False,0.9759235431121013,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,101739,Rock/Stone,Rock/Stone,True,0.9245197807503324,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,102473,Box Step,Box Step,True,0.9997191821580081,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,102839,Timber/Wood,Box Step,False,0.8627685175215711,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,105458,Timber/Wood,Timber/Wood,True,0.9971194009931802,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,106583,Concrete,Concrete,True,0.9997656843092214,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107290,Timber/Wood,Timber/Wood,True,0.9999468610719227,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107475,Box Step,Box Step,True,0.9996626313016541,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107485,Box Step,Box Step,True,0.9985767808015987,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107876,Timber/Wood,Box Step,False,0.9242370183432673,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107879,Timber/Wood,Timber/Wood,True,0.6878759075280333,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107881,Timber/Wood,Timber/Wood,True,0.9470997853341981,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107903,Rock/Stone,Timber/Wood,False,0.3751566138035174,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107913,Timber/Wood,Timber/Wood,True,0.5442895679388008,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107929,Timber/Wood,Timber/Wood,True,0.9982007511114649,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107942,Timber/Wood,Timber/Wood,True,0.8959218563620699,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107945,Timber/Wood,Timber/Wood,True,0.7490301162565921,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107950,Timber/Wood,Timber/Wood,True,0.8533246124808346,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,107974,Timber/Wood,Timber/Wood,True,0.8829198744867743,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,108024,Box Step,Timber/Wood,False,0.9918713987292711,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,108487,Timber/Wood,Box Step,False,0.8987843209791675,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,108648,Box Step,Box Step,True,0.3986265824521892,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,108862,Concrete,Concrete,True,0.6767471793443939,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,108945,Timber/Wood,Timber/Wood,True,0.7263722638839214,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,109154,Timber/Wood,Timber/Wood,True,0.9674402204187521,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,109165,Timber/Wood,Box Step,False,0.7080767019027202,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,109801,Concrete,Concrete,True,0.9774048417303383,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,109807,Concrete,Concrete,True,0.9998117813308942,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,109919,Timber/Wood,Timber/Wood,True,0.6070960778514629,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,110568,Timber/Wood,Timber/Wood,True,0.9984476532745307,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,112127,Timber/Wood,Timber/Wood,True,0.8174997877051567,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,112490,Box Step,Timber/Wood,False,0.6262832413253359,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,112573,Box Step,Timber/Wood,False,0.9998492863904506,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,112908,Concrete,Concrete,True,0.9999997486810116,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,113193,Timber/Wood,Timber/Wood,True,0.9997172278024747,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,113204,Timber/Wood,Timber/Wood,True,0.9984984622831409,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,114575,Timber/Wood,Box Step,False,0.9085201256391702,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,117016,Timber/Wood,Timber/Wood,True,0.9984562381469757,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,117219,Timber/Wood,Timber/Wood,True,0.9993783186817311,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,117585,Timber/Wood,Timber/Wood,True,0.9264131922888544,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,117590,Timber/Wood,Timber/Wood,True,0.993985420443082,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,120734,Timber/Wood,Timber/Wood,True,0.6914024923906822,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,121829,Box Step,Box Step,True,0.7932634449697566,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,122192,Timber/Wood,Timber/Wood,True,0.9953509296250064,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,122648,Timber/Wood,Timber/Wood,True,0.9974700175246729,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,123140,Metal,Metal,True,0.6630497815187293,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,123141,Timber/Wood,Timber/Wood,True,0.9937698469391429,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,123605,Metal,Timber/Wood,False,0.41887804773975695,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,126332,Concrete,Concrete,True,0.9992542875549449,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,127152,Earth-Filled,Box Step,False,0.9926674230899288,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,127157,Timber/Wood,Timber/Wood,True,0.9999260277742795,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,127168,Timber/Wood,Rock/Stone,False,0.5960560771918989,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,46924,Timber/Wood,Timber/Wood,True,0.9991699974086127,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,48488,Timber/Wood,Timber/Wood,True,0.9923293469901895,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49057,Metal,Timber/Wood,False,0.9269655957072511,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,49062,Concrete,Concrete,True,0.49808001187834344,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,89654,Concrete,Concrete,True,0.8261815442682641,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,50822,Metal,Aluminum,False,0.9978122528274351,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51525,Steel,Steel,True,0.5325553213358833,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,51941,Timber/Wood,Timber/Wood,True,0.9948111136000973,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,52458,Timber/Wood,Timber/Wood,True,0.9315632787570488,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,53986,Aluminum,Timber/Wood,False,0.9947002420443608,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,54327,Timber/Wood,Timber/Wood,True,0.99740509910924,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,55115,Timber/Wood,Timber/Wood,True,0.9978251888638038,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,56206,Timber/Wood,Timber/Wood,True,0.9964306566206003,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,57834,Steel,Timber/Wood,False,0.9727688539638809,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,58162,Metal,Steel,False,0.38670219789223553,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,58165,Timber/Wood,Timber/Wood,True,0.9980718038333042,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,60689,Timber/Wood,Timber/Wood,True,0.9993641899654165,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,62927,Timber/Wood,Timber/Wood,True,0.7357041159341238,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,64643,Aluminum,Timber/Wood,False,0.5077659060057309,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,65497,Aluminum,Aluminum,True,0.975866217255605,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,67205,Timber/Wood,Timber/Wood,True,0.7833544906203348,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,67465,Timber/Wood,Timber/Wood,True,0.9998255985646963,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,88741,Timber/Wood,Timber/Wood,True,0.965747583148075,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,122980,Timber/Wood,Timber/Wood,True,0.9998338033490449,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,122981,Timber/Wood,Timber/Wood,True,0.999228679765781,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,128273,Aluminum,Timber/Wood,False,0.8639258782559043,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,46618,Timber/Wood,Timber/Wood,True,0.9571663548415263,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,50824,Timber/Wood,Timber/Wood,True,0.9999502383089365,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,58183,Timber/Wood,Steel,False,0.45543944507265743,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,60883,Timber/Wood,Timber/Wood,True,0.7828064460109612,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,64463,Timber/Wood,Timber/Wood,True,0.9989146856151055,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,66056,Timber/Wood,Timber/Wood,True,0.9772336172336349,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,66960,Timber/Wood,Box Step,False,0.5560657289641087,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,68017,Timber/Wood,Timber/Wood,True,0.9946954691777299,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,68021,Timber/Wood,Timber/Wood,True,0.9969319187184134,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,74894,Timber/Wood,Timber/Wood,True,0.9999663530382683,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,1,74944,Metal,Aluminum,False,0.4669808724639562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,48119,Timber/Wood,Timber/Wood,True,0.9973105718769844,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,48637,Timber/Wood,Timber/Wood,True,0.9813067246209617,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,48634,Timber/Wood,Timber/Wood,True,0.9831493939402437,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,48933,Timber/Wood,Timber/Wood,True,0.8515480370825941,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,50513,Timber/Wood,Steel,False,0.595592155857806,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,51547,Timber/Wood,Timber/Wood,True,0.9997828717572457,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,52244,Timber/Wood,Timber/Wood,True,0.9987507860640262,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,52469,Timber/Wood,Timber/Wood,True,0.9909836522983396,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,55645,Timber/Wood,Timber/Wood,True,0.999332504951306,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,56344,Timber/Wood,Timber/Wood,True,0.9740025831923756,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,56345,Timber/Wood,Timber/Wood,True,0.9803186717094714,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,58171,Timber/Wood,Timber/Wood,True,0.9991077799508375,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,62067,Timber/Wood,Timber/Wood,True,0.9998194295016084,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,64235,Timber/Wood,Timber/Wood,True,0.9987938170754987,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,66040,Timber/Wood,Timber/Wood,True,0.9327294390336202,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,85171,Timber/Wood,Timber/Wood,True,0.9998863434289773,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,47049,Rock/Stone,Rock/Stone,True,0.9318725997210319,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,48799,Box Step,Box Step,True,0.9831646363542262,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,49702,Timber/Wood,Timber/Wood,True,0.9708883563152501,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,50514,Box Step,Box Step,True,0.9729199422175312,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,50805,Box Step,Box Step,True,0.9606344386842004,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,51458,Concrete,Concrete,True,0.8779440844611393,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,51545,Metal,Metal,True,0.6269612021550528,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,52622,Timber/Wood,Timber/Wood,True,0.6671225025075089,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,53805,Concrete,Rock/Stone,False,0.9157604722622325,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,53807,Concrete,Concrete,True,0.9998771321116479,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,53808,Box Step,Box Step,True,0.9971277334679529,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,54159,Rock/Stone,Concrete,False,0.8026829773915629,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,56477,Rock/Stone,Rock/Stone,True,0.999977804086129,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,56479,Box Step,Box Step,True,0.9776373292352474,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,57613,Concrete,Rock/Stone,False,0.42052590604758133,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,61612,Rock/Stone,Rock/Stone,True,0.968257653865034,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,61931,Concrete,Box Step,False,0.6897811390202934,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,62890,Concrete,Concrete,True,0.999948869095733,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,63006,Timber/Wood,Timber/Wood,True,0.9875868022207428,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,64399,Metal,Timber/Wood,False,0.7536896952499537,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,64459,Metal,Timber/Wood,False,0.6195513647193294,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,80463,Timber/Wood,Rock/Stone,False,0.4965351583051563,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,80471,Rock/Stone,Rock/Stone,True,0.9871457766185708,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,80804,Concrete,Concrete,True,0.8880742783372102,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,81109,Concrete,Concrete,True,0.9997861412595581,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,82406,Concrete,Concrete,True,0.9995576671381773,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,82425,Concrete,Concrete,True,0.9825439973029505,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,82555,Concrete,Concrete,True,0.9999008040749591,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,82806,Concrete,Concrete,True,0.9993540808497857,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,82895,Box Step,Box Step,True,0.9949506244570347,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,85480,Timber/Wood,Timber/Wood,True,0.998552065306679,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,85964,Concrete,Concrete,True,0.9055094304986857,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,86044,Earth-Filled,Box Step,False,0.3443390104793311,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,86053,Timber/Wood,Timber/Wood,True,0.6630952815243529,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,86209,Timber/Wood,Timber/Wood,True,0.9991026408817724,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,86620,Concrete,Concrete,True,0.9965325505262632,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,86680,Concrete,Concrete,True,0.9998421756805468,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,87005,Rock/Stone,Rock/Stone,True,0.9927080024711249,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,88271,Box Step,Box Step,True,0.9795172653311326,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,88507,Timber/Wood,Timber/Wood,True,0.9801157916788369,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,89202,Concrete,Timber/Wood,False,0.6295306411926201,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,89567,Concrete,Concrete,True,0.942849160484089,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,91857,Box Step,Box Step,True,0.9088980292306562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,92005,Box Step,Box Step,True,0.862778947135349,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,92007,Timber/Wood,Box Step,False,0.9110271391212993,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,92431,Rock/Stone,Box Step,False,0.7735492661280964,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,92432,Box Step,Timber/Wood,False,0.9943261675276903,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,92917,Box Step,Box Step,True,0.8408969035709523,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94138,Concrete,Concrete,True,0.9516263369827718,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94297,Timber/Wood,Timber/Wood,True,0.9973702603005782,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94298,Timber/Wood,Timber/Wood,True,0.9954246148588256,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94301,Timber/Wood,Timber/Wood,True,0.9989953544637157,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94307,Timber/Wood,Timber/Wood,True,0.3222368225791965,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94313,Box Step,Timber/Wood,False,0.8639758970643127,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94397,Timber/Wood,Timber/Wood,True,0.9618772475408897,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,94403,Box Step,Timber/Wood,False,0.8365666969947156,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,96803,Timber/Wood,Timber/Wood,True,0.9999084141814111,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,98304,Concrete,Concrete,True,0.9990205990864099,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,100301,Concrete,Box Step,False,0.9941842730420383,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,100302,Concrete,Concrete,True,0.9885938588921912,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101016,Rock/Stone,Rock/Stone,True,0.9984637238856507,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101396,Timber/Wood,Box Step,False,0.8452508471890906,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101449,Rock/Stone,Timber/Wood,False,0.7376182563243101,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101607,Box Step,Box Step,True,0.9209332660634771,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101613,Box Step,Box Step,True,0.896108127981407,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101720,Metal,Steel,False,0.9856931278703046,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,101744,Timber/Wood,Rock/Stone,False,0.6946500704515235,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,102467,Timber/Wood,Timber/Wood,True,0.9997458402834957,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,103932,Box Step,Timber/Wood,False,0.6857183873816414,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,105840,Timber/Wood,Timber/Wood,True,0.9997951406805244,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,105855,Timber/Wood,Timber/Wood,True,0.9614892838020888,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,106071,Concrete,Concrete,True,0.9745295711868418,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107471,Box Step,Box Step,True,0.9441768033854271,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107884,Timber/Wood,Timber/Wood,True,0.8661590085820446,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107899,Timber/Wood,Timber/Wood,True,0.9998881970998604,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107927,Timber/Wood,Timber/Wood,True,0.5925401408448837,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107937,Timber/Wood,Timber/Wood,True,0.9992400017132708,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,107995,Timber/Wood,Box Step,False,0.681140737393889,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,108005,Timber/Wood,Timber/Wood,True,0.5689065985089438,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,108012,Timber/Wood,Box Step,False,0.7110143891892035,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,108028,Timber/Wood,Timber/Wood,True,0.8184344169114299,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,109804,Concrete,Concrete,True,0.9916802624884979,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,110173,Timber/Wood,Box Step,False,0.511432175269994,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,110371,Timber/Wood,Box Step,False,0.47053213881081546,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,113205,Timber/Wood,Timber/Wood,True,0.9992152644963621,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,114558,Rock/Stone,Concrete,False,0.9118851152746184,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,116610,Timber/Wood,Timber/Wood,True,0.9997160180120876,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,118199,Metal,Metal,True,0.9980540728254259,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121000,Timber/Wood,Timber/Wood,True,0.9803826162490252,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121014,Timber/Wood,Timber/Wood,True,0.6311480702144705,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121017,Timber/Wood,Timber/Wood,True,0.8876393122155344,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121018,Timber/Wood,Timber/Wood,True,0.9980267098596494,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121019,Timber/Wood,Timber/Wood,True,0.9973989240366344,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121920,Timber/Wood,Timber/Wood,True,0.9992944358380216,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121921,Timber/Wood,Timber/Wood,True,0.9921010625093349,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,122611,Box Step,Timber/Wood,False,0.9608945865258436,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,122649,Timber/Wood,Timber/Wood,True,0.9995928075696892,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,122661,Timber/Wood,Timber/Wood,True,0.9976122112343037,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,124042,Box Step,Timber/Wood,False,0.5498022384690646,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,125311,Box Step,Box Step,True,0.5280563499694302,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,126696,Box Step,Box Step,True,0.9748617167881207,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,126797,Timber/Wood,Timber/Wood,True,0.994890306637939,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,46925,Timber/Wood,Timber/Wood,True,0.9992162366623188,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,46931,Timber/Wood,Timber/Wood,True,0.7703961534583684,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,47299,Timber/Wood,Timber/Wood,True,0.9976520284083292,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,49059,Timber/Wood,Timber/Wood,True,0.9861157401253008,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,49063,Metal,Metal,True,0.6350305552711993,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,49244,Timber/Wood,Timber/Wood,True,0.9990837472589686,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,49664,Timber/Wood,Timber/Wood,True,0.852771996599501,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,50770,Timber/Wood,Timber/Wood,True,0.9984615257048511,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,51524,Steel,Box Step,False,0.9710817837306427,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,52457,Aluminum,Metal,False,0.663860073874156,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,53984,Timber/Wood,Timber/Wood,True,0.9940266771909853,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,53985,Timber/Wood,Aluminum,False,0.6898167101696666,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,54321,Timber/Wood,Timber/Wood,True,0.9986842123771126,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,55465,Timber/Wood,Timber/Wood,True,0.9995842711790833,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,55638,Timber/Wood,Timber/Wood,True,0.8186229618772002,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,55640,Aluminum,Aluminum,True,0.8083269917846686,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,55642,Timber/Wood,Timber/Wood,True,0.9543119492922695,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,58163,Timber/Wood,Metal,False,0.6798069871532008,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,58164,Timber/Wood,Timber/Wood,True,0.7994419340959025,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,58169,Timber/Wood,Timber/Wood,True,0.9852546329182337,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,59060,Timber/Wood,Timber/Wood,True,0.9978501406434058,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,61416,Timber/Wood,Timber/Wood,True,0.8325378870495029,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,62089,Timber/Wood,Timber/Wood,True,0.5815370967335994,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,64129,Timber/Wood,Timber/Wood,True,0.9977055524200994,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,65154,Timber/Wood,Steel,False,0.9306870947963591,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,65425,Aluminum,Aluminum,True,0.9524312405431975,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,88740,Timber/Wood,Timber/Wood,True,0.9555143392893077,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,96884,Timber/Wood,Timber/Wood,True,0.9934945681733705,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,121796,Timber/Wood,Timber/Wood,True,0.5953621887477275,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,46617,Timber/Wood,Timber/Wood,True,0.8556091835795085,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,51549,Aluminum,Metal,False,0.88934455198269,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,54072,Timber/Wood,Steel,False,0.4981302270550467,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,56218,Timber/Wood,Timber/Wood,True,0.9860378140864421,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,57298,Timber/Wood,Timber/Wood,True,0.995844136265562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,58829,Timber/Wood,Timber/Wood,True,0.9939792219975635,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,62341,Concrete,Timber/Wood,False,0.6581834758874331,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,66955,Steel,Timber/Wood,False,0.9998350636401975,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,67796,Rock/Stone,Timber/Wood,False,0.9246609530735558,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,2,68019,Timber/Wood,Timber/Wood,True,0.8339725169801104,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,46935,Timber/Wood,Timber/Wood,True,0.9965245973638652,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,48935,Timber/Wood,Timber/Wood,True,0.999967229232373,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,51603,Timber/Wood,Timber/Wood,True,0.9043323838125432,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54329,Timber/Wood,Timber/Wood,True,0.9948478074667837,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,56209,Timber/Wood,Timber/Wood,True,0.8783293285716003,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,58826,Timber/Wood,Timber/Wood,True,0.9966717842201483,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,58825,Timber/Wood,Timber/Wood,True,0.9995548386867444,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,59061,Timber/Wood,Timber/Wood,True,0.9864699799122415,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,62448,Timber/Wood,Timber/Wood,True,0.9999722837994767,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64220,Timber/Wood,Timber/Wood,True,0.9861224092909929,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64273,Timber/Wood,Timber/Wood,True,0.9874076711955909,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64260,Timber/Wood,Timber/Wood,True,0.5308971572500719,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64888,Timber/Wood,Timber/Wood,True,0.958673440194896,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,65428,Timber/Wood,Timber/Wood,True,0.9957537535195693,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,66933,Timber/Wood,Timber/Wood,True,0.9665091798170266,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,118770,Timber/Wood,Timber/Wood,True,0.9967708683962268,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,47050,Concrete,Rock/Stone,False,0.9861160305034201,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,47054,Box Step,Box Step,True,0.9995381996779672,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,48395,Concrete,Rock/Stone,False,0.7977554299434775,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,49525,Timber/Wood,Timber/Wood,True,0.9999460883885911,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,49865,Concrete,Timber/Wood,False,0.8679716051389629,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,51544,Timber/Wood,Timber/Wood,True,0.8894508569291024,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,52249,Box Step,Box Step,True,0.8784928757146157,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,52621,Timber/Wood,Rock/Stone,False,0.8732311046973183,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,52953,Concrete,Concrete,True,0.9614864392193692,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,52956,Concrete,Concrete,True,0.9999926865146251,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,53212,Box Step,Box Step,True,0.9610477235475974,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,53213,Timber/Wood,Timber/Wood,True,0.8326711291772446,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,53214,Timber/Wood,Timber/Wood,True,0.7624633323887628,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,53222,Concrete,Concrete,True,0.9425528977479541,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54506,Rock/Stone,Rock/Stone,True,0.9999345916643425,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,55912,Concrete,Concrete,True,0.999296642878422,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,56563,Box Step,Box Step,True,0.6679318633544103,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,60961,Rock/Stone,Rock/Stone,True,0.8901880041431798,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,61846,Timber/Wood,Timber/Wood,True,0.9383002473362148,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,62068,Timber/Wood,Box Step,False,0.9337391014912483,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,62365,Timber/Wood,Box Step,False,0.7211193020288548,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,63038,Box Step,Rock/Stone,False,0.6830392298486977,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64381,Box Step,Box Step,True,0.9660642232328093,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,65613,Box Step,Box Step,True,0.6517170830656541,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,66054,Timber/Wood,Timber/Wood,True,0.9982220402605042,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,80460,Timber/Wood,Timber/Wood,True,0.9984214708304395,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,80640,Box Step,Box Step,True,0.5669614207282915,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,80914,Box Step,Box Step,True,0.9993756523263303,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,80916,Box Step,Box Step,True,0.9422588771790115,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,81293,Timber/Wood,Timber/Wood,True,0.9947635361252237,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,81800,Box Step,Box Step,True,0.994277667203962,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,82213,Box Step,Timber/Wood,False,0.8539837831852558,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,83137,Rock/Stone,Timber/Wood,False,0.9938062413698943,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,83142,Timber/Wood,Timber/Wood,True,0.9997983697518914,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,83147,Timber/Wood,Timber/Wood,True,0.999486122846023,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,83940,Timber/Wood,Timber/Wood,True,0.5199899239746354,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,85476,Timber/Wood,Timber/Wood,True,0.9159812175047871,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,85496,Timber/Wood,Timber/Wood,True,0.9993854745739844,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,86094,Box Step,Box Step,True,0.6895131713707049,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,86238,Timber/Wood,Timber/Wood,True,0.999722936432927,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,86259,Timber/Wood,Timber/Wood,True,0.5545046337453027,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,86617,Concrete,Concrete,True,0.9998925499394506,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,88086,Box Step,Timber/Wood,False,0.5277802928160292,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,89549,Concrete,Concrete,True,0.9992842356825813,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,89718,Box Step,Box Step,True,0.9170013110196592,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,89732,Box Step,Box Step,True,0.982849272599735,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,89733,Box Step,Timber/Wood,False,0.5219599668750234,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,91434,Timber/Wood,Timber/Wood,True,0.8492623143037434,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,92032,Box Step,Box Step,True,0.6615204584689722,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,92047,Box Step,Timber/Wood,False,0.8583403034785614,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,92059,Timber/Wood,Timber/Wood,True,0.9994162940095747,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,92077,Box Step,Box Step,True,0.9934714750016104,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,92807,Rock/Stone,Rock/Stone,True,0.9924033026923488,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,93357,Rock/Stone,Rock/Stone,True,0.7614964331570955,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,94121,Concrete,Rock/Stone,False,0.44077018489797526,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,94308,Timber/Wood,Timber/Wood,True,0.9987968417617481,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,94318,Timber/Wood,Timber/Wood,True,0.994136471820771,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,94401,Concrete,Box Step,False,0.660601230665828,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,98299,Concrete,Concrete,True,0.9990627253431182,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,101027,Rock/Stone,Rock/Stone,True,0.9911742390754477,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,101547,Timber/Wood,Concrete,False,0.7572969647324245,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,101624,Box Step,Box Step,True,0.9949762886989908,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,102366,Box Step,Box Step,True,0.9731416595706349,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,102425,Timber/Wood,Timber/Wood,True,0.9321161641509482,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,102449,Timber/Wood,Timber/Wood,True,0.9999924195354007,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,102455,Rock/Stone,Concrete,False,0.5388344228791115,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,102459,Rock/Stone,Rock/Stone,True,0.9960399334114647,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,105082,Box Step,Box Step,True,0.9642097036203301,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,105083,Box Step,Box Step,True,0.9900518235819628,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,106065,Concrete,Concrete,True,0.9998333720787459,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,106072,Concrete,Concrete,True,0.9998470993805452,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107490,Box Step,Box Step,True,0.9423139017862087,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107516,Box Step,Box Step,True,0.9061945314638629,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107667,Concrete,Concrete,True,0.999990777844009,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107917,Box Step,Box Step,True,0.7204514136861744,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107938,Timber/Wood,Timber/Wood,True,0.999858557219851,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107944,Timber/Wood,Box Step,False,0.5230924590370862,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107947,Timber/Wood,Box Step,False,0.7027929797645209,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,107983,Box Step,Box Step,True,0.9418811169031919,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,108004,Timber/Wood,Timber/Wood,True,0.864378780442669,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,108010,Timber/Wood,Timber/Wood,True,0.9982194801822402,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,108241,Timber/Wood,Timber/Wood,True,0.9999432232890177,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,108734,Timber/Wood,Earth-Filled,False,0.5259579190641711,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,109150,Timber/Wood,Box Step,False,0.9305684949145775,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,109803,Concrete,Concrete,True,0.9989396277145635,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,110086,Rock/Stone,Rock/Stone,True,0.6336149949297445,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,110284,Timber/Wood,Box Step,False,0.5875515552414585,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,110287,Timber/Wood,Timber/Wood,True,0.9935319523731759,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,111458,Box Step,Box Step,True,0.5029524784710032,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,112902,Box Step,Box Step,True,0.856337413813653,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,113187,Timber/Wood,Timber/Wood,True,0.9766381215310241,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,113194,Timber/Wood,Timber/Wood,True,0.9998035499197975,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,113203,Timber/Wood,Timber/Wood,True,0.9978370696217285,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,115090,Concrete,Concrete,True,0.9999537091816036,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,117205,Timber/Wood,Timber/Wood,True,0.7303738899944092,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,121001,Timber/Wood,Timber/Wood,True,0.9823479127889824,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,121484,Box Step,Box Step,True,0.9949590364621015,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,121917,Box Step,Box Step,True,0.9593317874541462,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,122662,Timber/Wood,Timber/Wood,True,0.9988294197472761,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,122663,Timber/Wood,Timber/Wood,True,0.9987514035458239,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,123217,Box Step,Box Step,True,0.6445983160276507,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,123618,Timber/Wood,Timber/Wood,True,0.9172524234473487,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,124044,Box Step,Box Step,True,0.7259336468698686,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,125604,Concrete,Concrete,True,0.9922958285469154,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,126796,Timber/Wood,Timber/Wood,True,0.9994169947788314,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,127026,Concrete,Concrete,True,0.9866621770516198,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,46340,Timber/Wood,Timber/Wood,True,0.9660345423749841,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,46923,Timber/Wood,Timber/Wood,True,0.9997673697333752,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,46926,Timber/Wood,Timber/Wood,True,0.9418203243752219,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,47633,Timber/Wood,Timber/Wood,True,0.9418058985164882,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,49058,Timber/Wood,Timber/Wood,True,0.9938722813915486,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,49497,Timber/Wood,Timber/Wood,True,0.9813867092963907,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,50821,Timber/Wood,Timber/Wood,True,0.9955749308349956,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54206,Timber/Wood,Timber/Wood,True,0.9998470949090253,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,55798,Timber/Wood,Timber/Wood,True,0.9727456560449426,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,56469,Timber/Wood,Box Step,False,0.7438345350329845,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,57833,Timber/Wood,Timber/Wood,True,0.9982794375106966,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,61003,Timber/Wood,Timber/Wood,True,0.9999228439445965,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,61004,Timber/Wood,Timber/Wood,True,0.9996116539151259,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,62088,Timber/Wood,Timber/Wood,True,0.9975058875442692,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64102,Timber/Wood,Timber/Wood,True,0.6136041827989068,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64110,Timber/Wood,Timber/Wood,True,0.9836731230117343,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64128,Timber/Wood,Timber/Wood,True,0.46109059475242076,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64137,Timber/Wood,Timber/Wood,True,0.9991221571142728,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,64138,Timber/Wood,Timber/Wood,True,0.661786828393534,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,65423,Aluminum,Aluminum,True,0.8707237612200022,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,65424,Aluminum,Aluminum,True,0.9870458224693391,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,88736,Timber/Wood,Timber/Wood,True,0.9998798685523402,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,129364,Timber/Wood,Timber/Wood,True,0.9999632639967035,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,51864,Timber/Wood,Timber/Wood,True,0.9718992160606248,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54186,Timber/Wood,Rock/Stone,False,0.8572321982089579,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54209,Timber/Wood,Steel,False,0.5414386590206489,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,54507,Concrete,Rock/Stone,False,0.9947974268467713,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,55656,Timber/Wood,Timber/Wood,True,0.9990284459129161,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,56692,Timber/Wood,Timber/Wood,True,0.9086774821743483,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,56786,Timber/Wood,Timber/Wood,True,0.9998700259221412,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,57509,Timber/Wood,Timber/Wood,True,0.4007387046330322,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,61424,Gravel,Rock/Stone,False,0.7143577125699389,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,66956,Timber/Wood,Timber/Wood,True,0.915762196654756,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,66957,Timber/Wood,Timber/Wood,True,0.999248966973562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,3,66959,Timber/Wood,Timber/Wood,True,0.7322162524423347,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,46933,Timber/Wood,Timber/Wood,True,0.8765140755185438,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,48934,Timber/Wood,Timber/Wood,True,0.9835849931337314,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,53556,Timber/Wood,Timber/Wood,True,0.9983195599077559,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,56778,Timber/Wood,Timber/Wood,True,0.9999376252212541,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,57747,Timber/Wood,Timber/Wood,True,0.98157766580402,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,61958,Timber/Wood,Timber/Wood,True,0.9995986259887796,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,62447,Timber/Wood,Timber/Wood,True,0.999756141158899,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64207,Timber/Wood,Timber/Wood,True,0.9998204549979921,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64237,Timber/Wood,Timber/Wood,True,0.9720938057562448,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64261,Timber/Wood,Timber/Wood,True,0.9991582728974966,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64236,Timber/Wood,Timber/Wood,True,0.9958383830683126,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64887,Timber/Wood,Timber/Wood,True,0.9999856127311336,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,65422,Timber/Wood,Timber/Wood,True,0.7445679161802394,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,66539,Timber/Wood,Timber/Wood,True,0.9999602588240802,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,120920,Timber/Wood,Timber/Wood,True,0.9987985357625024,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123415,PVC,Timber/Wood,False,0.9945089818579341,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123418,Timber/Wood,Timber/Wood,True,0.9991470059869675,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,46616,Timber/Wood,Timber/Wood,True,0.9793752908589151,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,48347,Box Step,Box Step,True,0.768721064225081,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,48394,Concrete,Concrete,True,0.9999905573355222,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,48937,Concrete,Concrete,True,0.9995144054705959,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,51695,Concrete,Timber/Wood,False,0.9993915809222053,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,52162,Box Step,Box Step,True,0.7102651229717627,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,52547,Timber/Wood,Timber/Wood,True,0.9863287127824402,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,52952,Timber/Wood,Timber/Wood,True,0.311412743562732,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,53110,Box Step,Box Step,True,0.9888719220794213,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54208,Timber/Wood,Concrete,False,0.9358474761702881,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54335,Timber/Wood,Timber/Wood,True,0.9973341810427534,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54337,Box Step,Concrete,False,0.84203240099135,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,55708,Box Step,Box Step,True,0.9995960025469555,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,56878,Box Step,Box Step,True,0.9900637940176282,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,57406,Rock/Stone,Rock/Stone,True,0.7509330036525398,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,57612,Timber/Wood,Timber/Wood,True,0.989215946709868,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,60066,Rock/Stone,Concrete,False,0.9355852375816583,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,60445,Concrete,Concrete,True,0.9977085279398397,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,62338,Box Step,Concrete,False,0.6714752991523124,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,63007,Timber/Wood,Box Step,False,0.8333791225764022,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,65317,Concrete,Concrete,True,0.9995768057074573,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,66296,Timber/Wood,Timber/Wood,True,0.9928374713644124,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,67210,Concrete,Concrete,True,0.9999808450120468,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,80608,Timber/Wood,Timber/Wood,True,0.9940886870333366,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,80639,Timber/Wood,Box Step,False,0.7787247954476526,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,82182,Concrete,Concrete,True,0.9981563193266647,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,82778,Box Step,Box Step,True,0.9998096379992936,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,83852,Concrete,Concrete,True,0.964486771688831,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,83874,Metal,Concrete,False,0.33648485041500137,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,84856,Timber/Wood,Timber/Wood,True,0.9756882039794977,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,85483,Box Step,Timber/Wood,False,0.7067421309374288,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,85488,Timber/Wood,Box Step,False,0.6543071769481477,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,86102,Timber/Wood,Timber/Wood,True,0.9756495036349406,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,86159,Timber/Wood,Timber/Wood,True,0.9998382931926896,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,86174,Timber/Wood,Timber/Wood,True,0.9666236306274679,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,86623,Concrete,Concrete,True,0.9975366583702201,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,87713,Box Step,Concrete,False,0.570778077546932,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,87717,Rock/Stone,Rock/Stone,True,0.9987624950423286,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,88110,Timber/Wood,Box Step,False,0.9713171484953542,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,88198,Timber/Wood,Box Step,False,0.6267650398707728,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,89719,Box Step,Timber/Wood,False,0.5278551986775305,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,89730,Box Step,Timber/Wood,False,0.5190931563965634,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,91224,Rock/Stone,Rock/Stone,True,0.9693067209776777,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,92019,Box Step,Box Step,True,0.8697650232473041,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,92076,Box Step,Box Step,True,0.889413745530889,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,92843,Timber/Wood,Timber/Wood,True,0.9997977805188982,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,93359,Box Step,Box Step,True,0.8958944064973188,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,93363,Concrete,Concrete,True,0.9810151579977633,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94137,Concrete,Concrete,True,0.630386221288707,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94302,Box Step,Timber/Wood,False,0.9889778965296386,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94324,Timber/Wood,Timber/Wood,True,0.987390385424764,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94329,Timber/Wood,Concrete,False,0.6698538392363061,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94369,Timber/Wood,Timber/Wood,True,0.9711202869492906,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,94417,Timber/Wood,Timber/Wood,True,0.6030387325286474,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,101440,Timber/Wood,Rock/Stone,False,0.8995076880131695,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,101697,Timber/Wood,Timber/Wood,True,0.8363847165345261,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,102843,Box Step,Timber/Wood,False,0.5436819849124683,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,103909,Box Step,Box Step,True,0.9173612327588931,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,103930,Concrete,Timber/Wood,False,0.9611277688729429,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,104143,Box Step,Box Step,True,0.9784238817360612,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,104721,Timber/Wood,Concrete,False,0.3133126068074294,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,105854,Box Step,Timber/Wood,False,0.6364473749419559,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,106011,Box Step,Box Step,True,0.9981499116299897,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,106066,Concrete,Concrete,True,0.9999363072923289,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,106074,Concrete,Concrete,True,0.9988699564600532,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,106506,Box Step,Box Step,True,0.9997372146091525,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,106584,Concrete,Concrete,True,0.827495185989589,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107329,Timber/Wood,Timber/Wood,True,0.9516170223672593,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107518,Box Step,Box Step,True,0.9957976791253389,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107893,Timber/Wood,Box Step,False,0.8118527003867607,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107894,Timber/Wood,Timber/Wood,True,0.9970049187882745,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107918,Timber/Wood,Box Step,False,0.5123546090905577,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107928,Timber/Wood,Timber/Wood,True,0.9805144956439347,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107931,Timber/Wood,Timber/Wood,True,0.7277390184990281,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107932,Timber/Wood,Timber/Wood,True,0.9924301066366761,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107935,Timber/Wood,Timber/Wood,True,0.9941156202376881,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107972,Timber/Wood,Timber/Wood,True,0.9723470894508994,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107975,Timber/Wood,Timber/Wood,True,0.858759901221315,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107977,Box Step,Timber/Wood,False,0.9198191884296245,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,107999,Timber/Wood,Timber/Wood,True,0.8428161150646165,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,108013,Box Step,Timber/Wood,False,0.771518234028468,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,108868,Concrete,Concrete,True,0.9999838772716896,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,109159,Box Step,Timber/Wood,False,0.9509668290178201,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,109762,Rock/Stone,Rock/Stone,True,0.5243575595955045,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,109806,Concrete,Concrete,True,0.9979109597821387,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,110087,Rock/Stone,Rock/Stone,True,0.39324251746472944,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,110869,Timber/Wood,Box Step,False,0.9536115759072337,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,111482,Rock/Stone,Timber/Wood,False,0.6853034606049784,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,111583,Rock/Stone,Metal,False,0.8617459088079593,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,111787,Timber/Wood,Timber/Wood,True,0.9987752747510705,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,113161,Timber/Wood,Box Step,False,0.8946409800275271,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,113196,Timber/Wood,Timber/Wood,True,0.9874245482591966,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,117052,Timber/Wood,Timber/Wood,True,0.9990480703893517,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,118556,Timber/Wood,Timber/Wood,True,0.9999439715260233,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,120546,Box Step,Timber/Wood,False,0.991878037166709,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121013,Timber/Wood,Timber/Wood,True,0.9978378001986705,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121016,Timber/Wood,Timber/Wood,True,0.97153499257599,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121071,Box Step,Box Step,True,0.8340894533966189,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121503,Timber/Wood,Timber/Wood,True,0.9996727900770846,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121918,Timber/Wood,Timber/Wood,True,0.814365428747057,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,122647,Timber/Wood,Timber/Wood,True,0.9956323306950101,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,122664,Timber/Wood,Timber/Wood,True,0.9998632947059857,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,122777,Timber/Wood,Timber/Wood,True,0.9999743743129805,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,122780,Timber/Wood,Timber/Wood,True,0.9995320220330008,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,122781,Timber/Wood,Timber/Wood,True,0.99217732989976,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123145,Box Step,Box Step,True,0.6731436828951697,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123172,Box Step,Box Step,True,0.9932925185648218,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123413,Rock/Stone,Concrete,False,0.8078977967248614,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123416,Rock/Stone,Box Step,False,0.9909940042448218,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,123577,Box Step,Box Step,True,0.5877938540612194,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,125976,Box Step,Box Step,True,0.9555952830521997,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,127081,Box Step,Timber/Wood,False,0.813135096280333,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,46614,Timber/Wood,Timber/Wood,True,0.97952449753605,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,47637,Timber/Wood,Metal,False,0.4054014924248667,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,49061,Steel,Timber/Wood,False,0.9981513170336879,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,51800,Timber/Wood,Timber/Wood,True,0.9751134120742594,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,52551,Timber/Wood,Timber/Wood,True,0.988958257633865,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,53195,Concrete,Concrete,True,0.5000387707394341,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,53200,Timber/Wood,Timber/Wood,True,0.9913991130723508,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54324,Steel,Steel,True,0.9481547597608473,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54326,Timber/Wood,Timber/Wood,True,0.7377368748437435,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,55637,Timber/Wood,Timber/Wood,True,0.812209786704443,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,56470,Timber/Wood,Timber/Wood,True,0.868235827270678,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,56533,Timber/Wood,Aluminum,False,0.9908047264354353,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,58160,Steel,Timber/Wood,False,0.46521144051427,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,58413,Timber/Wood,Timber/Wood,True,0.9903055679925665,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,58881,Timber/Wood,Timber/Wood,True,0.9993293451808396,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,58954,Timber/Wood,Timber/Wood,True,0.9947135190525087,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,58955,Timber/Wood,Metal,False,0.7336076860195213,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,60633,Timber/Wood,Timber/Wood,True,0.9992909189718661,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,61499,Timber/Wood,Timber/Wood,True,0.875325414025537,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,55464,Timber/Wood,Metal,False,0.8684984176142259,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,95948,Timber/Wood,Timber/Wood,True,0.9978118484896427,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,115209,Timber/Wood,Timber/Wood,True,0.9998019319695041,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,115211,Timber/Wood,Timber/Wood,True,0.9585374163403817,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,116690,Timber/Wood,Timber/Wood,True,0.9007068561910972,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,121698,Timber/Wood,Timber/Wood,True,0.921526699374513,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,46619,Timber/Wood,Timber/Wood,True,0.9928279685344356,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,54338,Timber/Wood,Timber/Wood,True,0.9925575667959295,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,4,64468,Timber/Wood,Timber/Wood,True,0.8740237326442983,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,47664,Timber/Wood,Timber/Wood,True,0.9961042527013807,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,46615,Timber/Wood,Timber/Wood,True,0.9887807803680938,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,48514,Timber/Wood,Timber/Wood,True,0.998360279026097,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,48936,Timber/Wood,Timber/Wood,True,0.9999737324072367,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51538,Timber/Wood,Timber/Wood,True,0.844233503919141,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51942,Timber/Wood,Timber/Wood,True,0.6668988190794785,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,52245,Timber/Wood,Timber/Wood,True,0.9998051953153326,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,53993,Timber/Wood,Timber/Wood,True,0.9988761999459674,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55643,Timber/Wood,Timber/Wood,True,0.9987483111775244,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,56877,Timber/Wood,Timber/Wood,True,0.9981711045131283,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,56779,Timber/Wood,Timber/Wood,True,0.9998419998872734,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,58173,Timber/Wood,Timber/Wood,True,0.9941943217764896,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,64274,Timber/Wood,Timber/Wood,True,0.9182778420582154,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,65430,Timber/Wood,Timber/Wood,True,0.9376956168703642,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,95950,Timber/Wood,Timber/Wood,True,0.9974739244553166,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,46496,Natural Surface,Rock/Stone,False,0.9984003925408074,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,47051,Concrete,Concrete,True,0.8981886135260991,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,47053,Concrete,Rock/Stone,False,0.9131668035443415,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,49501,Concrete,Concrete,True,0.8126481677874933,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,49704,Box Step,Timber/Wood,False,0.8454011365729768,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,49706,Timber/Wood,Box Step,False,0.8670775473564747,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51270,Timber/Wood,Timber/Wood,True,0.9954466051149502,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51536,Box Step,Box Step,True,0.85466884389511,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51805,Timber/Wood,Concrete,False,0.8996320033823655,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,52248,Timber/Wood,Timber/Wood,True,0.994171004689742,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,53428,Box Step,Box Step,True,0.8589728529444745,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,53688,Concrete,Concrete,True,0.9986881097988116,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55707,Timber/Wood,Timber/Wood,True,0.9907392807575461,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,57673,Concrete,Concrete,True,0.5187217295047432,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,57674,Timber/Wood,Concrete,False,0.9782403042789357,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,58181,Timber/Wood,Timber/Wood,True,0.9870658186683731,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,58182,Concrete,Timber/Wood,False,0.9202604889832499,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,60443,Concrete,Concrete,True,0.9994909065836116,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61221,Concrete,Concrete,True,0.9580279313083888,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61932,Timber/Wood,Timber/Wood,True,0.996100791669015,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61933,Timber/Wood,Timber/Wood,True,0.998868551244594,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,63400,Rock/Stone,Rock/Stone,True,0.7813879163199484,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,64656,Box Step,Box Step,True,0.9232959273188373,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,66055,Concrete,Concrete,True,0.999913239014927,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,66243,Concrete,Concrete,True,0.9634287356789532,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,80438,Timber/Wood,Concrete,False,0.47121067317997223,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,80452,Rock/Stone,Rock/Stone,True,0.7363846767968599,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,80470,Rock/Stone,Rock/Stone,True,0.6133900889957478,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,80606,Timber/Wood,Timber/Wood,True,0.9044145601815555,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,82811,Concrete,Concrete,True,0.9535606287765097,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,83152,Timber/Wood,Timber/Wood,True,0.5492840525489512,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85087,Metal,Metal,True,0.4822030456062455,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85486,Earth-Filled,Timber/Wood,False,0.8809393423067948,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85489,Timber/Wood,Timber/Wood,True,0.9354017772035468,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85493,Timber/Wood,Timber/Wood,True,0.9835801552017486,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85499,Timber/Wood,Box Step,False,0.9784037376305562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85958,Concrete,Concrete,True,0.9983058198934218,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,86062,Timber/Wood,Timber/Wood,True,0.9932053543952738,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,86143,Timber/Wood,Timber/Wood,True,0.996316153713499,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,86246,Timber/Wood,Timber/Wood,True,0.9697734728629649,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,87019,Concrete,Concrete,True,0.9890126210633403,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,88091,Box Step,Concrete,False,0.49250899582313035,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,89201,Box Step,Concrete,False,0.8607327281095459,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92084,Box Step,Box Step,True,0.889911377890725,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92085,Box Step,Box Step,True,0.7423417325036854,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92433,Box Step,Box Step,True,0.9986964516275532,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92434,Timber/Wood,Timber/Wood,True,0.9963980803797887,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92436,Box Step,Box Step,True,0.9737769021716041,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,92806,Rock/Stone,Rock/Stone,True,0.9928903338314202,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,93352,Rock/Stone,Rock/Stone,True,0.9901631432838699,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94135,Concrete,Concrete,True,0.9379166972656015,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94176,Timber/Wood,Timber/Wood,True,0.977687753814737,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94295,Timber/Wood,Timber/Wood,True,0.9384825072716272,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94315,Timber/Wood,Timber/Wood,True,0.7272182051523146,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94330,Timber/Wood,Timber/Wood,True,0.7051496024143068,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94334,Timber/Wood,Box Step,False,0.9541700144874679,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94339,Box Step,Timber/Wood,False,0.9056489476740346,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94398,Timber/Wood,Timber/Wood,True,0.9994273059237561,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94404,Timber/Wood,Timber/Wood,True,0.9987474904760216,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94418,Timber/Wood,Box Step,False,0.9388824115649015,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94419,Timber/Wood,Concrete,False,0.7594518673052456,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,100334,Box Step,Box Step,True,0.9986753690124226,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,101066,Rock/Stone,Concrete,False,0.7835494026023844,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,102439,Timber/Wood,Timber/Wood,True,0.9533114960733443,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,102759,Rock/Stone,Rock/Stone,True,0.9999970054732357,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,104350,Timber/Wood,Timber/Wood,True,0.7208796848555528,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,104861,Concrete,Concrete,True,0.6421764642189348,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,104870,Box Step,Box Step,True,0.9657809040187864,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105614,Timber/Wood,Timber/Wood,True,0.971581897950031,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105616,Box Step,Box Step,True,0.9997970915956031,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105617,Box Step,Box Step,True,0.8110839100569008,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105619,Box Step,Box Step,True,0.9996401122120709,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105817,Timber/Wood,Timber/Wood,True,0.9991020716687138,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105819,Timber/Wood,Timber/Wood,True,0.9999839035280528,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,105824,Timber/Wood,Timber/Wood,True,0.7901815701618874,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,106068,Concrete,Concrete,True,0.9889504338294816,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,106070,Concrete,Concrete,True,0.9994002117350791,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,106073,Concrete,Concrete,True,0.9897694348005893,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,107878,Timber/Wood,Timber/Wood,True,0.9984430458136493,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,107905,Box Step,Timber/Wood,False,0.9623148847688491,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,107941,Timber/Wood,Timber/Wood,True,0.9998602443087539,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,107943,Timber/Wood,Timber/Wood,True,0.9682970692411665,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,107971,Box Step,Timber/Wood,False,0.9513887050843648,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,109153,Box Step,Timber/Wood,False,0.9884170675251112,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,109628,Timber/Wood,Timber/Wood,True,0.991830621644284,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,109719,Timber/Wood,Timber/Wood,True,0.9926090018243628,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,110378,Timber/Wood,Timber/Wood,True,0.8704466417232867,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,110703,Box Step,Box Step,True,0.9545357286002935,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,110871,Timber/Wood,Box Step,False,0.9999136968223603,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,110875,Timber/Wood,Timber/Wood,True,0.4565251918107647,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,111450,Box Step,Box Step,True,0.9345554535186688,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,112342,Timber/Wood,Timber/Wood,True,0.9999625505495562,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,113157,Timber/Wood,Timber/Wood,True,0.9924302949884445,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,113162,Timber/Wood,Timber/Wood,True,0.9184873377608357,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,113200,Box Step,Timber/Wood,False,0.9458956014953966,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,114567,Rock/Stone,Rock/Stone,True,0.9281047332232318,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,115040,Box Step,Box Step,True,0.9577804046679397,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,116732,Timber/Wood,Timber/Wood,True,0.9626334161451688,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,116796,Timber/Wood,Timber/Wood,True,0.998313286005684,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,117044,Timber/Wood,Timber/Wood,True,0.9999728688125339,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,117800,Box Step,Box Step,True,0.9614966314885764,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,121499,Timber/Wood,Timber/Wood,True,0.9851163164323532,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,121919,Timber/Wood,Timber/Wood,True,0.9876554397526299,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,122646,Timber/Wood,Timber/Wood,True,0.9998501369435903,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,122779,Timber/Wood,Timber/Wood,True,0.9999763544531387,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,123649,Box Step,Box Step,True,0.9884001406276505,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,124045,Box Step,Timber/Wood,False,0.6136718966689058,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,126777,Timber/Wood,Timber/Wood,True,0.9997719151733055,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,127144,Earth-Filled,Timber/Wood,False,0.5923295970103488,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,127169,Timber/Wood,Box Step,False,0.9988865846339079,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,46928,Timber/Wood,Timber/Wood,True,0.9994965406982382,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,46929,Timber/Wood,Timber/Wood,True,0.6492604534115715,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,48296,Timber/Wood,Timber/Wood,True,0.9487724739775695,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,49060,Steel,Timber/Wood,False,0.982248172215321,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,50654,Timber/Wood,Timber/Wood,True,0.9977530692018594,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51798,Steel,Timber/Wood,False,0.5760255994133332,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51858,Timber/Wood,Timber/Wood,True,0.6663792371939348,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,53193,Timber/Wood,Timber/Wood,True,0.9913897344496576,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,53983,Timber/Wood,Timber/Wood,True,0.9816143511121657,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55116,Aluminum,Aluminum,True,0.7792158679894412,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55633,Metal,Aluminum,False,0.39808912395984997,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55635,Rock/Stone,Concrete,False,0.8326326354842332,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,57117,Timber/Wood,Timber/Wood,True,0.9925108845519277,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,57835,Timber/Wood,Steel,False,0.9905504782000214,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,57858,Timber/Wood,Timber/Wood,True,0.9888373341072028,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61111,Timber/Wood,Timber/Wood,True,0.9892053518927749,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61414,Timber/Wood,Timber/Wood,True,0.9831237893333918,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,61415,Metal,Timber/Wood,False,0.9678739125117891,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,63597,Metal,Steel,False,0.89250789832551,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,64116,Timber/Wood,Timber/Wood,True,0.9979660061497437,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,64131,Timber/Wood,Timber/Wood,True,0.8311713453000581,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,89716,Box Step,Box Step,True,0.6561436795763735,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,94172,Timber/Wood,Timber/Wood,True,0.974559336700857,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,95947,Timber/Wood,Timber/Wood,True,0.9992733262984212,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,111862,Timber/Wood,Timber/Wood,True,0.9959960289029262,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,118221,Aluminum,Steel,False,0.6469948444877951,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,48252,Timber/Wood,Timber/Wood,True,0.9994944319677997,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,48297,Gravel,Timber/Wood,False,0.9432372969629232,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,51548,Steel,Steel,True,0.651526085053314,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,55471,Metal,Timber/Wood,False,0.9785143341394789,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,68018,Timber/Wood,Timber/Wood,True,0.9980900534532844,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression
+attr_material_frame_tank_body,,5,85146,Timber/Wood,Timber/Wood,True,0.9999978305799079,"attr_material_frame,_tank,_body",logistic_regression,dinov3_frozen_embeddings_logistic_regression

@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_bridge_type,attr_bridge_type,data/processed/train/attr_bridge_type_train.csv,data/features/dinov3_vitb16_remaining_attributes_assets.csv,classification,dinov3_frozen_embeddings_linear_svm,linear_svm,StratifiedGroupKFold,5,612,612,768,0.856297481007597,0.029045432224178814,0.8505677575364732,0.030835219930536832,0.4482129869134398,0.08152795863430097

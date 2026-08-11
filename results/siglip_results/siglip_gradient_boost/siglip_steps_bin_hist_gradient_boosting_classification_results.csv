@@ -1,0 +1,2 @@
+attribute,target_column,target_file,feature_file,task_type,strategy,classifier,splitter,n_folds,n_labels,n_assets,n_features,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+steps_bin,steps_bin,data/processed/train/steps_bin_train.csv,data/features/google_siglip2_base_patch16_224_all_attributes_assets.csv,classification,siglip_frozen_embeddings_hist_gradient_boosting,hist_gradient_boosting,GroupKFold,5,29,29,768,0.3866666666666666,0.14996295838935988,0.23285714285714282,0.14164885842452288,0.22182539682539684,0.09308410737394127

@@ -1,0 +1,2 @@
+attribute,model,asset_type,prompt_version,n_samples,macro_f1,weighted_f1,timestamp
+attr_has_pedestrian_railing,gemma-4-26b-a4b-it,Stairs,pedestrian_railing_v1,365,0.7650590133734898,0.8603636048263216,2026-05-29T11:13:15.416292

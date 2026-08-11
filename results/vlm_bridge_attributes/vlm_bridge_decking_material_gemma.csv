@@ -1,0 +1,1762 @@
+asset_id,timestamp,model,response,latency_s,decking_material_value,decking_material_confidence,parse_error,raw_response,error,traceback
+46926,2026-06-06T22:06:42.789611,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.98}}",10.376,Timber,0.98,,,,
+47533,2026-06-06T22:06:57.572810,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",14.771,Timber,0.95,,,,
+47637,2026-06-06T22:07:09.258801,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.683,Timber,0.95,,,,
+48111,2026-06-06T22:07:20.483090,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.22,Timber,0.95,,,,
+48112,2026-06-06T22:07:29.947460,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.46,Timber,0.95,,,,
+48296,2026-06-06T22:07:42.099462,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.146,Timber,0.95,,,,
+48340,2026-06-06T22:07:52.980181,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.879,Timber,0.95,,,,
+48344,2026-06-06T22:08:03.843475,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.859,Timber,0.95,,,,
+49057,2026-06-06T22:08:13.780373,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.931,Timber,0.95,,,,
+49059,2026-06-06T22:08:25.333395,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.542,Timber,0.95,,,,
+49060,2026-06-06T22:08:34.428879,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",9.088,Timber,1.0,,,,
+49061,2026-06-06T22:08:43.351941,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",8.92,Timber,0.95,,,,
+50654,2026-06-06T22:08:54.426763,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.073,Timber,0.95,,,,
+51524,2026-06-06T22:09:10.560428,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",16.127,Steel,0.9,,,,
+51525,2026-06-06T22:09:29.537870,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",18.971,Steel,0.9,,,,
+51531,2026-06-06T22:09:40.817322,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.278,Timber,0.95,,,,
+52457,2026-06-06T22:09:55.148055,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",14.326,Steel,0.9,,,,
+52551,2026-06-06T22:10:05.671386,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.517,Timber,1.0,,,,
+53193,2026-06-06T22:10:17.060136,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.388,Timber,0.95,,,,
+53798,2026-06-06T22:10:29.448218,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",12.387,Timber,0.95,,,,
+53985,2026-06-06T22:10:53.218854,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",23.706,Steel,0.9,,,,
+53986,2026-06-06T22:11:13.244894,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}",20.02,unable to determine,0.0,,,,
+54184,2026-06-06T22:11:24.847699,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",11.596,Timber,0.98,,,,
+54321,2026-06-06T22:11:38.153558,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",13.304,Timber,0.9,,,,
+54324,2026-06-06T22:11:52.429124,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.95
+    }
+}",14.273,Steel,0.95,,,,
+55640,2026-06-06T22:12:03.240208,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.809,Timber,0.95,,,,
+56206,2026-06-06T22:12:13.755200,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.505,Timber,0.95,,,,
+56469,2026-06-06T22:12:23.630718,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.85,Timber,0.95,,,,
+56533,2026-06-06T22:12:34.162137,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.516,Timber,0.95,,,,
+56876,2026-06-06T22:12:49.026971,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",14.858,Timber,0.95,,,,
+57834,2026-06-06T22:12:58.834893,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.803,Timber,0.95,,,,
+58162,2026-06-06T22:13:21.048159,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",22.212,Steel,0.9,,,,
+58164,2026-06-06T22:13:30.474056,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.42,Timber,0.95,,,,
+58955,2026-06-06T22:13:41.768389,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",11.293,Timber,0.9,,,,
+59060,2026-06-06T22:13:54.244968,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",12.475,Timber,1.0,,,,
+61003,2026-06-06T22:14:03.191618,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",8.942,Timber,0.9,,,,
+63068,2026-06-06T22:14:14.716187,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.511,Timber,0.95,,,,
+63597,2026-06-06T22:14:27.426878,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",12.707,Steel,0.9,,,,
+64102,2026-06-06T22:14:38.982460,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.55,Timber,0.95,,,,
+64126,2026-06-06T22:14:51.074615,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.09,Timber,0.95,,,,
+64643,2026-06-06T22:15:07.799442,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}",16.696,Steel,0.85,,,,
+65423,2026-06-06T22:15:23.543715,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",15.74,Steel,0.9,,,,
+65425,2026-06-06T22:15:33.527145,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.971,Timber,0.95,,,,
+65609,2026-06-06T22:15:46.775990,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.95
+    }
+}
+```",13.242,Concrete,0.95,,,,
+65788,2026-06-06T22:16:54.779217,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",67.998,Aluminum,0.9,,,,
+65789,2026-06-06T22:17:08.181951,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",13.397,Steel,0.9,,,,
+66920,2026-06-06T22:17:20.367494,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",12.184,Timber,0.9,,,,
+66922,2026-06-06T22:17:45.958504,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",25.589,Timber,0.85,,,,
+67205,2026-06-06T22:17:59.178899,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",13.216,Timber,0.9,,,,
+82270,2026-06-06T22:18:07.944220,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.762,Timber,0.95,,,,
+82379,2026-06-06T22:18:17.713210,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.768,Timber,0.95,,,,
+82385,2026-06-06T22:18:28.263549,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",10.549,Timber,0.98,,,,
+83138,2026-06-06T22:18:37.727415,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.462,Timber,0.95,,,,
+83150,2026-06-06T22:18:51.883082,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",14.154,Timber,0.95,,,,
+83513,2026-06-06T22:19:02.709207,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.825,Timber,0.95,,,,
+85208,2026-06-06T22:19:13.313053,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.601,Timber,0.95,,,,
+85487,2026-06-06T22:19:24.066277,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.751,Timber,0.95,,,,
+86369,2026-06-06T22:19:36.782363,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.715,Timber,0.95,,,,
+86525,2026-06-06T22:19:48.951018,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.163,Timber,0.95,,,,
+86599,2026-06-06T22:19:59.808797,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",10.856,Timber,0.9,,,,
+87188,2026-06-06T22:20:10.970179,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",11.136,Timber,0.98,,,,
+87483,2026-06-06T22:20:20.592181,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.621,Timber,0.95,,,,
+87769,2026-06-06T22:20:31.610251,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.016,Timber,0.95,,,,
+87928,2026-06-06T22:20:42.794599,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.179,Timber,0.95,,,,
+88280,2026-06-06T22:20:52.247136,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.451,Timber,0.95,,,,
+88733,2026-06-06T22:21:03.089671,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.84,Timber,0.9,,,,
+88812,2026-06-06T22:21:14.466441,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.375,Timber,0.95,,,,
+88814,2026-06-06T22:21:27.339986,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",12.868,Timber,0.95,,,,
+88818,2026-06-06T22:21:36.677105,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.334,Timber,0.95,,,,
+88838,2026-06-06T22:21:47.214522,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",10.536,Timber,0.98,,,,
+88842,2026-06-06T22:22:06.022307,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",18.807,Timber,1.0,,,,
+88845,2026-06-06T22:22:44.476569,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",38.453,Timber,0.95,,,,
+88856,2026-06-06T22:23:04.745504,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",20.262,Timber,1.0,,,,
+88857,2026-06-06T22:23:16.878066,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.131,Timber,0.95,,,,
+88859,2026-06-06T22:23:29.424593,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",12.545,Timber,0.95,,,,
+88865,2026-06-06T22:23:39.972712,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.546,Timber,0.95,,,,
+88866,2026-06-06T22:23:51.038443,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.062,Timber,0.95,,,,
+88869,2026-06-06T22:24:02.367892,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.326,Timber,0.95,,,,
+88871,2026-06-06T22:24:12.334164,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.965,Timber,0.95,,,,
+89437,2026-06-06T22:24:20.517080,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.18,Timber,0.95,,,,
+89447,2026-06-06T22:24:31.574398,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.036,Timber,0.95,,,,
+89450,2026-06-06T22:24:42.434607,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.858,Timber,0.95,,,,
+89580,2026-06-06T22:24:53.445244,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.009,Timber,0.95,,,,
+89761,2026-06-06T22:25:06.096586,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",12.649,Timber,0.98,,,,
+90361,2026-06-06T22:25:15.303710,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.204,Timber,0.95,,,,
+89767,2026-06-06T22:25:15.308054,gemma-4-26b-a4b-it,,0.003,,,True,,,
+90408,2026-06-06T22:25:26.686852,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",11.378,Timber,0.98,,,,
+90412,2026-06-06T22:25:39.081224,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",12.392,Timber,0.95,,,,
+91248,2026-06-06T22:25:50.067512,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.979,Timber,0.95,,,,
+91253,2026-06-06T22:25:59.028687,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",8.96,Timber,0.95,,,,
+91832,2026-06-06T22:26:09.987261,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.957,Timber,0.95,,,,
+92164,2026-06-06T22:26:18.699694,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",8.71,Timber,0.9,,,,
+92794,2026-06-06T22:26:52.244944,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}
+```",33.545,Steel,0.8,,,,
+92801,2026-06-06T22:27:02.308400,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.058,Timber,0.95,,,,
+92854,2026-06-06T22:27:14.295793,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",11.986,Timber,1.0,,,,
+92872,2026-06-06T22:27:25.352297,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",11.055,Timber,0.85,,,,
+93036,2026-06-06T22:27:41.019704,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",15.666,Timber,0.9,,,,
+93038,2026-06-06T22:27:50.750920,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.729,Timber,0.95,,,,
+93043,2026-06-06T22:28:30.655112,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.7
+    }
+}
+```",39.902,Concrete,0.7,,,,
+94144,2026-06-06T22:28:59.458280,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",28.79,Aluminum,0.85,,,,
+94177,2026-06-06T22:29:09.913168,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",10.429,Timber,0.98,,,,
+96291,2026-06-06T22:29:20.146875,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.227,Timber,0.9,,,,
+96292,2026-06-06T22:29:29.732190,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",9.584,Timber,0.95,,,,
+96854,2026-06-06T22:29:40.427664,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.692,Timber,0.95,,,,
+97817,2026-06-06T22:29:52.476746,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",12.047,Timber,0.98,,,,
+98336,2026-06-06T22:30:07.810214,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",15.33,Timber,0.95,,,,
+98498,2026-06-06T22:30:16.725177,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.913,Timber,0.95,,,,
+98531,2026-06-06T22:30:29.941090,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",13.214,Timber,0.85,,,,
+99611,2026-06-06T22:30:43.358546,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",13.409,Timber,0.95,,,,
+99614,2026-06-06T22:30:56.307282,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",12.943,Timber,0.95,,,,
+99844,2026-06-06T22:31:08.622936,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",12.315,Timber,0.9,,,,
+100140,2026-06-06T22:31:23.898649,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",15.273,Timber,1.0,,,,
+100181,2026-06-06T22:31:36.808645,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",12.908,Timber,0.98,,,,
+100272,2026-06-06T22:31:47.806794,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.997,Timber,0.95,,,,
+100347,2026-06-06T22:31:59.235446,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.426,Timber,0.95,,,,
+100348,2026-06-06T22:32:11.226280,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.989,Timber,0.95,,,,
+100446,2026-06-06T22:32:20.731963,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",9.504,Timber,0.98,,,,
+100475,2026-06-06T22:32:31.258654,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.525,Timber,1.0,,,,
+100757,2026-06-06T22:32:40.984857,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.725,Timber,0.95,,,,
+100758,2026-06-06T22:32:49.815661,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",8.83,Timber,1.0,,,,
+101132,2026-06-06T22:33:02.407408,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",12.57,Timber,1.0,,,,
+101826,2026-06-06T22:33:12.354344,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.95
+    }
+}",9.94,Aluminum,0.95,,,,
+101831,2026-06-06T22:33:23.914618,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.559,Timber,0.95,,,,
+101890,2026-06-06T22:33:36.243651,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.327,Timber,0.95,,,,
+101988,2026-06-06T22:33:47.364047,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.118,Timber,0.95,,,,
+102341,2026-06-06T22:34:10.429255,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",23.063,Timber,0.85,,,,
+102344,2026-06-06T22:34:24.026926,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",13.595,Timber,0.85,,,,
+102352,2026-06-06T22:34:33.660501,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.632,Timber,0.95,,,,
+102353,2026-06-06T22:34:52.728445,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.85
+    }
+}
+```",19.055,Concrete,0.85,,,,
+102354,2026-06-06T22:36:10.731632,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Composite"",
+        ""confidence"": 0.7
+    }
+}
+```",78.003,Composite,0.7,,,,
+102355,2026-06-06T22:36:19.325213,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.587,Timber,0.95,,,,
+102359,2026-06-06T22:36:30.390648,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.064,Timber,0.95,,,,
+102370,2026-06-06T22:36:40.010305,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.616,Timber,0.95,,,,
+102471,2026-06-06T22:36:53.219050,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",13.207,Aluminum,0.9,,,,
+102851,2026-06-06T22:37:02.646784,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.427,Timber,0.95,,,,
+103253,2026-06-06T22:37:11.349129,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.699,Timber,0.95,,,,
+103256,2026-06-06T22:37:23.325471,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.97,Timber,0.95,,,,
+104066,2026-06-06T22:37:32.752076,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.425,Timber,0.95,,,,
+104086,2026-06-06T22:37:44.528465,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.774,Timber,0.95,,,,
+104159,2026-06-06T22:38:04.086459,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",19.556,Timber,0.95,,,,
+104170,2026-06-06T22:38:14.734953,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.626,Timber,0.95,,,,
+105042,2026-06-06T22:38:28.573684,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",13.837,Timber,0.9,,,,
+105438,2026-06-06T22:38:39.208130,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.63,Timber,0.95,,,,
+105440,2026-06-06T22:38:50.367250,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",11.158,Timber,0.8,,,,
+105442,2026-06-06T22:39:01.232423,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.864,Timber,0.95,,,,
+105443,2026-06-06T22:39:17.261785,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.85
+    }
+}",16.027,Concrete,0.85,,,,
+105444,2026-06-06T22:39:25.186685,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.923,Timber,0.95,,,,
+105449,2026-06-06T22:40:34.116807,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",68.928,Steel,0.85,,,,
+106027,2026-06-06T22:40:44.852098,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.729,Timber,0.95,,,,
+106030,2026-06-06T22:40:55.604447,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",10.751,Timber,0.98,,,,
+106045,2026-06-06T22:41:04.414183,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",8.808,Timber,1.0,,,,
+106273,2026-06-06T22:41:19.256951,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.8}}",14.842,Timber,0.8,,,,
+106920,2026-06-06T22:41:31.497866,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.239,Timber,0.95,,,,
+106925,2026-06-06T22:42:12.738380,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Asphalt"",
+        ""confidence"": 0.7
+    }
+}
+```",41.234,Asphalt,0.7,,,,
+107041,2026-06-06T22:42:21.194907,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",8.453,Timber,0.98,,,,
+107058,2026-06-06T22:42:31.251941,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.055,Timber,1.0,,,,
+107068,2026-06-06T22:42:40.769456,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.516,Timber,0.95,,,,
+107117,2026-06-06T22:42:49.268052,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.497,Timber,0.95,,,,
+107473,2026-06-06T22:42:59.309595,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.039,Timber,0.95,,,,
+107877,2026-06-06T22:43:21.275311,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",21.963,Aluminum,0.9,,,,
+107885,2026-06-06T22:43:38.597762,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",17.309,Aluminum,0.9,,,,
+107969,2026-06-06T22:43:53.274853,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",14.667,Steel,0.9,,,,
+107973,2026-06-06T22:44:13.482795,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",20.206,Timber,0.9,,,,
+108019,2026-06-06T22:44:24.402069,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}
+```",10.918,Timber,0.98,,,,
+108037,2026-06-06T22:44:39.532020,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}
+```",15.127,Steel,0.9,,,,
+108040,2026-06-06T22:44:48.262360,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",8.729,Timber,0.9,,,,
+108107,2026-06-06T22:45:05.162731,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",16.897,Timber,0.95,,,,
+108380,2026-06-06T22:45:18.264069,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",13.1,Timber,0.95,,,,
+108725,2026-06-06T22:45:30.659802,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}",12.394,Timber,0.85,,,,
+108731,2026-06-06T22:45:42.653956,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",11.993,Concrete,0.9,,,,
+109160,2026-06-06T22:45:54.411174,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",11.755,Timber,1.0,,,,
+109169,2026-06-06T22:46:19.607172,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",25.194,Timber,0.95,,,,
+109560,2026-06-06T22:46:39.574643,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",19.966,Timber,0.98,,,,
+109619,2026-06-06T22:46:49.626644,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.05,Timber,0.95,,,,
+110131,2026-06-06T22:47:03.942335,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",14.315,Timber,0.95,,,,
+110139,2026-06-06T22:47:55.667585,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.7
+    }
+}
+```",51.724,Steel,0.7,,,,
+110170,2026-06-06T22:48:06.061754,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.388,Timber,0.95,,,,
+110299,2026-06-06T22:48:28.458929,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",22.396,Timber,0.9,,,,
+110356,2026-06-06T22:48:39.075826,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.615,Timber,0.95,,,,
+110775,2026-06-06T22:48:55.881510,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",16.803,Timber,0.9,,,,
+110788,2026-06-06T22:49:06.616395,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.726,Timber,0.95,,,,
+110868,2026-06-06T22:49:16.873235,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.255,Timber,0.95,,,,
+110996,2026-06-06T22:49:28.847657,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.973,Timber,0.95,,,,
+111914,2026-06-06T22:49:41.258723,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.406,Timber,0.95,,,,
+112338,2026-06-06T22:49:56.081255,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",14.82,Timber,0.9,,,,
+112422,2026-06-06T22:50:05.207096,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.125,Timber,0.95,,,,
+113125,2026-06-06T22:50:59.679556,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.85
+    }
+}
+```",54.466,Aluminum,0.85,,,,
+113163,2026-06-06T22:51:10.731655,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.047,Timber,0.95,,,,
+113164,2026-06-06T22:51:23.242696,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.509,Timber,0.95,,,,
+113217,2026-06-06T22:51:35.313530,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",12.048,Timber,1.0,,,,
+113244,2026-06-06T22:52:27.085336,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",51.763,Aluminum,0.9,,,,
+113804,2026-06-06T22:52:38.692838,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.578,Timber,0.95,,,,
+113952,2026-06-06T22:52:50.673860,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.978,Timber,0.95,,,,
+113958,2026-06-06T22:53:03.165693,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.49,Timber,0.95,,,,
+114047,2026-06-06T22:53:13.918658,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.751,Timber,0.95,,,,
+114291,2026-06-06T22:53:22.583363,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.663,Timber,0.95,,,,
+114635,2026-06-06T22:53:32.661023,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.076,Timber,0.95,,,,
+114815,2026-06-06T22:53:44.538984,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.873,Timber,0.95,,,,
+114923,2026-06-06T22:53:54.987506,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.447,Timber,0.95,,,,
+114963,2026-06-06T22:54:10.760370,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",15.769,Timber,0.9,,,,
+114996,2026-06-06T22:54:25.191395,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",14.41,Timber,0.9,,,,
+114997,2026-06-06T22:54:40.140209,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Composite"",
+        ""confidence"": 0.85
+    }
+}
+```",14.946,Composite,0.85,,,,
+115806,2026-06-06T22:54:50.277878,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",10.136,Timber,1.0,,,,
+115807,2026-06-06T22:55:00.723386,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",10.444,Timber,0.9,,,,
+115809,2026-06-06T22:55:15.580235,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",14.855,Timber,0.95,,,,
+115814,2026-06-06T22:55:24.789378,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.208,Timber,0.95,,,,
+116847,2026-06-06T22:55:34.317614,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",9.527,Timber,0.9,,,,
+117195,2026-06-06T22:56:17.121310,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}",42.798,Steel,0.8,,,,
+117196,2026-06-06T22:56:42.359618,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",25.236,Aluminum,0.9,,,,
+117197,2026-06-06T22:57:03.201458,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",20.84,Aluminum,0.9,,,,
+117211,2026-06-06T22:57:38.838543,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.7
+    }
+}
+```",35.632,Aluminum,0.7,,,,
+117216,2026-06-06T22:58:08.705330,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.75
+    }
+}",29.851,Aluminum,0.75,,,,
+117220,2026-06-06T22:58:25.736606,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",17.029,Aluminum,0.9,,,,
+117221,2026-06-06T22:58:44.468555,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}
+```",18.729,Aluminum,0.9,,,,
+117304,2026-06-06T22:58:59.108154,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}
+```",14.638,Timber,1.0,,,,
+117365,2026-06-06T22:59:11.800127,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.691,Timber,0.95,,,,
+118143,2026-06-06T22:59:22.157410,gemma-4-26b-a4b-it,"{""decking_material"": {""value"": ""Timber"", ""confidence"": 0.95}}",10.351,Timber,0.95,,,,
+118246,2026-06-06T22:59:32.750753,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.592,Timber,0.95,,,,
+118757,2026-06-06T22:59:40.996328,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",8.244,Timber,0.98,,,,
+118797,2026-06-06T22:59:51.451094,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.453,Timber,0.95,,,,
+118923,2026-06-06T23:00:41.829102,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",50.363,unable to determine,0.0,,,,
+119099,2026-06-06T23:00:58.826377,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",16.994,Timber,0.9,,,,
+119811,2026-06-06T23:01:13.562267,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",14.735,Timber,0.9,,,,
+119851,2026-06-06T23:01:24.333841,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.77,Timber,0.95,,,,
+119977,2026-06-06T23:01:34.506281,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.167,Timber,0.95,,,,
+120706,2026-06-06T23:01:55.548094,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.85
+    }
+}
+```",21.04,Timber,0.85,,,,
+121497,2026-06-06T23:02:03.358309,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",7.809,Timber,0.95,,,,
+121755,2026-06-06T23:02:12.160745,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.801,Timber,0.95,,,,
+122034,2026-06-06T23:02:23.812318,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.65,Timber,0.95,,,,
+121993,2026-06-06T23:02:34.365147,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.551,Timber,0.95,,,,
+122244,2026-06-06T23:02:44.193312,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.822,Timber,0.95,,,,
+122263,2026-06-06T23:02:54.328848,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.135,Timber,0.95,,,,
+122441,2026-06-06T23:03:06.490176,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.16,Timber,0.95,,,,
+122444,2026-06-06T23:03:19.317709,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",12.826,Timber,0.9,,,,
+122445,2026-06-06T23:03:32.746712,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",13.427,Timber,0.9,,,,
+122456,2026-06-06T23:03:43.792551,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.044,Timber,0.95,,,,
+122981,2026-06-06T23:03:55.057137,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.98
+    }
+}",11.263,Timber,0.98,,,,
+123161,2026-06-06T23:04:12.622537,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.85
+    }
+}
+```",17.56,Steel,0.85,,,,
+123219,2026-06-06T23:04:42.496215,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.8
+    }
+}
+```",29.873,Steel,0.8,,,,
+123309,2026-06-06T23:05:31.406021,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.7
+    }
+}
+```",48.893,Timber,0.7,,,,
+123352,2026-06-06T23:05:43.458753,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",12.043,Timber,0.95,,,,
+123310,2026-06-06T23:06:04.795129,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.8
+    }
+}
+```",21.331,Timber,0.8,,,,
+123354,2026-06-06T23:06:32.656128,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""unable to determine"",
+        ""confidence"": 0.0
+    }
+}
+```",27.858,unable to determine,0.0,,,,
+123585,2026-06-06T23:06:42.107024,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",9.45,Timber,1.0,,,,
+126199,2026-06-06T23:06:53.147922,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",11.039,Steel,0.9,,,,
+126334,2026-06-06T23:07:03.928198,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.775,Timber,0.95,,,,
+126340,2026-06-06T23:08:19.181901,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",75.248,Timber,0.9,,,,
+126683,2026-06-06T23:08:30.446884,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.249,Timber,0.95,,,,
+126721,2026-06-06T23:08:41.258834,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",10.81,Timber,0.95,,,,
+126709,2026-06-06T23:08:49.483287,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",8.223,Timber,0.95,,,,
+126779,2026-06-06T23:09:08.473194,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",18.989,Aluminum,0.9,,,,
+126915,2026-06-06T23:09:20.911029,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",12.436,Timber,0.95,,,,
+127136,2026-06-06T23:09:42.968985,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Aluminum"",
+        ""confidence"": 0.9
+    }
+}",22.057,Aluminum,0.9,,,,
+127147,2026-06-06T23:09:58.602613,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",15.628,Timber,0.9,,,,
+127145,2026-06-06T23:10:54.907083,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}
+```",56.303,Timber,0.9,,,,
+127159,2026-06-06T23:11:05.269613,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.353,Timber,0.95,,,,
+127203,2026-06-06T23:11:14.902456,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",9.631,Timber,0.95,,,,
+127204,2026-06-06T23:11:25.035147,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.13,Timber,0.95,,,,
+127205,2026-06-06T23:11:36.716670,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.68,Timber,0.95,,,,
+127388,2026-06-06T23:11:47.842536,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Concrete"",
+        ""confidence"": 0.9
+    }
+}",11.12,Concrete,0.9,,,,
+127525,2026-06-06T23:11:59.248075,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",11.376,Timber,0.95,,,,
+128273,2026-06-06T23:12:10.702562,gemma-4-26b-a4b-it,"```json
+{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}
+```",11.449,Timber,0.95,,,,
+128830,2026-06-06T23:12:21.145181,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.441,Timber,0.95,,,,
+128831,2026-06-06T23:12:29.860271,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.9
+    }
+}",8.714,Timber,0.9,,,,
+129739,2026-06-06T23:12:40.767799,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 1.0
+    }
+}",10.902,Timber,1.0,,,,
+129491,2026-06-06T23:12:57.118480,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Steel"",
+        ""confidence"": 0.9
+    }
+}",16.349,Steel,0.9,,,,
+102358,2026-06-06T23:13:07.631716,gemma-4-26b-a4b-it,"{
+    ""decking_material"": {
+        ""value"": ""Timber"",
+        ""confidence"": 0.95
+    }
+}",10.512,Timber,0.95,,,,

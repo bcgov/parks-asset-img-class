@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_structure_material,data\processed\train\attr_structure_material_train.csv,data\features\dinov3_attr_structure_material_train_assets.csv,GroupKFold,10,classification,5,1674,0.9235320403968184,0.014440483048528735,0.8997887290614048,0.02041480885804796,0.4969827517903451,0.09926669028618813

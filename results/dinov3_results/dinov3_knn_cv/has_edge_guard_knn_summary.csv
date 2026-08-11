@@ -1,0 +1,2 @@
+target_column,target_file,feature_file,splitter,knn_k,task_type,n_folds,n_valid_assets,accuracy_mean,accuracy_std,weighted_f1_mean,weighted_f1_std,macro_f1_mean,macro_f1_std
+attr_has_edge_guard,data\processed\train\attr_has_edge_guard_train.csv,data\features\dinov3_attr_has_edge_guard_train_assets.csv,StratifiedGroupKFold,10,classification,5,1616,0.922021557160876,0.008386008455488017,0.89463862971938,0.013962145069235899,0.5381083264614793,0.07154538174311724

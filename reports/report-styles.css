@@ -1,0 +1,115 @@
+body {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1f2933;
+}
+
+main.content {
+  max-width: 860px;
+}
+
+.report-header {
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #d6d9de;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.report-header h1 {
+  margin: 0 0 0.45rem;
+  text-align: center;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+.report-header h2 {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.report-header dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.9rem;
+  row-gap: 0.15rem;
+  max-width: 590px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.report-header dt {
+  font-weight: 700;
+  text-align: right;
+}
+
+.report-header dd {
+  margin: 0;
+}
+
+.report-toc ol {
+  max-width: 620px;
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.report-toc li {
+  margin-bottom: 0.25rem;
+}
+
+.report-toc a {
+  color: #1f4f7a;
+  text-decoration: none;
+}
+
+.report-toc a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+}
+
+ul,
+ol {
+  margin-top: 0.2rem;
+  margin-bottom: 0.65rem;
+  padding-left: 1.35rem;
+}
+
+li {
+  margin-bottom: 0.2rem;
+}
+
+h1,
+h2,
+h3 {
+  color: #111827;
+  line-height: 1.25;
+}
+
+h1.title {
+  font-size: 1.9rem;
+  margin-bottom: 0.35rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+#TOC {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}

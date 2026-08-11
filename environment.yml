@@ -1,0 +1,41 @@
+name: bcparks_capstone
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyter
+  - notebook
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - pillow
+  - requests
+  - tqdm
+  - make
+  - pip
+  - pip:
+    - ultralytics
+    - transformers
+    - torch
+    - torchvision
+    - ftfy
+    - omegaconf
+    - regex
+    - submitit
+    - termcolor
+    - torchmetrics
+    - python-dotenv
+    - mlflow>=2.13
+    - pytest>=8.0
+    - openpyxl
+    - tabulate
+    - google-genai
+    - openai
+    - anthropic
+    - dagshub
+    - open-clip-torch
+    - httpx==0.27.2

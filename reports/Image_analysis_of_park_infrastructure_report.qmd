@@ -1,0 +1,320 @@
+---
+title: ""
+
+bibliography: references.bib
+jupyter: bcparks_capstone
+author:
+  - name: Sarah Gauthier
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Nour Shawky
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Ssemakula Peter Wasswa
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Mehmet Imga
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+
+format:
+  html:
+    toc: false
+    toc-depth: 2
+    number-sections: true
+    css: report-styles.css
+  pdf:
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    fontsize: 10pt
+    geometry:
+      - margin=0.85in
+    header-includes:
+      - \linespread{0.98}
+---
+
+```{=html}
+<section class="report-header">
+  <h1>Project Report</h1>
+  <h2>Image Analysis of Park Infrastructure</h2>
+
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-05-11</dd>
+
+    <dt>Prepared for:</dt>
+    <dd>UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
+</section>
+```
+
+```{=latex}
+\begin{center}
+{\Huge \textbf{Project Proposal Report}\par}
+\vspace{0.35cm}
+{\Large \textbf{Image Analysis of Park Infrastructure}\par}
+\end{center}
+
+\vspace{0.45cm}
+
+\begin{center}
+\begin{tabular}{r@{\hspace{0.7cm}}l}
+\textbf{Date:} & 2026-05-08 \\
+\textbf{Prepared for:} & BC Parks \\
+\textbf{Prepared by:} & Sarah Gauthier \\
+                     & Nour Shawky \\
+                     & Ssemakula Peter Wasswa \\
+                     & Mehmet Imga \\
+\end{tabular}
+\end{center}
+
+\vspace{0.55cm}
+```
+
+\newpage
+
+# Executive Summary
+BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material, structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.
+
+We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline [@radford2021clip], followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible analysis pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records. Success will be measured by the pipeline's ability to outperform a majority class baseline on F1 score for categorical attributes, and reduce prediction error for binned numerical attributes, on a held-out test set.
+
+
+# Introduction
+
+BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.
+
+Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. In addition to missing labels, initial exploration showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.
+
+Recent advances in computer vision and vision-language models, such as CLIP [@radford2021clip], have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows. Model performance will be evaluated using macro-F1 for categorical attributes and MAE for binned numerical attributes, with all final results measured on a test set that is withheld from training and model selection.
+
+
+# Data & Exploratory Data Analysis (EDA)
+## Data Sources
+
+The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:
+
+1. All image files attached to assets of type `Trail Bridge`, `Stairs`, `Boardwalk` or `Viewing Platform`.
+2. A CSV file with attribute data for each image file.
+
+The CSV file with attribute data contains 5,562 rows, where each row corresponds to a single image (attachment) linked to an asset through its Asset ID. As such, the observational unit of the dataset is an individual image–asset pair. Each record also includes metadata such as image path, asset category (`profile_id`), and a series of asset-level attributes (e.g., decking material, fall height, length).
+
+```{python}
+#| echo: false
+#| label: tbl-data-summary
+#| tbl-cap: Summary of non-null counts, data types, and unique values for the attribute dataset.
+
+import pandas as pd
+
+attributes_df = pd.read_csv("../data/raw/citywide/image_attributes_manifest.csv")
+
+attributes_df = attributes_df[[
+    "image_path",
+    "file_exists", 
+    "asset_id", 
+    "profile_id",
+    "profile_name",
+    "description",
+    "file_id",
+    "filename",
+    "attr_Abutment Material",
+    "attr_Bridge Type",
+    "attr_Decking Material",
+    "attr_Fall Height",
+    "attr_Has Edge Guard",
+    "attr_Has Pedestrian Railing",
+    "attr_Length",
+    "attr_Material (Frame, Tank, Body)",
+    "attr_Number of Steps",
+    "attr_Structure Material",
+    "attr_Structure Position",
+    "attr_Width"
+]]
+
+summary = pd.DataFrame({
+    "Non-Null Count": attributes_df.notnull().sum(),
+    "Null Count": attributes_df.isnull().sum(),
+    "Data Type": attributes_df.dtypes,
+    "Unique Values Count": attributes_df.nunique()
+})
+summary.index.name = "Column"
+
+summary
+```
+
+
+In addition to the attribute table, the dataset includes 5,310 image files that were collected by field inspectors corresponding to the attachment records. Examples of these images are shown in @fig-examples.
+
+```{python}
+#| echo: false
+#| label: fig-examples
+#| fig-cap: "Sample images from the dataset"
+
+from PIL import Image, ImageOps
+import matplotlib.pyplot as plt
+
+img_paths = [
+    "../data/raw/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
+    "../data/raw/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
+    "../data/raw/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
+]
+
+fig, axes = plt.subplots(1, 3, figsize=(8, 3))
+
+for ax, img_path in zip(axes, img_paths):
+    # Open and auto-orient based on EXIF
+    img = Image.open(img_path)
+    img = ImageOps.exif_transpose(img)
+
+    ax.imshow(img)
+    ax.axis("off")
+
+# Bring images closer together
+plt.subplots_adjust(wspace=0.01)
+
+plt.tight_layout()
+```
+
+
+## Data Exploration
+
+### Unique values and label consistency
+
+To better understand the possible values of categorical attributes, unique values were extracted.
+
+```{python}
+#| echo: false
+#| label: tbl-unique-vals
+#| tbl-cap: "Unique values for categorical attributes"
+
+import pandas as pd
+from IPython.display import Markdown
+from tabulate import tabulate
+
+attr_cols = [c for c in attributes_df.columns if c.startswith("attr_")]
+num_attrs = ["attr_Fall Height", "attr_Number of Steps", "attr_Length", "attr_Width"]
+cat_attrs = [col for col in attr_cols if col not in num_attrs]
+
+unique_table = pd.DataFrame({
+    "Column": cat_attrs,
+    "Unique Values": [
+        ", ".join(map(str, sorted(attributes_df[col].dropna().unique().tolist())))
+        for col in cat_attrs
+    ]
+})
+
+pd.set_option("display.max_colwidth", None)
+
+unique_table
+
+Markdown(tabulate(unique_table, headers="keys", tablefmt="pipe", showindex=False))
+```
+
+@tbl-unique-vals reveals some data quality issues such as the presence of placeholder values like `TBD` to denote missing values, artificially reducing the null counts in @tbl-data-summary.
+
+### Attribute completeness by asset category
+
+To assess data coverage, attribute fill rates were computed for each asset category. Invalid values were removed before computing fill rates.
+
+![Attribute fill rate per asset category](report_images/attribute_fill_rate.png){#fig-attribute-fill-rate fig-pos='H'}
+
+As shown in @fig-attribute-fill-rate, there is a lot of variation in completeness across attribute types. Numerical attributes such as `Fall Height` and `Number of Steps` are particularly sparse while some categorical or binary attributes like `Decking Material` or `Has Edge Guard` are more consistently filled.
+
+### Categorical attribute distributions
+
+![Class distributions for categorical attributes](report_images/categorical_distributions.png){#fig-cat-distributions fig-pos='H' width=85%}
+
+@fig-cat-distributions shows strong class imbalance across several categorical attributes. For example, for `Decking Material` and `Structure Material`, dominant classes such as `Timber` appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy.
+
+### Image quality
+
+While having multiple images per asset improves coverage and may give us more opportunities to correctly predict attribute values, the quality among these images varies significantly. Some images are close-ups or poorly framed, and may not capture relevant structural information, as shown in @fig-same-asset. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.
+
+```{python}
+#| echo: false
+#| label: fig-same-asset
+#| fig-cap: "Two sample images of the same boardwalk"
+#| fig-pos: 'H'
+
+img_paths = [
+    "../data/raw/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
+    "../data/raw/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
+]
+
+fig, axes = plt.subplots(1, 2, figsize=(8, 3))
+
+for ax, img_path in zip(axes, img_paths):
+    img = Image.open(img_path)
+    img = ImageOps.exif_transpose(img)
+
+    ax.imshow(img)
+    ax.axis("off")
+
+# Remove extra whitespace and push images together
+plt.subplots_adjust(wspace=0.02, left=0, right=1, top=1, bottom=0)
+
+plt.show()
+```
+ 
+
+# Proposed Data Science Approach
+
+Our approach is motivated directly by the findings from our exploratory data analysis above. Given the  high degree of class imbalance seen in @fig-cat-distributions, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance. We rely on F1 rather than accuracy as our primary metric, since accuracy can be misleadingly high when one class dominates. In this case, a model that always predicts Timber would appear highly accurate despite being uninformative.
+
+As we have seen above in @tbl-unique-vals, attributes vary in data type. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure (see @fig-pipeline).
+
+Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner's existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison. 
+
+To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return "Cannot Determine" or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values. 
+
+Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes.
+
+All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.
+
+```{mermaid}
+%%| label: fig-pipeline
+%%| fig-cap: "High-level overview of the proposed attribute prediction pipeline"
+%%| fig-width: 2.5
+%%| fig-height: 4
+
+flowchart TD
+    A["Image Folder per Asset Type"] --> B["Image Filtering: YOLO or Model Prompt"]
+    B --> C["Attribute Prediction: Zero-shot VLM / CLIP"]
+    C --> D["CSV Output: Predictions + Confidence Scores"]
+    C --> E["Advanced Approaches: DINOv2 / RAG"]
+    E --> D
+```
+
+# Evaluation & Success Criteria
+
+For our evaluation plan, we will start comparing our approaches against our majority class predictor using an F1 score as the minimum benchmark. For attribute-specific evaluation, we will use macro-F1 for categorical fields, and both mean absolute error (MAE) and root mean squared error (RMSE) for numeric fields. MAE shows the average error size, while RMSE penalizes larger errors more heavily, together providing a more complete view of model performance. Our best models will then be evaluated on a held-out test set.
+
+For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, structure position and number of steps, reducing manual effort required by field staff. The results should be exported as a simple CSV file containing predicted attribute values with associated confidence scores, making it easy for staff to review. The pipeline is designed to support staff decision-making, not replace it.
+
+The primary stakeholders are BC Parks staff, the UBC MDS capstone team, and future maintainers. They all require accurate data, reproducible methods, and clear documentation for future updates as more data becomes available.
+
+# Timeline 
+
+| Week | Focus | Key Deliverables |
+|------|-------|-----------------|
+| 1 | Data understanding & preliminary EDA | Completeness analysis, class distribution plots, preliminary EDA notebook, proposal presentation |
+| 2 | Data cleaning & preprocessing | More EDA, extract data quality isssues, prepare cleaned master dataset + asset specific datasets, proposal report submitted |
+| 3 | Baseline & zero shot models | Train/val/test splits, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM |
+| 4-5 | Experimenting with Complex Approaches | Embedding (DINOv2) + classifier approach , asset-specific models|
+| 6–8 | Model evaluation & Fine Tuning, Finalization of data product | Best model fine-tuning, Model evaluation and comparison, final evaluation on held-out test set, final report + data product, partner documentation and demo |
+
+
+The final deliverable will be a reproducible end-to-end pipeline that takes a folder of infrastructure images as input and produces a structured CSV file containing predicted attribute values and confidence scores for each asset. Alongside the pipeline, we will provide BCParks with a report documenting our results with clear documentation and a walkthrough tutorial to support further fine tuning and future maintenance of our pipeline as new data becomes available.
+
+# References
+
